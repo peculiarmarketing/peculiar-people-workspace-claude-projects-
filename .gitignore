@@ -1,0 +1,26 @@
+# Nested repositories. Git does not nest: adding one of these would record a
+# bare pointer to a commit with none of its content, which looks tracked and is
+# not. Each has its own history and its own GitHub remote, so they stay
+# independent and this repo covers only what nothing else does.
+/temple-product-generator/
+/temple-ref-finder/
+/humanizer-stack/
+# Leading slashes are load-bearing: unanchored, these patterns match at every
+# level and would also swallow .claude/skills/temple-product-generator/ and
+# .claude/skills/temple-ref-finder/, which are exactly the skills CLAUDE.md
+# points at. They went missing from the first staging attempt that way.
+
+# Audit screenshots. The REPORT.md and manifest.json are the thinking and are
+# tracked; the shots are 29MB of evidence that re-running the audit reproduces.
+audits/*/shots/
+
+# Claude Code scratch: worktrees are checkouts of the sub-repos above, and
+# settings.local.json is per-machine.
+.claude/worktrees/
+.claude/settings.local.json
+
+.DS_Store
+.env
+.venv*/
+__pycache__/
+*.pyc

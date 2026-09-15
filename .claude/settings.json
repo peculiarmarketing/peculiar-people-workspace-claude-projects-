@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd *)",
+      "Bash(./.venv.nosync/bin/python *)",
+      "Bash(tail *)",
+      "Bash(head *)",
+      "Bash(grep *)",
+      "Bash(ls *)"
+    ]
+  }
+}
