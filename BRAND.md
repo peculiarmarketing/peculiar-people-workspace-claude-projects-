@@ -81,8 +81,8 @@ Retiring, verified against the Shopify store on 14 September 2026:
 |---|---|---|---|---|---|
 | Essential Temple Tee | Comfort Colors 1717 | $44.99 | 52 | Moss | Replaced by the Tapstitch tee |
 | Essential Temple Tee, with personalizable date | Comfort Colors 1717 | $49.99 | 51 | Moss | **Paused, not replaced** |
-| Classic Temple Crew Sweatshirt | Comfort Colors 1566 | $64.99 | 36 | True Navy | Replaced by the Tapstitch crew |
-| Pillar Temple Hoodie | Comfort Colors 1567 | $74.99 | 27 | Denim | Replaced by the Tapstitch hoodie |
+| Classic Temple Crew Sweatshirt | Comfort Colors 1566 | $64.99 | 36 | True Navy | Replaced by the Cloud Temple Crew Sweatshirt |
+| Pillar Temple Hoodie | Comfort Colors 1567 | $74.99 | 27 | Denim | Replaced by the Cloud Temple Hoodie |
 
 Staying live throughout:
 
@@ -210,13 +210,20 @@ available across all three lines.
 
 Still open:
 
-- **The print area dimensions.** Only visible inside the Tapstitch editor, so
-  they wait on the first live session.
-- **Whether the product line names carry over.** The Tapstitch products inherit
-  the existing titles (Essential Temple Tee, Classic Temple Crew Sweatshirt,
-  Pillar Temple Hoodie) for a concrete reason: a replacement that takes the same
-  title inherits the same web address, which keeps the Easify dropdown links
-  alive. Renaming is possible but costs those links.
+- **The print area dimensions. CLOSED.** Read off the editor 14 September 2026
+  and confirmed from Tapstitch's own API on 16 September, which states each
+  garment's print area and its resolution outright. Tee and crew are confirmed;
+  the hoodie's are read the same way whenever it is built.
+- **Whether the product line names carry over. CLOSED 16 September 2026.** The
+  crew becomes the **Cloud Temple Crew Sweatshirt** and the hoodie the **Cloud
+  Temple Hoodie** (Evan). The tee keeps **Essential Temple Tee**. The reason for
+  carrying the old names over turned out not to be true: a replacement does NOT
+  inherit its predecessor's web address by sharing its title. Shopify builds a
+  new product's address from its title, so publishing the first crew on
+  16 September minted it at a fresh address even though the old listing had
+  already been deleted, and the old address had to be set on it deliberately.
+  That has to happen on every replacement regardless of what it is called, so
+  renaming costs nothing and the dropdown links survive either way.
 
 Tapstitch has no public API, so product creation runs through their web editor
 under browser automation. The approach bakes placement into the design file so
@@ -583,7 +590,7 @@ Worth noting that print-on-demand carries no inventory risk, so the content plan
 
 **Tee weight. CLOSED 14 September 2026.** The first choice, the RU0010, was lighter than the Comfort Colors it replaced, which defeated the point of moving. Swapped the same day for the RT0063 at 260 gsm, which is heavier than both and covers the full size range. Costs $3 more per unit.
 
-**Front print size. CLOSED 14 September 2026.** Six inches wide, measured ink to ink. Placement is still open: the logo currently sits 3 inches below the top of the front print area, but that area is a placeholder, so the number it is measured against is not real yet. One edit in the garment configs once the editor session reads the true front print area.
+**Front print size. CLOSED 14 September 2026.** Six inches wide, measured ink to ink. Placement was left open against a placeholder print area; the real front print areas arrived the same day and were confirmed from Tapstitch's API on 16 September, so the 3 inches below the top of the front print area is now measured against a real number. The first published crew's front logo was checked on the rendered mockup and sits correctly.
 
 **Back print spacing. One call left of the two.** Removing the logo from the back changed how every design sits. Proof sheet with all 40 temples: https://claude.ai/code/artifact/63f25017-3639-4bb9-96cc-d16cc1e21d57
 Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and the margins are gone entirely: there is no top or bottom margin, the block is centred in the file, and every temple now reaches the full 12 inches.
