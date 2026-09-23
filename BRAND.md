@@ -143,9 +143,8 @@ a design choice.** Tapstitch cannot vary the print colour within a single listin
 so one listing means one ink. The earlier version of this rule said the same thing
 for a different reason, that every colour in the range is dark. That is no longer
 true: Heather Gray, Gray, Mauve and Royal Blue are all mid tones. The consequence
-is that choosing a colourway now has to respect white-ink legibility. White on
-Heather Gray and white on Mauve each need one real mockup check before they are
-treated as settled (section 19).
+is that choosing a colourway now has to respect white-ink legibility. Evan confirmed
+white on Heather Gray and on Mauve works (23 September 2026).
 
 The crew and the hoodie are still a matching set on fabric, identical at 350 gsm
 and 10.3 oz, so a customer can buy the pair and they will feel the same. They no
@@ -628,8 +627,8 @@ Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and
 
 **The three Nauvoo Limited Edition products and Cornerstone Sweatpants. DELETED 14 September 2026.** Four live Printify products outside the temple catalog that would have become unfulfillable when Printify retires. Gone permanently, on Evan's instruction. If any of them is wanted again it is a rebuild on Tapstitch, not a restore.
 
-**When Printify is actually switched off.** Still open. The account and its products stay untouched as the way back if the blanks disappoint, and nothing is deleted there until Tapstitch is proven on real orders. There have been none yet. The storefront overhaul (September 2026) recommends uninstalling the Printify and Printful apps from Shopify, because both can still edit products and the theme and neither fulfils anything. That is Evan's call, and it collides with this rule: uninstalling Printify may take its listings with it, including the 40 paused dated tees.
+**When Printify is actually switched off.** Still open. The account and its products stay untouched as the way back if the blanks disappoint, and nothing is deleted there until Tapstitch is proven on real orders. There have been none yet. The storefront overhaul (September 2026) recommends uninstalling the Printify and Printful apps from Shopify, because both can still edit products and the theme and neither fulfils anything. Evan's call, 23 September 2026: uninstall Printful now, since it never fulfilled anything here. Keep Printify installed until the first few Tapstitch orders arrive fine, because uninstalling it may take its listings with it, including the 40 paused dated tees.
 
 **Salt Lake bare parent titles. CLOSED 21 September 2026.** They stay. See section 6.
 
-**White ink on mid-tone colourways.** Open. Because every print is white ink (section 7), the question is whether to keep Heather Gray on the sweatshirt and Mauve on the hoodie, not how to print them. One real mockup of each settles it.
+**White ink on mid-tone colourways. CLOSED 23 September 2026.** Heather Gray on the sweatshirt and Mauve on the hoodie stay. Evan has seen them and knows white ink works on both. No mockup check needed.
