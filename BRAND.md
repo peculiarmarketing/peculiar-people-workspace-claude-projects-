@@ -1,6 +1,6 @@
 # Peculiar People: Brand File
 
-Last updated 1 September 2026. Written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
+Last updated 23 September 2026 (sections 6, 7, 8, 18 and 19 brought in line with the live Tapstitch store). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
 
 ## What this file is
 
@@ -65,53 +65,50 @@ First impression matters disproportionately, because word of mouth either starts
 
 Pricing is deliberately premium and Evan is holding it, with a stated worry that it may be a barrier while the store has no reviews. The bet is that the emotion the product carries, the quality, and the marketing justify it.
 
-## 6. Products, in transition
+## 6. Products
 
-**THE STORE IS DARK.** On 14 September 2026 all 160 Printify temple listings were
-set to draft and six products were deleted outright. The only thing a visitor can
-buy today is the Temple Art File. Section 7 has the blanks that replace them; this
-section has what came down.
+**The store is live on Tapstitch.** Verified against the Shopify store on
+23 September 2026: 136 active products. That is 45 temples across three garment
+lines, plus the Temple Art File. Printify fulfills nothing. Every garment comes
+from Tapstitch under the vendor name `ODMPOD`, printed and shipped from the USA.
 
-Getting back is `store_pulldown.py restore --apply`, which reads the snapshot taken
-before the pull-down. It restores the 160 drafts. It cannot undo the six deletions.
-
-Retiring, verified against the Shopify store on 14 September 2026:
-
-| Line | Blank | Price | Variants | Opening color | Fate |
-|---|---|---|---|---|---|
-| Essential Temple Tee | Comfort Colors 1717 | $44.99 | 52 | Moss | Replaced by the Tapstitch tee |
-| Essential Temple Tee, with personalizable date | Comfort Colors 1717 | $49.99 | 51 | Moss | **Paused, not replaced** |
-| Classic Temple Crew Sweatshirt | Comfort Colors 1566 | $64.99 | 36 | True Navy | Replaced by the Cloud Temple Crew Sweatshirt |
-| Pillar Temple Hoodie | Comfort Colors 1567 | $74.99 | 27 | Denim | Replaced by the Cloud Temple Hoodie |
-
-Staying live throughout:
-
-| Line | Blank | Price | Variants | Opening color |
+| Line | Blank | Price | Colours, in swatch order | Opens on |
 |---|---|---|---|---|
-| Temple Art File (digital SVG download) | n/a | $4.95 | 40 designs | Salt Lake preselected |
+| Essential Heavyweight Temple Tee | Tapstitch RT0063 | $44.99 | Black, Maroon, Navy Blue, Coffee, Charcoal | Black |
+| Ultra-soft Temple Sweatshirt | Tapstitch R00368 | $64.99 | Heather Gray, Black | Heather Gray |
+| Ultra-soft Oversized Temple Hoodie | Tapstitch R00286 | $74.99 | Navy Blue, Gray, Eden Green, Black, Coffee, Mauve, Royal Blue | Navy Blue |
+| Temple Art File (digital SVG download) | n/a | $4.95 | 45 designs | Salt Lake |
 
-The Temple Art File is not a print-on-demand product, so it is the only thing
-sellable while the garment catalog is dark.
+Eden Green is being added to the hoodies one temple at a time, as of
+22 September 2026 (17 of 45 done on 23 September). Tapstitch cannot add a colour to
+an existing listing, so each hoodie is remade and the old one is retired as a
+draft. It sits third in the swatch row, where Tapstitch puts it, by Evan's
+decision on 22 September. Do not reorder it.
 
-The personalizable date tee is paused because the mechanic does not survive the
-move. Printify let a buyer type a date at checkout and flowed it into the print;
-nothing equivalent was found on Tapstitch. Rather than hand-editing every dated
-order, the product waits. The demand it served is real and section 10 still
-names that buyer, so this is a pause, not a retirement.
+The Temple Art File gained Albuquerque, Billings, Burley, Lehi and Provo Rock
+Canyon on 23 September 2026. Those five show as sold out until their download
+files are attached in the Digital Products app.
 
-Fulfillment moves from Printify (shop 23119809) to Tapstitch. Both push to the
-same Shopify store (peculiarpeopleco.com, Basic plan, USD). Tapstitch products
-arrive under the vendor name `ODMPOD`.
+The personalizable date tee is paused, not retired. Its 40 listings sit as drafts
+on the old Printify blank. Printify let a buyer type a date at checkout and flowed
+it into the print; nothing equivalent was found on Tapstitch. The demand it served
+is real and section 10 still names that buyer.
 
 Catalog conventions:
 
-- Titles lead with the garment line, temple in parentheses: `Essential Temple Tee (Logan)`.
-- Salt Lake is the parent. Its four products carry the bare garment title and no parentheses.
-- Navigation runs through an Easify "Temple" dropdown on every product page rather than Shopify collections. Handles are not derived from titles and survive renames, which is what keeps those dropdown links alive.
-- "Limited Edition" marks one-offs, for example `Essential Temple Tee - Limited Edition (Nauvoo)`. The pipeline never touches these.
-- Personalization on the dated tee accepts a sealing date, mission call date, or baptismal date in `Month DD, YYYY` format.
+- Titles lead with the garment line, temple in parentheses: `Essential Heavyweight Temple Tee (Logan)`.
+- Salt Lake is the parent. Its three products carry the bare garment title. That stays, by Evan's decision: the confusion a bare title causes is handled by the `peculiar.temple_name` metafield, the SEO title and the on-page copy, not by a rename.
+- Shoppers find a temple three ways: seven collections (all temples, one per garment line, Utah, Idaho, California), filters and search, and the Easify "Temple" dropdown on every product page. Every live garment carries `temple:`, `state:`, `country:` and `garment:` tags that drive the collections.
+- A remade product does not inherit its predecessor's web address. Shopify builds the address from the title, so it is set deliberately on each replacement.
 
-Scale: 45 temple folders, 40 with traced art and sellable (Albuquerque, Billings, Burley, Lehi and Provo Rock Canyon have no traced art yet). 99 more temples sit in `Temples READY` with reference photos gathered. 162 Printify temple listings are being retired; the Tapstitch catalog rebuilds to 3 lines across 40 temples, so 120 products rather than 162.
+Scale: 45 temple folders, all traced and all sellable. 99 more temples sit in
+`Temples READY` with reference photos gathered.
+
+Earlier history, for reference. On 14 September 2026 all 160 Printify temple
+listings were drafted and the store went dark while the Tapstitch catalogue was
+built. It came back on 16 September and was complete at 45 temples on 17 September.
+Six products were deleted permanently at Evan's instruction during the move (see
+section 19).
 
 ## 7. Blanks: decided, 14 September 2026
 
@@ -133,15 +130,22 @@ fleece blanks print DTF.
 | Line | Blank | Weight | Sizes | Opens on | Price |
 |---|---|---|---|---|---|
 | Tee | Essential Cotton T-Shirt #RT0063 | 260 gsm, 7.7 oz | S to 3XL | Black | $44.99 |
-| Crewneck | Fleeced Sweatshirt #R00368 | 350 gsm, 10.3 oz | S to 2XL | Gray | $64.99 |
+| Crewneck | Fleeced Sweatshirt #R00368 | 350 gsm, 10.3 oz | S to 2XL | Heather Gray | $64.99 |
 | Hoodie | Oversize Fleeced Hoodie #R00286 | 350 gsm, 10.3 oz | S to 2XL | Navy Blue | $74.99 |
 
-Colors: the tee is Black, Dark Gray, Coffee, Navy Blue and Maroon. The crewneck
-is Black and Gray, two only. The hoodie is Black, Dark Gray, Navy Blue, Dark
-Green and Coffee. Every color in the range is dark, so every design prints in
-white ink and there is no second art file to manage. The one color to watch is
-the crew's Gray, which is Tapstitch's Flower Gray: if a real mockup shows it
-too light to carry white ink, that colorway needs black art built for it.
+Colors, as live on 23 September 2026: the tee is Black, Maroon, Navy Blue, Coffee
+and Charcoal. The crewneck is Heather Gray and Black, two only. The hoodie is Navy
+Blue, Gray, Eden Green, Black, Coffee, Mauve and Royal Blue, with Eden Green still
+being rolled out (section 6). Dark Green is on no live product.
+
+**Every print is white ink, on every colourway. This is a supplier constraint, not
+a design choice.** Tapstitch cannot vary the print colour within a single listing,
+so one listing means one ink. The earlier version of this rule said the same thing
+for a different reason, that every colour in the range is dark. That is no longer
+true: Heather Gray, Gray, Mauve and Royal Blue are all mid tones. The consequence
+is that choosing a colourway now has to respect white-ink legibility. White on
+Heather Gray and white on Mauve each need one real mockup check before they are
+treated as settled (section 19).
 
 The crew and the hoodie are still a matching set on fabric, identical at 350 gsm
 and 10.3 oz, so a customer can buy the pair and they will feel the same. They no
@@ -215,8 +219,11 @@ Still open:
   garment's print area and its resolution outright. Tee and crew are confirmed;
   the hoodie's are read the same way whenever it is built.
 - **Whether the product line names carry over. CLOSED 16 September 2026.** The
-  crew becomes the **Cloud Temple Crew Sweatshirt** and the hoodie the **Cloud
-  Temple Hoodie** (Evan). The tee keeps **Essential Temple Tee**. The reason for
+  live names are **Essential Heavyweight Temple Tee**, **Ultra-soft Temple
+  Sweatshirt** and **Ultra-soft Oversized Temple Hoodie**. The fleece lines were
+  briefly the Cloud Temple Crew Sweatshirt and Cloud Temple Hoodie on
+  16 September, and renamed the same day. The Salt Lake hoodie still lives at the
+  `cloud-temple-hoodie` web address from that first name. The reason for
   carrying the old names over turned out not to be true: a replacement does NOT
   inherit its predecessor's web address by sharing its title. Shopify builds a
   new product's address from its title, so publishing the first crew on
@@ -225,9 +232,9 @@ Still open:
   That has to happen on every replacement regardless of what it is called, so
   renaming costs nothing and the dropdown links survive either way.
 
-Tapstitch has no public API, so product creation runs through their web editor
-under browser automation. The approach bakes placement into the design file so
-the editor only ever uploads one file and types one size value. Plan and current
+Tapstitch has no public API, but its web editor turned out to be a JSON API
+underneath, and product creation is driven from Python (`tapstitch_api.py`)
+rather than browser automation. Placement is baked into the design file. Plan and current
 state: `temple-product-generator/docs/tapstitch-migration-plan.md`, with what the
 live store already revealed in `docs/discovery/2026-09-tapstitch-store-findings.md`.
 
@@ -236,8 +243,14 @@ live store already revealed in `docs/discovery/2026-09-tapstitch-store-findings.
 **Two print locations as of 14 September 2026.** The back carries the temple
 illustration and the location line. The front carries the logo. The location line
 is the temple's physical city and state in caps, not the name city (Washington
-D.C. Temple reads `KENSINGTON, MARYLAND`). Dark colorways get white art, light
-colorways get black.
+D.C. Temple reads `KENSINGTON, MARYLAND`). All art prints in white ink on every
+colourway, a Tapstitch constraint recorded in section 7.
+
+**Storefront typography and colour. CLOSED 21 September 2026.** Arial for body
+text at 16px and Montserrat for headings are deliberate choices, not theme
+leftovers. The palette is black, white, navy `#001A58`, and buttons in orange
+`#F58000`. Red is kept only for error states. Purple `#6d388b` and its gradient
+are gone.
 
 **The logo moved off the back.** It used to sit at the bottom of the back stack,
 below the location line. It is now the front print. The old arrangement existed
@@ -560,11 +573,11 @@ Content and disclosure constraints, all hard:
 Two finished pipelines, both driven by skills in `.claude/skills/`:
 
 - `temple-ref-finder`. Finds and verifies reference photos. Queue runs `Temples TO DO` to `Temples READY`. Its real value is the documented trap list: mislabeled official Newsroom files, pre-renovation photos of Columbus, Mesa and Oklahoma City, the demolished Kona temple, superseded renders, fan-made 3D passed off as photos, same-state search bleed.
-- `temple-product-generator`. Traces art, computes layout, builds the print files, assembles and writes the description, publishes to Shopify, pushes art close-up cards, syncs the Easify dropdown. It is being rebuilt for Tapstitch as of 14 September 2026; the Printify path stays on disk as the fallback and is not deleted until Tapstitch is proven.
+- `temple-product-generator`. Traces art, computes layout, builds the print files, assembles and writes the description, publishes to Shopify, pushes art close-up cards, syncs the Easify dropdown. It publishes to Tapstitch as of 16 September 2026; the Printify path stays on disk as the fallback and is not deleted until Tapstitch is proven on real orders (section 19).
 
 Plus `humanizer` and `structural-humanizer` for copy passes.
 
-Description assembly is three fixed blocks plus one variable: the founder intro (per garment), the temple facts (the only researched part, stored per temple), and the size-guide video. Facts render as collapsed rows because the block had grown to about six phone screens. The measurements table is trimmed at assembly, so the video is the size guide. This half of the pipeline is unchanged by the Tapstitch move and writes to Shopify directly, so a Tapstitch redesign cannot break it. The three new blanks need new intros and new size guides written; the guides need a decision on whether they are new videos or the branded size-chart images already in `Important Elements/`.
+Description assembly is three fixed blocks plus one variable: the founder intro (per garment), the temple facts (the only researched part, stored per temple), and the size-guide video. Facts render as collapsed rows because the block had grown to about six phone screens. The measurements table is trimmed at assembly, so the video is the size guide. This half of the pipeline is unchanged by the Tapstitch move and writes to Shopify directly, so a Tapstitch redesign cannot break it. The intros for the three Tapstitch blanks are written. On the product page the size guide is served by the Kiwi Size Chart app next to the size selector, with measurements matching Tapstitch's published figures (confirmed by Evan, 21 September 2026).
 
 Two operational traps worth remembering.
 
@@ -603,11 +616,11 @@ Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and
 
 **Voice and attribution once Bailee runs social.** Unresolved, and it should be settled before the first post, because it is expensive to change later. The founder intro on every product page is first person and signed "- Evan." If Bailee writes the posts, whose "I" is speaking? Three workable answers: the account speaks as the brand with Evan named only on product pages; Bailee writes in a shared voice with neither name attached; or she posts openly as herself and the brand has two named voices. Pick one deliberately. The rule that survives all three is that nothing may imply either of them did work they did not do.
 
-**What a second person unlocks.** "Photos of real people wearing it" is one of the four gaps on the Playbook's readiness board, and every current store image is a mockup. A second person is the cheapest route to closing it. The constraint still applies: that phase is blocked on the garment decision, so it does not start early just because a model is now available.
+**What a second person unlocks.** "Photos of real people wearing it" is one of the four gaps on the Playbook's readiness board. Store imagery today is AI-generated on-model shots plus Tapstitch flat lays, built to a fixed gallery order, with no real photography. AI model disclosure on the storefront is CLOSED, 21 September 2026: no label. Paid social platforms set their own disclosure rules for generated imagery in ads, so check those before any paid campaign. A second person is the cheapest route to closing it. The constraint still applies: that phase is blocked on the garment decision, so it does not start early just because a model is now available.
 
 **Posting volume with two people.** The rota's five per week was set low deliberately, because every high-volume example in the research turned out to be a team clipping long-form. Two people is a small team. The five-then-nine ramp may be too conservative now, but do not raise it before four clean reps of each show exist, which is what the week-four review reads.
 
-**Product tag hygiene. CLOSED by the migration.** Every Printify listing carried default junk tags ("4th of July," "US Elections Season," "Back to School," "TikTok," "Streetwear"). Tapstitch products arrive with no tags at all, so the replacements are clean and the retiring listings take the problem with them.
+**Product tag hygiene. CLOSED.** Every Printify listing carried default junk tags. Tapstitch products arrive with none. Every live garment now carries structured `temple:`, `state:`, `country:` and `garment:` tags (21 September 2026), and the junk block was removed from the 40 paused dated tees on 23 September 2026.
 
 **Pre-26-August products remain unlisted. OVERTAKEN by the migration.** Children published before 26 August 2026 were still UNLISTED on Shopify with working URLs. The pull-down drafts every temple listing regardless, and each replacement publishes active, so the inconsistency resolves itself rather than needing its own pass.
 
@@ -615,4 +628,8 @@ Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and
 
 **The three Nauvoo Limited Edition products and Cornerstone Sweatpants. DELETED 14 September 2026.** Four live Printify products outside the temple catalog that would have become unfulfillable when Printify retires. Gone permanently, on Evan's instruction. If any of them is wanted again it is a rebuild on Tapstitch, not a restore.
 
-**When Printify is actually switched off.** The account and its 162 products stay untouched during the rebuild, as the way back if the blanks disappoint. Nothing is deleted there until Tapstitch is proven on real orders.
+**When Printify is actually switched off.** Still open. The account and its products stay untouched as the way back if the blanks disappoint, and nothing is deleted there until Tapstitch is proven on real orders. There have been none yet. The storefront overhaul (September 2026) recommends uninstalling the Printify and Printful apps from Shopify, because both can still edit products and the theme and neither fulfils anything. That is Evan's call, and it collides with this rule: uninstalling Printify may take its listings with it, including the 40 paused dated tees.
+
+**Salt Lake bare parent titles. CLOSED 21 September 2026.** They stay. See section 6.
+
+**White ink on mid-tone colourways.** Open. Because every print is white ink (section 7), the question is whether to keep Heather Gray on the sweatshirt and Mauve on the hoodie, not how to print them. One real mockup of each settles it.
