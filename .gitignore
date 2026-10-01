@@ -24,3 +24,10 @@ audits/*/shots/
 .venv*/
 __pycache__/
 *.pyc
+
+# Idea inbox: the Mac collector pushes transcripts, frames and images only.
+# Video files never belong in git; this catches one if a bug ever lets it through.
+idea-inbox/inbox/**/*.mp4
+idea-inbox/inbox/**/*.mov
+idea-inbox/inbox/**/*.m4a
+idea-inbox/inbox/**/*.wav
