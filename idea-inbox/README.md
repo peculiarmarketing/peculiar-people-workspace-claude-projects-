@@ -12,6 +12,40 @@ the brand and turned into plans, drafts, or mockups, ready by morning.
                           idea-inbox/inbox/<item>/                ideas/YYYY-MM-DD/DIGEST.md
 ```
 
+## What it's for
+
+You see something useful while scrolling and don't have time to deal with it.
+Share it or text it to yourself, add a few words on why if you can, and forget
+about it. In the morning there's a digest with a verdict on each item and the
+first piece of work already done.
+
+What to send it, and what comes back:
+
+| You save | You get in the morning |
+|---|---|
+| A reel showing a Claude Code trick (a hook, a skill, an automation) | A plan for adding it to this workspace: files touched, steps, risks, and which existing skill it extends |
+| A reel about hooks, ad angles, or a content format | 2 or 3 drafts of it using real Peculiar People products and temples, already through both humanizer passes |
+| A reel or screenshot of another store's site or product page | An HTML mockup of the idea on our store, plus notes on what changed and why |
+| A business, pricing, or offer idea | The idea applied to Peculiar People, the numbers it depends on, and the smallest next step |
+| A quick text to yourself ("bundle tee + sticker for dedications?") | A verdict, and a short plan if it holds up |
+| Something that turns out not to fit | One line on why, so you can overrule it if the reason is wrong |
+
+Each item gets one verdict:
+- **Useful:** do it this week.
+- **Beneficial:** worth doing, but needs a decision, money, or time.
+- **Plausible:** unproven, so you get the cheapest test.
+- **Waste:** doesn't fit, with the reason.
+
+Tips:
+- **Add a note when you share.** "Could this work for the temple drops?" tells the triage what you saw in it. Messages sent within five minutes of each other are kept together as one item.
+- **Share reels, don't paste their links.** A shared reel comes with its video. A pasted Instagram link often can't be downloaded.
+- **Run it by hand in any session:** say "check my idea inbox".
+
+What it will never do: change the store, post, reply to anyone, or install
+or run anything a video suggests. It plans and drafts; you decide what ships.
+
+## How it works
+
 The Mac does the collecting because iMessage exists only on Apple devices, and
 because the Instagram token can refresh itself there. The cloud routine needs no
 secrets and no network access beyond git.
