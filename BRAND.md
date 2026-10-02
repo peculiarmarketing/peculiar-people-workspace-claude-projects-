@@ -122,9 +122,9 @@ temple design. Comfort Colors 1717, 1566 and 1567 are retired.
 The reasoning stands as he gave it: Comfort Colors 1566 and 1567 are well built
 but feel a bit light and stiff, and he wants heavier, and comfortable from first
 wear, for the reason in section 5. Tapstitch blanks are heavier and feel more
-distinct. Two things the move also buys, both of which section 5 cares about:
-the front logo becomes affordable, and custom neck labels and hang tags become
-possible.
+distinct. The move also makes the front logo affordable, which section 5 cares
+about. It made custom neck labels and hang tags possible too, but as of
+2 October 2026 Peculiar People does not use either one.
 
 **The blanks, as they stand at the end of 14 September 2026.** All three are
 fulfilled from the USA and print front and back. The tee prints DTG; the two
@@ -168,6 +168,13 @@ heavier than what they replace, at 350 gsm against 345.
 **What each garment actually costs.** Evan's figures, 14 September 2026, all in:
 the blank, printing both sides, shipping, the custom neck tag, the hangtag, the
 order insert, and payment gateway fees.
+
+**Flagged 2 October 2026: these totals need recalculating.** Custom neck labels
+and hang tags are no longer used, so every figure below still counts two items
+that are no longer bought. The per-unit cost of each was never recorded here, so
+the totals and gross margins are left as Evan gave them rather than guessed at.
+Each real cost is lower, and each gross higher, by whatever the neck tag and the
+hangtag cost per unit.
 
 | Line | All in | Sells for | Gross |
 |---|---|---|---|
@@ -366,9 +373,9 @@ The version worth backing is Church history as places and buildings: Kirtland, N
 
 Two things to get right. Print-on-demand gives no volume cost break, so a bulk discount comes straight out of margin with no cost relief behind it. Price the discount against the acquisition cost you are not paying on a group order, since there is no saving to price it against. And youth events may be the wrong first target: youth activity shirts are typically budgeted at a fraction of a $44.99 tee, so that segment pulls toward a cheaper blank and collides with the premium positioning. Adult ward and stake temple trips, and mission reunions, are less price constrained. Open the form to everyone, but expect the first workable orders to come from adults.
 
-**Custom neck labels, hang tags, and order inserts, if the move to Tapstitch happens.** Strong, and it is an argument for the switch that the migration doc never weighed. Tapstitch's seller-branding features are confirmed. This matters more here than for most brands: word of mouth is the stated growth engine, first impression carries the weight described in section 5, and a stock Comfort Colors neck label is the tell that says "printed blank." It is the same legitimacy argument as the front logo, solved at the same time.
+**Order inserts.** Custom neck labels and hang tags were part of this idea and are dropped: as of 2 October 2026 Peculiar People does not use them. The order insert stands on its own.
 
-The order insert is the highest-value piece of the three. It is the natural place to ask for a review, which the Playbook flags as the ask people forget and the highest-value one. It is where the 1 Peter 2:9 reference could live. It can carry that temple's own story. Unboxing also came up in the content research as a format that reliably performs.
+The order insert is the highest-value piece. It is the natural place to ask for a review, which the Playbook flags as the ask people forget and the highest-value one. It is where the 1 Peter 2:9 reference could live. It can carry that temple's own story. Unboxing also came up in the content research as a format that reliably performs.
 
 **Customer feature program.** Covered in full in section 17, since it is a growth mechanism. Short version: the incentive is recognition, the feature is about the customer's temple, and it becomes the third content show. The order insert above is its delivery mechanism.
 
