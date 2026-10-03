@@ -26,6 +26,7 @@ All commands run from the repo root with `./.venv.nosync/bin/python`.
 | Re-push published products to Shopify | `scripts/republish.py` (destructive, repairs itself; read the warning below first) |
 | Default variant onto the wanted colorway | `scripts/default_variant.py` (`--report-only` to preview) |
 | Easify dropdown sync (after publishing) | `scripts/easify_options.py sync` (`--report-only` to preview) |
+| Homepage marquee (every new temple) | `scripts/web_marquee.py check`; `sync` regenerates the city lines and prints the theme upload |
 
 ## Product naming
 
@@ -79,6 +80,10 @@ Catalog-wide description passes: `scripts/write_description.py --normalize [--vi
 
 Deltas from the claude.ai skills: write target is Printify (never the Shopify connector from here), no product resolution step (product ids come from status.json), and With Date products DO get descriptions. Evan's claude.ai description event still runs post-publish; it currently hard-stops on the new title patterns, and if revived it would write un-collapsed markup that a `--normalize` run re-converges.
 
+## New temple: add it to the homepage marquee (required)
+
+Every new temple must reach the homepage marquee, and this is part of the pipeline, not an optional extra. The marquee only shows a temple whose art (`theme/assets/pp-temple-<slug>.webp`), stroke file (`pp-temple-<slug>.json`, from `scripts/pen_strokes.py`, see `theme/README.md`) and city line (`theme/snippets/pp-temple-city.liquid`) are all in the live theme; a temple missing any of them is left off without an error. After publishing a new temple, run `scripts/web_marquee.py sync`, then upload what it lists with the `shopify theme push --nodelete` command it prints (from the Mac; the connector cannot write the live theme), and re-run `scripts/web_marquee.py check` until it is clean. `tapstitch_run.py --publish` runs the check itself at the end of the run. Commit the regenerated snippet and the new stroke file.
+
 ## New temple not in temples.json
 
 The generator hard-stops rather than guessing. Research the temple's PHYSICAL city (churchofjesuschristtemples.org is the reference; the physical city can differ from the name: Washington D.C. Temple prints KENSINGTON, MARYLAND). Add the entry with `verified: true` and the format `CITY, STATE` (spelled out) or `CITY, COUNTRY`, then re-run. If sources are unclear, ask Evan instead of guessing.
@@ -113,7 +118,7 @@ Run `scripts/easify_options.py sync` after `art_images.py push --all` whenever E
 
 ## After every run
 
-End-of-run sequence once generation and descriptions are done: `scripts/add_date_layer.py` (adds date layers to dated drafts via the browser), then `scripts/publish_drafts.py` (auto-publishes base drafts and verified dated drafts, and applies the Shopify fixups to each; wait for it to confirm), then `scripts/art_images.py push --all` (give Shopify a couple of minutes to finish ingesting mockups first), then `scripts/easify_options.py sync`, then `scripts/shopify_fixups.py all` (a no-op after a clean publish run, but any Printify republish re-syncs variants and pushes the hoodie colorway back to True Navy, so it is worth the pass). Evan's remaining manual steps: flip Economy shipping on for newly published products in the Printify UI (post-publish, whenever; the publish output lists which ones need it), and the Easify CSV import.
+End-of-run sequence once generation and descriptions are done: `scripts/add_date_layer.py` (adds date layers to dated drafts via the browser), then `scripts/publish_drafts.py` (auto-publishes base drafts and verified dated drafts, and applies the Shopify fixups to each; wait for it to confirm), then `scripts/art_images.py push --all` (give Shopify a couple of minutes to finish ingesting mockups first), then `scripts/easify_options.py sync`, then `scripts/shopify_fixups.py all`, then `scripts/web_marquee.py check` (any newly published temple must be on the homepage marquee; see above) (a no-op after a clean publish run, but any Printify republish re-syncs variants and pushes the hoodie colorway back to True Navy, so it is worth the pass). Evan's remaining manual steps: flip Economy shipping on for newly published products in the Printify UI (post-publish, whenever; the publish output lists which ones need it), and the Easify CSV import.
 
 Commit and push any repo changes the run produced: new or edited temples.json entries, description ledgers in artifacts/description-ledgers/, the Easify CSV in artifacts/easify/, and any code or config changes. The remote is Evan's PERSONAL GitHub, peculiarmarketing, over HTTPS using the repo's configured origin; never wire this repo to his work GitHub account (edavis821). Files in Temples/ (manifests, facts fragments, status, auto renders) live outside the repo and are not committed.
 
