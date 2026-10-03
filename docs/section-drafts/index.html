@@ -1,0 +1,609 @@
+<title>Quality Up Close</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+<style>
+/* Layout: a dark "fabric" page. Each draft is a live demo on top, the plan underneath.
+   Store tokens reused: Montserrat headings, Arial body, black, white, navy #001A58, orange #F58000. */
+:root {
+  color-scheme: dark;
+  --ink: #0d0e11;        /* page ground, near-black with a navy lean */
+  --panel: #15171c;      /* plan panels */
+  --line: #2a2e38;       /* hairlines */
+  --fg: #f3f2ef;         /* text */
+  --muted: #a5a8b1;      /* secondary text */
+  --navy: #001A58;       /* brand navy */
+  --orange: #F58000;     /* brand orange, used for marks only */
+  --stage: #08090b;      /* behind demo images */
+  --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+* { box-sizing: border-box; }
+body { background: var(--ink); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 48px 96px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-weight: 300; font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: -0.01em; line-height: 1.05; }
+h1 b { font-weight: 700; }
+h2 { font-weight: 600; font-size: clamp(1.4rem, 3.4vw, 2rem); line-height: 1.15; }
+h3 { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font-family: var(--display); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); }
+.lede { color: var(--muted); font-size: 1.05rem; }
+.intro { display: grid; gap: 18px; padding-block: 8px 40px; border-bottom: 1px solid var(--line); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--display); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--line); padding: 6px 10px; border-radius: 2px; color: var(--fg); background: rgba(8,9,11,.55); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.chip::before { content: ""; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; flex: none; }
+.toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 8px; }
+.toc a { background: var(--ink); color: var(--fg); text-decoration: none; padding: 12px 14px; font-family: var(--display); font-size: 0.85rem; font-weight: 600; display: grid; gap: 2px; }
+.toc a span { font-family: var(--body); font-weight: 400; color: var(--muted); font-size: 0.8rem; }
+.toc a:hover, .toc a:focus-visible { background: var(--panel); outline: none; }
+
+section.draft { padding-block: 72px 24px; border-bottom: 1px solid var(--line); display: grid; gap: 28px; }
+.draft-head { display: grid; gap: 10px; }
+.draft-head p { color: var(--muted); }
+
+/* demo stages */
+.stage { position: relative; background: var(--stage); overflow: hidden; border-radius: 3px; isolation: isolate; }
+.stage img { display: block; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+button { font-family: var(--display); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 9px 14px; border-radius: 2px; cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+button[aria-pressed="true"] { border-color: var(--orange); color: var(--orange); }
+.hint { color: var(--muted); font-size: 0.82rem; }
+
+/* overlay type: the proposed storefront treatment */
+.line-big { font-family: var(--display); font-weight: 300; font-size: clamp(1.35rem, 3.6vw, 2.4rem); line-height: 1.15; letter-spacing: -0.005em; color: #fff; text-shadow: 0 1px 24px rgba(0,0,0,.6); }
+.line-big b { font-weight: 700; }
+.cap { font-family: var(--display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; }
+
+/* 1. scroll zoom */
+.zoom-track { height: 340vh; position: relative; }
+.zoom-sticky { position: sticky; top: env(safe-area-inset-top, 0px); height: min(88vh, 720px); }
+.zoom-sticky .stage { height: 100%; }
+.zoom-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 47%; will-change: transform; }
+.zoom-macro { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity, transform; }
+.zoom-text { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 4vw, 40px); display: grid; gap: 14px; background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0)); }
+.zoom-text .line-big { min-height: 2.4em; transition: opacity .5s ease, transform .5s ease; }
+.zoom-chips { display: flex; flex-wrap: wrap; gap: 8px; min-height: 30px; }
+.zoom-chips .chip { transition: opacity .45s ease, transform .45s ease; }
+.dots { position: absolute; right: 16px; top: 16px; display: grid; gap: 8px; z-index: 2; }
+.dots button { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.6); }
+.dots button[aria-current="true"] { background: var(--orange); border-color: var(--orange); }
+
+/* 2. drawing to fabric */
+.draw-stage { aspect-ratio: 4 / 5; max-height: 720px; width: 100%; margin-inline: auto; }
+@media (min-width: 760px) { .draw-stage { aspect-ratio: 16 / 10; } }
+.draw-fabric { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.08); transition: opacity 1.6s ease, transform 6s ease-out; }
+.draw-stage.printed .draw-fabric { opacity: 1; transform: scale(1); }
+.draw-paper { position: absolute; inset: 0; background: #f4f3ef; transition: opacity 1.6s ease; }
+.draw-stage.printed .draw-paper { opacity: 0; }
+.draw-svg { position: absolute; left: 50%; top: 46%; width: min(56%, 360px); transform: translate(-50%, -50%); overflow: visible; }
+.draw-svg path { fill: none; stroke: #16181d; stroke-linecap: round; stroke-linejoin: round; transition: stroke 1.6s ease; }
+.draw-stage.printed .draw-svg path { stroke: #f7f6f2; }
+.draw-city { position: absolute; left: 0; right: 0; top: calc(46% + min(31vw, 205px)); text-align: center; font-family: var(--display); font-weight: 600; letter-spacing: 0.18em; font-size: clamp(0.6rem, 1.6vw, 0.82rem); color: #16181d; transition: color 1.6s ease; }
+@media (min-width: 760px) { .draw-city { top: calc(46% + 205px); } }
+.draw-stage.printed .draw-city { color: #f7f6f2; }
+.draw-copy { position: absolute; left: clamp(16px, 4vw, 36px); top: clamp(16px, 4vw, 36px); display: grid; gap: 6px; max-width: 22ch; }
+.draw-copy .line-big { color: #16181d; text-shadow: none; font-size: clamp(1.1rem, 2.6vw, 1.7rem); transition: color 1.6s ease, opacity .6s ease; }
+.draw-stage.printed .draw-copy .line-big { color: #fff; text-shadow: 0 1px 18px rgba(0,0,0,.6); }
+.draw-copy .l2 { opacity: 0; }
+.draw-stage.printed .draw-copy .l2 { opacity: 1; }
+.draw-stage.printed .draw-copy .l1 { opacity: .55; }
+
+/* 3. spec overlay */
+.spec-stage { aspect-ratio: 1 / 1; max-width: 720px; width: 100%; margin-inline: auto; }
+.spec-stage img { width: 100%; height: 100%; object-fit: cover; }
+.spec-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.spec-svg line { stroke: #fff; stroke-width: .25; stroke-dasharray: 60; stroke-dashoffset: 60; transition: stroke-dashoffset .9s ease; }
+.spec-svg circle { fill: var(--orange); opacity: 0; transition: opacity .4s ease; }
+.spec-label { position: absolute; transform: translateY(-50%); opacity: 0; transition: opacity .5s ease, transform .5s ease; display: grid; gap: 2px; max-width: 34%; }
+.spec-label .cap { font-size: clamp(0.56rem, 1.6vw, 0.76rem); }
+.spec-label .sub { font-family: var(--display); font-weight: 400; font-size: clamp(0.68rem, 1.9vw, 0.98rem); color: #fff; line-height: 1.25; }
+.spec-label.r { text-align: left; }
+.spec-label.l { text-align: right; }
+.spec-stage.on .spec-svg line { stroke-dashoffset: 0; }
+.spec-stage.on .spec-svg circle { opacity: 1; }
+.spec-stage.on .spec-label { opacity: 1; }
+
+/* 4. why chain */
+.chain-stage { aspect-ratio: 16 / 9; min-height: 360px; width: 100%; }
+.chain-bg { position: absolute; inset: -6%; background: url("img/jersey-dark.jpg") center/cover; animation: drift 24s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.05) translate(-2%, -1%); } to { transform: scale(1.18) translate(2%, 1%); } }
+.chain-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(0,0,0,.25), rgba(0,0,0,.75)); }
+.chain-lines { position: absolute; inset: 0; display: grid; align-content: center; padding: clamp(20px, 6vw, 64px); gap: 10px; }
+.chain-lines .line-big { opacity: .14; transform: translateY(6px); transition: opacity .7s ease, transform .7s ease; }
+.chain-lines .line-big.lit { opacity: 1; transform: none; }
+.chain-lines .line-big.past { opacity: .4; transform: none; }
+
+/* 5. feel band */
+.band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 680px) { .band { grid-template-columns: 1fr; } }
+.tile { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 3px; background: var(--stage); }
+.tile .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); transition: transform 7s ease-out; }
+.band.on .tile .bg { transform: scale(1.14); }
+.tile:hover .bg { transform: scale(1.22); transition-duration: 1.2s; }
+.tile .bg.print { background-image: url("img/tee-black-back.jpg"); background-size: 560%; background-position: 50.5% 44%; }
+.tile .bg.knit { background-image: url("img/jersey-dark.jpg"); }
+.tile .bg.fleece { background-image: url("img/fleece-dark-demo.jpg"); }
+.tile .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; background: linear-gradient(to top, rgba(0,0,0,.8), transparent); display: grid; gap: 4px; }
+.tile .label .sub { font-family: var(--display); font-weight: 300; color: #fff; font-size: 1.05rem; line-height: 1.25; }
+
+/* 6. loupe */
+.loupe-stage { aspect-ratio: 1 / 1; max-width: 640px; width: 100%; margin-inline: auto; cursor: none; touch-action: none; }
+.loupe-stage img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.lens { position: absolute; width: clamp(120px, 30%, 200px); aspect-ratio: 1; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); box-shadow: 0 10px 40px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.4); background-image: url("img/tee-black-back.jpg"); background-repeat: no-repeat; pointer-events: none; transform: translate(-50%, -50%); }
+.loupe-cap { position: absolute; left: 16px; bottom: 14px; }
+
+/* plan panels */
+.plan { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 760px) { .plan { grid-template-columns: 1fr; } }
+.plan > div { background: var(--panel); padding: 18px 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.plan ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.plan li { max-width: 60ch; }
+.plan .wide { grid-column: 1 / -1; }
+.quote { font-family: var(--display); font-weight: 300; font-size: 1.05rem; }
+.tag { display: inline-block; font-family: var(--display); font-weight: 700; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: var(--navy); color: #fff; }
+.tag.warn { background: transparent; border: 1px solid var(--orange); color: var(--orange); }
+
+/* image plan */
+.prompts { display: grid; gap: 14px; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 3px; }
+summary { cursor: pointer; padding: 14px 18px; font-family: var(--display); font-weight: 600; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+summary span { font-family: var(--body); font-weight: 400; color: var(--muted); font-size: .85rem; }
+.prompt-body { padding: 0 18px 18px; display: grid; gap: 10px; }
+.prompt-text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; line-height: 1.5; background: var(--stage); border: 1px solid var(--line); padding: 12px 14px; border-radius: 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.copied { color: var(--orange); font-size: .8rem; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 3px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--display); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
+td:first-child { font-family: var(--display); font-weight: 600; white-space: nowrap; }
+.foot { padding-top: 48px; color: var(--muted); display: grid; gap: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chain-bg { animation: none; }
+  .tile .bg, .band.on .tile .bg, .tile:hover .bg { transform: none; transition: none; }
+  .draw-fabric, .draw-paper, .draw-svg path, .draw-city, .zoom-text .line-big, .zoom-chips .chip { transition: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <div class="eyebrow">Peculiar People · section drafts · 3 Oct 2026</div>
+    <h1>Quality, <b>up close</b></h1>
+    <p class="lede">Six ways to show that the garment is premium, each one tied back to why the shirt exists. Every demo below runs live. The photos are stand-ins: real Tapstitch close-ups of your blanks and your Salt Lake on-model shot. The final images come from kie.ai or Higgsfield using the prompts at the bottom.</p>
+    <div class="facts" aria-label="Facts the overlays are allowed to use">
+      <span class="chip">Tee 260 GSM · 7.7 oz</span>
+      <span class="chip">Hoodie + crew 350 GSM · 10.3 oz</span>
+      <span class="chip">Temple up to 12 in across</span>
+      <span class="chip">Logo 6 in, front</span>
+      <span class="chip">Printed to order in the USA</span>
+      <span class="chip">Ships in 4 to 7 days</span>
+    </div>
+    <p class="hint">Those six chips are the only specs the drafts put on screen. Each one comes from BRAND.md or your garment configs. Fibre content is not on file, so no draft claims it.</p>
+    <nav class="toc" aria-label="Drafts">
+      <a href="#zoom">1. Scroll zoom <span>Homepage hero band</span></a>
+      <a href="#draw">2. Drawing to fabric <span>Homepage or product page</span></a>
+      <a href="#spec">3. Spec overlay <span>Upgrades garment anatomy</span></a>
+      <a href="#chain">4. The why chain <span>Homepage, near founder</span></a>
+      <a href="#feel">5. Feel band <span>Product page</span></a>
+      <a href="#loupe">6. Print loupe <span>Product page</span></a>
+      <a href="#images">Image plan <span>Prompts and method</span></a>
+    </nav>
+  </header>
+
+  <!-- 1 -->
+  <section class="draft" id="zoom">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 1</div>
+      <h2>Scroll zoom: from the whole shirt to the cotton</h2>
+      <p>The band pins in place while you scroll. The camera pushes from the full garment into the temple, into the fabric, and down to the city line. Words and spec tags arrive at each stop. This is your "dramatic zoom" in its purest form.</p>
+    </div>
+    <div class="zoom-track" id="zoomTrack">
+      <div class="zoom-sticky">
+        <div class="stage" id="zoomStage">
+          <img class="zoom-img" id="zoomImg" src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee, back view, on a model">
+          <img class="zoom-macro" id="zoomMacro" src="img/jersey-dark.jpg" alt="Close-up of black cotton jersey">
+          <div class="dots" id="zoomDots" aria-label="Jump to stop"></div>
+          <div class="zoom-text" aria-live="polite">
+            <div class="line-big" id="zoomLine">Look closer.</div>
+            <div class="zoom-chips" id="zoomChips"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="hint">Scroll through the band, or use the dots to jump between the four stops.</p>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Homepage, straight after the hero. Full width, about three screens of scroll on desktop and two on a phone.</p></div>
+      <div><h3>What it says</h3><p>The quality is real at every distance you look at it. The last stop lands on the city line, which ties the fabric back to a real place.</p></div>
+      <div class="wide"><h3>Words on screen (after both humanizer passes)</h3>
+        <ul>
+          <li class="quote">Look closer.</li>
+          <li class="quote">The whole temple, up to 12 inches across the back.</li>
+          <li class="quote">260 GSM cotton. You'll notice the weight the first time you put it on.</li>
+          <li class="quote">SALT LAKE CITY, UTAH. Under every temple, the city it actually stands in.</li>
+        </ul>
+      </div>
+      <div><h3>Images needed</h3><ul><li>One full garment shot, back view, with the real print composited (you have these in final-set).</li><li>One jersey close-up in black for the deep zoom (prompt P2).</li></ul></div>
+      <div><h3>Owner settings</h3><ul><li>Garment image, macro image</li><li>Four lines of text, each with optional spec tags</li><li>Zoom target point (x and y percent) for each stop</li><li>Scroll length: short, medium, long</li></ul></div>
+      <div><h3>How it's built</h3><p>One <code>pp-scroll-zoom</code> section. A small script maps scroll position to scale and crossfade. It doesn't depend on newer browser scroll features, so it behaves the same in Safari and Chrome. Reduced motion shows the four stops as a static strip.</p></div>
+      <div><h3>Effort and risk</h3><p><span class="tag">Medium</span> The zoom only looks premium if the garment image is at least 2048px and sharp around the print. A soft source shows mush at 3x.</p></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="draft" id="draw">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 2</div>
+      <h2>Drawing to fabric</h2>
+      <p>The temple draws itself on paper using your real stroke file. Then the paper dissolves into cotton and the lines turn to white ink. This links the craft of the drawing to the craft of the garment, and no competitor has this asset.</p>
+    </div>
+    <div class="stage draw-stage" id="drawStage">
+      <img class="draw-fabric" src="img/jersey-dark.jpg" alt="">
+      <div class="draw-paper"></div>
+      <svg class="draw-svg" id="drawSvg" role="img" aria-label="Line drawing of the Salt Lake Temple"></svg>
+      <div class="draw-city" id="drawCity" aria-hidden="true"></div>
+      <div class="draw-copy">
+        <div class="line-big l1">Every temple starts as a line drawing.</div>
+        <div class="line-big l2">Then it goes onto heavy cotton, line for line.</div>
+      </div>
+    </div>
+    <div class="controls"><button type="button" id="drawReplay">Replay</button><span class="hint">Shown here at about 6 seconds. The live section can match your existing 13-second pen speed.</span></div>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Homepage, or the product page in place of the current <code>pp-temple-drawing</code> band. On a product page it draws that product's own temple.</p></div>
+      <div><h3>What it says</h3><p>Care went into the drawing, and the same care goes onto the shirt. The handover from paper to cotton is the whole idea.</p></div>
+      <div class="wide"><h3>Words on screen</h3><ul><li class="quote">Every temple starts as a line drawing.</li><li class="quote">Then it goes onto heavy cotton, line for line.</li></ul></div>
+      <div><h3>Images needed</h3><ul><li>Black jersey macro, lit flat enough that white lines read on it (P2).</li><li>Optional: a warm paper texture (P7) in place of the flat paper colour.</li></ul></div>
+      <div><h3>How it's built</h3><p>Extends <code>pp-pen-draw.js</code>, which already loads the stroke files and the art. A new "printed" end state swaps paper for fabric and recolours the strokes. Your stroke files and art need no changes.</p></div>
+      <div class="wide"><h3>Effort and risk</h3><p><span class="tag">Low to medium</span> Most of the engine exists. Be careful with wording that could imply each shirt is hand drawn. The copy above only says the temple starts as a drawing.</p></div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="draft" id="spec">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 3</div>
+      <h2>Spec overlay</h2>
+      <p>Thin leader lines draw out from the garment, and spec tags snap in at the end of each. It's a technical, engineered look, kept quiet in white with a single orange dot.</p>
+    </div>
+    <div class="stage spec-stage" id="specStage">
+      <img src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee with spec callouts">
+      <svg class="spec-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="50" y1="40" x2="70" y2="24"/><circle cx="50" cy="40" r=".8"/>
+        <line x1="50" y1="62" x2="70" y2="70"/><circle cx="50" cy="62" r=".8"/>
+        <line x1="38" y1="70" x2="16" y2="58"/><circle cx="38" cy="70" r=".8"/>
+        <line x1="45" y1="79" x2="16" y2="86"/><circle cx="45" cy="79" r=".8"/>
+      </svg>
+      <div class="spec-label r" style="left:71%;top:24%"><span class="cap">Up to 12 in across</span><span class="sub">The full temple, centred on the back.</span></div>
+      <div class="spec-label r" style="left:71%;top:70%"><span class="cap">City line</span><span class="sub">The city the temple stands in.</span></div>
+      <div class="spec-label l" style="right:85%;top:58%"><span class="cap">260 GSM · 7.7 oz</span><span class="sub">Heavy cotton jersey.</span></div>
+      <div class="spec-label l" style="right:85%;top:86%"><span class="cap">Printed in the USA</span><span class="sub">Ships in 4 to 7 days.</span></div>
+    </div>
+    <div class="controls"><button type="button" id="specReplay">Replay</button><span class="hint">Callout positions are draft estimates over this one photo.</span></div>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Best as version 2 of your existing <code>pp-garment-anatomy</code> section, which already draws callout lines on scroll. Adding spec tags there beats building a second, similar section.</p></div>
+      <div><h3>What it says</h3><p>Real numbers, stated plainly. Premium buyers trust specifics more than adjectives.</p></div>
+      <div class="wide"><h3>Owner settings</h3><ul><li>Each callout is a block: point x and y, label, short line under it, side (left or right).</li><li>Up to six callouts. A chip style or a plain style.</li></ul></div>
+      <div class="wide"><h3>Effort and risk</h3><p><span class="tag">Low</span> <span class="tag warn">Check</span> Confirm that "Ships in 4 to 7 days" is still true before it goes on the homepage. It comes from BRAND.md, 14 Sep 2026.</p></div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="draft" id="chain">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 4</div>
+      <h2>The why chain</h2>
+      <p>Your positioning chain from BRAND.md section 5, told as kinetic type over slowly drifting fabric. Each line lights up in turn and the earlier lines stay dimly visible, so the chain reads as cause and effect. This is where quality becomes part of the purpose.</p>
+    </div>
+    <div class="stage chain-stage" id="chainStage">
+      <div class="chain-bg" aria-hidden="true"></div>
+      <div class="chain-shade" aria-hidden="true"></div>
+      <div class="chain-lines" id="chainLines">
+        <div class="line-big">Comfortable from the first wear.</div>
+        <div class="line-big">So it's the one you grab.</div>
+        <div class="line-big">So people see it.</div>
+        <div class="line-big"><b>So someone asks what's on your shirt.</b></div>
+      </div>
+    </div>
+    <div class="controls"><button type="button" id="chainPlay" aria-pressed="true">Pause</button><span class="hint">Plays when in view. On the store it can follow scroll instead of a timer.</span></div>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Homepage, just before the founder letter, so the letter answers "why". The founder letter itself stays untouched.</p></div>
+      <div><h3>What it says</h3><p>Comfort is the start of the brand's reason to exist. The last line echoes the "What's on your shirt?" heading already on the homepage.</p></div>
+      <div class="wide"><h3>Words on screen</h3><ul><li class="quote">Comfortable from the first wear.</li><li class="quote">So it's the one you grab.</li><li class="quote">So people see it.</li><li class="quote">So someone asks what's on your shirt.</li></ul></div>
+      <div><h3>Images needed</h3><ul><li>A dark fabric close-up with gentle folds, or a short looping video of a slow pan across fabric (P2 or V1).</li></ul></div>
+      <div><h3>Effort and risk</h3><p><span class="tag">Low</span> Text only plus one image. The risk is tone. Keep it slow and quiet. Fast, punchy type would fight "reverent, understated".</p></div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="draft" id="feel">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 5</div>
+      <h2>Feel band</h2>
+      <p>Three close-ups side by side, each slowly pushing in once it scrolls into view and further on hover. One short label each. It's the quiet version of the zoom, and it works on a product page where a pinned scroll band would be too much.</p>
+    </div>
+    <div class="band" id="band">
+      <div class="tile"><div class="bg print" role="img" aria-label="Close-up of the white temple print on black cotton"></div><div class="label"><span class="cap">Print</span><span class="sub">White ink on dark cotton.</span></div></div>
+      <div class="tile"><div class="bg knit" role="img" aria-label="Close-up of black cotton jersey"></div><div class="label"><span class="cap">Tee</span><span class="sub">260 GSM cotton jersey.</span></div></div>
+      <div class="tile"><div class="bg fleece" role="img" aria-label="Close-up of heavyweight fleece"></div><div class="label"><span class="cap">Hoodie and crew</span><span class="sub">350 GSM, fleece inside.</span></div></div>
+    </div>
+    <p class="hint">The fleece tile here is Tapstitch's mauve close-up, darkened for the demo only. The real tile needs a black version (P3).</p>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Product page, below the main product area and above related products. It also works on the homepage, under featured products.</p></div>
+      <div><h3>What it says</h3><p>Look at it this closely and it still holds up.</p></div>
+      <div class="wide"><h3>Owner settings</h3><ul><li>Two to four tiles as blocks: image, small caps label, one line.</li><li>Zoom strength: off, subtle, strong.</li><li>On a product page, the print tile can use that product's own image automatically.</li></ul></div>
+      <div class="wide"><h3>Effort and risk</h3><p><span class="tag">Low</span> The easiest draft to ship first. Keep it out of the product details column, so Easify and Kiwi are never touched.</p></div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="draft" id="loupe">
+    <div class="draft-head">
+      <div class="eyebrow">Draft 6</div>
+      <h2>Print loupe</h2>
+      <p>A magnifying lens the shopper drags across the print. On a phone it follows the finger. It's interactive, so people choose to look closer instead of being shown.</p>
+    </div>
+    <div class="stage loupe-stage" id="loupeStage">
+      <img src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee. Drag to magnify the print." draggable="false">
+      <div class="lens" id="lens" aria-hidden="true"></div>
+      <div class="loupe-cap cap">Drag across the print</div>
+    </div>
+    <p class="hint">Use a mouse or a finger. With the keyboard, focus the image and use the arrow keys.</p>
+    <div class="plan">
+      <div><h3>Where it goes</h3><p>Product page, in its own section below the main product area. Never inside the product details block where Easify and Kiwi live.</p></div>
+      <div><h3>What it says</h3><p>Nothing is hidden at full zoom.</p></div>
+      <div class="wide"><h3>Effort and risk</h3><p><span class="tag">Medium</span> It needs one high-resolution image per product (at least 2048px), ideally pulled from the product's own gallery. At 3x, a weak source shows its flaws, which is a good thing to know before shoppers see it.</p></div>
+    </div>
+  </section>
+
+  <!-- image plan -->
+  <section class="draft" id="images">
+    <div class="draft-head">
+      <div class="eyebrow">Image plan</div>
+      <h2>Making the photos with kie.ai or Higgsfield</h2>
+      <p>Image models still garble fine line art, and a wrong drawing is worse than none. So the rule is: <b>generate the fabric, light and garment, and never the temple.</b> The temple print always goes on afterwards with your existing <code>composite.py</code>, which places the real art at true physical size and shades it into the folds. You also already have <code>kie_client.py</code> and <code>build_colourways.py</code> in the photo-mockup folder.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Shot</th><th>Method</th><th>Used by</th></tr></thead>
+        <tbody>
+          <tr><td>P1 Full garment, back</td><td>Generate a blank, unprinted garment with your mockup as reference, then composite the real temple</td><td>1, 3, 6</td></tr>
+          <tr><td>P2 Jersey macro, black</td><td>Recolour Tapstitch's real jersey close-up to black (keeps the true knit), or generate fresh</td><td>1, 2, 4, 5</td></tr>
+          <tr><td>P3 Fleece macro, black</td><td>Recolour Tapstitch's real fleece close-up from mauve to black</td><td>5</td></tr>
+          <tr><td>P4 Collar and hem, black</td><td>Recolour Tapstitch's navy collar and hem shots</td><td>5 (extra tiles)</td></tr>
+          <tr><td>P5 Weight and drape</td><td>Generate with the hoodie mockup as reference</td><td>4, homepage</td></tr>
+          <tr><td>P6 Colour stack</td><td>Generate, using your measured swatch hex values</td><td>Collection banner</td></tr>
+          <tr><td>P7 Paper texture</td><td>Generate (no product in it)</td><td>2</td></tr>
+          <tr><td>V1 Slow fabric pan</td><td>Image to video from P2 (Kling via Higgsfield)</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="plan">
+      <div><h3>Keep it honest</h3><ul><li>A recolour of a real Tapstitch close-up shows the real fabric. A fully generated macro shows what a model thinks cotton looks like. Prefer the recolour wherever one exists.</li><li>No words baked into images. All type is live text in the section, so it stays sharp, translatable and editable.</li></ul></div>
+      <div><h3>Keep it consistent</h3><ul><li>One light direction across the set: low, from the upper left.</li><li>Garment colours from <code>config/swatches.json</code>: Black #191919, Charcoal #56575B, Coffee #58402E, Navy Blue #283243, Maroon #6D1E24.</li><li>Square or 4:5, at least 2048px on the long side.</li></ul></div>
+    </div>
+    <div class="prompts" id="prompts"></div>
+  </section>
+
+  <footer class="foot">
+    <h3>Next step</h3>
+    <p>Pick the drafts you want. I'd start with 5 (feel band) and 2 (drawing to fabric): low effort, mostly built on what exists, and both work with today's images while the new ones are made. Each picked draft becomes a <code>pp-</code> section file for you to upload, written to the rules in docs/shopify-custom-sections-research.md.</p>
+    <p>Sources: BRAND.md sections 5, 7, 8 and 11; temple-product-generator garment configs and swatches.json; Tapstitch fabric close-ups and the Salt Lake final-set image from artifacts/photo-mockup-spike.</p>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const ease = (t) => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+  /* ---------- 1. scroll zoom ---------- */
+  const stops = [
+    { at: 0.00, scale: 1.0, ox: 50, oy: 47, macro: 0, text: 'Look closer.', chips: [] },
+    { at: 0.30, scale: 2.6, ox: 50.5, oy: 49.5, macro: 0, text: 'The whole temple, up to 12 inches across the back.', chips: ['Up to 12 in across'] },
+    { at: 0.62, scale: 5.5, ox: 44, oy: 50, macro: 1, text: "260 GSM cotton. You'll notice the weight the first time you put it on.", chips: ['260 GSM', '7.7 oz'] },
+    { at: 0.92, scale: 3.4, ox: 50, oy: 70, macro: 0, text: 'SALT LAKE CITY, UTAH. Under every temple, the city it actually stands in.', chips: ['Real city line'] },
+  ];
+  const track = document.getElementById('zoomTrack');
+  const img = document.getElementById('zoomImg');
+  const macro = document.getElementById('zoomMacro');
+  const lineEl = document.getElementById('zoomLine');
+  const chipsEl = document.getElementById('zoomChips');
+  const dotsEl = document.getElementById('zoomDots');
+  let shown = -1;
+  stops.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Stop ' + (i + 1));
+    b.addEventListener('click', () => {
+      const r = track.getBoundingClientRect();
+      const total = track.offsetHeight - innerHeight * 0.88;
+      const y = scrollY + r.top + Math.max(0, total) * s.at + 2;
+      scrollTo({ top: y, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+    dotsEl.appendChild(b);
+  });
+  function setText(i) {
+    if (i === shown) return;
+    shown = i;
+    lineEl.style.opacity = 0;
+    setTimeout(() => {
+      lineEl.textContent = stops[i].text;
+      lineEl.style.opacity = 1;
+      chipsEl.textContent = '';
+      stops[i].chips.forEach((c) => { const s = document.createElement('span'); s.className = 'chip'; s.textContent = c; chipsEl.appendChild(s); });
+    }, REDUCED ? 0 : 220);
+    [...dotsEl.children].forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
+  }
+  function zoomFrame() {
+    const r = track.getBoundingClientRect();
+    const total = track.offsetHeight - Math.min(innerHeight * 0.88, 720);
+    const p = clamp(-r.top / Math.max(1, total), 0, 1);
+    let i = 0;
+    while (i < stops.length - 1 && p >= stops[i + 1].at) i++;
+    const a = stops[i], b = stops[Math.min(i + 1, stops.length - 1)];
+    const t = b === a ? 0 : ease(clamp((p - a.at) / (b.at - a.at), 0, 1));
+    const sc = lerp(a.scale, b.scale, t), ox = lerp(a.ox, b.ox, t), oy = lerp(a.oy, b.oy, t);
+    const m = lerp(a.macro, b.macro, t);
+    img.style.transformOrigin = ox + '% ' + oy + '%';
+    img.style.transform = 'scale(' + sc.toFixed(3) + ')';
+    macro.style.opacity = m.toFixed(3);
+    macro.style.transform = 'scale(' + (1.25 - m * 0.2).toFixed(3) + ')';
+    const nearest = stops.reduce((best, s, k) => Math.abs(s.at - p) < Math.abs(stops[best].at - p) ? k : best, 0);
+    setText(nearest);
+  }
+  let zt = false;
+  addEventListener('scroll', () => { if (!zt) { zt = true; requestAnimationFrame(() => { zt = false; zoomFrame(); }); } }, { passive: true });
+  addEventListener('resize', zoomFrame);
+  zoomFrame();
+
+  /* ---------- 2. drawing to fabric ---------- */
+  const drawStage = document.getElementById('drawStage');
+  const svg = document.getElementById('drawSvg');
+  const city = document.getElementById('drawCity');
+  let paths = [], drawToken = 0, drawData = null;
+  const NS = 'http://www.w3.org/2000/svg';
+  fetch('salt-lake-strokes.json').then((r) => r.json()).then((d) => {
+    drawData = d;
+    const [x0, y0, x1, y1] = d.box;
+    svg.setAttribute('viewBox', [x0, y0, x1 - x0, y1 - y0].join(' '));
+    d.strokes.forEach((s, k) => {
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', s);
+      p.setAttribute('stroke-width', (d.widths && d.widths[k]) || d.penWidth);
+      svg.appendChild(p);
+    });
+    paths = [...svg.querySelectorAll('path')];
+    paths.forEach((p) => { const L = p.getTotalLength(); p.dataset.len = L; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+    if (REDUCED) { finishDraw(); } else { observeOnce(drawStage, runDraw); }
+  }).catch(() => { city.textContent = 'SALT LAKE CITY, UTAH'; drawStage.classList.add('printed'); });
+  function finishDraw() {
+    paths.forEach((p) => { p.style.strokeDashoffset = 0; });
+    city.textContent = drawData ? drawData.city : 'SALT LAKE CITY, UTAH';
+    drawStage.classList.add('printed');
+  }
+  function runDraw() {
+    const token = ++drawToken;
+    drawStage.classList.remove('printed');
+    city.textContent = '';
+    paths.forEach((p) => { p.style.strokeDashoffset = p.dataset.len; });
+    const DRAW = 5200, n = paths.length;
+    const t0 = performance.now();
+    (function step(now) {
+      if (token !== drawToken) return;
+      const p = clamp((now - t0) / DRAW, 0, 1);
+      const upto = p * n;
+      for (let k = 0; k < n; k++) {
+        const f = clamp(upto - k, 0, 1);
+        paths[k].style.strokeDashoffset = (paths[k].dataset.len * (1 - f)).toFixed(1);
+      }
+      if (p < 1) { requestAnimationFrame(step); return; }
+      const txt = drawData.city; let j = 0;
+      (function letter() {
+        if (token !== drawToken) return;
+        city.textContent = txt.slice(0, ++j);
+        if (j < txt.length) setTimeout(letter, 45); else setTimeout(() => { if (token === drawToken) drawStage.classList.add('printed'); }, 700);
+      })();
+    })(t0);
+  }
+  document.getElementById('drawReplay').addEventListener('click', () => { if (paths.length) { REDUCED ? finishDraw() : runDraw(); } });
+
+  /* ---------- 3. spec overlay ---------- */
+  const specStage = document.getElementById('specStage');
+  const labels = [...specStage.querySelectorAll('.spec-label')];
+  const lines = [...specStage.querySelectorAll('line')];
+  function runSpec() {
+    specStage.classList.remove('on');
+    lines.forEach((l, k) => { l.style.transitionDelay = (k * 0.35) + 's'; });
+    labels.forEach((l, k) => { l.style.transitionDelay = (k * 0.35 + 0.7) + 's'; });
+    requestAnimationFrame(() => requestAnimationFrame(() => specStage.classList.add('on')));
+  }
+  if (REDUCED) specStage.classList.add('on'); else observeOnce(specStage, runSpec);
+  document.getElementById('specReplay').addEventListener('click', runSpec);
+
+  /* ---------- 4. why chain ---------- */
+  const chainLines = [...document.querySelectorAll('#chainLines .line-big')];
+  const chainBtn = document.getElementById('chainPlay');
+  let ci = 0, chainTimer = null, chainOn = !REDUCED, chainVisible = false;
+  function paintChain() { chainLines.forEach((l, k) => { l.classList.toggle('lit', k === ci); l.classList.toggle('past', k < ci); }); }
+  function tickChain() { ci = (ci + 1) % (chainLines.length + 1); if (ci === chainLines.length) { chainLines.forEach((l) => l.classList.add('past')); chainLines[chainLines.length - 1].classList.add('lit'); return; } paintChain(); }
+  function startChain() { stopChain(); if (chainOn && chainVisible) chainTimer = setInterval(tickChain, 2400); }
+  function stopChain() { clearInterval(chainTimer); chainTimer = null; }
+  if (REDUCED) { chainLines.forEach((l) => l.classList.add('lit')); chainBtn.textContent = 'Play'; chainBtn.setAttribute('aria-pressed', 'false'); }
+  else { paintChain(); }
+  chainBtn.addEventListener('click', () => {
+    chainOn = !chainOn;
+    chainBtn.textContent = chainOn ? 'Pause' : 'Play';
+    chainBtn.setAttribute('aria-pressed', String(chainOn));
+    if (chainOn) { chainVisible = true; paintChain(); startChain(); } else stopChain();
+  });
+  new IntersectionObserver((es) => es.forEach((e) => { chainVisible = e.isIntersecting; chainVisible ? startChain() : stopChain(); }), { threshold: 0.4 }).observe(document.getElementById('chainStage'));
+
+  /* ---------- 5. feel band ---------- */
+  const band = document.getElementById('band');
+  if (!REDUCED) observeOnce(band, () => band.classList.add('on'));
+
+  /* ---------- 6. loupe ---------- */
+  const lstage = document.getElementById('loupeStage');
+  const lens = document.getElementById('lens');
+  const ZOOM = 3.2;
+  let lx = 0.505, ly = 0.45;
+  lstage.tabIndex = 0;
+  lstage.setAttribute('role', 'img');
+  lstage.setAttribute('aria-label', 'Magnifier over the print. Arrow keys move the lens.');
+  function placeLens() {
+    const w = lstage.clientWidth, h = lstage.clientHeight, lw = lens.offsetWidth;
+    lens.style.left = (lx * w) + 'px';
+    lens.style.top = (ly * h) + 'px';
+    lens.style.backgroundSize = (w * ZOOM) + 'px ' + (h * ZOOM) + 'px';
+    lens.style.backgroundPosition = (-(lx * w * ZOOM - lw / 2)) + 'px ' + (-(ly * h * ZOOM - lw / 2)) + 'px';
+  }
+  function fromEvent(e) { const r = lstage.getBoundingClientRect(); lx = clamp((e.clientX - r.left) / r.width, 0.06, 0.94); ly = clamp((e.clientY - r.top) / r.height, 0.06, 0.94); placeLens(); }
+  lstage.addEventListener('pointermove', fromEvent);
+  lstage.addEventListener('pointerdown', (e) => { lstage.setPointerCapture(e.pointerId); fromEvent(e); });
+  lstage.addEventListener('keydown', (e) => {
+    const k = { ArrowLeft: [-0.03, 0], ArrowRight: [0.03, 0], ArrowUp: [0, -0.03], ArrowDown: [0, 0.03] }[e.key];
+    if (!k) return; e.preventDefault(); lx = clamp(lx + k[0], 0.06, 0.94); ly = clamp(ly + k[1], 0.06, 0.94); placeLens();
+  });
+  addEventListener('resize', placeLens);
+  placeLens();
+
+  /* ---------- helpers ---------- */
+  function observeOnce(el, fn) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); fn(); } }, { threshold: 0.35 });
+    io.observe(el);
+  }
+
+  /* ---------- prompts ---------- */
+  const prompts = [
+    ['P1', 'Full garment, back, blank for compositing', 'Kie.ai or Higgsfield, Nano Banana Pro, reference: your Tapstitch flat mockup', 'A heavyweight black cotton crewneck t-shirt laid flat on a dark charcoal slate surface, back side facing up with a smooth unprinted back panel, sleeves relaxed at the sides and the hem softly rippled. Overhead shot, garment centred with generous dark space around it. A single low raking light from the upper left skims across the fabric so the jersey texture and gentle folds catch soft highlights while the far edges fall into deep shadow. Photorealistic product photography, shot on a medium-format camera, sharp focus across the whole garment, neutral near-black fabric color, restrained cinematic grading. Use reference image 1 as a product reference. Keep the product\'s design, shape, color, and branding identical unless otherwise specified.'],
+    ['P2', 'Jersey macro, black (recolour route)', 'Kie.ai or Higgsfield, Nano Banana Pro, reference: Tapstitch tee D5 (navy jersey)', 'An extreme macro close-up of heavyweight cotton jersey fabric in a deep near-black color, a soft twisted fold curling through the centre of the frame with fine rows of interlocking knit loops clearly visible along every curve. Full-bleed fabric filling the entire frame. A single hard raking light from the upper left grazes the surface so each knit row casts a tiny shadow, with smooth falloff into deep black at the edges. Photorealistic macro photography, macro lens, shallow depth of field (f/4), neutral grading with near-black fabric. Use reference image 1 as a product reference. Keep the fabric\'s knit structure, fold shape, and texture identical, and change only the fabric color to near-black.'],
+    ['P3', 'Fleece macro, black (recolour route)', 'Kie.ai or Higgsfield, Nano Banana Pro, reference: Tapstitch hoodie D6 (mauve fleece)', 'An extreme macro close-up of heavyweight fleece sweatshirt fabric in a deep near-black color, a thick smooth fold rolling diagonally across the frame, the dense tight-knit outer surface showing a fine even texture. Full-bleed fabric filling the entire frame. Low raking light from the upper left catches the crest of the fold and leaves the valley in soft shadow, giving the fabric visible weight and thickness. Photorealistic macro photography, macro lens, shallow depth of field (f/4), neutral grading. Use reference image 1 as a product reference. Keep the fabric\'s texture and fold shape identical, and change only the fabric color to near-black.'],
+    ['P4', 'Ribbed collar, black (recolour route)', 'Kie.ai or Higgsfield, Nano Banana Pro, reference: Tapstitch tee D1 (navy collar)', 'A close-up of the ribbed crew collar of a heavyweight cotton t-shirt in a deep near-black color, the collar seam and its stitching running in a clean curve across the frame, the ribbing showing fine vertical texture. The garment rests on a dark charcoal surface. Soft low light from the upper left traces the curve of the collar and lifts the stitching out of the shadow. Photorealistic product photography, macro lens, shallow depth of field (f/5.6), neutral near-black grading. Use reference image 1 as a product reference. Keep the collar construction, rib, and stitching identical, and change only the fabric color to near-black.'],
+    ['P5', 'Weight and drape, hoodie', 'Kie.ai or Higgsfield, Nano Banana Pro, reference: your black hoodie flat mockup', 'A heavyweight black oversized fleece hoodie hanging from a dark walnut wooden hanger against a deep navy plaster wall, the fabric falling straight and heavy with a few deep vertical folds, the hood resting full and rounded at the back, the sleeves hanging close to the body. Medium shot, hoodie slightly off-centre to the right, empty wall space on the left. A single soft window light from the left carves the folds and shows the thickness of the fleece. Photorealistic editorial product photography, shot on 35mm film, fine grain, muted deep-navy and near-black palette. Use reference image 1 as a product reference. Keep the product\'s design, shape, color, and branding identical unless otherwise specified.'],
+    ['P6', 'Colour stack', 'Kie.ai or Higgsfield, Nano Banana Pro, no reference needed', 'Five neatly folded heavyweight cotton t-shirts stacked on a dark charcoal stone surface, folded edges facing the camera, from bottom to top in near-black #191919, charcoal gray #56575B, coffee brown #58402E, deep navy #283243, and maroon #6D1E24, each fold crisp with the dense cotton showing its thickness at the edge. Low three-quarter angle, stack centred with dark space above. Low raking light from the upper left grazes the folded edges so the knit texture reads on each layer. Photorealistic product photography, shot on a medium-format camera, shallow depth of field (f/2.8), accurate muted colors.'],
+    ['P7', 'Paper texture for Draft 2', 'Any image model, no reference', 'A flat sheet of heavy warm off-white drawing paper filling the entire frame, fine cold-press tooth visible across the surface, faint fibres and a very slight natural unevenness in tone. Straight-on overhead view, evenly lit with soft diffuse daylight. Photorealistic paper texture photography, high detail, neutral warm white.'],
+    ['V1', 'Slow fabric pan, video', 'Higgsfield image-to-video (Kling), start frame: P2', 'Slow, steady lateral camera slide from left to right across the black cotton jersey, the raking light shifting subtly across the knit rows as the camera moves, fabric completely still, smooth cinematic motion, five seconds, seamless enough to loop.'],
+  ];
+  const holder = document.getElementById('prompts');
+  prompts.forEach(([id, name, where, text]) => {
+    const d = document.createElement('details');
+    d.innerHTML = '<summary>' + id + '. ' + name + ' <span>' + where + '</span></summary>';
+    const body = document.createElement('div'); body.className = 'prompt-body';
+    const pre = document.createElement('div'); pre.className = 'prompt-text'; pre.textContent = text; pre.id = 'prompt-' + id;
+    const row = document.createElement('div'); row.className = 'controls';
+    const btn = document.createElement('button'); btn.type = 'button'; btn.textContent = 'Copy prompt';
+    const msg = document.createElement('span'); msg.className = 'copied';
+    btn.addEventListener('click', () => {
+      const done = () => { msg.textContent = 'Copied'; setTimeout(() => (msg.textContent = ''), 1800); };
+      const sel = () => { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Selected. Press Ctrl or Cmd + C.'; };
+      try { navigator.clipboard.writeText(text).then(done, sel); } catch (e) { sel(); }
+    });
+    row.append(btn, msg); body.append(pre, row); d.appendChild(body); holder.appendChild(d);
+  });
+})();
+</script>
