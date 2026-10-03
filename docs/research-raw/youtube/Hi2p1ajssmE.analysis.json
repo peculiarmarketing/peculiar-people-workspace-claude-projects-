@@ -1,0 +1,111 @@
+{
+ "id": "81b0eff3-a626-4f6a-be07-b09863d6a143",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=Hi2p1ajssmE",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Behind me is the Shopify theme that I've created for only 15 min. How's that possible? Well, I've used an extremely advanced technology that we call vibe coding.",
+   "label": "Opening Hook",
+   "visual": "A young male in his early 20s, with light blonde hair, glasses, and wearing a white hoodie, stands in front of a yellow wall with a light blue glow. He speaks directly to the camera with high energy, using broad hand gestures. He is light-skinned and has dark hair with blonde accents, and wears small black earrings. The lighting is soft and even, with a slight blue rim light. Behind him, there's a laptop screen showing a Shopify storefront with the text 'WeeklyHow'. The overall color palette is bright and warm.",
+   "shot_type": "Medium Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:14",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "In a previous video, I've covered vibe coding but for Shopify app development, but today we're going to take a closer look if it's possible to make Shopify themes and make customizations with it using cursor AI. I mean I literally just showed you earlier the preview of this video so it's not a clickbait, right?",
+   "label": "Product Information",
+   "visual": "The same individual, now wearing a brown plaid shirt, sits in a well-lit living room. He is talking to the camera, with a microphone and a desk lamp visible in the background. The background is slightly blurred, showing a plant and a white wall. He moves his hands while speaking, gesturing towards the computer. There is a screen recording of the Cursor AI website and the Shopify dashboard. The overall tone is educational and engaging.",
+   "shot_type": "Wide Shot",
+   "scene_number": 2,
+   "timestamp_end": "0:30",
+   "timestamp_start": "0:15"
+  },
+  {
+   "audio": "So without wasting more time let's get back to our computer and start working.",
+   "label": "Usage Scenarios",
+   "visual": "The individual is now back in his white hoodie, holding an Apple laptop in his hands. He gestures with the laptop as he speaks. The lighting is similar to the first scene, with a yellow background and a blue rim light. He is smiling and looking at the camera.",
+   "shot_type": "Close-Up",
+   "scene_number": 3,
+   "timestamp_end": "0:34",
+   "timestamp_start": "0:31"
+  },
+  {
+   "audio": "So we're back here in the Cursor code editor. Now the first thing that we're going to do is to create a new Shopify theme using Shopify CLI. So let's go straight to the chat box and make sure that you're using agent, okay? And the model is going to be Claude 3.7 Sonnet. I believe that's the best model that you can use when developing Shopify apps or Shopify themes, at least in my opinion. So let's start with 'Hello Cursor, let's create a new Shopify theme using Shopify CLI.' Now it's going to check the version of Shopify CLI first. There we go, let's click run, and then it's going to execute the shopify theme init command. At least that's what I'm expecting it to do. There we go, so great, the Shopify CLI is version 3.76.2. You can check yours as well if you're following along. Now it's asking me for a name. Let's just pop it out of the chat box so I can see it here. It appears the theme initialization command is running in the background. The command needs input to complete. Let's try again with the necessary parameters. This time I'll specify a theme name. You know what, he's right. I'm just gonna close this and just execute this command. So I just want to just press buttons instead of typing it myself.",
+   "label": "Product Selling Points",
+   "visual": "Screen recording of the Cursor code editor. The user interacts with the editor, typing commands and navigating through files. A small video of the individual in the white hoodie is in the bottom right corner of the screen. The editor has a dark theme. The user is using the Shopify CLI to create a new theme.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "1:40",
+   "timestamp_start": "0:35"
+  },
+  {
+   "audio": "There we go. Now the next thing that we're going to do is to change our current directory to that theme, to that theme folder. So we have cd my-new-theme, which is what we have here, and then we're going to execute the Shopify theme serve. I don't think that's the command that you're going to use to initiate or to run the Shopify theme. So this is not going to work, first of all. Let's just cancel that and say 'You have already created a Shopify theme. It's now the 'my-new-theme'. Let's change our current directory to that folder and open that folder using the cursor command.' Now the next thing that we're going to do is to log in. We have a Shopify theme project here that was created using Shopify CLI. I'd like to specify that this was created using Shopify CLI because there's a possibility that it could hallucinate and think that this was created using theme kit. Now moving forward, let's run this project using Shopify CLI.",
+   "label": "Real Experience",
+   "visual": "Screen recording continues. The theme is being initialized and local server started. The user is talking through the process, pointing out steps on the screen. The editor shows the file structure of the new Shopify theme. The individual's face is still visible in the bottom right corner.",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "2:30",
+   "timestamp_start": "1:41"
+  },
+  {
+   "audio": "I'm expecting it to use like Shopify auth login command, but let's see. So we have 3.76.2, great Shopify CLI is installed. Okay, there we go, it's actually using the right Shopify theme dev command. I did not expect that because I was expecting it to use the Shopify auth login command like what other AI say all the time. So I'm surprised that this is working just fine. Let's run that command. Now it's going to open a new browser, a new browser window. Okay, it looks like the address is currently being used, so it's going to run the same command but apply a different port. So let's do that. There we go, perfect. What is this? The command to run your Shopify theme is now executing in the background. The theme should be running on port 9293. Okay, we have the localhost URL. If you want to check the status, see, I don't think that's what we want to do, let's just cancel that. There we go. But now we can open our online store or development store by browsing this, by opening this URL. So let's just copy that because if you notice, if I hover this, it's not complete, it's going to break. So if I open this, that's not gonna work. Notice the URL is broken. So what we're going to do is to copy this URL here, the first one, and paste it here. So we should have here our Shopify theme. There we go, we have our Shopify theme running.",
+   "label": "Product Selling Points",
+   "visual": "Screen recording of the browser showing the Shopify store preview. The individual demonstrates the changes made to the theme, like the custom announcement bar. He explains how Cursor AI generated the code for the changes. The store shows a placeholder image of mountains and a sun.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "4:06",
+   "timestamp_start": "2:31"
+  },
+  {
+   "audio": "But the next thing that we're going to do is to test Cursor AI or 'vibe coding' to see if it's worth using when developing Shopify themes. So my plan is to create, like I said, to create custom sections like a custom announcement bar or change the navigational bar to a different color or create a video section, something like that, or even like a modal pop-out. Let's just try and do that here. So let's go back to the Cursor code editor and go back here in the chat. Let's scroll all the way down and we're going to remove this context because we are no longer talking about the Shopify CLI, the Shopify CLI is already working. But before we continue, let's just acknowledge that everything is working. Now the reason why you want to do this is that maybe in the future AI is going to take over us and you want to save your... jokes aside, let's continue and tell it to create custom sections. Now the next thing that we're going to do is to tell it to create or customize the Shopify theme. I want you to create a new custom announcement bar and use it in the main layout because we already have here an announcement bar and we kind of don't want that, you know, if you are a new merchant, maybe you want to create a new custom navigational bar or announcement bar. So that's what we're going to... so let's just click send. I'll help you create a custom announcement bar with a message and a button. There we go. Okay, so now it's checking the project files and now it's taking a look at the main layout file because that's where the previous announcement bar is being used. Okay, it looks like it's done. Now we've created a custom announcement bar for your Shopify theme, here's what we've accomplished. So it created a new custom announcement bar, it added a style, and then it updated the header configuration, which is the sections header-group JSON file, and it also added a message, which is pretty good.",
+   "label": "Problem Solving",
+   "visual": "The individual returns to the Cursor editor and uses AI to fix an alignment issue with a button in the announcement bar. He uses a screenshot to show the AI what's wrong. The AI then updates the CSS code, which is then reflected in the browser. The process is quick and efficient.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "5:50",
+   "timestamp_start": "4:07"
+  },
+  {
+   "audio": "So let's go back to our browser and reload the page. There we go. There is a minor issue here, not a big deal, but that's good. So we have special offer free shipping on orders over 50 dollars. Let's just zoom in because it's very small. But look at the button here, looks like it's broken. So what I want to do is to tell it to fix this. So I'm going to take a screenshot of this and just drag this image here and tell it 'It looks like the button label is not perfectly aligned.' So now it's making adjustments to the CSS and we can just go back to the browser, reload the page. There we go, now it's aligned properly. This is crazy. You don't have to code anymore. You just tell it what to do and it's going to do that. Now that is great, but we're not done yet. Now what I want to do next is to tell AI or tell Cursor that there's still the previous announcement bar here and we want to get rid of that. So let's tell AI or Cursor to remove that. 'Also, it looks like we are still using the previous announcement bar. Let's remove that.' I'm hoping it's not going to delete the file because I said let's remove that. Maybe it's going to hallucinate and literally delete the file. Okay, it looks like it did not delete it. Instead, it removed the section in the header group. So that's great. So now we can just go back to the browser, refresh the page, and there we go, now it's fixed.",
+   "label": "Real Experience",
+   "visual": "Screen recording of the theme customization process. The individual is refining the announcement bar, changing its color and adding an animation. The AI successfully creates a scrolling effect for a small dot. He's clearly impressed with the results, smiling and nodding.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "7:40",
+   "timestamp_start": "5:51"
+  },
+  {
+   "audio": "Now the next thing that we're going to do is to change the color of the announcement bar, at the same time change the color of the navigational bar. I want it to be black, the announcement bar. I want the announcement bar to have a color something like yellowish, and then I want it to have like dots behind and just scroll all the way to the right. So let's go back to the cursor AI or cursor code editor. I kept saying cursor AI, which is weird. Anyway, let's go back here in the chat. Perfect. Now the next thing that I want to do is to change the color of the announcement bar to yellow background and it should have a small dot scrolling across to the right and it should be looping. So let's try and do that. Click send. Awesome, looks like it is done, so let's go back to the browser, this is going to be the moment of truth. Let's refresh. That is not what I am trying to say. But hold on, there's a small dot running across. I'll take that. Let's try and fix that, shall we? 'Great work, but that's not what I wanted. I want the background to have small dots (not a single dot) and I want its color to be black. Another thing is the background color. It looks like it's not covering the whole width.' Let's press enter. I'll fix both issues: adding multiple black dots and ensuring the yellow background covers the full width. Let's update the CSS. Thank you very much. Take a look at this. I don't know why this is necessary, but take a look. Okay, now it's done. Let's take a look at this. Added multiple black dots instead of a single red dot with various characteristics. Seven different dots of various sizes. That's still not what I wanted, but let's take a look at the result. Honestly, it's not that bad, I think it's good. Okay, so just leave it like that. Now the next thing that we're going to do is to change the background color of the navigational bar. So let's try and do that. I think it's great. Let's move on to the next section. I want the navigational bar to have a background color of black and the texts should obviously be white. This is going to be very simple customization because if you take a look at your navigational bar section, you'll see there a color scheme, which you can do manually if you want, but as much as possible I want to see what it's going to do. It looks like it's hardcoding the customizations. You should not be doing this because you can literally just do it in the theme editor if you want to change the color of the navigational bar. But hey, the whole point of this whole thing is to test cursor. So let's just leave it.",
+   "label": "Usage Scenarios",
+   "visual": "Final steps of the theme creation. The individual uses AI to create a pop-up modal for the homepage. He tests it in the browser and confirms it only appears on the home page as requested. The video shows the pop-up with a 'Flash Sale' message. The individual looks satisfied.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "10:30",
+   "timestamp_start": "7:41"
+  },
+  {
+   "audio": "Okay, now it's done. Let's go back to the browser and take a look at the result. Okay, it looks like it's good, but now we lost our logo or the name of the online store. So let's just take a screenshot of this and let's just move to the cursor chat and drag this here and tell it 'It looks like we lost the logo/the name of the online store. Its text should also be white.' Once again, I am not coding, I am literally just telling it what to do. Okay, looks like it's done. We can go back to the browser and see the result. There we go, looks like we have our title here. That's good. Now the last component or section that I want to make using cursor is a modal window, you know a pop-up message. I want it to create a pop-up message that displays only in the homepage. I don't want it to be displayed in the product page, in the about page, or cart page. I just want it to be displayed in the homepage. So let's try and do that. Now the next thing that we wanna do is a new section and it's going to be a modal pop-up window or a pop-up window that displays a message like 'There is a SALE. Like 50% discount message.' BUT, I only want it to be displayed in the homepage, just the homepage. Let's try and do that. And probably some of you are getting annoyed of this, so let's just get rid of this. There we go, now it's done creating the pop-up sale liquid file. Now it's going to style it up. Okay, there we go, now we have a problem. Okay, we had a problem but it fixed it. So there we go. Now let's go back to our browser and this is it, moment of truth. If we refresh... Oh, I thought it didn't work but we have a message: 'Flash Sale! 50% off everything! Limited time only.' We also have links here which is pretty good. Now if we take a look at another page, what do you think is going to happen? Okay, I can't even click outside which is good. We need to close this before we continue. Go to catalog... looks like it's only being displayed in the homepage, which is what we wanted.",
+   "label": "Product Selling Points",
+   "visual": "The individual wraps up the demo by showing the final store. He demonstrates the modal and the updated navigation bar. The white logo 'Elizabeth Development Online Store' is now clearly visible against the black navigation bar. He is smiling and seems content with the outcome.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "12:30",
+   "timestamp_start": "10:31"
+  },
+  {
+   "audio": "And that's it. We successfully created a Shopify theme from scratch without even writing the codes ourselves. It's crazy how easy it was. Once again, a lot of you are probably wondering if it's still necessary to learn Shopify development now that AI could literally build everything for you. Personally, I would still recommend learning how to code or Shopify development specifically. You should learn how to read or identify issues. For example, earlier Cursor changed the color of the navigational bar, but instead of going to the theme editor or, you know, changing the color scheme settings, it hardcoded the whole thing. It hardcoded the styles of the navigational bar. Other than that, it's a great tool for building new features to your online stores, new components, new sections, but I would highly recommend using Git whenever you work with cursor or vibe coding tools so that the chances of you losing your work is much slimmer. And that's pretty much it for this video. If you guys enjoyed it, let me know by hitting the thumbs up and subscribe to the channel if you want more videos like this. If you have requests, let me know in the comments below as well, and if you have weird comments, in the comments below. Anyway, I'll see you guys on next video. Bye.",
+   "label": "Call to Action",
+   "visual": "Back to the individual in the white hoodie standing in front of the yellow wall. He is summarizing the video and sharing his thoughts on AI in development. He gives a thumbs up and encourages viewers to subscribe. The lighting and background are identical to the first scene.",
+   "shot_type": "Medium Shot",
+   "scene_number": 11,
+   "timestamp_end": "13:42",
+   "timestamp_start": "12:31"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:58.180376Z",
+ "updated_at": "2026-10-03T07:40:14.658095Z"
+}

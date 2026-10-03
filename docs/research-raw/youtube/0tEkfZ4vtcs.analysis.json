@@ -1,0 +1,246 @@
+{
+ "id": "599ac55f-6b2f-463a-ac49-a4c17f7cd719",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=0tEkfZ4vtcs",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Really important video for all of the Shopify theme developers. In this video, I'll show you guys...",
+   "label": "Opening Hook",
+   "visual": "A man in his 30s with fair skin, a thick black beard, and short dark hair is speaking to the camera. He is wearing a plain orange T-shirt. A black professional microphone is positioned directly in front of him, and he sits behind a silver laptop. The background is a brightly lit, blurred office space with green plants and modern furniture. The camera is static, and lighting is soft and even, highlighting his face.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 1,
+   "timestamp_end": "0:04",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "...how you can connect Claude Code and use GitHub to boost your Shopify theme development.",
+   "label": "Product Selling Points",
+   "visual": "Same scene as before. The man continues speaking with engaging hand gestures, pointing slightly towards his laptop as he explains the benefits of combining tools.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 2,
+   "timestamp_end": "0:12",
+   "timestamp_start": "0:05"
+  },
+  {
+   "audio": "So if you were building a theme in months or in days, you could do that in hours and minutes using the power of new Claude Code.",
+   "label": "Usage Scenarios",
+   "visual": "The man remains seated in the same office environment, maintaining eye contact with the viewer while describing the speed of development using the new software tools.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 3,
+   "timestamp_end": "0:24",
+   "timestamp_start": "0:13"
+  },
+  {
+   "audio": "The first step will be to connect GitHub with the VS Code. In the second step, we will add the Claude Code. And in the third step, we will add MCP server.",
+   "label": "Product Information",
+   "visual": "The man outlines the video's three main steps, using his fingers to count each one for emphasis. The lighting remains warm and natural.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 4,
+   "timestamp_end": "0:38",
+   "timestamp_start": "0:25"
+  },
+  {
+   "audio": "If you are not familiar with these terms, watch the complete video. I'll give you a beginner's guide. So without further ado, let's get into the screen.",
+   "label": "Real Experience",
+   "visual": "The man concludes his introduction, leaning slightly forward toward the camera before transitioning to the screen-sharing portion of the tutorial.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 5,
+   "timestamp_end": "0:50",
+   "timestamp_start": "0:39"
+  },
+  {
+   "audio": "So guys, this is the first step where I'll be connecting this theme with the GitHub. I've added the latest version of Horizon theme.",
+   "label": "Product Information",
+   "visual": "Screen recording of a Shopify dashboard under the 'Themes' section. A cursor moves across the screen to highlight the 'Horizon' theme, which is currently active.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "1:02",
+   "timestamp_start": "0:51"
+  },
+  {
+   "audio": "Now let's create a new repository in GitHub. I'm going to name it 'shopify-claude-tutorial' and make this repository private, then click on 'Create repository'.",
+   "label": "Product Information",
+   "visual": "Screen recording of a GitHub dashboard. The user clicks the 'New' button to create a repository, enters the name 'shopify-claude-tutorial', and sets it to private.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "1:25",
+   "timestamp_start": "1:03"
+  },
+  {
+   "audio": "Perfect, we have our repository created. Now we will download our theme and add it to our folder.",
+   "label": "Product Information",
+   "visual": "Screen recording showing the successful creation of the GitHub repository, followed by a switch back to the Shopify dashboard.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "1:35",
+   "timestamp_start": "1:26"
+  },
+  {
+   "audio": "I have this folder created by the name of 'shopify-theme'. I'm going to download the theme file... it's sending me an email with the theme files.",
+   "label": "Product Information",
+   "visual": "The cursor clicks through file directories on a Mac computer, opening a folder named 'shopify-theme'. The user then returns to Shopify to download the theme file.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "1:55",
+   "timestamp_start": "1:36"
+  },
+  {
+   "audio": "I'll go to my email and extract all of the files. I'm going to unzip it... that is my theme folders.",
+   "label": "Product Information",
+   "visual": "The user opens Gmail, downloads the zip file, and extracts the theme files into the local 'shopify-theme' folder using the Mac Finder interface.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "2:34",
+   "timestamp_start": "1:56"
+  },
+  {
+   "audio": "Now let's open this shopify-theme folder in my VS Code. I have all of the files downloaded locally. Now I need to connect the GitHub repository.",
+   "label": "Product Information",
+   "visual": "The user opens Visual Studio Code (VS Code) and selects the 'shopify-theme' folder. The screen displays the file structure on the left panel.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "3:08",
+   "timestamp_start": "2:35"
+  },
+  {
+   "audio": "First I need to initialize Git for this folder. I'm going to simply add these three commands in the terminal. Now we are getting this error, because we haven't yet initialized our Git.",
+   "label": "Product Information",
+   "visual": "The user switches between GitHub and VS Code, copying Git commands from the web browser and pasting them into the VS Code terminal.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "3:40",
+   "timestamp_start": "3:09"
+  },
+  {
+   "audio": "In order to fix this bug, we will add this command here: 'git init', 'git add .', 'git commit'. I'll add this command in the description.",
+   "label": "Product Information",
+   "visual": "The user types 'git init', 'git add .', and 'git commit' commands into the terminal to fix the error and push the local files to GitHub.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "4:32",
+   "timestamp_start": "3:41"
+  },
+  {
+   "audio": "Now if we go back to our GitHub repository and hit refresh, you can see all of the code in our local folder has been uploaded.",
+   "label": "Product Information",
+   "visual": "The screen recording shows the GitHub page being refreshed, displaying the uploaded files. Each folder shows the 'Initial commit' status.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "5:00",
+   "timestamp_start": "4:33"
+  },
+  {
+   "audio": "Now our local folder and cloud GitHub is connected. We will now connect our development store with this GitHub repo. Click on 'Connect from GitHub'.",
+   "label": "Product Information",
+   "visual": "Back in Shopify, the user navigates to 'Import theme' and selects 'Connect from GitHub', then chooses the repository and main branch.",
+   "shot_type": "Wide Shot",
+   "scene_number": 15,
+   "timestamp_end": "5:45",
+   "timestamp_start": "5:01"
+  },
+  {
+   "audio": "Our main branch is now connected with the theme. Now whatever change we make, it will show up in the revision history in the form of commits.",
+   "label": "Product Information",
+   "visual": "The Shopify interface shows the theme successfully connected to GitHub. The user explains how changes will now be tracked in the revision history.",
+   "shot_type": "Wide Shot",
+   "scene_number": 16,
+   "timestamp_end": "6:13",
+   "timestamp_start": "5:46"
+  },
+  {
+   "audio": "Let's try editing from the Shopify code editor. Let's find our base.css file. I'm simply going to change from 100% to 99%. Click on save.",
+   "label": "Problem Solving",
+   "visual": "The user edits a 'base.css' file within the Shopify code editor, changing a width value from 100% to 99%, and clicks save.",
+   "shot_type": "Wide Shot",
+   "scene_number": 17,
+   "timestamp_end": "6:48",
+   "timestamp_start": "6:14"
+  },
+  {
+   "audio": "Now if we go back to our GitHub repository and hit refresh, you can see that we have now Shopify bot added in commit.",
+   "label": "Problem Solving",
+   "visual": "The user returns to GitHub and refreshes the page to show that the 'Shopify bot' automatically committed the change made in the editor.",
+   "shot_type": "Wide Shot",
+   "scene_number": 18,
+   "timestamp_end": "7:15",
+   "timestamp_start": "6:49"
+  },
+  {
+   "audio": "It's going to show the same thing if we change anything locally. In the local folder, let's say change it to 101%. Hit save. I'm going to say 'test-change' and hit commit.",
+   "label": "Problem Solving",
+   "visual": "The user demonstrates making a local change in VS Code, changing the width to 101%, and then committing it manually via the Git interface.",
+   "shot_type": "Wide Shot",
+   "scene_number": 19,
+   "timestamp_end": "8:04",
+   "timestamp_start": "7:16"
+  },
+  {
+   "audio": "Now let's move on to the next step where we will be installing Claude. Click on this extension icon and search for 'Claude Code'. Click on the install button.",
+   "label": "Product Information",
+   "visual": "The user opens the VS Code Extensions panel and searches for 'Claude Code'. They select the extension published by Anthropic and click install.",
+   "shot_type": "Wide Shot",
+   "scene_number": 20,
+   "timestamp_end": "8:26",
+   "timestamp_start": "8:05"
+  },
+  {
+   "audio": "Once it's installed, you can chat with Claude Code. You can use Claude AI subscription or you can use Anthropic Console.",
+   "label": "Product Information",
+   "visual": "The user explains the login options for Claude Code, showing the difference between the Claude subscription and the Anthropic Console.",
+   "shot_type": "Wide Shot",
+   "scene_number": 21,
+   "timestamp_end": "9:02",
+   "timestamp_start": "8:27"
+  },
+  {
+   "audio": "Anthropic console is only going to charge you for API usage. For Claude AI subscription, there's a fixed charge. It's going to read all of the code and suggest changes automatically.",
+   "label": "Product Information",
+   "visual": "The screen shows a pricing page for Claude AI (Free, Pro, Max). The user switches back to VS Code to discuss the benefits of automated code suggestions.",
+   "shot_type": "Wide Shot",
+   "scene_number": 22,
+   "timestamp_end": "9:51",
+   "timestamp_start": "9:03"
+  },
+  {
+   "audio": "The most powerful thing to do is to add an MCP server. Go to the documentation 'Shopify MCP Claude Code'. Simply copy this command and paste this command in the terminal.",
+   "label": "Product Information",
+   "visual": "The user navigates to the Shopify Dev documentation for MCP (Model Context Protocol) and copies a command line to add the Shopify server to Claude.",
+   "shot_type": "Wide Shot",
+   "scene_number": 23,
+   "timestamp_end": "10:28",
+   "timestamp_start": "9:52"
+  },
+  {
+   "audio": "Once you do that, you will have it showing up on your Claude Code chat here. Type in '/mcp' and you can see that we have shopify-dev-mcp connected.",
+   "label": "Product Information",
+   "visual": "The user types '/mcp' in the Claude chat box in VS Code to verify that the 'shopify-dev-mcp' is successfully connected.",
+   "shot_type": "Wide Shot",
+   "scene_number": 24,
+   "timestamp_end": "10:45",
+   "timestamp_start": "10:29"
+  },
+  {
+   "audio": "Now what does this MCP mean? MCP meaning Model Context Protocol. It is going to pull the latest and updated documentation in the context of Claude Code.",
+   "label": "Product Selling Points",
+   "visual": "The camera returns to the man in the office. He explains the technical benefit of MCP, allowing the AI to access the most current Shopify API documentation.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 25,
+   "timestamp_end": "11:09",
+   "timestamp_start": "10:46"
+  },
+  {
+   "audio": "It will be able to assist us better in writing code. Shopify Dev MCP is really important to have. That's it for this video guys. Until next video, have a good day.",
+   "label": "Call to Action",
+   "visual": "The man wraps up the video with a friendly smile, encouraging viewers to comment and like. He waves slightly at the end as the video fades.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 26,
+   "timestamp_end": "11:35",
+   "timestamp_start": "11:10"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:54.381498Z",
+ "updated_at": "2026-10-03T07:38:12.853859Z"
+}

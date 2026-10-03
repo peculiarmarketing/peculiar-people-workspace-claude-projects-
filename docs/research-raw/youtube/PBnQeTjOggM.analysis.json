@@ -1,0 +1,255 @@
+{
+ "id": "91e1b5cf-961c-44b5-a618-e192d14453a2",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=PBnQeTjOggM",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Yes, yes. You are wondering how I created this game in my Shopify store.",
+   "label": "Opening Hook",
+   "visual": "A fair-skinned male in his mid-20s with short, blonde, slicked-back hair is seen from the waist up, seated in a gaming chair. He wears a black hoodie. To his left, a white wall features a black shelf with various items, including a red book and a circular art piece. A black microphone is positioned in front of him. On the right half of the screen, a split-screen view displays a desktop browser showing a retro-style video game on a Shopify store page. The man gestures toward the screen as he speaks, maintaining a focused and engaged facial expression. The lighting is bright and even, casting soft shadows, with a warm-toned lamp visible in the background. The overall color palette is clean, dominated by neutral white and black tones.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 1,
+   "timestamp_end": "0:09",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "Shopify actually released some new stuff, so let's go check that out.",
+   "label": "Product Information",
+   "visual": "The man remains in the same position and attire as in the previous scene. He continues to speak, using subtle hand gestures for emphasis while looking directly at the camera. The split-screen view of the Shopify game remains on the right side of the frame.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 2,
+   "timestamp_end": "0:13",
+   "timestamp_start": "0:09"
+  },
+  {
+   "audio": "What's up my nerds, it's Bosidev, your Shopify developer freelancer from Germany. And last week Shopify dropped their Summer Editions 2025. There were over 150 updates with heavy focus on merchant and app developer updates.",
+   "label": "Real Experience",
+   "visual": "The man is still in his chair, speaking to the camera. The right side of the screen now shows a presentation about Shopify's \"Summer Editions 2025\" with vibrant purple and neon themes. A graphic text \"+150 UPDATES\" appears briefly on the screen. He maintains his seated position, with the microphone and background elements unchanged.",
+   "shot_type": "Wide Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:26",
+   "timestamp_start": "0:13"
+  },
+  {
+   "audio": "But in this video, I want to show you the spotlight feature of this edition.",
+   "label": "Product Selling Points",
+   "visual": "The man is shown from the waist up, centered in the frame. He gestures toward the camera with his right hand as he describes a new feature. The split-screen display shows various theme layout options for the \"Horizon\" theme, with neon purple accents. The background and lighting remain consistent with the previous scenes.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 4,
+   "timestamp_end": "0:30",
+   "timestamp_start": "0:26"
+  },
+  {
+   "audio": "The new Horizon theme in addition with the new generative AI features. So if you are curious about all the new theme changes and how you can use them to power your knowledge even further, you should definitely stick around.",
+   "label": "Product Information",
+   "visual": "The man is seen in a slightly wider shot, still at his desk. The right side of the frame shows a demonstration of the \"Horizon\" theme's features, including AI generation blocks and storefront changes. He uses hand gestures and keeps a positive facial expression, looking toward the side and then at the camera. The lighting remains soft and natural.",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "0:43",
+   "timestamp_start": "0:30"
+  },
+  {
+   "audio": "First I'm going to show you what the new Horizon theme actually can do and all of its capabilities. Specifically, we are going to check out the new AI theme blocks you can use to build your dream theme without writing any code at all.",
+   "label": "Usage Scenarios",
+   "visual": "The man is still seated, while the right side of the screen shows a step-by-step walkthrough of the Shopify theme editor. He points to the screen as various options are selected in the demonstration. The shot is wider to include both him and the full browser window on the right. Lighting and environment remain unchanged.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "0:55",
+   "timestamp_start": "0:43"
+  },
+  {
+   "audio": "And of course, since this is a channel for Shopify developers, I will take a deep dive into Horizon's codebase and analyze what's new so you can use it on your own.",
+   "label": "Usage Scenarios",
+   "visual": "The man continues his presentation from the same position. The right-hand side of the screen shows a detailed codebase analysis on a developer's screen. He remains focused and uses precise hand gestures to direct the viewer's attention to the technical demonstration on the right.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "1:05",
+   "timestamp_start": "0:55"
+  },
+  {
+   "audio": "As always stay till the end because I'm going to give you three tips on how you can use the new features to help your clients and maybe make an extra buck. Let's jump right in.",
+   "label": "Call to Action",
+   "visual": "The man is framed from the waist up, pointing at the camera as he promises more tips toward the end of the video. The right side of the screen shows a summary of upcoming segments, including \"Tips\" for using the features. The background lighting is still bright and clear, emphasizing his face and the microphone.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 8,
+   "timestamp_end": "1:19",
+   "timestamp_start": "1:05"
+  },
+  {
+   "audio": "The new Horizon theme will actually replace the old foundation theme Dawn. We will compare these two a lot in this video. First of all, there's to say, of course, the Horizon theme is completely free.",
+   "label": "Usage Scenarios",
+   "visual": "A full-screen view of a browser window shows the Shopify store's theme customization page. The cursor moves across the screen to demonstrate theme options like \"Dawn\" and \"Horizon.\" The UI is clean, and the action is centered on the browser's functionality. The man's video is shown as a small circular inset at the bottom left, where he continues to talk.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "1:30",
+   "timestamp_start": "1:19"
+  },
+  {
+   "audio": "And the additions state that there're actually 10 new themes. But the other nine themes are actually just variants of the Horizon theme and therefore are just different in layout and design. This already shows what the actual main feature of the new Horizon theme is. Using the full potential of theme blocks for ultimate flexibility when it comes to design and layout. What does that actually mean?",
+   "label": "Product Selling Points",
+   "visual": "The browser window displays a grid of ten new Shopify themes. The user scrolls through them, showcasing their varied designs and layouts. The cursor interacts with specific elements on the page, like theme previews. The man's small inset is visible in the corner, and his hands gesture as he explains the options. Lighting is simulated as bright and neutral through the browser's UI.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "1:51",
+   "timestamp_start": "1:30"
+  },
+  {
+   "audio": "To show you what you can do with the new Horizon theme, I just went ahead into my online store and just downloaded the Horizon theme from this section here. And when we click on customize, there's actually nothing crazy new. We have all the templates, we have the sections, we have the editor settings. But the real magic is behind the theme blocks. When we click add section, we actually have a lot of sections. And when we now add something, we can see that the section is not a standalone section anymore, but it consists of multiple blocks. These sections are all one section with different presets. So for example here we have the collection list, but in four different variations, which you can see here also in the preview. So when I add the collection list Bento and the collection list Editorial, when we click on the actual section, we can see that it's basically the same settings but then we have different section setting values, all preset already.",
+   "label": "Usage Scenarios",
+   "visual": "The video shows the Shopify online store settings, where a new theme is being customized. The screen transitions through various menu options, such as \"Add Section\" and \"Customize.\" The user interacts with layout elements, changing the arrangement of different content blocks on the page. The man's circular inset remains in the bottom right corner, and he continues to explain the process through speech and hand movements.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "2:42",
+   "timestamp_start": "1:51"
+  },
+  {
+   "audio": "So you can just go ahead and add your own blocks wherever you want. For example, here on the text, I can add a button. And this button of course appears then and by going into the parent block and just change the alignment to center and direction horizontal to change the layout and the design. And if you want to add a block in general, we can see that we have a lot, a lot of theme blocks to use. And the cool thing is that we have a custom section that we can fully customize ourselves. We could try to create a multi-column section, so let's do that. And here we can just create a new group that contains an image, a heading, and a text. Then I can go to the group and say alignment is center. And instead of repeating the steps now with the group, adding an image and adding these headings and texts, we can simply go to the group, right-click, and say copy. Then we can paste after, again paste after, we have three images with text. And if you go to the parent section now, we can say align this horizontal. In like 20 seconds, we created this multi-column group by just adding the theme blocks, the groups, and copy-paste them again. You can also go ahead and now rename this section to multi-column, so it's super, super flexible.",
+   "label": "Product Selling Points",
+   "visual": "The Shopify theme editor screen shows the addition of new blocks to a section. The user clicks on the \"Add block\" button and chooses a button block, which then appears on the page. The layout settings for alignment (center, horizontal) are adjusted. The user then scrolls through a long list of available blocks. A new \"Custom section\" is added and fully customized with a group block containing an image, a heading, and a text block. The man's inset is still in the bottom-right corner, and he continues to speak as he demonstrates the steps.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "3:56",
+   "timestamp_start": "2:42"
+  },
+  {
+   "audio": "Then of course we have the new star of the Shopify editions. We can go ahead into custom section and of course when we add block, we can now generate a block. So we can create a unique block just for your store with AI. If you click generate now, we come to this setting here and here it says describe the block you want. So let's say create a hero banner section. And we click enter, it is now generating the code and has this placeholder here. And when it's done, it actually just created everything itself with the AI. So you have an element and also you have settings with it. You can even create follow-up instructions if you are not satisfied yet, but in this case I can save. And the cool thing is if you want to add a block now, all your AI-generated blocks are saved in this column here, so you can reuse them.",
+   "label": "Usage Scenarios",
+   "visual": "The browser screen now focuses on the AI generation features within the Shopify editor. The user types \"create a hero banner section\" into the prompt box, and the system begins generating code and a live preview of the block. A placeholder appears, followed by a fully formed hero banner section with an image and text. The user saves the block and demonstrates that it's now available in the \"AI-generated\" column for future use. The man's circular inset is still in the corner, and he continues his explanation.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "4:41",
+   "timestamp_start": "3:56"
+  },
+  {
+   "audio": "If you want to remove the blocks from your theme code again, you can simply go ahead, right-click, and say edit code. Then you have to go into blocks and just click the trash bin and remove it. With all of these features, you basically have a whole page builder inside your theme now. But I have to say that you also have to be careful with the AI-generated blocks because this is just a simple example. But when it gets complicated, for example, create an upsell in the cart, then the AI sometimes is not the best. It either doesn't know what you want exactly or does wrong things, so you always have to check if everything is correct. Then of course we have the normal settings and we can also see that it improved drastically compared to the Dawn theme. We have more settings we can choose from, for example, the colors is a lot more than in the Dawn theme which is super cool. And we have in general just a lot more to customize. The only thing that is also interesting is that we have an allow discounts in cart section. When we go ahead into the theme and add something to the cart, we can now see that there's a discount input where we can apply a discount code from the cart. Before that was only possible in the checkout with apps or by creating it yourself with workarounds, but now this is available natively.",
+   "label": "Problem Solving",
+   "visual": "The Shopify code editor is displayed, showing the .liquid files for the AI-generated blocks. The user right-clicks a block to edit its code and then shows how to delete it from the theme's codebase. The man's inset is present, and he gestures with his hands to highlight important points while he speaks. The screen then returns to the theme editor for a final overview of the features. The user adds a discount input block to the cart to show its functionality. The man's inset remains in the same position.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "5:51",
+   "timestamp_start": "4:41"
+  },
+  {
+   "audio": "As you can see, the new Horizon theme is a flexibility beast and in my opinion will be the new meta for everything regarding theme building. This does not only reflect in the storefront and editor but also in its codebase. So let's check that out next.",
+   "label": "Product Information",
+   "visual": "The man is back in full view from the waist up, centered in the frame. He speaks directly to the camera, with the microphone in front of him and the background wall visible. He uses hand gestures and looks enthusiastic while talking about the flexibility of the new theme. The lighting is still bright and clear, and his black hoodie and styled hair are detailed as in the beginning.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 15,
+   "timestamp_end": "6:10",
+   "timestamp_start": "5:51"
+  },
+  {
+   "audio": "To give you an in-depth view of the codebase of the Horizon theme, I just opened up my code editor. If you don't know how to use the code editor in your Shopify devflow, just check out my video on the Shopify CLI. Before we start analyzing, let's just be clear that we don't look at the config, locales, and template files because they basically just stay the same for every theme there is. Let's start hierarchy-wise therefore, let's first jump into the theme liquid. First thing when I scrolled down here was that it was really, really slimmed down. The Dawn theme was actually full of stuff and the Horizon theme now makes use of snippets to just put all the chaos inside of these snippets, so we don't clutter the actual theme liquid. Other than that it's just pretty basic so I really like the cleanness here. We can then go to the sections. As I mentioned before, the sections in the Horizon theme are basically acting as wrappers. So there are not a lot of sections. If we jump in the sections, we basically see that these are just wrappers for the blocks that get rendered inside of them. So we don't have this big section clutter, we only have a couple of main sections and then they make use of the theme blocks. Then I also saw that we have an underscore blocks dot liquid section. This is weird for me because I never saw an underscore before it. When we go to the documentation for the AI-generated theme blocks, we can see that there's a wrapper section.",
+   "label": "Usage Scenarios",
+   "visual": "A full-screen view of a code editor, specifically VS Code, shows the file structure and liquid code for the Horizon theme. The user navigates through different folders and files, like \"layout,\" \"sections,\" and \"blocks.\" The man's small circular inset is visible in the bottom-right corner, and he points to specific lines of code as he talks. Lighting is even and highlights the text on the screen clearly.",
+   "shot_type": "Wide Shot",
+   "scene_number": 16,
+   "timestamp_end": "7:23",
+   "timestamp_start": "6:10"
+  },
+  {
+   "audio": "And the wrapper section is basically just for AI-generated theme blocks, not with the theme blocks generator but rather when you use Sidekick. When we go back to the Horizon theme, we on the one hand can create AI blocks in here with the adding a block or we can open Sidekick, which is basically the AI chat that Shopify has. And here we can also ask Sidekick to create something for us. For example, I can say create an image with text block I can use in my theme editor. And then it gives me a link. When I click this link, it redirects me to a generate block dialog and then I can just click this. And now it basically does the same thing with generating an AI block yourself. And when he's done we can click save and this block is now wrapped by a section. So it's not the custom section but rather the section. One is used to just create your own custom section, the other one is used for Sidekick.",
+   "label": "Usage Scenarios",
+   "visual": "The screen shows a split view: one side has the Shopify theme documentation, and the other side shows the editor. The user interacts with the AI assistant \"Sidekick\" to generate a new block. The cursor clicks on a link provided by Sidekick, which opens a generation dialog in the editor. The man's small inset is in the corner, and he continues to explain the difference between sections. The background lighting is still neutral and bright.",
+   "shot_type": "Wide Shot",
+   "scene_number": 17,
+   "timestamp_end": "8:16",
+   "timestamp_start": "7:23"
+  },
+  {
+   "audio": "To show you the differences, I will just start my theme server and on the underscore block section I will write this is for sidekick and the normal custom section is this section file. Here we can say this is the normal AI block section. And when we preview this now, we can see that this is the normally AI block section, also this but the sidekick one is this one. This is super important to know because then you are more flexible in your layout decisions when using theme blocks or Sidekick. What I also saw in the section settings and the block settings of course that they make a use of the new visible if setting. So you can show settings depending on conditions and this cleans up a lot of clutter. So when we click on the custom section and for example here on the background media we click image, then there are more settings suddenly and on video they are different settings. And the last thing I recognized is that all the CSS gets now wrapped in style sheets on the section itself, which is super smart because we come to this later but we can see that we nearly have no CSS files and everything is saved in the sections themselves. And by using the style sheet tag you even get rid of duplicates in the styles because when we go to the documentation for the style sheet tag, it states bundled assets are only injected once for each section, block, or snippet file, not for each instance of that file.",
+   "label": "Problem Solving",
+   "visual": "The code editor shows a demonstration of the different sections by adding text like \"This is for sidekick\" and \"This is the normal AI Block section.\" The user then previews these changes in the browser. The user explores the conditional settings using the \"visible_if\" tag in the theme code. The screen shows a variety of CSS and stylesheet tags within the section files. The man's circular inset remains at the bottom right, and he points at the screen while he speaks.",
+   "shot_type": "Wide Shot",
+   "scene_number": 18,
+   "timestamp_end": "9:35",
+   "timestamp_start": "8:16"
+  },
+  {
+   "audio": "Just be aware that liquid isn't rendered inside of style sheets, so you can for example not use conditionals inside of the style sheet tag. For this case you would need to use a normal style tag. Okay, this is all for the sections, we can now go to snippets and here the first thing I saw it is super modular with the snippets. We have a lot of snippets, there's less standalone code and it's not only elements that get wrapped in snippets, we also have utilities and functionality in snippets. For example, we can just create a bento grid by using a snippet, or we just have size style settings inside of a snippet that we can render on an element. Then of course we have simple components, for example, just a button or a background image, so it's really, really modular and component-based what they are doing here and I really like it. But for developers, it's also kind of complex and intriguing because there's a lot of nesting going on, so you definitely have to work into this. What they also doing is they are using the new doc tag to describe the functionality of the snippets which really helps with using and understanding them. Then what we saw in the theme liquid that we have these snippets, we basically removed all the clutter from the head tag which is super awesome. So you can see all the styles, all the font thingies are inside here. And there's specifically one snippet that caught my attention. This is the scripts liquid and here we have some kind of import map and all the JS rendered in here. We will see what this does later. Let's first go over the CSS again. I mean I said it before but we have only three CSS files in the assets folder. Any other CSS is either in the sections or the snippets itself and as I mentioned before wrapped in a style sheet tag this makes a lot of lot of sense. When I look at the CSS itself, it is really, really modern and uses a lot of new stuff that CSS can do now. This nesting for example was only possible with SCSS before, but now it's possible with native CSS. It's really, really modern and I can even learn myself and you should too, so look at the CSS files in this theme, take the learnings and use them yourself.",
+   "label": "Product Information",
+   "visual": "The user explores the \"snippets\" folder in the code editor, showing many small, reusable liquid files. The focus shifts to the \"scripts.liquid\" file and the use of import maps for JavaScript. A variety of JS files are shown, including components and utilities. The man's inset is still in the corner, and he explains the modular structure of the theme. The background elements remain unchanged, and the lighting is clear.",
+   "shot_type": "Wide Shot",
+   "scene_number": 19,
+   "timestamp_end": "11:38",
+   "timestamp_start": "9:35"
+  },
+  {
+   "audio": "Now let's go over the JavaScript files. When we go into the files, we can see that they still have the custom HTML element approach, which I really like. If you don't know what custom HTML elements are, check out my video on them, super important. The JavaScript is just really, really modern and we also have a lot of comments and documentations for all the stuff. Then of course we can see the vast majority of JS files, it is really, really modular like everything else in the Horizon theme and therefore you get a better overview over the stuff. What instantly grabbed my attention was import statements in the JS files. With imports you basically don't have to put everything in one file but you can rather take JS from other files and reuse them. And I showed you the scripts liquid, the section that gets rendered in the head and here we can see that the Horizon theme creates an import map with all the different JS files that they need so we can use them in the JS files themselves. For me this is a really, really big thing because this opens up so much new possibilities. For the imported files, I just mainly found four JS files that are important in this case. First it's the component JS where we are creating a component we are reusing throughout the theme. In the most cases we are not extending classes with HTML elements but rather with a component in here. We also have the utilities JS where we have a lot of utility, for example, formatting money or different functions we can use to make our JavaScript in other files more performant, which is really cool.",
+   "label": "Usage Scenarios",
+   "visual": "The user navigates to the JavaScript files in the theme. The screen shows custom HTML element approaches and modular JS structures. The focus is on the `component.js`, `utilities.js`, and `events.js` files. The man's inset is in the corner, and he uses hand gestures to explain the benefits of these modern development techniques. Lighting and background are consistent with previous scenes.",
+   "shot_type": "Wide Shot",
+   "scene_number": 20,
+   "timestamp_end": "12:40",
+   "timestamp_start": "11:38"
+  },
+  {
+   "audio": "Then of course we have a events JS where all the events are and this is a real game changer. I saw this in other paid themes that we have now a lot of events we can listen for. For example, there's an event variant update where we can listen for throughout the theme, or a cart update. So when we add or remove items from the cart, we can listen for this and take more actions on that. This is high peak developer-friendly and I love seeing that. Then of course we have a section renderer JS. We can use this to render sections and I would definitely use this when you are developing the Horizon theme. The last file that catched my eye is the performance JS. So apparently they implemented some performance analysis tool in here, especially for cart performance. So when I look for this now we can see in all the cart functionality we have this cart performance which measures from events and these events you can read out actually in the console. When we go ahead and open the console, you can go to performance and when we click stuff here we can see that we have events that we can check. But I'm not quite sure why they did that. I cannot tell you more about this, I just saw that it was there. Overall JavaScript high end, super modular, super modern, dig into this for sure.",
+   "label": "Usage Scenarios",
+   "visual": "The browser displays the cart performance tools within the theme's console. The user clicks on various elements in the cart to trigger events, which then appear in the browser's performance monitor. The code for these events is shown in the editor. The man's circular inset is visible in the corner, and he continues to explain the new performance tracking features. Lighting remains soft and even.",
+   "shot_type": "Wide Shot",
+   "scene_number": 21,
+   "timestamp_end": "14:18",
+   "timestamp_start": "12:40"
+  },
+  {
+   "audio": "And now of course for the main feature again, we go into the blocks folder. Basically I don't have to explain how this works because I already did a video on this, check out my video on theme blocks to understand what is going on here. The interesting thing for me is the AI-generated blocks because these are also getting saved inside the block folder and as you can see they are named with AI Gen Block and then a unique number. So it's a little bit hard to see what they're actually for but when we click on it, we can always see the same structure. First we have a doc tag which describes the block itself, first it creates a specific AI Gen ID based on the block ID and then this is used throughout the block. Then we have a style tag with all the style for the block. I just quickly remove the docs so we can see it better. Then here we have the element which the AI wrote and if there's functionality or JavaScript, it takes a script tag with a function that instantly runs and here it also works with custom HTML elements. Then the element gets wrapped in this custom HTML element to give it its functionality. And then of course we have the schema of the block. If you want you can go ahead and edit the code yourself. And that is basically it for the codebase of the Horizon theme. Now I give you three tips on how you can use all of these features to give your clients a good time and maybe make some extra cash. Let's go.",
+   "label": "Call to Action",
+   "visual": "The man is back in a medium close-up, waist-up, centered in the frame. He speaks directly to the camera, using hand gestures and maintaining an enthusiastic tone. Behind him, the white wall and decorations remain as seen in the earlier scenes. He is summarizing his tips for using the new theme's features. The lighting remains neutral and clear, highlighting his expressions.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 22,
+   "timestamp_end": "15:27",
+   "timestamp_start": "14:18"
+  },
+  {
+   "audio": "First tip, upgrade old themes to using AI theme blocks. A lot of your clients will be using old themes that don't use AI theme blocks now.",
+   "label": "Call to Action",
+   "visual": "The man is seen in a medium shot, standing and pointing to a text overlay that says \"HOW TO USE THE CURRENT FEATURES.\" He wears a black hoodie and looks confidently at the camera. The background is the same as the home studio setup. The lighting is bright and crisp, casting soft shadows. The overall color palette remains consistent.",
+   "shot_type": "Medium Shot",
+   "scene_number": 23,
+   "timestamp_end": "15:39",
+   "timestamp_start": "15:27"
+  },
+  {
+   "audio": "Just propose to upgrade them and give them the flexibility they want. And don't be scared that they won't contact you for new sections or blocks again, AI will come anyway if you want or not, so make the best out of it.",
+   "label": "Call to Action",
+   "visual": "The man is back in a medium close-up, speaking directly to the viewer. He gestures with his hands, moving them in a fluid motion to emphasize his point. A split-screen on the right shows the Shopify editor with the text \"1. TIP AI THEME UPGRADE.\" The man maintains an engaging and friendly facial expression. Lighting and background are unchanged.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 24,
+   "timestamp_end": "15:59",
+   "timestamp_start": "15:39"
+  },
+  {
+   "audio": "Second tip, build a custom page builder for your clients. You saw what you can do with the Horizon theme blocks. Go ahead, study them, create your own and implement these into your client's themes. Because like I said before, a lot of old themes won't have this feature now.",
+   "label": "Call to Action",
+   "visual": "The man is shown from the chest up, gesturing toward the viewer. On the right side, the screen shows the text \"2. TIP CUSTOM PAGE BUILDER.\" A video demonstration shows the user adding blocks to a Shopify theme. He maintains a focused look and uses precise hand gestures to direct the viewer's attention to the demonstration. Lighting and color grading remain consistent.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 25,
+   "timestamp_end": "16:14",
+   "timestamp_start": "15:59"
+  },
+  {
+   "audio": "Third tip, create a discount input in the cart for your clients. As you saw before, the Horizon now offers a discount input in the cart. With this you can add a discount from the cart and not just the checkout. Just study the functionality in the Horizon theme, take it and put it in the theme of your client. This is a huge conversion optimization and your client will be really happy about this. And if you're more curious about this feature, just go ahead and visit the Shopify documentation about the cart API. There you can see that they added an update discounts for the update JS endpoint.",
+   "label": "Call to Action",
+   "visual": "The man is back to speaking to the camera in a medium close-up shot. On the right, the screen shows the text \"3. TIP CART DISCOUNT INPUT\" and a demonstration of adding a discount code in a shopping cart. He maintains a positive expression and points toward the screen. The background wall and microphone are clearly visible. The lighting is bright and warm.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 26,
+   "timestamp_end": "16:45",
+   "timestamp_start": "16:14"
+  },
+  {
+   "audio": "And watch out of course because I will release a whole video guide on the cart API soon. Subscribe if you don't want to miss this. That was it for the video. I hope I could teach you something about the Horizon theme, how to use it, what it's capable of and what it teaches us. So now go and learn for yourself and use the concepts for your own. As always I would be really happy if you would subscribe to my channel because it take a lot of time creating these videos to teach you something. Also check out my Discord community where I try to build a community solely for Shopify developer. We talk a lot about Shopify development, help each other solve our problems and I even post freebies and tips and tricks from time to time. Lastly I want to tell you that I work on a Shopify academy where I want to teach you how to become a Shopify developer or at least better at it. If you want to learn more in depth about Shopify development, go check out the link in the description and I will let you know when I launch the academy. See you next time. Bye bye.",
+   "label": "Call to Action",
+   "visual": "The man concludes the video in a medium close-up shot, looking directly at the camera. He smiles and points to a text overlay that says \"SUBSCRIBE.\" The screen then transitions to showing his Discord community and his Shopify Academy website. The man remains enthusiastic and engages with the viewer until the final frame. The lighting and overall scene details are consistent with the entire video.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 27,
+   "timestamp_end": "17:49",
+   "timestamp_start": "16:45"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:58.874840Z",
+ "updated_at": "2026-10-03T07:41:09.091296Z"
+}
