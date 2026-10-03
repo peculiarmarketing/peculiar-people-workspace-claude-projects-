@@ -29,3 +29,8 @@ Local files: no full theme is in the repos. `temple-product-generator/theme/` ho
 - `sections/custom-liquid.liquid` exists with presets (Shopify's standard "Custom Liquid" section).
 - Shrine's own block code uses `visible_if`, scoped selectors like `#ContentContainer-{{ block.id }}`, inline `<style>` with Liquid, and `!important` in places. Shrine's block schemas use plain English labels in some files and `t:` keys in others.
 - The live theme does NOT contain `pp-garment-anatomy`, `pp-temple-marquee` or `pp-founder`; those are on the unpublished "Claude Code V2" theme per temple-product-generator/theme/README.md.
+
+## Color and type settings (config/settings_schema.json, live theme)
+- Shrine uses the older select-based color schemes, not `color_scheme_group`. Global settings such as `card_color_scheme` are `select` settings with options `accent-1`, `accent-2`, `background-1`, `background-2`, `inverse`. Color values are separate `color` settings: `colors_solid_button_labels`, `colors_accent_1`, `colors_accent_2`, `colors_text`, `colors_outline_button_labels`, `colors_background_1`, `colors_background_2` (schema defaults shown; the store's actual values live in config/settings_data.json, which was not read).
+- No `color_scheme_group` setting exists, so per shopify.dev a `color_scheme` input setting in a new section would return nil on this theme.
+- Fonts: `type_header_font` and `type_body_font` are `font_picker` settings.
