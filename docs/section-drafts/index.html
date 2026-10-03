@@ -62,7 +62,7 @@ button[aria-pressed="true"] { border-color: var(--orange); color: var(--orange);
 .zoom-track { height: 340vh; position: relative; }
 .zoom-sticky { position: sticky; top: env(safe-area-inset-top, 0px); height: min(88vh, 720px); }
 .zoom-sticky .stage { height: 100%; }
-.zoom-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 47%; will-change: transform; }
+.zoom-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 48%; will-change: transform; }
 .zoom-macro { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity, transform; }
 .zoom-text { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 4vw, 40px); display: grid; gap: 14px; background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0)); }
 .zoom-text .line-big { min-height: 2.4em; transition: opacity .5s ease, transform .5s ease; }
@@ -79,11 +79,13 @@ button[aria-pressed="true"] { border-color: var(--orange); color: var(--orange);
 .draw-stage.printed .draw-fabric { opacity: 1; transform: scale(1); }
 .draw-paper { position: absolute; inset: 0; background: #f4f3ef; transition: opacity 1.6s ease; }
 .draw-stage.printed .draw-paper { opacity: 0; }
-.draw-svg { position: absolute; left: 50%; top: 46%; width: min(56%, 360px); transform: translate(-50%, -50%); overflow: visible; }
+.draw-art { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(50%, 330px); display: grid; gap: 14px; justify-items: center; }
+.draw-svg { width: 100%; height: auto; overflow: visible; display: block; }
+.draw-pick { position: absolute; right: clamp(12px, 3vw, 28px); bottom: clamp(12px, 3vw, 28px); display: flex; gap: 6px; z-index: 2; }
+.draw-pick button { background: rgba(8,9,11,.6); }
 .draw-svg path { fill: none; stroke: #16181d; stroke-linecap: round; stroke-linejoin: round; transition: stroke 1.6s ease; }
 .draw-stage.printed .draw-svg path { stroke: #f7f6f2; }
-.draw-city { position: absolute; left: 0; right: 0; top: calc(46% + min(31vw, 205px)); text-align: center; font-family: var(--display); font-weight: 600; letter-spacing: 0.18em; font-size: clamp(0.6rem, 1.6vw, 0.82rem); color: #16181d; transition: color 1.6s ease; }
-@media (min-width: 760px) { .draw-city { top: calc(46% + 205px); } }
+.draw-city { text-align: center; min-height: 1.4em; font-family: var(--display); font-weight: 600; letter-spacing: 0.18em; font-size: clamp(0.6rem, 1.6vw, 0.82rem); color: #16181d; transition: color 1.6s ease; }
 .draw-stage.printed .draw-city { color: #f7f6f2; }
 .draw-copy { position: absolute; left: clamp(16px, 4vw, 36px); top: clamp(16px, 4vw, 36px); display: grid; gap: 6px; max-width: 22ch; }
 .draw-copy .line-big { color: #16181d; text-shadow: none; font-size: clamp(1.1rem, 2.6vw, 1.7rem); transition: color 1.6s ease, opacity .6s ease; }
@@ -124,7 +126,7 @@ button[aria-pressed="true"] { border-color: var(--orange); color: var(--orange);
 .tile .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); transition: transform 7s ease-out; }
 .band.on .tile .bg { transform: scale(1.14); }
 .tile:hover .bg { transform: scale(1.22); transition-duration: 1.2s; }
-.tile .bg.print { background-image: url("img/tee-black-back.jpg"); background-size: 560%; background-position: 50.5% 44%; }
+.tile .bg.print { background-image: url("img/nauvoo-tee-black.jpg"); background-size: 520%; background-position: 50% 46%; }
 .tile .bg.knit { background-image: url("img/jersey-dark.jpg"); }
 .tile .bg.fleece { background-image: url("img/fleece-dark-demo.jpg"); }
 .tile .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; background: linear-gradient(to top, rgba(0,0,0,.8), transparent); display: grid; gap: 4px; }
@@ -133,7 +135,7 @@ button[aria-pressed="true"] { border-color: var(--orange); color: var(--orange);
 /* 6. loupe */
 .loupe-stage { aspect-ratio: 1 / 1; max-width: 640px; width: 100%; margin-inline: auto; cursor: none; touch-action: none; }
 .loupe-stage img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
-.lens { position: absolute; width: clamp(120px, 30%, 200px); aspect-ratio: 1; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); box-shadow: 0 10px 40px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.4); background-image: url("img/tee-black-back.jpg"); background-repeat: no-repeat; pointer-events: none; transform: translate(-50%, -50%); }
+.lens { position: absolute; width: clamp(120px, 30%, 200px); aspect-ratio: 1; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); box-shadow: 0 10px 40px rgba(0,0,0,.6), inset 0 0 0 1px rgba(0,0,0,.4); background-image: url("img/nauvoo-tee-black.jpg"); background-repeat: no-repeat; pointer-events: none; transform: translate(-50%, -50%); }
 .loupe-cap { position: absolute; left: 16px; bottom: 14px; }
 
 /* plan panels */
@@ -173,7 +175,7 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
   <header class="intro">
     <div class="eyebrow">Peculiar People · section drafts · 3 Oct 2026</div>
     <h1>Quality, <b>up close</b></h1>
-    <p class="lede">Six ways to show that the garment is premium, each one tied back to why the shirt exists. Every demo below runs live. The photos are stand-ins: real Tapstitch close-ups of your blanks and your Salt Lake on-model shot. The final images come from kie.ai or Higgsfield using the prompts at the bottom.</p>
+    <p class="lede">Six ways to show that the garment is premium, each one tied back to why the shirt exists. Every demo below runs live. The photos are stand-ins: real Tapstitch close-ups of your blanks and your live Saratoga Springs and Nauvoo product photos. The final images come from kie.ai or Higgsfield using the prompts at the bottom.</p>
     <div class="facts" aria-label="Facts the overlays are allowed to use">
       <span class="chip">Tee 260 GSM · 7.7 oz</span>
       <span class="chip">Hoodie + crew 350 GSM · 10.3 oz</span>
@@ -204,7 +206,7 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
     <div class="zoom-track" id="zoomTrack">
       <div class="zoom-sticky">
         <div class="stage" id="zoomStage">
-          <img class="zoom-img" id="zoomImg" src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee, back view, on a model">
+          <img class="zoom-img" id="zoomImg" src="img/saratoga-tee-black.jpg" alt="Black Saratoga Springs Temple tee, back view, on a model">
           <img class="zoom-macro" id="zoomMacro" src="img/jersey-dark.jpg" alt="Close-up of black cotton jersey">
           <div class="dots" id="zoomDots" aria-label="Jump to stop"></div>
           <div class="zoom-text" aria-live="polite">
@@ -223,10 +225,10 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
           <li class="quote">Look closer.</li>
           <li class="quote">The whole temple, up to 12 inches across the back.</li>
           <li class="quote">260 GSM cotton. You'll notice the weight the first time you put it on.</li>
-          <li class="quote">SALT LAKE CITY, UTAH. Under every temple, the city it actually stands in.</li>
+          <li class="quote">SARATOGA SPRINGS, UTAH. Under every temple, the city it actually stands in.</li>
         </ul>
       </div>
-      <div><h3>Images needed</h3><ul><li>One full garment shot, back view, with the real print composited (you have these in final-set).</li><li>One jersey close-up in black for the deep zoom (prompt P2).</li></ul></div>
+      <div><h3>Images needed</h3><ul><li>One full garment shot, back view, with the real print composited. Your live product photos already are.</li><li>One jersey close-up in black for the deep zoom (prompt P2).</li></ul></div>
       <div><h3>Owner settings</h3><ul><li>Garment image, macro image</li><li>Four lines of text, each with optional spec tags</li><li>Zoom target point (x and y percent) for each stop</li><li>Scroll length: short, medium, long</li></ul></div>
       <div><h3>How it's built</h3><p>One <code>pp-scroll-zoom</code> section. A small script maps scroll position to scale and crossfade. It doesn't depend on newer browser scroll features, so it behaves the same in Safari and Chrome. Reduced motion shows the four stops as a static strip.</p></div>
       <div><h3>Effort and risk</h3><p><span class="tag">Medium</span> The zoom only looks premium if the garment image is at least 2048px and sharp around the print. A soft source shows mush at 3x.</p></div>
@@ -243,8 +245,14 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
     <div class="stage draw-stage" id="drawStage">
       <img class="draw-fabric" src="img/jersey-dark.jpg" alt="">
       <div class="draw-paper"></div>
-      <svg class="draw-svg" id="drawSvg" role="img" aria-label="Line drawing of the Salt Lake Temple"></svg>
-      <div class="draw-city" id="drawCity" aria-hidden="true"></div>
+      <div class="draw-art">
+        <svg class="draw-svg" id="drawSvg" role="img" aria-label="Line drawing of the Saratoga Springs Temple"></svg>
+        <div class="draw-city" id="drawCity" aria-hidden="true"></div>
+      </div>
+      <div class="draw-pick" role="group" aria-label="Temple">
+        <button type="button" data-temple="saratoga-springs" aria-pressed="true">Saratoga Springs</button>
+        <button type="button" data-temple="nauvoo" aria-pressed="false">Nauvoo</button>
+      </div>
       <div class="draw-copy">
         <div class="line-big l1">Every temple starts as a line drawing.</div>
         <div class="line-big l2">Then it goes onto heavy cotton, line for line.</div>
@@ -269,17 +277,17 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
       <p>Thin leader lines draw out from the garment, and spec tags snap in at the end of each. It's a technical, engineered look, kept quiet in white with a single orange dot.</p>
     </div>
     <div class="stage spec-stage" id="specStage">
-      <img src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee with spec callouts">
+      <img src="img/nauvoo-hoodie-black.jpg" alt="Black Nauvoo Temple hoodie with spec callouts">
       <svg class="spec-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="50" y1="40" x2="70" y2="24"/><circle cx="50" cy="40" r=".8"/>
-        <line x1="50" y1="62" x2="70" y2="70"/><circle cx="50" cy="62" r=".8"/>
-        <line x1="38" y1="70" x2="16" y2="58"/><circle cx="38" cy="70" r=".8"/>
-        <line x1="45" y1="79" x2="16" y2="86"/><circle cx="45" cy="79" r=".8"/>
+        <line x1="50" y1="41" x2="70" y2="24"/><circle cx="50" cy="41" r=".8"/>
+        <line x1="50" y1="65.5" x2="70" y2="72"/><circle cx="50" cy="65.5" r=".8"/>
+        <line x1="38" y1="56" x2="16" y2="50"/><circle cx="38" cy="56" r=".8"/>
+        <line x1="45" y1="75" x2="16" y2="80"/><circle cx="45" cy="75" r=".8"/>
       </svg>
       <div class="spec-label r" style="left:71%;top:24%"><span class="cap">Up to 12 in across</span><span class="sub">The full temple, centred on the back.</span></div>
-      <div class="spec-label r" style="left:71%;top:70%"><span class="cap">City line</span><span class="sub">The city the temple stands in.</span></div>
-      <div class="spec-label l" style="right:85%;top:58%"><span class="cap">260 GSM · 7.7 oz</span><span class="sub">Heavy cotton jersey.</span></div>
-      <div class="spec-label l" style="right:85%;top:86%"><span class="cap">Printed in the USA</span><span class="sub">Ships in 4 to 7 days.</span></div>
+      <div class="spec-label r" style="left:71%;top:72%"><span class="cap">City line</span><span class="sub">Nauvoo, Illinois. The city the temple stands in.</span></div>
+      <div class="spec-label l" style="right:85%;top:50%"><span class="cap">350 GSM · 10.3 oz</span><span class="sub">Heavyweight fleece.</span></div>
+      <div class="spec-label l" style="right:85%;top:80%"><span class="cap">Printed in the USA</span><span class="sub">Ships in 4 to 7 days.</span></div>
     </div>
     <div class="controls"><button type="button" id="specReplay">Replay</button><span class="hint">Callout positions are draft estimates over this one photo.</span></div>
     <div class="plan">
@@ -346,7 +354,7 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
       <p>A magnifying lens the shopper drags across the print. On a phone it follows the finger. It's interactive, so people choose to look closer instead of being shown.</p>
     </div>
     <div class="stage loupe-stage" id="loupeStage">
-      <img src="img/tee-black-back.jpg" alt="Black Salt Lake Temple tee. Drag to magnify the print." draggable="false">
+      <img src="img/nauvoo-tee-black.jpg" alt="Black Nauvoo Temple tee. Drag to magnify the print." draggable="false">
       <div class="lens" id="lens" aria-hidden="true"></div>
       <div class="loupe-cap cap">Drag across the print</div>
     </div>
@@ -390,7 +398,7 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
   <footer class="foot">
     <h3>Next step</h3>
     <p>Pick the drafts you want. I'd start with 5 (feel band) and 2 (drawing to fabric): low effort, mostly built on what exists, and both work with today's images while the new ones are made. Each picked draft becomes a <code>pp-</code> section file for you to upload, written to the rules in docs/shopify-custom-sections-research.md.</p>
-    <p>Sources: BRAND.md sections 5, 7, 8 and 11; temple-product-generator garment configs and swatches.json; Tapstitch fabric close-ups and the Salt Lake final-set image from artifacts/photo-mockup-spike.</p>
+    <p>Sources: BRAND.md sections 5, 7, 8 and 11; temple-product-generator garment configs and swatches.json; Tapstitch fabric close-ups from artifacts/photo-mockup-spike; the Saratoga Springs tee, Nauvoo tee and Nauvoo hoodie on-model photos from the live store.</p>
   </footer>
 </div>
 
@@ -403,10 +411,10 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
 
   /* ---------- 1. scroll zoom ---------- */
   const stops = [
-    { at: 0.00, scale: 1.0, ox: 50, oy: 47, macro: 0, text: 'Look closer.', chips: [] },
-    { at: 0.30, scale: 2.6, ox: 50.5, oy: 49.5, macro: 0, text: 'The whole temple, up to 12 inches across the back.', chips: ['Up to 12 in across'] },
-    { at: 0.62, scale: 5.5, ox: 44, oy: 50, macro: 1, text: "260 GSM cotton. You'll notice the weight the first time you put it on.", chips: ['260 GSM', '7.7 oz'] },
-    { at: 0.92, scale: 3.4, ox: 50, oy: 70, macro: 0, text: 'SALT LAKE CITY, UTAH. Under every temple, the city it actually stands in.', chips: ['Real city line'] },
+    { at: 0.00, scale: 1.0, ox: 50, oy: 48, macro: 0, text: 'Look closer.', chips: [] },
+    { at: 0.30, scale: 2.3, ox: 50, oy: 60, macro: 0, text: 'The whole temple, up to 12 inches across the back.', chips: ['Up to 12 in across'] },
+    { at: 0.62, scale: 5.5, ox: 40, oy: 64, macro: 1, text: "260 GSM cotton. You'll notice the weight the first time you put it on.", chips: ['260 GSM', '7.7 oz'] },
+    { at: 0.92, scale: 3.4, ox: 50, oy: 69, macro: 0, text: 'SARATOGA SPRINGS, UTAH. Under every temple, the city it actually stands in.', chips: ['Real city line'] },
   ];
   const track = document.getElementById('zoomTrack');
   const img = document.getElementById('zoomImg');
@@ -467,23 +475,45 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
   const city = document.getElementById('drawCity');
   let paths = [], drawToken = 0, drawData = null;
   const NS = 'http://www.w3.org/2000/svg';
-  fetch('salt-lake-strokes.json').then((r) => r.json()).then((d) => {
-    drawData = d;
-    const [x0, y0, x1, y1] = d.box;
-    svg.setAttribute('viewBox', [x0, y0, x1 - x0, y1 - y0].join(' '));
-    d.strokes.forEach((s, k) => {
-      const p = document.createElementNS(NS, 'path');
-      p.setAttribute('d', s);
-      p.setAttribute('stroke-width', (d.widths && d.widths[k]) || d.penWidth);
-      svg.appendChild(p);
-    });
-    paths = [...svg.querySelectorAll('path')];
-    paths.forEach((p) => { const L = p.getTotalLength(); p.dataset.len = L; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
-    if (REDUCED) { finishDraw(); } else { observeOnce(drawStage, runDraw); }
-  }).catch(() => { city.textContent = 'SALT LAKE CITY, UTAH'; drawStage.classList.add('printed'); });
+  const temples = { 'saratoga-springs': 'Saratoga Springs Temple', nauvoo: 'Nauvoo Temple' };
+  const loaded = {};
+  const pickBtns = [...document.querySelectorAll('.draw-pick button')];
+  let seen = false;
+  function loadTemple(slug) {
+    if (!loaded[slug]) loaded[slug] = fetch(slug + '-strokes.json').then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    return loaded[slug];
+  }
+  function showTemple(slug, animate) {
+    drawToken++;
+    pickBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.temple === slug)));
+    svg.setAttribute('aria-label', 'Line drawing of the ' + temples[slug]);
+    return loadTemple(slug).then((d) => {
+      drawData = d;
+      const [x0, y0, x1, y1] = d.box;
+      svg.setAttribute('viewBox', [x0, y0, x1 - x0, y1 - y0].join(' '));
+      svg.textContent = '';
+      d.strokes.forEach((s, k) => {
+        const p = document.createElementNS(NS, 'path');
+        p.setAttribute('d', s);
+        p.setAttribute('stroke-width', (d.widths && d.widths[k]) || d.penWidth);
+        svg.appendChild(p);
+      });
+      paths = [...svg.querySelectorAll('path')];
+      paths.forEach((p) => { const L = p.getTotalLength(); p.dataset.len = L; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+      if (REDUCED || !animate) finishDraw(); else runDraw();
+    }).catch(() => { city.textContent = ''; drawStage.classList.add('printed'); });
+  }
+  pickBtns.forEach((b) => b.addEventListener('click', () => showTemple(b.dataset.temple, seen)));
+  showTemple('saratoga-springs', false).then(() => {
+    if (REDUCED) return;
+    drawStage.classList.remove('printed');
+    paths.forEach((p) => { p.style.strokeDashoffset = p.dataset.len; });
+    city.textContent = '';
+    observeOnce(drawStage, () => { seen = true; runDraw(); });
+  });
   function finishDraw() {
     paths.forEach((p) => { p.style.strokeDashoffset = 0; });
-    city.textContent = drawData ? drawData.city : 'SALT LAKE CITY, UTAH';
+    city.textContent = drawData ? drawData.city : '';
     drawStage.classList.add('printed');
   }
   function runDraw() {
@@ -551,7 +581,7 @@ td:first-child { font-family: var(--display); font-weight: 600; white-space: now
   const lstage = document.getElementById('loupeStage');
   const lens = document.getElementById('lens');
   const ZOOM = 3.2;
-  let lx = 0.505, ly = 0.45;
+  let lx = 0.5, ly = 0.46;
   lstage.tabIndex = 0;
   lstage.setAttribute('role', 'img');
   lstage.setAttribute('aria-label', 'Magnifier over the print. Arrow keys move the lens.');
