@@ -1,0 +1,192 @@
+{
+ "id": "5a5e8c50-f259-4115-beca-47afec771cc6",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=rNiw_9OO9ts",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Hey guys, so today I wanted to record a video about how you can start to use Claude Code to code your Shopify site. So this is going to introduce AI-driven development into your workflow which will boost your productivity massively when you are making edits to your Shopify theme.",
+   "label": "Opening Hook",
+   "visual": "A screen recording shows a website interface for an AI coding tool. The website is sleek with a dark mode aesthetic, primarily charcoal grey, black, and orange accents. The center text dynamically changes, cycling through words like 'engineers', 'programmers', 'makers', 'creators', and 'debuggers' in orange. A 'Get Claude Code' button is prominently displayed in the center. Below the main text, there is a simulated terminal interface showing code being executed. The background is a very dark charcoal color with some subtle texture. Lighting appears even as it's a digital screen capture.",
+   "shot_type": "Wide Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:18",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "So the first thing that you guys want to do is if you don't already have a GitHub account set up, you want to navigate yourself to github.com and click this sign up for GitHub button here. Follow their onboarding steps, and then you're going to need to create an SSH key to be able to push to GitHub and whatnot. GitHub at a high level essentially tracks version history on your codebase, so it makes it so you if you make an error you can easily go back and also it keeps a remote copy of your theme, that way if your theme for whatever reason on your machine gets deleted, you can always pull it down from GitHub.",
+   "label": "Product Information",
+   "visual": "A screen recording of GitHub's homepage. The interface is dark with blue and white accents. A graphic of a stylized cat character with three eyes and cosmic patterns is visible. There are input fields for an email and buttons to sign up or try GitHub Copilot. The cursor moves to a terminal window at the bottom of the screen, highlighting various code snippets. The overall lighting is consistent with a standard computer display. The background is a deep blue and black gradient with abstract cloud shapes.",
+   "shot_type": "Wide Shot",
+   "scene_number": 2,
+   "timestamp_end": "1:03",
+   "timestamp_start": "0:18"
+  },
+  {
+   "audio": "It's free and it's one of the first things that I do when I start working with clients is I download their theme, upload it to GitHub and we connect it through that way. Okay, so the next thing I want you guys to do is you're going to go to your online store's admin and from your admin come here to online store themes. From there, go up to this right-hand corner here, import theme, connect from GitHub. This, if you don't already have your GitHub account connected, should display a prompt to install Shopify's connector for GitHub. You guys want to go ahead and do that.",
+   "label": "Usage Scenarios",
+   "visual": "The screen recording transitions to the Shopify Online Store admin panel. The page displays various theme options, including a primary 'shopify-horizon-main' and several others in a 'Theme library'. The cursor navigates to the 'Import theme' button in the top right, revealing a dropdown menu where it selects 'Connect from GitHub'. A sidebar then appears on the right for connecting a theme, asking for account, repository, and branch selection. The lighting is bright and clean, typical of a web application interface, with a white background and grey elements.",
+   "shot_type": "Wide Shot",
+   "scene_number": 3,
+   "timestamp_end": "1:28",
+   "timestamp_start": "1:03"
+  },
+  {
+   "audio": "Make sure inside that app you have all repositories set up. That's going to make it a lot easier for the purposes of this tutorial to follow along.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording showing the Shopify GitHub app's settings on GitHub. The page lists permissions for reading and writing access. Under 'Repository access', a radio button for 'All repositories' is selected. There's a 'Danger zone' section at the bottom with options to suspend or uninstall. The cursor lingers near the repository access settings. The layout is clean, with a white background, grey text, and subtle green accents for successful settings.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "1:36",
+   "timestamp_start": "1:28"
+  },
+  {
+   "audio": "Okay, so you can see here that now I've downloaded and unzipped these theme files. And in the next step of this tutorial, we're going to make sure that you guys have the Shopify CLI downloaded and implemented on your machine so that you can make the necessary connection between this, these theme files and Shopify.",
+   "label": "Usage Scenarios",
+   "visual": "The screen recording returns to the Shopify admin panel, but a macOS Finder window is superimposed over it. The Finder window shows a directory with several folders like 'assets', 'blocks', 'config', 'layout', 'locales', 'sections', 'snippets', and 'templates'. The cursor moves within this window, highlighting the file structure. The lighting remains bright, with the white background of the Shopify admin contrasting with the slightly grey window of the Finder interface.",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "1:56",
+   "timestamp_start": "1:36"
+  },
+  {
+   "audio": "Okay, so I want you guys to navigate to shopify.dev/docs/api/shopify-cli. This is going to walk you through implementing Shopify CLI. High level overview here is we can use npm if you already have that installed. If you don't, just find a tutorial for how to install npm. There should be a bunch on YouTube or somewhere else online. Enter that command in your terminal. Let me go ahead and blow up my terminal a little bit for you guys and it will install Shopify CLI. You can make sure that Shopify CLI is implemented properly by typing shopify help or and you should get these types of outputs showing up, or you can type shopify excuse me shopify version here and it will give you the version number that Shopify is currently on.",
+   "label": "Product Selling Points",
+   "visual": "A screen recording shows the Shopify developer documentation for the Shopify CLI. The page is dark with a mix of green, white, and teal text. Several code blocks show installation commands like 'npm install -g @shopify/cli@latest'. The cursor moves to highlight different parts of the instructions. A terminal window is then opened, and the command is pasted and executed, showing progress as packages are added. The final output in the terminal shows the Shopify CLI version. Lighting is consistently dark mode, with high contrast between text and background.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "2:50",
+   "timestamp_start": "1:56"
+  },
+  {
+   "audio": "Okay, from here let's make sure that the connector is working completely by going into whatever directory our theme files are in, so I'm going to go into that directory and now you should see that we're actually in this directory now and what I want to do to preview this theme is I type shopify theme dev --store let me let me full screen this really quickly for you guys. Shopify theme dev --store and then I want to enter my Shopify my Shopify title URL here, so what I want to do is you want this after the admin.shopify.com/store there should be this URL slug here, you want to copy that, paste that in here and type .myshopify.com after that. What that will do is it will spin up a local preview of this Shopify theme. So you can see that right now it's building it and if we hit t here...",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording shows a terminal window over the Shopify admin panel. In the terminal, several commands are entered to navigate directories and start the Shopify theme development server. The command 'shopify theme dev --store' followed by a store URL is typed. A green success message appears, providing local and theme preview URLs. The cursor highlights these links. The overall look is technical, with a black terminal background and white/green text overlaid on the white Shopify interface.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "4:02",
+   "timestamp_start": "2:50"
+  },
+  {
+   "audio": "...it will take us to a local copy a local hosted copy of the Shopify theme where we can preview our changes live. And you can see that it's uploading everything here.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording shows a web browser displaying a Shopify store preview. The storefront features a large banner image of three people outdoors, with the text 'Browse our latest products' and a 'Shop all' button. Below the banner, a 'Products' section shows various items like a gift card, ski wax, and multiple snowboards. The cursor scrolls down the page, highlighting the product grid. The lighting is bright and clear, showcasing the clean design of the store theme with vibrant product images and a white background.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "4:12",
+   "timestamp_start": "4:02"
+  },
+  {
+   "audio": "So I'm going to quit out of that now and the next thing that we want to do is integrate this theme with GitHub. So I'm going to type git init here that's going to initialize an empty repository, I'm going to git add star to add everything, git commit and type initial commit here or initial. And from there now we need to actually go into GitHub and create this repository.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording shows a terminal window showing log entries of GET requests as the theme preview loads. The cursor then enters a series of Git commands: 'git init', 'git add *', and 'git commit -m \"initial\"'. A long list of created files follows the commit command. The interface is primarily dark with green and white text on a black background. Lighting is uniform from the digital display.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "4:44",
+   "timestamp_start": "4:12"
+  },
+  {
+   "audio": "So once inside GitHub there should be in the left hand corner there should be a button that prompts you to create a new repository. Uh I'm going to type you know test shopify theme here or something whatever repository you name you want just type that here. Your visibility you want to set to private unless you want other people to be able to see this theme or the edits that you make to this theme, hit create repository here.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording showing the GitHub 'Create a new repository' page. The cursor fills in the repository name as 'test-shopify-theme', sets the visibility to 'Private', and clicks the 'Create repository' button. The lighting is dark mode, with green and white accents. The background is a very dark charcoal grey.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "5:10",
+   "timestamp_start": "4:44"
+  },
+  {
+   "audio": "Now it is going to walk you through either using HTTPS or SSH to set up this Git repository. If you haven't set up an SSH key you can use you can use HTTPS here but SSH is preferred. We have an existing repository here so we're going to push that from the command line. So we just want to add we just want to copy paste all of these commands here from our terminal...",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording showing the repository setup page on GitHub. Several command options are shown for pushing an existing repository. The cursor highlights the 'SSH' button for the repository URL, then moves to a terminal window placed next to the browser. The terminal is dark, with white and blue text. The lighting is digital and even, showing two windows side-by-side.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "5:35",
+   "timestamp_start": "5:10"
+  },
+  {
+   "audio": "...and hit enter and let's make sure that that goes through. So it's pushing our single commit up to the main branch here.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording shows a terminal window as the user executes git commands to link and push to the GitHub repository. Progress percentages for object counting and compression are visible. The final line shows that the branch was pushed to the main branch on GitHub. The lighting is uniform from the dark mode interface, with text appearing in white and green.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "5:45",
+   "timestamp_start": "5:35"
+  },
+  {
+   "audio": "And you can see that it has integrated these changes, it's pushed them onto our GitHub repository.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording showing the updated GitHub repository page, now populated with various folders and files like 'assets', 'blocks', and 'config'. A notification shows the commit was made '1 minute ago'. The lighting is dark mode, with a clean layout and green/blue accents for folder icons and links.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "5:58",
+   "timestamp_start": "5:45"
+  },
+  {
+   "audio": "And from there we want to connect this GitHub repository to our Shopify store. For that we're going to hit import theme here, connect from GitHub and for the repository we want to type that same uh URL slug here so mine was test shopify theme. I'm going to go ahead hit that hit the main branch or whatever branch you pushed the changes to and from there hit connect. And it will upload the theme.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording back on the Shopify admin themes page. The cursor clicks 'Import theme', then 'Connect from GitHub'. A search field in the right sidebar is used to find the 'test-shopify-theme' repository. Once found, the cursor selects the 'main' branch and clicks 'Connect'. The background is white and clean, with a sidebar for connectivity and a main area showing the theme library.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "6:35",
+   "timestamp_start": "5:58"
+  },
+  {
+   "audio": "Once you're satisfied with the changes and whatnot you can obviously publish this. The amazing thing about having this GitHub connection is now we can use our own tools on our local machine like Claude Code or Cursor or Visual Studio Code or whatever code editor you prefer to make changes to our Shopify theme and it will automatically sync to Shopify and changes that we make through Shopify through the customizer or the code editor here we can pull them down into our local copy of our theme so that they're always synchronized. The other nice thing again this provides you with free theme backups as well as version history so if you end up making some massive change to your store that ends up breaking your theme and you need to roll back or revert it's as simple as a five-minute process of going back to a previous commit.",
+   "label": "Product Selling Points",
+   "visual": "A split-screen recording shows a browser with the Shopify admin on the left and a terminal window on the right. The Shopify admin shows the 'test-shopify-theme' being added. The terminal displays a long list of file creation paths. The lighting is digital, with high contrast between the white browser and the black terminal window. The layout is clean and informative.",
+   "shot_type": "Wide Shot",
+   "scene_number": 15,
+   "timestamp_end": "7:23",
+   "timestamp_start": "6:35"
+  },
+  {
+   "audio": "Okay, from here what I want you guys to do is go ahead and go download Visual Studio Code if you don't already have that downloaded because we are going to use that as a sample code editor. There's a lot of different code editors that you could end up using with Claude Code, but for the purposes of this tutorial we're going to be using Visual Studio Code. So just navigate to code.visualstudio.com and go ahead hit whatever button crops up here it's going to be specific to your machine architecture and whatnot. Walk through downloading it and once you have that, go ahead and open that up.",
+   "label": "Product Information",
+   "visual": "A screen recording shows the Visual Studio Code website. The header reads 'The open source AI code editor'. Below is a button to 'Download for macOS'. A large graphic shows a complex code editor interface with an AI assistant chat window on the right. The cursor scrolls down to show more features like 'Any model for any team'. The lighting is dark mode, with teal and white text on a black background.",
+   "shot_type": "Wide Shot",
+   "scene_number": 16,
+   "timestamp_end": "8:03",
+   "timestamp_start": "7:23"
+  },
+  {
+   "audio": "From here we want to open up the specific repository of the theme that we downloaded before so for me that's going to be here you can just find that in file open and then navigate on your machine to actually find to that repository. What I want you guys to go ahead and do afterwards is go down to your settings extensions here and typing Claude here that is going to open up this Claude Code for VS Code extension here you guys want to go ahead and install that you can see that I already have that installed.",
+   "label": "Usage Scenarios",
+   "visual": "A screen recording showing the Visual Studio Code application. The cursor navigates to the 'Extensions' icon on the left sidebar, searches for 'Claude', and selects 'Claude Code for VS Code'. The extension page shows an 'Install' button and details about the tool. The application is in dark mode with a mix of grey, white, and colorful code highlighting. The lighting is uniform from the screen capture.",
+   "shot_type": "Wide Shot",
+   "scene_number": 17,
+   "timestamp_end": "8:38",
+   "timestamp_start": "8:03"
+  },
+  {
+   "audio": "Okay, so once you have the Claude Code extension installed what you want to do is you want to hit this little orange icon that will bring up the Claude Code chat interface and what you'll notice right now is if I go ahead and you know type anything and hit enter here it's going to let me know that my credit balance is too low because we actually have not logged into our account yet.",
+   "label": "Real Experience",
+   "visual": "A screen recording showing the Visual Studio Code interface with a code file open. An orange AI assistant icon is clicked on the right, opening the Claude Code chat window. The cursor types a query in the chat box. An error message appears stating 'credit balance is too low'. The lighting is dark, with syntax highlighting in various colors like blue, green, and orange. The overall layout is busy but organized.",
+   "shot_type": "Wide Shot",
+   "scene_number": 18,
+   "timestamp_end": "9:04",
+   "timestamp_start": "8:38"
+  },
+  {
+   "audio": "So you want to type /login here and it will prompt you basically to log in one of a few different ways. And so the high-level overview of these different ways is either you can use your claude.ai subscription which is going to actually be like a monthly charge that's sort of a flat fee for using Claude Code or you can use the Anthropic console which is going to allow you to pay on a per-credit sort of usage basis for the API or whatnot. And then finally you can use third-party providers for API keys and do it that way. Choose one of these and sign up and then from there now when you go ahead and open this you can go ahead and begin to start making edits and ask questions about your theme and things like that through Claude Code.",
+   "label": "Product Information",
+   "visual": "A screen recording shows the Claude Code login interface within Visual Studio Code. It provides options to 'Create a subscription' or 'Add/manage credits'. The cursor hovers over these options while the UI shows instructions for logging in. The screen is in dark mode, featuring white text and orange buttons. The background is a very dark charcoal color.",
+   "shot_type": "Wide Shot",
+   "scene_number": 19,
+   "timestamp_end": "10:02",
+   "timestamp_start": "9:04"
+  },
+  {
+   "audio": "Okay guys, so that is how you guys can start to use Claude Code to code your Shopify site. I also have a video on how you can use Cursor as well. Either of these tools are great to start to build in AI-driven development into your theme development for your Shopify store. I would say that you know if you are using these tools properly they can easily 10x the output that you get as far as building new features for themes and whatnot. The one thing obviously to be careful with with using these tools is you don't want to have them 100% replace your critical thinking and your ability to understand how the code works behind the scenes because AI at this iteration still makes tons of mistakes and it makes mistakes in weird ways that you wouldn't necessarily expect so being able to debug it is still a super-super critical skill to possess but let me know if you're having trouble with anything in this video in the comment section below and I will help you as soon as I can. If you got some use out of this video you know leave a like it helps other people find it and I'll see you in the next video guys.",
+   "label": "Call to Action",
+   "visual": "The screen recording returns to the initial website interface shown in the hook. The text continues to cycle through roles in orange. The cursor moves across the screen but doesn't interact with any specific element. The aesthetic is modern and clean with high-contrast text. The lighting is uniform from the digital source.",
+   "shot_type": "Wide Shot",
+   "scene_number": 20,
+   "timestamp_end": "11:15",
+   "timestamp_start": "10:02"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:55.083635Z",
+ "updated_at": "2026-10-03T07:47:50.344586Z"
+}

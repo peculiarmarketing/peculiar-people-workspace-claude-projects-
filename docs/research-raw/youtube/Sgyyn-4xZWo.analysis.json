@@ -1,0 +1,201 @@
+{
+ "id": "b7cd3ccb-081b-4640-830c-b7f8441084cf",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=Sgyyn-4xZWo",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Hey guys, let's convert this section from Figma to Shopify using AI. Let me show you.",
+   "label": "Opening Hook",
+   "visual": "A computer screen shows a web browser with a Shopify store page on the left and Chrome DevTools on the right. The user is browsing a local Shopify store with a large banner. A cursor is visible on the screen, interacting with the browser's developer tools. The lighting is neutral, and the color palette is dominated by the green and white of the website and the dark theme of the developer tools.",
+   "shot_type": "Wide Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:05",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "I have written the command. You can see I am running this Shopify theme code in my local VS Code and I have opened the Claude Code and you can see here we have this section.",
+   "label": "Product Information",
+   "visual": "The view switches between the web browser and VS Code. In VS Code, a tool called 'Claude Code' is open. The user is typing a command to convert a Figma design into a Shopify section. The interface is dark-themed with a text area at the bottom for prompts. The user is in the middle of writing their prompt, asking to create a specific section for both desktop and mobile.",
+   "shot_type": "Wide Shot",
+   "scene_number": 2,
+   "timestamp_end": "0:15",
+   "timestamp_start": "0:05"
+  },
+  {
+   "audio": "So I just need to copy the link of this section from the Figma and I have already written the command. I need to create this section and here is the desktop Figma design.",
+   "label": "Usage Scenarios",
+   "visual": "The screen switches back to Figma, where a hero banner design is displayed. The user opens the 'Share' menu in Figma to copy the link to the specific section. They then return to VS Code and paste the link into the prompt in Claude Code.",
+   "shot_type": "Wide Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:25",
+   "timestamp_start": "0:15"
+  },
+  {
+   "audio": "And I need to copy the mobile design as well. So here we have the mobile design. I want to keep the CSS and JS for this section in the same section Liquid file.",
+   "label": "Product Selling Points",
+   "visual": "The user continues to refine their prompt in VS Code, specifying that they want to keep the CSS and JS in the same Liquid file and add the section to the top of the page in the header group. The terminal at the bottom shows the synchronization of files.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "0:35",
+   "timestamp_start": "0:25"
+  },
+  {
+   "audio": "And also add the section in the top of page in header section group. So it will automatically create the Shopify section at the stylings and add the newly created Shopify section into the header section group.",
+   "label": "Problem Solving",
+   "visual": "The user finishes typing the prompt and hits enter. The AI, Claude Code, begins to process the request, showing a status like 'Accomplishing...' and listing the steps it is taking, such as thinking, reading files, and philosophizing.",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "0:47",
+   "timestamp_start": "0:35"
+  },
+  {
+   "audio": "So let's go to the Shopify. By the way here I am running the local theme. Okay, let me preview.",
+   "label": "Real Experience",
+   "visual": "The AI is processing the design. The screen briefly shows the Shopify admin theme editor loading. The user then goes back to VS Code to check the progress, where Claude Code is asking for permission to proceed with the Figma design context.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "0:58",
+   "timestamp_start": "0:47"
+  },
+  {
+   "audio": "Okay I will just. You can see that I want to proceed with the MCP Figma cloud because we have given the Figma link so it is asking the permission to access the Figma design context. So I'll just preview by pressing the P.",
+   "label": "Real Experience",
+   "visual": "The user grants the permission and the AI continues its work. The screen shows the VS Code terminal with various status updates and permission requests. The user then switches to a Shopify store page to preview the changes.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "1:15",
+   "timestamp_start": "0:58"
+  },
+  {
+   "audio": "Now you can see we are previewing the drafting. So it asked the permission to for the Figma MCP so let me show you. The Figma MCP is here, you can use this command to attach the Figma MCP to your MCP server.",
+   "label": "Product Information",
+   "visual": "A documentation page about Figma MCP is displayed. It shows the command to install the Figma MCP plugin for Claude Code and a step-by-step guide on how to set it up. The user is highlighting the relevant command on the page.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "1:25",
+   "timestamp_start": "1:15"
+  },
+  {
+   "audio": "Or maybe there was also option right here but you can use this one. And now this is asking some other permissions so I'll give the permissions. And also you can see I have installed the Shopify AI Toolkit for the in the cloud.",
+   "label": "Product Information",
+   "visual": "The screen is split between a documentation page and the VS Code terminal. The user is showing the Shopify AI Toolkit plugin page, which explains how to install and use the toolkit. They are highlighting the installation command.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "1:40",
+   "timestamp_start": "1:25"
+  },
+  {
+   "audio": "To let the cloud know about the all the sections assets and all the other Shopify related context so that it can understand it easily.",
+   "label": "Usage Scenarios",
+   "visual": "Back in VS Code, the AI is still processing the request. The user is explaining why these tools are necessary, emphasizing that they provide the AI with the necessary context about Shopify themes and sections.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "1:55",
+   "timestamp_start": "1:40"
+  },
+  {
+   "audio": "So we need these two, the Shopify MCP and the Figma MCP in the cloud and then we can use we can create any of the Shopify section from the Figma to Shopify. So it is taking some of the time and after that once it is created we will be able to see this.",
+   "label": "Real Experience",
+   "visual": "The user switches between documentation pages for Shopify and Figma MCPs. The VS Code terminal shows that the AI is still working, displaying status updates like 'Spelunking' and 'Thinking'.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "2:10",
+   "timestamp_start": "1:55"
+  },
+  {
+   "audio": "Here in the Shopify header group. So this is just the basic section that starts and ends. We need to give it more detail like what happens when the section ends.",
+   "label": "Problem Solving",
+   "visual": "The user shows the Shopify admin theme editor, where a new section is appearing in the header group. Back in VS Code, the AI is completing the task and showing the generated code for the Liquid and JSON files.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "2:25",
+   "timestamp_start": "2:10"
+  },
+  {
+   "audio": "How we can control all these things, we can give it more information. But just to show you that how it works I have chosen this simple example. So I have created the more in-depth. I will be creating more in-depth training to cover all the topics using AI.",
+   "label": "Call to Action",
+   "visual": "The user scrolls through a webpage for a 'Shopify Development with AI' training course. The page details the curriculum, which includes foundations, theme development, Figma to Shopify, and app development. A 'Reserve My Seat' button is visible with a price of $20.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "2:40",
+   "timestamp_start": "2:25"
+  },
+  {
+   "audio": "And we will be covering the Shopify development, theme development, Figma to Shopify with AI with real projects and the app development, Shopify Flow and all the other things in this training. So currently this is under process.",
+   "label": "Call to Action",
+   "visual": "The user continues to scroll through the training page, highlighting the different modules of the course. The design of the page is dark with red and white text, making the information clear and easy to read.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "2:55",
+   "timestamp_start": "2:40"
+  },
+  {
+   "audio": "I will be starting within few days so you can register your spot. The price may go high once we have once we have few of the enrollments. So task being to permission the to create the countdown timer file and you can see it is also writing the header group dot JSON.",
+   "label": "Problem Solving",
+   "visual": "Back in VS Code, the terminal shows some errors related to file uploads. The user explains that it's important to monitor the terminal during development. The AI is still working to finalize the section and its settings.",
+   "shot_type": "Wide Shot",
+   "scene_number": 15,
+   "timestamp_end": "3:05",
+   "timestamp_start": "2:55"
+  },
+  {
+   "audio": "And added the counter announcement bar right here and while you are developing you just need to keep an eye on the terminal. So in the header group dot JSON we need to resave it.",
+   "label": "Problem Solving",
+   "visual": "The user identifies an error in the terminal: the name of the section is too long. They go into the Liquid file and rename the schema to resolve the issue. The AI continues to update the files.",
+   "shot_type": "Wide Shot",
+   "scene_number": 16,
+   "timestamp_end": "3:25",
+   "timestamp_start": "3:05"
+  },
+  {
+   "audio": "Okay this file is present. Ah you can see there is an error this file was not loaded in the theme therefore it was showing the error right here. So let me show you the error is the name is too long in the schema.",
+   "label": "Problem Solving",
+   "visual": "The user points out that the file wasn't loaded in the theme because of the long name. They continue to fix the naming in the Liquid schema and the JSON settings, ensuring the AI can correctly integrate the new section.",
+   "shot_type": "Wide Shot",
+   "scene_number": 17,
+   "timestamp_end": "3:45",
+   "timestamp_start": "3:25"
+  },
+  {
+   "audio": "So once you have the basics clear you will be able you will be able to take full leverage of the AI workflows. But if your basics are not good then you will not be able to take full advantage of the AI. So in this Shopify training we will be covering all the basics and creating the real world projects.",
+   "label": "Usage Scenarios",
+   "visual": "The user demonstrates how having a strong foundation in Shopify development is crucial for troubleshooting and getting the most out of AI tools. They show the Shopify store preview again, where the new header announcement bar with a countdown is now visible.",
+   "shot_type": "Wide Shot",
+   "scene_number": 18,
+   "timestamp_end": "4:05",
+   "timestamp_start": "3:45"
+  },
+  {
+   "audio": "So you can see the error was here and we tracked down and you can see we have the exact same design, exact same design that we had in the Figma. So you can see all the colors and let me show you the mobile. And here we can see it has also created the settings.",
+   "label": "Real Experience",
+   "visual": "The user compares the final Shopify section with the original Figma design, highlighting that the colors and layouts are an exact match. They show the settings for the announcement bar in the Shopify editor, which allows for customization.",
+   "shot_type": "Wide Shot",
+   "scene_number": 19,
+   "timestamp_end": "4:25",
+   "timestamp_start": "4:05"
+  },
+  {
+   "audio": "So it knows like you can control it very effectively. And it is not done yet it is just rechecking the theme check output for the section file. So once it is done we can finalize it. So you can see that how smooth the process is. If we try to create it manually with hand then it will take maybe one hour to 1.5 hour to create this small section.",
+   "label": "Real Experience",
+   "visual": "The user switches between the Shopify store preview and the VS Code terminal. The AI is doing a final theme check. The user emphasizes the speed of the process compared to manual coding.",
+   "shot_type": "Wide Shot",
+   "scene_number": 20,
+   "timestamp_end": "4:45",
+   "timestamp_start": "4:25"
+  },
+  {
+   "audio": "But with the help of Claude Code we just created it within five minutes. Within five minutes. So we will be covering all those topics from basics, theme development, app development, all those stuff in this training. If you are interested you can join. So I hope you liked the video. Please let me know if you have any suggestions or questions. Thank you.",
+   "label": "Call to Action",
+   "visual": "The video ends with the user once again showing the training course webpage and its various modules. The store preview is also visible, showing the successfully created announcement bar.",
+   "shot_type": "Wide Shot",
+   "scene_number": 21,
+   "timestamp_end": "5:00",
+   "timestamp_start": "4:45"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:53.715024Z",
+ "updated_at": "2026-10-03T07:52:59.999498Z"
+}

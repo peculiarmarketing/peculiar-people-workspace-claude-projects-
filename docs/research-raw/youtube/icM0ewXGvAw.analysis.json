@@ -1,0 +1,669 @@
+{
+ "id": "70f2fcd9-433b-440f-a12a-739cd055a4c9",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=icM0ewXGvAw",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "You've probably got a prompt that starts something like this.",
+   "label": "Opening Hook",
+   "visual": "The man, in his late 20s, with short blonde hair and a beard, wearing an olive-green T-shirt, is seated in a dark office. He has a blue and black gaming chair. He is facing the camera, hands on the desk. Behind him is a large microphone and a piece of art with a white circle on it. The light is warm and artificial.",
+   "shot_type": "Medium Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:03",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "you are a senior copywriter with 20 yrs experience who writes all my marketing copy. take a deep breath. this task is very important.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a prompt box with the text, 'you are a senior copywriter with 20 yrs experience who writes all my marketing copy. take a deep breath. this task is very important.' A cursor moves through the text, and there is a 'plus' button, 'chat', and 'cowork' options at the bottom of the box.",
+   "shot_type": "Close-Up",
+   "scene_number": 2,
+   "timestamp_end": "0:09",
+   "timestamp_start": "0:03"
+  },
+  {
+   "audio": "I've written openings like that hundreds of times on my prompts. And someone actually went and tested this. If you give Claude a role or a persona, does it actually perform better?",
+   "label": "Real Experience",
+   "visual": "The man in the olive-green T-shirt is back on screen. He is still seated in his gaming chair, gesturing with his hands as he speaks. The lighting remains warm, and the background is the same as in the first scene.",
+   "shot_type": "Medium Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:17",
+   "timestamp_start": "0:09"
+  },
+  {
+   "audio": "They tested 162 different personas across two and a half thousand prompts.",
+   "label": "Product Selling Points",
+   "visual": "The man is shown from the chest up, gesturing with his hands as he speaks. On the left side of the screen, the text '162 Different Personas' and '2,500 prompts' appears in red and black text.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 4,
+   "timestamp_end": "0:21",
+   "timestamp_start": "0:17"
+  },
+  {
+   "audio": "And the prompts with the persona did no better than just asking the question directly.",
+   "label": "Real Experience",
+   "visual": "The man is back in his chair, gesturing with his hands. The lighting and background remain the same.",
+   "shot_type": "Medium Shot",
+   "scene_number": 5,
+   "timestamp_end": "0:26",
+   "timestamp_start": "0:21"
+  },
+  {
+   "audio": "So all of those additional lines that you've been writing at the top of every prompt for the last year, the model isn't even reading.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the prompt box again with the same text as before. The cursor is moving through the text, highlighting specific parts as the man speaks.",
+   "shot_type": "Close-Up",
+   "scene_number": 6,
+   "timestamp_end": "0:31",
+   "timestamp_start": "0:26"
+  },
+  {
+   "audio": "And the Claude code team basically confirmed it from the inside because recently they've cut their own system prompt by around 80%.",
+   "label": "Real Experience",
+   "visual": "The man is back on screen, talking to the camera. On the right side of the screen, a white box appears with the text 'The new rules of context engineering for Claude 5 generation models'. He gestures towards the box.",
+   "shot_type": "Medium Shot",
+   "scene_number": 7,
+   "timestamp_end": "0:39",
+   "timestamp_start": "0:31"
+  },
+  {
+   "audio": "and now say even that stuffing it with examples is no longer best practice.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a white box with the text 'Now: Design interfaces'. There are two sections below: 'Before' and 'CodeWrite'. The 'Before' section has the text 'a 100 characters', while the 'CodeWrite' section has 'Create now appls a task list [task] [description]'.",
+   "shot_type": "Close-Up",
+   "scene_number": 8,
+   "timestamp_end": "0:44",
+   "timestamp_start": "0:39"
+  },
+  {
+   "audio": "So that's mistake number one of 19 that I'm going to show you today.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, holding up one finger. On the left side of the screen, a red circle with the number 1 and the text 'delete that opener' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 9,
+   "timestamp_end": "0:47",
+   "timestamp_start": "0:44"
+  },
+  {
+   "audio": "Because pretty much every rule you've learned about using Claude has been rewritten in the last six months, and most people are still running on the old rules.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 10,
+   "timestamp_end": "0:54",
+   "timestamp_start": "0:47"
+  },
+  {
+   "audio": "So to finish number one off, you just delete those lines and spend the same words on the three most important things that you have to say in your prompt instead. And these come straight out of Anthropic's own prompting guidance.",
+   "label": "Product Selling Points",
+   "visual": "The man is speaking, gesturing with his hands. He is sitting at his desk with a keyboard visible in front of him.",
+   "shot_type": "Medium Shot",
+   "scene_number": 11,
+   "timestamp_end": "1:05",
+   "timestamp_start": "0:54"
+  },
+  {
+   "audio": "So number one is telling it where to look. So actually we're just going to give it advice on where the additional context it can go and get is.",
+   "label": "Usage Scenarios",
+   "visual": "The screen shows the prompt box again. The text 'where to look = the clients notes are in the onboarding folder' is highlighted in blue.",
+   "shot_type": "Close-Up",
+   "scene_number": 12,
+   "timestamp_end": "1:10",
+   "timestamp_start": "1:05"
+  },
+  {
+   "audio": "Number two is giving it that definition of done or the done criteria. What does it look like when the output is finished? What should the output look like?",
+   "label": "Usage Scenarios",
+   "visual": "The text 'definition of done = a one-page proposal covering their three pain points, with price listed at the bottom' is highlighted in blue.",
+   "shot_type": "Close-Up",
+   "scene_number": 13,
+   "timestamp_end": "1:17",
+   "timestamp_start": "1:10"
+  },
+  {
+   "audio": "And then the third is giving it a self-check. And their docs literally suggest the phrasing 'before you finish, verify your answer against' and then we add whatever our check should be.",
+   "label": "Usage Scenarios",
+   "visual": "The text 'self-check = before you finish, check every number against the notes and flag anything you couldn't back up' is highlighted in blue.",
+   "shot_type": "Close-Up",
+   "scene_number": 14,
+   "timestamp_end": "1:26",
+   "timestamp_start": "1:17"
+  },
+  {
+   "audio": "So say you're getting a client proposal written. Instead of 'you are a senior copywriter with 20 years experience who writes all my marketing copy', we're going to get rid of that. So you write all my marketing copy. We're going to get rid of 'take a deep breath, this is very important'.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the prompt box again. The text 'you are a senior copywriter with 20 yrs experience' is highlighted in blue. The man's hands are visible on the right side, gesturing as he talks.",
+   "shot_type": "Close-Up",
+   "scene_number": 15,
+   "timestamp_end": "1:42",
+   "timestamp_start": "1:26"
+  },
+  {
+   "audio": "And what we're going to say is actually you need to look in the onboarding folder for the client notes. This looks like a one-page proposal covering their three pain points with price listed at the bottom when it's done.",
+   "label": "Usage Scenarios",
+   "visual": "The text 'a one-page proposal covering their three pain points, with price listed at the bottom' is highlighted in blue.",
+   "shot_type": "Close-Up",
+   "scene_number": 16,
+   "timestamp_end": "1:53",
+   "timestamp_start": "1:42"
+  },
+  {
+   "audio": "And before you finish, this is the most important thing to check against: every number against our notes and flag anything that you can't back up.",
+   "label": "Usage Scenarios",
+   "visual": "The text 'every number against the notes and flag anything you couldn't back up' is highlighted in blue.",
+   "shot_type": "Close-Up",
+   "scene_number": 17,
+   "timestamp_end": "2:00",
+   "timestamp_start": "1:53"
+  },
+  {
+   "audio": "So this is roughly the same number of words as we had before, but now every single one of them is going to be used by Claude. Which brings us to number two, which is one more from the Claude code team around your prompts, which is stop writing 'do not do X', like 'do not return this as markdown text'.",
+   "label": "Product Selling Points",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 2 and the text 'do not do this' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 18,
+   "timestamp_end": "2:12",
+   "timestamp_start": "2:00"
+  },
+  {
+   "audio": "Because it basically confuses the model when it conflicts with what you're actually asking it to do. And instead of writing something like 'do not return it as markdown text', we actually want to just say 'write it as smooth flowing text paragraphs'.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the prompt box again. The text 'do not return it as markdown text' is highlighted in blue. Below it, the text 'write it as smooth flowing text paragraphs' is typed into the box.",
+   "shot_type": "Close-Up",
+   "scene_number": 19,
+   "timestamp_end": "2:21",
+   "timestamp_start": "2:12"
+  },
+  {
+   "audio": "So we're telling it what to do, not what not to do. Now number three is about routines running with full tool access by default, which is not only unsafe because Claude can basically access all of your tools through every routine, but it's also more costly because we're loading in the context and the names etc. of those tools.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 3 and the text 'routines + tool access' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 20,
+   "timestamp_end": "2:35",
+   "timestamp_start": "2:21"
+  },
+  {
+   "audio": "So you can basically come into the desktop app or your cloud account, go into the code and go into routines. And if you look when you set up a new routine, all of the connectors are added by default. So when you set up a new routine, you can go through and basically remove any of those connectors before you start. You can also retrospectively go into your routines and remove access to any of those connectors, basically redacting tool access from those.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the Claude desktop app interface. The cursor is navigating through the 'Routines' section, showing various options like 'Create weekly research routine' and 'Add environment file access'. The cursor clicks on a new routine setup, showing the 'Connectors' tab and options like 'Load tools when needed' and 'Tools already loaded'.",
+   "shot_type": "Close-Up",
+   "scene_number": 21,
+   "timestamp_end": "2:55",
+   "timestamp_start": "2:35"
+  },
+  {
+   "audio": "Now staying with connectors for number four, if you've got a decent number of connectors switched on and your tool access is set to auto, which it is by default usually, the tool definitions for all of those connectors are actually being loaded into the context up front on every single message. Now some people have measured this and it's costing them thousands in tokens for every single session they have.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 4 and the text 'overloading connectors' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 22,
+   "timestamp_end": "3:16",
+   "timestamp_start": "2:55"
+  },
+  {
+   "audio": "So there's a quick fix: just go into the chat mode, go to the plus icon, go to connectors and make sure that inside tool access it loads tools when needed, not tools already loaded. And now nothing is going to load until Claude actually needs to use that tool. So go and do that one and that's going to save you a bit of money in the long run too.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the Claude interface again. The cursor is in the chat mode, clicking on the plus icon and navigating to 'Connectors' and 'Tool access'. The option 'Load tools when needed' is selected.",
+   "shot_type": "Close-Up",
+   "scene_number": 23,
+   "timestamp_end": "3:32",
+   "timestamp_start": "3:16"
+  },
+  {
+   "audio": "But in contrast to that with number five, there used to be advice about removing any MCP servers that you use infrequently because all of MCP schemas are loaded in on every single session. And I've definitely given a version of that advice myself in previous videos. But that's actually out of date now. So tool search has been on by default for a while, which means only the tool names actually load in from those MCPs, which are around 120 tokens let's say. And the actual schemas get pulled in now on demand. So adding more MCP servers now has minimal impact on your context window.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 5 and the text 'MCPs do not eat context' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 24,
+   "timestamp_end": "4:04",
+   "timestamp_start": "3:32"
+  },
+  {
+   "audio": "And you can actually check this by running /context and see exactly what these MCP servers are actually costing you in terms of number of tokens. And you can see next to that now /mcp which are all loaded on demand, so it's costing us nothing from the outset.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the Claude terminal interface. The text '/context' is typed, and a list of MCP tools and their token costs appears. The man's hands are visible on the left side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 25,
+   "timestamp_end": "4:18",
+   "timestamp_start": "4:04"
+  },
+  {
+   "audio": "Now number six, you'll have felt the pain of it if you work between the terminal or something like VS code on Claude code directly and then working inside Claude cowork for example in the desktop app.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 6 and the text 'skills don't exist in cowork' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 26,
+   "timestamp_end": "4:28",
+   "timestamp_start": "4:18"
+  },
+  {
+   "audio": "So if you've ever built a skill in the terminal, they get nested under .claude/skills and then the skill itself. So let's say this trending research skill which researches data from the last 30 days across Reddit, X, the web, etc. Those are accessible directly by Claude code from this folder tree.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a file structure in VS Code. The cursor is navigating through the '.claude/skills' folder, highlighting a skill called 'str-trending-research'. A window opens with the description and content of the skill.",
+   "shot_type": "Close-Up",
+   "scene_number": 27,
+   "timestamp_end": "4:44",
+   "timestamp_start": "4:28"
+  },
+  {
+   "audio": "But as soon as we move to Claude cowork, the skill access no longer has access to those skills even if you give access to that folder directly. What you have to do instead is go up to this customize window and add it in as a zip file or create the skill again inside this customize window. And you can see we've had to duplicate here basically our trending research skill so that cowork can actually use that skill too.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the Claude desktop app again. The cursor is in the chat mode, showing that the skill access is no longer available. The cursor then moves to the 'Customize' window, showing a list of skills like 'tool-humanizer' and 'email-voice-refresh'. The 'str-trending-research' skill is added manually.",
+   "shot_type": "Close-Up",
+   "scene_number": 28,
+   "timestamp_end": "5:04",
+   "timestamp_start": "4:44"
+  },
+  {
+   "audio": "Now hopefully it's not long before the functionality between code and cowork merge much more closely so that we can actually just have skills in one place and use them across different platforms there. Oh and by the way, there's one more thing that actually caught me out here, which is that cowork loads all of those skills at session start. So enabling a skill or adding a skill halfway through needs you to actually restart before you can use that skill.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 29,
+   "timestamp_end": "5:25",
+   "timestamp_start": "5:04"
+  },
+  {
+   "audio": "So then number seven is some advice that I used to hear quite a lot. So using subagents was deemed important to keep your main context clean. And that is still true. But it's probably the most repeated Claude tip of the last year. But what never really comes up is what it's actually going to cost you by having a lack of context injected into that subagent.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 7 and the text 'subagents multiply costs' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 30,
+   "timestamp_end": "5:44",
+   "timestamp_start": "5:25"
+  },
+  {
+   "audio": "So Anthropic's own docs say that agent teams use approximately seven times more tokens than standard sessions when teammates are running in that plan mode. Because basically each teammate maintains its own individual context window which has a standard set of context that's injected there and runs as a separate Claude instance.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a white box with the text 'Manage agent team costs'. Below it, the text explains that agent teams use approximately 7x more tokens than standard sessions. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 31,
+   "timestamp_end": "6:03",
+   "timestamp_start": "5:44"
+  },
+  {
+   "audio": "So the way that I tend to think about it now is that subagents are really brilliant for looking at things broad searches, parallel investigation where not a lot of context is required, but they're actually expensive for actually doing things. So if you're actually going to delegate specific tasks where a high amount of context is required, then actually I'd just keep that to the main context session. Because you're having to pass that context that's then uncached in that separate window on the same model as the main window and all of that adds up over time and that's why it tends to cost you seven times as much when you're using subagents. Plus we've got built-in modes that delegate properly and efficiently like ultra code now anyway.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. On the right side of the screen, the Claude terminal interface shows the '/fast' command being used.",
+   "shot_type": "Medium Shot",
+   "scene_number": 32,
+   "timestamp_end": "6:39",
+   "timestamp_start": "6:03"
+  },
+  {
+   "audio": "Now number eight is a quick tip not to get tricked by. So there's actually a mode called fast. And as it sounds, it basically is 2.5 times quicker, it runs on Opus, and you get this little symbol here to dictate that you're on fast mode. Let's say send me a response.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 8 and the text 'be careful using fast mode' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 33,
+   "timestamp_end": "6:52",
+   "timestamp_start": "6:39"
+  },
+  {
+   "audio": "And you'll notice there that it actually switched off fast mode for me because I didn't have usage credits enabled. So that brings us to the first limitation which is actually this fast mode is based not on your subscription plan but on your API credits. So if you have usage credits enabled, then using something like fast mode is going to cost you a lot of money and it will automatically stay on by default until you write fast off. And that's even when you switch sessions, so just be careful of that one.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface again. The text '/fast on' is typed, and the fast mode symbol appears. After a response, the text 'Fast mode OFF' appears. The cursor then types '/fast off'.",
+   "shot_type": "Close-Up",
+   "scene_number": 34,
+   "timestamp_end": "7:16",
+   "timestamp_start": "6:52"
+  },
+  {
+   "audio": "And the second limitation then, and this can really cost you, is the first time you enable fast mode in a conversation, you pay the full fast mode for uncached data. So if you've had a load of context in that conversation, you've cached it or Claude has cached it in the background, you are paying less every message that you send and you're paying that on your subscription plan. You switch it to fast mode and suddenly all of that cached data becomes context that's now uncached so you're going to pay the full fast mode uncached input price for that entire existing context. So flipping fast mode on in the middle of a conversation could be a really dangerous and costly move.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 35,
+   "timestamp_end": "7:51",
+   "timestamp_start": "7:16"
+  },
+  {
+   "audio": "Now let's move on to hidden context. But before we do that, I am scarily close to 100,000 subscribers now. So if you're getting any value from this, then please subscribe below if you haven't already.",
+   "label": "Call to Action",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a white box with an animated counter showing the number of subscribers approaching 100,000 appears. He gestures towards the box and a 'Subscribe' button.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 36,
+   "timestamp_end": "8:02",
+   "timestamp_start": "7:51"
+  },
+  {
+   "audio": "So this next one's really simple, which is don't edit your Claude.md mid-session.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 9 and the text 'don't edit CLAUDE.md mid-session' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 37,
+   "timestamp_end": "8:07",
+   "timestamp_start": "8:02"
+  },
+  {
+   "audio": "So I'm mid-session chatting and I decide actually I just want to add a rule inside a new section here: always return your outputs in bullet points. Say I'm really pedantic around how I want my outputs to be structured. And you'll notice that if I start a brand new session, it will abide by the rules that we've added. But if I continue in my existing session, then it will not acknowledge those new rules, right?",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a Claude.md file in VS Code. The text '### Rules' and 'always return your outputs in bullet points' is typed into the file. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 38,
+   "timestamp_end": "8:26",
+   "timestamp_start": "8:07"
+  },
+  {
+   "audio": "So until you clear the existing session or start a new session entirely, it will ignore any edits to the Claude.md. And that's because, straight from Anthropic's docs, the project's root and user-level Claude.md files are read just once at the session start and held in memory. So restarting, clearing, or compacting all basically get that to re-index in the information. So if you ever want to add a rule mid-session, you're going to need to compact or restart that.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 39,
+   "timestamp_end": "8:51",
+   "timestamp_start": "8:26"
+  },
+  {
+   "audio": "Now number 10 might seem obvious, but not many people actually stick to this. And you've probably heard 'keep your Claude.md short' loads of times now. But what you usually don't get is the actual diagnostic of the impact it has.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 10 and the text 'shorten your CLAUDE.md' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 40,
+   "timestamp_end": "9:04",
+   "timestamp_start": "8:51"
+  },
+  {
+   "audio": "So here it is directly from Anthropic, so it's been tested and proven. If Claude keeps doing something you don't want despite having a rule against it in your Claude.md, the file is probably too long and the rule is getting lost.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a white box with text from Anthropic's docs about keeping the Claude.md file short. The text 'the file is probably too long and the rule is getting lost' is highlighted in yellow.",
+   "shot_type": "Close-Up",
+   "scene_number": 41,
+   "timestamp_end": "9:14",
+   "timestamp_start": "9:04"
+  },
+  {
+   "audio": "And in the past we've always been told okay you can stress the importance of a specific rule by you know capitalizing it or writing important before it. But the real fix is actually just make the Claude.md shorter in the first place.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 42,
+   "timestamp_end": "9:26",
+   "timestamp_start": "9:14"
+  },
+  {
+   "audio": "And just for some scale, Claude code's own system prompt is around 50 instructions. And models are supposedly following somewhere in between 150 to 200 instructions reliably. And the instruction files that perform best sit around 300 to 350 words. And that's words, not instructions. So if you look through yours, is yours less than 100 lines? Is it less than 200 lines? The shorter the better.",
+   "label": "Product Selling Points",
+   "visual": "The man is speaking, gesturing with his hands. On the right side of the screen, the Claude.md file is shown in VS Code. The text is very long and has many rules.",
+   "shot_type": "Medium Shot",
+   "scene_number": 43,
+   "timestamp_end": "10:00",
+   "timestamp_start": "9:26"
+  },
+  {
+   "audio": "The more you can outsource different context to different files and reference that so Claude can pull it in at a specific time when it needs it, the better the model will be able to perform. And there is of course a quick hack that you can run. And you can run the /doctor command and it's basically a health check for the user's Claude code setup and fix issues. So let's say doctor, doctor propose trims to my Claude.md that won't impact performance. Run something like that, you're going to get a suggested list of what you could trim from your Claude.md to immediately cut it down to only the most important information and therefore you'll get better performance over time. And that comes back and gives us a really nice set of suggestions from seven sections inside our agents.md and our Claude.md that would save us, you know, four thousand, five thousand tokens every single session. So it's definitely worth doing.",
+   "label": "Problem Solving",
+   "visual": "The screen shows the terminal interface again. The cursor types '/doctor' and a list of suggestions for cleaning up the Claude.md and agents.md files appears. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 44,
+   "timestamp_end": "10:36",
+   "timestamp_start": "10:00"
+  },
+  {
+   "audio": "Now related to that with number 11, what actually gets passed over to a subagent? Like what does it actually know when you pass a task over? So basically it gets its own system prompt, whatever you wrote in the task that you were giving it, and the full Claude.md hierarchy, right?",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 11 and the text 'subagents skip CLAUDE.md' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 45,
+   "timestamp_end": "10:52",
+   "timestamp_start": "10:36"
+  },
+  {
+   "audio": "Well, kind of, most of the time anyway. So it doesn't even get conversation history, it doesn't get output style, it doesn't get any of the auto memory that's injected from the main thread, and none of the files that have already been read into context already. And it turns out some agents actually get even less than that.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. On the right side of the screen, a white box with text from Anthropic's docs appears. The text 'The built-in Explore and Plan agents skip this' is highlighted in yellow.",
+   "shot_type": "Medium Shot",
+   "scene_number": 46,
+   "timestamp_end": "11:08",
+   "timestamp_start": "10:52"
+  },
+  {
+   "audio": "So the built-in explore and plan agents, so these are automatically delegated if you've not created your own agent, like a lot of the exploration or the planning agents that are delegated by Claude themselves actually skip the receiving of Claude.md. So the important thing to note here is when you're passing instructions to a subagent if you are using subagents, if there are certain rules in that Claude.md that those subagents need to abide by, then you need to actually pass those in the instructions of the subagent directly if it goes and spins out any explore and plan agents.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a diagram of a Claude.md file and a subagent context box. Text is added to the subagent context box: 'only edit the files I've listed'. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 47,
+   "timestamp_end": "11:45",
+   "timestamp_start": "11:08"
+  },
+  {
+   "audio": "So unfortunately there's no great fix for this, it's just to restate those critical constraints inside the prompts that you're giving the subagent directly. And if you are doing a side task that genuinely needs the full context, then actually you can just fork the conversation instead and therefore it will inherit the full context of that conversation.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 48,
+   "timestamp_end": "11:55",
+   "timestamp_start": "11:45"
+  },
+  {
+   "audio": "Now onto number 12, in a previous video I actually gave you incorrect information or it's been since updated. So in my hidden settings video I said Claude code waits until your context window is around 95% full before it compacts and that you can actually go and change that percentage and override that. And that's completely changed now. So let me just correct what actually has changed.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 12 and the text '/autocompact' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 49,
+   "timestamp_end": "12:15",
+   "timestamp_start": "11:55"
+  },
+  {
+   "audio": "So the current documented behavior is that if you don't set an auto compact window limit, then Claude code is going to compact when the conversation reaches the model's context limit. So it's no longer a percentage and there are per-model exceptions on top of that. So cloud sessions compact as they approach their limit and some models compact at the full boundary, let's say 200,000 tokens in the window.",
+   "label": "Product Selling Points",
+   "visual": "The man is speaking, gesturing with his hands. On the right side of the screen, the terminal interface shows the '/autocompact' command being used.",
+   "shot_type": "Medium Shot",
+   "scene_number": 50,
+   "timestamp_end": "12:35",
+   "timestamp_start": "12:15"
+  },
+  {
+   "audio": "So now what you can do is run the auto compact setting to set how full the context gets before it auto summarizes. And you can leave this automatically or you can say 50k tokens or 100k tokens and actually you set the auto compact window now to 100k tokens. Now as you go through the conversation, it's going to hit 100k tokens and start auto compacting. So instead of a percentage now, you can now set a fixed amount. And this is important because quality degrades long before that context window is full.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface again. The cursor types '/autocompact 100k' and the response 'Auto-compact window set to 100k tokens!' appears. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 51,
+   "timestamp_end": "13:02",
+   "timestamp_start": "12:35"
+  },
+  {
+   "audio": "And while we're on context size, for number 13, historically everyone's been chasing these huge context windows, right? We were all so happy when we saw that we had models that were now able to actually take in a million tokens in that window.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 13 and the text 'bigger context = bad recall' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 52,
+   "timestamp_end": "13:14",
+   "timestamp_start": "13:02"
+  },
+  {
+   "audio": "But Anthropic's own published benchmark from testing Opus 4.6 on a long context retrieval test where it put eight hidden things inside the context and tried to confirm if the model could find them, it found that at 256,000 tokens it could score 93%. So actually pretty remarkable it can get 93% accuracy at that high number of tokens. But then at one million tokens with the same model with the same test, it actually dropped to 76% accuracy. So suddenly you've got a three out of four chance of actually retrieving that information.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a chart with benchmarking results for Claude family models. The man's hands are visible on the right side, gesturing towards the chart. The text '78.3 (64k)' is highlighted in yellow.",
+   "shot_type": "Close-Up",
+   "scene_number": 53,
+   "timestamp_end": "13:44",
+   "timestamp_start": "13:14"
+  },
+  {
+   "audio": "Which in plain English is roughly one in four of those actually failing. So one in four of your rules not actually being able to be retrieved. So a bigger context window isn't really more memory, it's basically then going to become harder to actually retrieve the right information. So I definitely recommend using things like auto compact as well.",
+   "label": "Real Experience",
+   "visual": "The man is talking to the camera, gesturing with his hands. The lighting and background are consistent with previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 54,
+   "timestamp_end": "14:02",
+   "timestamp_start": "13:44"
+  },
+  {
+   "audio": "And by the way for number 14, compaction isn't all or nothing. I used to think it was basically all or nothing.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 14 and the text 'compact part of your chat' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 55,
+   "timestamp_end": "14:08",
+   "timestamp_start": "14:02"
+  },
+  {
+   "audio": "But if you hit escape twice in an existing conversation, it puts you in rewind mode, which a few of you are probably familiar with. So you can actually jump back to a previous part of the conversation and start again that conversation from there. But as soon as you go into one of those it actually gives you more options. It allows you to restore the code and the conversation, restore the conversation, restore the code, but it also allows you to summarize from that specific point in the conversation or summarize up to here. So when we use something like summarize up to here, we can add additional context, but what we're actually saying is auto summarize everything before this point and now we can continue the conversation from that point onwards. So we can choose which parts of the conversation we actually want to auto summarize.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface. The cursor is in 'Rewind' mode, showing a history of the conversation. The options to 'Restore code and conversation', 'Restore conversation', 'Restore code', and 'Summarize from here' appear.",
+   "shot_type": "Close-Up",
+   "scene_number": 56,
+   "timestamp_end": "14:47",
+   "timestamp_start": "14:08"
+  },
+  {
+   "audio": "Now moving on from context, this is one thing that hardly anyone seems to know and will actually save you quite a lot of time for such a simple change.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 15 and the text 'editing the plan' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 57,
+   "timestamp_end": "14:54",
+   "timestamp_start": "14:47"
+  },
+  {
+   "audio": "So when you are in plan mode and you're saying something like plan some pricing page updates 10% off for more users, Claude goes off and creates a plan for you. You kind of have these different options right to respond. So you have yes and switch to bypass permissions or yes and manually improve edits or you can basically add in additional information. But I've always missed this: control and G to edit directly in VS code. So if we hit control and G, then what it basically does is open up the plan inside the browser so that we can go and edit the plan directly. Before, what I'd always have to do is actually ask it to go and edit the plan to change one or two little things. But if you hit control and G, you can actually edit the plan directly, tell it you've updated the plan, and then it can go and actually act on that new plan. Saves you a lot of tokens back and forth trying to get it to rework that plan for some simple changes.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface. The cursor is in plan mode, and a plan for updating pricing pages is generated. The options 'yes', 'manual approve edits', and 'Ctrl+G to edit directly' appear. The cursor hits Ctrl+G and the plan opens in a browser for editing.",
+   "shot_type": "Close-Up",
+   "scene_number": 58,
+   "timestamp_end": "15:39",
+   "timestamp_start": "14:54"
+  },
+  {
+   "audio": "Now number 16 is actually crazy because it's all about cheaper models actually costing you more. So it catches basically everyone out because it looks like the sensible thing to do when you're doing a simpler job switch to a cheaper model, right? Cheaper models are usually faster as well, so it makes a lot of sense. And this is all about the way that the data is cached and uncached.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 16 and the text 'cheaper model can cost more' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 59,
+   "timestamp_end": "15:58",
+   "timestamp_start": "15:39"
+  },
+  {
+   "audio": "So if you're for example 100,000 tokens into a conversation with Opus and you want to answer a question that is fairly easy to answer, it would actually be more expensive to switch to Haiku at that point than to have Opus answer because basically we'd re-need to build the prompt cache for Haiku with those 100,000 tokens. And then if you switch back to Opus, you're also going to be rebuilding that cache with a 100,000 tokens. So every model has its own cache basically. But the moment you switch, it gets uncached and you have to pay for it all again.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a white box with text about not changing models mid-session. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 60,
+   "timestamp_end": "16:27",
+   "timestamp_start": "15:58"
+  },
+  {
+   "audio": "Now moving on to number 17, and this is a real power user's tip. So Anthropic actually have a power user guide and they say something in it that I think most people skim straight past.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 17 and the text 'let claude check it's work' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 61,
+   "timestamp_end": "16:38",
+   "timestamp_start": "16:27"
+  },
+  {
+   "audio": "And their exact words are the single most impactful tip in this guide is verification. And if you only adopt one practice, make it verification because if there's no check that Claude can run itself, then you're basically acting as the verification loop for Claude, which means every single error just sits there waiting for a human to notice the error. So there are four levels here and they escalate in terms of how you can get Claude to verify things.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the Anthropic power user tips page. The text 'the single most impactful tip in this guide is verification' is highlighted in yellow.",
+   "shot_type": "Close-Up",
+   "scene_number": 62,
+   "timestamp_end": "17:01",
+   "timestamp_start": "16:38"
+  },
+  {
+   "audio": "And the simplest is just asking for the check in the exact same prompt. Then you've got forward slash goal where there's a separate evaluator that re-checks a condition after every single turn. Above that you've got stop hooks which physically block the turn from ending until your script passes that stop hook.",
+   "label": "Product Selling Points",
+   "visual": "The man is speaking, gesturing with his hands. On the right side of the screen, various boxes with verification tips like 'Use /goal' and 'Stop hooks' appear.",
+   "shot_type": "Medium Shot",
+   "scene_number": 63,
+   "timestamp_end": "17:18",
+   "timestamp_start": "17:01"
+  },
+  {
+   "audio": "And then at the very top level, the best verification is actually an adversarial review agent. Now when you employ an adversarial review agent, it is as it sounds, going to find gaps. So that is actually a problem if you've just told it to go and find problems because it will basically keep going until it finds problems. So you basically need to tell the adversarial reviewer agent to flag only what affects correctness or your stated requirements or your done condition and treat the rest as optional, otherwise it will continue to try and find problems.",
+   "label": "Real Experience",
+   "visual": "The screen shows a white box with text about adding an adversarial review step. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 64,
+   "timestamp_end": "17:46",
+   "timestamp_start": "17:18"
+  },
+  {
+   "audio": "So if there's one thing you need to understand it's use a verification layer instead of using yourself as that verification layer and those four different layers you can leverage that. Now the next one I've actually lost a ton of data to in the past so make sure that you correct this today.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 18 and the text 'history deletes every 30 days' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 65,
+   "timestamp_end": "18:01",
+   "timestamp_start": "17:46"
+  },
+  {
+   "audio": "You can basically run resume, right, to resume previous conversations. When you hit that, you'll see 13 sessions. But I haven't only completed 13 sessions since I started using VS code and Claude code, right? And that's because by default it only keeps 30 days of your previous conversations. And those 13 for me have been mostly today because now I've mostly switched to using the desktop app and Claude code there instead. But you can see if I scroll down, we've got a few from one month ago but before that all of the conversation history has been completely wiped.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface again. The cursor types '/resume' and a list of 13 recent sessions appears. The man's hands are visible on the left side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 66,
+   "timestamp_end": "18:28",
+   "timestamp_start": "18:01"
+  },
+  {
+   "audio": "So inside your settings.json, if you want to stop this, then you can actually put cleanupPeriodDays and then a number. So if you put 365 in there, then you've got a year of historic data. And by the way, zero doesn't mean unlimited, it will basically wipe everything as it comes in. It's worth knowing separately that your auto memory files are actually exempt from that sweep so anything stored in the auto memory files do get kept. It's just you can't resume those conversations.",
+   "label": "Usage Scenarios",
+   "visual": "The screen shows a white box with the text 'cleanupPeriodDays'. Below it, a code snippet shows the setting being set to 20. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 67,
+   "timestamp_end": "18:51",
+   "timestamp_start": "18:28"
+  },
+  {
+   "audio": "And then the final hack, the last one is basically five for the price of one. There are commands that hardly anyone ever types.",
+   "label": "Problem Solving",
+   "visual": "The man is back on screen, talking to the camera. On the left side of the screen, a red circle with the number 19 and the text 'commands you never knew' appears.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 68,
+   "timestamp_end": "18:58",
+   "timestamp_start": "18:51"
+  },
+  {
+   "audio": "So we used doctor earlier, which is basically your full Claude setup check-in or check-up. So it'll find skills, MCP servers and plugins that you're not using, show how much it's costing you in context, de-duping your Claude.md all of those different things it can propose trims, etc. And those are all really helpful.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal interface again. The cursor types '/doctor' and the list of suggestions appears. Then it types '/insights' and a message about generating a report appears.",
+   "shot_type": "Close-Up",
+   "scene_number": 69,
+   "timestamp_end": "19:13",
+   "timestamp_start": "18:58"
+  },
+  {
+   "audio": "Then we've got insights, which will basically generate a report analyzing your Claude code sessions. So it's a full HTML report analyzing up to 200 of your recent sessions.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows a report being generated. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 70,
+   "timestamp_end": "19:26",
+   "timestamp_start": "19:13"
+  },
+  {
+   "audio": "Now this is only going to be valuable if you're not clearing sessions after the last 30 days, right? You've then got by the way or BTW where you can ask a quick side question without interrupting the main conversation. It will come back with an answer. Hey what's the date today? And it will answer that you see in the background of why and we can close that with escape whilst it's still running that insights command.",
+   "label": "Product Selling Points",
+   "visual": "The terminal shows the '/btw' command being used to ask 'hey what's the date today?'. The answer appears in a small window.",
+   "shot_type": "Close-Up",
+   "scene_number": 71,
+   "timestamp_end": "19:40",
+   "timestamp_start": "19:26"
+  },
+  {
+   "audio": "And then if you're mid-conversation and you've got a bunch of context that you don't want to lose but you want to do something else with it, then actually you can run branch and it will create a branch of the current conversation at that point. You can take that to a new conversation, so it copies your conversation to take it in a different direction while the original conversation stays exactly the same. So if there is a point that you want to branch out multiple conversations with the same context, you can do that with branch.",
+   "label": "Product Selling Points",
+   "visual": "The terminal shows a long conversation. The cursor types '/branch [name]' and a message about creating a branch of the current conversation appears. The man's hands are visible on the right side, gesturing.",
+   "shot_type": "Close-Up",
+   "scene_number": 72,
+   "timestamp_end": "20:02",
+   "timestamp_start": "19:40"
+  },
+  {
+   "audio": "So that is the 19. Next video I'm going to show you 14 ways to supercharge your Claude code setup. Give this video a like, subscribe, and I'll see you in the next one.",
+   "label": "Call to Action",
+   "visual": "The man is back on screen, talking to the camera. He gestures towards the camera and then waves goodbye. The lighting and background are consistent with the previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 73,
+   "timestamp_end": "20:13",
+   "timestamp_start": "20:02"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:59.497435Z",
+ "updated_at": "2026-10-03T07:49:04.367644Z"
+}
