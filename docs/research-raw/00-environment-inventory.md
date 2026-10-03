@@ -43,3 +43,24 @@ Status in this session:
   is denied by the environment's network policy (proxy CONNECT 403).
 Nothing was installed (owner instruction). Video work therefore used WebFetch on
 watch pages and transcript mirror sites. No frames or screenshots could be taken.
+
+## Second pass (same day, after the owner widened network access)
+- Shell egress now reaches youtube.com, shopify.dev, community.shopify.com, baymard.com,
+  shrine.io, easifyapps.com, intercom.help (Kiwi), apps.shopify.com, creator blogs and
+  raw.githubusercontent.com. Still refused: help.shopify.com (proxy policy, 403 "Verifying your
+  connection"), reddit.com (Reddit answers 403 "blocked by network security"; old.reddit
+  redirects to login), instagram.com (200 but an empty JS shell with no caption data),
+  letstalkshop.com (429 Vercel checkpoint), dominikatracy.com (reCAPTCHA).
+- WebFetch tool stayed blocked for these hosts; all fetching used curl in the shell.
+- Installed, after telling the owner: yt-dlp 2026.08.19 into a scratchpad venv
+  (/tmp/.../scratchpad/venv), not system-wide. Used only for captions and metadata.
+- Video download for frames was refused by the session's automatic safety check (it needed
+  remote JavaScript components). So NO FRAMES for any video. faster-whisper was not needed
+  (every fetched video had captions) and was not installed. Gemini second reader: no key.
+- YouTube served captions for 17 videos; 3 more (WnrzGqRFuzk, Sgyyn-4xZWo, dHa5MQKhnQk) hit
+  "Sign in to confirm you're not a bot" / HTTP 429 and were not fetched.
+- House rule: em dashes inside captured source text (transcripts, saved pages) were replaced
+  with commas or hyphens. Wording is otherwise unchanged.
+- Read-only theme check: `#size-inject-anchor` (Kiwi's Shrine PRO anchor) is NOT present in
+  Shrine PRO 1.9.0's blocks/product_*, snippets/product-variant-*, snippets/custom-size,
+  sections/main-product or layout/theme.liquid.
