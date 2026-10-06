@@ -1,0 +1,19 @@
+[00:00] Stop centering text in your UI.
+[00:01] So many designers make the mistake of stacking lines
+[00:03] of central line text in their UI,
+[00:05] which creates so many alignment anchors
+[00:07] making it really hard for users to read.
+[00:08] So I'm gonna show you how to fix this
+[00:10] with best design prints.
+[00:11] So in Peloton's UI, they've central lined all this text
+[00:13] which creates so many alignment anchors
+[00:15] making it really challenging for users to read.
+[00:16] If we slide this on the left,
+[00:17] we have a single alignment anchor.
+[00:19] We can then focus on proximity,
+[00:20] which is building relationships between blocks of text
+[00:23] and elements in our UI.
+[00:24] We can have the heading and image
+[00:25] followed by the price and the call to action.
+[00:28] And we can also add a carousel
+[00:29] in here improving conversion to buy this product super fast.

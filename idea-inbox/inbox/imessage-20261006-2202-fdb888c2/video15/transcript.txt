@@ -1,0 +1,6 @@
+[00:00] purple to blue gradient, gradient hero text, emojis in your headings, interfront everywhere,
+[00:04] color left bordered cards, glass morphism cards, low contrast dark mode, 3 icon boxes in a row,
+[00:10] a badge above the headline, lucid icons everywhere, untouched shcn components,
+[00:14] sections fading in as you scroll, cursor following line, buttons fade on hover,
+[00:18] inconsistent spacing, m dashes everywhere, generic buzzwords, serif italics for accent words,
+[00:23] space group test plus instrumental serif, grain texture.

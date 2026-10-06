@@ -1,0 +1,21 @@
+[00:00] You probably haven't tapped into your cloud code's full research potential when it comes
+[00:03] to social media, and I'm not just talking about creating a skill that gives you better
+[00:08] hooks.
+[00:09] Here are the three systems you should install into your cloud code right now to take your
+[00:13] social media research to the next level.
+[00:15] First, you'll want to use a tool like this EpiFiMCP to research and download all of
+[00:19] the content from either TikTok or Instagram that you've created in the past for analysis.
+[00:25] After doing so, next you'll want to download this Tribe V2 model, which is
+[00:28] from Meta that shows how the brain responds to social media content.
+[00:32] And last, you can run the research model on your computer.
+[00:35] However, it may take a little bit of time depending on how powerful your computer is.
+[00:39] Therefore, I recommend using a tool like Modal to run the model in the background.
+[00:46] Now, putting these three systems together, you can run the research model against your
+[00:49] content and get outputs just like this that shows how the brain responds to your
+[00:53] content and where the brain is most active.
+[00:56] And you can get unique insights just like this or this, that's not just do better
+[01:01] hooks or tell better stories.
+[01:03] I do want to give a reminder that correlation does not exactly mean causation
+[01:07] when it comes to data like this.
+[01:08] However, I've been getting a tremendous amount of insight into my content and I
+[01:11] know that this is going to give you a leg up in your content creation as well.

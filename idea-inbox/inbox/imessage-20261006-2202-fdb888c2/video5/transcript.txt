@@ -1,0 +1,12 @@
+[00:00] So Claude just killed web designers, because it can now build websites that actually look
+[00:03] professionally designed.
+[00:04] Here's how.
+[00:05] First, add the Emil Kowalski design and impeccable skills to Claude.
+[00:08] These give it rules for things like typography, spacing, layouts, and animations.
+[00:12] Then add the taste skill so it can reference great websites instead of giving you that
+[00:15] generic AI look.
+[00:16] Finally, connect Figma MCP and Playwrights so that Claude can actually design, build,
+[00:20] and test and screenshot what it creates.
+[00:21] Now you can describe the website you want in plain English and then just let it
+[00:24] handle the rest.
+[00:25] So comment die and I'll send you the full setup.

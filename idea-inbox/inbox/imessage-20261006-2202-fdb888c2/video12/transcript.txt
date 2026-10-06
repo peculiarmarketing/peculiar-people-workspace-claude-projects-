@@ -1,0 +1,35 @@
+[00:00] I don't want to use Fable, I'm gonna hit my usage limits.
+[00:03] Skill issue.
+[00:03] What you're gonna do, you're gonna drop in a list
+[00:06] of everything that you need to get done,
+[00:07] just literally a brain dumpin' in there,
+[00:09] then you're going to tell Fable to create a sub-agent
+[00:12] that is an opus profile that is going to execute everything.
+[00:15] So what we're gonna do now is Fable
+[00:17] is going to be the orchestrator.
+[00:19] Fable's gonna use the task,
+[00:20] create the specs to hand it off to opus.
+[00:22] Opus is way cheaper than gonna go and take off
+[00:25] those tasks.
+[00:26] Now opus is gonna go run and cook up these tasks
+[00:28] and probably have like four or five other team members
+[00:31] helping out other tasks in parallel,
+[00:33] work trees, whatever, all that jazz.
+[00:34] Then when they're done with the task,
+[00:35] they're gonna go back to Fable and say,
+[00:37] hey boss, how does this look?
+[00:39] And then Fable's gonna go, hmm, I am much smarter than you
+[00:42] so I don't think you did better.
+[00:44] Fix X, Y, and Z.
+[00:45] And then the workers are gonna go back
+[00:46] and fix those things and they're gonna come back
+[00:48] to Fable and it's gonna keep doing that loop
+[00:49] a few times until it's good enough.
+[00:51] Then Fable will come back to you and say,
+[00:53] hey, human, this is good.
+[00:56] And that exact workflow is how I've been looping Fable
+[00:59] all day long because it's not actually Fable
+[01:01] that's running the task.
+[01:01] No, Fable is setting the spec
+[01:03] and then making sure that things are adhered
+[01:05] to that level of quality.

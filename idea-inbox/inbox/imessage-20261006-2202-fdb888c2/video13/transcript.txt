@@ -1,0 +1,19 @@
+[00:00] Five more tells your app was vibe coded.
+[00:02] You know who you are.
+[00:03] First, tapping the thing twice does the thing twice.
+[00:06] Two purchases, two saves, one annoyed user.
+[00:10] Second, raw error text on the screen.
+[00:12] Use toasts, no one wants to see undefined
+[00:15] or some weird database error.
+[00:17] Third, the keyboard covers the field you're typing in.
+[00:20] This is the worst.
+[00:21] Fourth, switching between dark and light mode
+[00:24] suddenly makes things unreadable.
+[00:26] Fifth, you hit the back button
+[00:27] and everything you entered or typed is gone.
+[00:30] You don't always catch these things in testing
+[00:32] because you know how things are supposed to work,
+[00:34] but your users don't.
+[00:36] Comment, polish.
+[00:37] I'll send you these five plus another five
+[00:39] and the prompts to fix all of this stuff.

@@ -1,0 +1,73 @@
+{
+  "id": "imessage-20261006-2153-68168af2",
+  "source": "imessage",
+  "source_label": "iMessage note to self",
+  "received_at": "2026-10-06T21:53:39Z",
+  "messages": [
+    {
+      "time": "2026-10-06T21:53:39Z",
+      "text": "Note for web design",
+      "attachments": []
+    },
+    {
+      "time": "2026-10-06T21:54:07Z",
+      "text": "https://www.instagram.com/reel/DeGBtXpPDau/",
+      "attachments": [
+        "DC2C7E01-ECB2-4D69-B839-4F9D2B45110A.pluginPayloadAttachment",
+        "4D5F8E68-2E62-47C9-B328-A97882775AE3.pluginPayloadAttachment"
+      ]
+    },
+    {
+      "time": "2026-10-06T21:54:07Z",
+      "text": "Note for web design",
+      "attachments": []
+    }
+  ],
+  "note_text": "Note for web design\nhttps://www.instagram.com/reel/DeGBtXpPDau/\nNote for web design",
+  "links": [
+    "https://www.instagram.com/reel/DeGBtXpPDau/"
+  ],
+  "media": [
+    {
+      "kind": "missing",
+      "name": "DC2C7E01-ECB2-4D69-B839-4F9D2B45110A.pluginPayloadAttachment",
+      "errors": [
+        "attachment not downloaded to this Mac"
+      ]
+    },
+    {
+      "kind": "file",
+      "name": "4D5F8E68-2E62-47C9-B328-A97882775AE3.pluginPayloadAttachment",
+      "mime": "",
+      "errors": [
+        "file type not processed"
+      ]
+    },
+    {
+      "kind": "video",
+      "folder": "video1",
+      "errors": [],
+      "duration_seconds": 29.9,
+      "truncated_to_seconds": null,
+      "frames": [
+        "video1/frames/01_t00m02s.jpg",
+        "video1/frames/02_t00m07s.jpg",
+        "video1/frames/03_t00m12s.jpg",
+        "video1/frames/04_t00m17s.jpg",
+        "video1/frames/05_t00m22s.jpg",
+        "video1/frames/06_t00m27s.jpg"
+      ],
+      "transcript": "video1/transcript.txt",
+      "language": "en",
+      "url": "https://www.instagram.com/reel/DeGBtXpPDau/",
+      "source_meta": {
+        "title": "Video by vibecode.rob",
+        "uploader": "Rob",
+        "channel": "vibecode.rob",
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DeGBtXpPDau/",
+        "description": "Watch this if you are a vibe coder 🤑\n#vibecoding #manuspartner #ad"
+      }
+    }
+  ]
+}

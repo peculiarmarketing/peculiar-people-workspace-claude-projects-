@@ -1,0 +1,12 @@
+[00:00] Four Claude code plugins that keep me from hitting my usage limit and I install them in
+[00:03] every single project.
+[00:04] This is day 14 of Claude stuff worth stealing.
+[00:07] Start with Graphify, which turns your code base into a knowledge graph so your agent
+[00:11] stops re-reading the same files.
+[00:13] Then there's Agent Skills from Adi Osmani at Google, which is 25 skills that Claude
+[00:17] picks from on its own depending on what you're working on.
+[00:19] Ponytail makes Claude write about half the code so you stop burning tokens on stuff
+[00:23] you never needed.
+[00:24] And the one I'd install first is OmniRoute, because it hooks Claude code up to over
+[00:28] 150 free providers and switches you to the next best model the moment your limit runs out.
+[00:33] Comment repo and I'll send you all four links.

@@ -1,0 +1,18 @@
+[00:00] This free plugin cuts the tokens that Claude spends by around 65%.
+[00:06] I'm the skill.
+[00:07] Install it.
+[00:08] Now, using this score, I'm going to ask Claude to explain how this algorithm I wrote works.
+[00:11] Why do I tried it earlier without cavemen and it took 4,000 tokens?
+[00:15] Okay, it's done.
+[00:15] Actually, like the way this is structured with less words and no waffle.
+[00:18] Well, let's see what the use of this was.
+[00:20] This one only used 2,800 output tokens, which is a 30% decrease.
+[00:24] So not bad.
+[00:25] Okay, let's try an example that requires editing code.
+[00:27] I'm going to ask you to implement an FAQ page.
+[00:29] I tried this earlier without cavemen and it used 4,900 output tokens and it's done.
+[00:34] The output looks pretty much the same as the one I ran without cavemen.
+[00:37] Let's see the token.
+[00:38] Okay, and this one used 2,400 tokens, which is another 30% decrease.
+[00:42] So it's not exactly 65% decrease, but it does work.
+[00:45] So I give this one a fact.

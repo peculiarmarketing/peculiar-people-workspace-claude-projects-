@@ -1,0 +1,25 @@
+[00:00] If you don't know what I'm looking at here, you are probably falling behind because
+[00:04] this is one of the easiest ways to improve Claude code's memory and create a second brain.
+[00:08] This is an obsidian knowledge graph and let me show you how you should set up obsidian
+[00:13] when it comes to Claude code. Now remember obsidian is completely free. It's something
+[00:17] we download and then we designate a folder on our computer as a vault. Everything that is
+[00:23] then inside that master folder is part of obsidian and when we open up Claude code in that folder
+[00:30] it's now connected to obsidian. It's that simple. So the question then becomes how do I properly
+[00:36] organize that folder, that obsidian vault, so that Claude code can navigate it well
+[00:41] because if our vault is just a random assortment of files and folders and that doesn't actually
+[00:44] bias anything we want to give Claude code a map so it can easily figure out where information
+[00:50] is and then give us better answers quicker. Now the common setup is what you see here and this is
+[00:54] the Carpathian obsidian rag setup and rag is an error quotes because it's not a true rag system.
+[01:00] But the idea is we have our vault again, you can designate any folders, the vault split into three
+[01:05] file structures. We have the raw section, the wiki section and the output section. The idea
+[01:11] being I bring stuff in to my obsidian vault and it goes into the raw folder. This is kind
+[01:16] of just unstructured knowledge. From there Claude code takes a look at everything in the raw
+[01:20] and it creates Wikipedia style articles about it, right? It's creating an article with structured
+[01:26] information that Claude code can take a look at at any time. From there once we've created something
+[01:30] in the wiki when we want to turn it into some sort of deliverable, it gets sent to the output
+[01:34] folder and this output folder could be something like a slide deck of PDF, whatever. But the truth
+[01:38] is you can set this up however you want. You don't have to do raw wiki and output,
+[01:42] you just need something that makes sense. So in theory, if you had a million files in this
+[01:46] folder, do you have a clear path for Claude code to follow to find it? And if you don't,
+[01:52] you're wrong. And remember, you can just ask Claude code for help to set up some sort of
+[01:55] file structure that makes sense for you.

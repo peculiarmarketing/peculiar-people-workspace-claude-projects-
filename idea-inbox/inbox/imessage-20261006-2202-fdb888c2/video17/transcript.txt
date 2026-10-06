@@ -1,0 +1,26 @@
+[00:00] Do you guys want to get better front-end designs
+[00:01] with cloud code?
+[00:02] Here are five plugins you need to install right now.
+[00:04] The first is taste skill that pulls real design taste
+[00:07] from premium references,
+[00:08] so your UI stops looking crappy and vibe coded.
+[00:11] The second is the web design guidelines skill.
+[00:13] It'll audit your code against Vercel's latest design roles
+[00:16] and flag any weak points before you actually ship anything.
+[00:18] The third is awesome design.
+[00:20] It'll hand your AI a full design system
+[00:21] pulled from top quality websites
+[00:23] with colors, typography, spacing, buttons,
+[00:25] everything all done for you.
+[00:27] The fourth is image to code,
+[00:28] which will turn any design reference
+[00:29] into actual usable code
+[00:31] without losing any of those details.
+[00:32] And the fifth is playwright CLI.
+[00:34] This gives cloud the power to open up a browser,
+[00:36] screenshot what it just built
+[00:37] and even catch crappy outputs and errors
+[00:39] before you see them.
+[00:40] So if you guys want to try all these yourselves,
+[00:42] just comment design down below
+[00:43] and I'll send you the links directly.

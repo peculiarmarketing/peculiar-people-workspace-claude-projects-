@@ -1,0 +1,19 @@
+[00:00] Don't start vibe-coding with Claude code unless you've installed these four plugins.
+[00:03] The first is Superpowers, which has almost 300,000 stars and stops Claude from jumping
+[00:07] straight into code.
+[00:08] It asks what you're actually building, turns it into a spec you sign off on, and hands
+[00:12] the work to sub-agents that write the tests first, so it can run for hours without drifting
+[00:16] off the plan.
+[00:17] The second is the Carpathian Skills, which is one Claude.md file, built from
+[00:20] Andre Carpathian's complaint that models write a thousand lines when a hundred
+[00:23] would do.
+[00:24] Four rules.
+[00:25] Think before coding, keep it simple, touch only what you are asked to, and
+[00:28] prove it works.
+[00:29] The third is I have a DHD, which stops Claude burying the answer.
+[00:32] No great question, no hope this helps.
+[00:34] The next action first, steps numbered, and lists capped at five.
+[00:38] And finally, there's Claude Octopus, which hands the same task to up to 12 other models,
+[00:42] like Codex, Copilot, and Grock, and flags every place they disagree before you ship.
+[00:46] So if you want to try them all out for yourselves, just comment senior, and I'll send the
+[00:49] links to you directly.

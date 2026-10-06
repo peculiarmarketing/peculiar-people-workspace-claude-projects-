@@ -1,0 +1,19 @@
+[00:00] Top four libraries every VibeCoder should know.
+[00:03] First is Unlumen UI.
+[00:04] It offers a huge collection of animations, image effects,
+[00:08] navigation components, backgrounds, and shaders
+[00:11] to make your website look more interactive.
+[00:13] Second is Magic UI.
+[00:15] It provides beautiful components like animated lists,
+[00:17] theme toggles, special effects, templates,
+[00:20] and showcase sections that are ready to use.
+[00:22] Third is Smooth UI.
+[00:23] It includes stylish text effects, buttons, UI components,
+[00:27] and pre-built blocks like hero sections, stats blocks,
+[00:30] and more to help you build modern websites faster.
+[00:32] Fourth is Retro UI.
+[00:34] It comes with a Figma UI Kit featuring 300-plus components,
+[00:37] including carousels, cards, drop-down menus,
+[00:40] and also provide ready-made blocks and templates.
+[00:43] It's perfect for designing faster.
+[00:45] Comment libraries, and I'll send you all the links.

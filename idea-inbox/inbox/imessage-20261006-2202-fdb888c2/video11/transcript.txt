@@ -1,0 +1,7 @@
+[00:00] Reduce choices per screen. Make targets large. Follow familiar patterns. Group related information.
+[00:05] Break content into chunks. Interactions within 400 milliseconds.
+[00:09] Highlight the primary action. Place key actions nearby. Put essentials first.
+[00:14] End flows memorably. Show visible progress. Simplify complex interfaces.
+[00:18] Use sensible defaults. Prevent errors proactively. Make errors recoverable.
+[00:23] Maintain pattern consistency. Connect related elements visually.
+[00:26] Reduce task completion time. Reveal complexity gradually. Make completion feel closer.
