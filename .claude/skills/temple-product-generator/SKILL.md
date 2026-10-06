@@ -1,147 +1,142 @@
 ---
 name: temple-product-generator
-description: Generate Peculiar People temple products on Printify from the Temples folder. Use when Evan asks to generate temple products, run the temple sweep, add a temple or garment, check catalog coverage, regenerate or backfill a product, or drops a new temple folder. Triggers include "generate [temple]", "run the sweep", "temple products", "new temple", "coverage report".
+description: Generate Peculiar People temple products on Tapstitch from the Temples folder. Use when Evan asks to generate temple products, run the temple sweep, add a temple or garment, check catalog coverage, regenerate or backfill a product, or drops a new temple folder. Triggers include "generate [temple]", "run the sweep", "temple products", "new temple", "coverage report".
 ---
 
 # Temple Product Generator
 
-Project repo: `Claude Projects/temple-product-generator/`. Read `docs/decisions.md` before changing behavior; those decisions are settled and gate-approved. Voice: no em dashes in anything Evan-facing, explain a failure's mechanism before fixing it.
+Project repo: `Claude Projects/temple-product-generator/`. Read `HANDOFF.md` (top) and `docs/decisions.md` before changing behavior; settled decisions there are not up for re-derivation. Voice: no em dashes in anything Evan-facing, explain a failure's mechanism before fixing it.
 
-All commands run from the repo root with `./.venv.nosync/bin/python`.
+All commands run from the repo root with `./.venv.nosync/bin/python`. Credentials live in `.env` (gitignored); never print or commit it.
+
+## The catalog
+
+The store runs on Tapstitch. Three garment lines, one product per temple per line, 45 temples, 135 live products:
+
+| Garment id | Tapstitch blank | Title pattern (`garments/{id}.json` under `naming`) |
+|---|---|---|
+| `tee` | RT0063 | `Essential Heavyweight Temple Tee ({place})` |
+| `crew` | R00368 | `Ultra-soft Temple Sweatshirt ({place})` |
+| `hoodie` | R00286 | `Ultra-soft Oversized Temple Hoodie ({place})` |
+
+Never hardcode a title; read it from the garment config. A title renamed on the store by hand must be mirrored into the config, because the runner's duplicate guard compares titles.
+
+**Salt Lake is the parent temple** (`config/catalog.json`). Its products carry the bare `title_parent`; every other temple carries the place in parentheses. Garment collections show only the parent (tagged `listing:parent`), and shoppers reach every other temple through the Easify Temple dropdown.
+
+**Limited Edition titles are Evan's hand-built one-offs.** The pipeline never claims, publishes or gives a dropdown row to one.
+
+## How a product gets made
+
+Products are created from Python against Tapstitch's own JSON API (`tapstitch_api.py`). Auth is the dedicated Chrome profile's cookies (port 9223). Evan logs in once with `scripts/tapstitch_login.py`; `--check` verifies the session. Only `distribute()` reaches the storefront; everything before it stays inside Tapstitch.
+
+Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, readable copy `LEDGER.md`), one row per temple per garment. States, worst to best: `art-missing`, `error`, `art-ok`, `file-built`, `file-approved`, `product-created`, `description-written`, `card-pushed`, `live`. The ledger is not the authority on what is live; the runner checks the store's real titles before building.
 
 ## Commands
 
 | Task | Command |
 |---|---|
-| Coverage report (read-only) | `generate.py --sweep --report-only` |
-| Morning sweep (generate everything possible) | `generate.py --sweep` |
-| One temple, specific garments | `generate.py --temple "Salt Lake" --garments cc1717-dated` |
-| One-time catalog rename backfill | `scripts/rename_catalog.py` (`--report-only` first, always) |
-| Backfill a live product in place | `generate.py --temple Logan --garments cc1717 --in-place` |
-| Replace-alongside (retire old at publish) | `... --replace` |
-| Preview a layout without touching Printify | `preview.py --temple Logan --location "LOGAN, UTAH" --garment cc1717` |
-| Add date layers to dated drafts | `scripts/add_date_layer.py` (`--report-only` to preview; drives the Printify editor via the dedicated Chrome, see `scripts/printify_login.py` for the one-time login) |
-| Publish eligible drafts (base plus verified dated) | `scripts/publish_drafts.py` (`--report-only` to preview, `--only "title text"` to restrict) |
-| Shopify fixups (hoodie colorway, color order, featured photo) | `scripts/shopify_fixups.py all` (`--report-only` to preview, `--handle H` for one) |
-| Re-push published products to Shopify | `scripts/republish.py` (destructive, repairs itself; read the warning below first) |
-| Default variant onto the wanted colorway | `scripts/default_variant.py` (`--report-only` to preview) |
-| Easify dropdown sync (after publishing) | `scripts/easify_options.py sync` (`--report-only` to preview) |
-| Homepage marquee (every new temple) | `scripts/web_marquee.py check`; `sync` regenerates the city lines and prints the theme upload |
+| Coverage / where things stand (read only) | `scripts/tapstitch_status.py` (`--full`, `--temple T`, `--state S`, `--problems`) |
+| What blocks a run (read only) | `scripts/tapstitch_publish.py check` |
+| Validate every design, write nothing | `scripts/tapstitch_build.py --report-only` |
+| Build print files | `scripts/tapstitch_build.py` (`--temple T`, `--garments tee,crew,hoodie`, `--colors black,white`, `--no-trace`, `--verbose`) |
+| Proof sheet for Evan | `scripts/tapstitch_preview.py` (`--temple T`, `--garment tee`, `--color white`) |
+| Record Evan's approval | `scripts/tapstitch_approve.py --temple T` (`--all`, `--all --except "A,B"`, `--revoke --temple T`, `--list`, `--dry-run`) |
+| Plan a run (default, writes nothing) | `scripts/tapstitch_run.py` (`--temple T`, repeatable; `--garments`; `--limit N`) |
+| Build in Tapstitch, nothing public | `scripts/tapstitch_run.py --apply --temple T` |
+| Build and publish (LIVE, no undo) | `scripts/tapstitch_run.py --apply --publish --temple T` (or `--limit N`; a bound is required) |
+| Shopify half for one product | `scripts/tapstitch_publish.py finish --handle H --temple T --garment G` (`--dry-run`) |
+| Bind variants to their back image | `scripts/tapstitch_variant_images.py` (`--report-only`, `--handle H`, `--template-id ID`) |
+| Art close-up cards | `scripts/art_images.py make --temple T` / `make --all`; `push --temple T` / `push --all` |
+| Easify dropdown sync | `scripts/easify_options.py sync` (`--report-only` first); `reseed --export PATH` |
+| Back up facts fragments to git | `scripts/mirror_facts.py` (`--report-only`, `--check`) |
+| Homepage marquee | `scripts/web_marquee.py check`; `sync` (both take `--theme ID`) |
+| Pen stroke file | `scripts/pen_strokes.py ART.webp OLD.json OUT.json [--debug DEBUG.png]` |
+| City-line snippet | `scripts/temple_city_snippet.py` (`web_marquee.py sync` runs it) |
+| Colour swatches | `scripts/swatches.py check` (`--strict-theme`); `render`; `push --dry-run` |
+| Colour order / product-type fixups | `scripts/shopify_fixups.py all --report-only` (`--handle H`) |
+| Gallery composites | `scripts/composite_catalog.py --garment G --outdir DIR --temple T` (`--force`) |
+| Gallery build | `scripts/build_garment_catalog.py --garment G --composites DIR --temple T --dry-run` (`--stages`, `--verify`, `--limit`) |
 
-## Product naming
+## New temple, end to end
 
-Titles lead with the garment line and carry the temple in parentheses. The
-patterns live in `garments/*.json` under `naming`; never hardcode one.
+1. **Art.** Evan drops a folder in `Temples/` with either the black and white SVGs or just the source sketch PNG ("{Temple}.png", or any single unambiguous PNG). PNG-only folders are traced during the build (`trace_art.py`, `--trim --drop-label`) and must pass the tracer's health checks (lost solid about 0%, lost faint under 10%, weight delta within 8%, no ink touching the frame) or the temple stops with the reason. A "{Temple} trace check (auto).png" lands in the folder for Evan's eyeball. The manifest scaffolds itself from `temples.json`.
+2. **Location.** If the temple is not in `temples.json`, the build stops rather than guessing. See "New temple not in temples.json" below.
+3. **Facts.** Research and save `temple-facts.html` (see "Writing descriptions"). The runner blocks any row without it; that is a workflow step, not a bug.
+4. **Build.** `scripts/tapstitch_build.py --temple "{Name}"` writes the flattened back print files into the temple folder and adds the rows to the ledger as `file-built`.
+5. **Proof.** `scripts/tapstitch_preview.py --temple "{Name}"` renders the proof page into `artifacts/tapstitch-previews/`. Show it to Evan.
+6. **Approve.** Only after Evan approves: `scripts/tapstitch_approve.py --temple "{Name}"`. Approval is per temple and covers all three garments.
+7. **Plan, then run.** `scripts/tapstitch_run.py --temple "{Name}"` prints the plan and any blockers. Publishing puts listings live with no undo, so run `--apply --publish --temple "{Name}"` only when Evan has initiated it. Per row the runner creates the template, uploads the back and front files, saves the design, creates the store product with the description baked in, distributes, waits for Shopify, then runs the Shopify half (product type, art card at slot 2, colour fixups, swatch gate) and rebinds each variant to its back image. Every step is resumable: a re-run reads the ids already in the ledger and never distributes twice. On the way out it mirrors the facts fragments into `artifacts/temple-facts/` and runs the marquee check.
+8. **Easify.** `scripts/easify_options.py sync --report-only`, then `sync`. Evan imports `artifacts/easify/option-sets.csv` in the Easify app by hand; importing is never automated.
+9. **Marquee.** Required, see below.
+10. **Gallery (optional, per Evan).** The standard gallery (flat back, flat front, art card, on-model backs, fabric details) comes from `composite_catalog.py` then `build_garment_catalog.py`. Dry-run first; `--prune` deletes images.
+11. **Commit** (see "After every run").
 
-| Garment | Title | Salt Lake (parent) |
-|---|---|---|
-| cc1567 hoodie | `Pillar Temple Hoodie ({place})` | `Pillar Temple Hoodie` |
-| cc1566 crew | `Classic Temple Crew Sweatshirt ({place})` | `Classic Temple Crew Sweatshirt` |
-| cc1717 tee | `Essential Temple Tee ({place})` | `Essential Temple Tee` |
-| cc1717-dated | `Essential Temple Tee – with personalizable date ({place})` | `Essential Temple Tee – with personalizable date` |
+## Writing descriptions
 
-En dash, lowercase after it. No em dashes anywhere.
+A Tapstitch product carries its description from birth: `generate.description_for()` composes the garment's fixed sections (`reference/garment-copy/{tee,crew,hoodie}/` plus the shared `care-instructions.html`) with the temple's facts fragment, and the runner bakes it into the create call. Research once per temple; all three garments use it.
 
-**Salt Lake is the parent temple** (`config/catalog.json`). Its four products
-carry the bare garment title; every other temple's title carries the temple in
-parentheses, and shoppers can reach any temple through the Easify Temple
-dropdown on every product page. ALL products publish ACTIVE on Shopify (Evan's
-26 Aug 2026 decision; the unlist fixup is removed). Children published before
-that date remain UNLISTED and keep working URLs; nothing in the pipeline sets
-a product's status in either direction anymore. Build a title with
-`generate.build_title()` and read one back with `art_images.match_temple()`;
-both handle the parent case.
+1. Follow the methodology in `reference/skills/cc1717-temple-description-builder/cc1717-temple-description-builder/SKILL.md` exactly (only its research method and fragment format apply; that folder name is historical): source hierarchy (Tier 1 official Church sources and Church News; Tier 2 churchofjesuschristtemples.org; Tier 3 needs three independent sources), screen every claim against `references/known-myths.md`, check `references/special-cases.md` first, omit what cannot be tiered, no em dashes, the exact HTML format with h3/h4 and time elements.
+2. New prose goes through the `humanizer` skill, then the `structural-humanizer` skill (one or two structural interventions, varied per temple), before Evan sees it. The fixed sections and existing fragments are stored assets and are never edited by either pass.
+3. Save ONLY the `<section class="temple-facts">` fragment to `Temples/{Name}/Working files/temple-facts.html` with the as-of line dated to the research date. Fragments belong in `Working files/`; a fragment at the folder root still resolves through the fallback, which is how ten ended up misplaced.
+4. Print the source ledger in chat (VERIFIED by tier / CONFLICTS RESOLVED / VOLATILE / OMITTED) and save it under `artifacts/description-ledgers/`. Evan spot-checks it.
+5. Run `scripts/mirror_facts.py` after editing a fragment outside a run, and commit `artifacts/temple-facts/`.
 
-**Limited Edition titles are Evan's hand-built one-offs** (`Essential Temple
-Tee – Limited Edition (Nauvoo)` and the two Nauvoo front-logo garments). The
-pipeline never claims one as a duplicate, never auto-publishes one, and never
-gives one a dropdown row. This marker replaced the old `(front logo)` one.
-
-## The workflow
-
-1. Evan drops a temple folder in `Temples/` containing either the black + white SVGs OR just the source sketch PNG (named "{Temple}.png", or any single unambiguous PNG). PNG-only folders are traced automatically during the run (trace_art.py wraps the exported tracer with the standard --trim --drop-label flags) and must pass the tracer skill's health checks (lost solid ~0%, lost faint under 10%, weight delta within 8%, no ink touching the frame) or that temple hard-stops with the reason. A "{Temple} trace check (auto).png" composite lands in the folder for Evan's eyeball; his real quality gate remains reviewing the unpublished product before publishing. The manifest scaffolds itself from `temples.json`.
-2. For each product wanted, Evan duplicates ANY product of that garment in the Printify UI (dated sources only for the dated line,; the duplicate carries mockups, personalization config, and variant visibility, but NOT the Economy shipping toggle: new drafts default Economy off, observed 18 Aug 2026).
-3. Run the sweep or a targeted generate. The generator claims duplicates, uploads art (resolution bumped in memory to 4096), renders location text in Alata (Evan's own `*location text*` files override; `(auto)` files are the generator's, always regenerated), computes ink-anchored layout, and PUTs the design with the real title.
-4. After descriptions are written, run `scripts/add_date_layer.py` for any dated drafts: it drives the Printify editor via the dedicated Chrome (CDP attach; Evan logs in once via `scripts/printify_login.py`) to add the personalization date text layer to all colorway groups, then verifies via API. Manual editor flow remains the fallback.
-5. Run `scripts/publish_drafts.py`: drafts publish to Shopify automatically when they pass every gate: never published, not locked by an in-progress publish, not a "Copy of" or Limited Edition title, temple-facts section present, and for dated/personalizable drafts a clean date-layer verification (Evan's 18 Aug 2026 evening decision reversing the earlier never-publish-dated rule). Unverified dated drafts stay held for Evan to finish by hand. Economy shipping is NOT a gate (Evan's 19 Aug 2026 decision): drafts publish with Economy off and the run output notes each one so Evan can flip the toggle in the Printify UI whenever, post-publish. Evan retires old products when a draft was a `--replace`ment. Publishing puts listings live immediately, so run it only as part of a run Evan initiated. Confirmation is checked against Shopify itself (Printify's own status lags the push by several minutes; the product is typically live in 1 to 4). After each publish confirms, the script applies the Shopify fixups for that product: a hoodie's "True Navy" colorway is renamed to "Blue Jean", and the garment's `storefront_first_color` is moved to the front of the Color option (Moss on tees, True Navy on crews, Denim on hoodies). The product's listing status is left alone: everything publishes ACTIVE (Evan's 26 Aug 2026 decision; children were unlisted before then and stay that way). That last one sets which variant the product page opens on, since Shopify preselects variant position 1 and derives position from the option value order; it is also the swatch display order. Caveat: Shopify re-derives every option's order from the resulting variant sequence, so a first color missing a size pushes that size to the back. Denim lacks S and 3XL on the hoodies, which is why hoodie sizes read M, L, XL, 2XL, S, 3XL; Evan accepted that on 22 Aug 2026. It also puts the default variant on the garment's declared `default_colorway` (Moss on the dated tee), preserving the size: "True Navy / L" becomes "Moss / L". That moves Printify's default, which mockup selection follows; Shopify orders variants itself and does not follow it.
-
-## Writing descriptions (after generating a temple's products)
-
-Descriptions are written to PRINTIFY pre-publish, so products go live complete. Research once per temple, apply to all its garments:
-
-1. Follow the methodology in `reference/skills/cc1717-temple-description-builder/.../SKILL.md` EXACTLY: source hierarchy (Tier 1 official Church sources and Church News; Tier 2 churchofjesuschristtemples.org; Tier 3 needs three independent sources), screen every claim against `references/known-myths.md`, check `references/special-cases.md` first, omit what cannot be tiered, no em dashes, the exact HTML format with h3/h4 and time elements.
-2. Save ONLY the `<section class="temple-facts">` fragment to `Temples/{Name}/temple-facts.html` with the as-of line dated to the research date.
-3. Run `scripts/write_description.py --temple "{Name}"`. It assembles the garment-correct fixed sections plus the fragment and PUTs it to every product in the temple's status.json. The dated tee's fixed sections open with the Personalization block at `reference/description-blocks/personalization-intro.html`, wired in by `description_prefix` in `garments/cc1717-dated.json`.
-4. Print the source ledger in chat (VERIFIED by tier / CONFLICTS RESOLVED / VOLATILE / OMITTED). Evan spot-checks it.
-
-Every description passes through `description_html.compose_description()` at assembly (all three compose sites): the temple facts are rewrapped as collapsed `<details>` rows (temple name + spec rows, then one row per h4 block; the as-of line stays visible) styled by a scoped `<style>` block shipped inside the section (dividers, 12px rows, +/− indicator; the theme hides default markers), the size-guide video gains `controls="controls"` and `preload="metadata"` so iPhones that decline autoplay still get a play button, and the size-guide measurements table is trimmed off because the video is the size guide (all Evan's 26 Aug 2026 decisions). The vendored skill assets and the Temples/ fragments stay verbatim; never wrap them by hand. Transforms are idempotent, so re-composing extracted live facts converges byte-exact.
-
-Catalog-wide description passes: `scripts/write_description.py --normalize [--via-publish] [--only "title text"] [--report-only]`. `--normalize` rewrites anything differing from the repo's current copy; `--via-publish` syncs stale Shopify copies by publishing from Printify with ONLY the description flag on (measured safe 26 Aug 2026: art card, color order, handle, status all survive; a full-flag publish is the destructive republish, never use it for this). Without `--via-publish` it writes descriptionHtml to Shopify directly. The Shopify comparison is entity-insensitive because the Printify connector decodes entities on push (&sup2; arrives as a literal superscript two).
-
-Deltas from the claude.ai skills: write target is Printify (never the Shopify connector from here), no product resolution step (product ids come from status.json), and With Date products DO get descriptions. Evan's claude.ai description event still runs post-publish; it currently hard-stops on the new title patterns, and if revived it would write un-collapsed markup that a `--normalize` run re-converges.
+`description_html.compose_description()` collapses the facts and the fixed sections into `<details>` rows; never wrap them by hand. Live descriptions are not rewritten retroactively unless Evan asks. For an existing live product, `tapstitch_publish.py finish` writes the composed description; `scripts/collapse_live_sections.py` (`--report-only`, `--handle H`) makes the smallest splice-and-collapse change to live pages instead of recomposing them.
 
 ## New temple: add it to the homepage marquee (required)
 
-Every new temple must reach the homepage marquee, and this is part of the pipeline, not an optional extra. The marquee only shows a temple whose art (`theme/assets/pp-temple-<slug>.webp`), stroke file (`pp-temple-<slug>.json`, from `scripts/pen_strokes.py`, see `theme/README.md`) and city line (`theme/snippets/pp-temple-city.liquid`) are all in the live theme; a temple missing any of them is left off without an error. After publishing a new temple, run `scripts/web_marquee.py sync`, then upload what it lists with the `shopify theme push --nodelete` command it prints (from the Mac; the connector cannot write the live theme), and re-run `scripts/web_marquee.py check` until it is clean. `tapstitch_run.py --publish` runs the check itself at the end of the run. Commit the regenerated snippet and the new stroke file.
+Every new temple must reach the homepage marquee; this is part of the pipeline, not an optional extra. The marquee (`theme/sections/pp-temple-marquee.liquid`) shows a temple only when the live theme has its art (`assets/pp-temple-<slug>.webp`), its stroke file (`assets/pp-temple-<slug>.json`, from `scripts/pen_strokes.py`, see `theme/README.md`) and its city line (`snippets/pp-temple-city.liquid`). A temple missing any of them is left off with no error. After publishing, run `scripts/web_marquee.py sync`, upload what it lists with the `shopify theme push --nodelete` command it prints (from the Mac; the store connector cannot write the live theme), and re-run `scripts/web_marquee.py check` until it is clean. `tapstitch_run.py --publish` runs the check itself at the end. Commit the regenerated snippet and the new stroke file.
 
 ## New temple not in temples.json
 
-The generator hard-stops rather than guessing. Research the temple's PHYSICAL city (churchofjesuschristtemples.org is the reference; the physical city can differ from the name: Washington D.C. Temple prints KENSINGTON, MARYLAND). Add the entry with `verified: true` and the format `CITY, STATE` (spelled out) or `CITY, COUNTRY`, then re-run. If sources are unclear, ask Evan instead of guessing.
+The build hard-stops rather than guessing. Research the temple's PHYSICAL city (churchofjesuschristtemples.org is the reference; the physical city can differ from the name: Washington D.C. Temple prints KENSINGTON, MARYLAND). Add the entry with `verified: true` and the format `CITY, STATE` (spelled out) or `CITY, COUNTRY`, then re-run. If sources are unclear, ask Evan instead of guessing.
 
 ## Adding a garment
 
-1. Evan duplicates a product of the new garment type in Printify.
-2. Copy an existing `garments/*.json`; fill blueprint_id, print_provider_id, and print area px from the duplicate/catalog API; set layout_profile, product_type, naming pattern, description_skill.
-3. Run one temple with `--garments {new_id}`, Evan eyeballs it in the editor before it goes near the sweep. Spacing overrides go in the garment config, never in code.
+1. Copy `garments/tee.json` to `garments/{new_id}.json` with `"channel": "tapstitch"`. Fill the `blank` (model, variant code, sizes), `print_area` and `front_print_area`, `colorways`, `storefront_first_color`, `shopify_product_type`, `naming`, `price_usd`, `costs_usd`, and `garment_copy` pointing at a new `reference/garment-copy/{new_id}/` folder.
+2. Every storefront colour name needs a hex in `config/swatches.json` and an entry in `colour_names.py`, or the swatch gate stops the publish.
+3. Add the line to `artifacts/easify/sets.json` so it gets a Temple dropdown set.
+4. `scripts/tapstitch_publish.py check` until nothing blocks, then build, preview and approve one temple with `--garments {new_id}`, and have Evan eyeball it before it goes near the rest of the catalog. Spacing overrides go in the garment config, never in code.
 
-Adding a layout profile (genuinely new arrangement): one function in `layout.py` plus a `PROFILES` entry. That is the only layout code change ever needed.
+Adding a layout profile (a genuinely new arrangement): one function in `layout.py` plus a `PROFILES` entry.
+
+## Coverage check
+
+`scripts/tapstitch_status.py` gives the per-state counts; `--full` or `--problems` lists rows. `scripts/tapstitch_run.py` with no flags shows what is ready and what is blocked, with reasons, against the live store's titles. `scripts/web_marquee.py check` covers the homepage side.
+
+## Regenerating or repairing a live product
+
+Most damage is Shopify-side and repaired in place, all idempotent:
+
+- Product type, description, art card, colour fixups: `tapstitch_publish.py finish --handle H --temple T --garment G` (`--dry-run` first).
+- Variants opening on the blank front: `tapstitch_variant_images.py --handle H`.
+- Missing art card: `art_images.py push --temple T`.
+- Colour order: `shopify_fixups.py all --handle H`.
+
+Tapstitch cannot add a colour to an existing listing, and distributing a rebuilt store product creates a second Shopify product with the same title rather than updating the first. A full rebuild is therefore a swap: new product, old one set to DRAFT at a `-retired-<date>` address. `scripts/eden_green_rollout.py` is the worked example; its docstring holds the sequence and traps. Any swap needs Evan's explicit go-ahead.
 
 ## Temples/All mirror (digital download files)
 
-`Temples/All/` holds a flat duplicate of every temple's black SVG named by
-its CLEAN place token (`Manhattan black.svg`, `Ogden Original black.svg`,
-no stars). It feeds the Temple Art File digital product's delivery app.
-`mirror_black_art()` in generate.py maintains it automatically on every
-sweep and `--temple` run (refreshes when source art is newer). `All` is NOT
-a temple folder: the sweep skips it, and any new script walking `Temples/`
-must skip it too.
+`Temples/All/` holds a flat copy of every temple's black SVG named by its clean place token (`Manhattan black.svg`, `Ogden Original black.svg`, no stars). It feeds the Temple Art File digital product's delivery app. The Tapstitch scripts do not refresh it, so check that a new temple's black SVG is there. `All` is not a temple folder: any script walking `Temples/` must skip it.
 
-## Art close-up images (post-publish, Shopify side)
+## Art close-up cards
 
-Every product gets a black-art-on-white close-up card at gallery position 2 on Shopify. Cards auto-render to `Temples/{Name}/{Name} art closeup (auto).png` (an Evan-made file without "(auto)" overrides). Run `scripts/art_images.py push --all` at the end of every sweep: it snapshots the whole catalog in a few bulk queries, matches every temple product by longest place token (Provo City Center beats Provo), and cards anything missing one. Scope per Evan's explicit rule (17 Aug 2026): ANY temple product on Shopify, hand-built or generated; copies, templates, and test titles are excluded. Idempotent via the alt marker "Temple line art close-up". Requires SHOPIFY_STORE_DOMAIN and SHOPIFY_ADMIN_TOKEN in .env; if absent, say so and skip.
+Every product gets a black-art-on-white card in the gallery. Cards render to `Temples/{Name}/{Name} art closeup (auto).png` (an Evan-made file without "(auto)" overrides). The runner pushes the card for each temple it publishes; `art_images.py push --all` catches anything missing. Idempotent via the alt marker "Temple line art close-up". Needs `SHOPIFY_STORE_DOMAIN` and `SHOPIFY_ADMIN_TOKEN` in `.env`; if absent, say so and skip.
 
-## Temple dropdown option sets (Easify, Shopify side)
+## Temple dropdown (Easify)
 
-Every product page shows a "Temple" dropdown (Easify Product Options app) cross-linking the other temples' products of the same garment line. The canonical option-sets CSV lives at `artifacts/easify/option-sets.csv` (committed); the Easify app is downstream of it. `artifacts/easify/sets.json` maps garment lines to sets.
-
-Run `scripts/easify_options.py sync` after `art_images.py push --all` whenever Evan has published products (or on request). It reads the live catalog, verifies every option's label and URL against the real handles (never derived from titles), adds newly published temples alphabetically, creates configured sets that do not exist yet (placeholder ids 900001+), and rewrites the CSV only when something changed. Rows are never deleted, only fixed, added, or reported. Evan then imports the CSV in the Easify app by hand; importing is manual like publishing, never automated. If an import created a new set, Evan exports fresh from Easify once and we run `scripts/easify_options.py reseed --export <file>` so the real ids replace the placeholders; commit the reseeded CSV. Same .env Shopify creds as the art push; if absent, say so and skip.
+Every product page shows a "Temple" dropdown cross-linking the same garment line's other temples. The canonical CSV is `artifacts/easify/option-sets.csv`; `artifacts/easify/sets.json` maps garment lines to sets. `easify_options.py sync` reads the live catalog, checks every label and URL against real handles, adds new temples alphabetically, and rewrites the CSV only on change. Rows are never deleted. Evan imports the CSV by hand. If an import created a new set, Evan exports fresh from Easify and we run `easify_options.py reseed --export <file>`, then commit.
 
 ## After every run
 
-End-of-run sequence once generation and descriptions are done: `scripts/add_date_layer.py` (adds date layers to dated drafts via the browser), then `scripts/publish_drafts.py` (auto-publishes base drafts and verified dated drafts, and applies the Shopify fixups to each; wait for it to confirm), then `scripts/art_images.py push --all` (give Shopify a couple of minutes to finish ingesting mockups first), then `scripts/easify_options.py sync`, then `scripts/shopify_fixups.py all`, then `scripts/web_marquee.py check` (any newly published temple must be on the homepage marquee; see above) (a no-op after a clean publish run, but any Printify republish re-syncs variants and pushes the hoodie colorway back to True Navy, so it is worth the pass). Evan's remaining manual steps: flip Economy shipping on for newly published products in the Printify UI (post-publish, whenever; the publish output lists which ones need it), and the Easify CSV import.
+Once products are published: `scripts/easify_options.py sync`, then the marquee steps above, then `scripts/mirror_facts.py --check`. Evan's manual steps: the Easify CSV import and the theme upload.
 
-Commit and push any repo changes the run produced: new or edited temples.json entries, description ledgers in artifacts/description-ledgers/, the Easify CSV in artifacts/easify/, and any code or config changes. The remote is Evan's PERSONAL GitHub, peculiarmarketing, over HTTPS using the repo's configured origin; never wire this repo to his work GitHub account (edavis821). Files in Temples/ (manifests, facts fragments, status, auto renders) live outside the repo and are not committed.
-
-## Republishing an already-published product
-
-`scripts/republish.py` re-pushes title, description, images and variants
-together. Measured 22 Aug 2026: it keeps the title and the listing status,
-but it DELETES the art close-up cards, reverts the hoodie's Blue Jean colorway
-to Printify's True Navy, reverts the Color option order so pages stop opening
-on the wanted color, and does NOT change the featured image. The script runs
-the three repair passes itself afterward; never run it with `--skip-repair`
-and walk away. Unclaimed "Copy of ..." drafts are never republished because
-publishing one creates a junk storefront product.
-
-Three different things are called "default" and setting one does not set the
-others: Printify's `variants[].is_default` (`scripts/default_variant.py`),
-Shopify's preselected variant, which is variant position 1 and follows the
-Color option value order (`shopify_fixups.py color-order`), and the featured
-photo, which is gallery position 1 (`shopify_fixups.py featured-photo`).
+Commit and push repo changes the run produced: `temples.json` entries, the ledger in `artifacts/tapstitch/`, description ledgers, `artifacts/temple-facts/`, the Easify CSV, the city-line snippet and stroke files, and any code or config changes. The remote is Evan's PERSONAL GitHub, peculiarmarketing, over HTTPS using the repo's configured origin; never wire this repo to his work GitHub account (edavis821). Files in `Temples/` live outside the repo and are not committed.
 
 ## Hard rules
 
-- Place tokens live in manifests and may differ from folder names ("Washington DC" folder, "Washington D.C." token). Never derive one garment's title from another's.
-- Never create a title that exactly duplicates an existing product except via `--replace`. Nesting is no longer a concern: the place token is parenthesized at the end of the title.
-- Do not modify the description skills, the tracer outputs, or anything in `Temples/` beyond manifests, status files, and `(auto)` renders.
+- Publishing is `--apply --publish` with a bound, run only when Evan initiated it. Nothing else distributes.
+- Place tokens live in manifests and may differ from folder names ("Washington DC" folder, "Washington D.C." token). Folder names may carry a ref-finder star ("Lehi*"); `--temple "Lehi"` resolves it.
+- Never create a product whose title duplicates a live one.
+- Do not modify the description skill, the tracer outputs, or anything in `Temples/` beyond manifests, facts fragments, print files and `(auto)` renders.
 - Do not touch Lease End files or projects, ever.
