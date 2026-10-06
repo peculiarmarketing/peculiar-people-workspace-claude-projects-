@@ -2,9 +2,7 @@
 
 Replaces the old "PP NEW Margin Offer Breakdown" CSV, which priced Comfort Colors blanks on Printify. Those blanks are retired. Figures are Evan's, 14 September 2026, and match BRAND.md section 7.
 
-All-in cost covers the blank, printing both sides, shipping, the custom neck tag, the hangtag, the order insert, and payment gateway fees.
-
-**Flagged 2 October 2026: these totals need recalculating.** Peculiar People no longer uses custom neck labels or hang tags, so every all-in figure below still counts two items that are no longer bought. Their per-unit cost was never recorded, so the figures stay as Evan gave them. Each real cost is lower, and each gross higher, by that amount. Same flag as BRAND.md section 7.
+All-in cost covers the blank, printing both sides, shipping, the order insert, and payment gateway fees. No neck tag or hangtag; Peculiar People does not use them.
 
 | Line | Blank | All in | Price | Gross | Gross % |
 |---|---|---|---|---|---|

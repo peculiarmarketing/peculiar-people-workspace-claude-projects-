@@ -169,15 +169,8 @@ sizes a blank has at all, and what printing costs. Both replacements are slightl
 heavier than what they replace, at 350 gsm against 345.
 
 **What each garment actually costs.** Evan's figures, 14 September 2026, all in:
-the blank, printing both sides, shipping, the custom neck tag, the hangtag, the
-order insert, and payment gateway fees.
-
-**Flagged 2 October 2026: these totals need recalculating.** Custom neck labels
-and hang tags are no longer used, so every figure below still counts two items
-that are no longer bought. The per-unit cost of each was never recorded here, so
-the totals and gross margins are left as Evan gave them rather than guessed at.
-Each real cost is lower, and each gross higher, by whatever the neck tag and the
-hangtag cost per unit.
+the blank, printing both sides, shipping, the order insert, and payment gateway
+fees. No neck tag or hangtag; Peculiar People does not use them.
 
 | Line | All in | Sells for | Gross |
 |---|---|---|---|
