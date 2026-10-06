@@ -83,8 +83,13 @@ in git history if that is ever revisited.
    is how the real job runs. Running the check from Terminal would borrow
    Terminal's permissions and could pass when the real job would fail.
 
-The Mac has to be awake and logged in at 1:15 AM. Check that System Settings >
-Energy does not put it to sleep.
+The Mac has to be logged in at 1:15 AM; a locked screen is fine. It sleeps
+after a minute idle, so a repeating wake gets it up first (run once, needs your
+password; `pmset -g sched` confirms it):
+
+    sudo pmset repeat wakeorpoweron MTWRFSU 01:13:00
+
+Once running, the job holds the Mac awake with `caffeinate` until it finishes.
 
 ## Files
 

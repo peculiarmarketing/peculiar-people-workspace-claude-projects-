@@ -17,6 +17,7 @@ are never half-synced by iCloud while it runs.
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -149,6 +150,10 @@ def main():
     config = common.load_config()
     if args.check:
         return run_check(config)
+    # The Mac mini sleeps after a minute idle. caffeinate holds it awake until this
+    # process exits. Started as a child, not as the launchd program, so Full Disk
+    # Access is still checked against this Python.
+    subprocess.Popen(["/usr/bin/caffeinate", "-i", "-w", str(os.getpid())])
     common.OUTBOX.mkdir(parents=True, exist_ok=True)
     state = common.load_state()
     status = collect(config, state)
