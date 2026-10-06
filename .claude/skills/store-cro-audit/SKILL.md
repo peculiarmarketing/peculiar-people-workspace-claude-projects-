@@ -38,7 +38,7 @@ Audits the live storefront against `references/rules.md`, 68 rules derived from
 
 Read, in this order:
 
-1. `BRAND.md` (project root). Voice, guardrails, open decisions, and the print-on-demand
+1. `project-sync/BRAND.md`. Voice, guardrails, open decisions, and the print-on-demand
    constraints. Section 19 open decisions are open: do not report an open question as a defect.
 2. `.claude/skills/store-cro-audit/references/rules.md`. The rules, their basis labels, and
    which are blocked at zero orders.

@@ -28,7 +28,7 @@ voice even though he appears in two videos.
 
 ## Brand constraints that override any rule here
 
-Read `BRAND.md` before writing findings. These are settled and not up for re-derivation:
+Read `project-sync/BRAND.md` before writing findings. These are settled and not up for re-derivation:
 
 - **No em dashes anywhere.** Absolute.
 - No fabricated urgency, scarcity, countdowns, or "N sold" counters. Ruled out on brand

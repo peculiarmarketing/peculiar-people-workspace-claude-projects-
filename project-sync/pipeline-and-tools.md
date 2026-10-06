@@ -4,7 +4,7 @@ Mirror of the Claude Code workspace, as of 6 October 2026. The source of truth l
 
 ## Where the work happens
 
-- **Claude Code**, run from `1. Peculiar People/Claude Projects/`, does all building: art, print files, products, descriptions, Shopify and Tapstitch changes. It reads `CLAUDE.md`, `BRAND.md`, and each project's `README.md`, `docs/decisions.md` and `HANDOFF.md`.
+- **Claude Code**, run from `1. Peculiar People/Claude Projects/`, does all building: art, print files, products, descriptions, Shopify and Tapstitch changes. It reads `CLAUDE.md`, `project-sync/BRAND.md`, and each project's `README.md`, `docs/decisions.md` and `HANDOFF.md`.
 - **This Claude project** is for strategy, marketing, copy and creative, and it keeps a copy of the brand and pipeline state so chat answers match what is live. If this doc and the workspace disagree, the workspace wins.
 
 ## Folder map (`1. Peculiar People/`)

@@ -49,7 +49,7 @@ first real piece of work for the ones that are.
 
 1. `git pull` so the Mac's push is present.
 2. `python3 idea-inbox/pending.py` lists unprocessed items and the Mac's health.
-3. Read `BRAND.md` in full on the first item of the night (it is long; the
+3. Read `project-sync/BRAND.md` in full on the first item of the night (it is long; the
    sections that matter most are 5 Positioning, 6 Products, 10 Who buys this,
    11 Voice, 13 Guardrails, 16 Where the business stands, 17 Direction, 18
    Systems, 19 Open decisions). Read `CLAUDE.md` and skim

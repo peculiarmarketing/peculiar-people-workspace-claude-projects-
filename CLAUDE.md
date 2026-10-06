@@ -4,7 +4,7 @@ Workspace for Peculiar People (peculiarpeopleco.com) automation. Everything here
 
 ## The brand
 
-`BRAND.md` holds what Peculiar People is: purpose, vision, positioning, products, customer avatars, voice, guardrails, and the open decisions. Read it before any work touching copy, products, marketing, or brand direction. Its "Open decisions" section is load-bearing; do not treat an open question there as settled.
+`project-sync/BRAND.md` holds what Peculiar People is: purpose, vision, positioning, products, customer avatars, voice, guardrails, and the open decisions. Read it before any work touching copy, products, marketing, or brand direction. Its "Open decisions" section is load-bearing; do not treat an open question there as settled.
 
 ## Projects
 
@@ -35,7 +35,7 @@ The "Peculiar People" Project on claude.ai holds copies of three docs so chat wo
 
 | Project doc | Source here |
 |---|---|
-| `claude/BRAND.md` | `BRAND.md` |
+| `claude/BRAND.md` | `project-sync/BRAND.md` |
 | `claude/pipeline-and-tools.md` | `project-sync/pipeline-and-tools.md` |
 | `claude/unit-economics.md` | `project-sync/unit-economics.md` |
 
