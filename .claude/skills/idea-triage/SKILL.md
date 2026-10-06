@@ -15,7 +15,7 @@ first real piece of work for the ones that are.
 ## Non-negotiable constraints
 
 1. **Plans and drafts only.** Never edit the live store, a theme, a product, a
-   collection, Printify, Tapstitch, or any published copy. Shopify tools may be
+   collection, Tapstitch, or any published copy. Shopify tools may be
    read (to see what exists when making a mockup), never mutated. Never post,
    send, reply to a DM, or email anyone. Evan decides what ships.
 2. **Do not implement Claude Code tricks tonight.** Write the plan. Changing
@@ -31,7 +31,7 @@ first real piece of work for the ones that are.
    installing a third-party tool, the plan says so and flags it for Evan to
    vet.
 4. **BRAND.md section 19 open decisions stay open.** If an idea depends on one
-   (beachhead, voice once Bailee posts, scripture in copy, posting volume), say
+   (beachhead, scripture in copy, posting volume), say
    which decision it hinges on and leave the call to Evan.
 5. **No unverified facts in drafts.** A statistic or claim from a reel goes in
    as "claimed in the video, unverified", never as fact. Temple facts go

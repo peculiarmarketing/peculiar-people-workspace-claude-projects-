@@ -8,7 +8,7 @@ Workspace for Peculiar People (peculiarpeopleco.com) automation. Everything here
 
 ## Projects
 
-- `temple-product-generator/`: generates Printify temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill. Work in flight is at the top of its `HANDOFF.md`; read that before anything else there.
+- `temple-product-generator/`: generates Tapstitch temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill. Work in flight is at the top of its `HANDOFF.md`; read that before anything else there.
 - `idea-inbox/`: nightly pipeline. The Mac mini collects reels and notes Evan saves (iMessage to self, two Instagram chats) at 1:15 AM; the `idea-triage` skill turns them into verdicts and plans, drafts, or mockups in `ideas/` around 2 AM. Plans and drafts only. Start with `idea-inbox/README.md`.
 
 ## Writing outward-facing copy
@@ -26,8 +26,8 @@ This applies only to new prose being drafted (new temple facts sections, schedul
 
 - No em dashes in anything Evan-facing (chat, docs, product copy). Plain, direct language.
 - Explain the mechanism of a failure before fixing it.
-- Phase gates and product changes that touch the live store get Evan's explicit confirmation. Publishing runs through scripts/publish_drafts.py's gates: base products and verified With Date drafts auto-publish when Evan initiates a run; anything failing a gate stays held for Evan.
-- The Printify token lives in `temple-product-generator/.env`, gitignored. Never commit or print it.
+- Phase gates and product changes that touch the live store get Evan's explicit confirmation.
+- API tokens live in `temple-product-generator/.env`, gitignored. Never commit or print them.
 
 ## Keeping the claude.ai project in sync
 

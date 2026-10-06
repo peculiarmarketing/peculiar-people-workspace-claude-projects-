@@ -616,7 +616,7 @@ the mockup problem. Worth separating from the larger shoot.
 
 ### Conflicts with print-on-demand economics
 
-Printify gives no volume cost break, so every one of these comes straight out of margin with
+Print-on-demand gives no volume cost break, so every one of these comes straight out of margin with
 no cost relief behind it:
 
 - Free shipping thresholds and the progress bar that drives them (B1, B2, B3).

@@ -1,6 +1,6 @@
 # Peculiar People: Brand File
 
-Last updated 23 September 2026 (sections 6, 7, 8, 18 and 19 brought in line with the live Tapstitch store; later the same day, Bailee's social role and brand voice closed in sections 3 and 19, and the email tooling noted in section 17). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
+Last updated 6 October 2026 (superseded history pruned throughout; Tapstitch is the only fulfillment channel). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
 
 ## What this file is
 
@@ -69,7 +69,7 @@ Pricing is deliberately premium and Evan is holding it, with a stated worry that
 
 **The store is live on Tapstitch.** Verified against the Shopify store on
 23 September 2026: 136 active products. That is 45 temples across three garment
-lines, plus the Temple Art File. Printify fulfills nothing. Every garment comes
+lines, plus the Temple Art File. Every garment comes
 from Tapstitch under the vendor name `ODMPOD`, printed and shipped from the USA.
 
 | Line | Blank | Price | Colours, in swatch order | Opens on |
@@ -79,18 +79,16 @@ from Tapstitch under the vendor name `ODMPOD`, printed and shipped from the USA.
 | Ultra-soft Oversized Temple Hoodie | Tapstitch R00286 | $74.99 | Navy Blue, Gray, Eden Green, Black, Coffee, Mauve, Royal Blue | Navy Blue |
 | Temple Art File (digital SVG download) | n/a | $4.95 | 45 designs | Salt Lake |
 
-Eden Green is being added to the hoodies one temple at a time, as of
-22 September 2026 (17 of 45 done on 23 September). Tapstitch cannot add a colour to
-an existing listing, so each hoodie is remade and the old one is retired as a
-draft. It sits third in the swatch row, where Tapstitch puts it, by Evan's
-decision on 22 September. Do not reorder it.
+Eden Green is live on all 45 hoodies (rollout finished 23 September 2026). It
+sits third in the swatch row, where Tapstitch puts it, by Evan's decision on
+22 September. Do not reorder it. Dark Green is on no live product.
 
 The Temple Art File gained Albuquerque, Billings, Burley, Lehi and Provo Rock
 Canyon on 23 September 2026. Those five show as sold out until their download
 files are attached in the Digital Products app.
 
 The personalizable date tee is paused, not retired. Its 40 listings sit as drafts
-on the old Printify blank. Printify let a buyer type a date at checkout and flowed
+on a retired blank. That setup let a buyer type a date at checkout and flowed
 it into the print; nothing equivalent was found on Tapstitch. The demand it served
 is real and section 10 still names that buyer.
 
@@ -104,20 +102,14 @@ Catalog conventions:
 Scale: 45 temple folders, all traced and all sellable. 99 more temples sit in
 `Temples READY` with reference photos gathered.
 
-Earlier history, for reference. On 14 September 2026 all 160 Printify temple
-listings were drafted and the store went dark while the Tapstitch catalogue was
-built. It came back on 16 September and was complete at 45 temples on 17 September.
-Six products were deleted permanently at Evan's instruction during the move (see
-section 19).
-
 ## 7. Blanks: decided, 14 September 2026
 
-**Peculiar People is moving to Tapstitch blanks.** Evan judged the samples and
+**Peculiar People moved to Tapstitch blanks.** Evan judged the samples and
 committed to one tee, one hoodie, and one crewneck sweatshirt, carrying every
-temple design. Comfort Colors 1717, 1566 and 1567 are retired.
+temple design.
 
-The reasoning stands as he gave it: Comfort Colors 1566 and 1567 are well built
-but feel a bit light and stiff, and he wants heavier, and comfortable from first
+The reasoning stands as he gave it: the old fleece blanks were well built
+but felt a bit light and stiff, and he wants heavier, and comfortable from first
 wear, for the reason in section 5. Tapstitch blanks are heavier and feel more
 distinct. The move also makes the front logo affordable, which section 5 cares
 about. It made custom neck labels and hang tags possible too, but as of
@@ -133,40 +125,21 @@ fleece blanks print DTF.
 | Crewneck | Fleeced Sweatshirt #R00368 | 350 gsm, 10.3 oz | S to 2XL | Heather Gray | $64.99 |
 | Hoodie | Oversize Fleeced Hoodie #R00286 | 350 gsm, 10.3 oz | S to 2XL | Navy Blue | $74.99 |
 
-Colors, as live on 23 September 2026: the tee is Black, Maroon, Navy Blue, Coffee
-and Charcoal. The crewneck is Heather Gray and Black, two only. The hoodie is Navy
-Blue, Gray, Eden Green, Black, Coffee, Mauve and Royal Blue, with Eden Green still
-being rolled out (section 6). Dark Green is on no live product.
-
 **Every print is white ink, on every colourway. This is a supplier constraint, not
 a design choice.** Tapstitch cannot vary the print colour within a single listing,
-so one listing means one ink. The earlier version of this rule said the same thing
-for a different reason, that every colour in the range is dark. That is no longer
-true: Heather Gray, Gray, Mauve and Royal Blue are all mid tones. The consequence
-is that choosing a colourway now has to respect white-ink legibility. Evan confirmed
+so one listing means one ink. Heather Gray, Gray, Mauve and Royal Blue are mid
+tones, so choosing a colourway has to respect white-ink legibility. Evan confirmed
 white on Heather Gray and on Mauve works (23 September 2026).
 
 The crew and the hoodie are still a matching set on fabric, identical at 350 gsm
-and 10.3 oz, so a customer can buy the pair and they will feel the same. They no
-longer match on color. The crew carries two colorways against the hoodie's five,
-and Black is the only color all three lines share. The earlier reading, that the
-catalog looks like one family because most colors repeat across the lines, does
-not survive the switch to US fulfillment.
+and 10.3 oz, so a customer can buy the pair and they will feel the same. They do
+not match on color. The crew carries two colorways against the hoodie's seven,
+and Black is the only color all three lines share.
 
 Two colors are renamed for the storefront, because Tapstitch's own names read
 badly on a product page: Wine Red becomes Maroon on the tee, and Flower Gray
 becomes Gray on the crew. The renames happen after publish and have to be re-run
 if variants ever re-sync.
-
-Two of the three blanks are not the ones first chosen. The tee was originally the
-RU0010 and changed within hours: 180 gsm, lighter than the Comfort Colors it was
-meant to improve on, no Small, and a warning on its own product page that it ran
-smaller than standard. The RT0063 is heavier than both, runs the full size range,
-and carries no such warning. The crewneck and hoodie changed later the same day,
-with the move to US fulfillment, from the UT0044 and RW0041. Tapstitch's
-fulfillment choice is not a shipping preference: it changes which colors and
-sizes a blank has at all, and what printing costs. Both replacements are slightly
-heavier than what they replace, at 350 gsm against 345.
 
 **What each garment actually costs.** Evan's figures, 14 September 2026, all in:
 the blank, printing both sides, shipping, the order insert, and payment gateway
@@ -178,58 +151,31 @@ fees. No neck tag or hangtag; Peculiar People does not use them.
 | Crewneck | $34.10 | $64.99 | $30.89 |
 | Hoodie | $34.67 | $74.99 | $40.32 |
 
-These supersede the international-fulfillment figures, and they close the open
-question about the tee: the old $20.57 was worked out while the blank was still
-the RU0010, and $19.57 is measured on the blank and the fulfillment actually in
-use.
-
 The crewneck is the number to look at. Its blank costs more than the hoodie's,
 $16.57 against $14.92, and once everything is counted the two are within $0.57 of
 each other, but the crewneck sells for $10.00 less. That is $9.43 less gross on a
 garment that costs the same to make and ship. Either the crewneck price rises or
 the gap is accepted on purpose. Prices are unchanged for now.
 
-Two things matter beyond the totals. The second print location costs $2.99, not
-the $4.90 Printify charged, which is what made the front logo affordable at all.
+Two things matter beyond the totals. The second print location costs $2.99, which is
+what made the front logo affordable at all.
 And every extra item in an order still adds shipping, which works against the
-multi-temple orders section 16 names as one of the three levers on AOV. The old
-per-item figures (roughly $2.45 tee, $4.80 crewneck, $6.70 hoodie) were
-international rates and no longer apply; the US rates have not been read yet, and
-they need to be before any multi-buy offer is built.
+multi-temple orders section 17 names as one of the three levers on AOV. The US
+per-item shipping rates have not been read yet, and they need to be before any
+multi-buy offer is built.
 
 Against the stated $22 to $40 acquisition cost, a single tee at $25.42 gross
 still does not reliably pay for its own customer. That is the arithmetic behind
-section 16's point that AOV is the structural problem, and it has not changed
+section 17's point that AOV is the structural problem, and it has not changed
 with the move.
 
 **Delivery is 4 to 7 days**: 1 to 2 days production plus 3 to 5 days shipping,
-from a US fulfillment center. That replaces the 10 to 17 days the international
-center quoted, and it turns delivery from something to disclose carefully into
-something the product page can lead with.
+from a US fulfillment center. That is fast enough for the product page to lead
+with.
 
 One gap remains in the size range: the tee runs S to 3XL but the fleece stops at
 2XL, so a 3XL customer can buy a tee and nothing else. Everything from S to 2XL is
 available across all three lines.
-
-Still open:
-
-- **The print area dimensions. CLOSED.** Read off the editor 14 September 2026
-  and confirmed from Tapstitch's own API on 16 September, which states each
-  garment's print area and its resolution outright. Tee and crew are confirmed;
-  the hoodie's are read the same way whenever it is built.
-- **Whether the product line names carry over. CLOSED 16 September 2026.** The
-  live names are **Essential Heavyweight Temple Tee**, **Ultra-soft Temple
-  Sweatshirt** and **Ultra-soft Oversized Temple Hoodie**. The fleece lines were
-  briefly the Cloud Temple Crew Sweatshirt and Cloud Temple Hoodie on
-  16 September, and renamed the same day. The Salt Lake hoodie still lives at the
-  `cloud-temple-hoodie` web address from that first name. The reason for
-  carrying the old names over turned out not to be true: a replacement does NOT
-  inherit its predecessor's web address by sharing its title. Shopify builds a
-  new product's address from its title, so publishing the first crew on
-  16 September minted it at a fresh address even though the old listing had
-  already been deleted, and the old address had to be set on it deliberately.
-  That has to happen on every replacement regardless of what it is called, so
-  renaming costs nothing and the dropdown links survive either way.
 
 Tapstitch has no public API, but its web editor turned out to be a JSON API
 underneath, and product creation is driven from Python (`tapstitch_api.py`)
@@ -253,8 +199,8 @@ are gone.
 
 **The logo moved off the back.** It used to sit at the bottom of the back stack,
 below the location line. It is now the front print. The old arrangement existed
-because back-print-only was a cost decision: Printify charged $4.90 for a second
-print location, which destroyed the margin. It was never an aesthetic choice, and
+because back-print-only was a cost decision: a second print location used to cost
+$4.90, which destroyed the margin. It was never an aesthetic choice, and
 this file should not record it as one. Moving to Tapstitch is what made the front
 print affordable, and a logo on the front is the thing that stops the garment
 reading as a printed blank.
@@ -277,8 +223,7 @@ and correct.
 It is set to 0.7 inches of ink, measured on the letterforms rather than on the box
 around them. The longest line in the catalog, `SARATOGA SPRINGS, UTAH`, is 9.5
 inches wide at that height, which leaves better than two inches of clearance in
-the narrowest of the three back print areas. An earlier 0.8 was set against a
-guess at the print area before the real ones were known.
+the narrowest of the three back print areas.
 
 **The back print, stated completely.** The temple and the city line are centred in
 the print file, horizontally and vertically. The temple spans no more than 12
@@ -294,15 +239,12 @@ the file it sits in. That distinction is not pedantry. The logo file carries abo
 taller than its letters, so a 0.7 inch box would print noticeably smaller than 0.7
 inches of visible type.
 
-All 40 temples reach the full 12 inches on all three garments. They did not
-before: the old layout carried a 2.5 inch bottom margin measured off the Printify
-back, where the logo used to sit down there, and it was the only thing holding
-tall narrow buildings under full width. Dropping the margins was what cleared the
-last of them. The tallest design in the catalog is West Jordan at 15.3 inches
+All 45 temples reach the full 12 inches on all three garments. The tallest design in the catalog is West Jordan at 15.3 inches
 including the city line, inside a back print area 18.4 inches tall.
 
-**The print areas, read off the Tapstitch editor 14 September 2026.** These
-replaced the placeholder canvas the designs were built on until then.
+**The print areas, read off the Tapstitch editor 14 September 2026** and
+confirmed from Tapstitch's API on 16 September, which states each area and its
+resolution outright.
 
 | Line | Front | Back |
 |---|---|---|
@@ -314,13 +256,8 @@ The hoodie's front is the odd one: landscape, because the pouch pocket takes the
 bottom of the panel. That matters for the logo. It currently sits 3 inches below
 the top of the print area on all three lines, which is high on the chest inside
 an 18 inch panel and about a third of the way down inside the hoodie's 10.8 inch
-one. Same number, different place on the body. Worth looking at on a mockup.
-
-One caveat on all six figures: Tapstitch gives the print area in pixels, not
-inches, and does not publish the resolution those pixels are quoted at. These
-inches assume 150 dpi, which is the only reading where a 12 inch design fits at
-all, and which puts the areas within half an inch of the Printify area this
-catalog printed on for a year. The editor displays inches and settles it.
+one. Same number, different place on the body. The first published crew's front
+logo was checked on the rendered mockup and sits correctly.
 
 **Two file rules Tapstitch imposes.** Uploads must be PNG, not SVG, which the
 pipeline already satisfied: the traced vectors are sources, and every print file
@@ -331,12 +268,11 @@ averages hidden black into the edges of white artwork and draws grey halos
 around it. Every pixel in a finished file, visible or not, is set to the ink
 color, which makes that averaging harmless.
 
-**Placement is baked into the file, not set in the editor.** Because Tapstitch
-has no API, each design ships as one flattened transparent PNG shaped to the
-exact proportions of the print area. Dropping it in centred at full size then
-lands every element where the layout math put it. The alternative, dragging
-elements around inside their editor, is the flakiest kind of browser automation
-and was rejected.
+**Placement is baked into the file, not set in the editor.** Each design ships
+as one flattened transparent PNG shaped to the exact proportions of the print
+area. `tapstitch_api.py` places it centred at full size through the editor's JSON
+API, which lands every element where the layout math put it. Positioning
+individual elements inside the editor was rejected as fragile.
 
 ## 9. Future products
 
@@ -368,7 +304,7 @@ Evan's list with an honest read on each. None are committed. The reads are argum
 
 The version worth backing is Church history as places and buildings: Kirtland, Nauvoo, Carthage, the Sacred Grove, Hill Cumorah. That extends what already works and inherits the same legal footing.
 
-**Customizable scenes of Christ with the buyer's own family, matched to family size.** The riskiest idea here, and the recommendation is against building it as described. It means bespoke illustration per order, which breaks the automated pipeline completely; there is no Printify or Tapstitch mechanic for it, so every order becomes manual art. It carries the same copyright problem as the scenes above. And the theological taste line is genuinely contested, inside a word-of-mouth network where a bad reaction travels as fast as a good one. The instinct is right and it already has a proven outlet in date personalization. For a personal, high-emotion, high-price piece, a family portrait in the line style, or a family at their temple, delivers that with none of the risk.
+**Customizable scenes of Christ with the buyer's own family, matched to family size.** The riskiest idea here, and the recommendation is against building it as described. It means bespoke illustration per order, which breaks the automated pipeline completely; there is no Tapstitch mechanic for it, so every order becomes manual art. It carries the same copyright problem as the scenes above. And the theological taste line is genuinely contested, inside a word-of-mouth network where a bad reaction travels as fast as a good one. The instinct is right, and date personalization was meant to be its outlet, though the date tee is paused (section 6). For a personal, high-emotion, high-price piece, a family portrait in the line style, or a family at their temple, delivers that with none of the risk.
 
 **Dictionary-style entry: word, part of speech, example sentence.** Skip it. The dictionary template is one of the most saturated design tropes on print-on-demand, in every niche, and it reads as generic merch. It sits close to the thing named as the enemy in the Playbook's rejected-advice section: thoughtless merchandise. If the underlying idea is defining "peculiar" from 1 Peter 2:9, that is worth doing as original typography. The dictionary format is what kills it, and the word itself is fine.
 
@@ -386,7 +322,7 @@ The order insert is the highest-value piece. It is the natural place to ask for 
 
 **Missionary discount with proof of call.** Recommended against as stated. The Playbook's own correction applies: full-time missionaries have dress standards and almost nowhere to wear a graphic tee outside preparation day, so a call-day discount subsidizes the buyer least able to use the product, at the moment their family is already spending heavily. Verification is manual on Shopify Basic and easy to game. And discounting before any reviews exist trains buyers to wait, which leaves the trust problem that actually gates a premium price untouched.
 
-The moment is right even though the mechanic is wrong. Three replacements that cost no margin: sell the mission call date at full price on the existing personalized tee, aimed at the family rather than the missionary, since parents and siblings want something to wear during the two years and nothing currently serves them; target returned missionaries, who pass the wear test and are the denser network; and run the missionary play in February, where the search data puts the peak.
+The moment is right even though the mechanic is wrong. Three replacements that cost no margin: sell the mission call date at full price on a personalized tee if the paused date tee comes back (section 19), aimed at the family rather than the missionary, since parents and siblings want something to wear during the two years and nothing currently serves them; target returned missionaries, who pass the wear test and are the denser network; and run the missionary play in February, where the search data puts the peak.
 
 ## 10. Who buys this
 
@@ -396,7 +332,7 @@ Four avatars. Evan was asked to pick only the ones that felt real to him and he 
 
 **Women buying gifts.** Wives, mothers, grandmothers, buying for a husband, son, or missionary. Seasonally this is the Q4 buyer, with a February lift on missionary gifting.
 
-**The newly sealed and newly endowed.** A specific date attached to a specific building. The personalizable date tee exists for this person, and it is the highest-margin product in the catalog.
+**The newly sealed and newly endowed.** A specific date attached to a specific building. The personalizable date tee was built for this person. It is paused (section 6), so nothing in the live catalog serves them yet.
 
 **Temple district locals.** People near a new or newly dedicated temple. Open houses, dedications, ward and stake groups. This one connects directly to the group-order and seeding plays.
 
@@ -499,7 +435,7 @@ Established priorities, in order:
 4. Paid Meta only above roughly $100/day. Otherwise skip it.
 5. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
 
-AOV is the structural problem. A single tee cannot absorb a $22 to $40 acquisition cost. The levers are multi-temple orders, the personalization premium, and hoodie mix.
+AOV is the structural problem. A single tee cannot absorb a $22 to $40 acquisition cost. The levers are multi-temple orders, hoodie mix, and the personalization premium once the paused date tee returns.
 
 Content plan: 5 posts per week for month one, then about 9 per week from week five. The extra volume comes from splintering rather than creating. One temple's already-written research yields six pieces, one sample photography session yields four. Same two production sessions.
 
@@ -515,7 +451,7 @@ The two operating documents carry the reasoning and the week-by-week detail. Thi
 - The First Sale Playbook (31 videos reviewed, seasonality data, 90-day sequence, source scorecard): https://claude.ai/code/artifact/948c2205-be6f-4200-9f45-078cc42359ed
 - The Posting Rota (the week laid out, four weeks of topics filled in, the batching method): https://claude.ai/code/artifact/b02e0e11-494c-48cf-8159-b4f011efec7d
 
-The two pillars split cleanly across two people. One temple's existing research splinters into six posts; one sample photography session splinters into four. If Bailee leads social, the natural division is Evan supplying the research pillar and the sample deliveries, Bailee running production, publishing, comments, and the week-four read. Nine to ten posts a week come out of the same two production sessions either way.
+The two pillars split cleanly across two people. One temple's existing research splinters into six posts; one sample photography session splinters into four. Bailee leads social, so the natural division is Evan supplying the research pillar and the sample deliveries, Bailee running production, publishing, comments, and the week-four read. Nine to ten posts a week come out of the same two production sessions either way.
 
 ### Customer content and the feature program
 
@@ -541,7 +477,7 @@ What makes it work is the recurrence. People will show up for a slot they can co
 
 Sequencing. Zero orders exist, so a customer program currently has a denominator of zero. It arrives in three stages:
 
-- Now, blocked on the garment decision: the seeded cohort. This is the Playbook's existing seeding phase, and seeded people go into this same program. Do not start collecting photographs of a blank that may be discontinued; the asset dies with the garment.
+- Now: the seeded cohort. This is the Playbook's existing seeding phase, and seeded people go into this same program. The garment decision that held this back closed on 14 September 2026 (section 7), so the blanks being photographed are the ones the catalog keeps.
 - First orders through roughly 50: the order insert asks for a review and a photo, and the feature slot goes live. The insert connects directly to the Tapstitch packaging idea in section 9, where it was already the right home for the review ask.
 - Once volume exists: the Playbook's ladder. Free product to many with no ask, then one-off paid posts for people who already showed real enthusiasm, then a small number of longer-term ambassadors. Micro accounts deliberately, under 10,000 followers, because large accounts read as paid.
 
@@ -572,15 +508,13 @@ Content and disclosure constraints, all hard:
 Two finished pipelines, both driven by skills in `.claude/skills/`:
 
 - `temple-ref-finder`. Finds and verifies reference photos. Queue runs `Temples TO DO` to `Temples READY`. Its real value is the documented trap list: mislabeled official Newsroom files, pre-renovation photos of Columbus, Mesa and Oklahoma City, the demolished Kona temple, superseded renders, fan-made 3D passed off as photos, same-state search bleed.
-- `temple-product-generator`. Traces art, computes layout, builds the print files, assembles and writes the description, publishes to Shopify, pushes art close-up cards, syncs the Easify dropdown. It publishes to Tapstitch as of 16 September 2026; the Printify path stays on disk as the fallback and is not deleted until Tapstitch is proven on real orders (section 19).
+- `temple-product-generator`. Traces art, computes layout, builds the print files, assembles and writes the description, publishes to Shopify, pushes art close-up cards, syncs the Easify dropdown. It publishes to Tapstitch, the only fulfillment channel.
 
 Plus `humanizer` and `structural-humanizer` for copy passes.
 
 Description assembly is three fixed blocks plus one variable: the founder intro (per garment), the temple facts (the only researched part, stored per temple), and the size-guide video. Facts render as collapsed rows because the block had grown to about six phone screens. The measurements table is trimmed at assembly, so the video is the size guide. This half of the pipeline is unchanged by the Tapstitch move and writes to Shopify directly, so a Tapstitch redesign cannot break it. The intros for the three Tapstitch blanks are written. On the product page the size guide is served by the Kiwi Size Chart app next to the size selector, with measurements matching Tapstitch's published figures (confirmed by Evan, 21 September 2026).
 
-Two operational traps worth remembering.
-
-Printify ran an intellectual-property filter against listing text and silently blocked publishes when it matched a brand name. It cost four Saratoga Springs products until the cause was found, which was the temple matron's maiden name "Hardy" matching the brand Ed Hardy. The reason appeared only in the Printify UI banner, never through the API. History rather than a live concern once Printify is gone, but the shape of the problem (a silent block with no API-visible cause) is worth recognising anywhere.
+One operational trap worth remembering.
 
 Tapstitch publishes products to Shopify with an empty product type, and every one of the store's automated fixups is keyed on that field, so colour ordering and the featured photo silently do nothing and report success. The pipeline sets the product type immediately after publish, before any fixup runs. Measured 14 September 2026.
 
@@ -600,35 +534,14 @@ Asset locations, all under `1. Peculiar People/`:
 
 Worth noting that print-on-demand carries no inventory risk, so the content plan is itself the cheapest possible test. Post across all three types and let performance choose. The decision can come from data instead of a guess.
 
-**Tee weight. CLOSED 14 September 2026.** The first choice, the RU0010, was lighter than the Comfort Colors it replaced, which defeated the point of moving. Swapped the same day for the RT0063 at 260 gsm, which is heavier than both and covers the full size range. Costs $3 more per unit.
-
-**Front print size. CLOSED 14 September 2026.** Six inches wide, measured ink to ink. Placement was left open against a placeholder print area; the real front print areas arrived the same day and were confirmed from Tapstitch's API on 16 September, so the 3 inches below the top of the front print area is now measured against a real number. The first published crew's front logo was checked on the rendered mockup and sits correctly.
-
-**Back print spacing. One call left of the two.** Removing the logo from the back changed how every design sits. Proof sheet with all 40 temples: https://claude.ai/code/artifact/63f25017-3639-4bb9-96cc-d16cc1e21d57
-Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and the margins are gone entirely: there is no top or bottom margin, the block is centred in the file, and every temple now reaches the full 12 inches.
-
 **1 Peter 2:9 in product copy.** TBD, Evan likes the idea. Never on the design itself.
 
 **Scripture text on garments** and **sacred imagery beyond architecture.** Not ruled out, not approved. Ask.
 
-**Tapstitch personalization gap. RESOLVED 14 September 2026 by pausing the product.** No sign Tapstitch supports buyer personalization like Printify's date entry. The split-catalog idea (base products to Tapstitch, dated products stay on Printify) is dropped: Evan paused the personalizable date tee instead, rather than keep a whole second fulfillment channel alive for one line. Reopen this if Tapstitch ships buyer personalization, or if the demand in section 10 proves worth a manual process.
+**Tapstitch personalization gap. RESOLVED 14 September 2026 by pausing the product.** No sign Tapstitch supports buyer personalization (a date typed at checkout), so Evan paused the personalizable date tee. Reopen this if Tapstitch ships buyer personalization, or if the demand in section 10 proves worth a manual process. Reopening means building it from scratch.
 
-**Voice and attribution once Bailee runs social. CLOSED 23 September 2026.** Bailee leads social and the account speaks as the brand, with Evan named only on product pages (the signed founder intro stays). The reasoning that framed the choice, kept for reference: The founder intro on every product page is first person and signed "- Evan." If Bailee writes the posts, whose "I" is speaking? Three workable answers: the account speaks as the brand with Evan named only on product pages; Bailee writes in a shared voice with neither name attached; or she posts openly as herself and the brand has two named voices. Pick one deliberately. The rule that survives all three is that nothing may imply either of them did work they did not do.
+**Voice and attribution once Bailee runs social. CLOSED 23 September 2026.** Bailee leads social and the account speaks as the brand, with Evan named only on product pages (the signed founder intro stays). Whatever the account says, nothing may imply either of them did work they did not do.
 
-**What a second person unlocks.** "Photos of real people wearing it" is one of the four gaps on the Playbook's readiness board. Store imagery today is AI-generated on-model shots plus Tapstitch flat lays, built to a fixed gallery order, with no real photography. AI model disclosure on the storefront is CLOSED, 21 September 2026: no label. Paid social platforms set their own disclosure rules for generated imagery in ads, so check those before any paid campaign. A second person is the cheapest route to closing it. The constraint still applies: that phase is blocked on the garment decision, so it does not start early just because a model is now available.
+**What a second person unlocks.** "Photos of real people wearing it" is one of the four gaps on the Playbook's readiness board. Store imagery today is AI-generated on-model shots plus Tapstitch flat lays, built to a fixed gallery order, with no real photography. AI model disclosure on the storefront is CLOSED, 21 September 2026: no label. Paid social platforms set their own disclosure rules for generated imagery in ads, so check those before any paid campaign. A second person is the cheapest route to closing it. The garment decision that used to block it closed on 14 September 2026 (section 7), so nothing holds it back now.
 
 **Posting volume with two people.** The rota's five per week was set low deliberately, because every high-volume example in the research turned out to be a team clipping long-form. Two people is a small team. The five-then-nine ramp may be too conservative now, but do not raise it before four clean reps of each show exist, which is what the week-four review reads.
-
-**Product tag hygiene. CLOSED.** Every Printify listing carried default junk tags. Tapstitch products arrive with none. Every live garment now carries structured `temple:`, `state:`, `country:` and `garment:` tags (21 September 2026), and the junk block was removed from the 40 paused dated tees on 23 September 2026.
-
-**Pre-26-August products remain unlisted. OVERTAKEN by the migration.** Children published before 26 August 2026 were still UNLISTED on Shopify with working URLs. The pull-down drafts every temple listing regardless, and each replacement publishes active, so the inconsistency resolves itself rather than needing its own pass.
-
-**Two stray duplicate listings. DELETED 14 September 2026.** A second copy of the Salt Lake tee and a second copy of the Salt Lake dated tee, both published 27 August by accident. Gone permanently, on Evan's instruction.
-
-**The three Nauvoo Limited Edition products and Cornerstone Sweatpants. DELETED 14 September 2026.** Four live Printify products outside the temple catalog that would have become unfulfillable when Printify retires. Gone permanently, on Evan's instruction. If any of them is wanted again it is a rebuild on Tapstitch, not a restore.
-
-**When Printify is actually switched off.** Still open. The account and its products stay untouched as the way back if the blanks disappoint, and nothing is deleted there until Tapstitch is proven on real orders. There have been none yet. The storefront overhaul (September 2026) recommends uninstalling the Printify and Printful apps from Shopify, because both can still edit products and the theme and neither fulfils anything. Evan's call, 23 September 2026: uninstall Printful now, since it never fulfilled anything here. Keep Printify installed until the first few Tapstitch orders arrive fine, because uninstalling it may take its listings with it, including the 40 paused dated tees.
-
-**Salt Lake bare parent titles. CLOSED 21 September 2026.** They stay. See section 6.
-
-**White ink on mid-tone colourways. CLOSED 23 September 2026.** Heather Gray on the sweatshirt and Mauve on the hoodie stay. Evan has seen them and knows white ink works on both. No mockup check needed.

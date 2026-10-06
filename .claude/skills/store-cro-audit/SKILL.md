@@ -51,12 +51,13 @@ Use the Shopify MCP tools (`search_products`, `get-product`) to list live produc
 **at least two** product pages that differ in a way that matters:
 
 - one tee and one fleece item, since the garment lines differ, and
-- ideally one plain product and one with the personalisable date field, since that adds a
-  form to the buying flow.
+- ideally the Temple Art File as well, since the one digital product has a different
+  buying flow (no size or colour choice). The personalisable date tee is paused and not
+  live, so do not look for it.
 
 Never guess a product URL. Take the real handle from Shopify. Also take the real collection
-handle; this store's navigation runs through an Easify dropdown rather than Shopify
-collections, so confirm which collection URL actually resolves.
+handle; the store has seven collections (all temples, one per garment line, Utah, Idaho,
+California) alongside the Easify Temple dropdown, so confirm which collection URL resolves.
 
 ### Step 2: capture
 
@@ -147,7 +148,7 @@ Do not pad. A rule that passes needs no paragraph; the scorecard covers it.
 ## Judgment notes
 
 - **Do not report an open decision as a defect.** BRAND.md section 19 lists genuinely open
-  questions, including the garment blanks and the beachhead. Navigation organised by temple
+  questions, including the beachhead. The garment blanks are decided (14 September 2026). Navigation organised by temple
   rather than by shopper intent is an open question, not a bug.
 - **Distinguish blocked from broken.** Most social-proof rules fail because the store has
   never had an order. That is a state, not a mistake.
