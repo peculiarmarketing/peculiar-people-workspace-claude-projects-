@@ -55,6 +55,9 @@ first real piece of work for the ones that are.
    Systems, 19 Open decisions). Read `CLAUDE.md` and skim
    `.claude/skills/*/SKILL.md` descriptions so a Claude Code trick is judged
    against what already exists.
+4. Read `ideas/STATUS.md`. It lists every idea from earlier digests and what
+   Evan did with it, so tonight's verdicts do not re-plan finished or dropped
+   work.
 
 If `pending_count` is 0, write no files and make no commit. End the session
 with one line: "Nothing new in the idea inbox tonight." plus any Mac health
@@ -73,6 +76,9 @@ grouped into one item.
 If two items are the same video (texted twice),
 handle it once and mark both.
 
+If one item holds many unrelated links (a batch sent within a few minutes),
+judge it as several ideas grouped by topic, one digest entry per idea.
+
 Write down, for yourself, in one or two sentences: what is the claim or trick,
 and what would Peculiar People actually do with it?
 
@@ -89,6 +95,11 @@ Pick exactly one. These are Evan's four words; keep their meanings distinct.
 - **Waste**: does not fit the brand, the stage (zero to few orders, two
   people), print-on-demand, the guardrails, or is already done. One or two
   lines saying exactly why, so Evan can overrule it if the reason is wrong.
+
+If `ideas/STATUS.md` already has the same idea, do not plan it again. Say which
+row it matches and its status: done or in progress means "already handled";
+dropped or tested, closed means it is Waste unless the new item adds something
+the earlier one lacked, and then say what.
 
 Judge it against where the business stands (BRAND.md section 16), not against a
 generic store. Something great for a brand with ad spend and a team can be a
@@ -142,8 +153,13 @@ Order items Useful, Beneficial, Plausible, Waste.
 
 1. Mark everything handled:
    `python3 idea-inbox/pending.py --mark <id> <id> ... --digest ideas/YYYY-MM-DD/DIGEST.md`
-2. Commit `ideas/` and `idea-inbox/state/` only, message
+2. Add one row per idea to the table in `ideas/STATUS.md`: linked name
+   (`YYYY-MM-DD #n Short name`, linking to its deliverable, or to the digest
+   for Waste), verdict, status `new` (or `waste` for Waste), today's date, and
+   a short note only if the next step is a precondition. Never change an
+   existing row; those belong to Evan's sessions.
+3. Commit `ideas/` and `idea-inbox/state/` only, message
    `Idea triage YYYY-MM-DD: N items`, and push to `main` (retry with
    `git pull --rebase` if the push is rejected).
-3. End the session with the digest's summary line and each item's name and
+4. End the session with the digest's summary line and each item's name and
    verdict, so the routine's notification reads as the morning brief.

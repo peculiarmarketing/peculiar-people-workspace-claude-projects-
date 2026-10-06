@@ -9,7 +9,7 @@ Workspace for Peculiar People (peculiarpeopleco.com) automation. Everything here
 ## Projects
 
 - `temple-product-generator/`: generates Tapstitch temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill. Work in flight is at the top of its `HANDOFF.md`; read that before anything else there.
-- `idea-inbox/`: nightly pipeline. The Mac mini collects the reel links, screenshots and notes Evan texts himself in iMessage at 1:15 AM (never logged in to any account; the Instagram API route was removed); the `idea-triage` skill turns them into verdicts and plans, drafts, or mockups in `ideas/` around 2 AM. Plans and drafts only. Start with `idea-inbox/README.md`.
+- `idea-inbox/`: nightly pipeline. The Mac mini collects the reel links, screenshots and notes Evan texts himself in iMessage at 1:15 AM (never logged in to any account; the Instagram API route was removed); the `idea-triage` skill turns them into verdicts and plans, drafts, or mockups in `ideas/` around 2 AM. Plans and drafts only. Start with `idea-inbox/README.md`. When a session acts on an idea from a digest (approves, builds, tests, or drops it), update that idea's row in `ideas/STATUS.md` in the same commit as the work.
 
 ## Writing outward-facing copy
 

@@ -39,6 +39,7 @@ Tips:
 - **Add a note when you share.** "Could this work for the temple drops?" tells the triage what you saw in it. Messages sent within five minutes of each other are kept together as one item.
 - **Copy the reel's link and text it to yourself.** The Mac downloads it logged out, so no account of yours is ever involved. Instagram sometimes refuses a logged-out download; when that happens the digest says so and judges the item on your note, so a line about why you saved it matters. A screenshot always gets through.
 - **Run it by hand in any session:** say "check my idea inbox".
+- **Act on an idea:** in any session (Mac or claude.ai/code), say "do idea 1 from today's digest". `ideas/STATUS.md` tracks every idea's state: the triage adds rows as `new`, and whichever session acts on one updates it. The triage reads it, so it never re-plans something you already did or dropped.
 
 What it will never do: change the store, post, reply to anyone, or install
 or run anything a video suggests. It plans and drafts; you decide what ships.
