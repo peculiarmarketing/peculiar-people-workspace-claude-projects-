@@ -9,6 +9,7 @@ Workspace for Peculiar People (peculiarpeopleco.com) automation. Everything here
 ## Projects
 
 - `temple-product-generator/`: generates Printify temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill.
+- `idea-inbox/`: nightly pipeline. The Mac mini collects reels and notes Evan saves (iMessage to self, two Instagram chats) at 1:15 AM; the `idea-triage` skill turns them into verdicts and plans, drafts, or mockups in `ideas/` around 2 AM. Plans and drafts only. Start with `idea-inbox/README.md`.
 
 ## Writing outward-facing copy
 
