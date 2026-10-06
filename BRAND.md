@@ -1,6 +1,6 @@
 # Peculiar People: Brand File
 
-Last updated 23 September 2026 (sections 6, 7, 8, 18 and 19 brought in line with the live Tapstitch store). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
+Last updated 23 September 2026 (sections 6, 7, 8, 18 and 19 brought in line with the live Tapstitch store; later the same day, Bailee's social role and brand voice closed in sections 3 and 19, and the email tooling noted in section 17). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
 
 ## What this file is
 
@@ -40,7 +40,7 @@ The vision and purpose drive the brand, but the financial goal is explicit: full
 - Peculiar Marketing is the umbrella. Peculiar People is a brand under it.
 - **Evan and Bailee own it.** The paperwork is outstanding and that is all it is. She contributes substantially and they run it together.
 - Evan runs design, research, copy, automation, and fulfillment.
-- Bailee is the likely lead on the social media plan as it starts up, though that isn't confirmed. When it is, the plan is hers to run.
+- **Bailee leads the social media plan.** Confirmed by Evan 23 September 2026. The plan is hers to run, and the account speaks as the brand (section 19).
 - Store email: evan@peculiarmarketing.com. Repos live under the `peculiarmarketing` GitHub account, never a work account.
 
 Both operating documents were written for one person and say so. The Posting Rota opens by promising "no models, no budget, no face, and nothing that needs anyone else's permission," and several of its rules (post by hand, reply to everything personally, no camera confidence required) follow from that. A second person relaxes some of them. Section 19 covers what that opens up and what it risks.
@@ -504,7 +504,7 @@ Established priorities, in order:
 2. Narrow to a beachhead of 3 to 5 temples and market only those. This is the best-corroborated finding across four rounds of research, with three independent sources arriving at it.
 3. Pinterest organic, and group or bulk orders through wards and stakes. Both free.
 4. Paid Meta only above roughly $100/day. Otherwise skip it.
-5. Klaviyo post-purchase flows only after roughly 50 orders.
+5. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
 
 AOV is the structural problem. A single tee cannot absorb a $22 to $40 acquisition cost. The levers are multi-temple orders, the personalization premium, and hoodie mix.
 
@@ -620,7 +620,7 @@ Both CLOSED 14 September 2026. Designs are centred rather than top-anchored, and
 
 **Tapstitch personalization gap. RESOLVED 14 September 2026 by pausing the product.** No sign Tapstitch supports buyer personalization like Printify's date entry. The split-catalog idea (base products to Tapstitch, dated products stay on Printify) is dropped: Evan paused the personalizable date tee instead, rather than keep a whole second fulfillment channel alive for one line. Reopen this if Tapstitch ships buyer personalization, or if the demand in section 10 proves worth a manual process.
 
-**Voice and attribution once Bailee runs social.** Unresolved, and it should be settled before the first post, because it is expensive to change later. The founder intro on every product page is first person and signed "- Evan." If Bailee writes the posts, whose "I" is speaking? Three workable answers: the account speaks as the brand with Evan named only on product pages; Bailee writes in a shared voice with neither name attached; or she posts openly as herself and the brand has two named voices. Pick one deliberately. The rule that survives all three is that nothing may imply either of them did work they did not do.
+**Voice and attribution once Bailee runs social. CLOSED 23 September 2026.** Bailee leads social and the account speaks as the brand, with Evan named only on product pages (the signed founder intro stays). The reasoning that framed the choice, kept for reference: The founder intro on every product page is first person and signed "- Evan." If Bailee writes the posts, whose "I" is speaking? Three workable answers: the account speaks as the brand with Evan named only on product pages; Bailee writes in a shared voice with neither name attached; or she posts openly as herself and the brand has two named voices. Pick one deliberately. The rule that survives all three is that nothing may imply either of them did work they did not do.
 
 **What a second person unlocks.** "Photos of real people wearing it" is one of the four gaps on the Playbook's readiness board. Store imagery today is AI-generated on-model shots plus Tapstitch flat lays, built to a fixed gallery order, with no real photography. AI model disclosure on the storefront is CLOSED, 21 September 2026: no label. Paid social platforms set their own disclosure rules for generated imagery in ads, so check those before any paid campaign. A second person is the cheapest route to closing it. The constraint still applies: that phase is blocked on the garment decision, so it does not start early just because a model is now available.
 

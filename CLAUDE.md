@@ -8,7 +8,7 @@ Workspace for Peculiar People (peculiarpeopleco.com) automation. Everything here
 
 ## Projects
 
-- `temple-product-generator/`: generates Printify temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill.
+- `temple-product-generator/`: generates Printify temple products from `../Temples/` folders. Phases 1-3 complete and gate-approved. Start with its `README.md` and `docs/decisions.md`; the settled decisions there are not up for re-derivation. Drive it via the `temple-product-generator` skill. Work in flight is at the top of its `HANDOFF.md`; read that before anything else there.
 - `idea-inbox/`: nightly pipeline. The Mac mini collects reels and notes Evan saves (iMessage to self, two Instagram chats) at 1:15 AM; the `idea-triage` skill turns them into verdicts and plans, drafts, or mockups in `ideas/` around 2 AM. Plans and drafts only. Start with `idea-inbox/README.md`.
 
 ## Writing outward-facing copy
@@ -28,3 +28,27 @@ This applies only to new prose being drafted (new temple facts sections, schedul
 - Explain the mechanism of a failure before fixing it.
 - Phase gates and product changes that touch the live store get Evan's explicit confirmation. Publishing runs through scripts/publish_drafts.py's gates: base products and verified With Date drafts auto-publish when Evan initiates a run; anything failing a gate stays held for Evan.
 - The Printify token lives in `temple-product-generator/.env`, gitignored. Never commit or print it.
+
+## Keeping the claude.ai project in sync
+
+The "Peculiar People" Project on claude.ai holds copies of three docs so chat work matches what is live. They go stale unless this workspace pushes updates.
+
+| Project doc | Source here |
+|---|---|
+| `claude/BRAND.md` | `BRAND.md` |
+| `claude/pipeline-and-tools.md` | `project-sync/pipeline-and-tools.md` |
+| `claude/unit-economics.md` | `project-sync/unit-economics.md` |
+
+At the end of any session that makes a material change, update the matching source file here first, then re-upload it to the Project. Material means:
+
+- BRAND.md changed (a decision closed or opened, products, prices, colours, avatars, voice, direction).
+- A pipeline or tool changed: a skill added or retired, a new app or vendor, a change to how art or products get made.
+- A HANDOFF.md item finished or a new one opened that Evan has to act on. Update the "Current state" and "Still open" sections of `project-sync/pipeline-and-tools.md`, and its date.
+- Costs, prices or margins changed. Update `project-sync/unit-economics.md`.
+
+How to push:
+
+- If a Projects tool is available in the session, write each changed file to its Project path above (`project_write` with `local_path`, replacing the existing doc). Only push files that changed, since every write clears the Project's cache.
+- If no Projects tool is available, end the session by telling Evan which Project docs are stale and which source files to upload.
+
+Routine product runs that change nothing in the three docs need no sync. The Project copies are never the source of truth; if they disagree with this folder, this folder wins.
