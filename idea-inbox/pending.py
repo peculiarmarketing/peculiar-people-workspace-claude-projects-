@@ -40,11 +40,6 @@ def heartbeat_report():
             problems.append(f"{name} failed on the Mac: {s.get('error')}")
         for w in s.get("warnings") or []:
             problems.append(f"{name}: {w}")
-    exp = hb.get("ig_token_expires_on")
-    if exp:
-        days = (datetime.fromisoformat(exp).date() - datetime.now(timezone.utc).date()).days
-        if days < 14:
-            problems.append(f"Instagram token expires in {days} days and is not refreshing.")
     return {"ok": not problems, "last_run": hb["last_run"], "problems": problems}
 
 

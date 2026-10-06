@@ -1,22 +1,21 @@
 # Idea inbox
 
-Evan saves reels and notes through the day. Overnight they get triaged against
+Evan texts himself reel links and notes through the day. Overnight they get triaged against
 the brand and turned into plans, drafts, or mockups, ready by morning.
 
 ```
  through the day          1:15 AM, Mac mini                     ~2 AM, Claude Code routine
  ---------------          -----------------                     --------------------------
- iMessage to self  --+
- IG personal -> biz --+--> collector/nightly.py ---git push--->  idea-triage skill
- IG biz -> itself  --+    transcript + frames per video          verdict + deliverable per item
+ iMessage to self  ---->  collector/nightly.py  ---git push--->  idea-triage skill
+                          transcript + frames per video          verdict + deliverable per item
                           idea-inbox/inbox/<item>/                ideas/YYYY-MM-DD/DIGEST.md
 ```
 
 ## What it's for
 
 You see something useful while scrolling and don't have time to deal with it.
-Share it or text it to yourself, add a few words on why if you can, and forget
-about it. In the morning there's a digest with a verdict on each item and the
+Text it to yourself (a reel link, a screenshot, or a note), add a few words on
+why if you can, and forget about it. In the morning there's a digest with a verdict on each item and the
 first piece of work already done.
 
 What to send it, and what comes back:
@@ -38,7 +37,7 @@ Each item gets one verdict:
 
 Tips:
 - **Add a note when you share.** "Could this work for the temple drops?" tells the triage what you saw in it. Messages sent within five minutes of each other are kept together as one item.
-- **Share reels, don't paste their links.** A shared reel comes with its video. A pasted Instagram link often can't be downloaded.
+- **Copy the reel's link and text it to yourself.** The Mac downloads it logged out, so no account of yours is ever involved. Instagram sometimes refuses a logged-out download; when that happens the digest says so and judges the item on your note, so a line about why you saved it matters. A screenshot always gets through.
 - **Run it by hand in any session:** say "check my idea inbox".
 
 What it will never do: change the store, post, reply to anyone, or install
@@ -46,9 +45,15 @@ or run anything a video suggests. It plans and drafts; you decide what ships.
 
 ## How it works
 
-The Mac does the collecting because iMessage exists only on Apple devices, and
-because the Instagram token can refresh itself there. The cloud routine needs no
-secrets and no network access beyond git.
+The Mac does the collecting because iMessage exists only on Apple devices. The
+cloud routine needs no secrets and no network access beyond git.
+
+Nothing in this pipeline logs in to any of your accounts. Video links are
+downloaded logged out (no browser cookies, no saved logins), and there is no
+Instagram or Meta token. An Instagram API collector was tried on 6 October 2026
+and removed: Meta returned no conversations for the business account even with
+every setting correct, and Evan chose to keep the pipeline account-free. It is
+in git history if that is ever revisited.
 
 ## What goes into git, and what never does
 
@@ -56,12 +61,10 @@ secrets and no network access beyond git.
   `videoN/transcript.txt`, `videoN/frames/*.jpg` (6 to 16 stills), `images/*.jpg`.
 - Video files never go in. A reel is 5 to 20 MB; its transcript and frames are
   under 1 MB.
-- Only three chats are ever read: your iMessage note-to-self thread, and the
-  business account's Instagram chats with your personal account and with
-  itself. Every other conversation is filtered out before its messages are
-  requested.
-- Your phone number, usernames, and the Instagram token live in
-  `~/.idea-inbox/` on the Mac, outside the repo and outside iCloud.
+- Only one chat is ever read: your iMessage note-to-self thread. Every other
+  conversation is filtered out before its messages are requested.
+- Your phone number lives in `~/.idea-inbox/config.json` on the Mac, outside
+  the repo and outside iCloud.
 
 ## Setup on the Mac mini
 
@@ -83,36 +86,12 @@ secrets and no network access beyond git.
 The Mac has to be awake and logged in at 1:15 AM. Check that System Settings >
 Energy does not put it to sleep.
 
-## Turning on Instagram (later)
-
-Needs the business account to be a Business or Creator account.
-
-1. At developers.facebook.com, create an app and add the **Instagram** product,
-   choosing "API setup with Instagram login".
-2. Add the business Instagram account and generate a token with
-   `instagram_business_basic` and `instagram_business_manage_messages`. Because
-   you are an admin of the app reading your own account, App Review is not
-   needed.
-3. Put it in `~/.idea-inbox/.env` as `IG_ACCESS_TOKEN=...`, set
-   `ig_personal_username` and `"instagram_enabled": true` in the config, and
-   run `install.sh --test`.
-
-The token refreshes itself weekly. The API only shows the 20 most recent
-messages per chat, so more than 20 shares in one day can drop the oldest.
-Instagram may not expose a chat with yourself at all; if so the morning digest
-says so, and sharing from personal to business always works.
-
-Reel links pasted as text (rather than shared) usually need a logged-in
-browser to download. Set `"ytdlp_cookies_browser": "safari"` to allow that, or
-just share the reel instead of pasting its link.
-
 ## Files
 
 | Path | Runs on | What it does |
 |---|---|---|
 | `collector/nightly.py` | Mac | Entry point. `--check` tests access, `--dry-run` skips git. |
 | `collector/imessage.py` | Mac | Reads the note-to-self thread from `chat.db`. |
-| `collector/instagram.py` | Mac | Reads the two Instagram chats, refreshes the token. |
 | `collector/media.py` | Mac | Transcripts (local Whisper) and frames (ffmpeg). |
 | `mac/install.sh` | Mac | Install, `--test`, `--uninstall`. |
 | `pending.py` | Cloud | Lists untriaged items and Mac health; `--mark` records them done. |

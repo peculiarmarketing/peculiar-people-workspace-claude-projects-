@@ -26,7 +26,7 @@ Mirror of the Claude Code workspace, as of 6 October 2026. The source of truth l
 4. **Descriptions.** Three fixed blocks plus one variable: the founder intro for each garment (signed "- Evan"), the temple facts (the only researched part, stored per temple, shown as collapsed rows), and the size guide video. The Kiwi Size Chart app sits next to the size selector. Stored blocks are copied in byte-identical and never edited.
 5. **Copy passes.** Any new customer-facing prose gets `humanizer` (word-level tells) and then `structural-humanizer` (shape-level tells, one or two interventions per piece).
 6. **Audit.** The `store-cro-audit` skill screenshots the live storefront on desktop and mobile and scores it against 68 rules. It is read-only. No audit has been run since the Tapstitch migration.
-7. **Idea inbox.** Evan shares Instagram reels to the business account or texts himself notes through the day. A Mac mini collects them at 1:15 AM (`idea-inbox/collector/nightly.py`), turns videos into transcripts and still frames, and pushes them to `idea-inbox/inbox/`. Around 2 AM a Claude Code routine runs the `idea-triage` skill, which gives each item a verdict (useful, beneficial, plausible, waste) and a first deliverable: a plan, a copy draft, a mockup, or a one-line reason. The digest lands in `ideas/YYYY-MM-DD/DIGEST.md`. It plans and drafts only; it never changes the store, posts, or replies to anyone.
+7. **Idea inbox.** Evan texts himself reel links, screenshots and notes in iMessage through the day. A Mac mini collects them at 1:15 AM (`idea-inbox/collector/nightly.py`), turns videos into transcripts and still frames, and pushes them to `idea-inbox/inbox/`. Around 2 AM a Claude Code routine runs the `idea-triage` skill, which gives each item a verdict (useful, beneficial, plausible, waste) and a first deliverable: a plan, a copy draft, a mockup, or a one-line reason. The digest lands in `ideas/YYYY-MM-DD/DIGEST.md`. It plans and drafts only; it never changes the store, posts, or replies to anyone.
 
 Skills in the workspace (`Claude Projects/.claude/skills/`): temple-ref-finder, temple-product-generator, humanizer, structural-humanizer, store-cro-audit, idea-triage.
 
@@ -47,6 +47,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
 - Zero orders. Distribution is the only constraint.
+- Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
 
@@ -55,6 +56,7 @@ Still open for Evan:
 - The storefront overhaul doc still says Boise is unfinished; its "State as of" section needs the completed rollout.
 - Test purchase to verify checkout (first priority in BRAND.md section 17).
 - Beachhead temples not yet picked.
+- Optional: the Meta developer app "Message Reader" (Peculiar Marketing LLC) is no longer used by anything. Delete it in the Meta dashboard, and remove it under Instagram Settings > Apps and websites on both accounts, if you want no app holding access.
 
 ## Working rules
 

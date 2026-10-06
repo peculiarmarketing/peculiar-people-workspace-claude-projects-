@@ -2,11 +2,6 @@
   "self_handles": ["+1 801 555 0100", "you@icloud.com"],
   "imessage_enabled": true,
 
-  "instagram_enabled": false,
-  "ig_personal_username": "your.personal.username",
-  "ig_api_version": "v23.0",
-
   "whisper_model": "small",
-  "ytdlp_cookies_browser": null,
   "repo_path": "__REPO__"
 }

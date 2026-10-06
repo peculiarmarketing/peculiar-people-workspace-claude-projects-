@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Nightly Mac collector. launchd runs this at 1:15 AM.
 
-  1. Collect new items from the iMessage note-to-self thread and the two
-     Instagram chats into ~/.idea-inbox/outbox (one folder per item).
+  1. Collect new items from the iMessage note-to-self thread into
+     ~/.idea-inbox/outbox (one folder per item).
   2. Copy them into a dedicated clone of the repo at ~/.idea-inbox/repo,
      write HEARTBEAT.json, commit, and push to main.
   3. Clear the outbox only after the push lands, so a failed push loses nothing.
@@ -29,7 +29,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import common  # noqa: E402
 import imessage  # noqa: E402
-import instagram  # noqa: E402
 import media  # noqa: E402
 
 INBOX_REL = Path("idea-inbox") / "inbox"
@@ -66,8 +65,6 @@ def run_check(config):
         report(*_named(imessage.check(), "iMessage"))
         if not config.get("self_handles"):
             report(False, "iMessage", "self_handles is empty in ~/.idea-inbox/config.json")
-    if config.get("instagram_enabled", True):
-        report(*_named(instagram.check(config), "Instagram"))
     repo = Path(config.get("repo_path", common.HOME / "repo"))
     r = git(repo, "ls-remote", "--heads", "origin", BRANCH, check=False)
     report(r.returncode == 0, "git", f"can reach origin from {repo}" if r.returncode == 0 else r.stderr.strip()[:300])
@@ -84,7 +81,6 @@ def collect(config, state):
     status = {}
     for name, enabled, fn in (
         ("imessage", config.get("imessage_enabled", True), lambda: (imessage.collect(config, state), [])),
-        ("instagram", config.get("instagram_enabled", True), lambda: instagram.collect(config, state)),
     ):
         if not enabled:
             status[name] = {"ok": True, "skipped": "disabled in config"}
@@ -117,12 +113,10 @@ def push(config, status):
             shutil.rmtree(dest)
         shutil.copytree(b, dest)
 
-    env = common.load_env()
     heartbeat = {
         "last_run": common.utc_iso(datetime.now(timezone.utc)),
         "items_pushed": [b.name for b in bundles],
         "sources": status,
-        "ig_token_expires_on": env.get("IG_TOKEN_EXPIRES_ON"),
     }
     (inbox / "HEARTBEAT.json").write_text(json.dumps(heartbeat, indent=2) + "\n")
 

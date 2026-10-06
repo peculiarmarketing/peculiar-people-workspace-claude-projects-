@@ -1,8 +1,8 @@
 """Shared pieces for the Mac-side collector: paths, config, state, bundles.
 
 Everything private lives in ~/.idea-inbox, outside the repo and outside
-iCloud: the config (your own phone number and usernames), the Instagram
-token, the run state, and the outbox of bundles waiting to be pushed.
+iCloud: the config (your own phone number), the run state, and the outbox
+of bundles waiting to be pushed.
 """
 
 import hashlib
@@ -15,7 +15,6 @@ from pathlib import Path
 
 HOME = Path(os.environ.get("IDEA_INBOX_HOME", Path.home() / ".idea-inbox"))
 CONFIG_PATH = HOME / "config.json"
-ENV_PATH = HOME / ".env"
 STATE_PATH = HOME / "state.json"
 OUTBOX = HOME / "outbox"
 LOG_DIR = HOME / "logs"
@@ -31,25 +30,6 @@ def load_config():
     if not CONFIG_PATH.exists():
         raise SystemExit(f"Missing {CONFIG_PATH}. Run idea-inbox/mac/install.sh first.")
     return json.loads(CONFIG_PATH.read_text())
-
-
-def load_env():
-    env = {}
-    if ENV_PATH.exists():
-        for line in ENV_PATH.read_text().splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                env[k.strip()] = v.strip().strip('"').strip("'")
-    return env
-
-
-def save_env(env):
-    lines = [f"{k}={v}" for k, v in env.items()]
-    tmp = ENV_PATH.with_suffix(".tmp")
-    tmp.write_text("\n".join(lines) + "\n")
-    os.chmod(tmp, 0o600)
-    tmp.replace(ENV_PATH)
 
 
 def load_state():

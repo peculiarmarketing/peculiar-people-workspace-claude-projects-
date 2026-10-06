@@ -162,11 +162,12 @@ def is_video_link(url):
     return any(h in url for h in VIDEO_HOSTS)
 
 
-def fetch_link_video(url, dest_dir, cookies_browser=None):
+def fetch_link_video(url, dest_dir):
     """Download a video page (YouTube, TikTok, an Instagram reel link) with yt-dlp.
 
-    Instagram links usually need a logged-in browser's cookies; set
-    ytdlp_cookies_browser in the config to "safari" or "chrome" to allow that.
+    Always logged out: no browser cookies, no cookie file, no .netrc. Evan chose
+    this so no account of his is ever tied to scripted downloads. Some Instagram
+    links will fail without a login; the digest reports those.
     Returns (path, info) or raises.
     """
     import yt_dlp
@@ -178,9 +179,10 @@ def fetch_link_video(url, dest_dir, cookies_browser=None):
         "no_warnings": True,
         "noplaylist": True,
         "max_filesize": MAX_DOWNLOAD_BYTES,
+        "cookiefile": None,
+        "cookiesfrombrowser": None,
+        "usenetrc": False,
     }
-    if cookies_browser:
-        opts["cookiesfrombrowser"] = (cookies_browser,)
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=True)
         path = Path(ydl.prepare_filename(info))
@@ -200,7 +202,7 @@ def process_links(urls, bundle, config, start_index=1):
             continue
         with tempfile.TemporaryDirectory() as tmp:
             try:
-                path, meta = fetch_link_video(url, tmp, config.get("ytdlp_cookies_browser"))
+                path, meta = fetch_link_video(url, tmp)
             except Exception as e:
                 results.append({"kind": "link", "url": url,
                                 "errors": [f"could not download video: {str(e)[:300]}"]})

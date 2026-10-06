@@ -1,6 +1,6 @@
 ---
 name: idea-triage
-description: Nightly triage of the ideas Evan saves for himself (Instagram reels shared to the business account, and iMessage notes to self) into a verdict and a deliverable for each one: an implementation plan, a copy draft, a mockup, or a one-line reason it is not worth doing. Runs from the 2 AM routine and on demand. Use when Evan says "run idea triage", "check my idea inbox", "what did I save today", "go through my saved reels", or when the nightly routine fires. Plans and drafts only; never changes the store, never posts, never replies to anyone.
+description: Nightly triage of the ideas Evan saves for himself (reel links, screenshots, and notes he texts himself in iMessage) into a verdict and a deliverable for each one: an implementation plan, a copy draft, a mockup, or a one-line reason it is not worth doing. Runs from the 2 AM routine and on demand. Use when Evan says "run idea triage", "check my idea inbox", "what did I save today", "go through my saved reels", or when the nightly routine fires. Plans and drafts only; never changes the store, never posts, never replies to anyone.
 ---
 
 # Idea triage
@@ -70,7 +70,7 @@ transcript misses it. Evan's own note in `note_text` says why he saved it; weigh
 it heavily. Messages that arrived within five minutes of each other are already
 grouped into one item.
 
-If two items are the same video (shared twice, or shared and also texted),
+If two items are the same video (texted twice),
 handle it once and mark both.
 
 Write down, for yourself, in one or two sentences: what is the claim or trick,

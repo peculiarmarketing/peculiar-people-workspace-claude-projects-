@@ -104,12 +104,9 @@ say "Whisper model (one-time download, about 500 MB)"
 say "Config"
 if [ ! -f "$HOME_DIR/config.json" ]; then
   sed "s#__REPO__#$HOME_DIR/repo#" "$SCRIPT_DIR/config.example.json" > "$HOME_DIR/config.json"
-  echo "Created $HOME_DIR/config.json. Fill in self_handles and ig_personal_username."
+  echo "Created $HOME_DIR/config.json. Fill in self_handles."
 fi
-if [ ! -f "$HOME_DIR/.env" ]; then
-  printf '# Instagram long-lived access token. Refreshed automatically every week.\nIG_ACCESS_TOKEN=\n' > "$HOME_DIR/.env"
-fi
-chmod 600 "$HOME_DIR/.env" "$HOME_DIR/config.json"
+chmod 600 "$HOME_DIR/config.json"
 
 say "Nightly job ($RUN_HOUR:$(printf %02d $RUN_MINUTE) AM)"
 write_agent "$LABEL" "$AGENT" "" yes
@@ -129,7 +126,7 @@ if [ -d "$APP_PY" ]; then
   echo "     $(cd "$APP_PY" && pwd)"
 fi
 cat <<EOF
-3. Fill in $HOME_DIR/config.json (and the token in $HOME_DIR/.env once the Meta app exists).
+3. Fill in self_handles in $HOME_DIR/config.json.
 4. Run:  bash "$SCRIPT_DIR/install.sh" --test
    It runs the check under launchd, the same way the nightly job runs.
 EOF
