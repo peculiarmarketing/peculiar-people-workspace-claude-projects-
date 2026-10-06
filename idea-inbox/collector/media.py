@@ -12,6 +12,7 @@ import json
 import shutil
 import subprocess
 import tempfile
+import wave
 from pathlib import Path
 
 MAX_VIDEO_SECONDS = 45 * 60      # longer videos get their first 45 minutes
@@ -81,7 +82,13 @@ def transcribe(video, model_name):
         wav = Path(tmp) / "audio.wav"
         _run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-t", str(MAX_VIDEO_SECONDS),
               "-vn", "-ac", "1", "-ar", "16000", str(wav)], timeout=600)
-        segments, info = _whisper_model.transcribe(str(wav), vad_filter=True)
+        # Hand whisper raw samples rather than a path: given a path, faster-whisper
+        # decodes through PyAV, and PyAV 19 dropped an argument it passes.
+        import numpy as np
+        with wave.open(str(wav)) as w:
+            pcm = w.readframes(w.getnframes())
+        audio = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+        segments, info = _whisper_model.transcribe(audio, vad_filter=True)
         lines = []
         for seg in segments:
             m, s = divmod(int(seg.start), 60)
