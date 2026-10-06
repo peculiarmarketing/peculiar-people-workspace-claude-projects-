@@ -157,7 +157,9 @@ def collect(config, state):
             atts = [dict(a) for a in conn.execute(
                 "SELECT a.filename, a.mime_type, a.transfer_name FROM attachment a "
                 "JOIN message_attachment_join maj ON maj.attachment_id = a.ROWID "
-                "WHERE maj.message_id = ?", (r["ROWID"],))]
+                "WHERE maj.message_id = ?", (r["ROWID"],))
+                # Link-preview cards, not real attachments; the link itself is in the text.
+                if not (a["transfer_name"] or a["filename"] or "").endswith(".pluginPayloadAttachment")]
             # A note-to-self can be stored twice (sent and received copies).
             key = (text, tuple(a["transfer_name"] for a in atts), int(t.timestamp()) // 10)
             if key in seen:
