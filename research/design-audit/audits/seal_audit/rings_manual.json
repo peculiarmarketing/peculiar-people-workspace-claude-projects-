@@ -1,0 +1,70 @@
+{
+ "outer_thick": {
+  "center": [
+   1021.6,
+   1015.6
+  ],
+  "r_inner": 870.3,
+  "r_outer": 883.1,
+  "width_mean": 12.83,
+  "width_min": 11.0,
+  "width_cv": 7.0,
+  "fit_rms": [
+   2.77,
+   2.46
+  ],
+  "rays": 1345,
+  "offset_from_outer_px": 0.0
+ },
+ "middle_thin": {
+  "center": [
+   1022.1,
+   1020.1
+  ],
+  "r_inner": 780.3,
+  "r_outer": 785.4,
+  "width_mean": 5.07,
+  "width_min": 4.0,
+  "width_cv": 13.6,
+  "fit_rms": [
+   1.9,
+   1.73
+  ],
+  "rays": 1298,
+  "offset_from_outer_px": 4.53
+ },
+ "inner_thin": {
+  "center": [
+   1020.7,
+   1021.9
+  ],
+  "r_inner": 651.5,
+  "r_outer": 656.6,
+  "width_mean": 5.12,
+  "width_min": 4.0,
+  "width_cv": 13.4,
+  "fit_rms": [
+   1.06,
+   1.0
+  ],
+  "rays": 1440,
+  "offset_from_outer_px": 6.36
+ },
+ "inner_heavy": {
+  "center": [
+   1021.6,
+   1023.1
+  ],
+  "r_inner": 626.6,
+  "r_outer": 638.2,
+  "width_mean": 11.65,
+  "width_min": 11.0,
+  "width_cv": 5.4,
+  "fit_rms": [
+   1.18,
+   1.08
+  ],
+  "rays": 1169,
+  "offset_from_outer_px": 7.5
+ }
+}
