@@ -37,7 +37,7 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 |---|---|
 | Coverage / where things stand (read only) | `scripts/tapstitch_status.py` (`--full`, `--temple T`, `--state S`, `--problems`) |
 | What blocks a run (read only) | `scripts/tapstitch_publish.py check` |
-| Validate every design, write nothing | `scripts/tapstitch_build.py --report-only` |
+| Validate every design, write no print files (it still rewrites the ledger: check `git diff`) | `scripts/tapstitch_build.py --report-only` |
 | Build print files | `scripts/tapstitch_build.py` (`--temple T`, `--garments tee,crew,hoodie`, `--colors black,white`, `--no-trace`, `--verbose`) |
 | Proof sheet for Evan | `scripts/tapstitch_preview.py` (`--temple T`, `--garment tee`, `--color white`) |
 | Record Evan's approval | `scripts/tapstitch_approve.py --temple T` (`--all`, `--all --except "A,B"`, `--revoke --temple T`, `--list`, `--dry-run`) |
