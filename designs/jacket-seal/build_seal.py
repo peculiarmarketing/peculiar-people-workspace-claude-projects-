@@ -27,6 +27,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONTS = {
     "zilla": os.path.join(HERE, "fonts", "ZillaSlab-Bold.ttf"),
     "montserrat": os.path.join(HERE, "fonts", "Montserrat-Bold-static.ttf"),
+    "arvo": os.path.join(HERE, "fonts", "Arvo-Bold.ttf"),
+    "rokkitt": os.path.join(HERE, "fonts", "Rokkitt-ExtraBold-static.ttf"),
+    "josefin": os.path.join(HERE, "fonts", "JosefinSans-Bold-static.ttf"),
+    "raleway": os.path.join(HERE, "fonts", "Raleway-ExtraBold-static.ttf"),
 }
 NAVY = "#001A58"
 
@@ -80,11 +84,23 @@ class Face:
         self.upm = self.f["head"].unitsPerEm
         self.cap = self.f["OS/2"].sCapHeight
         self.hmtx = self.f["hmtx"]
+        # lining figures from the font's own 'lnum' feature (some faces default
+        # to old-style figures, which look small beside capitals)
+        self.lnum = {}
+        if "GSUB" in self.f:
+            g = self.f["GSUB"].table
+            for fr in g.FeatureList.FeatureRecord:
+                if fr.FeatureTag != "lnum":
+                    continue
+                for li in fr.Feature.LookupListIndex:
+                    for st in g.LookupList.Lookup[li].SubTable:
+                        st = getattr(st, "ExtSubTable", st)
+                        self.lnum.update(getattr(st, "mapping", {}) or {})
 
     def glyph(self, ch):
         name = self.cmap[ord(ch)]
-        if ch.isdigit() and name + ".pnum_lnum" in self.gs:
-            name = name + ".pnum_lnum"   # lining figures beside capitals (Zilla defaults to old-style)
+        if ch.isdigit():
+            name = self.lnum.get(name, name)
         pen = SVGPathPen(self.gs)
         self.gs[name].draw(pen)
         bp = BoundsPen(self.gs)
