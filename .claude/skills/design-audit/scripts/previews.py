@@ -48,10 +48,14 @@ def main():
         big.save(p)
         written.append(p)
     view = im.resize((1200, round(im.height * 1200 / W)), Image.LANCZOS) if W > 1200 else im
+    bgc = tuple(info.get("background_rgb", (0, 0, 0)))
     for b in a.blur:
         rad = b / 100 * view.width
+        pad = int(3 * rad) + 2  # pad with the ground so the edge does not smear
+        padded = Image.new("RGB", (view.width + 2 * pad, view.height + 2 * pad), bgc)
+        padded.paste(view, (pad, pad))
         p = os.path.join(a.outdir, f"blur_{b:g}pct.png")
-        view.filter(ImageFilter.GaussianBlur(rad)).save(p)
+        padded.filter(ImageFilter.GaussianBlur(rad)).save(p)
         written.append(p)
     one = Image.fromarray(np.where(crop_mask, 0, 255).astype(np.uint8))
     p = os.path.join(a.outdir, "onecolour.png")

@@ -35,7 +35,12 @@ def main():
     else:
         box = a.box
     box = tuple(int(round(v)) for v in box)
-    c = im.crop(box)
+    # crop on a canvas padded with the ground colour, so a window past the edge
+    # shows background rather than black
+    bgc = tuple(info.get("background_rgb", (0, 0, 0)))
+    c = Image.new("RGB", (box[2] - box[0], box[3] - box[1]), bgc)
+    c.paste(im.crop((max(box[0], 0), max(box[1], 0), min(box[2], im.width), min(box[3], im.height))),
+            (max(-box[0], 0), max(-box[1], 0)))
     c = c.resize((int(c.width * a.zoom), int(c.height * a.zoom)), Image.NEAREST)
     c.save(a.out)
     print(a.out)

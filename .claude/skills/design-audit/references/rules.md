@@ -289,7 +289,7 @@ Confidence count: 44 ESTABLISHED (5 of them derived arithmetic or geometry from 
 - **Statement:** Every ring keeps one width all the way round; all lines of one role share one weight.
 - **Why:** Weight wobble reads as hand error or a bad trace, not intent.
 - **Check:** `rings[*].width_cv_pct`; `rings[*].width` (min to max).
-- **Threshold:** *tolerance* `width_cv_pct` at or under 3 percent for an AI-generated or traced raster; a true vector ring is 0. Above 5 percent is visible.
+- **Threshold:** *tolerance* `width_cv_pct` at or under 3 percent, or under `width_cv_noise_floor_pct` (whichever is larger: thin rings cannot be measured more finely than about half a pixel). A true vector ring is 0. Above 5 percent, and above the noise floor, is visible.
 - **Sources:** W39, W16, W17; V:spoon-vintage-badge-logo.
 - **Confidence:** ESTABLISHED.
 
@@ -362,7 +362,7 @@ Confidence count: 44 ESTABLISHED (5 of them derived arithmetic or geometry from 
 ### SEAL-05 Dividers are consistent and placed symmetrically
 - **Statement:** Divider glyphs (dots, diamonds, stars) are one glyph at one size, centred on the text's centre line, and placed symmetrically (for example at 3, 9 and 6 o'clock).
 - **Why:** Dividers are punctuation for the ring. Mismatched sizes or positions break the symmetry the circle sets up.
-- **Check:** Arcs with `kind: "ornament"`: their `mid_deg` and radial centre against the band text's centre line; visual crop for glyph match.
+- **Check:** Arcs with `kind: "ornament"`: `mid_deg`, `offset_from_band_center_line_px`, and `radial_extent_px` against `tangential_extent_px` (the same shape should give the same pair at every position; swapped values mean an upright glyph that was not rotated to the path). Visual crop for glyph match.
 - **Threshold:** *tolerance* positions within 0.5 degrees of their symmetric angle; radial centre within 5 percent of the band width of the text centre line.
 - **Sources:** V:pixelbracket-type-around-circle (dots at 3 and 9 o'clock), V:spoon-vintage-badge-logo (stars mirrored about the centre).
 - **Confidence:** SINGLE SOURCE (practice shown in videos).

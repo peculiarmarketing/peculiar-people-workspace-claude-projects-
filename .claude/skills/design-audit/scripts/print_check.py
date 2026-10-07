@@ -101,7 +101,7 @@ def element_checks(m, units, th, method):
         v = units.conv(cap_px)
         pt = round(v["pt"] / cap_ratio, 1)
         rows.append({"element": element, "measure": "cap height / est. font size",
-                     **{k: v[k] for k in ("px", "in", "mm", "pt")}, "est_font_pt": pt,
+                     "px": v["px"], "in": v["in"], "mm": v["mm"], "cap_height_pt": v["pt"], "est_font_pt": pt,
                      "fail_pt": tx["fail_pt"], "warn_pt": tx["warn_pt"],
                      "status": status(pt, tx["fail_pt"], tx["warn_pt"]), "rule": "PRINT-05"})
 
@@ -144,6 +144,9 @@ def element_checks(m, units, th, method):
 
 
 def overlay(mask, thin, gaps, path, shrink_to=1600):
+    """Overlay of the ink bounding box (plus 8 px). Large images are shrunk to
+    shrink_to px wide: multiply overlay coordinates by (crop width / overlay width)
+    to get back to analysis pixels."""
     h, w = mask.shape
     img = np.zeros((h, w, 3), np.uint8)
     img[...] = (0, 26, 88)
@@ -205,7 +208,8 @@ def run(image, mpath, widths, method, outdir, basis="ink"):
                     "line_mm": lim[f"line_{level}_mm"], "gap_mm": lim[f"gap_{level}_mm"],
                     "thin_strokes": blob_summary(thin, speck, u),
                     "closing_gaps": blob_summary(gaps, speck, u) if lim[f"gap_{level}_mm"] else None,
-                    "upsample": k, "morph_radius_px": {"line": round(rl / k, 2), "gap": round(rg / k, 2)},
+                    "upsample": k, "morph_radius_px": {"line": round(rl / k, 2),
+                                                       "gap": round(rg / k, 2) if lim[f"gap_{level}_mm"] else None},
                     "overlay": os.path.basename(ov)}
             entry["methods"][meth] = r
         res["widths"].append(entry)

@@ -114,6 +114,9 @@ def fit_ring(P, th, r, cx, cy, r0, r1):
             "width": C.stats(w_own),
             "width_mean": round(float(np.mean(w_own)), 2),
             "width_cv_pct": round(float(np.std(w_own) / max(np.mean(w_own), 1e-6) * 100), 1),
+            # widths come from whole-pixel runs, so a perfect ring still shows about
+            # 0.5 px of spread; below this floor a CV is measurement noise
+            "width_cv_noise_floor_pct": round(50.0 / max(float(np.mean(w_own)), 1e-6), 1),
             "inner_outer_center_gap": round(math.hypot(icx - ocx, icy - ocy), 2),
             "fit_rms": [round(ires, 2), round(ores, 2)],
             "coverage": round(len(widths) / len(th), 3),
@@ -132,10 +135,45 @@ def comp_polar(c, cx, cy):
     return rr, a0, rel
 
 
+def solidity(c):
+    """Pixel area over convex hull area. Solid convex shapes (diamonds, dots, stars
+    have lower values, serif letters lower still, letters with counters lower again)."""
+    ys, xs = c["ys"], c["xs"]
+    pts = {}
+    for y, x in zip(ys.tolist(), xs.tolist()):
+        lo, hi = pts.get(y, (x, x))
+        pts[y] = (min(lo, x), max(hi, x))
+    P = []
+    for y, (lo, hi) in pts.items():
+        P += [(lo - 0.5, y - 0.5), (lo - 0.5, y + 0.5), (hi + 0.5, y - 0.5), (hi + 0.5, y + 0.5)]
+    P = sorted(set(P))
+    if len(P) < 3:
+        return 1.0
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+    lower, upper = [], []
+    for p in P:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    for p in reversed(P):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    h = lower[:-1] + upper[:-1]
+    area = 0.5 * abs(sum(h[i][0] * h[(i + 1) % len(h)][1] - h[(i + 1) % len(h)][0] * h[i][1] for i in range(len(h))))
+    return c["area"] / max(area, 1)
+
+
 def text_arcs(comps, cx, cy, r_lo, r_hi):
-    """Group the components of one annulus into arcs of type. Components are sorted
-    by angle; a new arc starts wherever the angular gap is far larger than a word
-    space (more than 3 cap heights of arc length)."""
+    """Group the components of one annulus into arcs of type, and list ornaments
+    (divider diamonds, stars, large dots) separately.
+
+    An ornament is a solid convex shape (solidity above 0.88) at least 0.45 cap
+    heights across and not a narrow bar (a sans I or l). Smaller dots stay with the
+    text as punctuation or bullets. Text components are sorted by angle; a new arc
+    starts wherever the angular gap exceeds 3 cap heights of arc length."""
     items = []
     for c in comps:
         rr, a0, rel = comp_polar(c, cx, cy)
@@ -147,6 +185,23 @@ def text_arcs(comps, cx, cy, r_lo, r_hi):
     if not items:
         return []
     items.sort(key=lambda t: t["a0"])
+    hts = np.array([t["rmax"] - t["rmin"] for t in items])
+    cap = float(np.median(hts))
+    ornaments = []
+    for t, h in zip(items, hts):
+        tang = (t["amax"] - t["amin"]) * t["rmean"]
+        size = max(h, tang)
+        if size >= 0.45 * cap and 0.4 <= h / max(tang, 1e-6) <= 2.5 and solidity(t["c"]) > 0.88:
+            t["orn"] = True
+            ornaments.append({"kind": "ornament", "mid_deg": round(math.degrees(t["a0"]), 2),
+                              "position": clock(math.degrees(t["a0"])),
+                              "radial_extent_px": round(h, 2), "tangential_extent_px": round(tang, 2),
+                              "r_center": round((t["rmin"] + t["rmax"]) / 2, 2),
+                              "area_px": t["c"]["area"], "solidity": round(solidity(t["c"]), 3),
+                              "bbox": t["c"]["bbox"]})
+    items = [t for t in items if not t.get("orn")]
+    if not items:
+        return ornaments
     hts = np.array([t["rmax"] - t["rmin"] for t in items])
     cap = float(np.median(hts))
     rmean = float(np.median([t["rmean"] for t in items]))
@@ -165,7 +220,27 @@ def text_arcs(comps, cx, cy, r_lo, r_hi):
         else:
             cur.append(nxt)
     arcs.append(cur)
-    return [summarise_arc(a, cx, cy) for a in arcs]
+    out = [summarise_arc(a, cx, cy) for a in arcs]
+    # room each text arc has before it runs into the next element in the zone
+    spans = [(math.radians(a["start_deg"]), math.radians(a["end_deg"])) for a in out] + \
+            [(math.radians(o["mid_deg"]) - o["tangential_extent_px"] / 2 / max(o["r_center"], 1),
+              math.radians(o["mid_deg"]) + o["tangential_extent_px"] / 2 / max(o["r_center"], 1)) for o in ornaments]
+    for i, a in enumerate(out):
+        if a["kind"] != "text":
+            continue
+        s0, e0 = spans[i]
+        before = min([((s0 - e) % (2 * np.pi)) for j, (st, e) in enumerate(spans) if j != i] or [2 * np.pi])
+        after = min([((st - e0) % (2 * np.pi)) for j, (st, e) in enumerate(spans) if j != i] or [2 * np.pi])
+        rm = (a["r_glyph_min"] + a["r_glyph_max"]) / 2
+        a["room_before_deg"] = round(math.degrees(before), 2)
+        a["room_after_deg"] = round(math.degrees(after), 2)
+        a["room_before_px"] = round(before * rm, 1)
+        a["room_after_px"] = round(after * rm, 1)
+    return out + ornaments
+
+
+def clock(deg):
+    return "top" if (deg < 60 or deg > 300) else ("bottom" if 120 < deg < 240 else "side")
 
 
 def summarise_arc(items, cx, cy):
@@ -182,7 +257,15 @@ def summarise_arc(items, cx, cy):
     # letter gaps between glyphs only
     gl = [t for t, h in zip(items, hts) if h >= 0.6 * cap]
     lg = np.array([((b["amin"] - a["amax"]) % (2 * np.pi)) * rmean for a, b in zip(gl, gl[1:])])
+    gpos = [math.degrees((a["amax"] + ((b["amin"] - a["amax"]) % (2 * np.pi)) / 2) % (2 * np.pi)) for a, b in zip(gl, gl[1:])]
     letter, words = split_gaps(lg)
+    lmask = np.isin(lg, letter) if lg.size else np.array([], bool)
+    extremes = {}
+    if lmask.any():
+        idx = np.flatnonzero(lmask)
+        imin, imax = idx[np.argmin(lg[idx])], idx[np.argmax(lg[idx])]
+        extremes = {"narrowest_letter_gap": {"px": round(float(lg[imin]), 2), "deg": round(gpos[imin], 2)},
+                    "widest_letter_gap": {"px": round(float(lg[imax]), 2), "deg": round(gpos[imax], 2)}}
     a_start = items[0]["amin"] % (2 * np.pi)
     a_end = items[-1]["amax"] % (2 * np.pi)
     span = (a_end - a_start) % (2 * np.pi)
@@ -201,14 +284,16 @@ def summarise_arc(items, cx, cy):
             "letter_gap_px": C.stats(letter),
             "word_gap_px": C.stats(words),
             "letter_gap_to_cap": round(float(np.median(letter)) / cap, 3) if letter.size else None,
-            "kind": "text" if len(glyph) >= 3 else "ornament",
+            "kind": "text" if len(glyph) >= 3 else "fragment",
             "letter_gap_cv_pct": round(float(np.std(letter) / max(np.mean(letter), 1e-6) * 100), 1) if letter.size > 2 else None,
+            "r_center": round((min(t["rmin"] for t in glyph) + max(t["rmax"] for t in glyph)) / 2, 2) if glyph else None,
+            **extremes,
             "_pix": (ys, xs)}
 
 
 # ---------------------------------------------------------- centre zone ----
 
-def centre_zone(mask, comps, cx, cy, r_in):
+def centre_zone(mask, comps, cx, cy, r_in, ocx=None, ocy=None):
     """Split the inner disc into art and an optional caption line under it. The
     caption is found as the lowest band of rows separated from the art by a clear
     horizontal gap and made only of small components."""
@@ -243,6 +328,11 @@ def centre_zone(mask, comps, cx, cy, r_in):
             if bh < 0.2 * ah:
                 caption, art = below, above
     out = {}
+    # membership and clearances use the inner ring's own centre (cx, cy); offsets
+    # are reported against the outer ring centre (the seal's axis), with the inner
+    # ring versions alongside, so an off-centre inner ring is not blamed on the art
+    ocx = cx if ocx is None else ocx
+    ocy = cy if ocy is None else ocy
     ax = np.concatenate([c["xs"] for c in art])
     ay = np.concatenate([c["ys"] for c in art])
     bb = [int(ax.min()), int(ay.min()), int(ax.max()), int(ay.max())]
@@ -250,8 +340,9 @@ def centre_zone(mask, comps, cx, cy, r_in):
     out["art"] = {"bbox": bb, "width_px": bb[2] - bb[0] + 1, "height_px": bb[3] - bb[1] + 1,
                   "width_pct_of_inner_diameter": round((bb[2] - bb[0] + 1) / (2 * r_in) * 100, 1),
                   "height_pct_of_inner_diameter": round((bb[3] - bb[1] + 1) / (2 * r_in) * 100, 1),
-                  "bbox_center_offset": [round((bb[0] + bb[2]) / 2 - cx, 2), round((bb[1] + bb[3]) / 2 - cy, 2)],
-                  "mass_center_offset": [round(float(ax.mean()) - cx, 2), round(float(ay.mean()) - cy, 2)],
+                  "bbox_center_offset": [round((bb[0] + bb[2]) / 2 - ocx, 2), round((bb[1] + bb[3]) / 2 - ocy, 2)],
+                  "mass_center_offset": [round(float(ax.mean()) - ocx, 2), round(float(ay.mean()) - ocy, 2)],
+                  "bbox_center_offset_vs_inner_ring": [round((bb[0] + bb[2]) / 2 - cx, 2), round((bb[1] + bb[3]) / 2 - cy, 2)],
                   "min_radial_clearance_px": round(r_in - float(rr.max()), 2),
                   "clearance_px": {"top": round(bb[1] - (cy - r_in), 2), "bottom": round((cy + r_in) - bb[3], 2),
                                    "left": round(bb[0] - (cx - r_in), 2), "right": round((cx + r_in) - bb[2], 2)}}
@@ -270,14 +361,16 @@ def centre_zone(mask, comps, cx, cy, r_in):
         crr = np.hypot(cxs - cx, cys - cy)
         out["caption"] = {"bbox": cb, "cap_height_px": round(cap, 2),
                           "width_px": cb[2] - cb[0] + 1,
-                          "center_x_offset": round((cb[0] + cb[2]) / 2 - cx, 2),
+                          "center_x_offset": round((cb[0] + cb[2]) / 2 - ocx, 2),
                           "gap_to_art_px": cb[1] - bb[3] - 1,
                           "min_radial_clearance_px": round(r_in - float(crr.max()), 2),
                           "letter_gap_px": C.stats(letter), "word_gap_px": C.stats(words),
                           "letter_gap_to_cap": round(float(np.median(letter)) / cap, 3) if letter.size else None}
         blk = [min(bb[0], cb[0]), bb[1], max(bb[2], cb[2]), cb[3]]
         out["art_plus_caption"] = {"bbox": blk,
-                                   "bbox_center_offset": [round((blk[0] + blk[2]) / 2 - cx, 2), round((blk[1] + blk[3]) / 2 - cy, 2)],
+                                   "bbox_center_offset": [round((blk[0] + blk[2]) / 2 - ocx, 2), round((blk[1] + blk[3]) / 2 - ocy, 2)],
+                                   "bbox_center_offset_vs_inner_ring": [round((blk[0] + blk[2]) / 2 - cx, 2), round((blk[1] + blk[3]) / 2 - cy, 2)],
+                                   "height_px": blk[3] - blk[1] + 1,
                                    "clearance_px": {"top": round(blk[1] - (cy - r_in), 2), "bottom": round((cy + r_in) - blk[3], 2)}}
         cm = np.zeros(mask.shape, bool)
         cm[cys, cxs] = True
@@ -409,24 +502,34 @@ def measure(path, ink=None, bg=None):
         for a, b in zip(rings, rings[1:]):
             arcs = text_arcs(comps, cx, cy, b["r_outer"], a["r_inner"])
             for arc in arcs:
+                if arc["kind"] == "ornament":
+                    arc["offset_from_band_center_line_px"] = round(arc["r_center"] - (a["r_inner"] + b["r_outer"]) / 2, 2)
+                    continue
                 ys_, xs_ = arc.pop("_pix")
                 m = np.zeros(mask.shape, bool)
                 m[ys_, xs_] = True
                 arc["stroke_px"] = type_strokes(SW.widths(m))
-                arc["gap_to_outer_ring_px"] = round(a["r_inner"] - arc["r_glyph_max"], 2) if arc["r_glyph_max"] else None
-                arc["gap_to_inner_ring_px"] = round(arc["r_glyph_min"] - b["r_outer"], 2) if arc["r_glyph_min"] else None
-                if arc["gap_to_outer_ring_px"] is not None and arc["gap_to_inner_ring_px"]:
-                    arc["outer_to_inner_gap_ratio"] = round(arc["gap_to_outer_ring_px"] / max(arc["gap_to_inner_ring_px"], 0.5), 3)
-                arc["cap_height_pct_of_band"] = round(arc["cap_height_px"] / max(a["r_inner"] - b["r_outer"], 1) * 100, 1)
+                arc["position"] = clock(arc["mid_deg"])
                 arc["mid_offset_from_axis_deg"] = round(min(abs(arc["mid_deg"]), abs(arc["mid_deg"] - 360),
                                                             abs(arc["mid_deg"] - 180)), 2)
-                arc["position"] = "top" if (arc["mid_deg"] < 60 or arc["mid_deg"] > 300) else (
-                    "bottom" if 120 < arc["mid_deg"] < 240 else "side")
+                arc["cap_height_pct_of_band"] = round(arc["cap_height_px"] / max(a["r_inner"] - b["r_outer"], 1) * 100, 1)
+                if arc["kind"] != "text":
+                    continue
+                # clearances measured from each ring's own fitted centre, so an
+                # off-centre ring does not distort the gap
+                hm = np.zeros(mask.shape, bool)
+                glyph_pix = (ys_, xs_)
+                d_out = np.hypot(glyph_pix[1] - a["center"][0], glyph_pix[0] - a["center"][1])
+                d_in = np.hypot(glyph_pix[1] - b["center"][0], glyph_pix[0] - b["center"][1])
+                arc["gap_to_outer_ring_px"] = round(a["r_inner"] - float(d_out.max()), 2)
+                arc["gap_to_inner_ring_px"] = round(float(d_in.min()) - b["r_outer"], 2)
+                arc["outer_to_inner_gap_ratio"] = round(arc["gap_to_outer_ring_px"] / max(arc["gap_to_inner_ring_px"], 0.5), 3)
+                arc["zone_center_line_r"] = round((a["r_inner"] + b["r_outer"]) / 2, 2)
             zones.append({"between": [a["id"], b["id"]], "band_width_px": round(a["r_inner"] - b["r_outer"], 2),
                           "arcs": arcs})
         out["zones"] = zones
         last = rings[-1]
-        cz = centre_zone(mask, comps, last["center"][0], last["center"][1], last["r_inner"])
+        cz = centre_zone(mask, comps, last["center"][0], last["center"][1], last["r_inner"], cx, cy)
         if cz:
             am = cz.pop("_art_mask")
             cm = cz.pop("_caption_mask", None)

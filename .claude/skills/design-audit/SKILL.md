@@ -44,7 +44,8 @@ report of fixes with target numbers. Built from the research in
 
 ### 1. Run the scripts
 
-Use any python3 with numpy and Pillow (the temple-product-generator venv has both).
+Use any python3 with numpy and Pillow (system python3 works; the temple-product-generator
+requirements pin both).
 
     python3 .claude/skills/design-audit/scripts/run_audit.py <image> \
         --width 12 --width 10 --method all [--ink '#FFFFFF' --bg '#001A58'] \
@@ -58,8 +59,8 @@ This runs `measure.py` (geometry), `print_check.py` (physical sizes against
 |---|---|
 | `measurements.json` | rings, gaps, text arcs, centre art, caption, strokes, tints, smallest shapes (analysis px) |
 | `print_check.json` | per width and method: PASS / WARN / FAIL rows, thin-stroke and closing-gap regions, smallest shapes in mm |
-| `targets.json` | rebuild targets as a fraction of the outer diameter D and in mm / pt at each width |
-| `print_flags_<w>in_<method>_<fail or warn>.png` | red = stroke under the line minimum, yellow = gap that will close |
+| `targets.json` | rebuild targets as a fraction of the outer diameter D and in mm / pt at each width: floor and margin per stroke, current radii outside in (`geometry_now`), and fit `checks` (stroke-to-cap ratio, E/B fit, arc room) |
+| `print_flags_<w>in_<method>_<fail or warn>.png` | red = stroke under the line minimum, yellow = gap that will close. Covers the ink box plus 8 px, shrunk to 1600 px wide: multiply overlay pixels by (ink box width + 16) / 1600 to get analysis pixels |
 | `small_1in.png`, `small_2in.png` | the design at 1 and 2 in on a 96 ppi screen, enlarged 4x |
 | `blur_0.5pct.png`, `blur_1pct.png`, `blur_2pct.png` | squint test |
 | `onecolour.png` | ink only, black on white |
@@ -67,14 +68,29 @@ This runs `measure.py` (geometry), `print_check.py` (physical sizes against
 
 All pixel values are in analysis pixels (inputs over 3200 px are downscaled; the scale
 is `image.analysis_scale`). Angles: 0 degrees is 12 o'clock, increasing clockwise.
+Centre offsets (`centre.*_offset`) are measured from the outer ring centre, the
+seal's axis; the `_vs_inner_ring` versions sit alongside. If the inner ring is off
+centre, that is a ring finding (SEAL-01), not an art finding.
+
+**Binding method.** With `--method all`, the binding line rule and the binding gap
+rule are each the strictest of the methods that could apply, so they can come from
+different methods (for example DTG lines and screen gaps); `targets.json` names the
+source of each under `binding`. Screen-printed transfer is reported for reference
+only and is not in the binding set unless it is the confirmed method. Each stroke
+target has a floor (the fail level, the minimum that will hold) and a margin (the
+warn level, production-safe). Quote both; if the margin cannot fit (see the
+stroke-to-cap ratio check), say so and use the floor.
 
 ### 2. Check what the scripts detected
 
 Open `onecolour.png` and compare it with `measurements.json`:
 
 - Number of `rings` and their order (ring1 is outermost).
-- `zones[*].arcs`: one entry per text line or ornament, with `position` (top, bottom,
-  side) and `kind` (text or ornament). Does it match the lines you can see?
+- `zones[*].arcs`: one entry per text line (`kind: text`) and one per divider
+  (`kind: ornament`: solid convex shapes such as diamonds and stars, with their
+  angle, radial and tangential extent, and offset from the band centre line).
+  Small round bullets between phrases stay inside the text line as punctuation.
+  Does the list match what you can see?
 - `centre.art` and `centre.caption`: is the caption split from the art correctly?
 
 If ink detection is wrong (wrong colours, or a textured background), rerun with `--ink`
@@ -92,9 +108,14 @@ smallest width. Make zoomed crops for anything visual you will cite:
 
 (cx and cy are `centring.outer_ring_center`; r is an arc's `(r_min + r_max) / 2`.)
 Always crop the bottom arc (TYPE-04), the widest and narrowest letter gaps of each
-arc (TYPE-03), each divider (SEAL-05), and the worst red and yellow regions in the
-overlays (their `bbox_in_crop` coordinates are relative to the ink bounding box
-`ink.bbox`, so add `ink.bbox[0]` and `ink.bbox[1]` minus the 8 px pad).
+arc (`narrowest_letter_gap.deg` and `widest_letter_gap.deg`, TYPE-03), each divider
+(SEAL-05), and the worst red and yellow regions in the overlays (their
+`bbox_in_crop` coordinates are relative to the ink bounding box `ink.bbox`, so add
+`ink.bbox[0]` and `ink.bbox[1]` minus the 8 px pad).
+
+Reading the overlays: the closing test flags the inside of every sharp join (the
+apex notches of A, N, V, Y) because any acute angle fills a little. Do not count
+those as gap failures; count gaps between separate strokes and inside counters.
 
 ### 4. Score the rules
 
@@ -115,6 +136,11 @@ blur.
   hierarchy, reading direction, crowding, WARN-level print results on text).
 - **polish**: visible to a trained eye (centring by a few px, uneven gaps, ring wobble,
   tracking inconsistency, stroke ratios that do not relate).
+
+**At measurement resolution.** If a measured value is within one pixel
+(`px_resolution_mm` in `print_check.json`) of its limit, keep the severity the rule
+gives but label the finding "at measurement resolution" and ask for a vector or
+higher-resolution file to settle it.
 
 Rank by severity, then by how many other findings one fix resolves (a vector rebuild of
 the rings fixes concentricity, ring wobble and gap uniformity at once: list it once
@@ -137,12 +163,23 @@ its size inside the seal), the options are layout changes: a larger seal, a larg
 inner field with thinner bands, or fewer elements. A simplified art variant goes under
 Brand conflicts as Evan's call.
 
-### 7. Write the report
+Fixes interact. Equalising clearances (COMP-04, SEAL-04) moves rings, which changes
+the field size (RATIO-05) and the room for the art (PRINT-09); heavier strokes and wider
+gaps lengthen each text line (use the `arc room` checks: a line that grows by more than
+twice its room collides with its neighbours). Work the rebuild spec outside in and
+recheck each of these after the strokes are set.
 
-Use `references/report-template.md` exactly. Save it next to the audit output as
-`REPORT.md`, and give Evan the verdict, the top findings and the file path in chat. Copy
-the preview files you cite into the same folder, so the report travels with its
-evidence.
+### 7. Recommend a print size when it is open
+
+If the brief leaves the size open and the rules pass at one candidate width but not
+another, the Verdict says which width to settle on and why. That is often the single
+most useful line in the report.
+
+### 8. Write the report
+
+Use `references/report-template.md` exactly. Save it as `REPORT.md` in the audit output
+folder (the previews are already there; put your crops there too), and give Evan the
+verdict, the top findings and the file path in chat.
 
 ## Known limits
 
@@ -153,6 +190,11 @@ evidence.
   per-letter measurements. Confirm a hairline failure in a crop before calling it.
 - Letter gaps are bounding-box gaps, so letter shapes (A, L, T, Y) add natural
   variation. TYPE-03 needs a visual check.
+- Ring width CV has a noise floor (`width_cv_noise_floor_pct`, about 50 / width in
+  px): below it, a LINE-01 "wobble" is measurement noise, not a defect.
+- The scripts cannot separate an art's stray construction lines from the building, so
+  art bounding boxes (and the centring that uses them) include them. Say so when the
+  art has overrunning lines.
 - Ring detection needs a ring to cover most of its circle. A ring broken by text or
   art for more than 40 percent of its length is not detected; say so.
 - Non-circular logos get centring, strokes, print checks and previews; the SEAL and arc
