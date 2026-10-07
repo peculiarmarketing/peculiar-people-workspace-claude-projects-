@@ -23,9 +23,9 @@ Needs `fonttools` and `cairosvg` (pip). Writes to `out/`:
 - Motto tracking is solved so the motto covers 290 degrees, as in the draft; EST.
   2023 and UTAH, USA use the same tracking (one spacing logic). PECULIAR PEOPLE is
   at 50.
-- Temple E is the approved art, traced with the temple-svg-tracer skill
-  (`trace/Salt Lake E white.svg`; black twin alongside) and scaled 1.6 percent with
-  the field. Its line weights are untouched.
+- Temple E is the approved art, scaled 1.6 percent with the field. The seal uses a
+  DTG-thickened version (`trace/Salt Lake E DTG white.svg`, see below); the
+  untouched trace is `trace/Salt Lake E white.svg` (`--original-temple`).
 
 ## Fonts (all SIL OFL, licences in `fonts/`)
 
@@ -78,3 +78,29 @@ and Raleway default to old-style figures.
 The PNGs follow the BRAND.md section 8 file rules: every pixel, visible or not,
 carries the ink colour, and alpha is fully ink or fully clear (no tints). Rebuild
 with `python3 build_seal.py --print-png` (Arvo is now the default).
+
+## Temple thickened for DTG (Evan, 7 October 2026)
+
+Inside the seal, temple E prints at about half its stand-alone size, so its
+lightest lines were 0.24 mm at 12 in, under every print method's minimum (DTG
+0.71 mm). `dtg/thicken.py` fixes that on the source drawing, upscaled 4x:
+
+1. Every line grows 0.30 mm per side, so all three weights move up together and
+   keep their order.
+2. Every line gets a minimum width of 0.95 mm along its centre line, which
+   catches the faint construction strokes that started under 0.11 mm.
+
+The result is retraced with the temple-svg-tracer skill (`--upscale 1`, it is
+already 8192 px). At 0.84 mm the floor still measured within one pixel of the DTG
+limit after tracing and rasterising, so it was raised to 0.95.
+
+Audit of the final print file (`research/design-audit/audits/seal_final_arvo_dtg/`):
+0 FAIL on every method. Temple lightest lines 0.90 mm (DTG floor 0.71), no thin
+regions left on the DTG overlay. Everything sits under the 1.06 mm DTG production
+margin, so it reports WARN, the same as the type.
+
+What it costs: the drawing reads heavier. Ink coverage went from 10.6 to 22.3
+percent of the temple's frame, and 522 of 877 small enclosed gaps closed. The
+rows of tiny square panels under the battlements are now solid bands, and the
+spires' inner double lines fused. The windows, doors, round windows, battlements,
+tails and the Moroni all still read.

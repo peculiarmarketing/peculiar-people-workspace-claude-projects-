@@ -66,6 +66,9 @@ ART_TOP, ART_H, ART_CX = 452, 935, 1024
 CAPTION_CENTRE_DY = 1448.5 - 1023.1      # old caption cap centre below ring centre
 CROP_ORIGIN = (246, 39)                  # temple-e-white.png = temple-e.png cropped here
 FULL_SRC = 2048
+# "Salt Lake E DTG white.svg": every line grown 0.30 mm per side at 12 in so the
+# lightest lines clear the DTG floor (dtg/README in this folder). Evan, 7 Oct 2026.
+TEMPLE_TRACE = "Salt Lake E DTG white.svg"
 
 
 def ring(cx, cy, ro, ri):
@@ -186,7 +189,7 @@ def temple(D, field_r_new):
     y0 = ART_TOP - OLD_CENTRE[1]
     # Traced vector (temple-svg-tracer, white variant) of the full 2048 px
     # temple-e.png; temple-e-white.png is that image cropped to its ink box.
-    svg_trace = os.path.join(HERE, "trace", "Salt Lake E white.svg")
+    svg_trace = os.path.join(HERE, "trace", TEMPLE_TRACE)
     if os.path.exists(svg_trace):
         body = open(svg_trace).read()
         vb = body.split('viewBox="')[1].split('"')[0]
@@ -281,5 +284,9 @@ if __name__ == "__main__":
                     help="degrees the motto covers, centred on 12 o'clock; 0 uses --motto-track")
     ap.add_argument("--print-png", action="store_true",
                     help="also write the flattened Tapstitch print PNG at 300 ppi")
+    ap.add_argument("--original-temple", action="store_true",
+                    help="use the untouched trace of temple E instead of the DTG-thickened one")
     a = ap.parse_args()
+    if a.original_temple:
+        TEMPLE_TRACE = "Salt Lake E white.svg"
     build(a.font, a.width_in, a.out, a.motto_track, a.title_track, a.small_track, a.motto_span or None, a.print_png)

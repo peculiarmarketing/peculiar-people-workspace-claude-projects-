@@ -1,0 +1,3305 @@
+{
+  "thresholds_file": "../../../../.claude/skills/design-audit/references/print_thresholds.json",
+  "basis": "ink",
+  "basis_px": 3200,
+  "widths": [
+    {
+      "print_width_in": 12.0,
+      "smallest_shapes": [
+        {
+          "bbox": [
+            1520,
+            2908,
+            1533,
+            2922
+          ],
+          "area_mm2": 1.533,
+          "max_dim_mm": 1.429
+        },
+        {
+          "bbox": [
+            1622,
+            2377,
+            1639,
+            2400
+          ],
+          "area_mm2": 2.123,
+          "max_dim_mm": 2.286
+        },
+        {
+          "bbox": [
+            3044,
+            1239,
+            3068,
+            1264
+          ],
+          "area_mm2": 4.446,
+          "max_dim_mm": 2.476
+        },
+        {
+          "bbox": [
+            218,
+            982,
+            242,
+            1006
+          ],
+          "area_mm2": 4.509,
+          "max_dim_mm": 2.381
+        },
+        {
+          "bbox": [
+            1919,
+            127,
+            1944,
+            152
+          ],
+          "area_mm2": 4.545,
+          "max_dim_mm": 2.476
+        },
+        {
+          "bbox": [
+            1013,
+            183,
+            1057,
+            244
+          ],
+          "area_mm2": 8.964,
+          "max_dim_mm": 5.905
+        },
+        {
+          "bbox": [
+            2980,
+            2076,
+            3042,
+            2118
+          ],
+          "area_mm2": 8.964,
+          "max_dim_mm": 6.001
+        },
+        {
+          "bbox": [
+            2891,
+            874,
+            2952,
+            922
+          ],
+          "area_mm2": 8.973,
+          "max_dim_mm": 5.905
+        },
+        {
+          "bbox": [
+            92,
+            1340,
+            153,
+            1373
+          ],
+          "area_mm2": 9.063,
+          "max_dim_mm": 5.905
+        },
+        {
+          "bbox": [
+            1852,
+            2836,
+            1897,
+            2896
+          ],
+          "area_mm2": 12.085,
+          "max_dim_mm": 5.81
+        },
+        {
+          "bbox": [
+            677,
+            371,
+            747,
+            431
+          ],
+          "area_mm2": 12.212,
+          "max_dim_mm": 6.763
+        },
+        {
+          "bbox": [
+            2524,
+            2711,
+            2596,
+            2770
+          ],
+          "area_mm2": 12.23,
+          "max_dim_mm": 6.953
+        },
+        {
+          "bbox": [
+            2510,
+            404,
+            2564,
+            476
+          ],
+          "area_mm2": 12.248,
+          "max_dim_mm": 6.953
+        },
+        {
+          "bbox": [
+            1660,
+            2862,
+            1699,
+            2921
+          ],
+          "area_mm2": 12.275,
+          "max_dim_mm": 5.715
+        },
+        {
+          "bbox": [
+            3005,
+            1980,
+            3072,
+            2029
+          ],
+          "area_mm2": 12.311,
+          "max_dim_mm": 6.477
+        }
+      ],
+      "ppi": 266.67,
+      "px_per_mm": 10.499,
+      "px_resolution_mm": 0.095,
+      "design_height_in": 12.0,
+      "methods": {
+        "screen": {
+          "limits": {
+            "label": "screen print (plastisol, direct)",
+            "line_fail_mm": 0.35,
+            "line_warn_mm": 0.5,
+            "gap_fail_mm": 0.53,
+            "gap_warn_mm": 0.71
+          },
+          "element_checks": [
+            {
+              "element": "ring1",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 25.0,
+              "in": 0.0938,
+              "mm": 2.381,
+              "pt": 6.75,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring2",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring3",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring4",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 26.0,
+              "in": 0.0975,
+              "mm": 2.476,
+              "pt": 7.02,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring1/ring2",
+              "measure": "gap between rings (narrowest)",
+              "px": 153.58,
+              "in": 0.5759,
+              "mm": 14.628,
+              "pt": 41.47,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring2/ring3",
+              "measure": "gap between rings (narrowest)",
+              "px": 224.65,
+              "in": 0.8424,
+              "mm": 21.398,
+              "pt": 60.66,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring3/ring4",
+              "measure": "gap between rings (narrowest)",
+              "px": 24.92,
+              "in": 0.0935,
+              "mm": 2.374,
+              "pt": 6.73,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "letter gap (5th pct)",
+              "px": 52.85,
+              "in": 0.1982,
+              "mm": 5.034,
+              "pt": 14.27,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "cap height / est. font size",
+              "px": 58.26,
+              "in": 0.2185,
+              "mm": 5.549,
+              "cap_height_pt": 15.73,
+              "est_font_pt": 23.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 19.5,
+              "in": 0.0731,
+              "mm": 1.857,
+              "pt": 5.26,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 16.5,
+              "in": 0.0619,
+              "mm": 1.572,
+              "pt": 4.45,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 10.77,
+              "in": 0.0404,
+              "mm": 1.026,
+              "pt": 2.91,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 98.61,
+              "in": 0.3698,
+              "mm": 9.393,
+              "cap_height_pt": 26.62,
+              "est_font_pt": 39.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 53.0,
+              "in": 0.1987,
+              "mm": 5.048,
+              "pt": 14.31,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 58.77,
+              "in": 0.2204,
+              "mm": 5.598,
+              "cap_height_pt": 15.87,
+              "est_font_pt": 23.3,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type stem",
+              "px": 12.5,
+              "in": 0.0469,
+              "mm": 1.191,
+              "pt": 3.38,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.35,
+              "warn_mm": 0.5,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "caption",
+              "measure": "letter gap (5th pct)",
+              "px": 52.5,
+              "in": 0.1969,
+              "mm": 5.001,
+              "pt": 14.17,
+              "fail_mm": 0.53,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "caption",
+              "measure": "cap height / est. font size",
+              "px": 59.0,
+              "in": 0.2212,
+              "mm": 5.62,
+              "cap_height_pt": 15.93,
+              "est_font_pt": 23.4,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            }
+          ],
+          "fail": [],
+          "warn": [],
+          "morphology": {
+            "fail": {
+              "line_mm": 0.35,
+              "gap_mm": 0.53,
+              "thin_strokes": {
+                "regions": 31,
+                "specks_ignored": 5518,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      2639,
+                      2655,
+                      2662,
+                      2678
+                    ],
+                    "length_mm": 2.286,
+                    "area_mm2": 0.218
+                  },
+                  {
+                    "bbox_in_crop": [
+                      753,
+                      753,
+                      775,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2424,
+                      753,
+                      2446,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      754,
+                      2425,
+                      774,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2425,
+                      2425,
+                      2445,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2415,
+                      2381,
+                      2434,
+                      2400
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      799,
+                      2415,
+                      818,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      2415,
+                      2400,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      801,
+                      764,
+                      819,
+                      782
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      765,
+                      2399,
+                      783
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2416,
+                      800,
+                      2434,
+                      818
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      764,
+                      801,
+                      782,
+                      819
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  }
+                ],
+                "total_area_mm2": 4.63
+              },
+              "closing_gaps": {
+                "regions": 198,
+                "specks_ignored": 5870,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1698,
+                      1485,
+                      1704,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 14.743
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1323,
+                      1793,
+                      1329,
+                      2061
+                    ],
+                    "length_mm": 25.622,
+                    "area_mm2": 12.783
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1791,
+                      1146,
+                      2057
+                    ],
+                    "length_mm": 25.432,
+                    "area_mm2": 11.568
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2046,
+                      1791,
+                      2050,
+                      2051
+                    ],
+                    "length_mm": 24.86,
+                    "area_mm2": 11.032
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1865,
+                      1790,
+                      1870,
+                      2052
+                    ],
+                    "length_mm": 25.051,
+                    "area_mm2": 10.433
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1699,
+                      1794,
+                      1703,
+                      2052
+                    ],
+                    "length_mm": 24.67,
+                    "area_mm2": 10.216
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2045,
+                      1576,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 17.716,
+                    "area_mm2": 9.744
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1493,
+                      1791,
+                      1497,
+                      2052
+                    ],
+                    "length_mm": 24.955,
+                    "area_mm2": 9.399
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1564,
+                      1497,
+                      1761
+                    ],
+                    "length_mm": 18.859,
+                    "area_mm2": 9.345
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1864,
+                      1602,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 15.43,
+                    "area_mm2": 8.746
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1609,
+                      1146,
+                      1760
+                    ],
+                    "length_mm": 14.478,
+                    "area_mm2": 8.047
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1181,
+                      1113,
+                      1306,
+                      1125
+                    ],
+                    "length_mm": 12.001,
+                    "area_mm2": 4.418
+                  }
+                ],
+                "total_area_mm2": 235.56
+              },
+              "upsample": 2,
+              "morph_radius_px": {
+                "line": 2.0,
+                "gap": 3.0
+              },
+              "overlay": "print_flags_12in_screen_fail.png"
+            },
+            "warn": {
+              "line_mm": 0.5,
+              "gap_mm": 0.71,
+              "thin_strokes": {
+                "regions": 32,
+                "specks_ignored": 5624,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      2639,
+                      2655,
+                      2662,
+                      2678
+                    ],
+                    "length_mm": 2.286,
+                    "area_mm2": 0.218
+                  },
+                  {
+                    "bbox_in_crop": [
+                      753,
+                      753,
+                      775,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2424,
+                      753,
+                      2446,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      754,
+                      2425,
+                      774,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2425,
+                      2425,
+                      2445,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2415,
+                      2381,
+                      2434,
+                      2400
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      799,
+                      2415,
+                      818,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      2415,
+                      2400,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      801,
+                      764,
+                      819,
+                      782
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      765,
+                      2399,
+                      783
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2416,
+                      800,
+                      2434,
+                      818
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      764,
+                      801,
+                      782,
+                      819
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  }
+                ],
+                "total_area_mm2": 4.8
+              },
+              "closing_gaps": {
+                "regions": 243,
+                "specks_ignored": 5755,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1482,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 26.86,
+                    "area_mm2": 16.449
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2044,
+                      1483,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 15.677
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1532,
+                      1332,
+                      1770
+                    ],
+                    "length_mm": 22.765,
+                    "area_mm2": 15.405
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1503,
+                      1147,
+                      1760
+                    ],
+                    "length_mm": 24.574,
+                    "area_mm2": 14.779
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1698,
+                      1485,
+                      1704,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 14.743
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1483,
+                      1498,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 14.507
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1248,
+                      1499,
+                      1468
+                    ],
+                    "length_mm": 21.05,
+                    "area_mm2": 14.38
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1697,
+                      1249,
+                      1704,
+                      1468
+                    ],
+                    "length_mm": 20.955,
+                    "area_mm2": 13.745
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1323,
+                      1793,
+                      1329,
+                      2061
+                    ],
+                    "length_mm": 25.622,
+                    "area_mm2": 12.783
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1791,
+                      1146,
+                      2057
+                    ],
+                    "length_mm": 25.432,
+                    "area_mm2": 11.568
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2046,
+                      1791,
+                      2050,
+                      2051
+                    ],
+                    "length_mm": 24.86,
+                    "area_mm2": 11.032
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1865,
+                      1790,
+                      1870,
+                      2052
+                    ],
+                    "length_mm": 25.051,
+                    "area_mm2": 10.433
+                  }
+                ],
+                "total_area_mm2": 392.24
+              },
+              "upsample": 2,
+              "morph_radius_px": {
+                "line": 2.5,
+                "gap": 3.5
+              },
+              "overlay": "print_flags_12in_screen_warn.png"
+            }
+          }
+        },
+        "screen_transfer": {
+          "limits": {
+            "label": "screen-printed heat transfer",
+            "line_fail_mm": 0.3,
+            "line_warn_mm": 0.35,
+            "gap_fail_mm": 1.02,
+            "gap_warn_mm": 1.02
+          },
+          "element_checks": [
+            {
+              "element": "ring1",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 25.0,
+              "in": 0.0938,
+              "mm": 2.381,
+              "pt": 6.75,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring2",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring3",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring4",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 26.0,
+              "in": 0.0975,
+              "mm": 2.476,
+              "pt": 7.02,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring1/ring2",
+              "measure": "gap between rings (narrowest)",
+              "px": 153.58,
+              "in": 0.5759,
+              "mm": 14.628,
+              "pt": 41.47,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring2/ring3",
+              "measure": "gap between rings (narrowest)",
+              "px": 224.65,
+              "in": 0.8424,
+              "mm": 21.398,
+              "pt": 60.66,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring3/ring4",
+              "measure": "gap between rings (narrowest)",
+              "px": 24.92,
+              "in": 0.0935,
+              "mm": 2.374,
+              "pt": 6.73,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "letter gap (5th pct)",
+              "px": 52.85,
+              "in": 0.1982,
+              "mm": 5.034,
+              "pt": 14.27,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "cap height / est. font size",
+              "px": 58.26,
+              "in": 0.2185,
+              "mm": 5.549,
+              "cap_height_pt": 15.73,
+              "est_font_pt": 23.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 19.5,
+              "in": 0.0731,
+              "mm": 1.857,
+              "pt": 5.26,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 16.5,
+              "in": 0.0619,
+              "mm": 1.572,
+              "pt": 4.45,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 10.77,
+              "in": 0.0404,
+              "mm": 1.026,
+              "pt": 2.91,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 98.61,
+              "in": 0.3698,
+              "mm": 9.393,
+              "cap_height_pt": 26.62,
+              "est_font_pt": 39.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 53.0,
+              "in": 0.1987,
+              "mm": 5.048,
+              "pt": 14.31,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 58.77,
+              "in": 0.2204,
+              "mm": 5.598,
+              "cap_height_pt": 15.87,
+              "est_font_pt": 23.3,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type stem",
+              "px": 12.5,
+              "in": 0.0469,
+              "mm": 1.191,
+              "pt": 3.38,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.3,
+              "warn_mm": 0.35,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "caption",
+              "measure": "letter gap (5th pct)",
+              "px": 52.5,
+              "in": 0.1969,
+              "mm": 5.001,
+              "pt": 14.17,
+              "fail_mm": 1.02,
+              "warn_mm": 1.02,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "caption",
+              "measure": "cap height / est. font size",
+              "px": 59.0,
+              "in": 0.2212,
+              "mm": 5.62,
+              "cap_height_pt": 15.93,
+              "est_font_pt": 23.4,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            }
+          ],
+          "fail": [],
+          "warn": [],
+          "morphology": {
+            "fail": {
+              "line_mm": 0.3,
+              "gap_mm": 1.02,
+              "thin_strokes": {
+                "regions": 30,
+                "specks_ignored": 5278,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      2639,
+                      2655,
+                      2662,
+                      2678
+                    ],
+                    "length_mm": 2.286,
+                    "area_mm2": 0.218
+                  },
+                  {
+                    "bbox_in_crop": [
+                      753,
+                      753,
+                      775,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2424,
+                      753,
+                      2446,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      754,
+                      2425,
+                      774,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2425,
+                      2425,
+                      2445,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2415,
+                      2381,
+                      2434,
+                      2400
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      799,
+                      2415,
+                      818,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      2415,
+                      2400,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      801,
+                      764,
+                      819,
+                      782
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      765,
+                      2399,
+                      783
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2416,
+                      800,
+                      2434,
+                      818
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      764,
+                      801,
+                      782,
+                      819
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  }
+                ],
+                "total_area_mm2": 4.51
+              },
+              "closing_gaps": {
+                "regions": 383,
+                "specks_ignored": 5229,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1714,
+                      1223,
+                      1725,
+                      1442
+                    ],
+                    "length_mm": 20.955,
+                    "area_mm2": 20.84
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1745,
+                      1668,
+                      1821,
+                      1784
+                    ],
+                    "length_mm": 11.144,
+                    "area_mm2": 19.315
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1484,
+                      1332,
+                      1770
+                    ],
+                    "length_mm": 27.337,
+                    "area_mm2": 18.953
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1482,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 26.86,
+                    "area_mm2": 16.449
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1482,
+                      1148,
+                      1760
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 16.358
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2044,
+                      1483,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 15.677
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1219,
+                      1516,
+                      1253,
+                      1606
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 15.151
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1218,
+                      1667,
+                      1252,
+                      1756
+                    ],
+                    "length_mm": 8.572,
+                    "area_mm2": 14.952
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1218,
+                      1821,
+                      1253,
+                      1910
+                    ],
+                    "length_mm": 8.572,
+                    "area_mm2": 14.825
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1698,
+                      1485,
+                      1704,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 14.743
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1219,
+                      1355,
+                      1253,
+                      1445
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 14.716
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1483,
+                      1498,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 14.507
+                  }
+                ],
+                "total_area_mm2": 946.66
+              },
+              "upsample": 2,
+              "morph_radius_px": {
+                "line": 1.5,
+                "gap": 5.5
+              },
+              "overlay": "print_flags_12in_screen_transfer_fail.png"
+            },
+            "warn": {
+              "line_mm": 0.35,
+              "gap_mm": 1.02,
+              "thin_strokes": {
+                "regions": 31,
+                "specks_ignored": 5518,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      2639,
+                      2655,
+                      2662,
+                      2678
+                    ],
+                    "length_mm": 2.286,
+                    "area_mm2": 0.218
+                  },
+                  {
+                    "bbox_in_crop": [
+                      753,
+                      753,
+                      775,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2424,
+                      753,
+                      2446,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      754,
+                      2425,
+                      774,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2425,
+                      2425,
+                      2445,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2415,
+                      2381,
+                      2434,
+                      2400
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      799,
+                      2415,
+                      818,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      2415,
+                      2400,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      801,
+                      764,
+                      819,
+                      782
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      765,
+                      2399,
+                      783
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2416,
+                      800,
+                      2434,
+                      818
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      764,
+                      801,
+                      782,
+                      819
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  }
+                ],
+                "total_area_mm2": 4.63
+              },
+              "closing_gaps": {
+                "regions": 383,
+                "specks_ignored": 5229,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1714,
+                      1223,
+                      1725,
+                      1442
+                    ],
+                    "length_mm": 20.955,
+                    "area_mm2": 20.84
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1745,
+                      1668,
+                      1821,
+                      1784
+                    ],
+                    "length_mm": 11.144,
+                    "area_mm2": 19.315
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1484,
+                      1332,
+                      1770
+                    ],
+                    "length_mm": 27.337,
+                    "area_mm2": 18.953
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1482,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 26.86,
+                    "area_mm2": 16.449
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1482,
+                      1148,
+                      1760
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 16.358
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2044,
+                      1483,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 15.677
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1219,
+                      1516,
+                      1253,
+                      1606
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 15.151
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1218,
+                      1667,
+                      1252,
+                      1756
+                    ],
+                    "length_mm": 8.572,
+                    "area_mm2": 14.952
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1218,
+                      1821,
+                      1253,
+                      1910
+                    ],
+                    "length_mm": 8.572,
+                    "area_mm2": 14.825
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1698,
+                      1485,
+                      1704,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 14.743
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1219,
+                      1355,
+                      1253,
+                      1445
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 14.716
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1483,
+                      1498,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 14.507
+                  }
+                ],
+                "total_area_mm2": 946.66
+              },
+              "upsample": 2,
+              "morph_radius_px": {
+                "line": 2.0,
+                "gap": 5.5
+              },
+              "overlay": "print_flags_12in_screen_transfer_warn.png"
+            }
+          }
+        },
+        "dtf": {
+          "limits": {
+            "label": "DTF (Tapstitch fleece: hoodie, crewneck)",
+            "line_fail_mm": 0.5,
+            "line_warn_mm": 1.0,
+            "gap_fail_mm": 0.0,
+            "gap_warn_mm": 1.0
+          },
+          "element_checks": [
+            {
+              "element": "ring1",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 25.0,
+              "in": 0.0938,
+              "mm": 2.381,
+              "pt": 6.75,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring2",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring3",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring4",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 26.0,
+              "in": 0.0975,
+              "mm": 2.476,
+              "pt": 7.02,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring1/ring2",
+              "measure": "gap between rings (narrowest)",
+              "px": 153.58,
+              "in": 0.5759,
+              "mm": 14.628,
+              "pt": 41.47,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring2/ring3",
+              "measure": "gap between rings (narrowest)",
+              "px": 224.65,
+              "in": 0.8424,
+              "mm": 21.398,
+              "pt": 60.66,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring3/ring4",
+              "measure": "gap between rings (narrowest)",
+              "px": 24.92,
+              "in": 0.0935,
+              "mm": 2.374,
+              "pt": 6.73,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "letter gap (5th pct)",
+              "px": 52.85,
+              "in": 0.1982,
+              "mm": 5.034,
+              "pt": 14.27,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "cap height / est. font size",
+              "px": 58.26,
+              "in": 0.2185,
+              "mm": 5.549,
+              "cap_height_pt": 15.73,
+              "est_font_pt": 23.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 19.5,
+              "in": 0.0731,
+              "mm": 1.857,
+              "pt": 5.26,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 16.5,
+              "in": 0.0619,
+              "mm": 1.572,
+              "pt": 4.45,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 10.77,
+              "in": 0.0404,
+              "mm": 1.026,
+              "pt": 2.91,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 98.61,
+              "in": 0.3698,
+              "mm": 9.393,
+              "cap_height_pt": 26.62,
+              "est_font_pt": 39.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 53.0,
+              "in": 0.1987,
+              "mm": 5.048,
+              "pt": 14.31,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 58.77,
+              "in": 0.2204,
+              "mm": 5.598,
+              "cap_height_pt": 15.87,
+              "est_font_pt": 23.3,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type stem",
+              "px": 12.5,
+              "in": 0.0469,
+              "mm": 1.191,
+              "pt": 3.38,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "caption",
+              "measure": "letter gap (5th pct)",
+              "px": 52.5,
+              "in": 0.1969,
+              "mm": 5.001,
+              "pt": 14.17,
+              "fail_mm": 0.0,
+              "warn_mm": 1.0,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "caption",
+              "measure": "cap height / est. font size",
+              "px": 59.0,
+              "in": 0.2212,
+              "mm": 5.62,
+              "cap_height_pt": 15.93,
+              "est_font_pt": 23.4,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            }
+          ],
+          "fail": [],
+          "warn": [
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.5,
+              "warn_mm": 1.0,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            }
+          ],
+          "morphology": {
+            "fail": {
+              "line_mm": 0.5,
+              "gap_mm": 0.0,
+              "thin_strokes": {
+                "regions": 32,
+                "specks_ignored": 5624,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      2639,
+                      2655,
+                      2662,
+                      2678
+                    ],
+                    "length_mm": 2.286,
+                    "area_mm2": 0.218
+                  },
+                  {
+                    "bbox_in_crop": [
+                      753,
+                      753,
+                      775,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2424,
+                      753,
+                      2446,
+                      775
+                    ],
+                    "length_mm": 2.191,
+                    "area_mm2": 0.209
+                  },
+                  {
+                    "bbox_in_crop": [
+                      754,
+                      2425,
+                      774,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2425,
+                      2425,
+                      2445,
+                      2445
+                    ],
+                    "length_mm": 2.0,
+                    "area_mm2": 0.191
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2415,
+                      2381,
+                      2434,
+                      2400
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      799,
+                      2415,
+                      818,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      2415,
+                      2400,
+                      2434
+                    ],
+                    "length_mm": 1.905,
+                    "area_mm2": 0.181
+                  },
+                  {
+                    "bbox_in_crop": [
+                      801,
+                      764,
+                      819,
+                      782
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2381,
+                      765,
+                      2399,
+                      783
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2416,
+                      800,
+                      2434,
+                      818
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  },
+                  {
+                    "bbox_in_crop": [
+                      764,
+                      801,
+                      782,
+                      819
+                    ],
+                    "length_mm": 1.81,
+                    "area_mm2": 0.172
+                  }
+                ],
+                "total_area_mm2": 4.8
+              },
+              "closing_gaps": null,
+              "upsample": 2,
+              "morph_radius_px": {
+                "line": 2.5,
+                "gap": null
+              },
+              "overlay": "print_flags_12in_dtf_fail.png"
+            },
+            "warn": {
+              "line_mm": 1.0,
+              "gap_mm": 1.0,
+              "thin_strokes": {
+                "regions": 318,
+                "specks_ignored": 1451,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1330,
+                      1484,
+                      1341,
+                      1762
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 23.099
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1704,
+                      1794,
+                      1713,
+                      2050
+                    ],
+                    "length_mm": 24.479,
+                    "area_mm2": 22.999
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1483,
+                      1484,
+                      1492,
+                      1760
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 22.554
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2051,
+                      1482,
+                      2060,
+                      1760
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 22.527
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1131,
+                      1483,
+                      1140,
+                      1753
+                    ],
+                    "length_mm": 25.813,
+                    "area_mm2": 22.455
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1656,
+                      1511,
+                      1666,
+                      1761
+                    ],
+                    "length_mm": 23.908,
+                    "area_mm2": 22.418
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1484,
+                      1792,
+                      1493,
+                      2051
+                    ],
+                    "length_mm": 24.765,
+                    "area_mm2": 22.164
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1498,
+                      1510,
+                      1507,
+                      1761
+                    ],
+                    "length_mm": 24.003,
+                    "area_mm2": 22.001
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1132,
+                      1794,
+                      1141,
+                      2054
+                    ],
+                    "length_mm": 24.86,
+                    "area_mm2": 21.448
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1705,
+                      1523,
+                      1714,
+                      1761
+                    ],
+                    "length_mm": 22.765,
+                    "area_mm2": 21.302
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1315,
+                      1508,
+                      1324,
+                      1763
+                    ],
+                    "length_mm": 24.384,
+                    "area_mm2": 21.148
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1658,
+                      1822,
+                      1667,
+                      2063
+                    ],
+                    "length_mm": 23.05,
+                    "area_mm2": 21.103
+                  }
+                ],
+                "total_area_mm2": 1315.81
+              },
+              "closing_gaps": {
+                "regions": 299,
+                "specks_ignored": 1461,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1745,
+                      1669,
+                      1820,
+                      1784
+                    ],
+                    "length_mm": 11.049,
+                    "area_mm2": 18.744
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1484,
+                      1331,
+                      1770
+                    ],
+                    "length_mm": 27.337,
+                    "area_mm2": 18.463
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1482,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 26.86,
+                    "area_mm2": 16.439
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1482,
+                      1147,
+                      1760
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 16.113
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2044,
+                      1483,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 15.677
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1484,
+                      1498,
+                      1761
+                    ],
+                    "length_mm": 26.479,
+                    "area_mm2": 14.444
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1248,
+                      1499,
+                      1468
+                    ],
+                    "length_mm": 21.05,
+                    "area_mm2": 14.353
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1220,
+                      1355,
+                      1252,
+                      1445
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 14.153
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1220,
+                      1516,
+                      1252,
+                      1606
+                    ],
+                    "length_mm": 8.668,
+                    "area_mm2": 14.062
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1697,
+                      1249,
+                      1704,
+                      1467
+                    ],
+                    "length_mm": 20.86,
+                    "area_mm2": 13.654
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1191,
+                      1665,
+                      1279,
+                      1778
+                    ],
+                    "length_mm": 10.858,
+                    "area_mm2": 13.654
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1219,
+                      1667,
+                      1252,
+                      1756
+                    ],
+                    "length_mm": 8.572,
+                    "area_mm2": 13.582
+                  }
+                ],
+                "total_area_mm2": 781.43
+              },
+              "upsample": 1,
+              "morph_radius_px": {
+                "line": 5.0,
+                "gap": 5.0
+              },
+              "overlay": "print_flags_12in_dtf_warn.png"
+            }
+          }
+        },
+        "dtg": {
+          "limits": {
+            "label": "DTG on dark fabric with white underbase (Tapstitch tee)",
+            "line_fail_mm": 0.71,
+            "line_warn_mm": 1.06,
+            "gap_fail_mm": 0.0,
+            "gap_warn_mm": 0.71
+          },
+          "element_checks": [
+            {
+              "element": "ring1",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 25.0,
+              "in": 0.0938,
+              "mm": 2.381,
+              "pt": 6.75,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring2",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring3",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 13.0,
+              "in": 0.0487,
+              "mm": 1.238,
+              "pt": 3.51,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring4",
+              "measure": "ring width (5th pct around the ring)",
+              "px": 26.0,
+              "in": 0.0975,
+              "mm": 2.476,
+              "pt": 7.02,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "ring1/ring2",
+              "measure": "gap between rings (narrowest)",
+              "px": 153.58,
+              "in": 0.5759,
+              "mm": 14.628,
+              "pt": 41.47,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring2/ring3",
+              "measure": "gap between rings (narrowest)",
+              "px": 224.65,
+              "in": 0.8424,
+              "mm": 21.398,
+              "pt": 60.66,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "ring3/ring4",
+              "measure": "gap between rings (narrowest)",
+              "px": 24.92,
+              "in": 0.0935,
+              "mm": 2.374,
+              "pt": 6.73,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "letter gap (5th pct)",
+              "px": 52.85,
+              "in": 0.1982,
+              "mm": 5.034,
+              "pt": 14.27,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "cap height / est. font size",
+              "px": 58.26,
+              "in": 0.2185,
+              "mm": 5.549,
+              "cap_height_pt": 15.73,
+              "est_font_pt": 23.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 19.5,
+              "in": 0.0731,
+              "mm": 1.857,
+              "pt": 5.26,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 16.5,
+              "in": 0.0619,
+              "mm": 1.572,
+              "pt": 4.45,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 10.77,
+              "in": 0.0404,
+              "mm": 1.026,
+              "pt": 2.91,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "top arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 98.61,
+              "in": 0.3698,
+              "mm": 9.393,
+              "cap_height_pt": 26.62,
+              "est_font_pt": 39.1,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type stem",
+              "px": 11.5,
+              "in": 0.0431,
+              "mm": 1.095,
+              "pt": 3.1,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "letter gap (5th pct)",
+              "px": 53.0,
+              "in": 0.1987,
+              "mm": 5.048,
+              "pt": 14.31,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "cap height / est. font size",
+              "px": 58.77,
+              "in": 0.2204,
+              "mm": 5.598,
+              "cap_height_pt": 15.87,
+              "est_font_pt": 23.3,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type stem",
+              "px": 12.5,
+              "in": 0.0469,
+              "mm": 1.191,
+              "pt": 3.38,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "PASS",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "caption",
+              "measure": "letter gap (5th pct)",
+              "px": 52.5,
+              "in": 0.1969,
+              "mm": 5.001,
+              "pt": 14.17,
+              "fail_mm": 0.0,
+              "warn_mm": 0.71,
+              "status": "PASS",
+              "rule": "PRINT-03"
+            },
+            {
+              "element": "caption",
+              "measure": "cap height / est. font size",
+              "px": 59.0,
+              "in": 0.2212,
+              "mm": 5.62,
+              "cap_height_pt": 15.93,
+              "est_font_pt": 23.4,
+              "fail_pt": 7,
+              "warn_pt": 10,
+              "status": "PASS",
+              "rule": "PRINT-05"
+            }
+          ],
+          "fail": [],
+          "warn": [
+            {
+              "element": "top arc in ring1/ring2",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "bottom arc in ring2/ring3",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            },
+            {
+              "element": "centre art",
+              "measure": "lightest line weight (cluster centre)",
+              "px": 9.41,
+              "in": 0.0353,
+              "mm": 0.896,
+              "pt": 2.54,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "centre art",
+              "measure": "line width (10th pct)",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-01"
+            },
+            {
+              "element": "caption",
+              "measure": "type hairline",
+              "px": 9.5,
+              "in": 0.0356,
+              "mm": 0.905,
+              "pt": 2.56,
+              "fail_mm": 0.71,
+              "warn_mm": 1.06,
+              "status": "WARN",
+              "rule": "PRINT-02"
+            }
+          ],
+          "morphology": {
+            "fail": {
+              "line_mm": 0.71,
+              "gap_mm": 0.0,
+              "thin_strokes": {
+                "regions": 0,
+                "specks_ignored": 1479,
+                "largest": [],
+                "total_area_mm2": 0
+              },
+              "closing_gaps": null,
+              "upsample": 1,
+              "morph_radius_px": {
+                "line": 4.0,
+                "gap": null
+              },
+              "overlay": "print_flags_12in_dtg_fail.png"
+            },
+            "warn": {
+              "line_mm": 1.06,
+              "gap_mm": 0.71,
+              "thin_strokes": {
+                "regions": 858,
+                "specks_ignored": 1361,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1852,
+                      1481,
+                      1863,
+                      1761
+                    ],
+                    "length_mm": 26.765,
+                    "area_mm2": 25.222
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1704,
+                      1485,
+                      1714,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 25.167
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1329,
+                      1482,
+                      1341,
+                      1769
+                    ],
+                    "length_mm": 27.432,
+                    "area_mm2": 24.07
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1855,
+                      1790,
+                      1867,
+                      2050
+                    ],
+                    "length_mm": 24.86,
+                    "area_mm2": 23.661
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1326,
+                      1792,
+                      1339,
+                      2053
+                    ],
+                    "length_mm": 24.955,
+                    "area_mm2": 23.462
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1870,
+                      1506,
+                      1880,
+                      1764
+                    ],
+                    "length_mm": 24.67,
+                    "area_mm2": 23.416
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1704,
+                      1794,
+                      1713,
+                      2050
+                    ],
+                    "length_mm": 24.479,
+                    "area_mm2": 23.099
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1689,
+                      1508,
+                      1699,
+                      1761
+                    ],
+                    "length_mm": 24.193,
+                    "area_mm2": 22.763
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1656,
+                      1509,
+                      1667,
+                      1763
+                    ],
+                    "length_mm": 24.289,
+                    "area_mm2": 22.727
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2051,
+                      1481,
+                      2060,
+                      1760
+                    ],
+                    "length_mm": 26.67,
+                    "area_mm2": 22.709
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1483,
+                      1484,
+                      1492,
+                      1760
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 22.654
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1131,
+                      1483,
+                      1140,
+                      1753
+                    ],
+                    "length_mm": 25.813,
+                    "area_mm2": 22.545
+                  }
+                ],
+                "total_area_mm2": 2288.19
+              },
+              "closing_gaps": {
+                "regions": 261,
+                "specks_ignored": 1510,
+                "largest": [
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1484,
+                      1331,
+                      1770
+                    ],
+                    "length_mm": 27.337,
+                    "area_mm2": 18.463
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1482,
+                      1869,
+                      1763
+                    ],
+                    "length_mm": 26.86,
+                    "area_mm2": 16.439
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1482,
+                      1147,
+                      1760
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 16.113
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2044,
+                      1483,
+                      2050,
+                      1761
+                    ],
+                    "length_mm": 26.575,
+                    "area_mm2": 15.677
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1484,
+                      1498,
+                      1761
+                    ],
+                    "length_mm": 26.479,
+                    "area_mm2": 14.444
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1492,
+                      1248,
+                      1499,
+                      1468
+                    ],
+                    "length_mm": 21.05,
+                    "area_mm2": 14.353
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1697,
+                      1249,
+                      1704,
+                      1467
+                    ],
+                    "length_mm": 20.86,
+                    "area_mm2": 13.654
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1699,
+                      1485,
+                      1704,
+                      1761
+                    ],
+                    "length_mm": 26.384,
+                    "area_mm2": 13.355
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1141,
+                      1791,
+                      1146,
+                      2057
+                    ],
+                    "length_mm": 25.432,
+                    "area_mm2": 11.549
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1324,
+                      1793,
+                      1329,
+                      2061
+                    ],
+                    "length_mm": 25.622,
+                    "area_mm2": 11.277
+                  },
+                  {
+                    "bbox_in_crop": [
+                      1862,
+                      1310,
+                      1869,
+                      1466
+                    ],
+                    "length_mm": 14.954,
+                    "area_mm2": 11.25
+                  },
+                  {
+                    "bbox_in_crop": [
+                      2046,
+                      1791,
+                      2050,
+                      2051
+                    ],
+                    "length_mm": 24.86,
+                    "area_mm2": 11.014
+                  }
+                ],
+                "total_area_mm2": 576.56
+              },
+              "upsample": 1,
+              "morph_radius_px": {
+                "line": 6.0,
+                "gap": 4.0
+              },
+              "overlay": "print_flags_12in_dtg_warn.png"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
