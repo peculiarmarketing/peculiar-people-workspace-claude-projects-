@@ -37,7 +37,7 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 |---|---|
 | Coverage / where things stand (read only) | `scripts/tapstitch_status.py` (`--full`, `--temple T`, `--state S`, `--problems`) |
 | What blocks a run (read only) | `scripts/tapstitch_publish.py check` |
-| Validate every design, write nothing | `scripts/tapstitch_build.py --report-only` |
+| Validate every design, write no print files (it still rewrites the ledger: check `git diff`) | `scripts/tapstitch_build.py --report-only` |
 | Build print files | `scripts/tapstitch_build.py` (`--temple T`, `--garments tee,crew,hoodie`, `--colors black,white`, `--no-trace`, `--verbose`) |
 | Proof sheet for Evan | `scripts/tapstitch_preview.py` (`--temple T`, `--garment tee`, `--color white`) |
 | Record Evan's approval | `scripts/tapstitch_approve.py --temple T` (`--all`, `--all --except "A,B"`, `--revoke --temple T`, `--list`, `--dry-run`) |
@@ -56,6 +56,7 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 | Colour order / product-type fixups | `scripts/shopify_fixups.py all --report-only` (`--handle H`) |
 | Gallery composites | `scripts/composite_catalog.py --garment G --outdir DIR --temple T` (`--force`) |
 | Gallery build | `scripts/build_garment_catalog.py --garment G --composites DIR --temple T --dry-run` (`--stages`, `--verify`, `--limit`) |
+| Re-save every live product's design in place (the 7 Oct 2026 one-quarter lift) | `scripts/relift_rollout.py` plans; `--apply --limit N` (batches of 5); `--verify` read-only |
 
 ## New temple, end to end
 
@@ -68,7 +69,7 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 7. **Plan, then run.** `scripts/tapstitch_run.py --temple "{Name}"` prints the plan and any blockers. Publishing puts listings live with no undo, so run `--apply --publish --temple "{Name}"` only when Evan has initiated it. Per row the runner creates the template, uploads the back and front files, saves the design, creates the store product with the description baked in, distributes, waits for Shopify, then runs the Shopify half (product type, art card at slot 2, colour fixups, swatch gate) and rebinds each variant to its back image. Every step is resumable: a re-run reads the ids already in the ledger and never distributes twice. On the way out it mirrors the facts fragments into `artifacts/temple-facts/` and runs the marquee check.
 8. **Easify.** `scripts/easify_options.py sync --report-only`, then `sync`. Evan imports `artifacts/easify/option-sets.csv` in the Easify app by hand; importing is never automated.
 9. **Marquee.** Required, see below.
-10. **Gallery (optional, per Evan).** The standard gallery (flat back, flat front, art card, on-model backs, fabric details) comes from `composite_catalog.py` then `build_garment_catalog.py`. Dry-run first; `--prune` deletes images.
+10. **Gallery (optional, per Evan).** The standard gallery (on-model back in the flat-lay colour as the collection thumbnail, then flat back, flat front, art card, the other on-model backs, fabric details; the one definition is `build_product_gallery.gallery_order`) comes from `composite_catalog.py` then `build_garment_catalog.py`. Dry-run first; `--prune` deletes images.
 11. **Commit** (see "After every run").
 
 ## Writing descriptions
