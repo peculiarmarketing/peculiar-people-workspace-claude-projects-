@@ -1,6 +1,6 @@
 ---
 name: temple-product-generator
-description: Generate Peculiar People temple products on Tapstitch from the Temples folder. Use when Evan asks to generate temple products, run the temple sweep, add a temple or garment, check catalog coverage, regenerate or backfill a product, or drops a new temple folder. Triggers include "generate [temple]", "run the sweep", "temple products", "new temple", "coverage report".
+description: Generate Peculiar People temple products on Tapstitch from the Temples folder, end to end. "Run a sweep" finds new temple folders (only the design PNG in them), researches the location and temple facts, builds and publishes the three products, and finishes the gallery, tags, homepage marquee, Temple Art File option and Easify CSV, then verifies it all on the live site. Use when Evan asks to run the sweep, generate temple products, add a temple or garment, check catalog coverage, regenerate or backfill a product, or drops a new temple folder. Triggers include "run a sweep", "run the sweep", "generate [temple]", "temple products", "new temple", "coverage report". Not the refs sweep ("run the refs sweep" is temple-ref-finder).
 ---
 
 # Temple Product Generator
@@ -35,12 +35,13 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 
 | Task | Command |
 |---|---|
+| **The sweep: new temple folders to live and verified** | `scripts/sweep.py scan`; `run --all-ready` (or `--temple T`); `verify --temple T` / `--all` |
 | Coverage / where things stand (read only) | `scripts/tapstitch_status.py` (`--full`, `--temple T`, `--state S`, `--problems`) |
 | What blocks a run (read only) | `scripts/tapstitch_publish.py check` |
 | Validate every design, write no print files (it still rewrites the ledger: check `git diff`) | `scripts/tapstitch_build.py --report-only` |
 | Build print files | `scripts/tapstitch_build.py` (`--temple T`, `--garments tee,crew,hoodie`, `--colors black,white`, `--no-trace`, `--verbose`) |
 | Proof sheet for Evan | `scripts/tapstitch_preview.py` (`--temple T`, `--garment tee`, `--color white`) |
-| Record Evan's approval | `scripts/tapstitch_approve.py --temple T` (`--all`, `--all --except "A,B"`, `--revoke --temple T`, `--list`, `--dry-run`) |
+| Record an approval by hand (the sweep records its own) | `scripts/tapstitch_approve.py --temple T` (`--all`, `--all --except "A,B"`, `--revoke --temple T`, `--list`, `--dry-run`) |
 | Plan a run (default, writes nothing) | `scripts/tapstitch_run.py` (`--temple T`, repeatable; `--garments`; `--limit N`) |
 | Build in Tapstitch, nothing public | `scripts/tapstitch_run.py --apply --temple T` |
 | Build and publish (LIVE, no undo) | `scripts/tapstitch_run.py --apply --publish --temple T` (or `--limit N`; a bound is required) |
@@ -50,7 +51,7 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 | Easify dropdown sync | `scripts/easify_options.py sync` (`--report-only` first); `reseed --export PATH` |
 | Back up facts fragments to git | `scripts/mirror_facts.py` (`--report-only`, `--check`) |
 | Homepage marquee | `scripts/web_marquee.py check`; `sync` (both take `--theme ID`) |
-| Pen stroke file | `scripts/pen_strokes.py ART.webp OLD.json OUT.json [--debug DEBUG.png]` |
+| Pen drawing files (the sweep runs both) | `scripts/web_drawings.py build --temple T`, then `scripts/pen_strokes.py ART.webp OLD.json OUT.json [--debug DEBUG.png]` (ART and OLD are the build's files in `artifacts/web_drawings/`). Never `web_drawings.py push`: it re-uploads stale first-generation stroke files |
 | City-line snippet | `scripts/temple_city_snippet.py` (`web_marquee.py sync` runs it) |
 | Colour swatches | `scripts/swatches.py check` (`--strict-theme`); `render`; `push --dry-run` |
 | Colour order / product-type fixups | `scripts/shopify_fixups.py all --report-only` (`--handle H`) |
@@ -58,19 +59,52 @@ Every row lives in the migration ledger (`artifacts/tapstitch/ledger.json`, read
 | Gallery build | `scripts/build_garment_catalog.py --garment G --composites DIR --temple T --dry-run` (`--stages`, `--verify`, `--limit`) |
 | Re-save every live product's design in place (the 7 Oct 2026 one-quarter lift) | `scripts/relift_rollout.py` plans; `--apply --limit N` (batches of 5); `--verify` read-only |
 
-## New temple, end to end
+## Run a sweep (the default for any new temple)
 
-1. **Art.** Evan drops a folder in `Temples/` with either the black and white SVGs or just the source sketch PNG ("{Temple}.png", or any single unambiguous PNG). PNG-only folders are traced during the build (`trace_art.py`, `--trim --drop-label`) and must pass the tracer's health checks (lost solid about 0%, lost faint under 10%, weight delta within 8%, no ink touching the frame) or the temple stops with the reason. A "{Temple} trace check (auto).png" lands in the folder for Evan's eyeball. The manifest scaffolds itself from `temples.json`.
-2. **Location.** If the temple is not in `temples.json`, the build stops rather than guessing. See "New temple not in temples.json" below.
-3. **Facts.** Research and save `temple-facts.html` (see "Writing descriptions"). The runner blocks any row without it; that is a workflow step, not a bug.
-4. **Build.** `scripts/tapstitch_build.py --temple "{Name}"` writes the flattened back print files into the temple folder and adds the rows to the ledger as `file-built`.
-5. **Proof.** `scripts/tapstitch_preview.py --temple "{Name}"` renders the proof page into `artifacts/tapstitch-previews/`. Show it to Evan.
-6. **Approve.** Only after Evan approves: `scripts/tapstitch_approve.py --temple "{Name}"`. Approval is per temple and covers all three garments.
-7. **Plan, then run.** `scripts/tapstitch_run.py --temple "{Name}"` prints the plan and any blockers. Publishing puts listings live with no undo, so run `--apply --publish --temple "{Name}"` only when Evan has initiated it. Per row the runner creates the template, uploads the back and front files, saves the design, creates the store product with the description baked in, distributes, waits for Shopify, then runs the Shopify half (product type, art card at slot 2, colour fixups, swatch gate) and rebinds each variant to its back image. Every step is resumable: a re-run reads the ids already in the ledger and never distributes twice. On the way out it mirrors the facts fragments into `artifacts/temple-facts/` and runs the marquee check.
-8. **Easify.** `scripts/easify_options.py sync --report-only`, then `sync`. Evan imports `artifacts/easify/option-sets.csv` in the Easify app by hand; importing is never automated.
-9. **Marquee.** Required, see below.
-10. **Gallery (optional, per Evan).** The standard gallery (on-model back in the flat-lay colour as the collection thumbnail, then flat back, flat front, art card, the other on-model backs, fabric details; the one definition is `build_product_gallery.gallery_order`) comes from `composite_catalog.py` then `build_garment_catalog.py`. Dry-run first; `--prune` deletes images.
-11. **Commit** (see "After every run").
+When Evan says "run the sweep", "run a sweep" or drops a new temple folder, run the whole thing without stopping to ask. Saying it is his go-ahead to publish the temples the scan lists (`docs/decisions.md`, 7 Oct 2026). When the sweep ends, every new temple must be complete on the live site.
+
+Evan's only input is a folder in `Temples/` holding the original design PNG.
+
+1. **Preflight and scan.** Check for iCloud duplicate folders (`ls -d *\ 2`), then `scripts/sweep.py scan`. It lists each folder that is not live as `ready`, `needs-research` (location and/or facts), `finishing` (published by an earlier sweep that stopped before the end) or `no-art`. If nothing is listed, say so in one line and stop.
+2. **Research every `needs-research` temple, without waiting for Evan.** Use parallel subagents when there are several.
+   - **Location:** find the PHYSICAL city on churchofjesuschristtemples.org (see "New temple not in temples.json"). Add the entry to `temples.json` with `verified: true`, the official name, `location_line` and a `source` line that names the page and date. If the sources disagree or are unclear, do not guess: leave the temple out of this sweep and report it at the end. That is the only research stop.
+   - **Facts:** follow "Writing descriptions" below in full: the source hierarchy, the myth screen, both humanizer passes, the fragment saved to `Working files/temple-facts.html`, and the source ledger saved under `artifacts/description-ledgers/`. Do not stop for Evan's spot-check; print the ledger in the end summary instead.
+3. **Run.** `scripts/sweep.py run --all-ready`. LIVE, no undo. A preflight checks the Tapstitch login, `tapstitch_publish.py check`, `.env`, the stroke builder's packages and the colourway photos before anything is written. If the login has expired, ask Evan to run `scripts/tapstitch_login.py` (it needs his hands) and re-run. Per temple it runs, in order:
+   - **build:** trace the PNG if needed (tracer health checks), flatten and validate the print files.
+   - **proof:** render the proof sheet into `artifacts/tapstitch-previews/`, kept as the record.
+   - **approve:** recorded by the sweep once those automated gates pass.
+   - **publish:** `tapstitch_run.py --apply --publish`. This creates the product with its description, distributes it, then sets the product type, the art card, the colour renames, the swatch gate and the variant images.
+   - **tags:** `temple:`, `garment:`, `country:` and `state:` tags. The marquee, the product band and the state collections read them.
+   - **gallery:** on-model composites, then the standard gallery: on-model back in the flat-lay colour in slot 1.
+   - **drawing:** `web_drawings.py build`, then `pen_strokes.py`, then the city-line snippet. All three are uploaded straight to the live theme and read back.
+   - **download:** the black SVG goes into `Temples/All/`.
+   - **artfile:** the temple is added as a Temple Art File option, sold out until its file is attached.
+
+   Then, once for the whole run: `easify_options.py sync`, the facts mirror, and `verify` on every temple.
+4. **If a step fails,** explain the mechanism first, fix it, and re-run `sweep.py run --temple T`. Every step skips what is already done, so a re-run resumes where the last one stopped.
+5. **Commit and push** (see "After every run") without asking.
+6. **Summarize for Evan:**
+   - each temple as DONE (verified live), STOPPED (at which step, and why) or SKIPPED (unclear location);
+   - each new temple's source ledger;
+   - the proof-sheet path;
+   - the manual steps the run printed, and nothing else. Today these are the Easify CSV import, and attaching each new Art File download (`Temples/All/{Temple} black.svg`) in the Digital Products app.
+
+`scripts/sweep.py verify --temple T` (or `--all`) is the read-only proof that a temple is complete. It checks:
+- all three products are ACTIVE, with the right title, type, tags and facts;
+- the gallery is in the standard order, with slot 1 on-model and every colour bound to its own photo;
+- no Tapstitch colour names remain;
+- the tee is in `temple-tees`;
+- the drawing files and city line are in the live theme;
+- the Easify CSV has the rows, the Art File has the option, and the download file and facts mirror exist.
+
+## One-off steps, by hand
+
+Run the sweep for new temples. The scripts below are for repairs and for anything outside a sweep:
+
+1. **Art.** PNG-only folders are traced during the build (`trace_art.py`, `--trim --drop-label`) and must pass the tracer's health checks (lost solid about 0%, lost faint under 10%, weight delta within 8%, no ink touching the frame), or the temple stops with the reason. A "{Temple} trace check (auto).png" lands in the folder. The manifest scaffolds itself from `temples.json`.
+2. **Build:** `scripts/tapstitch_build.py --temple "{Name}"`. **Proof:** `scripts/tapstitch_preview.py --temple "{Name}"`. **Approve:** `scripts/tapstitch_approve.py --temple "{Name}"`.
+3. **Publish:** `scripts/tapstitch_run.py --temple "{Name}"` to plan, then `--apply --publish --temple "{Name}"`. Every step is resumable: a re-run reads the ids already in the ledger and never distributes twice.
+4. **Everything after publishing** is `scripts/sweep.py run --temple "{Name}"`. It skips the steps already done and finishes the rest.
 
 ## Writing descriptions
 
@@ -84,9 +118,15 @@ A Tapstitch product carries its description from birth: `generate.description_fo
 
 `description_html.compose_description()` collapses the facts and the fixed sections into `<details>` rows; never wrap them by hand. Live descriptions are not rewritten retroactively unless Evan asks. For an existing live product, `tapstitch_publish.py finish` writes the composed description; `scripts/collapse_live_sections.py` (`--report-only`, `--handle H`) makes the smallest splice-and-collapse change to live pages instead of recomposing them.
 
-## New temple: add it to the homepage marquee (required)
+## New temple: the homepage marquee (required, done by the sweep)
 
-Every new temple must reach the homepage marquee; this is part of the pipeline, not an optional extra. The marquee (`theme/sections/pp-temple-marquee.liquid`) shows a temple only when the live theme has its art (`assets/pp-temple-<slug>.webp`), its stroke file (`assets/pp-temple-<slug>.json`, from `scripts/pen_strokes.py`, see `theme/README.md`) and its city line (`snippets/pp-temple-city.liquid`). A temple missing any of them is left off with no error. After publishing, run `scripts/web_marquee.py sync`, upload what it lists with the `shopify theme push --nodelete` command it prints (from the Mac; the store connector cannot write the live theme), and re-run `scripts/web_marquee.py check` until it is clean. `tapstitch_run.py --publish` runs the check itself at the end. Commit the regenerated snippet and the new stroke file.
+The marquee (`theme/sections/pp-temple-marquee.liquid`) shows a temple only when:
+- its tee is in `temple-tees`, by its `garment:tee` tag;
+- the live theme has its art (`assets/pp-temple-<slug>.webp`);
+- the live theme has its stroke file (`assets/pp-temple-<slug>.json`);
+- the live theme has its city line (`snippets/pp-temple-city.liquid`).
+
+A temple missing any of these is left off, with no error. The sweep's tags and drawing steps cover all four, and they upload through the PP Pipeline app token, which has `write_themes`. No Shopify CLI step is needed. `scripts/web_marquee.py check` is the read-only confirmation. Commit the regenerated snippet and the new stroke file.
 
 ## New temple not in temples.json
 
@@ -118,7 +158,7 @@ Tapstitch cannot add a colour to an existing listing, and distributing a rebuilt
 
 ## Temples/All mirror (digital download files)
 
-`Temples/All/` holds a flat copy of every temple's black SVG named by its clean place token (`Manhattan black.svg`, `Ogden Original black.svg`, no stars). It feeds the Temple Art File digital product's delivery app. The Tapstitch scripts do not refresh it, so check that a new temple's black SVG is there. `All` is not a temple folder: any script walking `Temples/` must skip it.
+`Temples/All/` holds a flat copy of every temple's black SVG, named by its clean place token (`Manhattan black.svg`, `Ogden Original black.svg`, no stars). It feeds the Temple Art File digital product's delivery app. The sweep copies each new temple's file (`generate.mirror_black_art`) and adds the temple as a sold-out option on the Temple Art File. Attaching the file in the Digital Products app is manual, because that app opens a file picker. `All` is not a temple folder: any script walking `Temples/` must skip it.
 
 ## Art close-up cards
 
@@ -130,14 +170,14 @@ Every product page shows a "Temple" dropdown cross-linking the same garment line
 
 ## After every run
 
-Once products are published: `scripts/easify_options.py sync`, then the marquee steps above, then `scripts/mirror_facts.py --check`. Evan's manual steps: the Easify CSV import and the theme upload.
+The sweep runs the Easify sync, the marquee steps and the facts mirror itself. Evan's manual steps are only the Easify CSV import and attaching new Art File downloads, and the sweep prints them only when they are needed.
 
-Commit and push repo changes the run produced: `temples.json` entries, the ledger in `artifacts/tapstitch/`, description ledgers, `artifacts/temple-facts/`, the Easify CSV, the city-line snippet and stroke files, and any code or config changes. The remote is Evan's PERSONAL GitHub, peculiarmarketing, over HTTPS using the repo's configured origin; never wire this repo to his work GitHub account (edavis821). Files in `Temples/` live outside the repo and are not committed.
+Commit and push repo changes the run produced: `temples.json` entries, the ledger and `sweep-state.json` in `artifacts/tapstitch/`, description ledgers, `artifacts/temple-facts/`, the Easify CSV, the city-line snippet and stroke files, and any code or config changes. The remote is Evan's PERSONAL GitHub, peculiarmarketing, over HTTPS using the repo's configured origin; never wire this repo to his work GitHub account (edavis821). Files in `Temples/` live outside the repo and are not committed.
 
 ## Hard rules
 
-- Publishing is `--apply --publish` with a bound, run only when Evan initiated it. Nothing else distributes.
+- Publishing is `--apply --publish` with a bound, run only when Evan initiated it. "Run a sweep" is that initiation for the temples the scan lists. Nothing else distributes.
 - Place tokens live in manifests and may differ from folder names ("Washington DC" folder, "Washington D.C." token). Folder names may carry a ref-finder star ("Lehi*"); `--temple "Lehi"` resolves it.
 - Never create a product whose title duplicates a live one.
-- Do not modify the description skill, the tracer outputs, or anything in `Temples/` beyond manifests, facts fragments, print files and `(auto)` renders.
+- Do not modify the description skill, the tracer outputs, or anything in `Temples/` beyond manifests, facts fragments, print files, `(auto)` renders and the `Temples/All/` mirror.
 - Do not touch Lease End files or projects, ever.
