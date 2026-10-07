@@ -61,8 +61,13 @@ def find_rings(mask, cx, cy, rmax, min_cov=0.6):
             i += 1
     rings = []
     for (r0, r1) in bands:
+        # near the centre every ray passes through the same few pixels, so any
+        # blob reads as full coverage; a ring must also be thin relative to its
+        # radius and actually round
+        if r1 < 0.1 * rmax or (r1 - r0) > 0.35 * max(r1, 1):
+            continue
         ring = fit_ring(P, th, r, cx, cy, r0, r1)
-        if ring:
+        if ring and ring["width_cv_pct"] <= 35 and max(ring["fit_rms"]) <= max(2.0, 0.25 * ring["width_mean"]):
             rings.append(ring)
     rings.sort(key=lambda g: -g["r_outer"])
     return rings, cov
@@ -307,7 +312,7 @@ def type_strokes(widths):
         st["stem_px"] = round(float(np.quantile(w, 0.75)), 2)
         # one-pixel ridges are mostly anti-aliased corners and stroke tips; leave
         # them out unless the type is genuinely that thin (median under 3 px)
-        wh = w[w > 1] if np.median(w) >= 3 and (w > 1).sum() > 10 else w
+        wh = w[w > 1.01] if np.median(w) >= 3 and (w > 1.01).sum() > 10 else w
         st["hairline_px"] = round(float(np.quantile(wh, 0.20)), 2)
     return st
 
@@ -338,7 +343,7 @@ def weight_clusters(widths, kmax=3):
 # ------------------------------------------------------------------ main ---
 
 def measure(path, ink=None, bg=None):
-    rgb, mask, info = C.load(path, ink=ink, bg=bg)
+    rgb, mask, info, soft = C.load(path, ink=ink, bg=bg, want_soft=True)
     h, w = mask.shape
     ys, xs = np.nonzero(mask)
     if xs.size == 0:
@@ -362,7 +367,24 @@ def measure(path, ink=None, bg=None):
     out["rings"] = rings
     comps = C.components(mask)
     out["n_components"] = len(comps)
-    sw_all, _ = ridge_widths_cached(mask)
+    SW = SubpixelWidths(soft, bb)
+    # tints: flat mid-tone areas (not anti-aliased edges). A pixel is a tint when it
+    # is between 15 and 85 percent ink and its 3x3 neighbourhood is nearly flat.
+    p = np.pad(soft, 1, mode="edge")
+    nb = np.stack([p[i:i + soft.shape[0], j:j + soft.shape[1]] for i in range(3) for j in range(3)])
+    flat = (nb.max(0) - nb.min(0)) < 0.2
+    mid = (soft > 0.15) & (soft < 0.85)
+    edge_mid = mid & ~flat
+    out["tones"] = {"tint_pixels": int((mid & flat).sum()),
+                    "tint_pct_of_ink": round(float((mid & flat).sum()) / max(int(mask.sum()), 1) * 100, 3),
+                    "antialias_edge_pixels": int(edge_mid.sum()),
+                    "note": "tints print as solid white on DTG (Printify W59); anti-aliased edges are normal in a raster preview"}
+    small = sorted(comps, key=lambda c: c["area"])[:40]
+    out["smallest_components"] = [{"area_px": c["area"], "bbox": c["bbox"],
+                                   "max_dim_px": max(c["bbox"][2] - c["bbox"][0], c["bbox"][3] - c["bbox"][1]) + 1}
+                                  for c in small]
+    out["stroke_resolution_px"] = 1 / SW.K
+    sw_all = SW.widths(mask)
     out["strokes_all"] = C.stats(sw_all)
 
     if rings:
@@ -390,8 +412,7 @@ def measure(path, ink=None, bg=None):
                 ys_, xs_ = arc.pop("_pix")
                 m = np.zeros(mask.shape, bool)
                 m[ys_, xs_] = True
-                sw, _ = C.ridge_widths(m)
-                arc["stroke_px"] = type_strokes(sw)
+                arc["stroke_px"] = type_strokes(SW.widths(m))
                 arc["gap_to_outer_ring_px"] = round(a["r_inner"] - arc["r_glyph_max"], 2) if arc["r_glyph_max"] else None
                 arc["gap_to_inner_ring_px"] = round(arc["r_glyph_min"] - b["r_outer"], 2) if arc["r_glyph_min"] else None
                 if arc["gap_to_outer_ring_px"] is not None and arc["gap_to_inner_ring_px"]:
@@ -409,12 +430,11 @@ def measure(path, ink=None, bg=None):
         if cz:
             am = cz.pop("_art_mask")
             cm = cz.pop("_caption_mask", None)
-            sw, _ = C.ridge_widths(am)
+            sw = SW.widths(am)
             cz["art"]["stroke_px"] = C.stats(sw)
             cz["art"]["weights"] = weight_clusters(sw)
             if cm is not None:
-                sw, _ = C.ridge_widths(cm)
-                cz["caption"]["stroke_px"] = type_strokes(sw)
+                cz["caption"]["stroke_px"] = type_strokes(SW.widths(cm))
             cz["inner_ring"] = last["id"]
             cz["inner_diameter_px"] = round(2 * last["r_inner"], 2)
         out["centre"] = cz
@@ -426,14 +446,29 @@ def measure(path, ink=None, bg=None):
     return out, mask
 
 
-_cache = {}
+class SubpixelWidths:
+    """Stroke widths sampled on a 2x upsampled copy of the anti-aliased ink, so a
+    3.3 px stroke reads as 3.5 rather than 3. Region masks are given at analysis
+    resolution and widths are returned in analysis pixels."""
+    K = 2
 
+    def __init__(self, soft, bbox, pad=6):
+        h, w = soft.shape
+        self.x0, self.y0 = max(0, bbox[0] - pad), max(0, bbox[1] - pad)
+        self.x1, self.y1 = min(w - 1, bbox[2] + pad), min(h - 1, bbox[3] + pad)
+        up = C.upsample(soft, self.K, (self.x0, self.y0, self.x1, self.y1))
+        d = C.erosion_depth(up)
+        p = np.pad(d, 1)
+        nb = np.max(np.stack([p[:-2, :-2], p[:-2, 1:-1], p[:-2, 2:], p[1:-1, :-2],
+                              p[1:-1, 2:], p[2:, :-2], p[2:, 1:-1], p[2:, 2:]]), axis=0)
+        self.ridge = (d > 0) & (d >= nb)
+        self.w = (2 * d.astype(np.float32) - 1) / self.K
 
-def ridge_widths_cached(mask):
-    k = id(mask)
-    if k not in _cache:
-        _cache[k] = C.ridge_widths(mask)
-    return _cache[k]
+    def widths(self, region):
+        r = region[self.y0:self.y1 + 1, self.x0:self.x1 + 1]
+        r = np.repeat(np.repeat(r, self.K, axis=0), self.K, axis=1)
+        r = r[:self.ridge.shape[0], :self.ridge.shape[1]]
+        return self.w[self.ridge & r]
 
 
 def main():

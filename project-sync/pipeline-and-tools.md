@@ -1,6 +1,6 @@
 # Peculiar People: Pipeline, Tools and Current State
 
-Mirror of the Claude Code workspace, as of 6 October 2026. The source of truth lives on Evan's Mac in `1. Peculiar People/Claude Projects/`. BRAND.md (also in this project) covers the brand itself; this doc covers how the work gets built and where it stands.
+Mirror of the Claude Code workspace, as of 7 October 2026. The source of truth lives on Evan's Mac in `1. Peculiar People/Claude Projects/`. BRAND.md (also in this project) covers the brand itself; this doc covers how the work gets built and where it stands.
 
 ## Where the work happens
 
@@ -25,10 +25,10 @@ Mirror of the Claude Code workspace, as of 6 October 2026. The source of truth l
 3. **Products.** The `temple-product-generator` skill traces the art, computes layout, builds flattened PNG print files, creates Tapstitch products from Python (`tapstitch_api.py`, since the Tapstitch editor is a JSON API underneath), publishes to Shopify, sets product type, tags and colour order, assembles and writes the description, pushes art close-up cards, and syncs the Easify Temple dropdown. Tapstitch is the only fulfillment channel.
 4. **Descriptions.** Three fixed blocks plus one variable: the founder intro for each garment (signed "- Evan"), the temple facts (the only researched part, stored per temple, shown as collapsed rows), and the size guide video. The Kiwi Size Chart app sits next to the size selector. Stored blocks are copied in byte-identical and never edited.
 5. **Copy passes.** Any new customer-facing prose gets `humanizer` (word-level tells) and then `structural-humanizer` (shape-level tells, one or two interventions per piece).
-6. **Audit.** The `store-cro-audit` skill screenshots the live storefront on desktop and mobile and scores it against 68 rules. It is read-only. No audit has been run since the Tapstitch migration.
+6. **Audit.** The `store-cro-audit` skill screenshots the live storefront on desktop and mobile and scores it against 68 rules. It is read-only. No audit has been run since the Tapstitch migration. The `design-audit` skill does the same for a single graphic (logo, seal, garment print): scripts measure centring, ring concentricity, stroke weights, spacing and print-size minimums from the image, and it scores 61 researched rules and returns ranked fixes with target numbers. It proposes only and never overrides a BRAND.md decision. Its print minimums are vendor guidance (screen, DTF, DTG); Tapstitch publishes no artwork spec.
 7. **Idea inbox.** Evan texts himself reel links, screenshots and notes in iMessage through the day. A Mac mini collects them at 1:15 AM (`idea-inbox/collector/nightly.py`), turns videos into transcripts and still frames, and pushes them to `idea-inbox/inbox/`. Around 2 AM a Claude Code routine runs the `idea-triage` skill, which gives each item a verdict (useful, beneficial, plausible, waste) and a first deliverable: a plan, a copy draft, a mockup, or a one-line reason. The digest lands in `ideas/YYYY-MM-DD/DIGEST.md`. `ideas/STATUS.md` tracks what happened to each idea (new, approved, done, tested, dropped); any session that acts on one updates its row, and the triage reads it so it never re-plans finished work. It plans and drafts only; it never changes the store, posts, or replies to anyone.
 
-Skills in the workspace (`Claude Projects/.claude/skills/`): temple-ref-finder, temple-product-generator, humanizer, structural-humanizer, store-cro-audit, idea-triage.
+Skills in the workspace (`Claude Projects/.claude/skills/`): temple-ref-finder, temple-product-generator, humanizer, structural-humanizer, store-cro-audit, design-audit, idea-triage.
 
 Retired: the account-level cc1717, cc1566 and cc1567 temple description builders (written for blanks that are gone), plus the old temple-prompt-assembler and temple-sketch-generator flow through Higgsfield.
 
@@ -41,7 +41,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - Art: kie.ai with GPT Image 2.5 for line art and reference cleanup; Adobe Illustrator for SVG cleanup.
 - Connectors in Claude: Shopify, Higgsfield, Google Drive, Figma.
 
-## Current state (6 October 2026)
+## Current state (7 October 2026)
 
 - 136 active products: 45 temples on the tee, sweatshirt and hoodie, plus the Temple Art File.
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
@@ -50,6 +50,8 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
+
+- Ask Tapstitch for the jacket's print method and its minimum line, gap and text size, then update `.claude/skills/design-audit/references/print_thresholds.json`. Until then the seal audit treats the strictest method (DTG on dark) as binding.
 
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.

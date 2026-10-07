@@ -33,16 +33,21 @@ def main():
     m = json.load(open(a.measurements))
     th = json.load(open(os.path.join(HERE, "..", "references", "print_thresholds.json")))
     rb = th["rebuild"]
-    meth = th["methods"][a.method] if a.method != "all" else {
-        "min_line_mm": max(v["min_line_mm"] for v in th["methods"].values()),
-        "min_gap_mm": max(v["min_gap_mm"] for v in th["methods"].values())}
+    lvl = rb["line_floor"]  # "warn" = production-safe level
+    if a.method == "all":
+        meths = [v for k, v in th["methods"].items() if k != "screen_transfer"]
+        meth = {"min_line_mm": max(v[f"line_{lvl}_mm"] for v in meths),
+                "min_gap_mm": max(v[f"gap_{lvl}_mm"] for v in meths)}
+    else:
+        v = th["methods"][a.method]
+        meth = {"min_line_mm": v[f"line_{lvl}_mm"], "min_gap_mm": v[f"gap_{lvl}_mm"]}
     rings = m["rings"]
     if not rings:
         raise SystemExit("no rings detected; targets.py is for seals and badges")
     D = 2 * rings[0]["r_outer"]
     wmin = min(a.width)
     D_mm_small = wmin * 25.4  # the ink width is the outer diameter for a seal
-    safety = rb["line_safety_factor"]
+    safety = 1.0  # the floor is already the production-safe (warn) level
     floor_frac = meth["min_line_mm"] * safety / D_mm_small  # thinnest allowed stroke, as a fraction of D
     gap_floor_frac = meth["min_gap_mm"] * safety / D_mm_small
 
@@ -93,20 +98,40 @@ def main():
                 continue
             name = f"{arc['position']} text in {z['between'][0]}/{z['between'][1]}"
             cap = arc["cap_height_px"]
-            lo, hi = rb["band_cap_fraction"]
-            if len([x for x in z["arcs"] if x.get("kind") == "text"]) == 1 or arc["position"] != "bottom":
-                tgt = min(max(cap / band, lo), hi)
-                row(f"{name} cap height", tgt * band / D, cap / D, "SEAL-03",
-                    f"cap height {lo:.0%} to {hi:.0%} of the band it sits in")
+            tx = th["text"]
+            cap_floor = tx["warn_pt"] * tx["cap_height_to_em"] / 72 * 25.4 / D_mm_small  # frac of D
+            tgt = max(cap / D, cap_floor)
+            row(f"{name} cap height", tgt, cap / D, "PRINT-05",
+                f"at least {tx['warn_pt']} pt type at the smallest width (cap {cap_floor * D_mm_small:.2f} mm); "
+                f"no source gives cap height as a fraction of band width, so the current size is kept when it clears")
             go, gi = arc.get("gap_to_outer_ring_px"), arc.get("gap_to_inner_ring_px")
             if go is not None and gi is not None and len([x for x in z["arcs"] if x.get("kind") == "text"]) == 1:
                 eq = (go + gi) / 2
                 row(f"{name} clearance to each ring", eq / D, None, "SEAL-04",
                     f"now {go:.1f} px outside vs {gi:.1f} px inside; set equal")
+            st = arc.get("stroke_px") or {}
+            if st.get("hairline_px") is not None:
+                row(f"{name} thinnest stroke (hairline)", max(st["hairline_px"] / D, floor_frac), st["hairline_px"] / D,
+                    "PRINT-02 / TYPE-07", "choose a lower-contrast or heavier face, or a larger size, until the hairline clears this")
             lg = arc.get("letter_gap_to_cap")
             if lg is not None:
                 row(f"{name} letter gap", arc["cap_height_px"] * lg / D, arc["cap_height_px"] * lg / D, "TYPE-03",
                     f"keep one tracking value for the whole arc; measured gap varies {arc.get('letter_gap_cv_pct')}% (cv)")
+    # two arcs sharing one band (top word, bottom line): same radial centre line
+    for z in m.get("zones", []):
+        tx_arcs = [x for x in z["arcs"] if x.get("kind") == "text" and x.get("r_glyph_min")]
+        if len(tx_arcs) == 2:
+            mids = [(x["r_glyph_min"] + x["r_glyph_max"]) / 2 for x in tx_arcs]
+            row(f"radial centre of both arcs in {z['between'][0]}/{z['between'][1]}", sum(mids) / 2 / D,
+                None, "TYPE-05",
+                f"now {mids[0]:.1f} px ({tx_arcs[0]['position']}) vs {mids[1]:.1f} px ({tx_arcs[1]['position']}); "
+                "set both arcs on one centre-line radius")
+    c = m.get("centre")
+    if c and c.get("caption"):
+        st = c["caption"].get("stroke_px") or {}
+        if st.get("hairline_px") is not None:
+            row("caption thinnest stroke (hairline)", max(st["hairline_px"] / D, floor_frac), st["hairline_px"] / D,
+                "PRINT-02 / TYPE-07", "sturdier face or larger size")
     C.dump(out, a.out)
     print(a.out)
 

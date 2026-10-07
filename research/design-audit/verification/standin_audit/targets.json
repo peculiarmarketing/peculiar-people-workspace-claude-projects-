@@ -1,0 +1,356 @@
+{
+  "D_px": 2880.84,
+  "method": "all",
+  "min_line_mm": 1.06,
+  "safety": 1.0,
+  "anchor": {
+    "art_heaviest_weight_frac": 0.0029401146887713305,
+    "print_floor_frac": 0.00417,
+    "base_frac": 0.00417,
+    "note": "base = max(print floor at the smallest width x safety, art heaviest line)"
+  },
+  "elements": [
+    {
+      "element": "ring1 stroke",
+      "target_frac_D": 0.01669,
+      "current_frac_D": 0.01662,
+      "rule": "LINE-02 / PRINT-01",
+      "note": "rank 3 of 3 by weight; ratio [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 5.088,
+          "pt": 14.42,
+          "in": 0.2003
+        },
+        "10in": {
+          "mm": 4.24,
+          "pt": 12.02,
+          "in": 0.1669
+        }
+      }
+    },
+    {
+      "element": "ring2 stroke",
+      "target_frac_D": 0.00417,
+      "current_frac_D": 0.00309,
+      "rule": "LINE-02 / PRINT-01",
+      "note": "rank 1 of 3 by weight; ratio [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 1.272,
+          "pt": 3.61,
+          "in": 0.0501
+        },
+        "10in": {
+          "mm": 1.06,
+          "pt": 3.0,
+          "in": 0.0417
+        }
+      }
+    },
+    {
+      "element": "ring3 stroke",
+      "target_frac_D": 0.00835,
+      "current_frac_D": 0.01038,
+      "rule": "LINE-02 / PRINT-01",
+      "note": "rank 2 of 3 by weight; ratio [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 2.544,
+          "pt": 7.21,
+          "in": 0.1002
+        },
+        "10in": {
+          "mm": 2.12,
+          "pt": 6.01,
+          "in": 0.0835
+        }
+      }
+    },
+    {
+      "element": "ring3 centre offset",
+      "target_frac_D": 0.0,
+      "current_frac_D": 0.00529,
+      "rule": "SEAL-01",
+      "note": "rebuild concentric on the outer ring centre",
+      "at": {
+        "12in": {
+          "mm": 0.0,
+          "pt": 0.0,
+          "in": 0.0
+        },
+        "10in": {
+          "mm": 0.0,
+          "pt": 0.0,
+          "in": 0.0
+        }
+      }
+    },
+    {
+      "element": "gap ring1 to ring2",
+      "target_frac_D": 0.07016,
+      "current_frac_D": 0.07016,
+      "rule": "PRINT-02",
+      "note": "edge to edge; equalise the min and max around the circle",
+      "at": {
+        "12in": {
+          "mm": 21.384,
+          "pt": 60.62,
+          "in": 0.8419
+        },
+        "10in": {
+          "mm": 17.82,
+          "pt": 50.51,
+          "in": 0.7016
+        }
+      }
+    },
+    {
+      "element": "gap ring2 to ring3",
+      "target_frac_D": 0.09757,
+      "current_frac_D": 0.09757,
+      "rule": "PRINT-02",
+      "note": "edge to edge; equalise the min and max around the circle",
+      "at": {
+        "12in": {
+          "mm": 29.74,
+          "pt": 84.3,
+          "in": 1.1709
+        },
+        "10in": {
+          "mm": 24.783,
+          "pt": 70.25,
+          "in": 0.9757
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 cap height",
+      "target_frac_D": 0.01771,
+      "current_frac_D": 0.01771,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type at the smallest width (cap 2.40 mm); no source gives cap height as a fraction of band width, so the current size is kept when it clears",
+      "at": {
+        "12in": {
+          "mm": 5.399,
+          "pt": 15.3,
+          "in": 0.2126
+        },
+        "10in": {
+          "mm": 4.499,
+          "pt": 12.75,
+          "in": 0.1771
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 clearance to each ring",
+      "target_frac_D": 0.02562,
+      "current_frac_D": null,
+      "rule": "SEAL-04",
+      "note": "now 80.1 px outside vs 67.5 px inside; set equal",
+      "at": {
+        "12in": {
+          "mm": 7.808,
+          "pt": 22.13,
+          "in": 0.3074
+        },
+        "10in": {
+          "mm": 6.507,
+          "pt": 18.44,
+          "in": 0.2562
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 thinnest stroke (hairline)",
+      "target_frac_D": 0.00417,
+      "current_frac_D": 0.00087,
+      "rule": "PRINT-02 / TYPE-07",
+      "note": "choose a lower-contrast or heavier face, or a larger size, until the hairline clears this",
+      "at": {
+        "12in": {
+          "mm": 1.272,
+          "pt": 3.61,
+          "in": 0.0501
+        },
+        "10in": {
+          "mm": 1.06,
+          "pt": 3.0,
+          "in": 0.0417
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 letter gap",
+      "target_frac_D": 0.00443,
+      "current_frac_D": 0.00443,
+      "rule": "TYPE-03",
+      "note": "keep one tracking value for the whole arc; measured gap varies 29.1% (cv)",
+      "at": {
+        "12in": {
+          "mm": 1.35,
+          "pt": 3.83,
+          "in": 0.0531
+        },
+        "10in": {
+          "mm": 1.125,
+          "pt": 3.19,
+          "in": 0.0443
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 cap height",
+      "target_frac_D": 0.01598,
+      "current_frac_D": 0.01598,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type at the smallest width (cap 2.40 mm); no source gives cap height as a fraction of band width, so the current size is kept when it clears",
+      "at": {
+        "12in": {
+          "mm": 4.872,
+          "pt": 13.81,
+          "in": 0.1918
+        },
+        "10in": {
+          "mm": 4.06,
+          "pt": 11.51,
+          "in": 0.1598
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 thinnest stroke (hairline)",
+      "target_frac_D": 0.00417,
+      "current_frac_D": 0.00087,
+      "rule": "PRINT-02 / TYPE-07",
+      "note": "choose a lower-contrast or heavier face, or a larger size, until the hairline clears this",
+      "at": {
+        "12in": {
+          "mm": 1.272,
+          "pt": 3.61,
+          "in": 0.0501
+        },
+        "10in": {
+          "mm": 1.06,
+          "pt": 3.0,
+          "in": 0.0417
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 letter gap",
+      "target_frac_D": 0.00625,
+      "current_frac_D": 0.00625,
+      "rule": "TYPE-03",
+      "note": "keep one tracking value for the whole arc; measured gap varies 7.1% (cv)",
+      "at": {
+        "12in": {
+          "mm": 1.905,
+          "pt": 5.4,
+          "in": 0.075
+        },
+        "10in": {
+          "mm": 1.588,
+          "pt": 4.5,
+          "in": 0.0625
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 cap height",
+      "target_frac_D": 0.03428,
+      "current_frac_D": 0.03428,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type at the smallest width (cap 2.40 mm); no source gives cap height as a fraction of band width, so the current size is kept when it clears",
+      "at": {
+        "12in": {
+          "mm": 10.449,
+          "pt": 29.62,
+          "in": 0.4114
+        },
+        "10in": {
+          "mm": 8.708,
+          "pt": 24.68,
+          "in": 0.3428
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 thinnest stroke (hairline)",
+      "target_frac_D": 0.00417,
+      "current_frac_D": 0.0026,
+      "rule": "PRINT-02 / TYPE-07",
+      "note": "choose a lower-contrast or heavier face, or a larger size, until the hairline clears this",
+      "at": {
+        "12in": {
+          "mm": 1.272,
+          "pt": 3.61,
+          "in": 0.0501
+        },
+        "10in": {
+          "mm": 1.06,
+          "pt": 3.0,
+          "in": 0.0417
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 letter gap",
+      "target_frac_D": 0.006,
+      "current_frac_D": 0.006,
+      "rule": "TYPE-03",
+      "note": "keep one tracking value for the whole arc; measured gap varies 13.6% (cv)",
+      "at": {
+        "12in": {
+          "mm": 1.829,
+          "pt": 5.18,
+          "in": 0.072
+        },
+        "10in": {
+          "mm": 1.524,
+          "pt": 4.32,
+          "in": 0.06
+        }
+      }
+    },
+    {
+      "element": "radial centre of both arcs in ring2/ring3",
+      "target_frac_D": 0.36845,
+      "current_frac_D": null,
+      "rule": "TYPE-05",
+      "note": "now 1083.4 px (bottom) vs 1039.5 px (top); set both arcs on one centre-line radius",
+      "at": {
+        "12in": {
+          "mm": 112.303,
+          "pt": 318.34,
+          "in": 4.4214
+        },
+        "10in": {
+          "mm": 93.586,
+          "pt": 265.28,
+          "in": 3.6845
+        }
+      }
+    },
+    {
+      "element": "caption thinnest stroke (hairline)",
+      "target_frac_D": 0.00417,
+      "current_frac_D": 0.00052,
+      "rule": "PRINT-02 / TYPE-07",
+      "note": "sturdier face or larger size",
+      "at": {
+        "12in": {
+          "mm": 1.272,
+          "pt": 3.61,
+          "in": 0.0501
+        },
+        "10in": {
+          "mm": 1.06,
+          "pt": 3.0,
+          "in": 0.0417
+        }
+      }
+    }
+  ]
+}

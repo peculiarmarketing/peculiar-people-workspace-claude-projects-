@@ -36,6 +36,12 @@ def main():
     C.dump(m, mp)
     pc = print_check.run(a.image, mp, a.width, a.method, out)
     C.dump(pc, os.path.join(out, "print_check.json"))
+    if m["rings"]:
+        cmd = [sys.executable, os.path.join(HERE, "targets.py"), mp, "--method", a.method,
+               "--out", os.path.join(out, "targets.json")]
+        for w in a.width:
+            cmd += ["--width", str(w)]
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL)
     cmd = [sys.executable, os.path.join(HERE, "previews.py"), a.image, "--outdir", out]
     for w in a.width:
         cmd += ["--width", str(w)]
@@ -48,9 +54,10 @@ def main():
               f"centre offset {g['offset_from_outer_px']} px")
     for w in pc["widths"]:
         for meth, r in w["methods"].items():
-            f = r["failures"]
-            print(f"  {w['print_width_in']:g} in, {meth}: {len(f)} element failures, "
-                  f"{r['thin_strokes']['regions']} thin-stroke regions, {r['closing_gaps']['regions']} closing-gap regions")
+            mf = r["morphology"]["fail"]
+            cg = mf["closing_gaps"]["regions"] if mf["closing_gaps"] else "n/a"
+            print(f"  {w['print_width_in']:g} in, {meth}: {len(r['fail'])} FAIL, {len(r['warn'])} WARN elements; "
+                  f"at fail level {mf['thin_strokes']['regions']} thin-stroke and {cg} closing-gap regions")
 
 
 if __name__ == "__main__":

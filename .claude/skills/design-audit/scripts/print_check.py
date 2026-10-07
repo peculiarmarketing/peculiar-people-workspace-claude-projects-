@@ -34,6 +34,7 @@ def load_thresholds(path=THRESH):
 
 
 def morph_flags(mask, min_line_px, min_gap_px):
+    min_gap_px = max(min_gap_px, 1)
     """Strokes thinner than min_line: ink that does not survive an opening.
     Gaps narrower than min_gap: background that a closing fills in."""
     r_line = max(1, int(math.ceil(min_line_px / 2 - 0.5)))
@@ -61,7 +62,7 @@ def blob_summary(flag, min_len_px, units):
         if max(x1 - x0, y1 - y0) + 1 < min_len_px:
             specks += 1
             continue
-        big.append({"bbox": c["bbox"], "length_mm": units.conv(max(x1 - x0, y1 - y0) + 1)["mm"],
+        big.append({"bbox_in_crop": c["bbox"], "length_mm": units.conv(max(x1 - x0, y1 - y0) + 1)["mm"],
                     "area_mm2": round(c["area"] / units.ppi ** 2 * 645.16, 3)})
     big.sort(key=lambda b: -b["area_mm2"])
     return {"regions": len(big), "specks_ignored": specks, "largest": big[:12],
@@ -74,64 +75,72 @@ def cap_to_pt(cap_px, units, cap_ratio):
     return round(units.conv(cap_px)["pt"] / cap_ratio, 1)
 
 
+def status(v, fail, warn):
+    if fail and v < fail:
+        return "FAIL"
+    if warn and v < warn:
+        return "WARN"
+    return "PASS"
+
+
 def element_checks(m, units, th, method):
     t = th["methods"][method]
-    min_line = t["min_line_mm"]
-    min_gap = t["min_gap_mm"]
-    min_text = th["text"]["min_positive_text_pt"]
-    min_rev = th["text"]["min_reversed_text_pt"]
-    cap_ratio = th["text"]["cap_height_to_em"]
+    tx = th["text"]
+    cap_ratio = tx["cap_height_to_em"]
     rows = []
 
-    def add(element, what, px, limit_mm, rule, kind="min"):
+    def add(element, what, px, kind, rule):
         if px is None:
             return
         v = units.conv(px)
-        ok = v["mm"] >= limit_mm
+        fail, warn = t[f"{kind}_fail_mm"], t[f"{kind}_warn_mm"]
         rows.append({"element": element, "measure": what, **{k: v[k] for k in ("px", "in", "mm", "pt")},
-                     "limit_mm": limit_mm, "pass": bool(ok),
-                     "margin_pct": round((v["mm"] / limit_mm - 1) * 100, 1), "rule": rule})
+                     "fail_mm": fail, "warn_mm": warn, "status": status(v["mm"], fail, warn), "rule": rule})
+
+    def add_text(element, cap_px):
+        v = units.conv(cap_px)
+        pt = round(v["pt"] / cap_ratio, 1)
+        rows.append({"element": element, "measure": "cap height / est. font size",
+                     **{k: v[k] for k in ("px", "in", "mm", "pt")}, "est_font_pt": pt,
+                     "fail_pt": tx["fail_pt"], "warn_pt": tx["warn_pt"],
+                     "status": status(pt, tx["fail_pt"], tx["warn_pt"]), "rule": "PRINT-05"})
 
     for g in m.get("rings", []):
-        add(g["id"], "ring width (thinnest point)", g["width"]["p05"], min_line, "PRINT-01")
+        add(g["id"], "ring width (5th pct around the ring)", g["width"]["p05"], "line", "PRINT-01")
     for gap in m.get("ring_gaps", []):
-        add("/".join(gap["between"]), "gap between rings (narrowest)", gap["min_px"], min_gap, "PRINT-02")
+        add("/".join(gap["between"]), "gap between rings (narrowest)", gap["min_px"], "gap", "PRINT-03")
     for z in m.get("zones", []):
         for a in z["arcs"]:
             if a.get("kind") != "text":
                 continue
             name = f"{a['position']} arc in {'/'.join(z['between'])}"
             s = a.get("stroke_px") or {}
-            add(name, "type stem", s.get("stem_px"), min_line, "PRINT-01")
-            add(name, "type hairline", s.get("hairline_px"), min_line, "PRINT-01")
+            add(name, "type stem", s.get("stem_px"), "line", "PRINT-01")
+            add(name, "type hairline", s.get("hairline_px"), "line", "PRINT-02")
             lg = a.get("letter_gap_px")
             if lg:
-                add(name, "letter gap (5th pct)", lg["p05"], min_gap, "PRINT-02")
-            pt = cap_to_pt(a["cap_height_px"], units, cap_ratio)
-            v = units.conv(a["cap_height_px"])
-            rows.append({"element": name, "measure": "cap height / est. font size", **{k: v[k] for k in ("px", "in", "mm", "pt")},
-                         "est_font_pt": pt, "limit_pt": min_text, "pass": pt >= min_text,
-                         "margin_pct": round((pt / min_text - 1) * 100, 1), "rule": "PRINT-04"})
+                add(name, "letter gap (5th pct)", lg["p05"], "gap", "PRINT-03")
+            add_text(name, a["cap_height_px"])
     c = m.get("centre")
     if c:
         art = c["art"]
         if art.get("weights"):
-            add("centre art", "lightest line weight", art["weights"][0]["weight_px"], min_line, "PRINT-01")
-        add("centre art", "line width (10th pct)", art["stroke_px"]["p10"], min_line, "PRINT-01")
+            add("centre art", "lightest line weight (cluster centre)", art["weights"][0]["weight_px"], "line", "PRINT-01")
+        add("centre art", "line width (10th pct)", art["stroke_px"]["p10"], "line", "PRINT-01")
         cap = c.get("caption")
         if cap:
             s = cap.get("stroke_px") or {}
-            add("caption", "type stem", s.get("stem_px"), min_line, "PRINT-01")
-            add("caption", "type hairline", s.get("hairline_px"), min_line, "PRINT-01")
+            add("caption", "type stem", s.get("stem_px"), "line", "PRINT-01")
+            add("caption", "type hairline", s.get("hairline_px"), "line", "PRINT-02")
             if cap.get("letter_gap_px"):
-                add("caption", "letter gap (5th pct)", cap["letter_gap_px"]["p05"], min_gap, "PRINT-02")
-            pt = cap_to_pt(cap["cap_height_px"], units, cap_ratio)
-            v = units.conv(cap["cap_height_px"])
-            rows.append({"element": "caption", "measure": "cap height / est. font size", **{k: v[k] for k in ("px", "in", "mm", "pt")},
-                         "est_font_pt": pt, "limit_pt": min_text, "pass": pt >= min_text,
-                         "margin_pct": round((pt / min_text - 1) * 100, 1), "rule": "PRINT-04"})
-    return rows, {"min_line_mm": min_line, "min_gap_mm": min_gap, "min_text_pt": min_text,
-                  "min_reversed_text_pt": min_rev}
+                add("caption", "letter gap (5th pct)", cap["letter_gap_px"]["p05"], "gap", "PRINT-03")
+            add_text("caption", cap["cap_height_px"])
+    if not m.get("rings"):
+        if m.get("strokes_weights"):
+            add("whole design", "lightest line weight (cluster centre)", m["strokes_weights"][0]["weight_px"], "line", "PRINT-01")
+        if m.get("strokes_all"):
+            add("whole design", "line width (10th pct)", m["strokes_all"]["p10"], "line", "PRINT-01")
+    return rows, t
 
 
 def overlay(mask, thin, gaps, path, shrink_to=1600):
@@ -151,32 +160,54 @@ def overlay(mask, thin, gaps, path, shrink_to=1600):
 def run(image, mpath, widths, method, outdir, basis="ink"):
     m = json.load(open(mpath))
     th = load_thresholds()
-    rgb, mask, info = C.load(image)
+    rgb, mask, info, soft = C.load(image, want_soft=True)
+    bb = m["ink"]["bbox"]
+    pad = 8
+    box = (max(0, bb[0] - pad), max(0, bb[1] - pad), min(mask.shape[1] - 1, bb[2] + pad), min(mask.shape[0] - 1, bb[3] + pad))
     basis_px = m["ink"]["width_px"] if basis == "ink" else m["canvas"]["width"]
     os.makedirs(outdir, exist_ok=True)
     methods = [method] if method != "all" else list(th["methods"])
+    cache = {}
     res = {"thresholds_file": os.path.relpath(THRESH, outdir), "basis": basis,
            "basis_px": basis_px, "widths": []}
     for wi in widths:
         u = C.Units(wi, basis_px)
-        entry = {"print_width_in": wi, "ppi": round(u.ppi, 2), "px_per_mm": round(u.ppi / 25.4, 3),
+        smalls = [{"bbox": c["bbox"], "area_mm2": round(c["area_px"] / u.ppi ** 2 * 645.16, 3),
+                   "max_dim_mm": u.conv(c["max_dim_px"])["mm"]} for c in m.get("smallest_components", [])]
+        entry = {"print_width_in": wi, "smallest_shapes": smalls[:15], "ppi": round(u.ppi, 2), "px_per_mm": round(u.ppi / 25.4, 3),
                  "px_resolution_mm": round(25.4 / u.ppi, 3),
                  "design_height_in": round(m["ink"]["height_px"] / u.ppi, 3), "methods": {}}
         for meth in methods:
             rows, lim = element_checks(m, u, th, meth)
-            line_px = lim["min_line_mm"] / 25.4 * u.ppi
-            gap_px = lim["min_gap_mm"] / 25.4 * u.ppi
-            thin, gaps, rl, rg = morph_flags(mask, line_px, gap_px)
-            tag = f"{wi:g}in_{meth}"
-            ov = os.path.join(outdir, f"print_flags_{tag}.png")
-            overlay(mask, thin, gaps, ov)
-            entry["methods"][meth] = {
-                "limits": lim, "element_checks": rows,
-                "failures": [r for r in rows if not r["pass"]],
-                "thin_strokes": blob_summary(thin, SPECK_MM / 25.4 * u.ppi, u),
-                "closing_gaps": blob_summary(gaps, SPECK_MM / 25.4 * u.ppi, u),
-                "morph_radius_px": {"line": rl, "gap": rg},
-                "overlay": os.path.basename(ov)}
+            r = {"limits": {k: v for k, v in lim.items() if k != "sources"}, "element_checks": rows,
+                 "fail": [x for x in rows if x["status"] == "FAIL"],
+                 "warn": [x for x in rows if x["status"] == "WARN"], "morphology": {}}
+            for level in ("fail", "warn"):
+                line_px = lim[f"line_{level}_mm"] / 25.4 * u.ppi
+                gap_px = lim[f"gap_{level}_mm"] / 25.4 * u.ppi
+                k = C.pick_k(min(line_px, gap_px) if gap_px else line_px)
+                mk = C.upsample(soft, k, box)
+                key = (k, round(line_px * k, 3), round(gap_px * k, 3))
+                if key not in cache:
+                    cache[key] = morph_flags(mk, line_px * k, gap_px * k)
+                thin, gaps, rl, rg = (x.copy() if hasattr(x, "copy") else x for x in cache[key])
+                if k > 1:  # back to analysis pixels for counting and the overlay
+                    thin = thin.reshape(thin.shape[0] // k, k, thin.shape[1] // k, k).any(axis=(1, 3))
+                    gaps = gaps.reshape(gaps.shape[0] // k, k, gaps.shape[1] // k, k).any(axis=(1, 3))
+                mcrop = mask[box[1]:box[3] + 1, box[0]:box[2] + 1]
+                if not lim[f"gap_{level}_mm"]:
+                    gaps[:] = False
+                tag = f"{wi:g}in_{meth}_{level}"
+                ov = os.path.join(outdir, f"print_flags_{tag}.png")
+                overlay(mcrop, thin, gaps, ov)
+                speck = SPECK_MM / 25.4 * u.ppi
+                r["morphology"][level] = {
+                    "line_mm": lim[f"line_{level}_mm"], "gap_mm": lim[f"gap_{level}_mm"],
+                    "thin_strokes": blob_summary(thin, speck, u),
+                    "closing_gaps": blob_summary(gaps, speck, u) if lim[f"gap_{level}_mm"] else None,
+                    "upsample": k, "morph_radius_px": {"line": round(rl / k, 2), "gap": round(rg / k, 2)},
+                    "overlay": os.path.basename(ov)}
+            entry["methods"][meth] = r
         res["widths"].append(entry)
     return res
 

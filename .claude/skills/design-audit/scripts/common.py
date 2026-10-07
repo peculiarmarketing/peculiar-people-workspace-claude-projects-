@@ -13,7 +13,7 @@ PT_PER_IN = 72.0
 MAX_SIDE = 3200  # larger inputs are downscaled for speed; the scale is recorded
 
 
-def load(path, ink=None, bg=None, max_side=MAX_SIDE):
+def load(path, ink=None, bg=None, max_side=MAX_SIDE, want_soft=False):
     """Return (rgb uint8 array, ink bool mask, info dict).
 
     Ink detection, in order:
@@ -35,8 +35,11 @@ def load(path, ink=None, bg=None, max_side=MAX_SIDE):
     rgba = np.asarray(im.convert("RGBA")).astype(np.float32)
     rgb = rgba[..., :3]
     if has_alpha and (rgba[..., 3] < 128).mean() > 0.05 and ink is None and bg is None:
-        mask = rgba[..., 3] > 127
+        soft = rgba[..., 3] / 255.0
+        mask = soft > 0.5
         info["ink_mode"] = "alpha"
+        if want_soft:
+            return rgb.astype(np.uint8), mask, info, soft.astype(np.float32)
         return rgb.astype(np.uint8), mask, info
     h, w = rgb.shape[:2]
     b = max(2, int(0.02 * min(h, w)))
@@ -54,7 +57,36 @@ def load(path, ink=None, bg=None, max_side=MAX_SIDE):
     mask = d_ink < d_bg
     info.update(ink_mode="colour", background_rgb=[round(float(x)) for x in bgc],
                 ink_rgb=[round(float(x)) for x in inkc])
+    if want_soft:
+        # ink fraction per pixel: projection of the colour onto the bg->ink line,
+        # so anti-aliased edges carry sub-pixel position information
+        v = inkc - bgc
+        soft = np.clip(((rgb - bgc) @ v) / max(float(v @ v), 1e-6), 0, 1).astype(np.float32)
+        return rgb.astype(np.uint8), mask, info, soft
     return rgb.astype(np.uint8), mask, info
+
+
+def upsample(soft, k, box=None):
+    """Bicubic-upsample the soft ink map by k and threshold at 0.5. Recovers edge
+    positions to about 1/k px from anti-aliasing, so thresholds of a few pixels can
+    be tested without 1 px quantisation. box = (x0, y0, x1, y1) crops first."""
+    if box is not None:
+        x0, y0, x1, y1 = box
+        soft = soft[y0:y1 + 1, x0:x1 + 1]
+    if k == 1:
+        return soft > 0.5
+    im = Image.fromarray((soft * 255).astype(np.uint8))
+    im = im.resize((im.width * k, im.height * k), Image.BICUBIC)
+    return np.asarray(im) > 127
+
+
+def pick_k(threshold_px, max_k=2):
+    """Upsampling factor so one erosion step is at most about 15 percent of the
+    smallest threshold being tested."""
+    for k in (1, 2, 3, 4):
+        if k >= max_k or 2.0 / (threshold_px * k) <= 0.3:
+            return min(k, max_k)
+    return max_k
 
 
 def parse_color(s):
@@ -78,7 +110,7 @@ def erosion_depth(mask, limit=None):
     """Distance map by repeated erosion: depth 1 = removed by the first erosion.
     A stroke of width w pixels has a centre-line depth of about (w + 1) / 2, so
     width = 2 * depth - 1. Pixels still standing after `limit` steps get limit + 1."""
-    depth = np.zeros(mask.shape, np.int32)
+    depth = np.zeros(mask.shape, np.int16)
     cur = mask.copy()
     k = 0
     while cur.any():
