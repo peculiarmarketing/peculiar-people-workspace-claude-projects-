@@ -39,57 +39,107 @@ def polar(mask, cx, cy, rmax):
     return mask[yi, xi] & inside, th, r
 
 
-def find_rings(mask, cx, cy, rmax, min_cov=0.6):
-    """A ring is a radius band where at least `min_cov` of all rays hit ink.
-    Text bands peak far lower (letters cover well under half the circle), so the
-    threshold separates them. Each candidate is then fitted on its own, because an
-    off-centre ring smears across radii when sampled from the wrong centre."""
+def find_rings(mask, cx, cy, rmax, min_cov=0.6, cand_cov=0.3):
+    """A ring is a radius band where at least `min_cov` of all rays hit ink, sampled
+    from the ring's own centre. Text bands peak far lower (letters cover well under
+    half the circle), so the threshold separates them.
+
+    Sampled from any other centre, a ring offset by d px spreads over about 2d px of
+    radius, so a thin ring (5 px wide, 5 px off) never reaches `min_cov` at any single
+    radius. So candidates are taken from two places: bands that already pass
+    `min_cov` from (cx, cy), and weaker coverage peaks (at least `cand_cov`). Every
+    candidate is fitted, re-sampled from its own fitted centre, and kept only if it
+    reaches `min_cov` there. A perfectly round offset ring smears into two peaks at
+    r - d and r + d with a trough between, so every peak is tried; centre art makes
+    dozens of peaks, but each failed candidate costs a few milliseconds."""
     P, th, r = polar(mask, cx, cy, rmax)
     cov = P.mean(axis=0)
     covs = np.maximum.reduce([np.roll(cov, k) for k in (-3, -2, -1, 0, 1, 2, 3)])
     is_ring = covs >= min_cov
-    bands = []
+    cands = []
     i = 0
     while i < len(r):
         if is_ring[i]:
             j = i
             while j + 1 < len(r) and is_ring[j + 1]:
                 j += 1
-            bands.append((int(r[i]), int(r[j])))
+            cands.append((int(r[i]), int(r[j])))
             i = j + 1
         else:
             i += 1
+    peaks = [k for k in range(1, len(cov) - 1)
+             if cov[k] >= cand_cov and cov[k] >= cov[k - 1] and cov[k] > cov[k + 1] and not is_ring[k]]
+    cands += [(k - 1, k + 1) for k in peaks]
     rings = []
-    for (r0, r1) in bands:
+    for (r0, r1) in cands:
         # near the centre every ray passes through the same few pixels, so any
         # blob reads as full coverage; a ring must also be thin relative to its
         # radius and actually round
         if r1 < 0.1 * rmax or (r1 - r0) > 0.35 * max(r1, 1):
             continue
-        ring = fit_ring(P, th, r, cx, cy, r0, r1)
-        if ring and ring["width_cv_pct"] <= 35 and max(ring["fit_rms"]) <= max(2.0, 0.25 * ring["width_mean"]):
-            rings.append(ring)
+        # the run centres of a ring offset by d wander d px around the peak radius
+        tol = max(4, r1 - r0, 0.012 * (r0 + r1) / 2)
+        ring = fit_ring(P, th, r, cx, cy, r0, r1, tol)
+        if ring:
+            ring = refit_own_centre(mask, ring, min_cov)
+        if not ring or ring["width_cv_pct"] > 35:
+            continue
+        # a hand-drawn or generated ring can be a couple of pixels out of round;
+        # 0.3 percent of the radius is still far rounder than any text arc
+        if max(ring["fit_rms"]) > max(2.0, 0.25 * ring["width_mean"], 0.003 * ring["r_mid"]):
+            continue
+        if any(math.hypot(ring["center"][0] - g["center"][0], ring["center"][1] - g["center"][1]) < 3
+               and abs(ring["r_mid"] - g["r_mid"]) < 0.5 * max(ring["width_mean"], g["width_mean"]) + 1
+               for g in rings):
+            continue
+        rings.append(ring)
     rings.sort(key=lambda g: -g["r_outer"])
     return rings, cov
 
 
-def fit_ring(P, th, r, cx, cy, r0, r1):
-    tol = max(4, (r1 - r0))
-    lo, hi = max(0, r0 - tol), min(len(r) - 1, r1 + tol)
+def refit_own_centre(mask, ring, min_cov, rounds=3):
+    """Re-sample the mask from the ring's own fitted centre and fit again, until the
+    centre stops moving. Returns None if the ring never reaches `min_cov` coverage at
+    any radius from its own centre."""
+    for _ in range(rounds):
+        ocx, ocy = ring["center"]
+        P, th, r = polar(mask, ocx, ocy, ring["r_outer"] + max(10, ring["width_mean"]) + 2)
+        cov = P.mean(axis=0)
+        r0 = max(0, int(math.floor(ring["r_inner"] + 0.5)))
+        r1 = min(len(r) - 1, int(math.ceil(ring["r_outer"] - 0.5)))
+        if r1 < r0 or cov[max(0, r0 - 1):r1 + 2].max() < min_cov:
+            return None
+        g = fit_ring(P, th, r, ocx, ocy, r0, r1, max(4, r1 - r0))
+        if not g:
+            return None
+        g["own_center_peak_coverage"] = round(float(cov[max(0, r0 - 1):r1 + 2].max()), 3)
+        moved = math.hypot(g["center"][0] - ocx, g["center"][1] - ocy)
+        ring = g
+        if moved < 0.25:
+            break
+    return ring
+
+
+def fit_ring(P, th, r, cx, cy, r0, r1, tol=None):
+    """Fit inner and outer circles to the ring between radii r0 and r1 on the polar
+    samples P taken from (cx, cy). On each ray the ink run whose centre is nearest
+    the band's middle (and within `tol`) is the ring; runs are taken whole, never
+    clipped to a window, so an off-centre ring keeps its true edges."""
+    tol = max(4, (r1 - r0)) if tol is None else tol
+    mid = (r0 + r1) / 2
+    D = np.diff(np.pad(P.astype(np.int8), ((0, 0), (1, 1))), axis=1)
     inner_pts, outer_pts, widths = [], [], []
     for a in range(len(th)):
-        seg = P[a, lo:hi + 1].astype(np.int8)
-        if not seg.any():
+        s = np.flatnonzero(D[a] == 1)
+        if s.size == 0:
             continue
-        d = np.diff(np.concatenate([[0], seg, [0]]))
-        s = np.flatnonzero(d == 1) + lo
-        e = np.flatnonzero(d == -1) - 1 + lo
-        mid = (r0 + r1) / 2
-        k = int(np.argmin(np.abs((s + e) / 2 - mid)))
-        if s[k] > r1 + 2 or e[k] < r0 - 2:
+        e = np.flatnonzero(D[a] == -1) - 1
+        dist = np.abs((s + e) / 2 - mid)
+        k = int(np.argmin(dist))
+        if dist[k] > tol:
             continue
-        inner_pts.append((th[a], s[k] - 0.5))
-        outer_pts.append((th[a], e[k] + 0.5))
+        inner_pts.append((th[a], r[s[k]] - 0.5))
+        outer_pts.append((th[a], r[e[k]] + 0.5))
         widths.append(e[k] - s[k] + 1)
     if len(widths) < 0.5 * len(th):
         return None
@@ -435,6 +485,17 @@ def weight_clusters(widths, kmax=3):
 
 # ------------------------------------------------------------------ main ---
 
+def detect_rings(mask, bb):
+    """Rings sampled first from the ink bounding-box centre, then again from the
+    outer ring's fitted centre. Sorted outermost first."""
+    bcx, bcy = (bb[0] + bb[2]) / 2, (bb[1] + bb[3]) / 2
+    rings, _ = find_rings(mask, bcx, bcy, rmax=max(bb[2] - bcx, bcy - bb[1]) + 3)
+    if rings:
+        ocx, ocy = rings[0]["center"]
+        rings, _ = find_rings(mask, ocx, ocy, rmax=rings[0]["r_outer"] + 6)
+    return rings
+
+
 def measure(path, ink=None, bg=None):
     rgb, mask, info, soft = C.load(path, ink=ink, bg=bg, want_soft=True)
     h, w = mask.shape
@@ -452,11 +513,7 @@ def measure(path, ink=None, bg=None):
                        "bbox_offset_from_canvas": [round(bcx - w / 2, 2), round(bcy - h / 2, 2)],
                        "mass_offset_from_bbox_center": [round(mcx - bcx, 2), round(mcy - bcy, 2)]}
 
-    rings, cov = find_rings(mask, bcx, bcy, rmax=max(bb[2] - bcx, bcy - bb[1]) + 3)
-    if rings:
-        # refine: re-run from the outer ring's fitted centre
-        ocx, ocy = rings[0]["center"]
-        rings, cov = find_rings(mask, ocx, ocy, rmax=rings[0]["r_outer"] + 6)
+    rings = detect_rings(mask, bb)
     out["rings"] = rings
     comps = C.components(mask)
     out["n_components"] = len(comps)

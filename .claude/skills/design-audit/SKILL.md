@@ -218,3 +218,7 @@ Built 7 October 2026 with skill-creator from:
 15 px off centre, a 9 px thin ring, a low centre block) for checking the scripts after
 a change: the run should report ring3 `offset_from_outer_px` near 15.2 and ring2
 `width_mean` near 8.9.
+`tests/test_rings.py` checks that, plus the `--thin-ring` variant
+(`fixtures/standin_seal_thin_ring.png`: a 5 px ring 6 px off centre, the case
+`seal.png` exposed when two thin rings were missed). Run it after any change to ring
+detection: `python3 tests/test_rings.py`.

@@ -6,7 +6,12 @@ It is deliberately imperfect in the ways an AI-generated seal usually is, so the
 checks have something to find: the inner ring is nudged off centre, the gaps
 between rings are uneven, the thin ring is very thin, and the temple sits low.
 
-usage: make_standin_seal.py <temple_crop_png_white_on_dark> <out.png> [--size 3000]
+--thin-ring adds a 5 px ring 6 px off centre between the title and the inner ring,
+the case that seal.png exposed: sampled from the outer ring's centre it smears
+across about 12 px of radius and no single radius reaches ring coverage. The
+default output is unchanged, so the expectations in SKILL.md still apply to it.
+
+usage: make_standin_seal.py <temple_crop_png_white_on_dark> <out.png> [--size 3000] [--thin-ring]
 The temple input is any white-on-dark line drawing; it is thresholded to ink.
 """
 import argparse
@@ -63,6 +68,7 @@ def main():
     ap.add_argument("temple")
     ap.add_argument("out")
     ap.add_argument("--size", type=int, default=3000)
+    ap.add_argument("--thin-ring", action="store_true")
     a = ap.parse_args()
     S = a.size
     k = S / 3000
@@ -87,6 +93,8 @@ def main():
     arc_text(img, "EST. 2023", est, c, 1060 * k, 180, outside_reading=False, tracking=0.15)
     ci = (c[0] + 14 * k, c[1] + 6 * k)            # inner ring nudged off centre
     ring(d, ci, 900 * k, 30 * k)                  # heavier inner ring
+    if a.thin_ring:
+        ring(d, (c[0] - 6 * k, c[1]), 945 * k, 5 * k)  # thin ring, 6 px off centre
     t = Image.open(a.temple).convert("L")
     t = t.point(lambda v: 255 if v > 128 else 0)
     bb = t.getbbox()
