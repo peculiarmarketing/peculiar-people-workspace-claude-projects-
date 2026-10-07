@@ -1,0 +1,47 @@
+{
+  "id": "imessage-20261006-2205-bc33a610",
+  "source": "imessage",
+  "source_label": "iMessage note to self",
+  "received_at": "2026-10-06T22:05:47Z",
+  "messages": [
+    {
+      "time": "2026-10-06T22:05:47Z",
+      "text": "https://www.instagram.com/reel/DdiCSwPxGJS/",
+      "attachments": []
+    }
+  ],
+  "note_text": "https://www.instagram.com/reel/DdiCSwPxGJS/",
+  "links": [
+    "https://www.instagram.com/reel/DdiCSwPxGJS/"
+  ],
+  "media": [
+    {
+      "kind": "video",
+      "folder": "video1",
+      "errors": [],
+      "duration_seconds": 41.8,
+      "truncated_to_seconds": null,
+      "frames": [
+        "video1/frames/01_t00m02s.jpg",
+        "video1/frames/02_t00m07s.jpg",
+        "video1/frames/03_t00m13s.jpg",
+        "video1/frames/04_t00m18s.jpg",
+        "video1/frames/05_t00m23s.jpg",
+        "video1/frames/06_t00m28s.jpg",
+        "video1/frames/07_t00m33s.jpg",
+        "video1/frames/08_t00m39s.jpg"
+      ],
+      "transcript": "video1/transcript.txt",
+      "language": "en",
+      "url": "https://www.instagram.com/reel/DdiCSwPxGJS/",
+      "source_meta": {
+        "title": "Video by bengusberg",
+        "uploader": "Ben Gusberg",
+        "channel": "bengusberg",
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DdiCSwPxGJS/",
+        "description": "It’s cool that he shared this! #claude #chatgpt #ai #aitips #founder"
+      }
+    }
+  ]
+}
