@@ -1,0 +1,13 @@
+[00:00] This guy won an Anthropic hackathon and then gave his entire Claude setup away for free.
+[00:04] 68 agents, 292 skills and over 260,000 stars on GitHub.
+[00:09] Here's how to get the ultimate Claude setup for free.
+[00:12] I'm Ben Gusberg, I'm a Stanford founder of an AI startup we've raised $4 million.
+[00:15] The setup is called Everything Claude Code.
+[00:17] It gives Claude a coordinated engineering system and a toolbox.
+[00:21] It plans before it builds, verifies changes with tests,
+[00:24] reviews its own work, and turns repeated wins into reusable skills.
+[00:28] Over 260,000 people have already used it.
+[00:30] To set it up yourself, just go to this GitHub repo,
+[00:33] copy and paste the URL into Claude and ask it to help you install.
+[00:36] Try it out and let me know what you build.
+[00:38] I'm Ben Gusberg, follow me for more on AI founder life and leadership.
