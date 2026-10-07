@@ -6,7 +6,7 @@ one shared centre, and every letter is the font's own outline placed on its arc
 (type is expanded to outlines, no live text). Sizes are fractions of D, the
 outer diameter of the outer ring, so the same script builds any print size.
 
-    python3 build_seal.py --font zilla --width-in 12 --out out/
+    python3 build_seal.py --font arvo --width-in 12 --out out/ --print-png
 
 Writes seal-<font>.svg (print file, white on transparent), seal-<font>-navy.svg
 (preview on #001A58) and PNG renders of both. The temple goes in as the traced
@@ -201,7 +201,23 @@ def temple(D, field_r_new):
             f'height="{bh * k:.4f}" href="data:image/png;base64,{b64}"/>'), "raster"
 
 
-def build(font_key, width_in, out_dir, motto_track, title_track, small_track, motto_span=None):
+def export_print_png(svg_path, width_in, out_path, ppi=300):
+    """Tapstitch print file (BRAND.md section 8): PNG, ink to ink at full size,
+    every pixel set to the ink colour (white) so hidden pixels cannot average into
+    grey halos, and alpha either fully ink or fully clear (PRINT-06: no tints)."""
+    import cairosvg
+    import numpy as np
+    from PIL import Image
+    px = round(width_in * ppi)
+    buf = cairosvg.svg2png(url=svg_path, output_width=px, output_height=px)
+    a = np.asarray(Image.open(io.BytesIO(buf)).convert("RGBA"))[:, :, 3]
+    alpha = np.where(a >= 128, 255, 0).astype(np.uint8)
+    rgba = np.dstack([np.full_like(alpha, 255)] * 3 + [alpha])
+    Image.fromarray(rgba, "RGBA").save(out_path, dpi=(ppi, ppi))
+    print(f"  print file {out_path}: {px} x {px} px at {ppi} ppi")
+
+
+def build(font_key, width_in, out_dir, motto_track, title_track, small_track, motto_span=None, print_png=False):
     face = Face(FONTS[font_key])
     D = width_in * 25.4
     c = D / 2
@@ -242,6 +258,9 @@ def build(font_key, width_in, out_dir, motto_track, title_track, small_track, mo
     px = 2048
     cairosvg.svg2png(url=base + "-navy.svg", write_to=base + "-navy.png", output_width=px, output_height=px)
     cairosvg.svg2png(url=base + ".svg", write_to=base + ".png", output_width=px, output_height=px)
+    if print_png:
+        export_print_png(base + ".svg", width_in, os.path.join(
+            out_dir, f"jacket-seal-{font_key}-{width_in:g}in-print.png"))
     print(f"{font_key}: D {D:.1f} mm, motto span {m_span:.1f} deg (track {motto_track}), "
           f"title span {t_span:.1f} deg (track {title_track}), EST span {e_span:.1f} deg (track {small_track}), "
           f"temple {art_kind}")
@@ -251,7 +270,7 @@ def build(font_key, width_in, out_dir, motto_track, title_track, small_track, mo
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--font", choices=sorted(FONTS), default="zilla")
+    ap.add_argument("--font", choices=sorted(FONTS), default="arvo")   # chosen by Evan, 7 Oct 2026
     ap.add_argument("--width-in", type=float, default=12.0)
     ap.add_argument("--out", default=os.path.join(HERE, "out"))
     ap.add_argument("--motto-track", type=float, default=200)
@@ -260,5 +279,7 @@ if __name__ == "__main__":
                     help="tracking for EST. 2023 and UTAH, USA; default matches the motto")
     ap.add_argument("--motto-span", type=float, default=290,
                     help="degrees the motto covers, centred on 12 o'clock; 0 uses --motto-track")
+    ap.add_argument("--print-png", action="store_true",
+                    help="also write the flattened Tapstitch print PNG at 300 ppi")
     a = ap.parse_args()
-    build(a.font, a.width_in, a.out, a.motto_track, a.title_track, a.small_track, a.motto_span or None)
+    build(a.font, a.width_in, a.out, a.motto_track, a.title_track, a.small_track, a.motto_span or None, a.print_png)

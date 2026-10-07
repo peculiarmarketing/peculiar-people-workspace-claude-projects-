@@ -64,3 +64,17 @@ and Raleway default to old-style figures.
   caption offset 0.0.
 - Still FAILS: the temple's lightest lines (0.24 mm) on every method. Brand call,
   see REPORT.md finding 3.
+
+## Chosen: Arvo Bold (Evan, 7 October 2026)
+
+`Peculiar People Seal/` holds the finished files for `Other designs/`:
+
+| File | What it is |
+|---|---|
+| `Peculiar People Seal white.png` | print file, white ink, 3600 x 3600 px at 300 ppi (12 in), transparent |
+| `Peculiar People Seal black.png` | the same in black ink |
+| `Peculiar People Seal white.svg` / `black.svg` | vector sources |
+
+The PNGs follow the BRAND.md section 8 file rules: every pixel, visible or not,
+carries the ink colour, and alpha is fully ink or fully clear (no tints). Rebuild
+with `python3 build_seal.py --print-png` (Arvo is now the default).
