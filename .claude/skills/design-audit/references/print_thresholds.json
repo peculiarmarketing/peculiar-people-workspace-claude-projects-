@@ -1,0 +1,10 @@
+{
+  "_note": "PROVISIONAL, replaced from research below",
+  "methods": {
+    "screen": {"min_line_mm": 0.353, "min_gap_mm": 0.99},
+    "dtf": {"min_line_mm": 0.455, "min_gap_mm": 0.5},
+    "dtg": {"min_line_mm": 0.5, "min_gap_mm": 0.5}
+  },
+  "text": {"min_positive_text_pt": 8, "min_reversed_text_pt": 18, "cap_height_to_em": 0.68},
+  "spread_preview_mm": 0.1
+}
