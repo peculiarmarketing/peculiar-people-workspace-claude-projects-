@@ -13,7 +13,7 @@ Mirror of the Claude Code workspace, as of 7 October 2026. The source of truth l
 - `Temples READY/`: 99 temples with verified reference photos, waiting for art.
 - `Temples TO DO/`: queue for the ref finder.
 - `Important Elements/`: logos (black, white, square, Spanish), Evan's signature, size guide videos.
-- `Other designs/`: Be Peculiar wordmarks (English and Spanish), Dot the earth, Angel Moroni (flag before use).
+- `Other designs/`: Be Peculiar wordmarks (English and Spanish), Dot the earth, Angel Moroni (flag before use), Peculiar People Seal (jacket back seal, white and black ink; source and build script in `Claude Projects/designs/jacket-seal/`).
 - `Website : Social assets/`: slider images, product photography, temple collage.
 - `Posts/`: CapCut ad drafts, Kirtland recordings, story audio.
 - `Claude Projects/`: all automation, skills and research.

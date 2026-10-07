@@ -1,0 +1,623 @@
+{
+  "D_px": 3199.86,
+  "method": "all",
+  "smallest_width_in": 12.0,
+  "binding": {
+    "line_fail_mm": 0.71,
+    "line_fail_mm_from": "dtg",
+    "gap_fail_mm": 0.53,
+    "gap_fail_mm_from": "screen",
+    "line_warn_mm": 1.06,
+    "line_warn_mm_from": "dtg",
+    "gap_warn_mm": 1.0,
+    "gap_warn_mm_from": "dtf"
+  },
+  "floors_frac_D": {
+    "line_floor": 0.00233,
+    "line_margin": 0.00348,
+    "gap_floor": 0.00174,
+    "gap_margin": 0.00328,
+    "cap_floor": 0.00787
+  },
+  "elements": [
+    {
+      "element": "ring3 stroke",
+      "target_frac_D": 0.00615,
+      "current_frac_D": 0.00419,
+      "rule": "LINE-02, SEAL-03, PRINT-01",
+      "note": "rank 1 of 4 by weight; steps [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 1.876,
+          "pt": 5.32
+        }
+      },
+      "margin_frac_D": 0.00615,
+      "margin_at": {
+        "12in": {
+          "mm": 1.876,
+          "pt": 5.32
+        }
+      }
+    },
+    {
+      "element": "ring2 stroke",
+      "target_frac_D": 0.01231,
+      "current_frac_D": 0.00445,
+      "rule": "LINE-02, SEAL-03, PRINT-01",
+      "note": "rank 2 of 4 by weight; steps [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 3.751,
+          "pt": 10.63
+        }
+      },
+      "margin_frac_D": 0.01231,
+      "margin_at": {
+        "12in": {
+          "mm": 3.751,
+          "pt": 10.63
+        }
+      }
+    },
+    {
+      "element": "ring1 stroke",
+      "target_frac_D": 0.02461,
+      "current_frac_D": 0.00803,
+      "rule": "LINE-02, SEAL-03, PRINT-01",
+      "note": "rank 3 of 4 by weight; steps [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 7.502,
+          "pt": 21.27
+        }
+      },
+      "margin_frac_D": 0.02461,
+      "margin_at": {
+        "12in": {
+          "mm": 7.502,
+          "pt": 21.27
+        }
+      }
+    },
+    {
+      "element": "ring4 stroke",
+      "target_frac_D": 0.02461,
+      "current_frac_D": 0.00831,
+      "rule": "LINE-02, SEAL-03, PRINT-01",
+      "note": "rank 4 of 4 by weight; steps [1, 2, 4]",
+      "at": {
+        "12in": {
+          "mm": 7.502,
+          "pt": 21.27
+        }
+      },
+      "margin_frac_D": 0.02461,
+      "margin_at": {
+        "12in": {
+          "mm": 7.502,
+          "pt": 21.27
+        }
+      }
+    },
+    {
+      "element": "gap ring1 to ring2",
+      "target_frac_D": 0.048,
+      "current_frac_D": 0.048,
+      "rule": "SEAL-02, PRINT-03",
+      "note": "edge to edge; now 153.6 to 153.6 px around the circle, make it uniform",
+      "at": {
+        "12in": {
+          "mm": 14.63,
+          "pt": 41.47
+        }
+      }
+    },
+    {
+      "element": "gap ring2 to ring3",
+      "target_frac_D": 0.07021,
+      "current_frac_D": 0.07021,
+      "rule": "SEAL-02, PRINT-03",
+      "note": "edge to edge; now 224.7 to 224.7 px around the circle, make it uniform",
+      "at": {
+        "12in": {
+          "mm": 21.4,
+          "pt": 60.66
+        }
+      }
+    },
+    {
+      "element": "gap ring3 to ring4",
+      "target_frac_D": 0.00779,
+      "current_frac_D": 0.00779,
+      "rule": "SEAL-02, PRINT-03",
+      "note": "edge to edge; now 24.9 to 24.9 px around the circle, make it uniform",
+      "at": {
+        "12in": {
+          "mm": 2.375,
+          "pt": 6.73
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 cap height",
+      "target_frac_D": 0.01821,
+      "current_frac_D": 0.01821,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type (cap 2.40 mm) at 12 in; no source fixes cap height as a share of the band, so a clearing size is kept",
+      "at": {
+        "12in": {
+          "mm": 5.55,
+          "pt": 15.73
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 thinnest stroke (hairline)",
+      "target_frac_D": 0.00297,
+      "current_frac_D": 0.00297,
+      "rule": "PRINT-02, TYPE-07",
+      "note": "floor is the binding fail level; margin is the warn level",
+      "at": {
+        "12in": {
+          "mm": 0.905,
+          "pt": 2.57
+        }
+      },
+      "margin_frac_D": 0.00348,
+      "margin_at": {
+        "12in": {
+          "mm": 1.06,
+          "pt": 3.0
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2 narrowest letter gap",
+      "target_frac_D": 0.01634,
+      "current_frac_D": 0.01634,
+      "rule": "PRINT-03, TYPE-03",
+      "note": "one tracking value per arc; spacing varies 3.0% (cv)",
+      "at": {
+        "12in": {
+          "mm": 4.98,
+          "pt": 14.12
+        }
+      },
+      "margin_frac_D": 0.01634,
+      "margin_at": {
+        "12in": {
+          "mm": 4.98,
+          "pt": 14.12
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2: clearance to each ring",
+      "target_frac_D": 0.01446,
+      "current_frac_D": null,
+      "rule": "SEAL-04",
+      "note": "now 46.9 px outside vs 45.6 px inside; set equal",
+      "at": {
+        "12in": {
+          "mm": 4.408,
+          "pt": 12.49
+        }
+      }
+    },
+    {
+      "element": "top text in ring1/ring2: centre-line radius",
+      "target_frac_D": 0.46797,
+      "current_frac_D": 0.46776,
+      "rule": "SEAL-04, TYPE-06",
+      "note": "",
+      "at": {
+        "12in": {
+          "mm": 142.636,
+          "pt": 404.32
+        }
+      }
+    },
+    {
+      "element": "dividers in ring1/ring2",
+      "target_frac_D": 0.0225,
+      "current_frac_D": 0.0225,
+      "rule": "SEAL-05, SEAL-08",
+      "note": "same orientation to the path at every position; centre each on the text centre line",
+      "at": {
+        "12in": {
+          "mm": 6.858,
+          "pt": 19.44
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 cap height",
+      "target_frac_D": 0.03082,
+      "current_frac_D": 0.03082,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type (cap 2.40 mm) at 12 in; no source fixes cap height as a share of the band, so a clearing size is kept",
+      "at": {
+        "12in": {
+          "mm": 9.393,
+          "pt": 26.63
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 thinnest stroke (hairline)",
+      "target_frac_D": 0.00516,
+      "current_frac_D": 0.00516,
+      "rule": "PRINT-02, TYPE-07",
+      "note": "floor is the binding fail level; margin is the warn level",
+      "at": {
+        "12in": {
+          "mm": 1.572,
+          "pt": 4.46
+        }
+      },
+      "margin_frac_D": 0.00516,
+      "margin_at": {
+        "12in": {
+          "mm": 1.572,
+          "pt": 4.46
+        }
+      }
+    },
+    {
+      "element": "top text in ring2/ring3 narrowest letter gap",
+      "target_frac_D": 0.00287,
+      "current_frac_D": 0.00287,
+      "rule": "PRINT-03, TYPE-03",
+      "note": "one tracking value per arc; spacing varies 18.2% (cv)",
+      "at": {
+        "12in": {
+          "mm": 0.873,
+          "pt": 2.48
+        }
+      },
+      "margin_frac_D": 0.00328,
+      "margin_at": {
+        "12in": {
+          "mm": 1.0,
+          "pt": 2.83
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 cap height",
+      "target_frac_D": 0.01837,
+      "current_frac_D": 0.01837,
+      "rule": "PRINT-05",
+      "note": "at least 10 pt type (cap 2.40 mm) at 12 in; no source fixes cap height as a share of the band, so a clearing size is kept",
+      "at": {
+        "12in": {
+          "mm": 5.598,
+          "pt": 15.87
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 thinnest stroke (hairline)",
+      "target_frac_D": 0.00297,
+      "current_frac_D": 0.00297,
+      "rule": "PRINT-02, TYPE-07",
+      "note": "floor is the binding fail level; margin is the warn level",
+      "at": {
+        "12in": {
+          "mm": 0.905,
+          "pt": 2.57
+        }
+      },
+      "margin_frac_D": 0.00348,
+      "margin_at": {
+        "12in": {
+          "mm": 1.06,
+          "pt": 3.0
+        }
+      }
+    },
+    {
+      "element": "bottom text in ring2/ring3 narrowest letter gap",
+      "target_frac_D": 0.01647,
+      "current_frac_D": 0.01647,
+      "rule": "PRINT-03, TYPE-03",
+      "note": "one tracking value per arc; spacing varies 2.9% (cv)",
+      "at": {
+        "12in": {
+          "mm": 5.02,
+          "pt": 14.23
+        }
+      },
+      "margin_frac_D": 0.01647,
+      "margin_at": {
+        "12in": {
+          "mm": 5.02,
+          "pt": 14.23
+        }
+      }
+    },
+    {
+      "element": "centre-line radius for both arcs in ring2/ring3",
+      "target_frac_D": 0.40441,
+      "current_frac_D": null,
+      "rule": "TYPE-06",
+      "note": "zone centre line between the rings; now 1294.0 px (top) and 1293.9 px (bottom)",
+      "at": {
+        "12in": {
+          "mm": 123.265,
+          "pt": 349.41
+        }
+      }
+    },
+    {
+      "element": "dividers in ring2/ring3",
+      "target_frac_D": 0.0225,
+      "current_frac_D": 0.0225,
+      "rule": "SEAL-05, SEAL-08",
+      "note": "same orientation to the path at every position; centre each on the text centre line",
+      "at": {
+        "12in": {
+          "mm": 6.858,
+          "pt": 19.44
+        }
+      }
+    },
+    {
+      "element": "art-plus-caption block centre, above the ring centre",
+      "target_frac_D": 0.012,
+      "current_frac_D": 0.03437,
+      "rule": "COMP-02",
+      "note": "target 0 to 5 percent of the field height above centre (0.012 D is a middle value); current: positive is above centre, negative below",
+      "at": {
+        "12in": {
+          "mm": 3.658,
+          "pt": 10.37
+        }
+      }
+    },
+    {
+      "element": "art clearance to inner ring (minimum)",
+      "target_frac_D": 0.02992,
+      "current_frac_D": 0.02992,
+      "rule": "SEAL-06",
+      "note": "keep at least the smallest text-to-ring clearance",
+      "at": {
+        "12in": {
+          "mm": 9.121,
+          "pt": 25.85
+        }
+      }
+    },
+    {
+      "element": "caption cap height",
+      "target_frac_D": 0.01844,
+      "current_frac_D": 0.01844,
+      "rule": "PRINT-05, RATIO-03",
+      "note": "",
+      "at": {
+        "12in": {
+          "mm": 5.62,
+          "pt": 15.93
+        }
+      }
+    },
+    {
+      "element": "caption thinnest stroke (hairline)",
+      "target_frac_D": 0.00297,
+      "current_frac_D": 0.00297,
+      "rule": "PRINT-02, TYPE-07",
+      "note": "sturdier face or larger size",
+      "at": {
+        "12in": {
+          "mm": 0.905,
+          "pt": 2.57
+        }
+      },
+      "margin_frac_D": 0.00348,
+      "margin_at": {
+        "12in": {
+          "mm": 1.06,
+          "pt": 3.0
+        }
+      }
+    },
+    {
+      "element": "art to caption gap",
+      "target_frac_D": 0.02344,
+      "current_frac_D": 0.02344,
+      "rule": "COMP-04",
+      "note": "",
+      "at": {
+        "12in": {
+          "mm": 7.144,
+          "pt": 20.25
+        }
+      }
+    }
+  ],
+  "geometry_now": [
+    {
+      "element": "ring1 outer edge radius",
+      "frac_D": 0.5,
+      "at": {
+        "12in": {
+          "mm": 152.4,
+          "pt": 432.0
+        }
+      }
+    },
+    {
+      "element": "ring1 inner edge radius",
+      "frac_D": 0.49197,
+      "at": {
+        "12in": {
+          "mm": 149.951,
+          "pt": 425.06
+        }
+      }
+    },
+    {
+      "element": "ring2 outer edge radius",
+      "frac_D": 0.44397,
+      "at": {
+        "12in": {
+          "mm": 135.321,
+          "pt": 383.59
+        }
+      }
+    },
+    {
+      "element": "ring2 inner edge radius",
+      "frac_D": 0.43952,
+      "at": {
+        "12in": {
+          "mm": 133.965,
+          "pt": 379.74
+        }
+      }
+    },
+    {
+      "element": "ring3 outer edge radius",
+      "frac_D": 0.36931,
+      "at": {
+        "12in": {
+          "mm": 112.565,
+          "pt": 319.08
+        }
+      }
+    },
+    {
+      "element": "ring3 inner edge radius",
+      "frac_D": 0.36511,
+      "at": {
+        "12in": {
+          "mm": 111.286,
+          "pt": 315.46
+        }
+      }
+    },
+    {
+      "element": "ring4 outer edge radius",
+      "frac_D": 0.35732,
+      "at": {
+        "12in": {
+          "mm": 108.912,
+          "pt": 308.73
+        }
+      }
+    },
+    {
+      "element": "ring4 inner edge radius",
+      "frac_D": 0.34901,
+      "at": {
+        "12in": {
+          "mm": 106.379,
+          "pt": 301.55
+        }
+      }
+    },
+    {
+      "element": "top text centre-line radius in ring1/ring2",
+      "frac_D": 0.46776,
+      "at": {
+        "12in": {
+          "mm": 142.573,
+          "pt": 404.14
+        }
+      }
+    },
+    {
+      "element": "top text centre-line radius in ring2/ring3",
+      "frac_D": 0.40438,
+      "at": {
+        "12in": {
+          "mm": 123.254,
+          "pt": 349.38
+        }
+      }
+    },
+    {
+      "element": "bottom text centre-line radius in ring2/ring3",
+      "frac_D": 0.40436,
+      "at": {
+        "12in": {
+          "mm": 123.249,
+          "pt": 349.37
+        }
+      }
+    },
+    {
+      "element": "inner field diameter",
+      "frac_D": 0.69802,
+      "at": {
+        "12in": {
+          "mm": 212.758,
+          "pt": 603.09
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check": "top text in ring1/ring2: stroke-to-cap ratio",
+      "at_floor": 0.128,
+      "at_margin": 0.191,
+      "reading": "under 0.10 most text faces; 0.10 to 0.15 a medium monoline; 0.15 to 0.20 a bold monoline; over 0.20 no ordinary face: grow the type or settle the larger print width"
+    },
+    {
+      "check": "top text in ring1/ring2: three strokes plus two counters fit the cap height (E, B)",
+      "needed_frac_D": 0.01047,
+      "cap_frac_D": 0.01821,
+      "fits": true
+    },
+    {
+      "check": "top text in ring1/ring2: arc room before the next element",
+      "px": 880.9,
+      "frac_D": 0.27529,
+      "reading": "if heavier strokes or wider gaps lengthen the line by more than twice this, it no longer fits between its neighbours: shorten it, move dividers, or settle the larger width"
+    },
+    {
+      "check": "top text in ring2/ring3: stroke-to-cap ratio",
+      "at_floor": 0.076,
+      "at_margin": 0.113,
+      "reading": "under 0.10 most text faces; 0.10 to 0.15 a medium monoline; 0.15 to 0.20 a bold monoline; over 0.20 no ordinary face: grow the type or settle the larger print width"
+    },
+    {
+      "check": "top text in ring2/ring3: three strokes plus two counters fit the cap height (E, B)",
+      "needed_frac_D": 0.01047,
+      "cap_frac_D": 0.03082,
+      "fits": true
+    },
+    {
+      "check": "top text in ring2/ring3: arc room before the next element",
+      "px": 1307.1,
+      "frac_D": 0.40849,
+      "reading": "if heavier strokes or wider gaps lengthen the line by more than twice this, it no longer fits between its neighbours: shorten it, move dividers, or settle the larger width"
+    },
+    {
+      "check": "bottom text in ring2/ring3: stroke-to-cap ratio",
+      "at_floor": 0.127,
+      "at_margin": 0.189,
+      "reading": "under 0.10 most text faces; 0.10 to 0.15 a medium monoline; 0.15 to 0.20 a bold monoline; over 0.20 no ordinary face: grow the type or settle the larger print width"
+    },
+    {
+      "check": "bottom text in ring2/ring3: three strokes plus two counters fit the cap height (E, B)",
+      "needed_frac_D": 0.01047,
+      "cap_frac_D": 0.01837,
+      "fits": true
+    },
+    {
+      "check": "bottom text in ring2/ring3: arc room before the next element",
+      "px": 1609.2,
+      "frac_D": 0.5029,
+      "reading": "if heavier strokes or wider gaps lengthen the line by more than twice this, it no longer fits between its neighbours: shorten it, move dividers, or settle the larger width"
+    }
+  ],
+  "anchor": {
+    "art_heaviest_weight_frac": 0.00615,
+    "base_floor_frac": 0.00615,
+    "base_margin_frac": 0.00615,
+    "note": "thinnest ring = max(line floor or margin at the smallest width, art's heaviest line)"
+  }
+}

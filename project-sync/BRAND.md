@@ -523,7 +523,7 @@ Asset locations, all under `1. Peculiar People/`:
 - `Temples/` art source of truth, 45 folders, black and white SVGs plus facts fragments
 - `Temples READY/` 99 temples with references gathered
 - `Important Elements/` logos (black, white, square, Spanish), Evan's signature, size guide videos
-- `Other designs/` Angel Moroni, Be Peculiar (English and Spanish)
+- `Other designs/` Angel Moroni, Be Peculiar (English and Spanish), Peculiar People Seal (jacket back seal, white and black ink)
 - `Website : Social assets/` slider images, product photography, temple collage
 - `Posts/` CapCut ad drafts, Kirtland recordings, story audio
 - `Claude Projects/` all automation and skills
