@@ -46,7 +46,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - 136 active products: 45 temples on the tee, sweatshirt and hoodie, plus the Temple Art File.
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
-- Zero orders. Distribution is the only constraint.
+- Zero customer orders. Distribution is the only constraint. Test order #1001 (7 October 2026, Temple Art File Boise, $4.95) went through checkout, was paid, and auto-fulfilled in 8 seconds, so checkout and the digital path are verified. A physical tee or hoodie order through Tapstitch has not been tested.
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
@@ -56,7 +56,7 @@ Still open for Evan:
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - The storefront overhaul doc still says Boise is unfinished; its "State as of" section needs the completed rollout.
-- Test purchase to verify checkout (first priority in BRAND.md section 17).
+- Optional: place one physical test order (a tee or hoodie) to confirm the Shopify to Tapstitch hand-off. Cancel it in Tapstitch before it ships if you do not want the garment. The checkout test itself is done.
 - Beachhead temples not yet picked.
 - Optional: the Meta developer app "Message Reader" (Peculiar Marketing LLC) is no longer used by anything. Delete it in the Meta dashboard, and remove it under Instagram Settings > Apps and websites on both accounts, if you want no app holding access.
 
