@@ -1,0 +1,210 @@
+{
+ "id": "720941af-8669-42e8-b12b-7e57304d48ae",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=iVDU0oDNuVE",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "In this video, I'm going to show you my exact process for prompting sections with Claude...",
+   "label": "Opening Hook",
+   "visual": "A fair-skinned young man in his late 20s with short, dark brown hair and glasses is seated at a wooden desk. He is wearing a dark green pullover sweater and large white over-ear headphones. He holds a white ceramic mug with both hands, positioned in front of his chest. A laptop and a monitor are on either side of him. The lighting is soft and neutral, casting gentle shadows. The background is a white wall with a sloped ceiling, indicative of an attic or top-floor office.",
+   "shot_type": "Medium Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:01",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "...and how to automatically update your theme's code...",
+   "label": "Product Information",
+   "visual": "Screen recording of a software interface with a dark theme. A cursor moves across the screen, highlighting various menu options and text fields. The interface displays code snippets and project management tools. The color palette is dark gray, white, and subtle orange accents.",
+   "shot_type": "Close-Up",
+   "scene_number": 2,
+   "timestamp_end": "0:02",
+   "timestamp_start": "0:01"
+  },
+  {
+   "audio": "...so that you can use the prompted section in your theme. But before discussing this method, I used to...",
+   "label": "Product Selling Points",
+   "visual": "The same man from scene 1 continues speaking from the same position. He uses hand gestures to emphasize his points, occasionally shifting the white mug slightly. The camera remains static, maintaining the same framing and lighting as the opening shot.",
+   "shot_type": "Medium Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:09",
+   "timestamp_start": "0:02"
+  },
+  {
+   "audio": "...use Shopify's AI block-generated feature inside a theme, which is still a good method if you need to prompt a section quickly. For those of you that don't know, to prompt a section with Shopify's AI, all you need to do is go into your theme, hit add section, then select generate and describe the section you need.",
+   "label": "Problem Solving",
+   "visual": "A series of screen recordings showing the Shopify theme editor. A cursor interacts with various UI elements, such as 'Add section', 'Generate', and 'Edit theme'. The screen displays a website preview with the text 'We created this with Claude'. The interface is clean, primarily white and blue, with high contrast.",
+   "shot_type": "Close-Up",
+   "scene_number": 4,
+   "timestamp_end": "0:28",
+   "timestamp_start": "0:09"
+  },
+  {
+   "audio": "However, that method gives you very little control over building sections...",
+   "label": "Usage Scenarios",
+   "visual": "Back to the man at his desk. He is still wearing the green sweater and headphones, holding the mug. He looks directly at the camera with a focused expression. The setup is unchanged from previous scenes.",
+   "shot_type": "Medium Shot",
+   "scene_number": 5,
+   "timestamp_end": "0:29",
+   "timestamp_start": "0:28"
+  },
+  {
+   "audio": "...and it's better to iterate on a prompt which leads people to start prompting sections in Claude...",
+   "label": "Real Experience",
+   "visual": "Screen recording of a dark-themed AI chat interface. A user types 'Code a marquee Shopify section that says \"built with claude\"' into a text input field. The interface is minimalist, with a prominent search bar and a few action buttons.",
+   "shot_type": "Close-Up",
+   "scene_number": 6,
+   "timestamp_end": "0:34",
+   "timestamp_start": "0:29"
+  },
+  {
+   "audio": "...and then copying and pasting the code inside of a theme.",
+   "label": "Usage Scenarios",
+   "visual": "Close-up of the man's face and upper torso. He gestures with his right hand while holding the mug in his left. His expression is informative and engaging. The lighting and background are consistent with previous shots of him.",
+   "shot_type": "Medium Shot",
+   "scene_number": 7,
+   "timestamp_end": "0:35",
+   "timestamp_start": "0:34"
+  },
+  {
+   "audio": "You can do this by copying the code generated from Claude, selecting edit theme, creating a new section in the sections folder and pasting the code in. Then, inside the Shopify theme customizer, you can see your newly created section. But, as you can see, this can be arduous...",
+   "label": "Product Selling Points",
+   "visual": "A montage of screen recordings showing a code editor, a file explorer, and the Shopify admin interface. The cursor demonstrates the manual process of copying code, creating a new section file, and pasting the code. The visuals alternate between dark code editors and light web interfaces.",
+   "shot_type": "Close-Up",
+   "scene_number": 8,
+   "timestamp_end": "0:53",
+   "timestamp_start": "0:35"
+  },
+  {
+   "audio": "...and we can actually just connect Claude directly to your theme to transfer code...",
+   "label": "Problem Solving",
+   "visual": "The man continues his explanation, his hands moving to illustrate the connectivity he's describing. He holds the mug casually. The shot remains static, focused on his delivery and body language.",
+   "shot_type": "Medium Shot",
+   "scene_number": 9,
+   "timestamp_end": "0:57",
+   "timestamp_start": "0:53"
+  },
+  {
+   "audio": "...using a tool called GitHub and Claude Co-work.",
+   "label": "Product Information",
+   "visual": "A fast-paced screen recording showing the GitHub website and the Claude interface. The cursor quickly navigates through repository settings and project menus. The visuals are crisp and high-resolution, highlighting specific technical terms and icons.",
+   "shot_type": "Close-Up",
+   "scene_number": 10,
+   "timestamp_end": "1:00",
+   "timestamp_start": "0:57"
+  },
+  {
+   "audio": "Also quick shoutout to WebEx, they were the ones that showed me this process in the first first place. What you'll need...",
+   "label": "Usage Scenarios",
+   "visual": "The man gives a thumbs-up gesture while still holding the white mug. He smiles slightly, conveying a sense of helpfulness and success. The background and lighting remain unchanged, providing a consistent visual anchor.",
+   "shot_type": "Medium Shot",
+   "scene_number": 11,
+   "timestamp_end": "1:05",
+   "timestamp_start": "1:00"
+  },
+  {
+   "audio": "...to get started is a Claude Pro plan at the very least just because you'll need Co-work, and you'll also need GitHub Desktop or at least it's highly recommended.",
+   "label": "Product Information",
+   "visual": "Screen recordings of the Claude pricing page, showing 'Free', 'Pro', and other plans, followed by the GitHub Desktop download page. The cursor highlights the 'Pro' plan and the download button for macOS. The colors are vibrant, primarily green and blue on white backgrounds.",
+   "shot_type": "Close-Up",
+   "scene_number": 12,
+   "timestamp_end": "1:15",
+   "timestamp_start": "1:05"
+  },
+  {
+   "audio": "Then, hop over into Shopify, go over to a theme that you want to download, click on the three dots and then hit download theme.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of the Shopify admin panel. The cursor clicks on a theme's three-dot menu and selects 'Download theme file'. The interface is typical of Shopify, with a clean layout and clear labels.",
+   "shot_type": "Close-Up",
+   "scene_number": 13,
+   "timestamp_end": "1:22",
+   "timestamp_start": "1:15"
+  },
+  {
+   "audio": "Then what you'll want to do is download the theme from your email, copy over the theme once it's unzipped into your files, and then you should see a bunch of files such as assets, blocks, config, and so on. I personally put my file inside of a folder called Themes inside of Documents.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of a file explorer window. The user is organizing files into a folder named 'Themes' within 'Documents'. The files are typical for a Shopify theme (assets, blocks, config, etc.). The interface is the standard macOS Finder, with a light gray and white color scheme.",
+   "shot_type": "Close-Up",
+   "scene_number": 14,
+   "timestamp_end": "1:39",
+   "timestamp_start": "1:22"
+  },
+  {
+   "audio": "Then, what you want to do is after you have installed GitHub Desktop, you want to go over to the top, hit add, press add existing repository, choose your path. Again, mine is inside of documents, and I have YouTube theme here. Then I'm going to create it as a new repository. I'm not going to initialize anything in it and I am going to hit create repository. Then what we'll want to do is publish our repository. You can add it into an organization and I'll keep the code private.",
+   "label": "Usage Scenarios",
+   "visual": "A detailed screen recording showing the setup process in GitHub Desktop. The user adds an existing repository, selects the theme folder, publishes the repository, and makes it private. The interface is dark-themed, with white text and blue accents for primary actions.",
+   "shot_type": "Close-Up",
+   "scene_number": 15,
+   "timestamp_end": "2:10",
+   "timestamp_start": "1:39"
+  },
+  {
+   "audio": "Great, once that's done, you'll want to go over into import, connect from GitHub, then connect to your GitHub account. I have it under my personal account and then we're going to select the theme we just added into GitHub. And right now we have one branch and it is called main. Great, so once we have our theme added in, now we'll want to connect it to Claude.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of the Shopify 'Connect from GitHub' flow. The user selects their GitHub account and the newly created repository. The interface is white with blue and green progress indicators. A small picture-in-picture of the man in the green sweater is visible in the bottom right corner.",
+   "shot_type": "Close-Up",
+   "scene_number": 16,
+   "timestamp_end": "2:36",
+   "timestamp_start": "2:10"
+  },
+  {
+   "audio": "So what we're going to do is go over into our GitHub and you'll notice your new repository created. Then under settings, go over into developer settings. Then we're going to go into personal access tokens and fine-grained tokens. Then we're going to generate a new token. I'm going to call this YouTube theme. It's going to be under my name. You can set an expiration date which is probably recommended but for this I'll hit no expiration. And we're only going to select the repository that we just created. It's called YouTube theme. What I'll end up doing is creating a new token for every single repository that I create. And then you'll want to add permissions, type in content, and then change contents to read and write. Then hit generate token. Now, on this screen, you'll want to copy this token over here...",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording showing the generation of a personal access token in GitHub's developer settings. The user sets permissions to 'Read and write' for 'Contents'. The interface is standard GitHub, with a mix of light and dark elements. The man's picture-in-picture continues to be visible, providing a persistent guide.",
+   "shot_type": "Close-Up",
+   "scene_number": 17,
+   "timestamp_end": "3:24",
+   "timestamp_start": "2:36"
+  },
+  {
+   "audio": "...and as soon as you leave this screen you won't be able to access this token again so make sure you copy it. Then inside of Claude, make sure you go into Co-work and then projects and then select new project. Start project from scratch. I'll call this YouTube Theme and we'll want to select the file that we have our theme in. So, again, I have it under a folder called themes in documents. I'm going to select YouTube theme, which is my newly created theme and hit open, then I'm going to hit create.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of the Claude Co-work interface. The user creates a new project, names it 'YouTube Theme', and selects the theme folder from their computer. The interface is dark with a clean, modern aesthetic. The man's picture-in-picture is still present.",
+   "shot_type": "Close-Up",
+   "scene_number": 18,
+   "timestamp_end": "3:47",
+   "timestamp_start": "3:24"
+  },
+  {
+   "audio": "So for our first prompt, what we'll want to do is type in git remote set-url origin and then make sure that we add HTTPS in front of our key that we have pasted in here and then we're going to want to do at github.com slash our username slash the repository dot git. I'll have a formula in the description of this video and again kudos to WebEx for figuring this one out. I'm going to now submit this. Okay, so now we have it set up inside of Claude. Make sure that you use, you know, gitignore if you intend to, you know, store this key somewhere. You should try to keep it somewhat private here. For this video, not too worried about that because I will delete the key.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of the user entering a git command into the Claude Co-work console, including the copied access token. The man's picture-in-picture is still visible. The command is successfully executed, indicated by a confirmation message in the console.",
+   "shot_type": "Close-Up",
+   "scene_number": 19,
+   "timestamp_end": "4:28",
+   "timestamp_start": "3:47"
+  },
+  {
+   "audio": "Now let's prompt our section. Let's tell it to create a simple call to action section that says we created this with Claude and then we'll say push to main theme in GitHub. As we can see here, it is creating the new file for us. So now we have our new section created and pushed over to the main theme, which is awesome.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording showing the user prompting Claude to create a new section and push it to the GitHub repository. The man's picture-in-picture is still visible. The interface shows progress bars as the code is generated and the file is written and pushed.",
+   "shot_type": "Close-Up",
+   "scene_number": 20,
+   "timestamp_end": "4:53",
+   "timestamp_start": "4:28"
+  },
+  {
+   "audio": "So let's close this and let's hop into the theme. Again, it's YouTube main and so what we'll do is hit edit theme and now we can hit plus over here and we should now see our new Claude section and there you go. It's Claude CTA and there is our new section. And again we could end up prompting in Claude to revise the section if we need and honestly pretty efficient workflow.",
+   "label": "Usage Scenarios",
+   "visual": "Screen recording of the Shopify theme editor showing the newly added 'Claude CTA' section. The user navigates through the settings for this new section. The man's picture-in-picture is still present. The interface is light and high-contrast, clearly showing the new site element.",
+   "shot_type": "Close-Up",
+   "scene_number": 21,
+   "timestamp_end": "5:16",
+   "timestamp_start": "4:53"
+  },
+  {
+   "audio": "As you can see it's pretty efficient to prompt sections with Claude but if you want to skip that process entirely I built a library of professionally built sections that you can add into any theme. If that interests you click on this video here.",
+   "label": "Call to Action",
+   "visual": "The man is back in the full medium shot. He gestures towards the camera and then points to a hypothetical location on screen for a link. He is still holding the mug. The shot is identical in composition and lighting to the opening and intermediate shots of him.",
+   "shot_type": "Medium Shot",
+   "scene_number": 22,
+   "timestamp_end": "5:31",
+   "timestamp_start": "5:16"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:27.706802Z",
+ "updated_at": "2026-10-03T07:46:50.602858Z"
+}

@@ -1,0 +1,120 @@
+{
+ "id": "dae1c3fd-3c15-4df0-a2e7-8c9735e507cd",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=ptnWksC9TXY",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Shopify have just released the AI Toolkit, which is really cool and allows you to manage your store using Claude. I've tried it, it works really well, so let's do it together now.",
+   "label": "Opening Hook",
+   "visual": "A desktop screen recording showing a social media platform. A small picture-in-picture window in the bottom right corner features a man who appears to be in his late 20s or early 30s. He has short black hair, light skin, and wears glasses, a white t-shirt, and a dark grey zip-up jacket. He looks directly at the camera with a neutral expression and gestures slightly with his hands. The background is a plain wall. The desktop screen shows a post about the Shopify AI Toolkit, including a code snippet for optimizing products for SEO. The lighting is soft and natural, coming from the front.",
+   "shot_type": "Wide Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:09",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "So, first we're going to go to the Shopify AI Toolkit page on the developer documentation. And then there's these two sets of instructions here of how to install it. So I'm going to be installing it with Claude Code and it gives you the code to copy.",
+   "label": "Product Information",
+   "visual": "The man from Scene 1 continues to be shown in the picture-in-picture window, maintaining the same appearance and demeanor. The main screen shows the Shopify AI Toolkit developer documentation page. The mouse cursor moves to the 'Install with a plugin' section and clicks the 'Copy' button for the first command. The lighting and color grading remain consistent with the previous scene.",
+   "shot_type": "Wide Shot",
+   "scene_number": 2,
+   "timestamp_end": "0:23",
+   "timestamp_start": "0:09"
+  },
+  {
+   "audio": "So first I'm going to open the terminal, I'm going to launch Claude, dangerously skip permissions. I launch Claude this way so that it doesn't keep asking me about permissions and things like this. So I've initiated Claude and now I'm going to paste in that command: plugin marketplace add shopify-ai-toolkit. So it's successfully done that.",
+   "label": "Usage Scenarios",
+   "visual": "The man from Scene 1 is still in the picture-in-picture window. The main screen now shows a terminal window. The man types a command to launch Claude and then pastes the copied command to add the Shopify AI Toolkit marketplace. The terminal displays progress and success messages. The man continues to gesture and look at the camera occasionally.",
+   "shot_type": "Wide Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:47",
+   "timestamp_start": "0:23"
+  },
+  {
+   "audio": "And now there's the next command, so install the plugin. I'm going to copy that in. And you see it's given me these options at the bottom here: install for you, install for all collaborators, or you know, all these other options. So I'm going to install it for you, so user scope.",
+   "label": "Usage Scenarios",
+   "visual": "The man from Scene 1 remains in the picture-in-picture window. The main screen switches back to the documentation page. The mouse cursor clicks the 'Copy' button for the second command, then switches back to the terminal where the command is pasted and executed. The terminal shows the plugin details and installation options. The man selects the 'Install for you' option.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "1:05",
+   "timestamp_start": "0:47"
+  },
+  {
+   "audio": "That is done now as well. Now if I click on reload plugins. So that looks all good and now what is the next step? List out all of my active products on Shopify. It's probably going to ask me then for a link to my Shopify store to tell me like, you know, finish the setup. So let's see. It's asked me if I want to run the query directly against the store to fetch the results, I've said yes. So now it's asked me, yeah, for what is my store URL basically. So my Shopify store URL, so I'm going to paste that in now.",
+   "label": "Usage Scenarios",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The terminal shows the plugin installation success and the command to reload plugins. The man then types a command to list all active products on Shopify. The terminal displays the progress, launches a web browser for authentication, and then returns to show the query being built and executed.",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "1:59",
+   "timestamp_start": "1:05"
+  },
+  {
+   "audio": "So if I look at my actual website, the actual shorthand account name is actually Jons Nutrition. So I'm just going to paste this in instead, so Jons Nutrition. Now it's going to load up my website, it's now authenticated. It's going to proceed. It's loading the store info and it's listing out all of my active products. Super cool stuff, right?",
+   "label": "Usage Scenarios",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The main screen shows his Shopify store dashboard, then switches to the terminal where he types his store name. The terminal shows the authentication process, a browser window appears with an 'Authentication succeeded' message, and then the terminal displays a table listing his active products. The man smiles and gestures enthusiastically.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "2:31",
+   "timestamp_start": "1:59"
+  },
+  {
+   "audio": "And now let's show you some extra stuff. So let's first look at analytics and then let's look at editing actual store like themes and stuff like this. So first thing is like, what was my revenue for the past 30 days? What is my average order value and website conversion rate? Isn't this insane? Like, it's literally querying my store. I mean, I'm just thinking of all of the different possibilities you can do now that we have a direct connection to, you know, my Shopify store. I can ask it for analytics, you know, I can ask it for like monthly reporting, I can ask it for customer lifetime value, all this kind of stuff man, it's so cool. Okay, so it's now asked access to my store analytics, of course I'm going to say yes. Have everything you need, you know? Okay, let's go.",
+   "label": "Product Selling Points",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. In the terminal, he types a more complex query asking for revenue, average order value, and conversion rate for the past 30 days. The terminal displays the query progress and results, including another authentication step for data access. The man continues to explain the process and the power of the tool.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "3:33",
+   "timestamp_start": "2:31"
+  },
+  {
+   "audio": "I don't know about you guys but what other software you've added into your Claude stack, but you know I've added like pretty much my entire work stack at this point. Okay cool, so here's your store summary for the past 30 days: total revenue, average order value, sessions, and conversion rate. Awesome.",
+   "label": "Real Experience",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The terminal displays the store summary for the past 30 days in a table format. The man points at the screen in the picture-in-picture window and explains his experience with adding his work stack to Claude. The lighting and color grading remain consistent.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "4:00",
+   "timestamp_start": "3:33"
+  },
+  {
+   "audio": "Okay, now what was my customer lifetime value over the last six months? So this is more of a tricky question, right? Because Shopify might not necessarily have this in the reports that easily. So maybe it's going to have to do some calculations and things like this. And normally like before, I had to get an app called LifetimeLy and that told me all of my customer lifetime value statistics and all these kinds of things. But let's see if this can also find this out. You see, so Shopify doesn't have a built-in customer lifetime value metric in the Shopify QL, but I can calculate it from component metrics. So it's actually going to calculate these metrics from the data that it can get. So it's got the revenue, it's got the orders, let me fix the customer queries. And here you can see it's calculated customer lifetime values. So it's calculated the average order value, the purchase frequency on average, and the customer value over six months. So the average order value times the purchase frequency is about a $45.21 and then estimated annual customer lifetime value is six months times two, 12 months, so about a $90 customer lifetime value. Right, so then it's justified all of this and a six months customer lifetime value suggests that more customers are single purchase buyers right now. Given that supplements are consumable there's a significant opportunity to increase purchase frequency through subscription offers. Yeah, it's true, it's true. Thank you Claude, it's provided me the insight and suggestions. Insanely powerful.",
+   "label": "Real Experience",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. In the terminal, he asks for customer lifetime value over the last 6 months. The terminal explains that this metric isn't directly available but can be calculated, then proceeds to perform the calculations and display the results, including key takeaways. The man is impressed and gestures with his hand to his face, looking thoughtful.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "5:35",
+   "timestamp_start": "4:00"
+  },
+  {
+   "audio": "So now that we've seen that it can look at the data that I have, can it also start actually editing the website design itself? So if I look at my website, let me just load it up, lifetropics.com. You see this is kind of the design that I have, so I've got all my supplements, my reviews etc. But can I like for example like edit maybe this part? And to do this normally I'd have to go in and I'd have to edit the website theme. But let's see if it can edit the actual theme for me. So, edit the homepage title 'Science-Backed Supplements for True Results' and change it to let's say 'Science-Backed Supplements for Real Results'. So I'm changing the word 'true results' to now 'real results' and obviously I'd have to normally do that within the theme editor. So let me click go.",
+   "label": "Usage Scenarios",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The main screen shows his website, Lifetropics.com. He then switches back to the terminal and types a request to change a headline on his homepage. The terminal shows the process of searching for and updating the theme file.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "6:27",
+   "timestamp_start": "5:35"
+  },
+  {
+   "audio": "And now it's looking for where it is in the theme. And it's figured it out, it's figured out the steps. It's going to find the main theme ID, it's going to read the template, find the correct section and it's going to update the section. I've just skipped ahead but you can see now it's actually done this. So it's changed the 'Science-Backed Supplements for True Results' to 'Science-Backed Supplements for Real Results' and it's applied the update to my live theme. So let's check this out, I'm going to now open my website, I'm going to refresh it and you see it's now edited the actual copy on my theme. Insane stuff.",
+   "label": "Problem Solving",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The main screen shows the terminal completing the theme update. He then switches to his browser, refreshes his website, and the headline is shown as successfully updated. The man looks satisfied and gestures towards the updated headline.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "7:24",
+   "timestamp_start": "6:27"
+  },
+  {
+   "audio": "So I mean, I'm going to play around with maybe some more of the different commands and everything, maybe I'll build some skills, but it's looking super promising, really exciting. If you haven't tried it yet with your Shopify store definitely do so and I'm going to be doing more Claude tutorials for operators and professionals alike, so feel free to subscribe if you liked this video.",
+   "label": "Call to Action",
+   "visual": "The man from Scene 1 is in the picture-in-picture window. The main screen shows the Shopify AI Toolkit documentation page again. The man looks directly at the camera, talking to the audience and encouraging them to try the tool and subscribe to his channel. He maintains the same friendly and professional demeanor.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "7:45",
+   "timestamp_start": "7:24"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:55.760624Z",
+ "updated_at": "2026-10-03T07:39:08.032828Z"
+}

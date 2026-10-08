@@ -1,0 +1,147 @@
+{
+ "id": "9473cb90-81b1-440d-a2ad-0b4c778c4f6d",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=tc5NaxUrOyU",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Hello everyone. Today we are going to learn how to create a boilerplate for Shopify theme development using Claude AI and how to start theme development with AI.",
+   "label": "Opening Hook",
+   "visual": "A desktop screen recording of a Shopify theme called 'Skeleton' on a browser window. The mouse cursor moves over the 'Hello, World!' heading and surrounding text on a white minimalist webpage with a green shopping bag character illustration on the right. Below the main text, three information blocks labeled 'Key Concepts', 'Liquid', and 'Best Practices' are displayed.",
+   "shot_type": "Wide Shot",
+   "scene_number": 1,
+   "timestamp_end": "0:12",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "So, if you are not using Claude Code, you can use any free AI code editor. In that case, you can use ChatGPT's Codex, or...",
+   "label": "Product Information",
+   "visual": "The browser window remains static, showing the Skeleton theme homepage. The cursor hovers near the top left of the screen, indicating different UI elements while the speaker explains alternative AI tools.",
+   "shot_type": "Wide Shot",
+   "scene_number": 2,
+   "timestamp_end": "0:25",
+   "timestamp_start": "0:12"
+  },
+  {
+   "audio": "...VS Code's Copilot, or Antigravity. You can choose any one of them, but the procedure is the same, okay? So, first, what we need to do is prepare a boilerplate for theme development.",
+   "label": "Product Information",
+   "visual": "The mouse cursor continues to navigate the webpage interface. The speaker continues to list various AI tools like VS Code Copilot and Antigravity while the screen remains on the theme's landing page, showing technical text about Liquid and Shopify best practices.",
+   "shot_type": "Wide Shot",
+   "scene_number": 3,
+   "timestamp_end": "0:46",
+   "timestamp_start": "0:25"
+  },
+  {
+   "audio": "What you see here is basically a Shopify theme boilerplate. If we run 'shopify theme init', a theme is generated, a boilerplate is generated. In that case, it looks like this. And which AI are we using? If we run 'shopify theme init'...",
+   "label": "Usage Scenarios",
+   "visual": "A terminal window pops up on the bottom right of the browser screen. The user selects text on the webpage that says 'Skeleton theme'. The terminal shows code execution. The scene then cuts to a VS Code environment with a dark interface showing a file named 'CLAUDE.md' with technical documentation about theme architecture, directory structure, and sections.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "1:09",
+   "timestamp_start": "0:46"
+  },
+  {
+   "audio": "...then we can see that it's suggesting several types of AI. You can choose whichever you're using. Then, it will create instructions for that AI. For example, I ran 'shopify theme init' for Claude AI.",
+   "label": "Product Selling Points",
+   "visual": "The screen focuses on VS Code. The speaker scrolls through the 'CLAUDE.md' file. The terminal at the bottom shows the message 'The theme Development was pushed successfully'. The code editor displays the folder structure on the left (assets, blocks, config, layout, etc.).",
+   "shot_type": "Wide Shot",
+   "scene_number": 5,
+   "timestamp_end": "1:33",
+   "timestamp_start": "1:09"
+  },
+  {
+   "audio": "They've provided a file named 'CLAUDE.md', and inside this file, the plan for Claude AI is given. Here, the structure of the Shopify theme is detailed, along with the directory and the structure of these directories. Also, the work of 'sections', 'blocks', 'snippets', and 'layout' is mentioned separately.",
+   "label": "Product Selling Points",
+   "visual": "The mouse scrolls further down the markdown file in VS Code, highlighting sections for 'blocks', 'snippets', 'layout', and 'config'. A small file explorer window is opened briefly over the code editor, showing the local file directory.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "2:06",
+   "timestamp_start": "1:33"
+  },
+  {
+   "audio": "First, let's look at the 'Learn Shopify API' section. It's made mandatory because you need to learn this. When we run this, Claude AI tells us it has learned the skill and added it to the list. This sidebar you see is an extension for Claude AI.",
+   "label": "Problem Solving",
+   "visual": "The cursor points to the 'Learn Shopify API' link at the top of the 'CLAUDE.md' file. The speaker navigates the VS Code sidebar on the left, showing installed extensions, highlighting one named 'Claude Code for VS Code'.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "2:40",
+   "timestamp_start": "2:06"
+  },
+  {
+   "audio": "If we install 'Claude Code for VS Code', a chat option will appear in the sidebar. I've added it this way. If you have a subscription, it's best. As you know, these AIs work using tokens.",
+   "label": "Product Information",
+   "visual": "The speaker clicks through the VS Code extension marketplace interface, showing the 'Claude Code for VS Code' extension details. They then switch back to the file view, showing the 'CLAUDE.md' file alongside the terminal.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "3:10",
+   "timestamp_start": "2:40"
+  },
+  {
+   "audio": "In that case, the 'CLAUDE.md' file Shopify provides is a great way to save tokens. When we leave Claude AI to work on its own, it will work, but not in a structured way. If we have a 'CLAUDE.md' file, it's beneficial for us.",
+   "label": "Product Selling Points",
+   "visual": "Back in the code editor, the speaker highlights the 'CLAUDE.md' filename and content. The cursor moves over the 'sections' and 'blocks' descriptions in the markdown file, explaining how this file helps the AI understand the project structure.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "3:37",
+   "timestamp_start": "3:10"
+  },
+  {
+   "audio": "You can keep this file in any existing Shopify theme you want to develop. Claude AI will read this and understand the instructions. So, before starting, we need to do this and teach the AI. Then, we can move forward based on our design.",
+   "label": "Usage Scenarios",
+   "visual": "The speaker continues scrolling through the documentation in VS Code. The screen displays details about the 'layout' section, including requirements like '{{ content_for_header }}' and '{{ content_for_layout }}'.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "4:08",
+   "timestamp_start": "3:37"
+  },
+  {
+   "audio": "If you have Figma and a premium plan, you can integrate the MCP server with Claude AI. In the desktop app, it will pick the design from the file you mention. I don't have a Figma subscription, so I'll choose a design from here.",
+   "label": "Product Selling Points",
+   "visual": "The speaker moves the cursor to the bottom of the screen to switch browser tabs. The VS Code terminal shows more logs about theme development and pushing changes to the Shopify store.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "4:43",
+   "timestamp_start": "4:08"
+  },
+  {
+   "audio": "For example, this one. I was looking at the product details and what kind of design we can use. To create these sections, we'll take screenshots and give the AI an idea of what we want. It will then help us work on it.",
+   "label": "Real Experience",
+   "visual": "A Dribbble page is shown on the browser, featuring a landing page design for 'Muse + Metta' organic products. The design is light-themed with a bottle of kombucha as the hero image. The speaker scrolls down the page to show different sections like 'About', 'Happy Clients', and 'Latest Blogs'.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "5:12",
+   "timestamp_start": "4:43"
+  },
+  {
+   "audio": "Also, since Claude AI cannot generate images, we need to provide them as files or URLs. Otherwise, it will use placeholder images, which you can later customize. You need to tell it to use placeholders for now.",
+   "label": "Product Information",
+   "visual": "The speaker hovers the cursor over small product feature images on the Dribbble design (pineapple, mint, etc.). They then navigate back to the original Skeleton theme page on the Shopify store.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "5:53",
+   "timestamp_start": "5:12"
+  },
+  {
+   "audio": "That's a better way. There are many existing free designs you can use. You can tell the AI which sections you need. We need to move forward by giving it instructions. Otherwise, it will do something we might not like. With a little follow-up, it will follow the structure.",
+   "label": "Real Experience",
+   "visual": "The speaker moves between the browser and VS Code. The markdown file 'CLAUDE.md' is shown again. The cursor highlights the 'sections' and 'blocks' text as the speaker emphasizes the importance of providing a clear structure to the AI.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "6:24",
+   "timestamp_start": "5:53"
+  },
+  {
+   "audio": "This is very effective in any theme development. For existing themes or adding features, we can give instructions in 'CLAUDE.md'. The mandatory things we know as developers should also be taught to the AI. Otherwise, it might give wrong outputs. If we specify where to pick information from, it becomes easier. This is the initial state of theme development. I hope everyone understood. In the next video, we'll see how to develop a theme section or a product page. Thank you.",
+   "label": "Call to Action",
+   "visual": "Final shots of the VS Code interface showing the 'CLAUDE.md' file and the file directory. The speaker stops the recording while the terminal displays successful theme push messages. The video ends on the dark mode code editor screen.",
+   "shot_type": "Wide Shot",
+   "scene_number": 15,
+   "timestamp_end": "7:27",
+   "timestamp_start": "6:24"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:57.569587Z",
+ "updated_at": "2026-10-03T07:48:03.334002Z"
+}

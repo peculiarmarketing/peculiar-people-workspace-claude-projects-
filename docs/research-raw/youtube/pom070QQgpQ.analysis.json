@@ -1,0 +1,192 @@
+{
+ "id": "a7ce284c-1c83-4e55-b72e-555b256f96e4",
+ "video_input_id": null,
+ "youtube_url": "https://www.youtube.com/watch?v=pom070QQgpQ",
+ "status": "completed",
+ "fail_reason": null,
+ "video_s3_url": null,
+ "scenes": [
+  {
+   "audio": "Shopify's AI toolkit is awesome. Shopify quietly released that.",
+   "label": "Opening Hook",
+   "visual": "A light-skinned man in his 30s with a dark beard and short dark hair, wearing a red polo shirt, sits at a desk in front of a silver laptop. A black microphone is positioned in front of him. Behind him is a wall with a checkered pattern of blue and white square tiles. The lighting is soft and natural, coming from the front. The color palette is bright with warm tones. The background has a shallow depth of field.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 1,
+   "timestamp_end": "0:03",
+   "timestamp_start": "0:00"
+  },
+  {
+   "audio": "And AI toolkit is going to now natively integrate with Claude Code, Gemini CLI, and all of these coding agents.",
+   "label": "Product Selling Points",
+   "visual": "The same man in the red polo shirt continues speaking from the same position at his desk. He uses open hand gestures to emphasize his points. The lighting remains consistent, highlighting his face and the front of the silver laptop. The checkered blue and white tile background is still visible.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 2,
+   "timestamp_end": "0:12",
+   "timestamp_start": "0:03"
+  },
+  {
+   "audio": "Now if you don't know what is coding agent, it's basically an AI agent which works in command prompt. And now with this new Shopify AI toolkit, you can directly talk with your Shopify data. You can make changes, you can do theme customization, you can do a lot of stuff. I was able to update alt tags, which is an important step of SEO, and it updated 200+ images within a minute just with a single prompt. Let me show you.",
+   "label": "Product Information",
+   "visual": "The man in the red polo shirt explains coding agents, maintaining the same position and gestures. The lighting and background are unchanged. He continues to sit behind his silver laptop with the black microphone in the foreground.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 3,
+   "timestamp_end": "0:41",
+   "timestamp_start": "0:12"
+  },
+  {
+   "audio": "So that's my terminal and you can see all of these products and it's saying alt tags updated. Now every single product has multiple images. By the way, it's all dummy data. It's a development store I was testing it out and I wanted to create this video and I wanted to show you guys that how quickly you can do stuff with Claude Code native's Shopify AI toolkit. And you can see that all 200+ images got updated and I just had to give one single prompt. Now I'm going to show you guys how you can set this up as a complete beginner. If you don't know what is Claude Code, what is CLI, what is Shopify AI toolkit, I'm going to give you a complete beginner's guide on how you can set that up on your system and you can basically do wonders using Claude Code. So let's get into it.",
+   "label": "Usage Scenarios",
+   "visual": "The screen displays a computer interface showing a terminal window with a list of products and their updated alt tags. The background is a serene beach scene with calm blue water and large rocks. The color palette is dominated by the blue and white of the interface and the natural tones of the background. The lighting is bright and clear, as if on a sunny day.",
+   "shot_type": "Wide Shot",
+   "scene_number": 4,
+   "timestamp_end": "1:28",
+   "timestamp_start": "0:41"
+  },
+  {
+   "audio": "Guys, I have a small request before proceeding to the tutorial. Me and my team are putting a lot of effort to create up-to-date content related to Shopify, AI, and all of these new tools which are coming up and it takes a lot of time. So my request from you guys is just to subscribe this channel, like it, and comment on the video below to increase the engagement which will motivate us to create more valuable content for you guys. And now let's get back to the video.",
+   "label": "Real Experience",
+   "visual": "The man in the red polo shirt returns to the screen, speaking directly to the camera from his desk. He uses earnest hand gestures and maintains a friendly facial expression. The lighting and checkered background remain the same as in the first scene.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 5,
+   "timestamp_end": "1:55",
+   "timestamp_start": "1:28"
+  },
+  {
+   "audio": "So guys, this is the URL for Shopify AI toolkit. I'll add the link in the description. And this is Shopify AI toolkit where we will be adding some commands in our terminal or if you're using Windows, you will be using command prompt. And it will have the native features of where we will be able to connect with our store, talk with our data, and create reports and do a lot of stuff, even theme customization, adding product. You think it and you can do it. And before installing this Shopify AI toolkit, we will need two things if we need to use it with Claude Code.",
+   "label": "Product Information",
+   "visual": "The screen shows a web browser displaying the Shopify AI Toolkit documentation on the Shopify.dev website. The background is a scenic wallpaper of a clear blue sky over a rocky landscape. The lighting is bright and even, highlighting the text and links on the page. The color palette is clean, with the white and green of the Shopify website standing out against the natural background.",
+   "shot_type": "Wide Shot",
+   "scene_number": 6,
+   "timestamp_end": "2:31",
+   "timestamp_start": "1:55"
+  },
+  {
+   "audio": "Now it can work with Cursor and it can also work with Gemini CLI and VS Code. But for the sake of this video, I'm going to create this for Claude Code. And before following or adding these commands to your terminal, we will first need to install Node.js. So go to this Nodejs.org and download link and download it for your operating system if you're using Mac, Windows, or Linux. And once done, you will need to install Claude Code by adding this command. So once you have Node.js installed, copy this command for Linux and Mac OS and this command for Windows PowerShell which will install Claude Code into your laptop. Now once these two things are completed, we will come to Shopify AI toolkit and even before adding these two commands for Shopify AI toolkit, you'll have to install Shopify CLI.",
+   "label": "Usage Scenarios",
+   "visual": "The web browser transitions to show the installation guides for Node.js and Claude Code. The background remains the same rocky landscape. The screen displays various commands and installation steps. The lighting is bright, making the technical details easily readable. The color palette continues to be dominated by the white and blue of the browser windows.",
+   "shot_type": "Wide Shot",
+   "scene_number": 7,
+   "timestamp_end": "3:23",
+   "timestamp_start": "2:31"
+  },
+  {
+   "audio": "And for that, I have these commands which I'm going to add in the YouTube video description. So I'm simply going to copy this first command and add it to my terminal. So I'm going to open up the terminal and here I'm going to add this command. So I'm going to copy this, paste it in here, and hit enter. Once you add this command, it will install Shopify CLI to your command prompt or to your terminal.",
+   "label": "Product Information",
+   "visual": "The screen shows a code editor and a terminal window side by side. The man's cursor moves to copy commands from the editor and paste them into the terminal. The background is a serene landscape with a small body of water and rocks. The lighting is clear and bright, emphasizing the text in the terminal. The color palette includes the dark tones of the terminal and the natural colors of the background.",
+   "shot_type": "Wide Shot",
+   "scene_number": 8,
+   "timestamp_end": "3:47",
+   "timestamp_start": "3:23"
+  },
+  {
+   "audio": "Okay, once you have Shopify CLI installed, we will now run the Claude Code and add these two commands. And these two commands are also mentioned in this AI toolkit where you can see that we have this Claude Code chat and this plugin which we can install on Claude Code. Now I'm going to open up the Claude Code, so type in Claude Code and it will open up the Claude Code. Now it's asking for the folder permission, I'm going to say yes, I trust this folder. And here you can see that it's now asking for the permission to access the desktop folder, I'm going to click on allow.",
+   "label": "Usage Scenarios",
+   "visual": "The screen continues to show the terminal and code editor. The man copies more commands and pastes them into the terminal, demonstrating the installation of Claude Code and the Shopify AI Toolkit. The background and lighting remain consistent with the previous scene. The man's cursor is active, navigating through windows and executing commands.",
+   "shot_type": "Wide Shot",
+   "scene_number": 9,
+   "timestamp_end": "4:27",
+   "timestamp_start": "3:47"
+  },
+  {
+   "audio": "And now we will add these other two commands, this one and this one. So I'm going to click on copy here, go back to Claude Code, paste the command, and hit enter. Once done, it will say successfully added marketplace Shopify AI toolkit. Now we will need to add in this second command which is for Claude Code chat. So click on this copy and then paste this command here and hit enter. Now it's saying that it's already installed because I have already installed. You might see something like successfully added this plugin etc. And once done, you will need to connect your Shopify store with Claude Code. Now in order to connect it, you can also simply say connect with my Shopify store and add in your Shopify name like I have devwebsensepro.myshopify.com. That's my development store. You can simply add in this command but sometimes it does not work that well, so it hallucinates sometimes and it doesn't properly create the connection. If you want to make the connection easier, I have this ready command, so I'm going to share it with you guys.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal where the Shopify AI Toolkit is successfully added. The man then types a command to connect to his Shopify store. The background is a beautiful beach scene with calm blue water and rocks. The lighting is bright and sunny. The color palette is vibrant, with the blues of the water and sky contrasting with the white text in the terminal.",
+   "shot_type": "Wide Shot",
+   "scene_number": 10,
+   "timestamp_end": "5:30",
+   "timestamp_start": "4:27"
+  },
+  {
+   "audio": "In the description as well, that's the command. Now at the end of this command, you can see that it's giving the read products access. So with this command, we are giving the scope to read the products. Now you will need to update your own Shopify store URL here. So in case you open up your Shopify store, you can simply copy this URL or simply copy the alias of your Shopify store. I already have it in this command which you can see here, but before pasting this command, you will need to change it here, right? Now I'm going to copy this command and give it to my Claude Code and hit enter. Now it's going to prompt to authentication and it is going to install this CLI app which Shopify has. So if I go to the backend of my Shopify store now, there is a Shopify CLI connector app which got installed. So if I go to settings and then click on apps, you can see that we have Shopify CLI connector app installed.",
+   "label": "Usage Scenarios",
+   "visual": "The screen displays a browser window showing the Shopify store's backend and the terminal where the connection is being established. The background remains the beach landscape. The lighting is bright. The color palette is bright and clean. The man's cursor navigates the browser to find his store's URL and then returns to the terminal to complete the connection.",
+   "shot_type": "Wide Shot",
+   "scene_number": 11,
+   "timestamp_end": "6:28",
+   "timestamp_start": "5:30"
+  },
+  {
+   "audio": "Now once it's authenticated and Shopify CLI connector app, you can simply chat with Claude Code and ask for whatever information you need for your store. Please list all the products in my store. And now if I say that, it's going to list all of the products in my store. I'm going to hit yes, it's asking me to add this command. Now it's running the graph QL query, you can see that it's running this graph QL query and I'm going to hit enter. Hit enter again, it's again giving some more scope, going to go back to the Claude Code and here you can see that it's listing all of the products currently in my store. Here are all 50 products so I have 50 products on my development store and it's listing all of the active products showing up here. Right? So it's that easy now you can simply chat with the Shopify store data, ask it to tell you about theme customization option, ask it based on your orders or based on your customer which product is selling more and you can basically do anything with Claude Code. It's super awesome and now it's natively working with Shopify CLI connector app so it has all of the data.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal where the man interacts with the Shopify store data using Claude Code. He asks it to list all products, and the terminal displays the list. The background is a rocky coastline under a clear sky. The lighting is bright and even. The color palette is natural and bright, with the terminal window as the focal point.",
+   "shot_type": "Wide Shot",
+   "scene_number": 12,
+   "timestamp_end": "8:07",
+   "timestamp_start": "6:28"
+  },
+  {
+   "audio": "Now I'm going to try something else with this Claude Code, I'm going to update meta title and meta description. So in this development store, this is one of the product, Adidas classic backpack. It's a dummy product but if you notice, go to the meta title, meta description at the bottom of the product page, you can see that it does not have 70 characters preferred way to use best meta title for best SEO purposes, best SEO practices you should have all of the 70 characters. Right? And meta description I think have more than 160 characters, you can see that it has like 161 or when I click on it, it increase the number of characters. Now I'm going to ask Claude Code to update meta title and meta description of this product and act as an SEO specialist so all of the important keywords are added in this product title and description. So let's go and I'm going to give it a prompt, act as an SEO specialist and update meta title and description for this product.",
+   "label": "Usage Scenarios",
+   "visual": "The screen displays the terminal and the Shopify store's product page for an Adidas backpack. The man uses Claude Code to update the meta title and description of the product for better SEO. The background is a serene beach landscape. The lighting is bright and natural. The color palette is vibrant, highlighting the product image and the terminal text.",
+   "shot_type": "Wide Shot",
+   "scene_number": 13,
+   "timestamp_end": "9:00",
+   "timestamp_start": "8:07"
+  },
+  {
+   "audio": "Make sure it's SEO friendly and using SEO best practices. Now I'm going to test it with one of the product of my development store but you can do that in bulk so once you see the result for one of the product, you just have to prompt it again and say that now do the same thing with all of the product and it is going to update meta title and meta description for all of the products with just few prompts. So just imagine how much time it's going to save you, how much app cost it's going to save you if you buy the twenty dollar Claude Code subscription and you can do a lot of stuff with Claude Code using the native Shopify AI store toolkit. So I'm going to hit enter and see what it does. I'm going to click on yes, searching for the product.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal where Claude Code processes the request to update the product's SEO fields. The background remains the beach landscape. The lighting is bright. The color palette is bright and clear. The terminal shows the process of searching for the product and crafting the SEO-optimized content.",
+   "shot_type": "Wide Shot",
+   "scene_number": 14,
+   "timestamp_end": "10:02",
+   "timestamp_start": "9:00"
+  },
+  {
+   "audio": "Now it's asking for more access, we didn't have edit product access given to Claude Code. Now it's asking for the edit products access and I'm going to click on update. Okay, you can see that we have our meta title and meta description updated and it's giving all of the explanation that why it added meta title and meta description. So that is our meta title, you can see it has 57 character ideal which is less than 60 and it has 192 character ideal less than or equal to 160. Shop the Adidas classic backpack, designed for school travel, daily commutes, features spacious compartments, ergonomic straps and iconic Adidas style, order now and enjoy fast shipping. So imagine you can give it a prompt and it will update all of your meta title and meta description with just prompt and it is going to follow the best SEO practices. Now guys, I'm going to try a little advanced here and what I'm going to do, I'm going to create a duplicate of the theme in my development store and try to create a section within that Shopify theme all using Claude Code.",
+   "label": "Real Experience",
+   "visual": "The screen shows a prompt for authentication in the browser, followed by the terminal displaying the successfully updated meta fields. The background is a beautiful landscape. The lighting is bright. The color palette is clean and bright. The man then navigates his Shopify store to show the newly created theme copy.",
+   "shot_type": "Wide Shot",
+   "scene_number": 15,
+   "timestamp_end": "11:02",
+   "timestamp_start": "10:02"
+  },
+  {
+   "audio": "And in order to implement that, first we will add an MCP server from Shopify AI toolkit. Now MCP server is an model context protocol and we are adding a dev MCP server meaning it will have all of the documentation and tools of the development theme documentation, app documentation within our Claude Code. Now let's first add MCP server.",
+   "label": "Usage Scenarios",
+   "visual": "The man in the red polo shirt is back on screen, talking about adding an MCP server. He sits at his desk with the microphone in front of him and the checkered wall behind him. The lighting is soft and natural. The color palette is warm and bright.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 16,
+   "timestamp_end": "11:37",
+   "timestamp_start": "11:02"
+  },
+  {
+   "audio": "Now if I go to Shopify AI toolkit page and scroll down, you can see that we have the option of dev MCP server how you can install that in Claude Code. I'm going to copy this command here, go back to the terminal where I have Claude Code open, I'm going to paste this command and then hit enter. Now you can see that it's giving me I see you have added the Shopify dev MCP server. How can I help you with Shopify project? Now we have added MCP server and if we add slash MCP and hit enter, you can see that we have Shopify dev MCP enable and connected. Make sure you have it connected as well. Once it's connected, what we're going to do, we will connect our store which we have already done, I've shown you guys how you can connect that. Now we are going to ask it to create a duplicate of the current live theme.",
+   "label": "Product Selling Points",
+   "visual": "The screen displays the Shopify AI Toolkit documentation and then the terminal where the man adds the MCP server. The background is a serene beach landscape. The lighting is bright and sunny. The color palette is vibrant and clear. The terminal shows the command being executed and the server being successfully added.",
+   "shot_type": "Wide Shot",
+   "scene_number": 17,
+   "timestamp_end": "12:31",
+   "timestamp_start": "11:37"
+  },
+  {
+   "audio": "So I'm going to say that is my store where I have Savor theme installed. I'm going to say please create duplicate of live Savor theme and let me know once done. And once it creates the duplicate of the live theme, we're going to ask it to create a new section within that theme. So let's see how it works. Okay, now it's asking for authentication again where it needs more access. Now it needs edit theme access as well. I'm going to hit update, go back to Claude and now I'm going to ask it again to create a duplicate of live Savor theme and let me know once done. Okay, you can see that copy of Savor is now created and that's our theme ID. Now if I go to my store and hit refresh, you can see that copy of Savor has been created. Now I'm going to ask it to create a before-after slider section in this theme to see how it works.",
+   "label": "Usage Scenarios",
+   "visual": "The screen shows the Shopify store's theme page and then the terminal where the man asks Claude Code to duplicate the theme. The background is a beautiful rocky coastline. The lighting is bright. The color palette is bright and clean. The terminal shows the process of duplicating the theme, including authentication steps.",
+   "shot_type": "Wide Shot",
+   "scene_number": 18,
+   "timestamp_end": "13:36",
+   "timestamp_start": "12:31"
+  },
+  {
+   "audio": "I'm going to say please create before/after slider section in theme ID, let me know once done. Now explicitly added the theme ID to make it more specific, so the more detail you add into your prompt the more beneficial it will be. I have given it a simple prompt with the theme ID to see if it works, I'm going to hit enter to see if it works. Okay, you can see that it took one minute and added this new section which says before after slider. Now I'm going to go to this new theme here, hit refresh again and let's click on publish. And now I'm going to click on edit theme to check our new slider section which Claude Code added. Okay, click on add section, now here you can see that we have our before/after slider section created all within Claude Code. And let's try adding the images, click on before image, let's try with this one and I'm going to add the after image, let's try with this one just for the testing purposes to see if it works properly. And it is working. You can see that we have completely custom coded before/after slider section created within Claude Code without touching any custom code.",
+   "label": "Product Selling Points",
+   "visual": "The screen shows the terminal where the man asks for a new theme section, followed by the Shopify theme editor showing the newly added 'Before/After Slider'. The background is a serene beach landscape. The lighting is bright and natural. The color palette is vibrant. The man demonstrates the slider by selecting and comparing two images of a woman.",
+   "shot_type": "Wide Shot",
+   "scene_number": 19,
+   "timestamp_end": "15:19",
+   "timestamp_start": "13:36"
+  },
+  {
+   "audio": "And that's it for this video guys. Let me know in the comments below if it was helpful. Until next video, have a great day.",
+   "label": "Call to Action",
+   "visual": "The man in the red polo shirt delivers his final message from his desk. The lighting and checkered background are the same. He smiles and gestures slightly toward the camera. The background has a shallow depth of field.",
+   "shot_type": "Medium Close-Up",
+   "scene_number": 20,
+   "timestamp_end": "15:26",
+   "timestamp_start": "15:19"
+  }
+ ],
+ "created_at": "2026-10-03T07:35:56.365437Z",
+ "updated_at": "2026-10-03T07:40:08.365887Z"
+}
