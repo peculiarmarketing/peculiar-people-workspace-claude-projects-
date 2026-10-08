@@ -179,9 +179,18 @@ def build(width_in):
     cairosvg.svg2png(bytestring=files["chest-logo-a2-white.svg"].encode(),
                      write_to=o("tmp.png"), dpi=300)
     a = Image.open(o("tmp.png")).getchannel("A")
-    ink = Image.new("RGBA", a.size, (255, 255, 255, 0)); ink.putalpha(a)
-    ink.save(o("chest-logo-a2-white-%gin-300dpi.png" % width_in), dpi=(300, 300))
     os.remove(o("tmp.png"))
+    name = lambda v: o("chest-logo-a2-%s-%gin-300dpi.png" % (v, width_in))
+    for v, rgb in (("white", (255, 255, 255)), ("black", (0, 0, 0))):
+        ink = Image.new("RGBA", a.size, rgb + (0,)); ink.putalpha(a)
+        ink.save(name(v), dpi=(300, 300))
+    # Solid versions for mockups and sharing, with a 0.25 in margin all round.
+    m = 75
+    for v, fg, bg in (("white-on-black", (255, 255, 255), (0, 0, 0)),
+                      ("black-on-white", (0, 0, 0), (255, 255, 255))):
+        im = Image.new("RGB", (a.width + 2 * m, a.height + 2 * m), bg)
+        im.paste(Image.new("RGB", a.size, fg), (m, m), a)
+        im.save(name(v), dpi=(300, 300))
 
     proof(gray, pec_d, pec_bb, peo_d, peo_bb, o("proof-letterforms.png"))
     return stats

@@ -58,5 +58,5 @@ white per BRAND.md section 8), navy and black previews.
 
 **Final size: 3.75 in wide (Evan, 8 October 2026).** 3.75 x 3.34 in: frame
 1.71 mm, rules 1.31 mm, EST. 2023 cap height 0.27 in, thinnest PECULIAR stroke
-0.99 mm. Print file: `out/chest-logo-a2-white-3.75in-300dpi.png` (1125 x 1003 px).
+0.99 mm. Print files: `out/chest-logo-a2-white-3.75in-300dpi.png` and `-black-` (transparent, 1125 x 1003 px). Solid `-white-on-black-` and `-black-on-white-` versions add a 0.25 in margin (1275 x 1153 px).
 Evan places it on the garment himself.
