@@ -1,6 +1,6 @@
 # Peculiar People: Pipeline, Tools and Current State
 
-Mirror of the Claude Code workspace, as of 7 October 2026. The source of truth lives on Evan's Mac in `1. Peculiar People/Claude Projects/`. BRAND.md (also in this project) covers the brand itself; this doc covers how the work gets built and where it stands.
+Mirror of the Claude Code workspace, as of 8 October 2026. The source of truth lives on Evan's Mac in `1. Peculiar People/Claude Projects/`. BRAND.md (also in this project) covers the brand itself; this doc covers how the work gets built and where it stands.
 
 ## Where the work happens
 
@@ -51,13 +51,14 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
 - Zero orders. Distribution is the only constraint.
 - The sweep (`scripts/sweep.py`) was built 7 October and has not yet run on a real new temple. The first run should be watched: its tag, Art File and theme-upload writes have not touched the store yet.
-- Tapstitch now works from cloud sessions (8 October): the scripts read the login cookies from a `TAPSTITCH_COOKIES` environment secret when there is no Chrome profile. `scripts/tapstitch_designs.py` lists the Designs tab, including designs never published. The secret is a full login and expires after a few days.
+- Tapstitch now works from cloud sessions (8 October): the scripts read the login cookies from a `TAPSTITCH_COOKIES` environment secret when there is no Chrome profile. The secret is in place and the first live run worked. `scripts/tapstitch_designs.py` lists the Designs tab with when each design was saved and whether it reached the store (`--unpublished` for only the ones that did not). On 8 October it showed 149 designs: 135 feeding published products and 14 never added to the store (the new SÉ SINGULAR and BE PECULIAR fronts, a temple seal bomber jacket, and older August and September Salt Lake, Manti and Lindon tests). The secret is a full login and expires after a few days.
 - Street map tool built 7 October (`city-maps/`). Small towns that fail on the public city-roads site now download in seconds.
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
 
-- Add the `TAPSTITCH_COOKIES` secret to the cloud environment (copy the Cookie header from DevTools on tapstitch.com while logged in). Refresh it when a cloud run says "Not logged in".
+- Refresh the `TAPSTITCH_COOKIES` cloud secret when a cloud run says "Not logged in" (copy the Cookie header from DevTools on tapstitch.com while logged in).
+- Decide what happens to the 14 unpublished Tapstitch designs (publish, keep as drafts, or delete). Nothing is changed until you say.
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - Test purchase to verify checkout (first priority in BRAND.md section 17).
