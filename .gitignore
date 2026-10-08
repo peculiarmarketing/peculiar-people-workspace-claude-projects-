@@ -5,6 +5,7 @@
 /temple-product-generator/
 /temple-ref-finder/
 /humanizer-stack/
+/city-maps/city-roads/
 # Leading slashes are load-bearing: unanchored, these patterns match at every
 # level and would also swallow .claude/skills/temple-product-generator/ and
 # .claude/skills/temple-ref-finder/, which are exactly the skills CLAUDE.md
@@ -31,3 +32,6 @@ idea-inbox/inbox/**/*.mp4
 idea-inbox/inbox/**/*.mov
 idea-inbox/inbox/**/*.m4a
 idea-inbox/inbox/**/*.wav
+
+# City maps: exports are regenerated from city-maps/data/ in seconds.
+city-maps/out/

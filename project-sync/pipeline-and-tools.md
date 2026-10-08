@@ -16,7 +16,7 @@ Mirror of the Claude Code workspace, as of 7 October 2026. The source of truth l
 - `Other designs/`: Be Peculiar wordmarks (English and Spanish), Dot the earth, Angel Moroni (flag before use), Peculiar People Seal (jacket back seal, white and black ink; source and build script in `Claude Projects/designs/jacket-seal/`).
 - `Website : Social assets/`: slider images, product photography, temple collage.
 - `Posts/`: CapCut ad drafts, Kirtland recordings, story audio.
-- `Claude Projects/`: all automation, skills and research.
+- `Claude Projects/`: all automation, skills and research. `city-maps/` holds the street map tool and every saved town.
 
 ## The pipeline, end to end
 
@@ -27,6 +27,7 @@ Mirror of the Claude Code workspace, as of 7 October 2026. The source of truth l
 5. **Copy passes.** Any new customer-facing prose gets `humanizer` (word-level tells) and then `structural-humanizer` (shape-level tells, one or two interventions per piece).
 6. **Audit.** The `store-cro-audit` skill screenshots the live storefront on desktop and mobile and scores it against 68 rules. It is read-only. No audit has been run since the Tapstitch migration. The `design-audit` skill does the same for a single graphic (logo, seal, garment print): scripts measure centring, ring concentricity, stroke weights, spacing and print-size minimums from the image, and it scores 61 researched rules and returns ranked fixes with target numbers. It proposes only and never overrides a BRAND.md decision. Its print minimums are vendor guidance (screen, DTF, DTG); Tapstitch publishes no artwork spec.
 7. **Idea inbox.** Evan texts himself reel links, screenshots and notes in iMessage through the day. A Mac mini collects them at 1:15 AM (`idea-inbox/collector/nightly.py`), turns videos into transcripts and still frames, and pushes them to `idea-inbox/inbox/`. Around 2 AM a Claude Code routine runs the `idea-triage` skill, which gives each item a verdict (useful, beneficial, plausible, waste) and a first deliverable: a plan, a copy draft, a mockup, or a one-line reason. The digest lands in `ideas/YYYY-MM-DD/DIGEST.md`. `ideas/STATUS.md` tracks what happened to each idea (new, approved, done, tested, dropped); any session that acts on one updates its row, and the triage reads it so it never re-plans finished work. It plans and drafts only; it never changes the store, posts, or replies to anyone.
+8. **Street maps.** `city-maps/fetch_map.py` takes town names and writes black and white SVG and PNG street maps (transparent, 6000 px) to `city-maps/out/`. Each town is downloaded once from OpenStreetMap and saved in `city-maps/data/`. `city-maps/city-roads/` is a local copy of anvaka's city-roads web app for exploring by eye, fixed so small towns load: the public site only caches big cities and its fallback asks Overpass for more than a busy server will give. Raw material only; the designs come later. Nauvoo, Kirtland, Carthage and Palmyra are saved.
 
 Skills in the workspace (`Claude Projects/.claude/skills/`): temple-ref-finder, temple-product-generator, humanizer, structural-humanizer, store-cro-audit, design-audit, idea-triage.
 
@@ -39,6 +40,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - Shopify apps: Kaching (bundles and upsells), Easify Product Options (Temple dropdown), Kiwi Size Chart, Digital Products (Temple Art File downloads), Track123 (order tracking, free tier).
 - Email: a four-email Shopify Email post-purchase flow is drafted. Klaviyo will soon replace Shopify Email.
 - Art: kie.ai with GPT Image 2.5 for line art and reference cleanup; Adobe Illustrator for SVG cleanup.
+- Maps: OpenStreetMap data through Nominatim (search) and Overpass (download). Free; ODbL licence, credit needed on anything sold.
 - Connectors in Claude: Shopify, Higgsfield, Google Drive, Figma.
 
 ## Current state (7 October 2026)
@@ -49,6 +51,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
 - Zero orders. Distribution is the only constraint.
 - The sweep (`scripts/sweep.py`) was built 7 October and has not yet run on a real new temple. The first run should be watched: its tag, Art File and theme-upload writes have not touched the store yet.
+- Street map tool built 7 October (`city-maps/`). Small towns that fail on the public city-roads site now download in seconds.
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
@@ -56,6 +59,7 @@ Still open for Evan:
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - Test purchase to verify checkout (first priority in BRAND.md section 17).
+- Before any street map design ships: decide where the "© OpenStreetMap contributors" credit goes (product page is the usual place). The ODbL requires it.
 - Optional: the Meta developer app "Message Reader" (Peculiar Marketing LLC) is no longer used by anything. Delete it in the Meta dashboard, and remove it under Instagram Settings > Apps and websites on both accounts, if you want no app holding access.
 
 ## Working rules

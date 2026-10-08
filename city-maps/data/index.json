@@ -1,0 +1,50 @@
+{
+  "carthage-illinois": {
+    "area_id": 3600124766,
+    "bbox": [
+      40.4011836,
+      -91.15204,
+      40.4281098,
+      -91.1016526
+    ],
+    "name": "Carthage, Hancock County, Illinois, United States",
+    "osm": "relation/124766",
+    "query": "Carthage, Illinois"
+  },
+  "kirtland-ohio": {
+    "area_id": 3600181990,
+    "bbox": [
+      41.5697383,
+      -81.392094,
+      41.640806,
+      -81.2949896
+    ],
+    "name": "Kirtland, Lake County, Ohio, United States",
+    "osm": "relation/181990",
+    "query": "Kirtland, Ohio"
+  },
+  "nauvoo-illinois": {
+    "area_id": 3600127064,
+    "bbox": [
+      40.5230429,
+      -91.406851,
+      40.568694,
+      -91.361018
+    ],
+    "name": "Nauvoo, Hancock County, Illinois, 62354, United States",
+    "osm": "relation/127064",
+    "query": "Nauvoo, Illinois"
+  },
+  "palmyra-new-york": {
+    "area_id": 3600176097,
+    "bbox": [
+      43.051414,
+      -77.246941,
+      43.068598,
+      -77.21315
+    ],
+    "name": "Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "osm": "relation/176097",
+    "query": "Palmyra, New York"
+  }
+}
