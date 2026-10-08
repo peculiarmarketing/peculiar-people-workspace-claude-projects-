@@ -1,0 +1,35 @@
+{
+  "_note": "counties are 5-digit state+county FIPS codes for the Census TIGER road files. centre and temple are [lat, lon]. Temple positions are from OpenStreetMap or approximate and must be checked before anything ships.",
+  "san-antonio": {
+    "label": "SAN ANTONIO, TEXAS",
+    "counties": ["48029", "48091", "48187", "48325", "48013", "48493"],
+    "centre": [29.50, -98.50],
+    "width_km": 35,
+    "line_mm": 0.5,
+    "temple": [29.6416030, -98.4888196]
+  },
+  "salt-lake-city": {
+    "label": "SALT LAKE CITY, UTAH",
+    "counties": ["49035"],
+    "centre": [40.73, -111.89],
+    "width_km": 22,
+    "line_mm": 0.5,
+    "temple": [40.7705, -111.8918]
+  },
+  "nauvoo": {
+    "label": "NAUVOO, ILLINOIS",
+    "counties": ["17067"],
+    "centre": [40.5480, -91.3800],
+    "width_km": 3,
+    "line_mm": 1.0,
+    "temple": [40.5502, -91.3846]
+  },
+  "kirtland": {
+    "label": "KIRTLAND, OHIO",
+    "counties": ["39085"],
+    "centre": [41.6195, -81.3560],
+    "width_km": 3.5,
+    "line_mm": 1.0,
+    "temple": [41.6253, -81.3618]
+  }
+}
