@@ -74,10 +74,18 @@ from Tapstitch under the vendor name `ODMPOD`, printed and shipped from the USA.
 
 | Line | Blank | Price | Colours, in swatch order | Opens on |
 |---|---|---|---|---|
-| Essential Heavyweight Temple Tee | Tapstitch RT0063 | $44.99 | Black, Maroon, Navy Blue, Coffee, Charcoal | Black |
+| Essential Heavyweight Temple Tee | Tapstitch RT0063 | $44.99 | Black, Maroon, Navy Blue, Coffee, Charcoal, Pink, Light Blue, Cream | Black |
 | Ultra-soft Temple Sweatshirt | Tapstitch R00368 | $64.99 | Heather Gray, Black | Heather Gray |
 | Ultra-soft Oversized Temple Hoodie | Tapstitch R00286 | $74.99 | Navy Blue, Gray, Eden Green, Black, Coffee, Mauve, Royal Blue | Navy Blue |
 | Temple Art File (digital SVG download) | n/a | $4.95 | 45 designs | Salt Lake |
+
+Pink, Light Blue and Cream are live on all 45 temple tees and both map tees
+(rollout finished 8 October 2026), after the original five, white ink kept
+knowing the lower contrast (Evan, 8 October). Every new tee is built with all
+eight.
+
+The city map line (Nauvoo and Salt Lake City, 8 October 2026) uses the same
+three garments, prices and colours, titled "... Map Tee (<Place>)".
 
 Eden Green is live on all 45 hoodies (rollout finished 23 September 2026). It
 sits third in the swatch row, where Tapstitch puts it, by Evan's decision on
