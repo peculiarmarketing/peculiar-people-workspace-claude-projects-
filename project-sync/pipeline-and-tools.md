@@ -58,7 +58,8 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 Still open for Evan:
 
 - Refresh the `TAPSTITCH_COOKIES` cloud secret when a cloud run says "Not logged in" (copy the Cookie header from DevTools on tapstitch.com while logged in).
-- Approve the inputs for publishing designs 1 to 7 (Be Peculiar and Sé Singular on tee, crew and hoodie, and the seal bomber): titles, the draft copy, storefront colour names, the white-ink check on Pink, Blue and Apricot, and whether the scripture approval covers the wordmarks' small verse line. Nothing is built until each product is marked approved.
+- Review the draft `Ultra-soft "Be Peculiar" Sweatshirt`, then give the go for the other six (all built on Tapstitch, not public). All seven go live together on your word.
+- Publish the "Claude Code V3" theme when ready: it holds the swatches for Pink, Light Blue, Cream, Forest Green and Purple. The live V2 theme does not.
 - Set up the bomber's size chart in Kiwi Size Chart once it is live.
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.

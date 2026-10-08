@@ -281,7 +281,7 @@ Planned:
 - Hats and beanies
 - Sweatpants
 - Print files, expanding the digital line
-- **Be Peculiar wordmark line.** Non-temple designs built on the brand name. English and Spanish, black and white assets exist in `Other designs/Be Peculiar/`.
+- **Be Peculiar wordmark line.** In progress 8 October 2026: English and Español versions on the tee, sweatshirt and hoodie at the line prices, plus the Temple Seal Bomber Jacket at $79.99, being published. Non-temple designs built on the brand name. English and Spanish, black and white assets exist in `Other designs/Be Peculiar/`.
 - **Spanish-language products.** A Spanish logo already exists, and this is the first real step toward the worldwide-community vision.
 
 New ideas are welcome, with one filter: they have to be brand consistent.
@@ -385,7 +385,7 @@ Hard no, confirmed:
 
 Offered as guardrails and deliberately not selected, so these are open questions rather than permissions:
 
-- Scripture text printed on a garment. Approved 8 October 2026 for the seal bomber jacket only (section 19); still ask for anything else.
+- Scripture text printed on a garment. Approved 8 October 2026 for the seal bomber jacket and the Be Peculiar / Sé Singular wordmarks (section 19); still ask for anything else.
 - Sacred imagery beyond architecture (Christ, ordinances, temple interiors).
 
 Ask before designing anything in either category.
@@ -531,7 +531,7 @@ Asset locations, all under `1. Peculiar People/`:
 
 **1 Peter 2:9 in product copy.** TBD, Evan likes the idea. The draft bomber copy names it, pending his sign-off.
 
-**Scripture text on garments. APPROVED 8 October 2026 for the seal bomber jacket**, whose ring carries all four phrases of 1 Peter 2:9 (Evan, choosing "approve it, update BRAND"). Still open: the Be Peculiar and Sé Singular wordmarks also carry a verse in small type (1 Peter 2:9 in English; Deuteronomy 14:2, Reina-Valera 1909, in Spanish), and that approval has not been stated. Anything beyond these needs its own ask.
+**Scripture text on garments. APPROVED 8 October 2026 for the seal bomber jacket**, whose ring carries all four phrases of 1 Peter 2:9 (Evan, choosing "approve it, update BRAND"). The same day Evan approved the small verse line under both wordmarks too (1 Peter 2:9 in English; Deuteronomy 14:2, Reina-Valera 1909, in Spanish), and confirmed the Spanish wordmark was checked. Anything beyond these needs its own ask.
 
 **Sacred imagery beyond architecture.** Not ruled out, not approved. Ask.
 
