@@ -217,9 +217,13 @@ def fmt_coords(lat, lon):
             f"{abs(lon):.4f}\u00b0 {'E' if lon >= 0 else 'W'}")
 
 
-def front(lat, lon):
-    """Return the front artwork as an L mask at the logo's own resolution."""
+def front(lat=None, lon=None):
+    """Return the front artwork as an L mask at the logo's own resolution.
+
+    With no temple in the frame the front is the plain box logo."""
     logo = Image.open(LOGO).getchannel("A")
+    if lat is None:
+        return logo.crop(logo.getbbox())
     pad = 120  # room for the coordinates, which sit centred on the box line
     m = Image.new("L", (logo.width + 2 * pad, logo.height + 2 * pad), 0)
     m.paste(logo, (pad, pad))
@@ -246,6 +250,19 @@ def save_front(mask, path, ppi=300):
     img.save(path, dpi=(ppi, ppi), optimize=True)
 
 
+def fit(roads, p, max_fused):
+    """Small-town weight unless it merges: 1.5 mm, else 0.5 mm, else narrow the frame."""
+    def f(mm, km):
+        return fused_pct(render(roads, p["centre"], km, mm, 100), mm, 100)
+    if f(1.5, p["width_km"]) <= max_fused:
+        p["line_mm"] = 1.5
+    else:
+        p["line_mm"] = 0.5
+        if f(0.5, p["width_km"]) > max_fused:
+            p["width_km"] = auto_width(roads, p, max_fused, hi=p["width_km"])
+    print(f"  fitted: {p['width_km']} km at {p['line_mm']} mm")
+
+
 def auto_width(roads, p, max_fused, lo=3.0, hi=80.0):
     """Widest frame (km) with fused ink at or under max_fused, by bisection."""
     best = lo
@@ -266,6 +283,8 @@ def build(name, p, args):
     if args.auto:
         p["width_km"] = auto_width(roads, p, args.max_fused)
         print(f"  widest frame that holds: {p['width_km']} km")
+    if args.fit:
+        fit(roads, p, args.max_fused)
     outdir = OUT / name
     outdir.mkdir(parents=True, exist_ok=True)
     tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm"
@@ -280,21 +299,34 @@ def build(name, p, args):
              outdir / f"{tag}-print-300dpi.png", 300)
     if p.get("temple"):
         save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")
+    else:
+        save_front(front(), outdir / f"{name}-front-plain-6in-300dpi.png")
     print(f"  -> {outdir.relative_to(ROOT)}/")
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("places", nargs="+", help="keys in places.json")
+    ap.add_argument("places", nargs="*", help="keys in places.json")
     ap.add_argument("--auto", action="store_true", help="find the widest frame that holds")
     ap.add_argument("--max-fused", type=float, default=6.0)
+    ap.add_argument("--fit", action="store_true",
+                    help="pick 1.5 or 0.5 mm (and narrow if needed); saves to places.json")
+    ap.add_argument("--all", action="store_true", help="every place in places.json")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")
     args = ap.parse_args()
     places = {k: v for k, v in json.loads(PLACES.read_text()).items() if not k.startswith("_")}
-    for name in args.places:
+    names = list(places) if args.all else args.places
+    if not names:
+        ap.error("name at least one place, or use --all")
+    for name in names:
         if name not in places:
             sys.exit(f"unknown place {name!r}; known: {', '.join(places)}")
         build(name, places[name], args)
+    if args.fit or args.auto:
+        raw = json.loads(PLACES.read_text())
+        for name in names:
+            raw[name].update(width_km=places[name]["width_km"], line_mm=places[name]["line_mm"])
+        PLACES.write_text(json.dumps(raw, indent=2) + "\n")
 
 
 if __name__ == "__main__":

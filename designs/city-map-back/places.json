@@ -68,5 +68,367 @@
       41.6252883,
       -81.3621488
     ]
+  },
+  "sharon": {
+    "label": "SHARON, VERMONT",
+    "counties": [
+      "50017",
+      "50027",
+      "33009"
+    ],
+    "centre": [
+      43.77943,
+      -72.43384
+    ],
+    "width_km": 16.7,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "whitingham": {
+    "label": "WHITINGHAM, VERMONT",
+    "counties": [
+      "25011",
+      "50003",
+      "50025"
+    ],
+    "centre": [
+      42.78311,
+      -72.86658
+    ],
+    "width_km": 11.4,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "palmyra-village": {
+    "label": "PALMYRA, NEW YORK",
+    "counties": [
+      "36117"
+    ],
+    "centre": [
+      43.06001,
+      -77.23005
+    ],
+    "width_km": 3.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "palmyra-township": {
+    "label": "PALMYRA, NEW YORK",
+    "counties": [
+      "36117",
+      "36069"
+    ],
+    "centre": [
+      43.08362,
+      -77.19148
+    ],
+    "width_km": 10.0,
+    "line_mm": 1.5,
+    "temple": [
+      43.0389988,
+      -77.2370607
+    ]
+  },
+  "manchester": {
+    "label": "MANCHESTER, NEW YORK",
+    "counties": [
+      "36117",
+      "36069"
+    ],
+    "centre": [
+      42.99205,
+      -77.18914
+    ],
+    "width_km": 10.3,
+    "line_mm": 1.5,
+    "temple": [
+      43.0389988,
+      -77.2370607
+    ]
+  },
+  "sacred-grove": {
+    "label": "SACRED GROVE, NEW YORK",
+    "counties": [
+      "36117",
+      "36069"
+    ],
+    "centre": [
+      43.03971,
+      -77.24625
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": [
+      43.0389988,
+      -77.2370607
+    ]
+  },
+  "fayette": {
+    "label": "FAYETTE, NEW YORK",
+    "counties": [
+      "36123",
+      "36099",
+      "36069",
+      "36011"
+    ],
+    "centre": [
+      42.85367,
+      -76.84775
+    ],
+    "width_km": 23.5,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "mendon": {
+    "label": "MENDON, NEW YORK",
+    "counties": [
+      "36055",
+      "36051",
+      "36069"
+    ],
+    "centre": [
+      42.98877,
+      -77.55882
+    ],
+    "width_km": 13.6,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "colesville": {
+    "label": "COLESVILLE, NEW YORK",
+    "counties": [
+      "36017",
+      "36007"
+    ],
+    "centre": [
+      42.18536,
+      -75.66285
+    ],
+    "width_km": 23.6,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "afton": {
+    "label": "AFTON, NEW YORK",
+    "counties": [
+      "36017",
+      "36077",
+      "36007",
+      "36025"
+    ],
+    "centre": [
+      42.24033,
+      -75.52741
+    ],
+    "width_km": 20.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "harmony": {
+    "label": "HARMONY, PENNSYLVANIA",
+    "counties": [
+      "42115",
+      "36007"
+    ],
+    "centre": [
+      41.95433,
+      -75.62182
+    ],
+    "width_km": 8.2,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "hiram": {
+    "label": "HIRAM, OHIO",
+    "counties": [
+      "39055",
+      "39133"
+    ],
+    "centre": [
+      41.31027,
+      -81.14537
+    ],
+    "width_km": 8.6,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "independence": {
+    "label": "INDEPENDENCE, MISSOURI",
+    "counties": [
+      "29047",
+      "29095",
+      "29177"
+    ],
+    "centre": [
+      39.07878,
+      -94.34875
+    ],
+    "width_km": 25.2,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "liberty": {
+    "label": "LIBERTY, MISSOURI",
+    "counties": [
+      "29047",
+      "29095"
+    ],
+    "centre": [
+      39.23919,
+      -94.42585
+    ],
+    "width_km": 11.7,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "richmond": {
+    "label": "RICHMOND, MISSOURI",
+    "counties": [
+      "29107",
+      "29177"
+    ],
+    "centre": [
+      39.27134,
+      -93.96715
+    ],
+    "width_km": 5.8,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "far-west": {
+    "label": "FAR WEST, MISSOURI",
+    "counties": [
+      "29025"
+    ],
+    "centre": [
+      39.67112,
+      -94.13161
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "adam-ondi-ahman": {
+    "label": "ADAM-ONDI-AHMAN, MISSOURI",
+    "counties": [
+      "29061"
+    ],
+    "centre": [
+      39.97989,
+      -93.95286
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "hauns-mill": {
+    "label": "HAUN'S MILL, MISSOURI",
+    "counties": [
+      "29025"
+    ],
+    "centre": [
+      39.67019,
+      -93.83882
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "quincy": {
+    "label": "QUINCY, ILLINOIS",
+    "counties": [
+      "17001"
+    ],
+    "centre": [
+      39.9358,
+      -91.37212
+    ],
+    "width_km": 10.6,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "carthage": {
+    "label": "CARTHAGE, ILLINOIS",
+    "counties": [
+      "17067"
+    ],
+    "centre": [
+      40.41465,
+      -91.12685
+    ],
+    "width_km": 4.7,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "garden-grove": {
+    "label": "GARDEN GROVE, IOWA",
+    "counties": [
+      "19053"
+    ],
+    "centre": [
+      40.82723,
+      -93.60723
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "mount-pisgah": {
+    "label": "MOUNT PISGAH, IOWA",
+    "counties": [
+      "19175"
+    ],
+    "centre": [
+      41.05003,
+      -94.10083
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "council-bluffs": {
+    "label": "COUNCIL BLUFFS, IOWA",
+    "counties": [
+      "19129",
+      "19155"
+    ],
+    "centre": [
+      41.22899,
+      -95.83917
+    ],
+    "width_km": 16.2,
+    "line_mm": 1.5,
+    "temple": null
+  },
+  "winter-quarters": {
+    "label": "WINTER QUARTERS, NEBRASKA",
+    "counties": [
+      "19155",
+      "31055"
+    ],
+    "centre": [
+      41.33504,
+      -95.96501
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": [
+      41.3340799,
+      -95.966178
+    ]
+  },
+  "martins-cove": {
+    "label": "MARTIN'S COVE, WYOMING",
+    "counties": [
+      "56025",
+      "56007"
+    ],
+    "centre": [
+      42.45204,
+      -107.23993
+    ],
+    "width_km": 6.0,
+    "line_mm": 1.5,
+    "temple": null
   }
 }
