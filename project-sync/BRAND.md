@@ -423,9 +423,11 @@ Recommended posture: shoot key temples personally, move the rest to public domai
 
 ## 16. Where the business actually stands
 
-**Zero orders. Ever.**
+**Zero customer orders. Ever.** One test order exists (see below).
 
 Trailing 365 days to 1 September 2026: 558 sessions, 536 visitors, 26 add-to-carts, 4 reached checkout, 0 completed.
+
+Test order, 7 October 2026: order #1001, a Temple Art File (Boise) at $4.95, placed by Evan on the live store. Payment captured and the digital order auto-fulfilled 8 seconds later, so checkout, payment and the digital-download path work. It does not cover a physical order: a tee or hoodie routed to Tapstitch is still untested end to end. It is not market signal.
 
 Read that correctly. The store is pre-launch and unannounced. That traffic is Shopify and crawler bots plus Evan's own testing. The 26 add-to-carts are not market signal. There is no signal at all, which is the normal state for a store that has not opened. The product has never been shown to a real audience.
 
@@ -437,10 +439,11 @@ Before recommending anything growth-related, check whether it assumes traffic th
 
 Established priorities, in order:
 
-1. Verify checkout works with a real test purchase. Zero of four checkouts is unexplained and too small a sample to diagnose.
-2. Pinterest organic, and group or bulk orders through wards and stakes. Both free.
-3. Paid Meta only above roughly $100/day. Otherwise skip it.
-4. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
+1. ~~Verify checkout works with a real test purchase.~~ Done 7 October 2026 with order #1001 (Temple Art File, $4.95, paid and auto-fulfilled). The earlier zero of four checkouts was too small a sample to diagnose and is now moot. Still untested: a physical product order through to Tapstitch fulfillment.
+2. Narrow to a beachhead of 3 to 5 temples and market only those. This is the best-corroborated finding across four rounds of research, with three independent sources arriving at it.
+3. Pinterest organic, and group or bulk orders through wards and stakes. Both free.
+4. Paid Meta only above roughly $100/day. Otherwise skip it.
+5. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
 
 AOV is the structural problem. A single tee cannot absorb a $22 to $40 acquisition cost. The levers are multi-temple orders, hoodie mix, and the personalization premium once the paused date tee returns.
 
@@ -482,7 +485,7 @@ That framing keeps the no-CTA discipline intact, produces content worth watching
 
 What makes it work is the recurrence. People will show up for a slot they can count on.
 
-Sequencing. Zero orders exist, so a customer program currently has a denominator of zero. It arrives in three stages:
+Sequencing. Zero customer orders exist, so a customer program currently has a denominator of zero. It arrives in three stages:
 
 - Now: the seeded cohort. This is the Playbook's existing seeding phase, and seeded people go into this same program. The garment decision that held this back closed on 14 September 2026 (section 7), so the blanks being photographed are the ones the catalog keeps.
 - First orders through roughly 50: the order insert asks for a review and a photo, and the feature slot goes live. The insert connects directly to the Tapstitch packaging idea in section 9, where it was already the right home for the review ask.
