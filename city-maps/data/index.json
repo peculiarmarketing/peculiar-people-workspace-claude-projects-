@@ -1,4 +1,17 @@
 {
+  "adam-ondi-ahman-3km": {
+    "area_id": null,
+    "bbox": [
+      39.95293666475027,
+      -93.98802510094535,
+      40.00683533524973,
+      -93.91768609905466
+    ],
+    "name": "Adam-ondi-Ahman, Kaola Road, Daviess County, Missouri, 64647, United States",
+    "osm": "node/12663337871",
+    "query": "Adam-ondi-Ahman",
+    "radius_km": 3.0
+  },
   "carthage-illinois": {
     "area_id": 3600124766,
     "bbox": [
@@ -10,6 +23,93 @@
     "name": "Carthage, Hancock County, Illinois, United States",
     "osm": "relation/124766",
     "query": "Carthage, Illinois"
+  },
+  "council-bluffs-iowa": {
+    "area_id": 3600128357,
+    "bbox": [
+      41.1672536,
+      -95.9272495,
+      41.2907291,
+      -95.7510892
+    ],
+    "name": "Council Bluffs, Kane Township, Pottawattamie County, Iowa, United States",
+    "osm": "relation/128357",
+    "query": "Council Bluffs, Iowa"
+  },
+  "far-west-missouri-3km": {
+    "area_id": null,
+    "bbox": [
+      39.64416706475027,
+      -94.16662130145609,
+      39.698065735249735,
+      -94.0965976985439
+    ],
+    "name": "Far West, Caldwell County, Missouri, United States",
+    "osm": "node/151437854",
+    "query": "Far West, Missouri",
+    "radius_km": 3.0
+  },
+  "garden-grove-iowa": {
+    "area_id": 3600129180,
+    "bbox": [
+      40.8215443,
+      -93.6192499,
+      40.83066,
+      -93.5952688
+    ],
+    "name": "Garden Grove, Decatur County, Iowa, United States",
+    "osm": "relation/129180",
+    "query": "Garden Grove, Iowa"
+  },
+  "garden-grove-iowa-3km": {
+    "area_id": null,
+    "bbox": [
+      40.80027636475027,
+      -93.64284792316536,
+      40.85417503524973,
+      -93.57161787683464
+    ],
+    "name": "Garden Grove, Decatur County, Iowa, United States",
+    "osm": "relation/129180",
+    "query": "Garden Grove, Iowa",
+    "radius_km": 3.0
+  },
+  "hawn-s-mill-3km": {
+    "area_id": null,
+    "bbox": [
+      39.643242464750266,
+      -93.87383433287877,
+      39.69714113524973,
+      -93.80381166712124
+    ],
+    "name": "Hawn's Mill Cemetery, Northeast Hauns Mill Drive, Caldwell County, Missouri, United States",
+    "osm": "node/12663369901",
+    "query": "Hawn's Mill",
+    "radius_km": 3.0
+  },
+  "hiram-township-portage-county-ohio": {
+    "area_id": 3604629862,
+    "bbox": [
+      41.272968,
+      -81.1920779,
+      41.3475802,
+      -81.098672
+    ],
+    "name": "Hiram Township, Portage County, Ohio, United States",
+    "osm": "relation/4629862",
+    "query": "Hiram Township, Portage County, Ohio"
+  },
+  "independence-missouri": {
+    "area_id": 3600139824,
+    "bbox": [
+      39.017679,
+      -94.4815,
+      39.1398712,
+      -94.2160092
+    ],
+    "name": "Independence, Jackson County, Missouri, United States",
+    "osm": "relation/139824",
+    "query": "Independence, Missouri"
   },
   "kirtland-ohio": {
     "area_id": 3600181990,
@@ -23,6 +123,57 @@
     "osm": "relation/181990",
     "query": "Kirtland, Ohio"
   },
+  "liberty-missouri": {
+    "area_id": 3600141013,
+    "bbox": [
+      39.175747,
+      -94.4797162,
+      39.3026343,
+      -94.3719884
+    ],
+    "name": "Liberty, Clay County, Missouri, United States",
+    "osm": "relation/141013",
+    "query": "Liberty, Missouri"
+  },
+  "martin-s-cove-natrona-county-wyoming-3km": {
+    "area_id": null,
+    "bbox": [
+      42.42509356475027,
+      -107.27645490663387,
+      42.478992235249734,
+      -107.20340589336614
+    ],
+    "name": "Martin's Cove, Oregon Trail, Natrona County, Wyoming, United States",
+    "osm": "node/5310826993",
+    "query": "Martin's Cove, Natrona County, Wyoming",
+    "radius_km": 3.0
+  },
+  "mormon-trail-center-at-winter-quarters-3km": {
+    "area_id": null,
+    "bbox": [
+      41.308090564750266,
+      -96.0009050743794,
+      41.36198923524973,
+      -95.92912252562058
+    ],
+    "name": "Mormon Trail Center at Winter Quarters, State Street, Florence, Omaha, Douglas County, Nebraska, 68112, United States",
+    "osm": "way/1101671508",
+    "query": "Mormon Trail Center at Winter Quarters",
+    "radius_km": 3.0
+  },
+  "mount-pisgah-park-union-county-iowa-3km": {
+    "area_id": null,
+    "bbox": [
+      41.023082264750265,
+      -94.13656695881409,
+      41.07698093524973,
+      -94.06509624118593
+    ],
+    "name": "Mount Pisgah Park, Union County, Iowa, United States",
+    "osm": "relation/6150307",
+    "query": "Mount Pisgah Park, Union County, Iowa",
+    "radius_km": 3.0
+  },
   "nauvoo-illinois": {
     "area_id": 3600127064,
     "bbox": [
@@ -35,6 +186,18 @@
     "osm": "relation/127064",
     "query": "Nauvoo, Illinois"
   },
+  "oakland-township-susquehanna-county-pennsylvania": {
+    "area_id": 3606352203,
+    "bbox": [
+      41.9097821,
+      -75.6555672,
+      41.9988812,
+      -75.5880689
+    ],
+    "name": "Oakland Township, Susquehanna County, Pennsylvania, 18847, United States",
+    "osm": "relation/6352203",
+    "query": "Oakland Township, Susquehanna County, Pennsylvania"
+  },
   "palmyra-new-york": {
     "area_id": 3600176097,
     "bbox": [
@@ -46,5 +209,162 @@
     "name": "Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
     "osm": "relation/176097",
     "query": "Palmyra, New York"
+  },
+  "preston-lancashire": {
+    "area_id": 3600148606,
+    "bbox": [
+      53.7480139,
+      -2.825998,
+      53.896153,
+      -2.5954368
+    ],
+    "name": "Preston, Lancashire, England, United Kingdom",
+    "osm": "relation/148606",
+    "query": "Preston, Lancashire"
+  },
+  "quincy-illinois": {
+    "area_id": 3600126098,
+    "bbox": [
+      39.89921,
+      -91.428424,
+      39.9723842,
+      -91.31581
+    ],
+    "name": "Quincy, Adams County, Illinois, United States",
+    "osm": "relation/126098",
+    "query": "Quincy, Illinois"
+  },
+  "richmond-missouri": {
+    "area_id": 3600140970,
+    "bbox": [
+      39.2458694,
+      -93.997689,
+      39.296807,
+      -93.936615
+    ],
+    "name": "Richmond, Ray County, Missouri, 64085, United States",
+    "osm": "relation/140970",
+    "query": "Richmond, Missouri"
+  },
+  "sacred-grove-manchester-3km": {
+    "area_id": null,
+    "bbox": [
+      43.01276026475027,
+      -77.28312680533773,
+      43.066658935249734,
+      -77.20938199466227
+    ],
+    "name": "The Sacred Grove, Town of Farmington, Town of Manchester, Ontario County, New York, United States",
+    "osm": "way/70200391",
+    "query": "Sacred Grove, Manchester",
+    "radius_km": 3.0
+  },
+  "salt-lake-city-utah": {
+    "area_id": 3600198770,
+    "bbox": [
+      40.6999263,
+      -112.1013916,
+      40.8533905,
+      -111.7404843
+    ],
+    "name": "Salt Lake City, Salt Lake County, Utah, United States",
+    "osm": "relation/198770",
+    "query": "Salt Lake City, Utah"
+  },
+  "sharon-windsor-county-vermont": {
+    "area_id": 3602030462,
+    "bbox": [
+      43.7220154,
+      -72.5283444,
+      43.8368512,
+      -72.3393436
+    ],
+    "name": "Sharon, Windsor County, Vermont, 05065, United States",
+    "osm": "relation/2030462",
+    "query": "Sharon, Windsor County, Vermont"
+  },
+  "town-of-afton-new-york": {
+    "area_id": 3603166217,
+    "bbox": [
+      42.194996,
+      -75.637499,
+      42.285659,
+      -75.417319
+    ],
+    "name": "Town of Afton, Chenango County, New York, United States",
+    "osm": "relation/3166217",
+    "query": "Town of Afton, New York"
+  },
+  "town-of-colesville-new-york": {
+    "area_id": 3604611965,
+    "bbox": [
+      42.120984,
+      -75.792896,
+      42.24973,
+      -75.532797
+    ],
+    "name": "Town of Colesville, Broome County, New York, United States",
+    "osm": "relation/4611965",
+    "query": "Town of Colesville, New York"
+  },
+  "town-of-fayette-new-york": {
+    "area_id": 3609154533,
+    "bbox": [
+      42.8042857,
+      -76.9783847,
+      42.903053,
+      -76.717116
+    ],
+    "name": "Town of Fayette, Seneca County, New York, 13065, United States",
+    "osm": "relation/9154533",
+    "query": "Town of Fayette, New York"
+  },
+  "town-of-manchester-ontario-county-new-york": {
+    "area_id": 3603389525,
+    "bbox": [
+      42.944152,
+      -77.246806,
+      43.039955,
+      -77.131466
+    ],
+    "name": "Town of Manchester, Ontario County, New York, United States",
+    "osm": "relation/3389525",
+    "query": "Town of Manchester, Ontario County, New York"
+  },
+  "town-of-mendon-new-york": {
+    "area_id": 3602763733,
+    "bbox": [
+      42.942909,
+      -77.634979,
+      43.034626,
+      -77.482664
+    ],
+    "name": "Town of Mendon, Monroe County, New York, United States",
+    "osm": "relation/2763733",
+    "query": "Town of Mendon, New York"
+  },
+  "town-of-palmyra-new-york": {
+    "area_id": 3603292065,
+    "bbox": [
+      43.039824,
+      -77.247271,
+      43.127407,
+      -77.135687
+    ],
+    "name": "Town of Palmyra, Wayne County, New York, 14522, United States",
+    "osm": "relation/3292065",
+    "query": "Town of Palmyra, New York"
+  },
+  "whitingham-vermont": {
+    "area_id": 3602017228,
+    "bbox": [
+      42.7364128,
+      -72.9301038,
+      42.8298058,
+      -72.8030539
+    ],
+    "name": "Whitingham, Windham County, Vermont, United States",
+    "osm": "relation/2017228",
+    "query": "Whitingham, Vermont"
   }
 }

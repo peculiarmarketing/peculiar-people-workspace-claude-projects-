@@ -57,6 +57,10 @@ MARGIN = 0.02         # fraction of the long side left empty on each edge
 SUPERSAMPLE = 2       # PNG lines are drawn this much larger, then scaled down to antialias
 
 
+class FetchError(Exception):
+    """One place failed; the rest of the batch should still run."""
+
+
 def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
@@ -76,16 +80,38 @@ def save_index(index):
     INDEX.write_text(json.dumps(index, indent=2, sort_keys=True) + "\n")
 
 
-def lookup(query, index):
-    """Resolve a place name to an OSM area id (or a bbox), using the index first."""
-    slug = slugify(query)
+def lookup(query, index, radius=None):
+    """Resolve a place name to an OSM area id (or a bbox), using the index first.
+
+    With `radius` (km), the map is a square that far around the first match
+    instead of a boundary. Use it for sites with no town boundary (Far West,
+    Adam-ondi-Ahman) and write the query precisely, since the first hit wins.
+    """
+    slug = slugify(query) + (f"-{radius:g}km" if radius else "")
     if slug in index:
         return slug, index[slug]
 
     rows = http(NOMINATIM + "?" + urllib.parse.urlencode({"format": "json", "q": query}))
     time.sleep(1)  # Nominatim usage policy: at most one request per second
     if not rows:
-        raise SystemExit(f"Nominatim found nothing for {query!r}")
+        raise FetchError(f"Nominatim found nothing for {query!r}")
+
+    if radius:
+        row = rows[0]
+        lat, lon = float(row["lat"]), float(row["lon"])
+        dlat = radius / 111.32
+        dlon = radius / (111.32 * math.cos(math.radians(lat)))
+        place = {
+            "query": query,
+            "name": row["display_name"],
+            "osm": f'{row["osm_type"]}/{row["osm_id"]}',
+            "area_id": None,
+            "bbox": [lat - dlat, lon - dlon, lat + dlat, lon + dlon],
+            "radius_km": radius,
+        }
+        index[slug] = place
+        save_index(index)
+        return slug, place
 
     # Prefer a place with a boundary; fall back to the first hit's bounding box.
     row = next((r for r in rows if r["osm_type"] in ("relation", "way")), rows[0])
@@ -137,7 +163,7 @@ def download(place, wayfilter):
             print(f"  {last}, retrying in {wait}s")
             time.sleep(wait)
         print(f"  {last}, trying next server")
-    raise SystemExit(f"Every Overpass server failed. Last error: {last}")
+    raise FetchError(f"every Overpass server failed (last: {last})")
 
 
 def get_data(slug, place, filter_name, refresh):
@@ -162,30 +188,85 @@ def get_data(slug, place, filter_name, refresh):
     return result
 
 
-def project(result):
-    """Turn ways into lists of Web Mercator (x, y) points, y pointing down."""
-    nodes = {}
-    for el in result["elements"]:
-        if el["type"] == "node":
-            lat = max(min(el["lat"], 85.0), -85.0)
-            nodes[el["id"]] = (
-                math.radians(el["lon"]),
-                -math.log(math.tan(math.pi / 4 + math.radians(lat) / 2)),
-            )
+def mercator(lon, lat):
+    lat = max(min(lat, 85.0), -85.0)
+    return math.radians(lon), -math.log(math.tan(math.pi / 4 + math.radians(lat) / 2))
+
+
+def clip_segment(a, b, box):
+    """Liang-Barsky: the part of segment a-b inside box (x0, y0, x1, y1), or None."""
+    (x0, y0), (x1, y1) = a, b
+    dx, dy = x1 - x0, y1 - y0
+    t0, t1 = 0.0, 1.0
+    for p, q in ((-dx, x0 - box[0]), (dx, box[2] - x0), (-dy, y0 - box[1]), (dy, box[3] - y0)):
+        if p == 0:
+            if q < 0:
+                return None
+            continue
+        r = q / p
+        if p < 0:
+            t0 = max(t0, r)
+        else:
+            t1 = min(t1, r)
+        if t0 > t1:
+            return None
+    return (x0 + t0 * dx, y0 + t0 * dy), (x0 + t1 * dx, y0 + t1 * dy)
+
+
+def clip_line(pts, box):
+    """Split a polyline into the runs that fall inside box."""
+    runs, run = [], []
+    for a, b in zip(pts, pts[1:]):
+        seg = clip_segment(a, b, box)
+        if seg is None:
+            if len(run) >= 2:
+                runs.append(run)
+            run = []
+            continue
+        if not run or run[-1] != seg[0]:
+            if len(run) >= 2:
+                runs.append(run)
+            run = [seg[0]]
+        run.append(seg[1])
+    if len(run) >= 2:
+        runs.append(run)
+    return runs
+
+
+def project(result, clip_bbox=None):
+    """Turn ways into lists of Web Mercator (x, y) points, y pointing down.
+
+    With clip_bbox ([s, w, n, e]), lines are cut at its edges and the box
+    itself is returned as the frame, so the map is exactly that square.
+    """
+    nodes = {el["id"]: mercator(el["lon"], el["lat"])
+             for el in result["elements"] if el["type"] == "node"}
+    box = None
+    if clip_bbox:
+        s, w, n, e = clip_bbox
+        (x0, y1), (x1, y0) = mercator(w, s), mercator(e, n)
+        box = (x0, y0, x1, y1)
     lines = []
     for el in result["elements"]:
         if el["type"] == "way":
             pts = [nodes[n] for n in el.get("nodes", []) if n in nodes]
-            if len(pts) >= 2:
-                lines.append(pts)
-    return lines
+            if len(pts) < 2:
+                continue
+            lines.extend(clip_line(pts, box) if box else [pts])
+    return lines, box
 
 
-def fit(lines, width):
-    """Scale lines to fit a canvas `width` wide; return (lines, width, height)."""
-    xs = [x for line in lines for x, _ in line]
-    ys = [y for line in lines for _, y in line]
-    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+def fit(lines, width, frame=None):
+    """Scale lines to fit a canvas `width` wide; return (lines, width, height).
+
+    The frame is the lines' own extent unless a box (x0, y0, x1, y1) is given.
+    """
+    if frame:
+        minx, miny, maxx, maxy = frame
+    else:
+        xs = [x for line in lines for x, _ in line]
+        ys = [y for line in lines for _, y in line]
+        minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
     spanx, spany = (maxx - minx) or 1e-9, (maxy - miny) or 1e-9
     pad = MARGIN * max(spanx, spany)
     scale = width / (spanx + 2 * pad)
@@ -195,8 +276,8 @@ def fit(lines, width):
     return fitted, width, height
 
 
-def write_svg(lines, path, colour, title):
-    fitted, w, h = fit(lines, SVG_WIDTH)
+def write_svg(lines, path, colour, title, frame=None):
+    fitted, w, h = fit(lines, SVG_WIDTH, frame)
     paths = "\n".join(
         '<path d="M' + " L".join(f"{x:.1f} {y:.1f}" for x, y in line) + '"/>'
         for line in fitted
@@ -211,10 +292,10 @@ def write_svg(lines, path, colour, title):
     )
 
 
-def render_mask(lines, png_width):
+def render_mask(lines, png_width, frame=None):
     """Draw the lines into a greyscale mask at PNG size, antialiased by supersampling."""
     big = png_width * SUPERSAMPLE
-    fitted, w, h = fit(lines, big)
+    fitted, w, h = fit(lines, big, frame)
     stroke = max(1, round(SVG_STROKE * big / SVG_WIDTH))
     mask = Image.new("L", (w, h), 0)
     draw = ImageDraw.Draw(mask)
@@ -238,32 +319,46 @@ def main():
     ap.add_argument("--filter", choices=FILTERS, default="roads")
     ap.add_argument("--format", choices=("svg", "png", "both"), default="both")
     ap.add_argument("--png-width", type=int, default=6000)
+    ap.add_argument("--radius", type=float, metavar="KM",
+                    help="map a square this far around the place instead of its boundary")
     ap.add_argument("--refresh", action="store_true", help="re-download even if cached")
     args = ap.parse_args()
 
     DATA.mkdir(exist_ok=True)
     index = load_index()
+    failed = []
     for query in args.places:
-        slug, place = lookup(query, index)
-        print(f"{query} -> {place['name']} ({place['osm']})")
-        result = get_data(slug, place, args.filter, args.refresh)
-        lines = project(result)
-        if not lines:
-            print(f"  no ways found for {query}, skipping")
-            continue
+        try:
+            make_maps(query, index, args)
+        except FetchError as err:
+            print(f"  FAILED: {err}")
+            failed.append(query)
+    if failed:
+        print("\nFailed, run these again later:\n  " + "\n  ".join(failed))
+        return 1
 
-        outdir = OUT / slug
-        outdir.mkdir(parents=True, exist_ok=True)
-        base = f"{slug}-{args.filter}"
-        title = f"{place['name']}: {args.filter}"
-        if args.format in ("svg", "both"):
-            write_svg(lines, outdir / f"{base}-black.svg", "#000", title)
-            write_svg(lines, outdir / f"{base}-white.svg", "#fff", title)
-        if args.format in ("png", "both"):
-            mask = render_mask(lines, args.png_width)
-            write_png(mask, outdir / f"{base}-black.png", (0, 0, 0))
-            write_png(mask, outdir / f"{base}-white.png", (255, 255, 255))
-        print(f"  {len(lines)} ways -> {outdir.relative_to(HERE)}/")
+
+def make_maps(query, index, args):
+    slug, place = lookup(query, index, args.radius)
+    print(f"{query} -> {place['name']} ({place['osm']})")
+    result = get_data(slug, place, args.filter, args.refresh)
+    lines, frame = project(result, place["bbox"] if place.get("radius_km") else None)
+    if not lines:
+        print(f"  no ways found for {query}, skipping")
+        return
+
+    outdir = OUT / slug
+    outdir.mkdir(parents=True, exist_ok=True)
+    base = f"{slug}-{args.filter}"
+    title = f"{place['name']}: {args.filter}"
+    if args.format in ("svg", "both"):
+        write_svg(lines, outdir / f"{base}-black.svg", "#000", title, frame)
+        write_svg(lines, outdir / f"{base}-white.svg", "#fff", title, frame)
+    if args.format in ("png", "both"):
+        mask = render_mask(lines, args.png_width, frame)
+        write_png(mask, outdir / f"{base}-black.png", (0, 0, 0))
+        write_png(mask, outdir / f"{base}-white.png", (255, 255, 255))
+    print(f"  {len(lines)} ways -> {outdir.relative_to(HERE)}/")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # City maps
 
-Street maps of any town, from OpenStreetMap, as SVG and PNG. This is raw material for designs (Nauvoo, Kirtland, Carthage, Palmyra and the rest). It only gets the map out. The designs happen later, somewhere else.
+Street maps of any town, from OpenStreetMap, as SVG and PNG. `church-history-sites.md` lists the 29 Church history sites already downloaded. This is raw material for designs (Nauvoo, Kirtland, Carthage, Palmyra and the rest). It only gets the map out. The designs happen later, somewhere else.
 
 Two tools share one data folder:
 
@@ -29,7 +29,10 @@ Options:
 
 - `--filter roads` (default, every `highway`), `roads-basic`, `roads-strict`, `all-ways`, `buildings`. Same filters as the web app.
 - `--format svg|png|both` and `--png-width 6000`.
+- `--radius 3` maps a 6 km square around the place instead of its boundary, with roads cut at the edge. Use it for sites with no town (Far West, Adam-ondi-Ahman) and for tiny villages whose boundary map is mostly one passing highway. The first match wins, so write the name precisely.
 - `--refresh` downloads again even if the town is saved.
+
+If a place fails (the Overpass servers are often busy for bigger cities), the rest of the batch still runs and the failures are listed at the end. Run those again a few minutes later.
 
 Be specific with names. The script prints which place it matched, so check it. "Palmyra, New York" matches the village, not the larger Town of Palmyra. Ask for "Town of Palmyra, New York" when you want the township. A matched place is remembered in `data/index.json`; delete its entry to look it up again.
 
