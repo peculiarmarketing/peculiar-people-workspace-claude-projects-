@@ -1,6 +1,6 @@
 # City map back print
 
-Started 8 October 2026. A street map of a Church history site or any city, printed on the back of the garment inside a bolder frame, with `CITY, STATE` (or `CITY, COUNTRY`) small in the bottom right corner. The front is the box logo with the temple's coordinates. Cities only for now; mission-boundary designs are set aside. Nauvoo is being published as the test product (8 October 2026); see Publishing below.
+Started 8 October 2026. A street map of a Church history site or any city, printed on the back of the garment inside a bolder frame, with `CITY, STATE` (or `CITY, COUNTRY`) small in the bottom right corner. The front is the box logo with the temple's coordinates. Cities only for now; mission-boundary designs are set aside. Nauvoo is live as the test product (8 October 2026); see Publishing below.
 
 Mockups live on the design canvas "City Map Back Prints" on claude.ai (private to Evan): https://claude.ai/artifact/G2aUish7Jaz8CngTkvGkAF
 
