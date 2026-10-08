@@ -154,7 +154,23 @@ Most damage is Shopify-side and repaired in place, all idempotent:
 - Missing art card: `art_images.py push --temple T`.
 - Colour order: `shopify_fixups.py all --handle H`.
 
-Tapstitch cannot add a colour to an existing listing, and distributing a rebuilt store product creates a second Shopify product with the same title rather than updating the first. A full rebuild is therefore a swap: new product, old one set to DRAFT at a `-retired-<date>` address. `scripts/eden_green_rollout.py` is the worked example; its docstring holds the sequence and traps. Any swap needs Evan's explicit go-ahead.
+Tapstitch cannot add a colour to an existing listing, and distributing a rebuilt store product creates a second Shopify product with the same title rather than updating the first. A full rebuild is therefore a swap: new product, old one set to DRAFT at a `-retired-<date>` address. Any swap needs Evan's explicit go-ahead. Two worked examples, read their docstrings:
+
+- `scripts/tee_colours_rollout.py` (8 Oct 2026, Pink, Light Blue and Cream on all 45 temple tees and both map tees): the one to copy for adding a colour to a live line. It never re-saves a live design (that makes Tapstitch re-send the live product's images, alt text stripped): `tapstitch_api.copy_design` makes a new private design with the live one's exact artwork and the new colour list. The finished gallery is carried across image for image and only the new colours' photos are added, so it runs without the Mac's Temples folder.
+- `scripts/eden_green_rollout.py` (22 Sep 2026, Eden Green on the hoodies): rebuilds the gallery from local composites instead.
+
+Every swapped product loses its Easify dropdown until Evan re-imports `artifacts/easify/option-sets.csv` (the CSV is keyed by handle, which a swap keeps).
+
+## City map products
+
+A city map design (back street map, coordinates logo front) goes on the tee, crew and hoodie through `scripts/map_run.py <place>` (`--apply`, then `--apply --publish`, `--parent` for the one map per garment that is the line's collection card). Its docstring holds Evan's 8 Oct 2026 rules: title "<line with Map for Temple> (<Place>)", tags `map:<place>`, `line:map`, `apparel:<garment>` and never `garment:`/`country:`/`state:` (those feed the temple collections and marquee), the `product.map` page template, labelled Tapstitch flats plus a map and a logo close-up card, and Easify map sets (`easify_options.py sync --maps-only` works from the cloud). It takes its colours from the same garment configs, so maps get every colour a temple product does. State per place: `artifacts/maps/<place>/state.json`.
+
+## Adding a colour to a garment
+
+1. `garments/<g>.json` colorways (Tapstitch name, storefront name, ink, colour code), `config/tapstitch.json` `api.blanks.<g>.colorCodes`, `colour_names.NAMES[<g>]`, and `scripts/build_product_gallery.py` `ORDER[<g>]` (appended, so live galleries keep their order).
+2. A hex in `config/swatches.json`, then `scripts/swatches.py push` so the LIVE theme has the swatch before any product carries the colour (`check --strict-theme` to prove it). An unknown name renders a white circle.
+3. A blank on-model photo of the colour on the same model, one generation from that garment's base: `artifacts/onmodel-front/blanks/back_<g>_<slug>.jpg`. `composite_catalog.py` reads it when `colourway-photos/` has no copy, and the sweep preflight stops if any colour has neither.
+4. From then on every sweep and every `map_run.py` product is built with the colour. Live products get it through a swap (above).
 
 ## Temples/All mirror (digital download files)
 
