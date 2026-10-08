@@ -19,7 +19,8 @@
     "temple": [
       29.641603,
       -98.4888196
-    ]
+    ],
+    "busy": true
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -35,7 +36,8 @@
     "temple": [
       40.7704367,
       -111.8919131
-    ]
+    ],
+    "busy": true
   },
   "nauvoo": {
     "label": "NAUVOO, ILLINOIS",
@@ -264,8 +266,9 @@
       -94.34875
     ],
     "width_km": 25.2,
-    "line_mm": 1.5,
-    "temple": null
+    "line_mm": 0.5,
+    "temple": null,
+    "busy": true
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -278,8 +281,9 @@
       -94.42585
     ],
     "width_km": 11.7,
-    "line_mm": 1.5,
-    "temple": null
+    "line_mm": 0.5,
+    "temple": null,
+    "busy": true
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -344,8 +348,9 @@
       -91.37212
     ],
     "width_km": 10.6,
-    "line_mm": 1.5,
-    "temple": null
+    "line_mm": 0.5,
+    "temple": null,
+    "busy": true
   },
   "carthage": {
     "label": "CARTHAGE, ILLINOIS",
@@ -397,8 +402,9 @@
       -95.83917
     ],
     "width_km": 16.2,
-    "line_mm": 1.5,
-    "temple": null
+    "line_mm": 0.5,
+    "temple": null,
+    "busy": true
   },
   "winter-quarters": {
     "label": "WINTER QUARTERS, NEBRASKA",

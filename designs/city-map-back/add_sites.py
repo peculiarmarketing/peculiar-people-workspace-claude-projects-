@@ -8,8 +8,8 @@ is framed to its own boundary (3:4, a little margin), so the map takes in the
 whole town and not the next one; a site with no town is framed on its 6 km
 square. Counties are every county whose outline box touches the frame, so roads
 run to the frame edge instead of stopping at a county line. A temple is marked
-when one of TEMPLES falls inside the frame. Line weight starts at 1.5 mm (small
-towns) and the build drops busy places to 0.5 mm (see build_map_back.py).
+when one of TEMPLES falls inside the frame. Line weight is 1.5 mm, or 0.5 mm for the
+cities listed in BUSY.
 
 Entries already in places.json are left alone, so hand-tuned frames (Nauvoo,
 Kirtland, Salt Lake City) are kept.
@@ -71,6 +71,8 @@ SITES = {
 # River towns on a state line: leave the far bank out so the map ends at the
 # river instead of pulling in the next city (Omaha, West Quincy).
 ACROSS_RIVER = {"council-bluffs": "31", "quincy": "29", "carthage": "19"}
+# Cities busy enough that 1.5 mm streets clump; they print at 0.5 mm.
+BUSY = {"independence", "council-bluffs", "liberty", "quincy"}
 MARGIN = 0.05
 MIN_KM = 3.0
 
@@ -132,7 +134,10 @@ def main():
             codes = [c for c in codes if not c.startswith(ACROSS_RIVER[name])]
         places[name] = {"label": label, "counties": codes,
                         "centre": [round(centre[0], 5), round(centre[1], 5)],
-                        "width_km": width, "line_mm": 1.5, "temple": temple}
+                        "width_km": width, "line_mm": 0.5 if name in BUSY else 1.5,
+                        "temple": temple}
+        if name in BUSY:
+            places[name]["busy"] = True
         print(f"{name}: {width} km, counties {codes}, temple {'yes' if temple else 'no'}")
     PLACES.write_text(json.dumps(places, indent=2) + "\n")
 

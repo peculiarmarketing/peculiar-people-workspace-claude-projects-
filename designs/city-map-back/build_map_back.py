@@ -251,14 +251,17 @@ def save_front(mask, path, ppi=300):
 
 
 def fit(roads, p, max_fused):
-    """Small-town weight unless it merges: 1.5 mm, else 0.5 mm, else narrow the frame."""
-    def f(mm, km):
-        return fused_pct(render(roads, p["centre"], km, mm, 100), mm, 100)
-    if f(1.5, p["width_km"]) <= max_fused:
+    """Line weight by kind of place: busy cities ("busy": true in places.json) at
+    0.5 mm, narrowed if their frame merges; every other place at 1.5 mm.
+
+    The fused-ink measure picks the frame width for a busy city, but it cannot
+    tell a town from busy countryside (rural Fayette scores higher at 1.5 mm than
+    the city of Quincy), so it does not choose the weight."""
+    if not p.get("busy"):
         p["line_mm"] = 1.5
     else:
         p["line_mm"] = 0.5
-        if f(0.5, p["width_km"]) > max_fused:
+        if fused_pct(render(roads, p["centre"], p["width_km"], 0.5, 100), 0.5, 100) > max_fused:
             p["width_km"] = auto_width(roads, p, max_fused, hi=p["width_km"])
     print(f"  fitted: {p['width_km']} km at {p['line_mm']} mm")
 
@@ -310,7 +313,7 @@ def main():
     ap.add_argument("--auto", action="store_true", help="find the widest frame that holds")
     ap.add_argument("--max-fused", type=float, default=6.0)
     ap.add_argument("--fit", action="store_true",
-                    help="pick 1.5 or 0.5 mm (and narrow if needed); saves to places.json")
+                    help="1.5 mm, or 0.5 mm for busy places (narrowed if needed); saves to places.json")
     ap.add_argument("--all", action="store_true", help="every place in places.json")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")
     args = ap.parse_args()
