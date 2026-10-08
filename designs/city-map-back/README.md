@@ -40,6 +40,10 @@ Kept road classes (MTFCC): S1100 interstates, S1200 US and state highways, S1630
 
 `add_sites.py` adds every site in `city-maps/church-history-sites.md` to `places.json`. Each town is framed to its own boundary (3:4, 5 percent margin), so the map takes in the whole town and not the next one; sites with no town use their 6 km square. Every county the frame touches is loaded, so roads run to the frame edge. River towns on a state line leave out the far bank (Council Bluffs drops Omaha, Quincy drops Missouri, Carthage drops Iowa), so the map ends at the river. A temple in frame gets the halo and the coordinates front; with no temple the front is the plain box logo. Temples in frame: Nauvoo, Kirtland, Palmyra (Palmyra township, Manchester, Sacred Grove), Winter Quarters, Salt Lake. Preston, England is not built: TIGER is US only, and the OpenStreetMap download servers were unreachable on 8 October.
 
+## Product stages
+
+Every place in `places.json` has a `status`: **designed** (art built, not reviewed), **review** (the full product package is made: print files per garment, gallery cards, history section; waiting on Evan), **ready** (Evan confirmed; it may go on products), **live** (on the store). `map_run.py <place> --review` builds the package and a review sheet, `--confirm` marks it ready once Evan approves, `--apply` refuses anything below ready, and a full publish marks it live. 8 October 2026: Nauvoo and Salt Lake City live, Kirtland in review, the rest designed.
+
 ## Publishing (product page)
 
 Each map publishes on the tee, crewneck and hoodie through `temple-product-generator/scripts/map_run.py`, which runs the temple pipeline's own Tapstitch and Shopify calls with the map art. Nauvoo is the first, as a live test (8 October 2026).
