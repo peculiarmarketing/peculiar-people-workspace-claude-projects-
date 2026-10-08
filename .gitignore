@@ -35,3 +35,7 @@ idea-inbox/inbox/**/*.wav
 
 # City maps: exports are regenerated from city-maps/data/ in seconds.
 city-maps/out/
+
+# Census TIGER road files (about 20 MB per batch of counties), re-downloaded on demand.
+city-maps/data/tiger/
+designs/city-map-back/out/
