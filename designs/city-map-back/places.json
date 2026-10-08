@@ -21,7 +21,8 @@
       -98.4888196
     ],
     "busy": true,
-    "history": false
+    "history": false,
+    "status": "designed"
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -39,7 +40,8 @@
       -111.8919131
     ],
     "busy": true,
-    "history": true
+    "history": true,
+    "status": "live"
   },
   "nauvoo": {
     "label": "NAUVOO, ILLINOIS",
@@ -56,7 +58,8 @@
       40.5504848,
       -91.3843815
     ],
-    "history": true
+    "history": true,
+    "status": "live"
   },
   "kirtland": {
     "label": "KIRTLAND, OHIO",
@@ -73,7 +76,8 @@
       41.6252883,
       -81.3621488
     ],
-    "history": true
+    "history": true,
+    "status": "review"
   },
   "sharon": {
     "label": "SHARON, VERMONT",
@@ -89,7 +93,8 @@
     "width_km": 16.7,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "whitingham": {
     "label": "WHITINGHAM, VERMONT",
@@ -105,7 +110,8 @@
     "width_km": 11.4,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "palmyra-village": {
     "label": "PALMYRA, NEW YORK",
@@ -119,7 +125,8 @@
     "width_km": 3.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "palmyra-township": {
     "label": "PALMYRA, NEW YORK",
@@ -137,7 +144,8 @@
       43.0389988,
       -77.2370607
     ],
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "manchester": {
     "label": "MANCHESTER, NEW YORK",
@@ -155,7 +163,8 @@
       43.0389988,
       -77.2370607
     ],
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "sacred-grove": {
     "label": "SACRED GROVE, NEW YORK",
@@ -173,7 +182,8 @@
       43.0389988,
       -77.2370607
     ],
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "fayette": {
     "label": "FAYETTE, NEW YORK",
@@ -190,7 +200,8 @@
     "width_km": 23.5,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "mendon": {
     "label": "MENDON, NEW YORK",
@@ -206,7 +217,8 @@
     "width_km": 13.6,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "colesville": {
     "label": "COLESVILLE, NEW YORK",
@@ -221,7 +233,8 @@
     "width_km": 23.6,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "afton": {
     "label": "AFTON, NEW YORK",
@@ -238,7 +251,8 @@
     "width_km": 20.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "harmony": {
     "label": "HARMONY, PENNSYLVANIA",
@@ -253,7 +267,8 @@
     "width_km": 8.2,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "hiram": {
     "label": "HIRAM, OHIO",
@@ -268,7 +283,8 @@
     "width_km": 8.6,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "independence": {
     "label": "INDEPENDENCE, MISSOURI",
@@ -285,7 +301,8 @@
     "line_mm": 0.5,
     "temple": null,
     "busy": true,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -301,7 +318,8 @@
     "line_mm": 0.5,
     "temple": null,
     "busy": true,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -316,7 +334,8 @@
     "width_km": 5.8,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "far-west": {
     "label": "FAR WEST, MISSOURI",
@@ -330,7 +349,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "adam-ondi-ahman": {
     "label": "ADAM-ONDI-AHMAN, MISSOURI",
@@ -344,7 +364,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "hauns-mill": {
     "label": "HAUN'S MILL, MISSOURI",
@@ -358,7 +379,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "quincy": {
     "label": "QUINCY, ILLINOIS",
@@ -373,7 +395,8 @@
     "line_mm": 0.5,
     "temple": null,
     "busy": true,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "carthage": {
     "label": "CARTHAGE, ILLINOIS",
@@ -387,7 +410,8 @@
     "width_km": 4.7,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "garden-grove": {
     "label": "GARDEN GROVE, IOWA",
@@ -401,7 +425,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "mount-pisgah": {
     "label": "MOUNT PISGAH, IOWA",
@@ -415,7 +440,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "council-bluffs": {
     "label": "COUNCIL BLUFFS, IOWA",
@@ -431,7 +457,8 @@
     "line_mm": 0.5,
     "temple": null,
     "busy": true,
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "winter-quarters": {
     "label": "WINTER QUARTERS, NEBRASKA",
@@ -449,7 +476,8 @@
       41.3340799,
       -95.966178
     ],
-    "history": true
+    "history": true,
+    "status": "designed"
   },
   "martins-cove": {
     "label": "MARTIN'S COVE, WYOMING",
@@ -464,6 +492,8 @@
     "width_km": 6.0,
     "line_mm": 1.5,
     "temple": null,
-    "history": true
-  }
+    "history": true,
+    "status": "designed"
+  },
+  "_status": "Product stage per map (8 Oct 2026). designed: art built, not reviewed. review: the full product package (print files per garment, gallery cards, history section) is made and waits on Evan. ready: Evan confirmed it; scripts/map_run.py may publish it. live: on the store. map_run.py refuses --apply below ready and sets live itself after a publish."
 }
