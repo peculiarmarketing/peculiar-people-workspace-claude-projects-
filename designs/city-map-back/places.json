@@ -20,7 +20,8 @@
       29.641603,
       -98.4888196
     ],
-    "busy": true
+    "busy": true,
+    "history": false
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -37,7 +38,8 @@
       40.7704367,
       -111.8919131
     ],
-    "busy": true
+    "busy": true,
+    "history": true
   },
   "nauvoo": {
     "label": "NAUVOO, ILLINOIS",
@@ -53,7 +55,8 @@
     "temple": [
       40.5504848,
       -91.3843815
-    ]
+    ],
+    "history": true
   },
   "kirtland": {
     "label": "KIRTLAND, OHIO",
@@ -69,7 +72,8 @@
     "temple": [
       41.6252883,
       -81.3621488
-    ]
+    ],
+    "history": true
   },
   "sharon": {
     "label": "SHARON, VERMONT",
@@ -84,7 +88,8 @@
     ],
     "width_km": 16.7,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "whitingham": {
     "label": "WHITINGHAM, VERMONT",
@@ -99,7 +104,8 @@
     ],
     "width_km": 11.4,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "palmyra-village": {
     "label": "PALMYRA, NEW YORK",
@@ -112,7 +118,8 @@
     ],
     "width_km": 3.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "palmyra-township": {
     "label": "PALMYRA, NEW YORK",
@@ -129,7 +136,8 @@
     "temple": [
       43.0389988,
       -77.2370607
-    ]
+    ],
+    "history": true
   },
   "manchester": {
     "label": "MANCHESTER, NEW YORK",
@@ -146,7 +154,8 @@
     "temple": [
       43.0389988,
       -77.2370607
-    ]
+    ],
+    "history": true
   },
   "sacred-grove": {
     "label": "SACRED GROVE, NEW YORK",
@@ -163,7 +172,8 @@
     "temple": [
       43.0389988,
       -77.2370607
-    ]
+    ],
+    "history": true
   },
   "fayette": {
     "label": "FAYETTE, NEW YORK",
@@ -179,7 +189,8 @@
     ],
     "width_km": 23.5,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "mendon": {
     "label": "MENDON, NEW YORK",
@@ -194,7 +205,8 @@
     ],
     "width_km": 13.6,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "colesville": {
     "label": "COLESVILLE, NEW YORK",
@@ -208,7 +220,8 @@
     ],
     "width_km": 23.6,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "afton": {
     "label": "AFTON, NEW YORK",
@@ -224,7 +237,8 @@
     ],
     "width_km": 20.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "harmony": {
     "label": "HARMONY, PENNSYLVANIA",
@@ -238,7 +252,8 @@
     ],
     "width_km": 8.2,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "hiram": {
     "label": "HIRAM, OHIO",
@@ -252,7 +267,8 @@
     ],
     "width_km": 8.6,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "independence": {
     "label": "INDEPENDENCE, MISSOURI",
@@ -268,7 +284,8 @@
     "width_km": 25.2,
     "line_mm": 0.5,
     "temple": null,
-    "busy": true
+    "busy": true,
+    "history": true
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -283,7 +300,8 @@
     "width_km": 11.7,
     "line_mm": 0.5,
     "temple": null,
-    "busy": true
+    "busy": true,
+    "history": true
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -297,7 +315,8 @@
     ],
     "width_km": 5.8,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "far-west": {
     "label": "FAR WEST, MISSOURI",
@@ -310,7 +329,8 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "adam-ondi-ahman": {
     "label": "ADAM-ONDI-AHMAN, MISSOURI",
@@ -323,7 +343,8 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "hauns-mill": {
     "label": "HAUN'S MILL, MISSOURI",
@@ -336,7 +357,8 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "quincy": {
     "label": "QUINCY, ILLINOIS",
@@ -350,7 +372,8 @@
     "width_km": 10.6,
     "line_mm": 0.5,
     "temple": null,
-    "busy": true
+    "busy": true,
+    "history": true
   },
   "carthage": {
     "label": "CARTHAGE, ILLINOIS",
@@ -363,7 +386,8 @@
     ],
     "width_km": 4.7,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "garden-grove": {
     "label": "GARDEN GROVE, IOWA",
@@ -376,7 +400,8 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "mount-pisgah": {
     "label": "MOUNT PISGAH, IOWA",
@@ -389,7 +414,8 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   },
   "council-bluffs": {
     "label": "COUNCIL BLUFFS, IOWA",
@@ -404,7 +430,8 @@
     "width_km": 16.2,
     "line_mm": 0.5,
     "temple": null,
-    "busy": true
+    "busy": true,
+    "history": true
   },
   "winter-quarters": {
     "label": "WINTER QUARTERS, NEBRASKA",
@@ -421,7 +448,8 @@
     "temple": [
       41.3340799,
       -95.966178
-    ]
+    ],
+    "history": true
   },
   "martins-cove": {
     "label": "MARTIN'S COVE, WYOMING",
@@ -435,6 +463,7 @@
     ],
     "width_km": 6.0,
     "line_mm": 1.5,
-    "temple": null
+    "temple": null,
+    "history": true
   }
 }

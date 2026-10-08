@@ -188,9 +188,15 @@ def frame_and_label(mask, label, px_per_in):
 # Hand-drawn style: width wanders like pen pressure and dead ends taper to a
 # point, like the temple line art. The wobble is a smooth field over the page
 # (not per line), so two streets meeting at a junction agree on width there.
-HAND_SWING = 0.28        # width varies by about +/-28 percent
+HAND_SWING = 0.40        # default width swing (+/-40 percent); see swing_for()
+SWING_SMALL, SWING_BUSY = 0.40, 0.10   # Evan, 8 Oct 2026
 HAND_TAPER = 7           # a dead end tapers over this many line widths
 HAND_STEP_MM = 0.4       # resampling step along each line
+
+
+def swing_for(p):
+    """Small towns swing 40 percent, busy cities 10 percent, unless a place sets "swing"."""
+    return p.get("swing", SWING_BUSY if p.get("busy") else SWING_SMALL)
 
 
 def hand_width(x_in, y_in, ph):
@@ -374,7 +380,9 @@ def build(name, p, args):
         fit(roads, p, args.max_fused)
     outdir = OUT / name
     outdir.mkdir(parents=True, exist_ok=True)
-    hand = args.hand or p.get("style") == "hand"
+    global HAND_SWING
+    hand = not args.plain and p.get("style", "hand") == "hand"
+    HAND_SWING = args.swing if args.swing is not None else swing_for(p)
     tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm" + (f"-hand{round(HAND_SWING * 100)}" if hand else "")
     preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand)
     fused = fused_pct(preview, p["line_mm"], 100)
@@ -400,15 +408,13 @@ def main():
     ap.add_argument("--fit", action="store_true",
                     help="1.5 mm, or 0.5 mm for busy places (narrowed if needed); saves to places.json")
     ap.add_argument("--all", action="store_true", help="every place in places.json")
-    ap.add_argument("--swing", type=float, help="hand-drawn width swing, e.g. 0.4 for +/-40 percent")
-    ap.add_argument("--hand", action="store_true",
-                    help="hand-drawn lines: varying width, dead ends taper to a point")
+    ap.add_argument("--swing", type=float,
+                    help="override the hand-drawn width swing (default 0.4 small towns, 0.1 busy cities)")
+    ap.add_argument("--plain", action="store_true",
+                    help="even-width lines with round ends instead of the hand-drawn style")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")
     args = ap.parse_args()
     places = {k: v for k, v in json.loads(PLACES.read_text()).items() if not k.startswith("_")}
-    if args.swing is not None:
-        global HAND_SWING
-        HAND_SWING = args.swing
     names = list(places) if args.all else args.places
     if not names:
         ap.error("name at least one place, or use --all")

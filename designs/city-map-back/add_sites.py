@@ -138,6 +138,7 @@ def main():
                         "temple": temple}
         if name in BUSY:
             places[name]["busy"] = True
+        places[name]["history"] = True   # gets the Church history section on its product page
         print(f"{name}: {width} km, counties {codes}, temple {'yes' if temple else 'no'}")
     PLACES.write_text(json.dumps(places, indent=2) + "\n")
 
