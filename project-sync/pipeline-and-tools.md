@@ -53,15 +53,9 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 
 Still open for Evan:
 
-- Run `./.venv.nosync/bin/pip install -r requirements.txt` once on the Mac. The sweep's drawing step needs three new packages (opencv, scipy, scikit-image).
-
-- Ask Tapstitch for the jacket's print method and its minimum line, gap and text size, then update `.claude/skills/design-audit/references/print_thresholds.json`. Until then the seal audit treats the strictest method (DTG on dark) as binding.
-
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
-- The storefront overhaul doc still says Boise is unfinished; its "State as of" section needs the completed rollout.
 - Test purchase to verify checkout (first priority in BRAND.md section 17).
-- Beachhead temples not yet picked.
 - Optional: the Meta developer app "Message Reader" (Peculiar Marketing LLC) is no longer used by anything. Delete it in the Meta dashboard, and remove it under Instagram Settings > Apps and websites on both accounts, if you want no app holding access.
 
 ## Working rules

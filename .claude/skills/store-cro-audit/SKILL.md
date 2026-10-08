@@ -148,7 +148,7 @@ Do not pad. A rule that passes needs no paragraph; the scorecard covers it.
 ## Judgment notes
 
 - **Do not report an open decision as a defect.** BRAND.md section 19 lists genuinely open
-  questions, including the beachhead. The garment blanks are decided (14 September 2026). Navigation organised by temple
+  questions. The garment blanks are decided (14 September 2026). Navigation organised by temple
   rather than by shopper intent is an open question, not a bug.
 - **Distinguish blocked from broken.** Most social-proof rules fail because the store has
   never had an order. That is a state, not a mistake.

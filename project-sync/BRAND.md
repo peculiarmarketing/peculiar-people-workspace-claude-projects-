@@ -292,7 +292,7 @@ An Angel Moroni design sits in `Other designs/Angell Moroni/` and is not current
 
 Evan's list with an honest read on each. None are committed. The reads are arguments. Evan decides.
 
-**Temple location map, "Dot the earth."** State, country, or world map with a dot or pin per temple. The strongest idea in the batch. Temple locations are facts, so there is no copyright exposure, and the data already sits in the research library. The phrase is culturally instant. It also has no beachhead dependency, which is rare here: a Utah or world map sells to everyone, where every other product in the catalog only sells to whoever's temple got picked. It personalizes naturally ("the ones I've been to") and works as a print as well as a garment. One caveat: temples are announced constantly, so a map goes stale within months. Treat that as a feature, date the edition, and let the pipeline regenerate it.
+**Temple location map, "Dot the earth."** State, country, or world map with a dot or pin per temple. The strongest idea in the batch. Temple locations are facts, so there is no copyright exposure, and the data already sits in the research library. The phrase is culturally instant. It also sells to everyone, which is rare here: a Utah or world map is not tied to one temple, where every other product in the catalog sells to people who love that temple. It personalizes naturally ("the ones I've been to") and works as a print as well as a garment. One caveat: temples are announced constantly, so a map goes stale within months. Treat that as a feature, date the edition, and let the pipeline regenerate it.
 
 **More Be Peculiar wordmarks in other languages.** On brand, cheap, and the most direct step toward the worldwide-community vision. One trap that would be easy to miss: "peculiar people" is the King James rendering of 1 Peter 2:9. Other languages render that verse differently, so a literal translation of "Be Peculiar" can land with no scriptural echo at all, which is the whole reason the wordmark works. Start from what the verse actually says in each target language and have a native speaker confirm it. Never machine translate a wordmark.
 
@@ -411,7 +411,7 @@ Researched 1 September 2026. Not legal advice.
 - Trademark and implied affiliation is arguably the bigger exposure and needs a real lawyer.
 - AI-assisted output may not be copyrightable, so the line art may not be defensible against copying.
 
-Recommended posture: shoot beachhead temples personally, move the rest to public domain or permissive Creative Commons (avoiding ShareAlike and NonCommercial), feed multiple references per temple, and log license and source per image.
+Recommended posture: shoot key temples personally, move the rest to public domain or permissive Creative Commons (avoiding ShareAlike and NonCommercial), feed multiple references per temple, and log license and source per image.
 
 ## 16. Where the business actually stands
 
@@ -430,10 +430,9 @@ Before recommending anything growth-related, check whether it assumes traffic th
 Established priorities, in order:
 
 1. Verify checkout works with a real test purchase. Zero of four checkouts is unexplained and too small a sample to diagnose.
-2. Narrow to a beachhead of 3 to 5 temples and market only those. This is the best-corroborated finding across four rounds of research, with three independent sources arriving at it.
-3. Pinterest organic, and group or bulk orders through wards and stakes. Both free.
-4. Paid Meta only above roughly $100/day. Otherwise skip it.
-5. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
+2. Pinterest organic, and group or bulk orders through wards and stakes. Both free.
+3. Paid Meta only above roughly $100/day. Otherwise skip it.
+4. Klaviyo post-purchase flows only after roughly 50 orders. Current state (Evan, 23 September 2026): a four-email Shopify Email post-purchase flow is drafted, and Klaviyo will soon replace Shopify Email.
 
 AOV is the structural problem. A single tee cannot absorb a $22 to $40 acquisition cost. The levers are multi-temple orders, hoodie mix, and the personalization premium once the paused date tee returns.
 
@@ -471,7 +470,7 @@ Being featured is genuine currency in a community this identity-driven, and it c
 
 That framing keeps the no-CTA discipline intact, produces content worth watching on its own, and makes the featured person a contributor.
 
-**3. It becomes the third show.** The Posting Rota has exactly one gap designed into it: The Inspection runs on sample deliveries, has explicitly finite fuel, and thins out once the garment range is settled. The Rota says a third show can open later, once photographs of real people at the beachhead temples exist. This is that show. It solves the fuel problem, and it is the only one of the three that grows as the business grows.
+**3. It becomes the third show.** The Posting Rota has exactly one gap designed into it: The Inspection runs on sample deliveries, has explicitly finite fuel, and thins out once the garment range is settled. The Rota says a third show can open later, once photographs of real people at the temples exist. This is that show. It solves the fuel problem, and it is the only one of the three that grows as the business grows.
 
 What makes it work is the recurrence. People will show up for a slot they can count on.
 
@@ -487,7 +486,7 @@ Operational rules:
 - Put customer photos on the product page for that temple, not only in a gallery. That is social proof at the point of decision, and it retires the mockup problem one temple at a time.
 - Ask at delivery plus a few days, once they have worn it. Never at purchase.
 - Repost fast and reply to everyone. Recognition only functions if it is visible and prompt.
-- Ask for something specific. "Tag us" is weak. "Send us a photo of you at your temple" is achievable and produces the exact asset the Playbook wants: at least one person photographed at each beachhead temple, which it calls the whole brand in one frame.
+- Ask for something specific. "Tag us" is weak. "Send us a photo of you at your temple" is achievable and produces the exact asset the Playbook wants: at least one person photographed at each temple, which it calls the whole brand in one frame.
 - Minors need a parent's permission, and nothing staged should imply access to or endorsement by the Church.
 
 Two content shows, settled:
@@ -529,10 +528,6 @@ Asset locations, all under `1. Peculiar People/`:
 - `Claude Projects/` all automation and skills
 
 ## 19. Open decisions
-
-**Beachhead selection.** Genuinely undecided, for an honest reason: Evan does not know whether soon-to-be-dedicated temples, pioneer temples, or dense-population Utah and Idaho temples will pull hardest.
-
-Worth noting that print-on-demand carries no inventory risk, so the content plan is itself the cheapest possible test. Post across all three types and let performance choose. The decision can come from data instead of a guess.
 
 **1 Peter 2:9 in product copy.** TBD, Evan likes the idea. Never on the design itself.
 

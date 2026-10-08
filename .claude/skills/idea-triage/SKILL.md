@@ -31,7 +31,7 @@ first real piece of work for the ones that are.
    installing a third-party tool, the plan says so and flags it for Evan to
    vet.
 4. **BRAND.md section 19 open decisions stay open.** If an idea depends on one
-   (beachhead, scripture in copy, posting volume), say
+   (scripture in copy, posting volume), say
    which decision it hinges on and leave the call to Evan.
 5. **No unverified facts in drafts.** A statistic or claim from a reel goes in
    as "claimed in the video, unverified", never as fact. Temple facts go

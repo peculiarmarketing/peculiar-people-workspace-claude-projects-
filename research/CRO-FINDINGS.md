@@ -660,7 +660,7 @@ for a reason. Flagged for Evan, not resolved here.
   rather than Shopify collections, and BRAND.md notes that structure is what keeps the
   dropdown links alive across renames. Whether a buyer arrives wanting "a temple shirt" or
   "the Logan temple" is unknown, because nobody has ever bought anything. **Do not resolve
-  this from a video.** It is a real open question and the beachhead decision touches it.
+  this from a video.** It is a real open question.
 - **Homepage as product grid.** C3 argues an endless product grid reads as a catalogue
   rather than a brand. With roughly 167 near-identical products differing only by temple, a
   grid is the natural output of the catalogue, and the prescribed alternative needs imagery

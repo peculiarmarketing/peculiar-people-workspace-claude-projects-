@@ -45,8 +45,7 @@ and DTF on fleece; the jacket method is not yet known.
   fetched; quoted via Gizmodo and ArchDaily, which quote it.
 - Tobias Frere-Jones, Hoefler&Co, Monotype: searched, nothing on circular type
   or seal construction surfaced. Not used.
-- Tapstitch: no public artwork spec found by search. Ask Tapstitch directly for
-  the jacket method's minimums.
+- Tapstitch: no public artwork spec found by search.
 
 ## Sources
 

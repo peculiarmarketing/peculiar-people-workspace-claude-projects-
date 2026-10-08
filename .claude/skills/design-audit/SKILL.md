@@ -199,9 +199,7 @@ verdict, the top findings and the file path in chat.
   art for more than 40 percent of its length is not detected; say so.
 - Non-circular logos get centring, strokes, print checks and previews; the SEAL and arc
   rules report NOT CHECKED.
-- The print numbers are vendor guidance, not Tapstitch's spec (none is published). When
-  Tapstitch confirms the jacket's method and minimums, update
-  `references/print_thresholds.json`.
+- The print numbers are vendor guidance, not Tapstitch's spec (none is published).
 
 ## Provenance
 
