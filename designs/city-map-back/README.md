@@ -22,7 +22,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 
 ## Hand-drawn lines (option, being reviewed)
 
-`--hand` (or `"style": "hand"` on a place) draws every street with a width that wanders about 28 percent either way, like pen pressure, and tapers dead ends to a point over about seven line widths, in the spirit of the temple line art. The wobble is a smooth field over the page, so two streets meeting at a junction agree on width there. An end only tapers when no other street touches it: in the road data a side street often meets a main road partway along without sharing a point, and tapering those ends would leave gaps at junctions. Polygon fill adds about half a pixel per side, so each half-width is reduced by that much to keep the average weight where it was. Product copy must not call the art hand drawn (BRAND.md section 17); it is drawn by code.
+`--hand` (or `"style": "hand"` on a place) draws every street with a width that wanders either way by `--swing` (default 0.28, i.e. 28 percent; 0.4 tried 8 Oct), like pen pressure, and tapers dead ends to a point over about seven line widths, in the spirit of the temple line art. The wobble is a smooth field over the page, so two streets meeting at a junction agree on width there. An end only tapers when no other street touches it: in the road data a side street often meets a main road partway along without sharing a point, and tapering those ends would leave gaps at junctions. Polygon fill adds about half a pixel per side, so each half-width is reduced by that much to keep the average weight where it was. Product copy must not call the art hand drawn (BRAND.md section 17); it is drawn by code.
 
 ## How "as wide as it holds" is measured
 

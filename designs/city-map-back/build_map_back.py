@@ -375,7 +375,7 @@ def build(name, p, args):
     outdir = OUT / name
     outdir.mkdir(parents=True, exist_ok=True)
     hand = args.hand or p.get("style") == "hand"
-    tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm" + ("-hand" if hand else "")
+    tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm" + (f"-hand{round(HAND_SWING * 100)}" if hand else "")
     preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand)
     fused = fused_pct(preview, p["line_mm"], 100)
     frame_and_label(preview, p["label"], 100 * SS)
@@ -400,11 +400,15 @@ def main():
     ap.add_argument("--fit", action="store_true",
                     help="1.5 mm, or 0.5 mm for busy places (narrowed if needed); saves to places.json")
     ap.add_argument("--all", action="store_true", help="every place in places.json")
+    ap.add_argument("--swing", type=float, help="hand-drawn width swing, e.g. 0.4 for +/-40 percent")
     ap.add_argument("--hand", action="store_true",
                     help="hand-drawn lines: varying width, dead ends taper to a point")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")
     args = ap.parse_args()
     places = {k: v for k, v in json.loads(PLACES.read_text()).items() if not k.startswith("_")}
+    if args.swing is not None:
+        global HAND_SWING
+        HAND_SWING = args.swing
     names = list(places) if args.all else args.places
     if not names:
         ap.error("name at least one place, or use --all")
