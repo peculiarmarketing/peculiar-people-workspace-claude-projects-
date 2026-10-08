@@ -12,8 +12,9 @@ same width without distortion. Units are thousandths of an inch.
 
     python3 build_chest_logo.py --width-in 3.75
 
-Writes out/chest-logo-a2-{white,black}.svg, a white-ink print PNG at 300 dpi,
-navy and black previews, and proof-letterforms.png (traced words over the
+Writes the finished files to final/ (transparent white and black, white on
+black, black on white, each as SVG and 300 dpi PNG) and navy and black previews
+to out/, with proof-letterforms.png (traced words over the
 original logo) so the match can be checked by eye.
 """
 import argparse
@@ -169,8 +170,10 @@ def build(width_in):
                 'viewBox="%d %d %.2f %.2f">%s<g fill="%s">%s</g></svg>'
                 % (vw / 1000 * scale, vh / 1000 * scale, -pad, -pad, vw, vh, rect, fill, body))
 
-    os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
-    o = lambda n: os.path.join(HERE, "out", n)
+    # Finished logo files go to final/, previews and proofs to out/.
+    for d in ("out", "final"):
+        os.makedirs(os.path.join(HERE, d), exist_ok=True)
+    o = lambda n: os.path.join(HERE, "final" if n.startswith("chest-logo-") else "out", n)
     files = {"chest-logo-a2-white.svg": svg("#FFFFFF"), "chest-logo-a2-black.svg": svg("#000000"),
              "chest-logo-a2-white-on-black.svg": svg("#FFFFFF", "#000000", MARGIN),
              "chest-logo-a2-black-on-white.svg": svg("#000000", "#FFFFFF", MARGIN),

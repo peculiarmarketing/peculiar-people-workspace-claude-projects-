@@ -52,11 +52,15 @@ At 3.5 x 3.12 in: frame 1.6 mm, rules 1.2 mm, EST. 2023 cap height 0.25 in,
 thinnest PECULIAR stroke 0.93 mm. That stroke is just under the 1 mm DTG rule of
 thumb. It reaches 1 mm at 3.75 in wide. DTF holds it at 3.5 in.
 
-Outputs in `out/`: `chest-logo-a2-white.svg` / `-black.svg` (vector masters),
+Outputs (finished files now in `final/`, previews in `out/`): `chest-logo-a2-white.svg` / `-black.svg` (vector masters),
 `chest-logo-a2-white-3.5in-300dpi.png` (white ink, every pixel's colour set to
 white per BRAND.md section 8), navy and black previews.
 
 **Final size: 3.75 in wide (Evan, 8 October 2026).** 3.75 x 3.34 in: frame
 1.71 mm, rules 1.31 mm, EST. 2023 cap height 0.27 in, thinnest PECULIAR stroke
-0.99 mm. Print files: `out/chest-logo-a2-white-3.75in-300dpi.png` and `-black-` (transparent, 1125 x 1003 px). Solid `-white-on-black` and `-black-on-white` versions (SVG and PNG) carry a margin equal to the clear space inside the frame, 0.147 in at 3.75 in (1213 x 1091 px). Flush to the frame was rejected: crops, rounded thumbnails and resampling eat the outer frame line.
+0.99 mm. Print files: `final/chest-logo-a2-white-3.75in-300dpi.png` and `-black-` (transparent, 1125 x 1003 px). Solid `-white-on-black` and `-black-on-white` versions (SVG and PNG) carry a margin equal to the clear space inside the frame, 0.147 in at 3.75 in (1213 x 1091 px). Flush to the frame was rejected: crops, rounded thumbnails and resampling eat the outer frame line.
 Evan places it on the garment himself.
+
+**Finished files live in `final/`** (8 files: transparent white, transparent
+black, white on black, black on white, each as SVG and 300 dpi PNG at 3.75 in).
+`out/` holds only previews and the letterform proof.
