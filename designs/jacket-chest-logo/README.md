@@ -29,6 +29,29 @@ sketch style stays with the temple art on the back.
 `previews/chest-previews-3.5in.jpg` shows each one as white ink on navy and
 black at 3.5 in wide.
 
-These are raster AI drafts, not print files. Whichever direction wins gets
+Round 1 drafts are raster AI images, not print files. Whichever direction wins gets
 rebuilt as vectors from the real logo, with stroke weights checked by the
 `design-audit` skill, before any Tapstitch upload.
+
+## Round 2: A2 picked, rebuilt as vectors (8 October 2026)
+
+Evan picked A2. A rectangle inside a circle (B) felt off. Requirement: the
+lettering must be identical to the original logo.
+
+- The PECULIAR letters were drawn by an image model about two years ago and are
+  in no font file (the closest free font, Outfit, overlaps only 77 percent). So
+  `build_chest_logo.py` traces both words straight from the logo PNG. Trace
+  overlap with the original: PECULIAR 98.5 percent, PEOPLE 99.5 percent
+  (`out/proof-letterforms.png`).
+- PEOPLE matches Oswald Regular (97 percent overlap), so the new text, EST. 2023,
+  is set in Oswald 400 (`fonts/`, OFL).
+- Both words are scaled to the same width with no stretching. Original letter
+  spacing is kept.
+
+At 3.5 x 3.12 in: frame 1.6 mm, rules 1.2 mm, EST. 2023 cap height 0.25 in,
+thinnest PECULIAR stroke 0.93 mm. That stroke is just under the 1 mm DTG rule of
+thumb. It reaches 1 mm at 3.75 in wide. DTF holds it at 3.5 in.
+
+Outputs in `out/`: `chest-logo-a2-white.svg` / `-black.svg` (vector masters),
+`chest-logo-a2-white-3.5in-300dpi.png` (white ink, every pixel's colour set to
+white per BRAND.md section 8), navy and black previews.
