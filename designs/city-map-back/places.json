@@ -1,5 +1,5 @@
 {
-  "_note": "counties are 5-digit state+county FIPS codes for the Census TIGER road files. centre and temple are [lat, lon]. Temple positions are the temple building or grounds in OpenStreetMap (Nominatim lookup 8 Oct 2026); check against the Church's own address before anything ships, since the front print carries them as coordinates.",
+  "_note": "counties are 5-digit state+county FIPS codes for the Census TIGER road files. centre and temple are [lat, lon]. Temple positions are the temple building or grounds in OpenStreetMap (Nominatim lookup 8 Oct 2026).",
   "san-antonio": {
     "label": "SAN ANTONIO, TEXAS",
     "counties": [

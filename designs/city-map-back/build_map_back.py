@@ -13,12 +13,13 @@ road classes), downloaded once per county to city-maps/data/tiger/.
 --max-fused percent (default 6). Fused ink is the share of the ink that has
 merged into solid patches wider than a single road line: the "everything blurs
 into white" failure. Rule set by Evan, 8 Oct 2026: big cities at 0.5 mm with
-the frame as wide as it holds; small towns at 1 mm or heavier.
+the frame as wide as it holds; small towns at 1.5 mm.
 
 Writes to out/<place>/: a 100 ppi preview PNG for mockups and a 300 ppi print
 PNG, both white ink on transparent, every pixel's colour white (BRAND.md s8).
-Frame border and city label are not in these files yet; they are laid out in
-the design canvas until a direction is picked.
+The back carries a 2.5 mm frame around the full 13.5 x 18 in map and the
+city label inside the frame at the bottom right, on a knocked-out patch
+(Evan, 8 Oct 2026).
 
 Also writes the front: the box logo with the temple's coordinates set into the
 box edge (layout "3A closed", Evan, 8 Oct 2026). Latitude breaks the top edge
@@ -114,7 +115,7 @@ def load_roads(counties):
     return roads
 
 
-def render(roads, centre, width_km, line_mm, ppi, temple=None):
+def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None):
     """Return an L-mode mask at ppi * SS, frame centred on `centre`."""
     lat, lon = centre
     cx, cy = merc(lon, lat)
@@ -137,7 +138,38 @@ def render(roads, centre, width_km, line_mm, ppi, temple=None):
             d.line(xy, fill=255, width=lw, joint="curve")
     if temple:
         halo(mask, to_px(*merc(temple[1], temple[0])), ppi * SS)
+    if label:
+        frame_and_label(mask, label, ppi * SS)
     return mask
+
+
+FRAME_MM = 2.5           # frame border, about three times a 0.8 mm street
+LABEL_IN = 0.25          # label font size; Oswald 500 gives ~0.9 mm strokes
+LABEL_TRACK = 0.16       # letter spacing, as a fraction of the font size
+LABEL_INSET_IN = 0.25    # from the frame's inner edge to the label
+LABEL_PAD_IN = 0.08      # knocked-out space around the label
+
+
+def frame_and_label(mask, label, px_per_in):
+    """Draw the frame on the map's outer edge and the label inside it, bottom right."""
+    d = ImageDraw.Draw(mask)
+    fw = round(FRAME_MM * MM * px_per_in)
+    W, H = mask.size
+    for box in ((0, 0, W, fw), (0, H - fw, W, H), (0, 0, fw, H), (W - fw, 0, W, H)):
+        d.rectangle(box, fill=255)
+    f = ImageFont.truetype(str(OSWALD), round(LABEL_IN * px_per_in))
+    f.set_variation_by_axes([COORD_WEIGHT])
+    track = LABEL_TRACK * LABEL_IN * px_per_in
+    widths = [d.textlength(ch, font=f) for ch in label]
+    text_w = sum(widths) + track * (len(label) - 1)
+    _, top, _, bottom = d.textbbox((0, 0), "A", font=f, anchor="ls")  # cap height
+    inset, pad = LABEL_INSET_IN * px_per_in, LABEL_PAD_IN * px_per_in
+    x = W - fw - inset - text_w
+    base = H - fw - inset
+    d.rectangle((x - pad, base + top - pad, x + text_w + pad, base + pad), fill=0)
+    for ch, w in zip(label, widths):
+        d.text((x, base), ch, font=f, fill=255, anchor="ls")
+        x += w + track
 
 
 def halo(mask, xy, px_per_in):
@@ -238,11 +270,13 @@ def build(name, p, args):
     outdir.mkdir(parents=True, exist_ok=True)
     tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm"
     preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"))
+    fused = fused_pct(preview, p["line_mm"], 100)
+    frame_and_label(preview, p["label"], 100 * SS)
     print(f"  {p['width_km']:g} km at {p['line_mm']:g} mm: "
-          f"{fused_pct(preview, p['line_mm'], 100):.1f}% fused")
+          f"{fused:.1f}% fused")
     save(preview, outdir / f"{tag}-preview.png", 100)
     if not args.preview_only:
-        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple")),
+        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"]),
              outdir / f"{tag}-print-300dpi.png", 300)
     if p.get("temple"):
         save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")

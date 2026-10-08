@@ -53,7 +53,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - The sweep (`scripts/sweep.py`) was built 7 October and has not yet run on a real new temple. The first run should be watched: its tag, Art File and theme-upload writes have not touched the store yet.
 - Tapstitch now works from cloud sessions (8 October): the scripts read the login cookies from a `TAPSTITCH_COOKIES` environment secret when there is no Chrome profile. `scripts/tapstitch_designs.py` lists the Designs tab, including designs never published. The secret is a full login and expires after a few days.
 - Street map tool built 7 October (`city-maps/`). Small towns that fail on the public city-roads site now download in seconds.
-- City map back print in design exploration (8 October). Mockups on the claude.ai canvas "City Map Back Prints". Decided: full-bleed 13.5 x 18 in frame, halo temple marker, 0.5 mm lines for big cities at the widest frame that holds (San Antonio about 35 km, Salt Lake about 22 km), 1.5 mm for small towns. Front: the box logo with the temple's coordinates set into breaks in the box edge (latitude top left, longitude bottom right); the build script writes it per place. Nothing on Tapstitch.
+- City map back print in design exploration (8 October). Mockups on the claude.ai canvas "City Map Back Prints". Decided: full-bleed 13.5 x 18 in frame, halo temple marker, 0.5 mm lines for big cities at the widest frame that holds (San Antonio about 35 km, Salt Lake about 22 km), 1.5 mm for small towns. City label inside the frame, bottom right. Front: the box logo, 6 in and centred, with the temple's coordinates set into breaks in the box edge (latitude top left, longitude bottom right); the build script writes both prints per place. Cities only for now; mission-boundary designs are set aside. Nothing on Tapstitch.
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
@@ -63,9 +63,6 @@ Still open for Evan:
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - Test purchase to verify checkout (first priority in BRAND.md section 17).
 - Before any street map design ships: decide where the "© OpenStreetMap contributors" credit goes (product page is the usual place). The ODbL requires it. US designs built from Census TIGER data do not need it.
-- City map designs: order a sample tee and hoodie of one 0.5 mm design and wash them. 0.5 mm is below the DTG guideline for the tee (0.71 mm) and exactly at the DTF floor for fleece.
-- San Antonio mission designs: send the real Texas San Antonio North and South mission boundaries (stake list or map screenshot). They are not public; the mockups use county lines as a stand-in.
-- City map designs: pick the city label placement on the back (inside or below the frame). The front is decided.
 - Optional: the Meta developer app "Message Reader" (Peculiar Marketing LLC) is no longer used by anything. Delete it in the Meta dashboard, and remove it under Instagram Settings > Apps and websites on both accounts, if you want no app holding access.
 
 ## Working rules
