@@ -43,7 +43,7 @@ Setup, once, if the venv is missing:
 
 ## The web app (city-roads/)
 
-A clone of github.com/anvaka/city-roads on branch `peculiar`, with `upstream` pointing at anvaka. It is its own git repo and is ignored by this one. Changes from upstream:
+Our fork, github.com/peculiarmarketing/city-roads, on branch `peculiar` (the default). `origin` is the fork, `upstream` is anvaka. It is its own git repo and is ignored by this one. Changes from upstream:
 
 - `src/lib/LoadOptions.js`: 180 s timeout, no 1 GB reservation.
 - `src/lib/postData.js`: working mirror list, retries a busy server three times.
