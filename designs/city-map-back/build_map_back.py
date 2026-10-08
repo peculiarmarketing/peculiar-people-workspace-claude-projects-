@@ -19,6 +19,11 @@ Writes to out/<place>/: a 100 ppi preview PNG for mockups and a 300 ppi print
 PNG, both white ink on transparent, every pixel's colour white (BRAND.md s8).
 Frame border and city label are not in these files yet; they are laid out in
 the design canvas until a direction is picked.
+
+Also writes the front: the box logo with the temple's coordinates set into the
+box edge (layout "3A closed", Evan, 8 Oct 2026). Latitude breaks the top edge
+at the left, longitude breaks the bottom edge at the right; the box is
+otherwise whole and the lettering is the original logo, untouched.
 """
 
 import argparse
@@ -31,7 +36,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -39,6 +44,8 @@ TIGER = ROOT / "city-maps" / "data" / "tiger"
 OUT = HERE / "out"
 PLACES = HERE / "places.json"
 TIGER_URL = "https://www2.census.gov/geo/tiger/TIGER2024/ROADS/tl_2024_{}_roads.zip"
+LOGO = ROOT / "designs" / "logo" / "source" / "Peculiar People Logo - White copy.png"
+OSWALD = ROOT / "designs" / "jacket-chest-logo" / "fonts" / "Oswald[wght].ttf"
 
 W_IN, H_IN = 13.5, 18.0  # one frame fits the tee, crew and hoodie back areas
 SS = 2                   # draw at 2x, scale down to antialias
@@ -163,6 +170,50 @@ def save(mask, path, ppi):
     img.save(path, dpi=(ppi, ppi), optimize=True)
 
 
+# Front: box logo with coordinates. Geometry measured from the logo PNG
+# (3125 x 625, ink 3051 px wide, so about 508 px per inch at the 6 in front size).
+BOX = (31, 25, 1893, 604)   # outer edge of the box around PECULIAR
+BOX_STROKE = 19             # about 0.95 mm at 6 in
+FRONT_IN = 6.0              # BRAND.md s8: front logo is 6 in wide, ink to ink
+# Oswald 500 at 110 px: 0.8 mm strokes at 6 in, clear of the 0.71 mm DTG floor
+# (design-audit PRINT-01). Weight 400 at the earlier size measured 0.45 mm.
+COORD_PX, COORD_WEIGHT, COORD_INSET, COORD_GAP = 110, 500, 180, 40
+
+
+def fmt_coords(lat, lon):
+    return (f"{abs(lat):.4f}\u00b0 {'N' if lat >= 0 else 'S'}",
+            f"{abs(lon):.4f}\u00b0 {'E' if lon >= 0 else 'W'}")
+
+
+def front(lat, lon):
+    """Return the front artwork as an L mask at the logo's own resolution."""
+    logo = Image.open(LOGO).getchannel("A")
+    pad = 120  # room for the coordinates, which sit centred on the box line
+    m = Image.new("L", (logo.width + 2 * pad, logo.height + 2 * pad), 0)
+    m.paste(logo, (pad, pad))
+    d = ImageDraw.Draw(m)
+    f = ImageFont.truetype(str(OSWALD), COORD_PX)
+    f.set_variation_by_axes([COORD_WEIGHT])
+    x0, y0, x1, y1 = (v + pad for v in BOX)
+    top, bottom = fmt_coords(lat, lon)
+    for xy, text, anchor in (((x0 + COORD_INSET, y0 + BOX_STROKE / 2), top, "lm"),
+                             ((x1 - COORD_INSET, y1 - BOX_STROKE / 2), bottom, "rm")):
+        l, _, r, _ = d.textbbox(xy, text, font=f, anchor=anchor)
+        d.rectangle((l - COORD_GAP, xy[1] - BOX_STROKE / 2 - 4,
+                     r + COORD_GAP, xy[1] + BOX_STROKE / 2 + 4), fill=0)
+        d.text(xy, text, font=f, fill=255, anchor=anchor)
+    return m.crop(m.getbbox())
+
+
+def save_front(mask, path, ppi=300):
+    """Scale so the ink is FRONT_IN wide at ppi, then save white on transparent."""
+    w = round(FRONT_IN * ppi)
+    mask = mask.resize((w, round(mask.height * w / mask.width)), Image.LANCZOS)
+    img = Image.new("RGBA", mask.size, (255, 255, 255, 0))
+    img.putalpha(mask)
+    img.save(path, dpi=(ppi, ppi), optimize=True)
+
+
 def auto_width(roads, p, max_fused, lo=3.0, hi=80.0):
     """Widest frame (km) with fused ink at or under max_fused, by bisection."""
     best = lo
@@ -193,6 +244,8 @@ def build(name, p, args):
     if not args.preview_only:
         save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple")),
              outdir / f"{tag}-print-300dpi.png", 300)
+    if p.get("temple"):
+        save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")
     print(f"  -> {outdir.relative_to(ROOT)}/")
 
 

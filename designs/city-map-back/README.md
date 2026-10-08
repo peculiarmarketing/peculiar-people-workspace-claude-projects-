@@ -15,6 +15,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 - **The more streets the better**, as long as the frame does not pull in a whole other city. Kirtland went from 3.5 km to 6 km and Nauvoo from 3 km to 4 km for that reason.
 - **Crop for streets, keep some blank.** Empty ground (lake, desert, mountains) is good contrast in moderation. Salt Lake's frame moved about 3 km south and 1 km east so the empty lake and airport corner at the top left mostly drops out and more of the valley comes in, with the mountains on the right kept.
   - Highway-only maps and the tight 4 to 5 km city crops were rejected. 0.3 mm was tried and rejected because it is below every print method's minimum.
+- **Front: box logo with the temple's coordinates set into the box ("3A closed").** The box around PECULIAR stays whole except for two breaks: latitude in the top edge at the left, longitude in the bottom edge at the right, each with about 2 mm of clear space to the line ends. Decimal degrees to four places (about 11 m). Lettering is the original logo, untouched. Coordinates are Oswald 500, 0.8 mm strokes at the 6 in front size; weight 400 measured 0.45 mm and would not print on the tee. At chest size (3.75 in) the strokes drop to about 0.5 mm, so a chest version needs bolder coordinates. Rejected along the way: streets inside the box (too thin to print, and the street lines read as extra strokes in the thin PECULIAR letters), and corner-mark, tick, dashed, halo and scale-bar versions of the box.
 - **Every street, not highways.** The look Evan wants is intricate: individual streets readable, not white blobs.
 
 ## How "as wide as it holds" is measured
@@ -40,12 +41,12 @@ python3 designs/city-map-back/build_map_back.py san-antonio nauvoo
 python3 designs/city-map-back/build_map_back.py san-antonio --auto --preview-only
 ```
 
-Places are in `places.json` (counties by FIPS code, centre, width, line weight, temple). County road files download once to `city-maps/data/tiger/`, which is gitignored. Output goes to `out/<place>/`, also gitignored: a 100 ppi preview and a 300 ppi print PNG (4050 x 5400), white ink on transparent with every pixel's colour set to white. The frame border and city label are drawn on the canvas for now and get baked into the print file once the layout is final.
+Places are in `places.json` (counties by FIPS code, centre, width, line weight, temple). County road files download once to `city-maps/data/tiger/`, which is gitignored. Output goes to `out/<place>/`, also gitignored: a 100 ppi preview, a 300 ppi back print PNG (4050 x 5400) and a 300 ppi front PNG (the logo with coordinates, 6 in wide), white ink on transparent with every pixel's colour set to white. The frame border and city label are drawn on the canvas for now and get baked into the print file once the layout is final.
 
 ## Still open
 
 - **San Antonio mission boundaries.** The area is now split into Texas San Antonio North and South missions (new missions effective 1 July 2026). The boundaries are not public. The canvas mission boards use county lines as a clearly labelled stand-in until Evan supplies the real line (a stake list or a map screenshot).
-- **Front:** the box logo with the temple's coordinates (Evan, 8 October 2026). Layout drafts A to F are on the canvas; layout not picked.
+
 - **Label placement:** inside the frame (knockout) or outside, below the corner. Not picked.
 - **Temple positions** in `places.json` are from OpenStreetMap or approximate; verify before shipping.
 - Which places become products, and whether this becomes its own line in BRAND.md.
