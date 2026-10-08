@@ -46,7 +46,7 @@
       40.548,
       -91.38
     ],
-    "width_km": 3,
+    "width_km": 4,
     "line_mm": 1.5,
     "temple": [
       40.5502,
@@ -67,22 +67,6 @@
     "temple": [
       41.6253,
       -81.3618
-    ]
-  },
-  "nauvoo-wide": {
-    "label": "NAUVOO, ILLINOIS",
-    "counties": [
-      "17067"
-    ],
-    "centre": [
-      40.548,
-      -91.38
-    ],
-    "width_km": 4,
-    "line_mm": 1.5,
-    "temple": [
-      40.5502,
-      -91.3846
     ]
   }
 }

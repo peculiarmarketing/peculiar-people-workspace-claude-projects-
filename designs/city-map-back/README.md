@@ -12,7 +12,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 - **Line weight by place size.**
   - Big or busy cities: every street at 0.5 mm, with the frame as wide as it can go before streets merge. San Antonio holds to about 35 km across, Salt Lake to about 22 km.
   - Small towns (Nauvoo, Kirtland and the like): 1.5 mm.
-- **The more streets the better**, as long as the frame does not pull in a whole other city. Kirtland went from 3.5 km to 6 km for that reason.
+- **The more streets the better**, as long as the frame does not pull in a whole other city. Kirtland went from 3.5 km to 6 km and Nauvoo from 3 km to 4 km for that reason.
 - **Crop for streets, keep some blank.** Empty ground (lake, desert, mountains) is good contrast in moderation. Salt Lake's frame moved about 3 km south and 1 km east so the empty lake and airport corner at the top left mostly drops out and more of the valley comes in, with the mountains on the right kept.
   - Highway-only maps and the tight 4 to 5 km city crops were rejected. 0.3 mm was tried and rejected because it is below every print method's minimum.
 - **Every street, not highways.** The look Evan wants is intricate: individual streets readable, not white blobs.
