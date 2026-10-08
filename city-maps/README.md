@@ -30,13 +30,15 @@ Options:
 - `--filter roads` (default, every `highway`), `roads-basic`, `roads-strict`, `all-ways`, `buildings`. Same filters as the web app.
 - `--format svg|png|both` and `--png-width 6000`.
 - `--radius 3` maps a 6 km square around the place instead of its boundary, with roads cut at the edge. Use it for sites with no town (Far West, Adam-ondi-Ahman) and for tiny villages whose boundary map is mostly one passing highway. The first match wins, so write the name precisely.
+- `--trim` cuts every road at the town's official boundary and writes `-trimmed` files beside the untrimmed ones, framed to the town's outline. The boundary is fetched once and saved as `data/<area id>-boundary.json`. Square (`--radius`) maps are skipped since they are already cropped.
+- `--all-towns` runs every saved place that has a town boundary. `fetch_map.py --trim --all-towns` re-trims the whole set.
 - `--refresh` downloads again even if the town is saved.
 
 If a place fails (the Overpass servers are often busy for bigger cities), the rest of the batch still runs and the failures are listed at the end. Run those again a few minutes later.
 
 Be specific with names. The script prints which place it matched, so check it. "Palmyra, New York" matches the village, not the larger Town of Palmyra. Ask for "Town of Palmyra, New York" when you want the township. A matched place is remembered in `data/index.json`; delete its entry to look it up again.
 
-A road that crosses the town line comes back whole, so a highway can trail off past the edge (Nauvoo's river road does). The web app does the same. Trim it in the design.
+A road that crosses the town line comes back whole, so the untrimmed maps can have a highway trailing off past the edge (Carthage, Garden Grove). The `-trimmed` files fix that. The web app has the same trailing roads.
 
 Setup, once, if the venv is missing:
 

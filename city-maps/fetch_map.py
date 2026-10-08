@@ -8,6 +8,12 @@ The raw result is saved in data/, so later runs (and the city-roads web app)
 read it from disk. Exports land in out/<slug>/ in black and in white, on a
 transparent background, with no other styling.
 
+    python fetch_map.py --trim --all-towns
+
+--trim cuts every road at the town's official boundary (fetched once from
+Nominatim and saved next to the road data) and writes "-trimmed" files beside
+the untrimmed ones.
+
 Map data (c) OpenStreetMap contributors, ODbL. See README.md before shipping
 anything made from it.
 """
@@ -24,6 +30,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
+import shapely
 from PIL import Image, ImageDraw
 
 HERE = Path(__file__).resolve().parent
@@ -33,6 +41,7 @@ INDEX = DATA / "index.json"
 
 USER_AGENT = "PeculiarPeople-city-maps/0.1 (+https://peculiarpeopleco.com)"
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
+NOMINATIM_LOOKUP = "https://nominatim.openstreetmap.org/lookup"
 
 # Checked 7 Oct 2026. overpass.osm.jp has a broken TLS certificate and
 # maps.mail.ru / overpass.private.coffee were returning 504 and 500.
@@ -256,6 +265,39 @@ def project(result, clip_bbox=None):
     return lines, box
 
 
+def get_boundary(place, refresh=False):
+    """The place's boundary polygon in Web Mercator, from disk when we have it."""
+    path = DATA / f'{place["area_id"]}-boundary.json'
+    if path.exists() and not refresh:
+        geojson = json.loads(path.read_text())
+    else:
+        osm_type, osm_id = place["osm"].split("/")
+        ref = {"relation": "R", "way": "W"}[osm_type] + osm_id
+        rows = http(NOMINATIM_LOOKUP + "?" + urllib.parse.urlencode(
+            {"osm_ids": ref, "format": "json", "polygon_geojson": 1}))
+        time.sleep(1)  # Nominatim usage policy
+        if not rows or rows[0].get("geojson", {}).get("type") not in ("Polygon", "MultiPolygon"):
+            raise FetchError(f"no boundary polygon for {place['osm']}")
+        geojson = rows[0]["geojson"]
+        path.write_text(json.dumps(geojson, separators=(",", ":")))
+        print(f"  saved boundary: {path.relative_to(HERE)}")
+
+    def to_mercator(coords):
+        lon, lat = coords[:, 0], np.clip(coords[:, 1], -85.0, 85.0)
+        return np.column_stack((np.radians(lon),
+                                -np.log(np.tan(np.pi / 4 + np.radians(lat) / 2))))
+    return shapely.transform(shapely.geometry.shape(geojson), to_mercator).buffer(0)
+
+
+def trim(lines, boundary):
+    """Cut lines at the boundary; return the pieces inside it as point lists."""
+    inside = shapely.MultiLineString(lines).intersection(boundary)
+    inside = shapely.line_merge(shapely.MultiLineString(
+        [g for g in getattr(inside, "geoms", [inside]) if g.geom_type == "LineString"]))
+    return [list(g.coords) for g in getattr(inside, "geoms", [inside])
+            if g.geom_type == "LineString" and not g.is_empty]
+
+
 def fit(lines, width, frame=None):
     """Scale lines to fit a canvas `width` wide; return (lines, width, height).
 
@@ -315,7 +357,11 @@ def write_png(mask, path, rgb):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("places", nargs="+", help='e.g. "Nauvoo, Illinois"')
+    ap.add_argument("places", nargs="*", help='e.g. "Nauvoo, Illinois"')
+    ap.add_argument("--all-towns", action="store_true",
+                    help="every saved place that has a town boundary")
+    ap.add_argument("--trim", action="store_true",
+                    help='cut roads at the town boundary; writes "-trimmed" files')
     ap.add_argument("--filter", choices=FILTERS, default="roads")
     ap.add_argument("--format", choices=("svg", "png", "both"), default="both")
     ap.add_argument("--png-width", type=int, default=6000)
@@ -323,11 +369,17 @@ def main():
                     help="map a square this far around the place instead of its boundary")
     ap.add_argument("--refresh", action="store_true", help="re-download even if cached")
     args = ap.parse_args()
+    if not args.places and not args.all_towns:
+        ap.error("name at least one place, or use --all-towns")
 
     DATA.mkdir(exist_ok=True)
     index = load_index()
     failed = []
-    for query in args.places:
+    places = list(args.places)
+    if args.all_towns:
+        places += [p["query"] for p in index.values()
+                   if p["area_id"] and p["query"] not in places]
+    for query in places:
         try:
             make_maps(query, index, args)
         except FetchError as err:
@@ -347,9 +399,18 @@ def make_maps(query, index, args):
         print(f"  no ways found for {query}, skipping")
         return
 
+    base = f"{slug}-{args.filter}"
+    if args.trim:
+        if not place["area_id"]:
+            print("  no town boundary (a radius map is already square), skipping trim")
+            return
+        boundary = get_boundary(place, args.refresh)
+        lines = trim(lines, boundary)
+        frame = boundary.bounds
+        base += "-trimmed"
+
     outdir = OUT / slug
     outdir.mkdir(parents=True, exist_ok=True)
-    base = f"{slug}-{args.filter}"
     title = f"{place['name']}: {args.filter}"
     if args.format in ("svg", "both"):
         write_svg(lines, outdir / f"{base}-black.svg", "#000", title, frame)
