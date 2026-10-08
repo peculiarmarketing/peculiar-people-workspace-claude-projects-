@@ -1,6 +1,6 @@
 # Peculiar People: Brand File
 
-Last updated 6 October 2026 (superseded history pruned throughout; Tapstitch is the only fulfillment channel). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
+Last updated 8 October 2026 (superseded history pruned throughout; Tapstitch is the only fulfillment channel). Originally written from a three-round interview with Evan plus live verification against the Shopify store and the workspace.
 
 ## What this file is
 
@@ -49,7 +49,7 @@ Both operating documents were written for one person and say so. The Posting Rot
 
 From 1 Peter 2:9: "a chosen generation, a royal priesthood, an holy nation, a peculiar people."
 
-The reference never appears on the design itself. It may appear in product copy on the page. That is TBD and Evan likes the idea.
+The reference was kept off the temple designs. On 8 October 2026 Evan approved printing it on the seal bomber jacket (section 19). Whether it appears in product copy on the page is TBD and Evan likes the idea.
 
 ## 5. Positioning
 
@@ -385,7 +385,7 @@ Hard no, confirmed:
 
 Offered as guardrails and deliberately not selected, so these are open questions rather than permissions:
 
-- Scripture text printed on a garment.
+- Scripture text printed on a garment. Approved 8 October 2026 for the seal bomber jacket only (section 19); still ask for anything else.
 - Sacred imagery beyond architecture (Christ, ordinances, temple interiors).
 
 Ask before designing anything in either category.
@@ -529,9 +529,11 @@ Asset locations, all under `1. Peculiar People/`:
 
 ## 19. Open decisions
 
-**1 Peter 2:9 in product copy.** TBD, Evan likes the idea. Never on the design itself.
+**1 Peter 2:9 in product copy.** TBD, Evan likes the idea. The draft bomber copy names it, pending his sign-off.
 
-**Scripture text on garments** and **sacred imagery beyond architecture.** Not ruled out, not approved. Ask.
+**Scripture text on garments. APPROVED 8 October 2026 for the seal bomber jacket**, whose ring carries all four phrases of 1 Peter 2:9 (Evan, choosing "approve it, update BRAND"). Still open: the Be Peculiar and Sé Singular wordmarks also carry a verse in small type (1 Peter 2:9 in English; Deuteronomy 14:2, Reina-Valera 1909, in Spanish), and that approval has not been stated. Anything beyond these needs its own ask.
+
+**Sacred imagery beyond architecture.** Not ruled out, not approved. Ask.
 
 **Tapstitch personalization gap. RESOLVED 14 September 2026 by pausing the product.** No sign Tapstitch supports buyer personalization (a date typed at checkout), so Evan paused the personalizable date tee. Reopen this if Tapstitch ships buyer personalization, or if the demand in section 10 proves worth a manual process. Reopening means building it from scratch.
 
