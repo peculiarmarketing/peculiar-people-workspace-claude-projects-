@@ -42,7 +42,7 @@ Kept road classes (MTFCC): S1100 interstates, S1200 US and state highways, S1630
 
 ## Product stages
 
-Every place in `places.json` has a `status`: **designed** (art built, not reviewed), **review** (the full product package is made: print files per garment, gallery cards, history section; waiting on Evan), **ready** (Evan confirmed; it may go on products), **live** (on the store). `map_run.py <place> --review` builds the package and a review sheet, `--confirm` marks it ready once Evan approves, `--apply` refuses anything below ready, and a full publish marks it live. 8 October 2026: Nauvoo and Salt Lake City live, Kirtland in review, the rest designed.
+Every place in `places.json` has a `status`: **designed** (art built, not reviewed), **review** (the full product package is made: print files per garment, gallery cards, history section; waiting on Evan), **ready** (Evan confirmed; it may go on products), **live** (on the store). `map_run.py <place> --review` builds the package and a review sheet, `--confirm` marks it ready once Evan approves, `--apply` refuses anything below ready, and a full publish marks it live. 8 October 2026: Nauvoo and Salt Lake City live, Kirtland ready (confirmed by Evan), the rest designed.
 
 ## Publishing (product page)
 
