@@ -41,3 +41,7 @@ for name, hexv, level in [("white", "#FFFFFF", 255), ("black", "#000000", 0)]:
         flat[m_px:m_px + PX, m_px:m_px + PX][alpha == 255] = 0
         Image.fromarray(flat).convert("RGB").save(
             os.path.join(OUT, "Peculiar People Seal black on white.png"), dpi=(300, 300))
+
+# Trim the black-on-white tiles to a white disc 2 mm past the outer ring.
+import runpy
+runpy.run_path(os.path.join(HERE, "trim_on_white.py"))
