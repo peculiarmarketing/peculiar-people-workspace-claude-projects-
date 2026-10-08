@@ -45,7 +45,8 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 
 ## Current state (8 October 2026)
 
-- 139 active products: 45 temples on the tee, sweatshirt and hoodie, the Temple Art File, and the Nauvoo city map test on all three garments.
+- 142 active products: 45 temples on the tee, sweatshirt and hoodie, the Temple Art File, and two city maps (Nauvoo, Salt Lake City) on all three garments.
+- Collections by garment (8 October): Tees, Sweatshirts, Hoodies and Jackets each show one card per design line, the products tagged `apparel:<garment>` AND `listing:parent`: the Salt Lake temple parent, the Salt Lake City map parent, Be Peculiar English and Español as separate cards, and the bomber jacket. Every other temple or map is reached through its parent's Easify dropdown. Script: `temple-product-generator/scripts/garment_collections.py`. Temple products keep `garment:` too (the homepage marquee reads it); nothing else may carry it.
 - One-quarter lift finished 7 October: all 135 garment products re-saved in place with the higher print, folded model photos and on-model thumbnails, and verified. Orders print the new design; no listing was swapped, so the Easify dropdowns are untouched.
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
@@ -57,6 +58,10 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 - Idea inbox is live on this Mac from 6 October, iMessage only: notes, screenshots and reel links texted to self get transcripts and frames nightly. Reel links are downloaded logged out, so no account is tied to it; an occasional reel may fail. The Instagram API route was tried and removed (Meta returned no conversations with every setting correct), and nothing in the pipeline logs in to any account.
 
 Still open for Evan:
+
+- Tick Online Store on the four new collections (Tees, Sweatshirts, Hoodies, Jackets); the app token cannot publish collections. Add them to the menu if wanted. Temple Design Products, where Shop goes, now also shows every line's parent (it reads `listing:parent`), so it may want renaming to something like All Designs.
+- Import `temple-product-generator/artifacts/easify/option-sets.csv` in Easify: it adds three Map sets (Map Tee, Map Sweatshirt, Map Hoodie: Nauvoo, Salt Lake City). Afterwards export fresh from Easify and run `easify_options.py reseed --export <file>`. Map sets sync from the cloud with `sync --maps-only`; the temple sets still need the Mac.
+- Salt Lake City map prints 0.5 mm lines, under the 0.71 mm DTG minimum for the tee (fine on the fleece). Worth a sample tee.
 
 - Nauvoo map products: run the on-model gallery from the Mac when convenient. Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
 
