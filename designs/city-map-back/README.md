@@ -45,7 +45,7 @@ Places are in `places.json` (counties by FIPS code, centre, width, line weight, 
 ## Still open
 
 - **San Antonio mission boundaries.** The area is now split into Texas San Antonio North and South missions (new missions effective 1 July 2026). The boundaries are not public. The canvas mission boards use county lines as a clearly labelled stand-in until Evan supplies the real line (a stake list or a map screenshot).
-- **Front:** box logo, mini map tile, or box logo plus coordinates. Not picked.
+- **Front:** the box logo with the temple's coordinates (Evan, 8 October 2026). Layout drafts A to F are on the canvas; layout not picked.
 - **Label placement:** inside the frame (knockout) or outside, below the corner. Not picked.
 - **Temple positions** in `places.json` are from OpenStreetMap or approximate; verify before shipping.
 - Which places become products, and whether this becomes its own line in BRAND.md.

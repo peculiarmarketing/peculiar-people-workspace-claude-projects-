@@ -1,5 +1,5 @@
 {
-  "_note": "counties are 5-digit state+county FIPS codes for the Census TIGER road files. centre and temple are [lat, lon]. Temple positions are from OpenStreetMap or approximate and must be checked before anything ships.",
+  "_note": "counties are 5-digit state+county FIPS codes for the Census TIGER road files. centre and temple are [lat, lon]. Temple positions are the temple building or grounds in OpenStreetMap (Nominatim lookup 8 Oct 2026); check against the Church's own address before anything ships, since the front print carries them as coordinates.",
   "san-antonio": {
     "label": "SAN ANTONIO, TEXAS",
     "counties": [
@@ -33,8 +33,8 @@
     "width_km": 22,
     "line_mm": 0.5,
     "temple": [
-      40.7705,
-      -111.8918
+      40.7704367,
+      -111.8919131
     ]
   },
   "nauvoo": {
@@ -49,8 +49,8 @@
     "width_km": 4,
     "line_mm": 1.5,
     "temple": [
-      40.5502,
-      -91.3846
+      40.5504848,
+      -91.3843815
     ]
   },
   "kirtland": {
@@ -65,8 +65,8 @@
     "width_km": 6,
     "line_mm": 1.5,
     "temple": [
-      41.6253,
-      -81.3618
+      41.6252883,
+      -81.3621488
     ]
   }
 }
