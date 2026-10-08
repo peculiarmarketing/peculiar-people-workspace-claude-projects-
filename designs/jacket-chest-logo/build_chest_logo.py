@@ -45,6 +45,9 @@ FRAME_STROKE = 63       # 1.6 mm
 SIDE = 200              # frame outer edge to the words
 RULE = 48               # 1.2 mm
 GAP = 180               # every gap between frame, words and rules
+# Solid-background versions: the space outside the frame equals the clear
+# space inside it (frame to words), so the frame sits balanced in its tile.
+MARGIN = SIDE - FRAME_STROKE
 EST_CAP = 250           # EST. 2023 cap height
 EST_WIDTH = 0.60        # EST. 2023 width as a fraction of the word width
 EST_WGHT = 400
@@ -156,8 +159,9 @@ def build(width_in):
         "est_cap_in": round(EST_CAP / 1000 * scale, 3),
     }
 
-    def svg(fill, bg=None):
-        pad = 300 if bg else 0
+    def svg(fill, bg=None, pad=None):
+        if pad is None:
+            pad = 300 if bg else 0
         vw, vh = FRAME_W + 2 * pad, H + 2 * pad
         rect = ('<rect x="%d" y="%d" width="%.2f" height="%.2f" fill="%s"/>'
                 % (-pad, -pad, vw, vh, bg)) if bg else ""
@@ -168,6 +172,8 @@ def build(width_in):
     os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
     o = lambda n: os.path.join(HERE, "out", n)
     files = {"chest-logo-a2-white.svg": svg("#FFFFFF"), "chest-logo-a2-black.svg": svg("#000000"),
+             "chest-logo-a2-white-on-black.svg": svg("#FFFFFF", "#000000", MARGIN),
+             "chest-logo-a2-black-on-white.svg": svg("#000000", "#FFFFFF", MARGIN),
              "preview-navy.svg": svg("#FFFFFF", NAVY), "preview-black.svg": svg("#FFFFFF", "#111111")}
     for n, t in files.items():
         with open(o(n), "w") as fh:
@@ -184,13 +190,11 @@ def build(width_in):
     for v, rgb in (("white", (255, 255, 255)), ("black", (0, 0, 0))):
         ink = Image.new("RGBA", a.size, rgb + (0,)); ink.putalpha(a)
         ink.save(name(v), dpi=(300, 300))
-    # Solid versions for mockups and sharing, with a 0.25 in margin all round.
-    m = 75
-    for v, fg, bg in (("white-on-black", (255, 255, 255), (0, 0, 0)),
-                      ("black-on-white", (0, 0, 0), (255, 255, 255))):
-        im = Image.new("RGB", (a.width + 2 * m, a.height + 2 * m), bg)
-        im.paste(Image.new("RGB", a.size, fg), (m, m), a)
-        im.save(name(v), dpi=(300, 300))
+    # Solid versions, rendered from their SVGs so the two formats match.
+    for v in ("white-on-black", "black-on-white"):
+        cairosvg.svg2png(bytestring=files["chest-logo-a2-%s.svg" % v].encode(),
+                         write_to=name(v), dpi=300)
+        Image.open(name(v)).convert("RGB").save(name(v), dpi=(300, 300))
 
     proof(gray, pec_d, pec_bb, peo_d, peo_bb, o("proof-letterforms.png"))
     return stats
