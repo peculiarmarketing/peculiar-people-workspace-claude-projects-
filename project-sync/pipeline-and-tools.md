@@ -59,7 +59,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 
 Still open for Evan:
 
-- Tick Online Store on the four new collections (Tees, Sweatshirts, Hoodies, Jackets); the app token cannot publish collections. Add them to the menu if wanted. Temple Design Products, where Shop goes, now also shows every line's parent (it reads `listing:parent`), so it may want renaming to something like All Designs.
+- Tick Online Store on the four new collections (Tees, Sweatshirts, Hoodies, Jackets); the app token cannot publish collections. Add them to the menu if wanted. All Designs (renamed from Temple Design Products on 8 October; address still `temple-design-products`), where Shop goes, shows every line's parent.
 - Import `temple-product-generator/artifacts/easify/option-sets.csv` in Easify: it adds three Map sets (Map Tee, Map Sweatshirt, Map Hoodie: Nauvoo, Salt Lake City). Afterwards export fresh from Easify and run `easify_options.py reseed --export <file>`. Map sets sync from the cloud with `sync --maps-only`; the temple sets still need the Mac.
 - Salt Lake City map prints 0.5 mm lines, under the 0.71 mm DTG minimum for the tee (fine on the fleece). Worth a sample tee.
 
