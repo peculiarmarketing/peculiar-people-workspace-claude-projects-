@@ -115,7 +115,7 @@ def load_roads(counties):
     return roads
 
 
-def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None):
+def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=False):
     """Return an L-mode mask at ppi * SS, frame centred on `centre`."""
     lat, lon = centre
     cx, cy = merc(lon, lat)
@@ -127,15 +127,28 @@ def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None):
     lw = max(1, round(line_mm * MM * ppi * SS))
     mask = Image.new("L", (W, H), 0)
     d = ImageDraw.Draw(mask)
-    for cls in FIRST:
-        for c, pts in roads:
-            if c != cls:
-                continue
-            xy = [to_px(x, y) for x, y in pts]
-            xs, ys = [p[0] for p in xy], [p[1] for p in xy]
-            if max(xs) < 0 or min(xs) > W or max(ys) < 0 or min(ys) > H:
-                continue
-            d.line(xy, fill=255, width=lw, joint="curve")
+    if hand:
+        polys = []
+        for cls in FIRST:
+            for c, pts in roads:
+                if c != cls:
+                    continue
+                xy = [to_px(x, y) for x, y in pts]
+                xs, ys = [p[0] for p in xy], [p[1] for p in xy]
+                if max(xs) < -lw or min(xs) > W + lw or max(ys) < -lw or min(ys) > H + lw:
+                    continue
+                polys.append(xy)
+        draw_hand(d, polys, lw, ppi * SS)
+    else:
+        for cls in FIRST:
+            for c, pts in roads:
+                if c != cls:
+                    continue
+                xy = [to_px(x, y) for x, y in pts]
+                xs, ys = [p[0] for p in xy], [p[1] for p in xy]
+                if max(xs) < 0 or min(xs) > W or max(ys) < 0 or min(ys) > H:
+                    continue
+                d.line(xy, fill=255, width=lw, joint="curve")
     if temple:
         halo(mask, to_px(*merc(temple[1], temple[0])), ppi * SS)
     if label:
@@ -170,6 +183,77 @@ def frame_and_label(mask, label, px_per_in):
     for ch, w in zip(label, widths):
         d.text((x, base), ch, font=f, fill=255, anchor="ls")
         x += w + track
+
+
+# Hand-drawn style: width wanders like pen pressure and dead ends taper to a
+# point, like the temple line art. The wobble is a smooth field over the page
+# (not per line), so two streets meeting at a junction agree on width there.
+HAND_SWING = 0.28        # width varies by about +/-28 percent
+HAND_TAPER = 7           # a dead end tapers over this many line widths
+HAND_STEP_MM = 0.4       # resampling step along each line
+
+
+def hand_width(x_in, y_in, ph):
+    a = math.sin(2 * math.pi * x_in / 1.1 + ph[0]) * math.cos(2 * math.pi * y_in / 1.4 + ph[1])
+    b = math.sin(2 * math.pi * (x_in * 0.8 + y_in) / 0.45 + ph[2])
+    return 1 + HAND_SWING * (0.65 * a + 0.35 * b)
+
+
+def draw_hand(d, lines, lw, px_per_in, ph=(0.7, 2.1, 4.4)):
+    """lines: pixel point lists. An end tapers only if no other street touches it
+    (checked on the page, since a side street often meets a main road mid-segment
+    without sharing a point with it)."""
+    step = HAND_STEP_MM * MM * px_per_in
+    taper = HAND_TAPER * lw
+    sampled = []
+    for pts in lines:
+        res, acc = [pts[0]], [0.0]
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            seg = math.hypot(x1 - x0, y1 - y0)
+            n = max(1, int(seg / step))
+            for k in range(1, n + 1):
+                res.append((x0 + (x1 - x0) * k / n, y0 + (y1 - y0) * k / n))
+                acc.append(acc[-1] + seg / n)
+        sampled.append((res, acc))
+    cell = max(step, lw) * 2
+    grid = {}
+    for li, (res, _) in enumerate(sampled):
+        for x, y in res:
+            grid.setdefault((int(x // cell), int(y // cell)), []).append((li, x, y))
+    near = (lw * 1.5) ** 2
+    def touched(li, x, y):
+        gx, gy = int(x // cell), int(y // cell)
+        for cx in (gx - 1, gx, gx + 1):
+            for cy in (gy - 1, gy, gy + 1):
+                for lj, px, py in grid.get((cx, cy), ()):
+                    if lj != li and (px - x) ** 2 + (py - y) ** 2 < near:
+                        return True
+        return False
+    for li, (res, acc) in enumerate(sampled):
+        total = acc[-1]
+        if total <= 0:
+            continue
+        dead0, dead1 = not touched(li, *res[0]), not touched(li, *res[-1])
+        t_len = min(taper, total * 0.45)
+        radii = []
+        for (x, y), a in zip(res, acc):
+            w = lw * hand_width(x / px_per_in, y / px_per_in, ph) / 2
+            for dead, dist in ((dead0, a), (dead1, total - a)):
+                if dead and dist < t_len:
+                    w *= (dist / t_len) ** 0.7
+            radii.append(max(0.0, w - 0.5))  # polygon fill adds ~0.5 px per side
+        for i in range(len(res) - 1):
+            (x0, y0), (x1, y1) = res[i], res[i + 1]
+            r0, r1 = radii[i], radii[i + 1]
+            L = math.hypot(x1 - x0, y1 - y0) or 1e-9
+            nx, ny = -(y1 - y0) / L, (x1 - x0) / L
+            d.polygon([(x0 + nx * r0, y0 + ny * r0), (x1 + nx * r1, y1 + ny * r1),
+                       (x1 - nx * r1, y1 - ny * r1), (x0 - nx * r0, y0 - ny * r0)], fill=255)
+            if r1 > 0.5:
+                d.ellipse((x1 - r1, y1 - r1, x1 + r1, y1 + r1), fill=255)
+        if radii[0] > 0.5:
+            x, y = res[0]
+            d.ellipse((x - radii[0], y - radii[0], x + radii[0], y + radii[0]), fill=255)
 
 
 def halo(mask, xy, px_per_in):
@@ -290,15 +374,16 @@ def build(name, p, args):
         fit(roads, p, args.max_fused)
     outdir = OUT / name
     outdir.mkdir(parents=True, exist_ok=True)
-    tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm"
-    preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"))
+    hand = args.hand or p.get("style") == "hand"
+    tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm" + ("-hand" if hand else "")
+    preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand)
     fused = fused_pct(preview, p["line_mm"], 100)
     frame_and_label(preview, p["label"], 100 * SS)
     print(f"  {p['width_km']:g} km at {p['line_mm']:g} mm: "
           f"{fused:.1f}% fused")
     save(preview, outdir / f"{tag}-preview.png", 100)
     if not args.preview_only:
-        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"]),
+        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"], hand),
              outdir / f"{tag}-print-300dpi.png", 300)
     if p.get("temple"):
         save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")
@@ -315,6 +400,8 @@ def main():
     ap.add_argument("--fit", action="store_true",
                     help="1.5 mm, or 0.5 mm for busy places (narrowed if needed); saves to places.json")
     ap.add_argument("--all", action="store_true", help="every place in places.json")
+    ap.add_argument("--hand", action="store_true",
+                    help="hand-drawn lines: varying width, dead ends taper to a point")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")
     args = ap.parse_args()
     places = {k: v for k, v in json.loads(PLACES.read_text()).items() if not k.startswith("_")}

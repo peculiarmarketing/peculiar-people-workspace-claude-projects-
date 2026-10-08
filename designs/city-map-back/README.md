@@ -20,6 +20,10 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 - **Front: box logo with the temple's coordinates set into the box ("3A closed"), 6 in wide, centred.** The box around PECULIAR stays whole except for two breaks: latitude in the top edge at the left, longitude in the bottom edge at the right, each with about 2 mm of clear space to the line ends. Decimal degrees to four places (about 11 m). Lettering is the original logo, untouched. Coordinates are Oswald 500, 0.8 mm strokes at the 6 in front size; weight 400 measured 0.45 mm and would not print on the tee. Rejected along the way: streets inside the box (too thin to print, and the street lines read as extra strokes in the thin PECULIAR letters), and corner-mark, tick, dashed, halo and scale-bar versions of the box.
 - **Every street, not highways.** The look Evan wants is intricate: individual streets readable, not white blobs.
 
+## Hand-drawn lines (option, being reviewed)
+
+`--hand` (or `"style": "hand"` on a place) draws every street with a width that wanders about 28 percent either way, like pen pressure, and tapers dead ends to a point over about seven line widths, in the spirit of the temple line art. The wobble is a smooth field over the page, so two streets meeting at a junction agree on width there. An end only tapers when no other street touches it: in the road data a side street often meets a main road partway along without sharing a point, and tapering those ends would leave gaps at junctions. Polygon fill adds about half a pixel per side, so each half-width is reduced by that much to keep the average weight where it was. Product copy must not call the art hand drawn (BRAND.md section 17); it is drawn by code.
+
 ## How "as wide as it holds" is measured
 
 Fused ink is the share of the ink that has merged into solid patches wider than a single road line (a morphological opening on the 100 ppi preview). Round 1's whole-city San Antonio map was about 50 percent fused and read as large white sections. The limit is about 6 percent: San Antonio at 35 km is 5.8, at 40 km it is 8.4 and visibly hazing.
