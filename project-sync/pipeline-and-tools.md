@@ -48,7 +48,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 
 - Active products: 45 temples on the tee, sweatshirt and hoodie, the Temple Art File, and the Nauvoo and Salt Lake City maps on all three garments.
 - Tee colour rollout finished 8 October: all 45 temple tees and both map tees are live in eight colours (Pink, Light Blue and Cream added), verified on the storefront. Each was a swap; the old listings are drafts at `<address>-retired-2026-10-08`. Swatches for the new colours are in the live theme. Future sweeps and map runs build tees in all eight.
-- On-model photos v2 are on the seven Be Peculiar / Sé Singular / bomber drafts: 5000px, prints laid flat and sharp, wordmark at option F (11 in wide, 5 in below the collar on the tee, the same share of the chest on the sweatshirt and hoodie), black-on-white design close-ups, a longer-fitting hoodie, and one unzipped bomber shot. Still drafts.
+- The seven Be Peculiar / Sé Singular / bomber products went live 8 October with on-model photos v2: 5000px, prints laid flat and sharp, wordmark at option F (11 in wide, 5 in below the collar on the tee, the same share of the chest on the sweatshirt and hoodie), black-on-white design close-ups, a longer-fitting hoodie, and one unzipped bomber shot.
 - One-quarter lift finished 7 October: all 135 garment products re-saved in place with the higher print, folded model photos and on-model thumbnails, and verified. Orders print the new design; no listing was swapped, so the Easify dropdowns are untouched.
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
@@ -61,7 +61,6 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 Still open for Evan:
 
 - Refresh the `TAPSTITCH_COOKIES` cloud secret when a cloud run says "Not logged in" (copy the Cookie header from DevTools on tapstitch.com while logged in).
-- All seven Be Peculiar / Sé Singular / bomber products are finished as drafts with the v2 on-model galleries. Preview them in admin, then say the word to set them live.
 - Publish the "Claude Code V3" theme when ready (the live V2 theme now has the new swatches too, so this no longer blocks anything).
 - Set up the bomber's size chart in Kiwi Size Chart once it is live.
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie, all 45 swapped temple tees and both map tees are missing their dropdown until then. The CSV is keyed by address, which the swaps kept, so it is ready as it is.
