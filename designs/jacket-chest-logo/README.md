@@ -55,3 +55,8 @@ thumb. It reaches 1 mm at 3.75 in wide. DTF holds it at 3.5 in.
 Outputs in `out/`: `chest-logo-a2-white.svg` / `-black.svg` (vector masters),
 `chest-logo-a2-white-3.5in-300dpi.png` (white ink, every pixel's colour set to
 white per BRAND.md section 8), navy and black previews.
+
+**Final size: 3.75 in wide (Evan, 8 October 2026).** 3.75 x 3.34 in: frame
+1.71 mm, rules 1.31 mm, EST. 2023 cap height 0.27 in, thinnest PECULIAR stroke
+0.99 mm. Print file: `out/chest-logo-a2-white-3.75in-300dpi.png` (1125 x 1003 px).
+Evan places it on the garment himself.

@@ -10,7 +10,7 @@ Layout follows the Higgsfield draft higgsfield/A2-stacked-badge.png: a frame
 around PECULIAR, a rule, PEOPLE, a rule, EST. 2023. Both words are scaled to the
 same width without distortion. Units are thousandths of an inch.
 
-    python3 build_chest_logo.py --width-in 3.5
+    python3 build_chest_logo.py --width-in 3.75
 
 Writes out/chest-logo-a2-{white,black}.svg, a white-ink print PNG at 300 dpi,
 navy and black previews, and proof-letterforms.png (traced words over the
@@ -215,5 +215,5 @@ def proof(gray, pec_d, pec_bb, peo_d, peo_bb, out):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--width-in", type=float, default=3.5)
+    ap.add_argument("--width-in", type=float, default=3.75)
     print(build(ap.parse_args().width_in))
