@@ -59,7 +59,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
 Still open for Evan:
 
 - Church History Maps collection: tick Online Store (and any other channels) in the admin. The app token cannot publish collections, so it was created unpublished and its page 404s until then. Add it to the menu if wanted.
-- Nauvoo map products: run the on-model gallery from the Mac when convenient, and check the shared "Reference / Final drawing" slider and "Don't see your temple?" row on the product template, which are temple-worded and show on map pages too.
+- Nauvoo map products: run the on-model gallery from the Mac when convenient. Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
 
 - Add the `TAPSTITCH_COOKIES` secret to the cloud environment (copy the Cookie header from DevTools on tapstitch.com while logged in). Refresh it when a cloud run says "Not logged in".
 - Re-import `artifacts/easify/option-sets.csv` in Easify. Every swapped hoodie is missing its Temple dropdown until then.
