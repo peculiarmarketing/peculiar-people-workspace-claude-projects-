@@ -66,7 +66,7 @@ Still open for Evan:
 
 - Refresh the `TAPSTITCH_COOKIES` cloud secret when a cloud run says "Not logged in" (copy the Cookie header from DevTools on tapstitch.com while logged in).
 - Import `temple-product-generator/artifacts/easify/option-sets.csv` in Easify. One import restores the dropdown on every swapped product (the 45 Eden Green hoodies, the 45 temple tees and both map tees from the 8 October colour rollout; the CSV is keyed by address, which the swaps kept) and adds the three Map sets (Map Tee, Map Sweatshirt, Map Hoodie). Afterwards export fresh from Easify and run `easify_options.py reseed --export <file>`. Map sets sync from the cloud with `sync --maps-only`; the temple sets need the Mac.
-- Add the Tees, Sweatshirts, Hoodies and Jackets collections to the menu if wanted (all four published 8 October). All Designs (renamed from Temple Design Products on 8 October; address still `temple-design-products`), where Shop goes, shows every line's parent.
+- Main menu (8 October): Shop opens a sub-list, Hoodies, Tees, Sweatshirts, Jackets, All Products (All Designs). Changing the menu needs the Shopify connector; the app token has no navigation scope. All Designs (renamed from Temple Design Products on 8 October; address still `temple-design-products`), where Shop goes, shows every line's parent.
 - Set up the bomber's size chart in Kiwi Size Chart (the bomber is live).
 - Salt Lake City map prints 0.5 mm lines, under the 0.71 mm DTG minimum for the tee (fine on the fleece). Worth a sample tee.
 - Map products: run the on-model gallery from the Mac when convenient. Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
