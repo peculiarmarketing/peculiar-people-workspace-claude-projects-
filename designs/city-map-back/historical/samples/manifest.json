@@ -1,0 +1,97 @@
+{
+ "_note": "Research samples for historical map backs, 9 Oct 2026. Every file is from the Library of Congress; none of the items carries a Rights Advisory statement (checked in each item's JSON). Legal page: https://www.loc.gov/legal/",
+ "files": [
+  {
+   "file": "slc-1847-sherwood-plat_loc_pct25.jpg",
+   "title": "[Plat of the Great City of the Valley of the Great Salt Lake], H.G. Sherwood, 1847, manuscript on sheepskin",
+   "item_page": "https://www.loc.gov/item/2017587026/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd434:g4344:g4344s:ct011426/full/pct:25/0/default.jpg",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2017587026/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 210031,
+   "note": "Whole map at 25 percent. Full JP2 is 4328 x 6503.",
+   "downloaded": "2026-10-09",
+   "pixels": [
+    1082,
+    1626
+   ]
+  },
+  {
+   "file": "slc-1847-sherwood-plat_loc_info.json",
+   "title": "IIIF info.json for the 1847 Sherwood plat",
+   "item_page": "https://www.loc.gov/item/2017587026/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd434:g4344:g4344s:ct011426/info.json",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2017587026/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 1390,
+   "note": "IIIF Image API 2 service description.",
+   "downloaded": "2026-10-09"
+  },
+  {
+   "file": "nauvoo-1859-hancock-county-inset_loc_crop.jpg",
+   "title": "Map of Hancock County, Illinois, 1859 (Holmes & Arnold), 'City of Nauvoo' inset",
+   "item_page": "https://www.loc.gov/item/2013593101/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd410:g4103:g4103h:la000115/300,6900,2300,1700/full/0/default.jpg",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2013593101/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 532765,
+   "note": "Full-resolution crop of the Nauvoo inset. Full JP2 is 17770 x 16773.",
+   "downloaded": "2026-10-09",
+   "pixels": [
+    2300,
+    1700
+   ]
+  },
+  {
+   "file": "palmyra-1853-wayne-county-inset_loc_crop.jpg",
+   "title": "Map of Wayne County, New York, 1853 (H.F. Walling), 'Plan of Palmyra' inset",
+   "item_page": "https://www.loc.gov/item/2009579478/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd380:g3803:g3803w:la000575/4050,520,2250,1300/full/0/default.jpg",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2009579478/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 346076,
+   "note": "Full-resolution crop of the Palmyra inset. Full JP2 is 17182 x 11540.",
+   "downloaded": "2026-10-09",
+   "pixels": [
+    2250,
+    1300
+   ]
+  },
+  {
+   "file": "kirtland-1857-geauga-lake-township_loc_crop.jpg",
+   "title": "Map of Geauga and Lake counties, Ohio, 1857 (S.H. Matthews), Kirtland township",
+   "item_page": "https://www.loc.gov/item/2012591126/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd408:g4083:g4083g:la000628/2500,6800,2250,2200/full/0/default.jpg",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2012591126/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 801459,
+   "note": "Full-resolution crop of Kirtland township. Full JP2 is 13251 x 17982.",
+   "downloaded": "2026-10-09",
+   "pixels": [
+    2250,
+    2200
+   ]
+  },
+  {
+   "file": "hiram-1857-portage-county-inset_loc_crop.jpg",
+   "title": "Map of Portage Co., Ohio, 1857 (P.J. Browne), 'Hiram' inset",
+   "item_page": "https://www.loc.gov/item/2012592242/",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd408:g4083:g4083p:la000664/7350,14150,1450,1500/full/0/default.jpg",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2012592242/",
+   "license_more": "https://www.loc.gov/legal/",
+   "bytes": 213739,
+   "note": "Full-resolution crop of the Hiram inset. Full JP2 is 15659 x 17112.",
+   "downloaded": "2026-10-09",
+   "pixels": [
+    1450,
+    1500
+   ]
+  }
+ ]
+}

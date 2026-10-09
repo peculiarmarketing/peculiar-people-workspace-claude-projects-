@@ -40,7 +40,7 @@ Evan (9 Oct): "make them all and I will confirm them in one go". The packages ar
 
 ## Historical maps (started 9 Oct)
 
-Evan wants to know whether historical maps of each Church history place, in the years the Saints were there, can be had. Starting brief: the Claude Docs page "Historical Street Map Sources: Research Brief for Claude Code" (https://claude.ai/artifact/YWqHSXnAKpZ9bZn4Rpa85e). Findings go in `historical-maps.md` in this folder.
+Evan wants to know whether historical maps of each Church history place, in the years the Saints were there, can be had. Starting brief: the Claude Docs page "Historical Street Map Sources: Research Brief for Claude Code" (https://claude.ai/artifact/YWqHSXnAKpZ9bZn4Rpa85e). Findings are in `historical-maps.md` in this folder (9 Oct), with licensed samples and a manifest in `historical/samples/`. Waiting on Evan's answers to its questions before anything is built.
 
 ## History brief
 
