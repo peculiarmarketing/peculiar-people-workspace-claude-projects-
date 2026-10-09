@@ -8,7 +8,7 @@ Read `README.md` in this folder first: it holds every settled decision (frame, l
 |---|---|
 | live | Nauvoo, Salt Lake City (tee, sweatshirt, hoodie each; Salt Lake City is the map line's parent) |
 | ready (Evan confirmed) | Kirtland, Sharon |
-| review (design package built, waiting on Evan) | the other 25: San Antonio plus 24 Church history sites |
+| review (design package and history built, waiting on Evan on the review page) | the other 25: San Antonio plus 24 Church history sites |
 
 Stages live in `places.json` (`status`), defined in its `_status` note and in README "Product stages".
 
@@ -17,12 +17,17 @@ Stages live in `places.json` (`status`), defined in its `_status` note and in RE
 
 ## What Evan asked for and what is next
 
-Evan (9 Oct): "make them all and I will confirm them in one go". The packages are built; the history sections are not.
+Evan (9 Oct): "make them all and I will confirm them in one go".
 
-1. **Write the 24 history sections.** The brief every research agent follows is reproduced below under "History brief". Eight regional groups worked well in planning (Whitingham, Mendon, Fayette | Palmyra, Manchester, Sacred Grove | Colesville, Afton, Harmony | Hiram, Richmond, Liberty | Independence, Far West, Adam-ondi-Ahman | Haun's Mill, Quincy, Carthage | Garden Grove, Mount Pisgah, Council Bluffs | Winter Quarters, Martin's Cove). Each map's frame bounds come from `places.json` (centre, width_km, 3:4 portrait). The first attempt was stopped by Evan before any agent ran; nothing was written.
-2. **Review each section yourself** after the agent: both editing passes (CLAUDE.md), check any phrase that sounds like a guess against the `-sources.md` ledger, and vary the shapes. Shape convergence is the main risk across 28 sections: the existing four end on a concrete fact (Nauvoo), a myth correction (Salt Lake City), a light anecdote (Kirtland), a weather story (Sharon). Do not let them all close the same way.
-3. **One review page for Evan** with every map's review sheet and history section side by side, so he confirms in one go. Then `map_run.py <place> --confirm` for each he approves (it refuses a history site with no history file).
-4. **Products** only when Evan asks: `map_run.py <place> --apply --publish` (refuses anything below ready), then `easify_options.py sync --maps-only` and Evan imports the CSV, then he exports and the CSV is reseeded (every Easify import renumbers all sets).
+**Done 9 Oct (second session):** all 24 history sections written by eight regional research agents to the History brief below, each with its `-sources.md` ledger; reviewed in full by the main session (two edits: Whitingham's birth hill hedged, Winter Quarters "land of the Omaha people"). Palmyra: one section, written against the small village frame, copied byte for byte to `palmyra-township.html`. Haun's Mill has a "Notes" heading in place of Trivia. All 28 sections parse with `map_run.py`'s `history_section`.
+
+**Waiting on Evan: the review page** https://claude.ai/artifact/W18sJPW4zEjL2a5Rb89Kew (private to Evan). Every map in review with its back print, the print-file and card strip, the open points for him, and its history section. He picks Confirm / Needs changes / Drop per map with a note, plus the Palmyra village-or-township question. Choices save to the page's database: read them with ArtifactData `list` on collection `decisions` (doc id = place key: `choice`, `note`, `at`) and `get` `questions/palmyra`. The page builder (`build_page.py`, `template.html`, `notes.json`, `make_images.py`) lived in the session scratchpad and was not kept; the open points per map are in each history ledger and summarised on the page.
+
+Next, once Evan has chosen:
+1. `map_run.py <place> --confirm` for each he confirmed (status ready). Apply his notes for "Needs changes" (history fixes go back through the History brief; re-check the ledger). "Drop" on San Antonio means no product; on a history site, ask whether to remove it from `places.json`.
+2. **Products** only when Evan asks: `map_run.py <place> --apply --publish` (refuses anything below ready), then `easify_options.py sync --maps-only` and Evan imports the CSV, then he exports and the CSV is reseeded (every Easify import renumbers all sets).
+
+Open points Evan was asked on the page (also in the ledgers): Fayette organized in Fayette or both accounts; Independence's July 1833 editorial left out under the no-blame rule; Sacred Grove witness-tree source (BYU article, not a Church page); Council Bluffs replica tabernacle demolished 2022 (copy says so); Quincy stake today unconfirmed.
 
 ## Decisions Evan still owes
 
