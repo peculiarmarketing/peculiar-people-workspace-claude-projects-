@@ -1,0 +1,57 @@
+{
+  "id": "imessage-20261008-0204-009da6cd",
+  "source": "imessage",
+  "source_label": "iMessage note to self",
+  "received_at": "2026-10-08T02:04:38Z",
+  "messages": [
+    {
+      "time": "2026-10-08T02:04:38Z",
+      "text": "https://www.instagram.com/reel/DeEzLiQub5D/",
+      "attachments": []
+    },
+    {
+      "time": "2026-10-08T02:04:38Z",
+      "text": "Can we use this marketing concept to change messaging on the site or future marketing?",
+      "attachments": []
+    }
+  ],
+  "note_text": "https://www.instagram.com/reel/DeEzLiQub5D/\nCan we use this marketing concept to change messaging on the site or future marketing?",
+  "links": [
+    "https://www.instagram.com/reel/DeEzLiQub5D/"
+  ],
+  "media": [
+    {
+      "kind": "video",
+      "folder": "video1",
+      "errors": [],
+      "duration_seconds": 66.6,
+      "truncated_to_seconds": null,
+      "frames": [
+        "video1/frames/01_t00m02s.jpg",
+        "video1/frames/02_t00m07s.jpg",
+        "video1/frames/03_t00m12s.jpg",
+        "video1/frames/04_t00m17s.jpg",
+        "video1/frames/05_t00m23s.jpg",
+        "video1/frames/06_t00m28s.jpg",
+        "video1/frames/07_t00m33s.jpg",
+        "video1/frames/08_t00m38s.jpg",
+        "video1/frames/09_t00m43s.jpg",
+        "video1/frames/10_t00m48s.jpg",
+        "video1/frames/11_t00m53s.jpg",
+        "video1/frames/12_t00m58s.jpg",
+        "video1/frames/13_t01m04s.jpg"
+      ],
+      "transcript": "video1/transcript.txt",
+      "language": "en",
+      "url": "https://www.instagram.com/reel/DeEzLiQub5D/",
+      "source_meta": {
+        "title": "Video by danhenry",
+        "uploader": "Dan Henry",
+        "channel": "danhenry",
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DeEzLiQub5D/",
+        "description": "This is how the Squatty Potty made millions! \n\nIf you’re new here, I’m Dan Henry, founder of GetClients.com.\n\nWe do around $1M/month with webinars and help entrepreneurs use webinars to scale.\n\nA webinar is simply a speech that gets you clients online—and we write those speeches for our clients.\n\nI’m a Wall Street Journal bestselling author, and over the past 13 years, we’ve generated more than $45M in sales with webinars.\n\nI’m teaching how we do it in my Million Webinar Workshop.\n\nComment WEBINAR to attend."
+      }
+    }
+  ]
+}
