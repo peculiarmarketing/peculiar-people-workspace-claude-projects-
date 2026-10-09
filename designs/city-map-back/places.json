@@ -22,7 +22,7 @@
     ],
     "busy": true,
     "history": false,
-    "status": "review"
+    "status": "ready"
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -111,22 +111,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
-  },
-  "palmyra-village": {
-    "label": "PALMYRA, NEW YORK",
-    "counties": [
-      "36117"
-    ],
-    "centre": [
-      43.06001,
-      -77.23005
-    ],
-    "width_km": 3.0,
-    "line_mm": 1.5,
-    "temple": null,
-    "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "palmyra-township": {
     "label": "PALMYRA, NEW YORK",
@@ -135,10 +120,10 @@
       "36069"
     ],
     "centre": [
-      43.08362,
-      -77.19148
+      43.0737,
+      -77.2066
     ],
-    "width_km": 10.0,
+    "width_km": 12.5,
     "line_mm": 1.5,
     "temple": [
       43.0389988,
@@ -164,26 +149,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "review"
-  },
-  "sacred-grove": {
-    "label": "SACRED GROVE, NEW YORK",
-    "counties": [
-      "36117",
-      "36069"
-    ],
-    "centre": [
-      43.03971,
-      -77.24625
-    ],
-    "width_km": 6.0,
-    "line_mm": 1.5,
-    "temple": [
-      43.0389988,
-      -77.2370607
-    ],
-    "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "fayette": {
     "label": "FAYETTE, NEW YORK",
@@ -201,7 +167,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "mendon": {
     "label": "MENDON, NEW YORK",
@@ -218,7 +184,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "colesville": {
     "label": "COLESVILLE, NEW YORK",
@@ -234,7 +200,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "afton": {
     "label": "AFTON, NEW YORK",
@@ -252,7 +218,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "harmony": {
     "label": "HARMONY, PENNSYLVANIA",
@@ -268,7 +234,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "hiram": {
     "label": "HIRAM, OHIO",
@@ -284,7 +250,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "independence": {
     "label": "INDEPENDENCE, MISSOURI",
@@ -302,7 +268,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -319,7 +285,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -335,7 +301,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "far-west": {
     "label": "FAR WEST, MISSOURI",
@@ -350,7 +316,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "adam-ondi-ahman": {
     "label": "ADAM-ONDI-AHMAN, MISSOURI",
@@ -365,7 +331,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "hauns-mill": {
     "label": "HAUN'S MILL, MISSOURI",
@@ -380,7 +346,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "quincy": {
     "label": "QUINCY, ILLINOIS",
@@ -396,7 +362,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "carthage": {
     "label": "CARTHAGE, ILLINOIS",
@@ -411,7 +377,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "garden-grove": {
     "label": "GARDEN GROVE, IOWA",
@@ -426,7 +392,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "mount-pisgah": {
     "label": "MOUNT PISGAH, IOWA",
@@ -441,7 +407,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "council-bluffs": {
     "label": "COUNCIL BLUFFS, IOWA",
@@ -458,7 +424,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "winter-quarters": {
     "label": "WINTER QUARTERS, NEBRASKA",
@@ -477,7 +443,7 @@
       -95.966178
     ],
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
   "martins-cove": {
     "label": "MARTIN'S COVE, WYOMING",
@@ -493,7 +459,8 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "review"
+    "status": "ready"
   },
-  "_status": "Product stage per map (8 Oct 2026). designed: art built, not reviewed. review: the full product package (print files per garment, gallery cards, history section) is made and waits on Evan. ready: Evan confirmed it; scripts/map_run.py may publish it. live: on the store. map_run.py refuses --apply below ready and sets live itself after a publish."
+  "_status": "Product stage per map (8 Oct 2026). designed: art built, not reviewed. review: the full product package (print files per garment, gallery cards, history section) is made and waits on Evan. ready: Evan confirmed it; scripts/map_run.py may publish it. live: on the store. map_run.py refuses --apply below ready and sets live itself after a publish.",
+  "_dropped": "9 Oct 2026, Evan on the review page: palmyra-village and sacred-grove dropped. palmyra-township was widened (centre 43.0737, -77.2066, 12.5 km) to cover both old frames, and its history section carries the village and Sacred Grove story. Old frames: palmyra-village centre 43.06001,-77.23005 at 3 km; sacred-grove centre 43.03971,-77.24625 at 6 km. Their ledgers stay in history/ as sources for palmyra-township."
 }
