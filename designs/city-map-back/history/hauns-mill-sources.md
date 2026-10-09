@@ -71,3 +71,16 @@ Notes
 - George Edward Anderson's 1907 painted inscription on a millstone, now the Breckenridge monument owned by the town (H). Verified, but the monument sits outside the frame; left out.
 - 2003 Community of Christ marker, now reported missing (HMDB, lead only). Not tiered; omitted. No marker wording is quoted in the copy because no Church source gives one.
 - Haun's Mill Monument / "Haun's Mill" spelling on maps. No claim made about current on-site signage.
+
+## Markers (9 Oct 2026)
+
+Frame lat 39.6340 to 39.7064, lon -93.8738 to -93.8038. Merge distance 156 m. No temple. Sensitivity rule applied: the marker is the site as a whole, never the well or any point of the attack.
+
+1. Haun's Mill site, with the road in: 39.66960, -93.84003. Church location page pin (A, maps.app.goo.gl/TK5FzJ9FGJsQo5fF6, Google place "Hawn's Mill," place data 39.6695977, -93.8400338). Certainty exact: the Church's own pin for the historic site. In frame. Chosen over the OSM "Hawn's Mill Cemetery" point (39.67019, -93.83882, about 125 m away) because that point is the burial site, which the brief bars as a marker.
+   - Merge: Northeast Hauns Mill Drive (OSM 39.67024, -93.84115) is about 120 m from the Church pin, under the 156 m merge distance, so the road is named in the same entry, as before. The entry now starts with the place name ("Haun's Mill lies in woods and fields...") and the road sentence was folded in unchanged in substance.
+   - No new facts.
+
+Considered and left out:
+- The well, the blacksmith shop and the mill building: not marked under the sensitivity rule; the mill and house no longer stand (A), and the shop and well are points of the killings and burial.
+- Amanda Barnes Smith's camp where Alma recovered: part of the same site, unlocated within it.
+- Hawn's Mill Millstone Monument, Breckenridge: north of the frame (see above).

@@ -67,3 +67,21 @@ Trivia
 - Site purchased 8 Aug 1836; one square mile held in trust by W. W. Phelps and John Whitmer (G, citing secondary works). Verified on G but would need the Phelps and Whitmer land dispute (F ch. 25 to 26) for context. Omitted.
 - Temple dimensions and the monument's date. No fetched source.
 - Cornerstones under protective glass (search summary only). Omitted.
+
+## Markers (9 Oct 2026)
+
+Frame lat 39.6349 to 39.7073, lon -94.1666 to -94.0966. Merge distance 156 m. No temple of ours; the temple site is a `site`. Order: all three places mattered from the 1836 founding, so ties go north to south.
+
+1. Shoal Creek: 39.68607, -94.13133. OSM way 120020112 (fetched from api.openstreetmap.org/api/0.6/way/120020112/full.json), the node nearest the temple site; Nominatim bounded search confirms the way lies in the frame. Certainty exact (the creek itself; the marker is its closest point to the old town, 1.6 km north of the temple site). In frame. Significance: town on high rolling prairie between Shoal and Goose creeks (JSP place page, G, T1); settlement originally called Shoal Creek (G; H). Copy says "about a mile north" (1.6 km).
+2. Far West Temple Site and public square: 39.67153, -94.13184. Church location page pin (C and D share maps.app.goo.gl/HDqkegFXChTFgxuZ6, resolving to 39.6715269, -94.1318404). JSP "Public square, Far West, Missouri" gives 39.671111, -94.131389, within 50 m. Certainty exact. In frame. Merge: the public square contains the temple site, so one entry.
+   - NEW [T1] "Four acres, including site of schoolhouse and anticipated temple. Schoolhouse also used as town hall, courthouse, and church meetinghouse." JSP place page, https://www.josephsmithpapers.org/place/public-square-far-west-missouri (citing Berrett, Sacred Places 4:314). Copy: the temple site "takes up part of the town's old public square, four acres that also held a schoolhouse used as town hall, courthouse and meetinghouse." Saints ch. 27 also places the July 4, 1838 flag raising at the town square beside the excavated temple site (F).
+3. Goose Creek: 39.65720, -94.11990. OSM way 119826731 (fetched as above), node nearest the temple site; 1.9 km south-southeast. Certainty exact (the creek; same note as Shoal Creek). In frame. Old copy said "just southeast"; with the full line in hand the nearest point is more south than east, so copy now says "a little over a mile south."
+
+Considered and left out:
+- Lucas's militia camp and the spot of the October 31 arrest ("halfway to the Missouri camp," Saints ch. 30; "just outside of Far West," G). No source locates either; not marked, and the existing What Happened Here text already says "just outside town."
+- Hill where Hinkle and others met Lucas ("a hill near Far West," Saints ch. 30). Unlocated.
+- Schoolhouse as its own point: within the four-acre square, under the merge distance from the temple site and not separately located. Named in entry 2.
+- Joseph Smith's Far West home, other homes, stores, printing office: no located site found in a T1 source.
+- Kingston and Haun's Mill: outside the frame.
+
+Failed fetches: Overpass API (overpass-api.de) connection reset through the proxy, as in the first pass; not retried. Saints ch. 31 slug guess returned a 55-byte error page (wrong slug; ch. 30 covered the need).

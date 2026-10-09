@@ -78,3 +78,21 @@ Place coordinates from the Google Maps pins linked on each Church location page.
 - W. W. Phelps's hymn "Adam-ondi-Ahman," sung at the 1836 Kirtland Temple dedication (A, G heading note). Kirtland history, not this map.
 - Proposed Pattonsburg dam on the Grand River (M, 1972). Proposal only; omitted.
 - 2025 senior missionary death (L). Used only to confirm missionaries serve on the grounds; not mentioned in copy.
+
+## Markers (9 Oct 2026)
+
+Frame lat 39.9437 to 40.0161, lon -93.9880 to -93.9177. Merge distance 156 m. No temple. Order: story order (the Wights settled first in early 1838; the Spring Hill revelation came in May or June 1838); the Valley Overlook has no separate dated event, so it goes last.
+
+1. Wight home site, at the foot of Tower Hill: 39.97150, -93.98702. OSM node 12663353129, historic=ruins, name "Lyman and Harriet Wight Home Site" (Nominatim bounded search). The Church location pin shared by Tower Hill and Wight Home Site (maps.app.goo.gl/QCGQWcMgBcFsXPsz7) resolves to 39.972087, -93.983473, which matches the OSM Tower Hill Picnic Area and viewpoint nodes (39.97186, -93.98327): a trailhead, about 310 m east of the home site. The marker uses the home site, since the copy says the trail climbs to it and C says its location is marked. Certainty exact (a marked site; the house itself is gone). In frame, but only about 85 m inside the west edge (lon -93.9880). Merge: Tower Hill is named in this entry rather than given its own point, because no source gives the hill a single position separate from the trailhead.
+   - NEW [T1] Joseph Smith's journal as quoted on B: "We next kept up the river mostly in the timber for ten miles, until we came to Colonel Lyman Wight's, who lives at the foot of Tower Hill." Copy: "The Wight home site sits at the foot of Tower Hill, where Joseph Smith found Lyman Wight living in 1838."
+2. Spring Hill Summit: 39.98415, -93.97571. Church location pin (E, maps.app.goo.gl/eSfEAH7Y6bEv25FT9, place data 39.984154, -93.975707); OSM node 12663353130 "Spring Hill" 39.98406, -93.97612 agrees within 40 m. Certainty exact. In frame.
+3. Valley Overlook: 39.97331, -93.95443. Church location pin (F and B, maps.app.goo.gl/btjxTh91GvFpcAnt9, place data 39.9733095, -93.9544291, Google name "East Valley Overlook"); OSM node 12663352931 "East Valley Overlook" 39.97326, -93.95452. Certainty exact. In frame.
+
+Spacing: 1 to 2 1.7 km, 2 to 3 2.2 km, 1 to 3 2.8 km. No forced merges.
+
+Considered and left out:
+- Wight's Ferry on the Grand River: no source gives its position beyond "near Wight's home" (I). Not marked.
+- Valley Overlook Pavilion and Picnic Area (B): visitor amenity, next to the overlook.
+- Tower Hill Valley Overlook viewpoint (OSM): amenity at the trailhead; not in a T1 source as its own site.
+- The surveyed city and the 1838 homes: area only, no point.
+- Gallatin and Millport: outside the frame and not in the copy.
