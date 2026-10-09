@@ -56,7 +56,7 @@ Retired: the account-level cc1717, cc1566 and cc1567 temple description builders
   - backs at 90% of true size, centred on the body, with the hood over the top 3% of the hoodie map;
   - front logos at 95% (the hoodie's 85.5%), 2.5 in above Tapstitch's flat placement (the hoodie's 1.0 in).
 
-  A new city runs `composite_maps.py check`, then `build`, then `scripts/onmodel_maps_apply.py --place <city>`. The sweatshirts on every on-model shot (maps and Be Peculiar) were refitted 9 October to Tapstitch's loose, long fit.
+  A new city runs `composite_maps.py check`, then `build`, then `scripts/onmodel_maps_apply.py --place <city>`. The sweatshirts on every on-model shot (maps and Be Peculiar) were refitted 9 October to Tapstitch's loose, long fit. The locked photos and prints are backed up in Shopify Files, so any run on the Mac or in the cloud can restore them (`composite_maps.py fetch`). Map tees keep all eight colours (Evan, 9 October), even where the white ink is faint (Cream, Pink, Light Blue).
 - One-quarter lift finished 7 October: all 135 garment products re-saved in place with the higher print, folded model photos and on-model thumbnails, and verified. Orders print the new design; no listing was swapped, so the Easify dropdowns are untouched.
 - Eden Green hoodie rollout finished: all 45 hoodies live in seven colours, verified. Each was a swap, and the old listings sit as drafts at `<address>-retired-<date>`.
 - The personalized date tee is paused (40 drafts on a retired blank). Tapstitch has no buyer personalization, so bringing it back means building it from scratch.
@@ -74,7 +74,7 @@ Still open for Evan:
 - Main menu (8 October): Shop opens a sub-list, Hoodies, Tees, Sweatshirts, Jackets, All Products (All Designs). Changing the menu needs the Shopify connector; the app token has no navigation scope. All Designs (renamed from Temple Design Products on 8 October; address still `temple-design-products`), where Shop goes, shows every line's parent.
 - Set up the bomber's size chart in Kiwi Size Chart (the bomber is live).
 - Salt Lake City map prints 0.5 mm lines, under the 0.71 mm DTG minimum for the tee (fine on the fleece). Worth a sample tee.
-- White map ink is nearly invisible on the Cream tee and faint on Pink and Light Blue. Decide whether those colours stay on the map tees. Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
+- Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - Before any street map design ships: decide where the "© OpenStreetMap contributors" credit goes (product page is the usual place). The ODbL requires it. US designs built from Census TIGER data do not need it.
 - The storefront overhaul doc still says Boise is unfinished; its "State as of" section needs the completed rollout.
