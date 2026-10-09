@@ -1,0 +1,5 @@
+{"place": "far-west", "markers": [
+  {"n": 1, "name": "Shoal Creek", "lat": 39.68607, "lon": -94.13133, "certainty": "exact", "kind": "site", "coord_source": "OSM way 120020112 (Shoal Creek), node nearest the temple site; fetched from api.openstreetmap.org", "note": "Marker sits on the creek line at its closest point to the old town, about 1.6 km north of the temple site."},
+  {"n": 2, "name": "Far West Temple Site and public square", "lat": 39.67153, "lon": -94.13184, "certainty": "exact", "kind": "site", "coord_source": "Church location page pin (far-west-temple-site, maps.app.goo.gl/HDqkegFXChTFgxuZ6); JSP public square place page 39.67111, -94.13139 agrees within 50 m", "note": "Public square merged into the temple site entry: the temple site lies within the square."},
+  {"n": 3, "name": "Goose Creek", "lat": 39.6572, "lon": -94.1199, "certainty": "exact", "kind": "site", "coord_source": "OSM way 119826731 (Goose Creek), node nearest the temple site; fetched from api.openstreetmap.org", "note": "Marker sits on the creek line at its closest point to the old town, about 1.9 km south-southeast of the temple site."}
+]}
