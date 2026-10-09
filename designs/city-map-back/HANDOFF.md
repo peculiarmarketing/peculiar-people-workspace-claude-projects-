@@ -37,7 +37,8 @@ Done 9 Oct:
 - `build_map_back.py` draws them (`draw_markers`): a 0.05 in radius dot with streets cleared to 0.10 in, and the number in Oswald 500 at 0.24 in (measured 0.85 mm strokes, about 4.9 mm tall; DTG minimum 0.71 mm) on a knocked-out patch placed automatically clear of other markers, the halo, the frame and the city label. A temple entry gets only its number, outside the halo. `web_map_drawing.py` passes the markers too, so the product-page drawing band shows them.
 - `map_run.py` (temple repo) ships a scoped style that forces the On the Map numbers on, whatever the theme does to lists.
 - Status: all 26 stay at ready (Evan confirmed the maps and asked for the markers). Nauvoo and Salt Lake City are LIVE with the old art and old list: they need `map_run.py <place> --apply --publish` again to carry the markers, only when Evan says. Same for every other map when its products go up.
-- Evan's markers look is on the review page (collection `markers` there; the earlier `decisions` collection holds his 9 Oct map choices).
+- **Waiting on Evan:** the markers review page https://claude.ai/artifact/1aJvbn7Hgn7tYgY1H7EN8p (private to Evan). All 26 maps with markers, the print strip and the numbered list. Choices save to collection `markers` (doc id = place key: `choice` confirm/change/drop, `note`); read with ArtifactData `list`. "Drop" there means drop the markers, keep the map. The earlier map review page (https://claude.ai/artifact/W18sJPW4zEjL2a5Rb89Kew, collection `decisions`) holds his 9 Oct map choices.
+- Flags for Evan on that page: Whitingham marker 1 (traditional birth site) is placed from a non-Church lead; Colesville's tavern source says Harpursville but names a corner 4.6 km away.
 
 ## Next line of work (Evan, 9 Oct; not started)
 
