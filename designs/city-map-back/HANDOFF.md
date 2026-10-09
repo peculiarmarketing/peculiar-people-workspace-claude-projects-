@@ -43,7 +43,7 @@ Done 9 Oct:
 
 ## Thin lines in crowded patches (Evan, 9 Oct)
 
-Evan: "where the roads start blending together and forming solid white blocks ... make the roads where that's the case 0.5 millimeters, but then all the roads outside of it the 1.5", naming Fayette's far left and lower rows. Built into `build_map_back.py` (`dense_field`, see README) and `web_map_drawing.py`; applies to every 1.5 mm map automatically, so all small-town maps were rebuilt 9 Oct. Thin patches are under the 0.71 mm DTG tee minimum, like Salt Lake City; the sample tee would settle both.
+Evan: "where the roads start blending together and forming solid white blocks ... make the roads where that's the case 0.5 millimeters, but then all the roads outside of it the 1.5", naming Fayette's far left and lower rows. Built into `build_map_back.py` (`dense_field`, see README) and `web_map_drawing.py`; applies to every 1.5 mm map automatically, so all small-town maps were rebuilt 9 Oct. Share of each map thinned (patches under 0.2 sq in skipped as lone knots): Fayette 6.3 percent, Mendon 3.8, Winter Quarters 2.7, Colesville 1.7, Afton 1.4, Richmond 1.2, Manchester 1.1, Harmony 1.0, the rest under 1; Nauvoo, Far West, Haun's Mill, Garden Grove and Mount Pisgah unchanged. Shown to Evan on the markers review page and a Fayette before-and-after. Thin patches are under the 0.71 mm DTG tee minimum, like Salt Lake City; the sample tee would settle both.
 
 ## Next line of work (Evan, 9 Oct; not started)
 
