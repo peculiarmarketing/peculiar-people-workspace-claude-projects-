@@ -41,6 +41,10 @@ Done 9 Oct:
 - **Evan's markers review (9 Oct):** 24 confirmed. Mendon: "the actual number for #1 lies in the roadway so it looks like the road ... it should be moved off the road" (fixed for every map: number spots are now scored by the street ink under them). Salt Lake City: "#7 is covered by the location text, zoom out just enough" (widened 22 to 24.5 km, Davis County 49011 loaded, 5.3 percent fused). Then, for all maps: numbers and dots 10 percent bigger (number 0.24 to 0.264 in, about 0.94 mm strokes; dot radius 0.05 to 0.055 in; clearances scaled too).
 - Flags for Evan on that page: Whitingham marker 1 (traditional birth site) is placed from a non-Church lead; Colesville's tavern source says Harpursville but names a corner 4.6 km away.
 
+## Thin lines in crowded patches (Evan, 9 Oct)
+
+Evan: "where the roads start blending together and forming solid white blocks ... make the roads where that's the case 0.5 millimeters, but then all the roads outside of it the 1.5", naming Fayette's far left and lower rows. Built into `build_map_back.py` (`dense_field`, see README) and `web_map_drawing.py`; applies to every 1.5 mm map automatically, so all small-town maps were rebuilt 9 Oct. Thin patches are under the 0.71 mm DTG tee minimum, like Salt Lake City; the sample tee would settle both.
+
 ## Next line of work (Evan, 9 Oct; not started)
 
 Every city with a temple product gets a plain city map "in the near future": no history section (`history: false`), built and reviewed like San Antonio. Only plan or build this when Evan asks. A temple city's map should carry the temple halo and the coordinates front, since the temple is in frame by definition.

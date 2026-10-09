@@ -116,7 +116,7 @@ def load_roads(counties):
 
 
 def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=False,
-           markers=None, marker_label=None):
+           markers=None, marker_label=None, field=None):
     """Return an L-mode mask at ppi * SS, frame centred on `centre`."""
     lat, lon = centre
     cx, cy = merc(lon, lat)
@@ -139,7 +139,7 @@ def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=
                 if max(xs) < -lw or min(xs) > W + lw or max(ys) < -lw or min(ys) > H + lw:
                     continue
                 polys.append(xy)
-        draw_hand(d, polys, lw, ppi * SS)
+        draw_hand(d, polys, lw, ppi * SS, field=field)
     else:
         for cls in FIRST:
             for c, pts in roads:
@@ -209,7 +209,7 @@ def hand_width(x_in, y_in, ph):
     return 1 + HAND_SWING * (0.65 * a + 0.35 * b)
 
 
-def draw_hand(d, lines, lw, px_per_in, ph=(0.7, 2.1, 4.4)):
+def draw_hand(d, lines, lw, px_per_in, ph=(0.7, 2.1, 4.4), field=None):
     """lines: pixel point lists. An end tapers only if no other street touches it
     (checked on the page, since a side street often meets a main road mid-segment
     without sharing a point with it)."""
@@ -248,6 +248,8 @@ def draw_hand(d, lines, lw, px_per_in, ph=(0.7, 2.1, 4.4)):
         radii = []
         for (x, y), a in zip(res, acc):
             w = lw * hand_width(x / px_per_in, y / px_per_in, ph) / 2
+            if field is not None:
+                w *= field.factor(x / px_per_in, y / px_per_in)
             for dead, dist in ((dead0, a), (dead1, total - a)):
                 if dead and dist < t_len:
                     w *= (dist / t_len) ** 0.7
@@ -486,6 +488,58 @@ def auto_width(roads, p, max_fused, lo=3.0, hi=80.0):
     return round(best, 1)
 
 
+# Thin lines where the streets crowd (Evan, 9 Oct 2026). In small towns at
+# 1.5 mm, tight rows of streets (lakeside cottage lanes, a village core) run
+# together into solid white. Those patches are found and drawn at 0.5 mm, and
+# everything else stays 1.5 mm. How: render the map at full weight (100 ppi),
+# close every gap narrower than DENSE_GAP_MM, and where the closed-up pixels
+# are dense, that is a crowded patch. A smooth field over the page then scales
+# each line's width from 1 (open country) down to thin/line inside a patch,
+# easing over about 0.2 in so a road thins gradually instead of stepping.
+DENSE_LINE_MM = 0.5      # line weight inside crowded patches
+DENSE_GAP_MM = 1.5       # gaps narrower than this read as merged
+DENSE_THRESHOLD = 0.06   # local share of closed-up gaps that marks a patch
+DENSE_PPI = 100
+
+
+class WidthField:
+    def __init__(self, f, thin_ratio):
+        self.f, self.k = f, 1 - thin_ratio
+        self.h, self.w = f.shape
+
+    def factor(self, x_in, y_in):
+        i = min(self.h - 1, max(0, int(y_in * DENSE_PPI)))
+        j = min(self.w - 1, max(0, int(x_in * DENSE_PPI)))
+        return 1 - self.k * self.f[i, j]
+
+    def share(self):
+        return float((self.f > 0.5).mean())
+
+
+def dense_field(roads, p):
+    """The width field for a place, or None when nothing crowds (or the place
+    is already drawn thin)."""
+    thin = p.get("dense_line_mm", DENSE_LINE_MM)
+    if p.get("busy") or p["line_mm"] <= thin or p.get("dense_line_mm") == 0:
+        return None
+    import numpy as np
+    from scipy import ndimage as ndi
+    m = render(roads, p["centre"], p["width_km"], p["line_mm"], DENSE_PPI, p.get("temple"), hand=True)
+    m = m.resize((m.width // SS, m.height // SS), Image.LANCZOS)
+    ink = np.asarray(m) > 127
+    r = DENSE_GAP_MM * MM * DENSE_PPI / 2
+    n = int(r) + 1
+    yy, xx = np.mgrid[-n:n + 1, -n:n + 1]
+    closed = ndi.binary_closing(ink, structure=xx ** 2 + yy ** 2 <= r * r + 0.25)
+    dens = ndi.gaussian_filter((closed & ~ink).astype(float), 0.12 * DENSE_PPI)
+    zone = ndi.binary_opening(dens > DENSE_THRESHOLD, iterations=3)
+    if not zone.any():
+        return None
+    zone = ndi.binary_dilation(zone, iterations=round(0.1 * DENSE_PPI))
+    f = np.clip(ndi.gaussian_filter(zone.astype(float), 0.06 * DENSE_PPI) * 1.6, 0, 1)
+    return WidthField(f, thin / p["line_mm"])
+
+
 def build(name, p, args):
     print(f"{name}: {p['label']}")
     roads = load_roads(p["counties"])
@@ -503,8 +557,12 @@ def build(name, p, args):
     markers = markers_for(name)
     if markers:
         print(f"  {len(markers)} numbered markers")
+    field = dense_field(roads, p) if hand and not args.no_thin else None
+    if field:
+        print(f"  crowded patches drawn at {p.get('dense_line_mm', DENSE_LINE_MM):g} mm: "
+              f"{100 * field.share():.1f}% of the map")
     preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand,
-                     markers=markers, marker_label=p["label"])
+                     markers=markers, marker_label=p["label"], field=field)
     fused = fused_pct(preview, p["line_mm"], 100)
     frame_and_label(preview, p["label"], 100 * SS)
     print(f"  {p['width_km']:g} km at {p['line_mm']:g} mm: "
@@ -512,7 +570,7 @@ def build(name, p, args):
     save(preview, outdir / f"{tag}-preview.png", 100)
     if not args.preview_only:
         save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"], hand,
-                    markers=markers),
+                    markers=markers, field=field),
              outdir / f"{tag}-print-300dpi.png", 300)
     if p.get("temple"):
         save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")
@@ -531,6 +589,8 @@ def main():
     ap.add_argument("--all", action="store_true", help="every place in places.json")
     ap.add_argument("--swing", type=float,
                     help="override the hand-drawn width swing (default 0.4 small towns, 0.1 busy cities)")
+    ap.add_argument("--no-thin", action="store_true",
+                    help="keep every line at the place's weight (no 0.5 mm in crowded patches)")
     ap.add_argument("--plain", action="store_true",
                     help="even-width lines with round ends instead of the hand-drawn style")
     ap.add_argument("--preview-only", action="store_true", help="skip the 300 ppi print file")

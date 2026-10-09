@@ -113,7 +113,7 @@ def build_web(name, p):
     b.HAND_SWING = swing
     k = 3   # render the art at 3x (times build_map_back's own 2x) and scale down, so thin lines stay crisp
     art = b.render(roads, p["centre"], p["width_km"], p["line_mm"], ppi * k, p.get("temple"), hand=True,
-                   markers=b.markers_for(name), marker_label=p["label"])
+                   markers=b.markers_for(name), marker_label=p["label"], field=b.dense_field(roads, p))
     fw = max(2, round(b.FRAME_MM * b.MM * ppi * k * b.SS))
     d = ImageDraw.Draw(art)
     for box in ((0, 0, art.width, fw), (0, art.height - fw, art.width, art.height),
