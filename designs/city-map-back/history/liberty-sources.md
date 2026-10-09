@@ -69,3 +69,23 @@ Trivia
 - Wilford Woodruff making bricks on the Arthur farm and Zion's Camp being discharged there (F, G). Verified; cut for length.
 - Doniphan's grave in Fairview Cemetery, Liberty (39.24249, -94.42420, inside). F shows a photo of his grave marker "at cemetery in Liberty" without naming it; Fairview name from leads only. Not listed.
 - Distance of the Eight Witnesses monument: F says about 3½ miles south of Liberty; the OSM address point is closer to 2½ to 3 miles southwest. Copy says "south of town."
+
+## Markers (9 Oct 2026)
+
+Merge distance 303 m. Frame lat 39.1686 to 39.3097, lon -94.4937 to -94.3580. Pins resolved from the Google Maps short links on the Church location pages (fetched 9 Oct).
+
+1. Monument to the Eight Witnesses (former Michael Arthur farm), exact, 39.20740, -94.44985 (Church pin, G). Inside. The monument stands near the two Whitmer graves (F, G), so the marker shows the monument site as a whole; graves are not marked separately. Order: the farm mattered from 1834 (G).
+2. Historic Liberty Jail, exact, 39.24854, -94.42065 (Church pin, B; matches OSM 39.24852, -94.42062). Inside. Merged with the Doniphan home site marker, "a few hundred feet south" (H), estimated 39.2477, -94.4205, about 94 m away. Marker at the jail. Order: 1838 to 1839.
+
+Monument to jail: 5.2 km apart.
+
+No new facts: entry 2 joins the two former jail and Doniphan items word for word. The only change is the order (the Arthur farm, 1834, now comes first) and the merge.
+
+Considered and left out:
+
+- Hiram Page gravesite (Church location page, pin 39.35605, -94.17624): outside the frame (north and east of it).
+- Clay County Courthouse (39.24649, -94.41989 OSM, 230 m from the jail, so it would merge): the 1838 route went "past the courthouse," but the present building's date and whether it stands on the 1838 site are unverified. Not named.
+- Doniphan's grave: cemetery name from leads only (see Dropped). Not marked.
+- Zion's Camp discharge at the Arthur farm (F, G): verified but cut for length earlier; not added.
+- Fishing River (Zion's Camp, 1834) and the Clay County settlements: no site inside the frame located in a source read.
+- Liberty Missouri Stake Center: modern meetinghouse.

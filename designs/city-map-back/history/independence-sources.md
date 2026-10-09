@@ -87,3 +87,26 @@ Pins from the Google Maps links on the Church location pages (resolved place coo
 - [T1] July 1833 Star article: "discussed the legal obstacles relating to the migration of free black converts to Missouri, a slave state"; "Many locals felt the editorial ... intended to encourage these migrations" (B, read 9 Oct). Phelps said the Saints would obey Missouri laws restricting free Black people and advised the few Black Saints moving to Zion to act with care ("let prudence guide"); Samuel Lucas, a county judge and militia colonel, read it as an invitation; town leaders feared free Black people among the Saints could encourage enslaved people to seek freedom or rebel; Phelps printed a one-page leaflet recanting; leaders called a courthouse meeting for July 20 (I ch. 16, read 9 Oct). Two Church sources agree.
 - [T1] July 20: Samuel Lucas and twelve other men demanded Phelps stop printing and the Saints leave the county immediately; Partridge's requests for more time refused; a mob broke into the printing office (I ch. 16). "When Church leaders refused" (B).
 - Not used: Saints' note that the leaflet misrepresented the Church's position on baptizing Black members (one source; the copy says only that Phelps backed away from the article).
+
+## Markers (9 Oct 2026)
+
+Merge distance 653 m. Frame lat 38.9268 to 39.2307, lon -94.4946 to -94.2029. Pins resolved from the Google Maps short links on the Church location pages (fetched 9 Oct); distances by haversine.
+
+1. Temple lot, exact, 39.09051, -94.42759 (Church pin, E). Inside. Merged with: visitors' center 39.08974, -94.42678 (Church pin, F; 111 m), Community of Christ Temple 39.09089, -94.42608 (OSM; 137 m), Flournoy House 39.09118, -94.42902 (Church pin, Flournoy House page; 144 m). Marker at the lot, the main site.
+2. Printing office site, exact (the plaque-marked site; building gone), 39.09174, -94.41723 (Church pin, G). Inside. Merged with Gilbert and Whitney store site 39.09233, -94.41722 (Church pin, H; 66 m). Marker at the printing office, where the July 1833 events centred. Lot to printing office is 905 m, over the merge distance, so two markers.
+
+Order: temple lot (dedicated August 1831) before printing office (first Star June 1832).
+
+New facts (On the Map entry 1):
+
+- [T1] Flournoy House: "small, redbrick building built in 1826 by Jones H. Flourney"; Partridge bought part of the Flournoy property across from the home for a temple; the house is part of Heritage Plaza owned by Community of Christ and "stands four blocks west of its original location"; in the 1980s locals learned a parking lot would replace the site and moved the home in 1989. Church location page "Flournoy House": https://www.churchofjesuschrist.org/learn/locations/flournoy-house?lang=eng . This reverses the earlier Dropped entry: it is part of a merged entry, described neutrally, as the marker brief allows. The page spells the name both Flourney and Flournoy; copy uses Flournoy, as source D does.
+- [T1] "Store stood just north of" the printing office: from the two Church pins (store 66 m due north). Store page also says Gilbert and Whitney began building the store in 1832 and that "Today, the building is used as a grocery store" (H, re-read 9 Oct); copy keeps "stood" because H does not say the 1832 building itself survives.
+
+Considered and left out:
+
+- Kaw Township, the August 2, 1831 land dedication and first log: JSP place page geo 39.0501, -94.5731 (https://www.josephsmithpapers.org/place/kaw-township-missouri), about 6.7 km west of the frame's west edge; the log's own spot is not located by any source read. Outside the frame.
+- Big Blue River clash, November 4, 1833: no source read places the clash site. The JSP Big Blue River place page gives only a general river point (39.1281, -94.4692), which is not the clash site. Not marked; stays in What Happened Here.
+- Public square (tarring and feathering, July 20, 1833): OSM square centre 39.09178, -94.41411, 269 m from the printing office, so it would merge into entry 2 anyway; the entry already says "near the square" and the event is told in What Happened Here. No separate mention.
+- July 20, 1833 courthouse meeting: the 1831 to 1833 courthouse's site is not placed by any source read (D says only that it no longer exists). Not marked.
+- Missouri River crossings to Clay County, November 1833: no ferry site located in a source. Not marked.
+- Independence Missouri Stake Center and pavilion (Church location list): modern amenities, not part of the story.

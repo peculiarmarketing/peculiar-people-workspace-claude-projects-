@@ -70,3 +70,40 @@ Trivia
 - Doniphan statue sculptor and date. Not in fetched sources.
 - The courthouse standing today is not the 1838 building (the 1838 one was unfinished, B). Copy does not claim the present courthouse is the one used in 1838.
 - "Richmond is some 40 miles east of Independence" (E). Not needed.
+
+## Markers (9 Oct 2026)
+
+Merge distance 150 m. Frame lat 39.2364 to 39.3063, lon -94.0008 to -93.9335. Pins resolved from the Google Maps short links on the Church location pages (fetched 9 Oct); all five markers inside the frame.
+
+New sources:
+
+- K. Church location page, "Richmond Jail Site": https://www.churchofjesuschrist.org/learn/locations/richmond-jail-site?lang=eng
+- L. Church location page, "David Whitmer Homesite": https://www.churchofjesuschrist.org/learn/locations/david-whitmer-homesite?lang=eng
+- M. Church location page, "David Whitmer Gravesite": https://www.churchofjesuschrist.org/learn/locations/david-whitmer-gravesite?lang=eng
+- N. Church location page, "Statue of Alexander Doniphan": https://www.churchofjesuschrist.org/learn/locations/statue-of-alexander-doniphan?lang=eng
+- O. Church location page, "Richmond Pioneer Cemetery": https://www.churchofjesuschrist.org/learn/locations/richmond-pioneer-cemetery?lang=eng
+- Missouri Historic Sites, all locations list: https://www.churchofjesuschrist.org/learn/history/sites/missouri/all-locations?lang=eng
+
+Markers:
+
+1. Richmond jail site, exact (marked site; building gone), 39.27993, -93.97727 (Church pin on K, labelled "Historic site of Old Log Jail"; K's address 155 W Buchanan St geocodes in OSM to 39.27999, -93.97727). Merged with the Ray County Courthouse (OSM 39.27873, -93.97721; 134 m) and the Doniphan statue (Church pin on N, 39.27872, -93.97758; 137 m). Marker at the jail site, the 1838 place. Naming note: K calls the building the Richmond jail ("officers held Joseph and ten other prisoners in the Richmond County Jail"); B (JSP) and A (Saints) call it "an old log house." Copy sidesteps the name ("the site where Joseph Smith and the other leaders were held"), so it matches What Happened Here. Graded exact because a Church page places it without hedging and a marker stands there.
+2. David Whitmer homesite, exact (plaque-marked site; house gone), 39.27861, -93.97565 (Church pin on L; OSM address 114 E Main St is 39.27852, -93.97624, 51 m off). 202 m from marker 1.
+3. Pioneer Cemetery, Three Witnesses Monument, exact, 39.28499, -93.97621 (Church pin on O, replaces the Ensign Peak lead pair 39.28538, -93.97648 used before). 570 m from marker 1.
+4. Richmond Cemetery, David Whitmer grave, exact, 39.27998, -93.98550 (Church pin on M, the grave itself). Resolves the earlier open question about which OSM cemetery polygon is the city cemetery.
+5. Ray County Museum, exact, 39.27280, -93.98912 (OSM, 901 W Royle St).
+
+Order: 1838 hearing, then Whitmer's house (1838 to 1878; it matters to the section through his forty years in town, told after the hearing), Cowdery 1850, Whitmer 1888, museum 2010. Strict earliest-first would put the house (spring 1838) ahead of the jail (November 1838); kept the jail first because the section's story starts with the hearing.
+
+New facts:
+
+- [T1] Jail site "a few blocks north of the Ray County Courthouse"; jail "no longer standing"; "The Mormon Missouri Frontier Foundation has placed a marker and a picket fence to identify the jail site" (K). Copy says "just north" because the two pins are 134 m apart.
+- [T1] Statue "on the west side of the Ray County Courthouse"; "In 1918, the state of Missouri erected a monument honoring Colonel Alexander Doniphan" (N). Copy changes "in front of" to "on the west side of" and adds "the state put the statue up in 1918."
+- [T1] Whitmer home: moved from Far West to Richmond in spring 1838; "built a home one block East of the courthouse"; lived there "until June 1, 1878, when a tornado destroyed it. After the tornado, the house was rebuilt"; "the original David Whitmer home no longer exists. A one-story brick building occupies the site. A small bronze plaque ... marks the site" (L). "Forty years" = 1838 to 1878.
+- [T1] Whitmer grave: Richmond Cemetery, "on West Main Street"; "A large vertical limestone monument marks David's grave"; he "operated a livery stable and served as the mayor from 1867-1868" (M). Copy: "tall limestone monument", "served a term as mayor".
+
+Considered and left out:
+
+- The 1838 "unfinished courthouse" where forty-six men were held (B): its site is not placed by any source read, and the present courthouse is not that building. Only the present courthouse is named, as the statue's setting.
+- Peter and Mary Whitmer's home, where Cowdery died: no source places it.
+- Crooked River battle site: outside the frame.
+- Hiram Page and John Whitmer graves (Church list): outside the frame.
