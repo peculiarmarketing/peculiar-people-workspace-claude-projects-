@@ -38,39 +38,9 @@ Evan (9 Oct): "make them all and I will confirm them in one go". The packages ar
 - Preston, England is not built: TIGER is US only and OpenStreetMap was unreachable.
 - The two temple-worded FAQ rows ("Is it appropriate to wear a temple on a shirt?", Temple Art File) still show on map pages; Evan has not decided.
 
-## Historical maps: the next session starts here (9 Oct)
+## Historical maps: closed (Evan, 9 Oct)
 
-Evan wants to understand these before anything is made. Do not build products or confirm any history section until he has seen this. Full research: `historical-maps.md` in this folder (per-place tables, licenses word for word, earliest USGS quads, OpenHistoricalMap counts, failed requests). Starting brief: the Claude Docs page "Historical Street Map Sources: Research Brief for Claude Code" (https://claude.ai/artifact/YWqHSXnAKpZ9bZn4Rpa85e); read it with the Claude Docs connector (`read` ref node `8fd64ecc-b638` in container project `ff359f9f-4266-45de-99dd-f44f27f43861`).
-
-**Evan's questions for the next session, in his words:** "how do these historic maps work? are they like the current maps just older with less roads? Do all of the resources work? None of them?"
-
-### How they work (the short answer to give him, then show it)
-
-They are not the current maps with fewer roads. The current maps are data: every road is a line in the Census TIGER files, and the code draws it. For the Church-era years no such data exists, except a little in OpenHistoricalMap (OHM). What does exist is **pictures of old maps**: scanned period plats and county maps. To get our white-line look from one, someone (or a script, with checking) has to **trace** its streets, then fit them to the modern street grid so the frame, the temple halo and the coordinates still line up (georeferencing). The result would be a much sparser drawing (Salt Lake City 1847 is 135 square blocks; Nauvoo 1859 about 150 blocks; Palmyra 1853 about 15 streets), and the old map's own year often trails the Saints' years by 15 to 30 years. The alternative is to print the old map itself as a vintage image, which is a different product look.
-
-**Show, do not tell: done (9 Oct, second session).** `build_historical.py` drew the 1847 Salt Lake plat and the 1859 Nauvoo inset in the map-back style next to today's backs; results and method are in `historical-maps.md` under "Side-by-side test". Sheets: `out/historical/slc-1847-vs-today.png` and `nauvoo-1859-vs-today.png` (rebuild in about 25 seconds). Evan has seen them and has been walked through the six questions; **his answers are the next step.** Nothing else on historical maps until then.
-
-### Did the resources work? (tested 9 Oct)
-
-| Source | Worked? | What it gave | Commercial use |
-|---|---|---|---|
-| Library of Congress maps (loc.gov, IIIF image server) | **Yes, fully.** Item JSON, IIIF info.json and region crops all downloaded | The good maps: 1847 Salt Lake plat; 1850s county maps with insets for Nauvoo, Carthage, Palmyra, Kirtland, Hiram, Sharon; bird's-eye views | **Yes.** "free to use and reuse unless a Rights Advisory statement is present"; checked: none on the Salt Lake, Nauvoo, Palmyra or Kirtland items |
-| OpenHistoricalMap (Overpass `https://overpass-api.openhistoricalmap.org/api/interpreter`) | **Yes, but nearly empty** for these places | Salt Lake City: 38 era streets. Elsewhere only turnpikes and the Mormon Trail; 12 of 28 frames have no roads at all | Yes (CC0 unless a feature says otherwise) |
-| USGS topo maps (TNM API) | **Yes** | Earliest editions 1885 to 1954 per place: too late to be period maps | Yes (public domain) |
-| Joseph Smith Papers / Church History Library | Pages load; catalog rights fields could not be read (JavaScript app) | City of Zion 1833, Kirtland 1833, Far West plats | **No without permission** (© Intellectual Reserve, all rights reserved; Intellectual Property Office, about 45 days) |
-| NYPL Digital Collections | **No:** bot check blocks scripted requests | The true 1842 Gustavus Hills map of Nauvoo (NYPL calls it public domain) | Unconfirmed; Evan can open it in a browser |
-| DPLA, a Missouri archive site | **No:** HTTP 403 | (Winter Quarters, Jackson County plat book leads) | Unknown |
-| Allmaps (georeferencing lookup) | **No:** HTTP 403 for all six maps | Whether any of these maps is already georeferenced: unknown | Annotations CC0; images per holder |
-| David Rumsey | Searched, not used: its robots.txt disallows the search path (8 searches were sent before that was read; then stopped, nothing downloaded) | Copies of maps LoC also holds | **No** (CC BY-NC-SA, non-commercial) |
-| OldMapsOnline | Not tested (a finder that links to holding libraries) | | Per holding library |
-
-So: **LoC works and is the backbone; OHM and USGS work but add little; the Church, NYPL, DPLA and Allmaps routes were blocked or restricted.** Places with nothing usable: the Missouri sites, the Iowa camps, Winter Quarters, Martin's Cove.
-
-### Decisions to ask Evan after he has seen a side-by-side
-
-The six questions at the end of `historical-maps.md`: separate "Historical" version vs replacement vs no; planned-but-never-built cities (City of Zion) in scope?; Church-held plats (ask permission, draw our own City of Zion from its written dimensions, or LoC only); an 1850s map for an 1830s site and which year the label shows; the NYPL 1842 Nauvoo map (Evan to open it in a browser); keep Missouri, Iowa, Winter Quarters and Martin's Cove on today's roads?
-
-Rules carried from the brief: no scraping where a dump or bucket exists, respect robots.txt and terms, keep downloads small and in `historical/` with `manifest.json` recording source URL, license text and license URL for every file, report failed requests instead of working around them.
+Evan saw the side-by-side (1847 Salt Lake plat, 1859 Nauvoo inset, next to today's backs) and decided: **no historical maps; every map stays on today's TIGER roads.** Do not reopen it. The research (`historical-maps.md`), the LoC samples with their license manifest, the traces and `build_historical.py` stay in the repo as the record of why.
 
 ## History brief
 

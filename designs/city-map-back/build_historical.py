@@ -4,7 +4,8 @@
     python3 designs/city-map-back/build_historical.py            # both
     python3 designs/city-map-back/build_historical.py slc-1847
 
-A test for Evan (9 Oct 2026), not a product. It answers "are the historical
+A test for Evan (9 Oct 2026), not a product. Closed: Evan decided against
+historical maps the same day; kept as a record only. It answers "are the historical
 maps like the current maps, just older with fewer roads?" by drawing two of
 them in the same 13.5 x 18 in frame as the live backs and putting them side
 by side with today's map.

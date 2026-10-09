@@ -1,6 +1,6 @@
 # Historical maps of the Church history sites
 
-Research for map backs drawn from period maps instead of today's TIGER roads. Done 9 October 2026. Nothing here is a decision; see "Questions for Evan" at the end. Samples and their license manifest are in `historical/samples/`.
+Research for map backs drawn from period maps instead of today's TIGER roads. Done 9 October 2026. **Closed the same day: Evan saw the side-by-side test and decided against historical maps; every map stays on today's TIGER roads.** Kept as the record of why; the questions at the end are moot. Samples and their license manifest are in `historical/samples/`.
 
 ## Summary
 
