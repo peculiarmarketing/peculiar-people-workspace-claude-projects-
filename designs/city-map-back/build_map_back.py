@@ -500,6 +500,7 @@ DENSE_LINE_MM = 0.5      # line weight inside crowded patches
 DENSE_GAP_MM = 1.5       # gaps narrower than this read as merged
 DENSE_THRESHOLD = 0.06   # local share of closed-up gaps that marks a patch
 DENSE_PPI = 100
+DENSE_MIN_SQIN = 0.2    # smaller patches are lone knots and keep the full weight
 
 
 class WidthField:
@@ -537,6 +538,16 @@ def dense_field(roads, p):
         return None
     zone = ndi.binary_dilation(zone, iterations=round(0.1 * DENSE_PPI))
     f = np.clip(ndi.gaussian_filter(zone.astype(float), 0.06 * DENSE_PPI) * 1.6, 0, 1)
+    # A patch smaller than DENSE_MIN_SQIN is a lone knot on an ordinary road;
+    # thinning it reads as a glitch, so it keeps the full weight.
+    lab, n = ndi.label(f > 0.5)
+    sizes = ndi.sum(np.ones_like(lab), lab, range(1, n + 1)) / DENSE_PPI ** 2
+    small = np.isin(lab, 1 + np.nonzero(sizes < DENSE_MIN_SQIN)[0])
+    keep = np.isin(lab, 1 + np.nonzero(sizes >= DENSE_MIN_SQIN)[0])
+    ramp = round(0.25 * DENSE_PPI)
+    f[ndi.binary_dilation(small, iterations=ramp) & ~ndi.binary_dilation(keep, iterations=ramp)] = 0
+    if not keep.any():
+        return None
     return WidthField(f, thin / p["line_mm"])
 
 
