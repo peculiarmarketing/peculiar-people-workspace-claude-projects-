@@ -75,3 +75,21 @@ Trivia
 - Joseph Knight Sr. retrieving-the-plates night (Manchester, 1827) and D&C 12 (received at Harmony, May 1829). Verified (F, G, D&C 12 heading) but they happened outside Colesville.
 - The escape from the constable and later threats (BYU Journeys and others). Not needed; no Church source read for details.
 - Sally Knight and Emma confirmed together later that summer at Harmony (B). Harmony event; left out of both.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.0431 to 42.3276, lon -75.8059 to -75.5198; merge distance 612 m; no temple. All three markers checked inside the frame; nearest pair (1 and 2) is 831 m apart, so no merges.
+
+1. Nineveh (Knight work, 1826 to 1827): 42.19425, -75.60241. OSM Nominatim, hamlet center. Certainty: approximate. A (JSP place page) says Joseph worked for Knight "likely near Nineveh"; no farm or building is identified, so the hamlet stands in. Copy says so.
+2. Joseph Knight Sr. Home: 42.18715, -75.60555. Google Maps link on F (Church location page). Certainty: exact. The June 1830 baptism stream is NOT marked: J says only "a dammed stream running through or close to the Joseph Knight farm," and no Church source names the stream. Copy says the stream is unnamed and its course unknown.
+3. Nathaniel Cole Tavern site (June 30, 1830 trial): 42.14939, -75.66635. OSM: the node shared by Watrous Road (way 12770716) and Colesville Road (way 139601917), fetched from api.openstreetmap.org. Certainty: traditional. New source, see below. C (T1) says only "a Colesville tavern"; the identification with Cole's tavern is a "probable location" in one academic source. Note: the source says the remnants are "here in Harpursville," but the only Watrous Road in OSM meets Colesville Road about 4.6 km southwest of Harpursville village (still in the Harpursville 13787 postal area). Copy names the road corner and does not say Harpursville. Re-check on the ground if this marker matters.
+
+New facts:
+- [Academic, single source; used only as a traditional-grade location with the hedge in copy] "A probable location of the court trial held against the Prophet Joseph Smith in Broome County, New York, is the Nathaniel Cole Tavern. Remnants of the foundation of the tavern are found here in Harpursville, New York. In operation by 1800, it was located near the corner of what now is Colesville Road and Watrous road." Craig J. Ostler, BYU Religious Education Journeys, "The Prophet Joseph Smith in Old South Bainbridge and Colesville," https://byujourneys.byu.edu/new-york/the-prophet-joseph-smith-in-old-south-bainbridge-and-colesville (cites "Cole's Tavern," By the Way, Old Onaquaga Historical Society and Town of Colesville, ca. 2000, 52). Fetched and read 9 Oct 2026. The intro on the same page says the trial was "most likely held in the old Nathaniel Cole Tavern." This reverses the earlier Dropped entry for the tavern only as a hedged, traditional-grade marker.
+
+Considered and left out:
+- The baptism stream or dam site: location unknown (see marker 2).
+- Harpursville village (42.17841, -75.62463): only in the spec row; no event tied to the village itself.
+- Josiah Stowell Home (42.21035, -75.58530, inside this frame): Afton's story, not told in this section.
+- The Peter, James and John trivia ("between Harmony ... and Colesville ... on the Susquehanna"): no location known; not marked.
+- Joseph Knight's mill: no source located it.

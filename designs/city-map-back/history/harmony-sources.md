@@ -78,3 +78,16 @@ All from OpenStreetMap (Nominatim and Overpass), all inside:
 - Moroni returning the plates on September 22, 1828 (C). Verified; considered for the date trivia but it leans on the 1827 Manchester event. Not used.
 - Pennsylvania Rep. Sandra Major remarks, the 25-minute film, 1,000th visitor (D, E). Not history.
 - Nelson's 2023 book quote ranking Harmony second to Palmyra (G). Reverent tone; not used.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.9049 to 42.0038, lon -75.6713 to -75.5723; merge distance 213 m; no temple. All three markers checked inside the frame. Coordinates are the OSM points already listed above; no new facts were needed.
+
+1. Smith and Hale homes, McKune Cemetery and the Aaronic Priesthood monument: marker at the Joseph & Emma Homestead, 41.95140, -75.63922 (OSM). Certainty: exact (reconstructions on the original footprints, E; cemetery and monument are the actual sites, H). Merge: Hale home 151 m, monument 50 m and McKune Cemetery 185 m from the Smith home, all under 213 m, so one entry names all of them.
+2. Sugar maple grove: 41.95378, -75.63740 (OSM Maple Tree Grove). 304 m from marker 1. Certainty: approximate. H says the restoration was "likely" here; G quotes JSP historian Spencer McBride, "most likely went to a grove of sugar maple trees on the property"; J 1:68 says only "into the woods." Graded approximate rather than traditional because the identification comes from historians' research (E), and the older tradition pointed to the riverbank. Copy says the exact spot isn't known.
+3. Susquehanna riverbank (baptism): 41.95063, -75.64212 (OSM, end of the site path at the bank). 255 m from marker 1, 524 m from marker 2. Certainty: approximate. H names the bank where they were baptized; K ch. 7 says they "walked to the river and waded in"; no source fixes the spot along the river. Copy says the marker shows where the trail meets the bank. Note: 217 m from the Hale home, just over the merge distance, but the marker for entry 1 sits at the Smith home (255 m).
+
+Considered and left out:
+- Visitors' center and meetinghouse (41.95223, -75.63737): 179 m from marker 1 and not an 1820s site.
+- Melchizedek Priesthood restoration: location unknown (D&C 128:20; F); not marked.
+- Isaac Hale's spring (K ch. 6 contract): not located.

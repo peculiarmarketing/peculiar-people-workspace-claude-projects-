@@ -1,0 +1,5 @@
+{"place": "harmony", "markers": [
+  {"n": 1, "name": "Smith and Hale homes, McKune Cemetery, priesthood monument", "lat": 41.9514, "lon": -75.63922, "certainty": "exact", "kind": "site", "coord_source": "OSM (Joseph & Emma Homestead)", "note": "Merged: Hale home 151 m, monument 50 m, McKune Cemetery 185 m from the Smith home, all under 213 m."},
+  {"n": 2, "name": "Sugar maple grove", "lat": 41.95378, "lon": -75.6374, "certainty": "approximate", "kind": "site", "coord_source": "OSM (Maple Tree Grove)", "note": "Sources say the restoration 'most likely' / 'likely' happened in this grove (JSP historian McBride via Newsroom; Church location page); exact spot unknown."},
+  {"n": 3, "name": "Susquehanna riverbank (baptism)", "lat": 41.95063, "lon": -75.64212, "certainty": "approximate", "kind": "site", "coord_source": "OSM (end of site path at the riverbank)", "note": "Church location page names the bank where they were baptized, but no source fixes the spot along the river; the trail end is used."}
+]}

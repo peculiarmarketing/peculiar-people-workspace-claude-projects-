@@ -1,0 +1,6 @@
+{"place": "afton", "markers": [
+  {"n": 1, "name": "Josiah Stowell Home", "lat": 42.21035, "lon": -75.5853, "certainty": "exact", "kind": "site", "coord_source": "Google Maps link on Church location page 'Josiah Stowell Home' (323 NY-7)", "note": ""},
+  {"n": 2, "name": "Tarbill house site (marriage marker)", "lat": 42.22154, "lon": -75.52186, "certainty": "exact", "kind": "site", "coord_source": "William G. Pomeroy Foundation marker page 'Mormon House Site' lat/long, 46 E Main St, Afton", "note": "House gone; marker stands on the site per Pomeroy, Porter via BYU Journeys, Chenango County Historical Society."},
+  {"n": 3, "name": "Joseph Knight Sr. Home (arrest, June 28, 1830)", "lat": 42.18715, "lon": -75.60555, "certainty": "exact", "kind": "site", "coord_source": "Google Maps link on Church location page 'Joseph Knight Sr. Home'", "note": ""},
+  {"n": 4, "name": "South Bainbridge village (June 29, 1830 trial)", "lat": 42.22814, "lon": -75.52657, "certainty": "approximate", "kind": "site", "coord_source": "OSM Nominatim, Afton village", "note": "JSP and Ensign place the overnight tavern stay and the trial in South Bainbridge but name no building; village center used. The 1826 hearing is not marked: its record names only Bainbridge (the whole town)."}
+]}

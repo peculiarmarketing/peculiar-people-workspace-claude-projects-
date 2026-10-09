@@ -87,3 +87,20 @@ Bainbridge was then the name of the whole town, which included both villages. Co
 - Stowell's 1830 Canadian copyright journey (K). Not about this place.
 - Joseph and Emma possibly staying with the Stowells on their wedding night (H: "may have"). Hedged; not used.
 - Stowell and Joseph Knight at the Smith home the night the plates were retrieved (F). Manchester event.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.1197 to 42.3609, lon -75.6487 to -75.4061; merge distance 519 m; no temple. All four markers checked inside the frame; nearest pair (2 and 4) is 830 m apart, so no merges.
+
+1. Josiah Stowell Home: 42.21035, -75.58530. Google Maps link on H. Certainty: exact.
+2. Tarbill house site (marriage, 1827): 42.22154, -75.52186. William G. Pomeroy Foundation marker page lat/long (42.221543661733, -75.52185729105; address 46 E Main St, Afton). Certainty: exact (marked site at a published position). Replaces the fairground-polygon centroid listed above.
+3. Joseph Knight Sr. Home (arrest, evening of June 28, 1830): 42.18715, -75.60555. Google Maps link on the Church location page (Colesville ledger F). Certainty: exact. Added because the June 29 event begins with this arrest (D: Hatch arrested JS at the Knight home on the evening of 28 June). The Knight story stays in Colesville; copy gives one sentence.
+4. South Bainbridge village (overnight tavern stay and June 29, 1830 trial): 42.22814, -75.52657. OSM Nominatim, Afton village center. Certainty: approximate. D says Hatch took JS to South Bainbridge and they spent the night at a tavern, and the trial was in Bainbridge Township; G says "a trial in South Bainbridge." No source names the tavern or the trial building. Copy says the marker shows the village center.
+
+New facts:
+- [Marker page, used for coordinates and site identification, already T3 as P] Pomeroy page (https://www.wgpfoundation.org/historic-markers/mormon-house/, fetched 9 Oct 2026): inscription "MORMON HOUSE SITE ... MARRIED HERE JANUARY 18, 1827 BY JUSTICE ZECHARIAH TARBLE. WILLIAM G. POMEROY FOUNDATION 2015"; "The Tarble home once stood on this site." So the newer sign is a 2015 Pomeroy marker. Not added to copy.
+
+Not marked:
+- The 1826 hearing: the record names only Bainbridge (the whole town), so no village or building can be marked. Copy mentions it in the village entry without a number, saying the place is not known.
+- Bainbridge village (42.29352, -75.47926): no source places the 1826 hearing there.
+- The silver dig near Harmony: outside the frame.
