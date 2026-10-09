@@ -68,7 +68,7 @@ Still open for Evan:
 - Set up the bomber's size chart in Kiwi Size Chart (the bomber is live).
 - Publish the "Claude Code V3" theme when ready (the live V2 theme now has the new swatches too, so this no longer blocks anything).
 - Salt Lake City map prints 0.5 mm lines, under the 0.71 mm DTG minimum for the tee (fine on the fleece). Worth a sample tee.
-- Map line markers: confirm, change or drop the numbered landmark markers on the 26 Church history maps, on the markers review page (https://claude.ai/artifact/1aJvbn7Hgn7tYgY1H7EN8p). The maps themselves are confirmed (9 October): 27 at ready, Nauvoo and Salt Lake City live with the old art until they are republished with markers.
+- Map line: all 27 maps are confirmed with their final art (numbered landmark markers on the 26 Church history maps, thin lines in crowded patches). Products go up when Evan says: the 25 new maps on the tee, sweatshirt and hoodie, and Nauvoo and Salt Lake City republished to carry the new art. The thin patches and Salt Lake City print at 0.5 mm, under the 0.71 mm tee minimum; a sample tee is still worth ordering.
 - Map products: run the on-model gallery from the Mac when convenient. Map products use their own page template (`product.map`): no Reference / Final drawing slider, and the design-suggestion copy asks for cities and Church history sites.
 - Attach download files for the five new Art File designs (Albuquerque, Billings, Burley, Lehi, Provo Rock Canyon). They show as sold out until then.
 - Before any street map design ships: decide where the "© OpenStreetMap contributors" credit goes (product page is the usual place). The ODbL requires it. US designs built from Census TIGER data do not need it.
