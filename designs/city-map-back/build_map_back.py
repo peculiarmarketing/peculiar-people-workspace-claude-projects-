@@ -37,7 +37,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageStat
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -286,16 +286,20 @@ def halo(mask, xy, px_per_in):
 # On the Map list on the product page. A site gets a dot with the streets
 # cleared around it and its number beside it on a knocked-out patch; the
 # temple keeps its halo and gets only the number, set outside the ring.
-# Number size: Oswald 500 at 0.264 in draws about 0.94 mm strokes, clear of the
-# 0.71 mm DTG minimum, and about 5.4 mm tall (Evan asked for 10% over the
-# first 0.24 in, 9 Oct). A number never sits along a road: candidate spots are
-# scored by the street ink they would cover, so it lands on empty ground.
-MARK_NUM_IN = 0.264      # number font size (0.24 in, then 10% up per Evan, 9 Oct)
-MARK_DOT_IN = 0.055      # dot radius
-MARK_KO_IN = 0.11        # streets cleared around the dot
-MARK_PAD_IN = 0.04       # knocked-out padding around the number
-MARK_GAP_IN = 0.05       # clear space between the dot (or halo) and the number
+# Number size: Oswald 500 at 0.29 in, about 1 mm strokes (DTG minimum 0.71 mm)
+# and about 6 mm tall: Evan asked for 10% over the first 0.24 in, then 10% more.
+# Placement (Evan, 9 Oct): the number sits directly above its dot (or above the
+# halo), and both are ringed by 2 mm of cleared streets, so a road can't read
+# into the number. It moves only when that spot is taken by another marker,
+# the halo, the frame or the city label.
+MARK_NUM_IN = 0.29       # number font size (0.24 in, then 10% up twice per Evan, 9 Oct)
+MARK_DOT_IN = 0.06       # dot radius
+MARK_CLEAR_IN = 2 * MM   # 2 mm of streets cleared around the dot and the number (Evan)
+MARK_KO_IN = MARK_DOT_IN + MARK_CLEAR_IN   # streets cleared around the dot
+MARK_PAD_IN = MARK_CLEAR_IN   # knocked-out padding around the number
+MARK_GAP_IN = 0.03       # space between the top of the dot and the bottom of the number
 HALO_KO_IN = 0.32        # the halo's own cleared radius (see halo())
+HALO_RING_OUT_IN = 0.25  # just outside the halo's 0.22 in ring: where a temple's number patch may start
 MARKERS_DIR = HERE / "history"
 
 
@@ -333,64 +337,72 @@ def draw_markers(mask, markers, to_px, px_per_in, temple_xy=None, label=None):
     f = ImageFont.truetype(str(OSWALD), round(MARK_NUM_IN * px_per_in))
     f.set_variation_by_axes([COORD_WEIGHT])
     fw = round(FRAME_MM * MM * px_per_in)
-    keep_off = []
-    if temple_xy:
-        r = HALO_KO_IN * px_per_in
-        keep_off.append((temple_xy[0] - r, temple_xy[1] - r, temple_xy[0] + r, temple_xy[1] + r))
-    if label:
-        keep_off.append(_label_box(mask, label, px_per_in))
+    pad = MARK_PAD_IN * px_per_in
+    keep_off = []            # (box, owner): a number may overlap only its own dot's clearing
     pts = []
     for m in markers:
-        x, y = (temple_xy if m.get("kind") == "temple" and temple_xy
-                else to_px(*merc(m["lon"], m["lat"])))
+        temple = m.get("kind") == "temple" and temple_xy
+        x, y = temple_xy if temple else to_px(*merc(m["lon"], m["lat"]))
         if not (fw < x < W - fw and fw < y < H - fw):
             print(f"  marker {m['n']} ({m['name']}) is outside the frame; skipped")
             continue
-        pts.append((m, x, y))
-        if m.get("kind") != "temple":
-            r = MARK_KO_IN * px_per_in
-            keep_off.append((x - r, y - r, x + r, y + r))
-    streets = mask.copy()    # the streets before any marker is drawn
-    placed = []
-    for m, x, y in pts:
-        temple = m.get("kind") == "temple"
+        pts.append((m, x, y, bool(temple)))
+        r = (HALO_KO_IN if temple else MARK_KO_IN) * px_per_in
+        keep_off.append(((x - r, y - r, x + r, y + r), m["n"]))
+    if temple_xy and not any(t for *_, t in pts):
+        r = HALO_KO_IN * px_per_in
+        keep_off.append(((temple_xy[0] - r, temple_xy[1] - r, temple_xy[0] + r, temple_xy[1] + r), None))
+    if label:
+        keep_off.append((_label_box(mask, label, px_per_in), None))
+    placed = []              # (box, text, l, t)
+    for m, x, y, temple in pts:
+        text = str(m["n"])
+        l, t, rt, bt = d.textbbox((0, 0), text, font=f, anchor="lt")
+        tw, th = rt - l + 2 * pad, bt - t + 2 * pad
+        # distance from the point to the near edge of the number's cleared patch:
+        # a site's number sits just above its dot (the patch may overlap the
+        # dot's own clearing; the dot is drawn last); a temple's number sits
+        # just outside the halo ring
+        near = (HALO_RING_OUT_IN * px_per_in if temple
+                else (MARK_DOT_IN + MARK_GAP_IN) * px_per_in - pad)
+        others = [o for o, owner in keep_off if owner != m["n"]] + [b for b, *_ in placed]
+        best = None
+        # directly above first, then the nearest turns either way, below last
+        order = (90, 60, 120, 30, 150, 0, 180, 330, 210, 300, 240, 270)
+        # a marker may name its side ("label_at": right/left/below/above), e.g.
+        # when the spot above is a road the number would read into (Mendon 1)
+        side = {"above": 90, "right": 0, "left": 180, "below": 270}.get(m.get("label_at"))
+        if side is not None:
+            order = (side,) + tuple(a for a in order if a != side)
+        for ang_deg in order:
+            ang = math.radians(ang_deg)
+            c, s_ = math.cos(ang), -math.sin(ang)
+            reach = near + min(tw / 2 / max(abs(c), 1e-6), th / 2 / max(abs(s_), 1e-6))
+            bx, by = x + c * reach - tw / 2, y + s_ * reach - th / 2
+            box = (bx, by, bx + tw, by + th)
+            clash = sum(_overlap(box, o) for o in others)
+            outside = (max(0, fw - box[0]) + max(0, box[2] - (W - fw))
+                       + max(0, fw - box[1]) + max(0, box[3] - (H - fw)))
+            score = clash + outside * th * 10
+            if best is None or score < best[0]:
+                best = (score, box)
+            if score == 0:
+                break
+        placed.append((best[1], text, l, t))
+    # clearings first, then the dots, then the numbers, so nothing erases a dot
+    for m, x, y, temple in pts:
         if not temple:
             r = MARK_KO_IN * px_per_in
             d.ellipse((x - r, y - r, x + r, y + r), fill=0)
+    for box, *_ in placed:
+        d.rectangle(box, fill=0)
+    for m, x, y, temple in pts:
+        if not temple:
             r = MARK_DOT_IN * px_per_in
             d.ellipse((x - r, y - r, x + r, y + r), fill=255)
-        text = str(m["n"])
-        l, t, rt, bt = d.textbbox((0, 0), text, font=f, anchor="lt")
-        pad = MARK_PAD_IN * px_per_in
-        tw, th = rt - l + 2 * pad, bt - t + 2 * pad
-        near = ((HALO_KO_IN if temple else MARK_DOT_IN) + MARK_GAP_IN) * px_per_in
-        best = None
-        for extra in (0, 0.5, 1.0):          # a second and third ring if the first is crowded
-            for step in range(24):
-                ang = math.radians(step * 15)
-                # distance from the point to the box edge along this direction
-                c, s_ = math.cos(ang), -math.sin(ang)
-                reach = (near + extra * th
-                         + min(tw / 2 / max(abs(c), 1e-6), th / 2 / max(abs(s_), 1e-6)))
-                bx, by = x + c * reach - tw / 2, y + s_ * reach - th / 2
-                box = (bx, by, bx + tw, by + th)
-                clash = sum(_overlap(box, o) for o in keep_off + placed)
-                outside = (max(0, fw - box[0]) + max(0, box[2] - (W - fw))
-                           + max(0, fw - box[1]) + max(0, box[3] - (H - fw)))
-                # street ink under the number: a number lying along a road reads as road
-                ib = tuple(int(max(0, min(v, lim))) for v, lim in zip(box, (W, H, W, H)))
-                ink = (ImageStat.Stat(streets.crop(ib)).mean[0] / 255
-                       if ib[2] > ib[0] and ib[3] > ib[1] else 1.0)
-                # then prefer the right-hand side and the nearest ring
-                pref = min(abs(step * 15 - 0), abs(step * 15 - 360)) / 360 + extra * 0.6
-                score = (clash + outside * th * 10) * 1000 + ink * 8 + pref
-                if best is None or score < best[0]:
-                    best = (score, box)
-        box = best[1]
-        placed.append(box)
-        d.rectangle(box, fill=0)
+    for box, text, l, t in placed:
         d.text((box[0] + pad - l, box[1] + pad - t), text, font=f, fill=255, anchor="lt")
-    return placed
+    return [b for b, *_ in placed]
 
 
 def fused_pct(mask, line_mm, ppi):
