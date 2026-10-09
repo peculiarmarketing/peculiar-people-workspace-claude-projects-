@@ -22,7 +22,7 @@
     ],
     "busy": true,
     "history": false,
-    "status": "ready"
+    "status": "live"
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -78,7 +78,7 @@
       -81.3621488
     ],
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "sharon": {
     "label": "SHARON, VERMONT",
@@ -95,7 +95,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "whitingham": {
     "label": "WHITINGHAM, VERMONT",
@@ -112,7 +112,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "palmyra-township": {
     "label": "PALMYRA, NEW YORK",
