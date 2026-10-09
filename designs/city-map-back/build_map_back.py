@@ -115,7 +115,8 @@ def load_roads(counties):
     return roads
 
 
-def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=False):
+def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=False,
+           markers=None, marker_label=None):
     """Return an L-mode mask at ppi * SS, frame centred on `centre`."""
     lat, lon = centre
     cx, cy = merc(lon, lat)
@@ -151,6 +152,9 @@ def render(roads, centre, width_km, line_mm, ppi, temple=None, label=None, hand=
                 d.line(xy, fill=255, width=lw, joint="curve")
     if temple:
         halo(mask, to_px(*merc(temple[1], temple[0])), ppi * SS)
+    if markers:
+        draw_markers(mask, markers, to_px, ppi * SS,
+                     to_px(*merc(temple[1], temple[0])) if temple else None, label or marker_label)
     if label:
         frame_and_label(mask, label, ppi * SS)
     return mask
@@ -275,6 +279,109 @@ def halo(mask, xy, px_per_in):
     d.ellipse((x - dot, y - dot, x + dot, y + dot), fill=255)
 
 
+# Numbered landmark markers (Evan, 9 Oct 2026). Each Church history map can
+# carry a history/<place>-markers.json list; the numbers match the numbered
+# On the Map list on the product page. A site gets a dot with the streets
+# cleared around it and its number beside it on a knocked-out patch; the
+# temple keeps its halo and gets only the number, set outside the ring.
+# Number size: Oswald 500 at 0.24 in draws about 0.86 mm strokes, clear of the
+# 0.71 mm DTG minimum, and about 4 mm tall: readable, not loud.
+MARK_NUM_IN = 0.24       # number font size
+MARK_DOT_IN = 0.05       # dot radius
+MARK_KO_IN = 0.10        # streets cleared around the dot
+MARK_PAD_IN = 0.035      # knocked-out padding around the number
+MARK_GAP_IN = 0.045      # clear space between the dot (or halo) and the number
+HALO_KO_IN = 0.32        # the halo's own cleared radius (see halo())
+MARKERS_DIR = HERE / "history"
+
+
+def markers_for(name):
+    """The place's marker list, or None when it has none."""
+    f = MARKERS_DIR / f"{name}-markers.json"
+    if not f.exists():
+        return None
+    return json.loads(f.read_text())["markers"]
+
+
+def _label_box(mask, label, px_per_in):
+    """The knocked-out patch frame_and_label() will draw, so numbers keep off it."""
+    d = ImageDraw.Draw(mask)
+    f = ImageFont.truetype(str(OSWALD), round(LABEL_IN * px_per_in))
+    f.set_variation_by_axes([COORD_WEIGHT])
+    track = LABEL_TRACK * LABEL_IN * px_per_in
+    text_w = sum(d.textlength(ch, font=f) for ch in label) + track * (len(label) - 1)
+    _, top, _, _ = d.textbbox((0, 0), "A", font=f, anchor="ls")
+    fw = round(FRAME_MM * MM * px_per_in)
+    inset, pad = LABEL_INSET_IN * px_per_in, LABEL_PAD_IN * px_per_in
+    W, H = mask.size
+    base = H - fw - inset
+    return (W - fw - inset - text_w - 2 * pad, base + top - 2 * pad, W, H)
+
+
+def _overlap(a, b):
+    return max(0, min(a[2], b[2]) - max(a[0], b[0])) * max(0, min(a[3], b[3]) - max(a[1], b[1]))
+
+
+def draw_markers(mask, markers, to_px, px_per_in, temple_xy=None, label=None):
+    """Draw every marker; returns the placed number boxes (for checks)."""
+    d = ImageDraw.Draw(mask)
+    W, H = mask.size
+    f = ImageFont.truetype(str(OSWALD), round(MARK_NUM_IN * px_per_in))
+    f.set_variation_by_axes([COORD_WEIGHT])
+    fw = round(FRAME_MM * MM * px_per_in)
+    keep_off = []
+    if temple_xy:
+        r = HALO_KO_IN * px_per_in
+        keep_off.append((temple_xy[0] - r, temple_xy[1] - r, temple_xy[0] + r, temple_xy[1] + r))
+    if label:
+        keep_off.append(_label_box(mask, label, px_per_in))
+    pts = []
+    for m in markers:
+        x, y = (temple_xy if m.get("kind") == "temple" and temple_xy
+                else to_px(*merc(m["lon"], m["lat"])))
+        if not (fw < x < W - fw and fw < y < H - fw):
+            print(f"  marker {m['n']} ({m['name']}) is outside the frame; skipped")
+            continue
+        pts.append((m, x, y))
+        if m.get("kind") != "temple":
+            r = MARK_KO_IN * px_per_in
+            keep_off.append((x - r, y - r, x + r, y + r))
+    placed = []
+    for m, x, y in pts:
+        temple = m.get("kind") == "temple"
+        if not temple:
+            r = MARK_KO_IN * px_per_in
+            d.ellipse((x - r, y - r, x + r, y + r), fill=0)
+            r = MARK_DOT_IN * px_per_in
+            d.ellipse((x - r, y - r, x + r, y + r), fill=255)
+        text = str(m["n"])
+        l, t, rt, bt = d.textbbox((0, 0), text, font=f, anchor="lt")
+        pad = MARK_PAD_IN * px_per_in
+        tw, th = rt - l + 2 * pad, bt - t + 2 * pad
+        near = ((HALO_KO_IN if temple else MARK_DOT_IN) + MARK_GAP_IN) * px_per_in
+        best = None
+        for step in range(24):
+            ang = math.radians(step * 15)
+            # distance from the point to the box edge along this direction
+            c, s_ = math.cos(ang), -math.sin(ang)
+            reach = near + min(tw / 2 / max(abs(c), 1e-6), th / 2 / max(abs(s_), 1e-6))
+            bx, by = x + c * reach - tw / 2, y + s_ * reach - th / 2
+            box = (bx, by, bx + tw, by + th)
+            clash = sum(_overlap(box, o) for o in keep_off + placed)
+            outside = (max(0, fw - box[0]) + max(0, box[2] - (W - fw))
+                       + max(0, fw - box[1]) + max(0, box[3] - (H - fw)))
+            # prefer the right-hand side, then above, so numbers read naturally
+            pref = min(abs(step * 15 - 0), abs(step * 15 - 360)) / 360
+            score = (clash + outside * th * 10) * 1000 + pref
+            if best is None or score < best[0]:
+                best = (score, box)
+        box = best[1]
+        placed.append(box)
+        d.rectangle(box, fill=0)
+        d.text((box[0] + pad - l, box[1] + pad - t), text, font=f, fill=255, anchor="lt")
+    return placed
+
+
 def fused_pct(mask, line_mm, ppi):
     """Share of ink in solid patches wider than a line plus a margin (opening)."""
     small = mask.resize((mask.width // SS, mask.height // SS), Image.LANCZOS)
@@ -384,14 +491,19 @@ def build(name, p, args):
     hand = not args.plain and p.get("style", "hand") == "hand"
     HAND_SWING = args.swing if args.swing is not None else swing_for(p)
     tag = f"{name}-{p['width_km']:g}km-{p['line_mm']:g}mm" + (f"-hand{round(HAND_SWING * 100)}" if hand else "")
-    preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand)
+    markers = markers_for(name)
+    if markers:
+        print(f"  {len(markers)} numbered markers")
+    preview = render(roads, p["centre"], p["width_km"], p["line_mm"], 100, p.get("temple"), hand=hand,
+                     markers=markers, marker_label=p["label"])
     fused = fused_pct(preview, p["line_mm"], 100)
     frame_and_label(preview, p["label"], 100 * SS)
     print(f"  {p['width_km']:g} km at {p['line_mm']:g} mm: "
           f"{fused:.1f}% fused")
     save(preview, outdir / f"{tag}-preview.png", 100)
     if not args.preview_only:
-        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"], hand),
+        save(render(roads, p["centre"], p["width_km"], p["line_mm"], 300, p.get("temple"), p["label"], hand,
+                    markers=markers),
              outdir / f"{tag}-print-300dpi.png", 300)
     if p.get("temple"):
         save_front(front(*p["temple"]), outdir / f"{name}-front-6in-300dpi.png")
