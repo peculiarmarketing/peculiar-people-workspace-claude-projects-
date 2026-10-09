@@ -22,7 +22,7 @@
     ],
     "busy": true,
     "history": false,
-    "status": "designed"
+    "status": "review"
   },
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
@@ -111,7 +111,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "palmyra-village": {
     "label": "PALMYRA, NEW YORK",
@@ -126,7 +126,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "palmyra-township": {
     "label": "PALMYRA, NEW YORK",
@@ -145,7 +145,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "manchester": {
     "label": "MANCHESTER, NEW YORK",
@@ -164,7 +164,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "sacred-grove": {
     "label": "SACRED GROVE, NEW YORK",
@@ -183,7 +183,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "fayette": {
     "label": "FAYETTE, NEW YORK",
@@ -201,7 +201,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "mendon": {
     "label": "MENDON, NEW YORK",
@@ -218,7 +218,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "colesville": {
     "label": "COLESVILLE, NEW YORK",
@@ -234,7 +234,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "afton": {
     "label": "AFTON, NEW YORK",
@@ -252,7 +252,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "harmony": {
     "label": "HARMONY, PENNSYLVANIA",
@@ -268,7 +268,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "hiram": {
     "label": "HIRAM, OHIO",
@@ -284,7 +284,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "independence": {
     "label": "INDEPENDENCE, MISSOURI",
@@ -302,7 +302,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -319,7 +319,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -335,7 +335,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "far-west": {
     "label": "FAR WEST, MISSOURI",
@@ -350,7 +350,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "adam-ondi-ahman": {
     "label": "ADAM-ONDI-AHMAN, MISSOURI",
@@ -365,7 +365,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "hauns-mill": {
     "label": "HAUN'S MILL, MISSOURI",
@@ -380,7 +380,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "designed"
+    "status": "review"
   },
   "quincy": {
     "label": "QUINCY, ILLINOIS",
