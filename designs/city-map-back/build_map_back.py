@@ -297,9 +297,9 @@ MARK_DOT_IN = 0.06       # dot radius
 MARK_CLEAR_IN = 2 * MM   # 2 mm of streets cleared around the dot and the number (Evan)
 MARK_KO_IN = MARK_DOT_IN + MARK_CLEAR_IN   # streets cleared around the dot
 MARK_PAD_IN = MARK_CLEAR_IN   # knocked-out padding around the number
-MARK_GAP_IN = 0.03       # space between the top of the dot and the bottom of the number
+MARK_GAP_IN = 0.03 + 1 * MM   # space between the top of the dot and the bottom of the number (+1 mm, Evan 9 Oct)
 HALO_KO_IN = 0.32        # the halo's own cleared radius (see halo())
-HALO_RING_OUT_IN = 0.25  # just outside the halo's 0.22 in ring: where a temple's number patch may start
+HALO_RING_OUT_IN = 0.25 + 1 * MM  # just outside the halo's 0.22 in ring, plus 1 mm (Evan 9 Oct): where a temple's number patch may start
 MARKERS_DIR = HERE / "history"
 
 
