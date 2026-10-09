@@ -24,15 +24,18 @@ Evan (9 Oct): "make them all and I will confirm them in one go".
 **Waiting on Evan: the review page** https://claude.ai/artifact/W18sJPW4zEjL2a5Rb89Kew (private to Evan). Every map in review with its back print, the print-file and card strip, the open points for him, and its history section. He picks Confirm / Needs changes / Drop per map with a note, plus the Palmyra village-or-township question. Choices save to the page's database: read them with ArtifactData `list` on collection `decisions` (doc id = place key: `choice`, `note`, `at`) and `get` `questions/palmyra`. The page builder (`build_page.py`, `template.html`, `notes.json`, `make_images.py`) lived in the session scratchpad and was not kept; the open points per map are in each history ledger and summarised on the page.
 
 Next, once Evan has chosen:
-1. `map_run.py <place> --confirm` for each he confirmed (status ready). Apply his notes for "Needs changes" (history fixes go back through the History brief; re-check the ledger). "Drop" on San Antonio means no product; on a history site, ask whether to remove it from `places.json`.
+1. `map_run.py <place> --confirm` for each he confirmed (status ready). Apply his notes for "Needs changes" (history fixes go back through the History brief; re-check the ledger). On a history site, "Drop" means ask whether to remove it from `places.json`.
 2. **Products** only when Evan asks: `map_run.py <place> --apply --publish` (refuses anything below ready), then `easify_options.py sync --maps-only` and Evan imports the CSV, then he exports and the CSV is reseeded (every Easify import renumbers all sets).
 
-Open points Evan was asked on the page (also in the ledgers): Fayette organized in Fayette or both accounts; Independence's July 1833 editorial left out under the no-blame rule; Sacred Grove witness-tree source (BYU article, not a Church page); Council Bluffs replica tabernacle demolished 2022 (copy says so); Quincy stake today unconfirmed.
+Evan's calls, 9 Oct: Fayette's "In Fayette or Manchester?" row removed ("skip it if you aren't sure"); Independence's July 1833 Star article added, verified by two Church sources ("include it if verified by multiple sources"); San Antonio stays a product, as a plain city map with no history section. Still open on the page: Sacred Grove witness-tree source (BYU article, not a Church page); Council Bluffs replica tabernacle demolished 2022 (copy says so); Quincy stake today unconfirmed.
+
+## Next line of work (Evan, 9 Oct; not started)
+
+Every city with a temple product gets a plain city map "in the near future": no history section (`history: false`), built and reviewed like San Antonio. Only plan or build this when Evan asks. A temple city's map should carry the temple halo and the coordinates front, since the temple is in frame by definition.
 
 ## Decisions Evan still owes
 
 - **Palmyra has two maps** (`palmyra-village`, 3 km; `palmyra-township`, 10 km, with the temple in frame). Both are labelled PALMYRA, NEW YORK, so they would get the same product title and Easify label; `map_run.py` refuses a duplicate title. Pick one, or rename one. One Palmyra history section can serve both if its "On the Map" list holds only places inside the smaller village frame.
-- **San Antonio** is a city, not a Church history site: confirm it should be a product at all.
 - **Salt Lake City prints at 0.5 mm** lines, under the 0.71 mm DTG minimum for the tee. A sample tee was suggested, not yet ordered.
 - **Fayette's** frame takes in Waterloo and Seneca Falls, which show as dense knots (flagged 8 Oct, no action requested).
 

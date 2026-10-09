@@ -86,6 +86,12 @@ eight.
 
 The city map line (Nauvoo and Salt Lake City, 8 October 2026) uses the same
 three garments, prices and colours, titled "... Map Tee (<Place>)".
+There are two kinds of map (Evan, 9 October 2026). Church history sites carry
+a fact-checked Church history section on the product page. Plain city maps
+carry none. Every city with a temple product is planned to get a plain city
+map soon; San Antonio is the first. All maps are drawn from today's roads.
+Period (historical) maps were researched and test-drawn, and Evan decided
+against them.
 
 Eden Green is live on all 45 hoodies (rollout finished 23 September 2026). It
 sits third in the swatch row, where Tapstitch puts it, by Evan's decision on

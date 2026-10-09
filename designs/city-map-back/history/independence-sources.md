@@ -70,7 +70,6 @@ Pins from the Google Maps links on the Church location pages (resolved place coo
 
 - The 1833 "trail of blood" from children's feet cut by prairie grass (B). Verified but graphic; the brief bars graphic detail.
 - Whippings, the bounty on Church leaders, and William McLellin's hiding (I, ch. 17). Graphic or not essential.
-- The editorial on free Black converts as the trigger for July 1833 (B, I ch. 16). Verified, but the copy keeps to what happened rather than why, to stay inside the brief's no-blame line. Evan may expect to see it; it can go back in as one plain sentence from B if wanted.
 - D&C 101 explanation of the expulsion ("jarrings, and contentions...") (B, N). Doctrinal interpretation; outside the brand voice.
 - Meteor shower of November 13, 1833 seen from the Clay County camps (I, ch. 17). Happened in Clay County, off the map.
 - Polly Knight, first Saint buried in Zion (I, ch. 12). Verified; cut for length and because her burial site is not located.
@@ -82,3 +81,9 @@ Pins from the Google Maps links on the Church location pages (resolved place coo
 - Exact acreage of the Church's land today. No T1 figure found.
 - Courthouse "on the square" in 1831. D only says the original courthouse no longer exists; copy does not place it.
 - Names of the eight elders at the August 3 dedication. Verified (D) but cut for length.
+
+## Added 9 Oct after Evan's call ("include it if verified by multiple sources")
+
+- [T1] July 1833 Star article: "discussed the legal obstacles relating to the migration of free black converts to Missouri, a slave state"; "Many locals felt the editorial ... intended to encourage these migrations" (B, read 9 Oct). Phelps said the Saints would obey Missouri laws restricting free Black people and advised the few Black Saints moving to Zion to act with care ("let prudence guide"); Samuel Lucas, a county judge and militia colonel, read it as an invitation; town leaders feared free Black people among the Saints could encourage enslaved people to seek freedom or rebel; Phelps printed a one-page leaflet recanting; leaders called a courthouse meeting for July 20 (I ch. 16, read 9 Oct). Two Church sources agree.
+- [T1] July 20: Samuel Lucas and twelve other men demanded Phelps stop printing and the Saints leave the county immediately; Partridge's requests for more time refused; a mob broke into the printing office (I ch. 16). "When Church leaders refused" (B).
+- Not used: Saints' note that the leaflet misrepresented the Church's position on baptizing Black members (one source; the copy says only that Phelps backed away from the article).

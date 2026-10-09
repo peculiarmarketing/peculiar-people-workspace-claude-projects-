@@ -72,4 +72,4 @@ Places are in `places.json` (counties by FIPS code, centre, width, line weight, 
 
 ## Still open
 
-- Which places become products, and whether this becomes its own line in BRAND.md.
+- Decided 9 October 2026: two kinds of map, Church history sites (with a history section) and plain city maps (none). San Antonio is a plain city product, and every city with a temple product will get one. Historical period maps were tested and declined; maps stay on today's TIGER roads. Recorded in BRAND.md.
