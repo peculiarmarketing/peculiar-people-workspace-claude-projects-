@@ -11,7 +11,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 - **City label inside the frame**, bottom right, on a knocked-out patch: Oswald 500, 0.25 in type with 0.16 em letter spacing, 0.25 in in from the frame.
 - **Temple marker: the halo.** Streets cleared in a 0.32 in radius circle, a 1 mm ring at 0.22 in, a 0.06 in centre dot. No marker when no temple is in frame. Dot, dot-with-name and no-marker versions were rejected.
 - **Line weight by place size.**
-  - Big or busy cities: every street at 0.5 mm, with the frame as wide as it can go before streets merge. San Antonio holds to about 35 km across, Salt Lake to about 22 km.
+  - Big or busy cities: every street at 0.5 mm, with the frame as wide as it can go before streets merge. San Antonio holds to about 35 km across, Salt Lake to about 22 km (widened to 24.5 km on 9 October 2026, with Davis County loaded, so the Temple Quarry marker clears the city label; 5.3 percent fused).
   - Small towns, townships and rural sites: 1.5 mm.
   - Which is which is set by hand (`"busy": true` in `places.json`): the fused-ink measure picks a busy city's width but cannot tell a town from busy countryside (rural Fayette scores higher at 1.5 mm than the city of Quincy). Busy so far: San Antonio, Salt Lake City, Independence, Council Bluffs, Liberty, Quincy.
 - **The more streets the better**, as long as the frame does not pull in a whole other city. Kirtland went from 3.5 km to 6 km and Nauvoo from 3 km to 4 km for that reason.
@@ -22,7 +22,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 
 ## Numbered landmark markers (9 October 2026)
 
-Church history maps carry numbered markers that match the numbered On the Map list on the product page. The list of places lives in `history/<place>-markers.json` and is drawn by `draw_markers()` in `build_map_back.py`: a dot with the streets cleared around it, and the number (Oswald 500, 0.24 in, about 0.85 mm strokes) beside it on a knocked-out patch, placed clear of other markers, the halo, the frame and the label. A temple keeps its halo and gets only its number. Places closer than 0.35 in on the print share one number. A place whose spot is uncertain is graded approximate or traditional in the file and says so in its list item. Plain city maps have no markers.
+Church history maps carry numbered markers that match the numbered On the Map list on the product page. The list of places lives in `history/<place>-markers.json` and is drawn by `draw_markers()` in `build_map_back.py`: a dot with the streets cleared around it, and the number (Oswald 500, 0.264 in, about 0.94 mm strokes; Evan asked for 10 percent over the first 0.24 in) beside it on a knocked-out patch, placed clear of other markers, the halo, the frame and the label, and off the roads (each candidate spot is scored by the street ink it would cover). A temple keeps its halo and gets only its number. Places closer than 0.35 in on the print share one number. A place whose spot is uncertain is graded approximate or traditional in the file and says so in its list item. Plain city maps have no markers.
 
 ## Hand-drawn lines
 

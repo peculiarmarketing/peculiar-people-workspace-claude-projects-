@@ -27,13 +27,14 @@
   "salt-lake-city": {
     "label": "SALT LAKE CITY, UTAH",
     "counties": [
-      "49035"
+      "49035",
+      "49011"
     ],
     "centre": [
       40.7,
       -111.875
     ],
-    "width_km": 22,
+    "width_km": 24.5,
     "line_mm": 0.5,
     "temple": [
       40.7704367,
