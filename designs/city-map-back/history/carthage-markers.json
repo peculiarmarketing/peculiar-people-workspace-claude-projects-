@@ -1,0 +1,5 @@
+{"place": "carthage", "markers": [
+  {"n": 1, "name": "Courthouse square", "lat": 40.41299, "lon": -91.13542, "certainty": "exact", "kind": "site", "coord_source": "OSM way 917957321 (Hancock County Courthouse); NPS NRIS 86001482 district bounds", "note": ""},
+  {"n": 2, "name": "Hamilton's hotel site, SW corner of Main and Washington", "lat": 40.41352, "lon": -91.13292, "certainty": "approximate", "kind": "site", "coord_source": "JSP place page hamiltons-hotel-carthage-illinois (corner description); OSM intersection of Main St way 21778502 and Washington St (40.41366,-91.13278), offset into the SW corner", "note": "Source gives a street corner only; whether the building survives was not established. Marker at the corner."},
+  {"n": 3, "name": "Carthage Jail, visitors' center and statue plaza", "lat": 40.41521, "lon": -91.13932, "certainty": "exact", "kind": "site", "coord_source": "Church location page carthage-jail (Maps place 40.4152109,-91.1393322); OSM node 2483032243 agrees", "note": "Merged: visitors' center at 310 Buchanan St (40.41620,-91.13941) is 110 m away, under 122 m; statue and tablets are on the plaza on the same block."}
+]}

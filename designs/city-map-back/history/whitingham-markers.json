@@ -1,0 +1,35 @@
+{
+ "place": "whitingham",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Traditional birth site (Stimpson Hill Road)",
+   "lat": 42.78415,
+   "lon": -72.88822,
+   "certainty": "traditional",
+   "kind": "site",
+   "coord_source": "OSM way 19726723 Stimpson Hill Road, midpoint; road named as the birthplace road by Ensign Peak Foundation (lead only)",
+   "note": "Porter (BYU, 1998) speaks of an ongoing controversy over where in Whitingham Brigham was born; Church News 1998 says the monument is about two miles from where the birthplace was formerly thought to be. Marker is in a private front yard; exact position on the road unknown."
+  },
+  {
+   "n": 2,
+   "name": "Brigham Young monument, Town Hill",
+   "lat": 42.78179,
+   "lon": -72.86601,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM node 356557348 (Brigham Young Memorial Cemetery, Poverty Row); Ensign Peak Foundation pin 42.781683,-72.8663 agrees within 25 m",
+   "note": ""
+  },
+  {
+   "n": 3,
+   "name": "Jacksonville (Whitingham Municipal Center)",
+   "lat": 42.79719,
+   "lon": -72.82137,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM Nominatim village place point",
+   "note": "Marker is the village; the Municipal Center building was not found in OSM (Nominatim returned nothing; Overpass unreachable)."
+  }
+ ]
+}

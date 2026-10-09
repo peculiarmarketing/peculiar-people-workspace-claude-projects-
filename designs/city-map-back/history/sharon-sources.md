@@ -75,3 +75,18 @@ Trivia
 - "Solomon Mack Home" ruins (OSM, 43.82494, -72.46907) and "Solomon & Daniel Mack Farm Site" in Tunbridge (OSM, 43.85496, -72.45062). No Church source ties a specific event to either point; the Tunbridge one is a different Mack farm (D, footnote 1). Not listed.
 - Annual Christmas lights and nativity at the memorial. Ongoing event, not history; volatile.
 - Ephraim Smith born and died in Royalton, March 1810 (D). Verified, left out for length.
+
+## Markers (9 Oct 2026)
+
+Frame lat 43.6787 to 43.8801, lon -72.5377 to -72.3300; merge distance 433 m.
+
+1. Joseph Smith Birthplace Memorial, 43.82347, -72.47308. Exact. Source: map link on the Church location page C (place pin for 357 LDS Lane, 43.823473, -72.47308); OSM visitors' center way 282096232 (43.82327, -72.47244) is 55 m away. The obelisk, cabin-site marker and hearthstone are all on the grounds, within a few hundred yards (H), so well under 433 m; merged. The first two old On the Map items (memorial; cottage and hearthstone) became one entry, facts unchanged. Obelisk not separately mapped in OSM.
+2. South Royalton, 43.81146, -72.51409 (OSM village point). Exact for the village; A does not say which building held the 1905 evening meeting, and the li does not name one. 3.55 km from marker 1.
+
+Order: birth 1805, then the 1905 dedication-evening meeting.
+
+Considered and left out:
+
+- Railhead where the monument stones were unloaded: A says only "the six miles from the railhead" and "the railroad station," without naming it.
+- Solomon Mack Home ruins (OSM 43.82494, -72.46907): no Church source ties an event to the point; inside marker 1's merge radius anyway.
+- Tunbridge: outside the frame.

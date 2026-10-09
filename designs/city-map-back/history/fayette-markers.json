@@ -1,0 +1,5 @@
+{"place": "fayette", "markers": [
+  {"n": 1, "name": "Whitmer farm", "lat": 42.86595, "lon": -76.87220, "certainty": "exact", "kind": "site", "coord_source": "Church location page pin (Peter and Mary Whitmer Home, 1451 Aunkst Road)", "note": "Merged: OSM visitors' center and chapel 266 m east. The original house is gone; the farm itself is certain."},
+  {"n": 2, "name": "Seneca Lake (baptisms)", "lat": 42.87248, "lon": -76.94407, "certainty": "approximate", "kind": "site", "coord_source": "OSM relation 6464140 (Seneca Lake State Park, north shore)", "note": "Sources say only that some were baptized in nearby Seneca Lake; no spot recorded."},
+  {"n": 3, "name": "Cayuga-Seneca Canal at Waterloo", "lat": 42.90125, "lon": -76.86377, "certainty": "approximate", "kind": "site", "coord_source": "OSM relation 17611446 (Lock 4, Village of Waterloo)", "note": "Newsroom source says the company began 'near present-day Waterloo'; the present lock is a modern structure, used only to put the marker on the canal."}
+]}

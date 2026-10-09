@@ -1,0 +1,45 @@
+{
+ "place": "martins-cove",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Devil's Gate",
+   "lat": 42.44827,
+   "lon": -107.20997,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM node 5310819204 (natural=gorge)",
+   "note": "The gorge itself; the company's camp near it is described only as 'near Devil's Gate'."
+  },
+  {
+   "n": 2,
+   "name": "Fort Seminoe (rebuilt) and visitors' center",
+   "lat": 42.44095,
+   "lon": -107.22111,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM node 7606427444 (historic=fort, the reconstruction); visitors' center 42.44187,-107.21947 from the Church location page map pin",
+   "note": "The 2001 NPS survey located the original fort in the hayfield near the visitors' center; no source says the 2002 rebuild sits on the excavated footprint."
+  },
+  {
+   "n": 3,
+   "name": "Sweetwater crossing and rescue sculptures",
+   "lat": 42.44516,
+   "lon": -107.24324,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM way 120513102 (Sweetwater River), vertex nearest the cove (812 m south of the cove point); distances from Orton, BYU Studies 45:3",
+   "note": "Orton gives about two miles from the Devil's Gate camp and half a mile below the cove; the exact ford is not identified, and the Bowers sculptures have no mapped point."
+  },
+  {
+   "n": 4,
+   "name": "Martin's Cove",
+   "lat": 42.45204,
+   "lon": -107.23993,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM node 5310826993 ('Martin's Cove')",
+   "note": "Named landform; the camp spread through the cove."
+  }
+ ]
+}

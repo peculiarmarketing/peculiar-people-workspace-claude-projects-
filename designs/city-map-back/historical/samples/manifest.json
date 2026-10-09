@@ -1,5 +1,5 @@
 {
- "_note": "Research samples for historical map backs, 9 Oct 2026. Every file is from the Library of Congress; none of the items carries a Rights Advisory statement (checked in each item's JSON). Legal page: https://www.loc.gov/legal/",
+ "_note": "Research samples for historical map backs, 9 Oct 2026. Every file is from the Library of Congress; none of the items carries a Rights Advisory statement (checked in each item's JSON). Legal page: https://www.loc.gov/legal/ The side-by-side test (build_historical.py, 9 Oct) used only the samples already here; no new files were downloaded. Traced line files it made are listed under 'derived'.",
  "files": [
   {
    "file": "slc-1847-sherwood-plat_loc_pct25.jpg",
@@ -92,6 +92,38 @@
     1450,
     1500
    ]
+  }
+ ],
+ "derived": [
+  {
+   "file": "../traces/slc-1847.geojson",
+   "what": "Street centre lines of the 1847 Sherwood plat (26 lines: 10 north-south, 16 east-west), placed on the ground at the spacing of today's TIGER grid, anchored at Main Street and South Temple",
+   "made_from": [
+    "slc-1847-sherwood-plat_loc_pct25.jpg (block count and layout)",
+    "Census TIGER/Line 2024 roads, Salt Lake County 49035 (street positions; public domain)"
+   ],
+   "source_item": "https://www.loc.gov/item/2017587026/",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2017587026/",
+   "license_more": "https://www.loc.gov/legal/",
+   "tiger_license": "US Census Bureau TIGER/Line: public domain (https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html)",
+   "made": "2026-10-09",
+   "new_downloads": "none (TIGER county file is the map line's existing cache in city-maps/data/tiger/, gitignored)"
+  },
+  {
+   "file": "../traces/nauvoo-1859.geojson",
+   "what": "Street centre lines traced from the 'City of Nauvoo' inset (skeleton of the gaps between 112 detected blocks), fitted to the ground through 8 street intersections still named on TIGER; fit error 3 m mean, 6 m worst",
+   "made_from": [
+    "nauvoo-1859-hancock-county-inset_loc_crop.jpg",
+    "Census TIGER/Line 2024 roads, Hancock County 17067 (control points; public domain)"
+   ],
+   "source_item": "https://www.loc.gov/item/2013593101/",
+   "license_text": "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise. Credit Line: Library of Congress, Geography and Map Division.",
+   "license_url": "https://www.loc.gov/item/2013593101/",
+   "license_more": "https://www.loc.gov/legal/",
+   "tiger_license": "US Census Bureau TIGER/Line: public domain",
+   "made": "2026-10-09",
+   "new_downloads": "none"
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Historical maps of the Church history sites
 
-Research for map backs drawn from period maps instead of today's TIGER roads. Done 9 October 2026. Nothing here is a decision; see "Questions for Evan" at the end. Samples and their license manifest are in `historical/samples/`.
+Research for map backs drawn from period maps instead of today's TIGER roads. Done 9 October 2026. **Closed the same day: Evan saw the side-by-side test and decided against historical maps; every map stays on today's TIGER roads.** Kept as the record of why; the questions at the end are moot. Samples and their license manifest are in `historical/samples/`.
 
 ## Summary
 
@@ -207,6 +207,14 @@ Verdict: OHM is only useful for Salt Lake City (38 streets, enough to cross-chec
 - `hiram-1857-portage-county-inset_loc_crop.jpg`, 1450 x 1500, 214 KB
 
 Crops come straight from the LoC IIIF server (`.../{x},{y},{w},{h}/full/0/default.jpg`), so any other inset can be pulled the same way without downloading a whole map.
+
+## Side-by-side test (9 October, second session)
+
+`build_historical.py` draws two period plans in the map-back style, in the same 13.5 x 18 in frame, next to today's back. Run `python3 designs/city-map-back/build_historical.py` (about 25 seconds). Output in `out/historical/` (gitignored): `slc-1847-vs-today.png`, `nauvoo-1859-vs-today.png`, overlay checks and 100 ppi previews. The traced street lines are kept in `historical/traces/*.geojson` and listed in the samples manifest under "derived". No new files were downloaded.
+
+- **Salt Lake City 1847.** The plat is a perfect grid, so it is not traced pixel by pixel: the script counts the blocks on the scan (9 x 15, square pitch to 1.7 percent) and lays that grid on the ground at the spacing measured from today's TIGER streets (241.5 m east-west, 243.5 m north-south; the 1847 survey's 660 ft block plus 132 ft street is 241.4 m), anchored at Main and South Temple. The overlay shows the 1847 grid sitting exactly on today's downtown streets, except the top two rows, which run onto Capitol Hill where today's streets bend with the slope. The plat draws its streets narrower than they are (0.13 of a block on the sheepskin, 0.20 on the ground). In the same box, the plat has 71 km of street and today has 147 km: the later mid-block streets are what the plat lacks.
+- **Nauvoo 1859.** Traced from the inset: blocks are found as closed outlines, lettering and river hatching are filtered out, and the streets are the centre lines of the gaps. Fitted to the ground through 8 intersections whose 1859 names are still on TIGER (Main, Partridge and Wells with Young, Mulholland, White and Munson): 3 m mean error, 6 m worst. The Temple Ruins block lands on today's temple. In the same box the trace has about 39 km of street and today about 35 km: Nauvoo had a fuller grid on the flats in 1859 than survives today. The trace is automatic and unfinished: about 112 of the inset's blocks were found, a handful of street segments are missing where a block was missed, the rotated north-west addition is patchy, and the inset stops short of the east bluff, so the right side of the 4 km frame is empty. A product version would need about an hour of hand cleanup.
+- **Labels** on the test read "SALT LAKE CITY, UTAH 1847" and "NAUVOO, ILLINOIS 1859" as placeholders; which year to show is question 4 below.
 
 ## Questions for Evan
 

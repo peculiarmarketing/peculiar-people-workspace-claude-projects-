@@ -1,0 +1,25 @@
+{
+ "place": "garden-grove",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Garden Grove camp / town",
+   "lat": 40.82723,
+   "lon": -93.60723,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM relation 129180 (Garden Grove village) centre point via Nominatim",
+   "note": "Exact 1846 camp site not known. Ensign Sept 1979 says the town stands on the campsite; NPS says the site is on nearby private farmland. Marker placed at the village centre, where the Ensign puts a brass plaque on a large stone honoring the founders."
+  },
+  {
+   "n": 2,
+   "name": "Mormon pioneer cemetery (county park)",
+   "lat": 40.8275,
+   "lon": -93.62852,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM way 860522813 'Garden Grove Mormon Burial Grounds' via Nominatim; NPS address 30308 Mormon Trail Road",
+   "note": ""
+  }
+ ]
+}

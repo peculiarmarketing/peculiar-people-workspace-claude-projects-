@@ -1,0 +1,5 @@
+{"place": "adam-ondi-ahman", "markers": [
+  {"n": 1, "name": "Wight home site (foot of Tower Hill)", "lat": 39.9715, "lon": -93.98702, "certainty": "exact", "kind": "site", "coord_source": "OSM node 12663353129 historic=ruins 'Lyman and Harriet Wight Home Site'; Church location page pin for Tower Hill and Wight Home Site is 39.97209, -93.98347 (trailhead and picnic area, about 310 m east)", "note": "The Church marks the home's location (Wight Home Site page); OSM places that marker here. Tower Hill named in the same entry; no separate point for the hill."},
+  {"n": 2, "name": "Spring Hill Summit", "lat": 39.98415, "lon": -93.97571, "certainty": "exact", "kind": "site", "coord_source": "Church location page pin (spring-hill-summit, maps.app.goo.gl/eSfEAH7Y6bEv25FT9); OSM node 12663353130 'Spring Hill' 39.98406, -93.97612", "note": ""},
+  {"n": 3, "name": "Valley Overlook", "lat": 39.97331, "lon": -93.95443, "certainty": "exact", "kind": "site", "coord_source": "Church location page pin (valley-overlook and adam-ondi-ahman, maps.app.goo.gl/btjxTh91GvFpcAnt9); OSM node 12663352931 'East Valley Overlook' 39.97326, -93.95452", "note": ""}
+]}

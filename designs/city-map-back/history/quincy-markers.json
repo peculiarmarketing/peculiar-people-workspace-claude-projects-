@@ -1,0 +1,4 @@
+{"place": "quincy", "markers": [
+  {"n": 1, "name": "Washington Park (1976 marker)", "lat": 39.93258, "lon": -91.40925, "certainty": "exact", "kind": "site", "coord_source": "OSM Nominatim (Washington Park); ISHS marker record places it in the park on the north side of Maine St between 4th and 5th", "note": "Marker at the park; the plaque itself sits at the park's Maine Street side."},
+  {"n": 2, "name": "Clat Adams Bicentennial Park", "lat": 39.9346, "lon": -91.41559, "certainty": "exact", "kind": "site", "coord_source": "OSM Nominatim (Clat Adams Bicentennial Park)", "note": "Marks the park and the 2025 panel, not a landing place; no Church source fixes where the 1839 crossings came ashore."}
+]}

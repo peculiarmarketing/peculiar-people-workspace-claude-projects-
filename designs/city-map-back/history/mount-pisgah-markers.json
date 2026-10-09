@@ -1,0 +1,25 @@
+{
+ "place": "mount-pisgah",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Mount Pisgah settlement slope",
+   "lat": 41.0505,
+   "lon": -94.0965,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "Derived: about 370 m east of OSM relation 6150307 (Mount Pisgah Park), on the slope the Iowa state marker text (quoted in NPS Historic Resource Study ch. 7) describes",
+   "note": "Settlement layout unknown and almost nothing remains. State marker text: 'The original community was located on the slope and flat lands east of this spot'; Church History Sites page: homes and two log meetinghouses on a hillside above the fields. Point stands for that eastern slope, not a known building."
+  },
+  {
+   "n": 2,
+   "name": "Mount Pisgah cemetery, monument and park",
+   "lat": 41.0511,
+   "lon": -94.10106,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "Church location page 'Mount Pisgah Monument' map pin (41.051103, -94.101062); OSM relation 6150306 cemetery 41.05125, -94.10079",
+   "note": "Merged: cemetery/monument and the adjoining county park (OSM relation 6150307, 41.05003, -94.10083) are about 120 m apart, under the 156 m merge distance."
+  }
+ ]
+}

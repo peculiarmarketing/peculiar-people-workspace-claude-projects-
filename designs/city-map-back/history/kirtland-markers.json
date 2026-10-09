@@ -1,0 +1,45 @@
+{
+ "place": "kirtland",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Whitney store (with Whitney home, Johnson Inn, sawmill, ashery)",
+   "lat": 41.62938,
+   "lon": -81.36142,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "Church location page map pin, whitney-store (maps.app.goo.gl link, 41.6293836,-81.3614178)",
+   "note": "Merged: Whitney home 50 m, Johnson Inn 60 m, sawmill 129 m, ashery 132 m from the store, all under 156 m."
+  },
+  {
+   "n": 2,
+   "name": "Isaac and Lucy Morley farm",
+   "lat": 41.63687,
+   "lon": -81.34495,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "Church location page map pin, morley-farm (41.6368711,-81.3449515); OSM Nominatim 8605 Chillicothe Rd 41.63649,-81.34413 agrees within 75 m",
+   "note": "Original buildings gone; the house there now is later (Church page). Pin is the public part of the farm, not the Smiths' house or the schoolhouse."
+  },
+  {
+   "n": 3,
+   "name": "Kirtland Temple (with Joseph and Emma Smith Home, Kirtland North Cemetery)",
+   "lat": 41.62529,
+   "lon": -81.36215,
+   "certainty": "exact",
+   "kind": "temple",
+   "coord_source": "Brief coordinates 41.6252883,-81.3621488; Church pin kirtland-temple 41.6252719,-81.3620669 agrees",
+   "note": "Merged: Smith home 155 m (Church pin 41.6266612,-81.3625094) and North Cemetery 68 m (Church pin 41.6258795,-81.3623571) from the temple, both under 156 m."
+  },
+  {
+   "n": 4,
+   "name": "Stannard Quarry",
+   "lat": 41.598,
+   "lon": -81.34898,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "Church location page map pin, stannard-quarry (41.5979958,-81.3489821); OSM Quarry Pond way 311034887 41.59796,-81.34888",
+   "note": ""
+  }
+ ]
+}

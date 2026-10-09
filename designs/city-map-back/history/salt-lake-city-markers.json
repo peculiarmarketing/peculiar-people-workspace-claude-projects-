@@ -1,0 +1,75 @@
+{
+ "place": "salt-lake-city",
+ "markers": [
+  {
+   "n": 1,
+   "name": "This Is the Place Monument",
+   "lat": 40.75202,
+   "lon": -111.81619,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM node 356680155 (historic=monument, GNIS 1446532)",
+   "note": "Marks the monument itself; the vanguard's canyon-mouth camp of 21 July 1847 is described only as 'at the mouth of Emigration Canyon' and is folded in here."
+  },
+  {
+   "n": 2,
+   "name": "First valley camp, Parley's Creek (1700 S / 500 E)",
+   "lat": 40.73352,
+   "lon": -111.87679,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM: shared node of 1700 South and 500 East; position from Ensign July 1997 ('near present-day 1700 South and 500 East')",
+   "note": "Sources give only a nearby intersection; the camp site itself was not recorded."
+  },
+  {
+   "n": 3,
+   "name": "City Creek camp of 23 July 1847 (Main-State, 300-400 S)",
+   "lat": 40.7617,
+   "lon": -111.88965,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "Centre of the block bounded by Main, State, 300 South and 400 South (OSM intersection nodes); position from Ensign July 1997",
+   "note": "Sources name the block only; marker at the block centre."
+  },
+  {
+   "n": 4,
+   "name": "Ensign Peak",
+   "lat": 40.79437,
+   "lon": -111.89066,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM node 356678240 (natural=peak, GNIS 1440938)",
+   "note": ""
+  },
+  {
+   "n": 5,
+   "name": "Temple Square (temple, Tabernacle, Assembly Hall, Beehive and Lion Houses)",
+   "lat": 40.7704367,
+   "lon": -111.8919131,
+   "certainty": "exact",
+   "kind": "temple",
+   "coord_source": "Temple coordinates given in the brief",
+   "note": ""
+  },
+  {
+   "n": 6,
+   "name": "Old Fort site, Pioneer Park",
+   "lat": 40.76194,
+   "lon": -111.90137,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM way 172843732 (Pioneer Park) centroid; NRHP 74001938 places the fort site at Pioneer Park",
+   "note": ""
+  },
+  {
+   "n": 7,
+   "name": "Temple Quarry, Little Cottonwood Canyon",
+   "lat": 40.57155,
+   "lon": -111.7739,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM way 223936008 (Temple Quarry Interpretive Trail) centroid; Ensign Oct 1975 and Church News 2004 place the quarry at the canyon mouth",
+   "note": "Quarry ground spread along the canyon floor; marker on the interpretive trail through the pits."
+  }
+ ]
+}

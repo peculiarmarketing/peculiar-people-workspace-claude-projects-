@@ -4,30 +4,56 @@ Read `README.md` in this folder first: it holds every settled decision (frame, l
 
 ## Where it stands
 
-| Stage | Maps |
-|---|---|
-| live | Nauvoo, Salt Lake City (tee, sweatshirt, hoodie each; Salt Lake City is the map line's parent) |
-| ready (Evan confirmed) | Kirtland, Sharon |
-| review (design package built, waiting on Evan) | the other 25: San Antonio plus 24 Church history sites |
+**All 27 maps are live (9 Oct, evening)** on the tee, sweatshirt and hoodie: 81 listings, each with on-model photos in every colour. Salt Lake City is the map line's parent. Nothing is in review.
 
-Stages live in `places.json` (`status`), defined in its `_status` note and in README "Product stages".
+- **Publish:** the 25 new maps went up through `map_run.py <place> --apply --publish`, two lanes at a time (about 4 minutes a map). Network resets to Tapstitch and Shopify stopped a run three times; every stage resumes from `artifacts/maps/<place>/state.json`, so a rerun picks up where it stopped with nothing duplicated.
+- **Nauvoo and Salt Lake City** (live since 8 Oct) were moved onto the new art in place with `scripts/map_refresh.py <place>`: new design on the existing Tapstitch template, Tapstitch re-sends the images, the script restores every alt by pixel match, swaps the design cards, checks variant bindings, rewrites the description. Listings, handles and Easify bindings unchanged. Two things it now handles: products created on 8 Oct get Tapstitch's stored tags copied onto every re-sent image as alt text ("map:nauvoo,line:map"); and a re-send can drop an image whose file Shopify no longer has (it logs these as LOST).
+- **On-model photos:** built with the locked placement (`artifacts/onmodel-maps/LOCK.md`) for all 27, approved by Evan city by city on the review page https://claude.ai/artifact/Jd47QRyexAtEsRVHsHFMrd (collection `onmodel`), applied with `scripts/onmodel_maps_apply.py --place <city> --apply`. Nauvoo and Salt Lake City used `--replace`, which swapped their old-art photos for the new ones and brought back the three shots lost in the re-sends. `scripts/onmodel_maps_register.py <city>` adds a new city's prints and Tapstitch placements to `prints/`.
+- **Names:** `map_run.city_state` no longer uses `str.title()` (it gave "Haun'S Mill"); Adam-ondi-Ahman keeps the Church's lowercase "ondi". Shopify handles for those two end `-haun-s-mill` and `-martin-s-cove`; Palmyra township's listings end `-palmyra`. Scripts read handles from `state.json`, never from the folder name.
+- **Art files:** every live map's art, print files, cards and review sheet are in Shopify Files (277 files). Index: `temple-product-generator/artifacts/maps/ART_INDEX.md`; restore with `scripts/map_art_backup.py --fetch <place>`, re-upload after a rebuild with `--apply`.
+- **Easify:** `option-sets.csv` now lists all 27 maps in the Map Tee, Map Sweatshirt and Map Hoodie sets. Evan imports it, then exports and the CSV is reseeded (`easify_options.py reseed --export PATH`), because every import renumbers the sets.
 
 - **Design packages** (print files per garment, gallery cards, a review sheet) are built for all 29 by `temple-product-generator/scripts/map_run.py <place> --review`. They are gitignored and rebuild in about 20 seconds per map: `artifacts/maps/<place>/` (print files, `<place> map card.png`, `<place> logo card.png` when the front has coordinates, `<place> review.png`). The 300 dpi art they are made from is in `out/<place>/` here, also gitignored, rebuilt by `build_map_back.py <place>`.
 - **History sections** exist for Nauvoo, Salt Lake City, Kirtland and Sharon (`history/<place>.html` with `history/<place>-sources.md`). **None exist yet for the other 24 Church history sites.** San Antonio needs none (`history: false`).
 
 ## What Evan asked for and what is next
 
-Evan (9 Oct): "make them all and I will confirm them in one go". The packages are built; the history sections are not.
+Evan (9 Oct): "make them all and I will confirm them in one go".
 
-1. **Write the 24 history sections.** The brief every research agent follows is reproduced below under "History brief". Eight regional groups worked well in planning (Whitingham, Mendon, Fayette | Palmyra, Manchester, Sacred Grove | Colesville, Afton, Harmony | Hiram, Richmond, Liberty | Independence, Far West, Adam-ondi-Ahman | Haun's Mill, Quincy, Carthage | Garden Grove, Mount Pisgah, Council Bluffs | Winter Quarters, Martin's Cove). Each map's frame bounds come from `places.json` (centre, width_km, 3:4 portrait). The first attempt was stopped by Evan before any agent ran; nothing was written.
-2. **Review each section yourself** after the agent: both editing passes (CLAUDE.md), check any phrase that sounds like a guess against the `-sources.md` ledger, and vary the shapes. Shape convergence is the main risk across 28 sections: the existing four end on a concrete fact (Nauvoo), a myth correction (Salt Lake City), a light anecdote (Kirtland), a weather story (Sharon). Do not let them all close the same way.
-3. **One review page for Evan** with every map's review sheet and history section side by side, so he confirms in one go. Then `map_run.py <place> --confirm` for each he approves (it refuses a history site with no history file).
-4. **Products** only when Evan asks: `map_run.py <place> --apply --publish` (refuses anything below ready), then `easify_options.py sync --maps-only` and Evan imports the CSV, then he exports and the CSV is reseeded (every Easify import renumbers all sets).
+**Done 9 Oct (second session):** all 24 history sections written by eight regional research agents to the History brief below, each with its `-sources.md` ledger; reviewed in full by the main session (two edits: Whitingham's birth hill hedged, Winter Quarters "land of the Omaha people"). Palmyra: one section, written against the small village frame, copied byte for byte to `palmyra-township.html`. Haun's Mill has a "Notes" heading in place of Trivia. All 28 sections parse with `map_run.py`'s `history_section`.
+
+**Waiting on Evan: the review page** https://claude.ai/artifact/W18sJPW4zEjL2a5Rb89Kew (private to Evan). Every map in review with its back print, the print-file and card strip, the open points for him, and its history section. He picks Confirm / Needs changes / Drop per map with a note, plus the Palmyra village-or-township question. Choices save to the page's database: read them with ArtifactData `list` on collection `decisions` (doc id = place key: `choice`, `note`, `at`) and `get` `questions/palmyra`. The page builder (`build_page.py`, `template.html`, `notes.json`, `make_images.py`) lived in the session scratchpad and was not kept; the open points per map are in each history ledger and summarised on the page.
+
+Next, once Evan has chosen:
+1. `map_run.py <place> --confirm` for each he confirmed (status ready). Apply his notes for "Needs changes" (history fixes go back through the History brief; re-check the ledger). On a history site, "Drop" means ask whether to remove it from `places.json`.
+2. **Products** only when Evan asks: `map_run.py <place> --apply --publish` (refuses anything below ready), then `easify_options.py sync --maps-only` and Evan imports the CSV, then he exports and the CSV is reseeded (every Easify import renumbers all sets).
+
+Evan's calls, 9 Oct: Fayette's "In Fayette or Manchester?" row removed ("skip it if you aren't sure"); Independence's July 1833 Star article added, verified by two Church sources ("include it if verified by multiple sources"); San Antonio stays a product, as a plain city map with no history section. Still open on the page: Sacred Grove witness-tree source (BYU article, not a Church page); Council Bluffs replica tabernacle demolished 2022 (copy says so); Quincy stake today unconfirmed.
+
+## Numbered landmark markers (Evan, 9 Oct: build on all Church history maps)
+
+Evan: "build the numbered list structure on all the church history maps with any relevant history, locations, events, as best as we might know where they are. If we are not positive that's where they are or where they happened, note that in the on the map section. Also ensure that the numbers are big enough to be printed correctly, but not ridiculously big. Do this on all church history maps, including Salt Lake and Nauvoo."
+
+Done 9 Oct:
+- Each of the 26 Church history maps has `history/<place>-markers.json` (n, name, lat, lon, certainty exact/approximate/traditional, kind site/temple, coordinate source) and its On the Map list is now `<ol class="site-history__list site-history__map">`, one item per marker in the same order. Every approximate or traditional item says so in plain words. Each ledger has a "## Markers (9 Oct 2026)" section (coordinates, sources, merges, places left out). 85 markers in all; places closer than 0.35 in on the print were merged into one number.
+- `build_map_back.py` draws them (`draw_markers`): a 0.055 in radius dot with streets cleared to 0.11 in, and the number in Oswald 500 at 0.264 in (10 percent over the first 0.24 in, which measured 0.85 mm strokes and 4.9 mm tall; DTG minimum 0.71 mm) on a knocked-out patch placed automatically clear of other markers, the halo, the frame and the city label. A temple entry gets only its number, outside the halo. `web_map_drawing.py` passes the markers too, so the product-page drawing band shows them.
+- `map_run.py` (temple repo) ships a scoped style that forces the On the Map numbers on, whatever the theme does to lists.
+- Status: all 26 stay at ready (Evan confirmed the maps and asked for the markers). Nauvoo and Salt Lake City are LIVE with the old art and old list: they need `map_run.py <place> --apply --publish` again to carry the markers, only when Evan says. Same for every other map when its products go up.
+- **Confirmed by Evan, 9 Oct (final pass):** all 26 maps with markers, the thin crowded patches, numbers directly above the dot with 2 mm clearance and 1 mm more space, 0.29 in numbers. Nothing left to review on the map line; products wait only on Evan saying to publish (`map_run.py <place> --apply --publish`, then Easify; Nauvoo and Salt Lake City republish to carry the new art).
+- The markers review page https://claude.ai/artifact/1aJvbn7Hgn7tYgY1H7EN8p (private to Evan). All 26 maps with markers, the print strip and the numbered list. Choices save to collection `markers` (doc id = place key: `choice` confirm/change/drop, `note`); read with ArtifactData `list`. "Drop" there means drop the markers, keep the map. The earlier map review page (https://claude.ai/artifact/W18sJPW4zEjL2a5Rb89Kew, collection `decisions`) holds his 9 Oct map choices.
+- **Evan's markers review (9 Oct):** 24 confirmed. Mendon: "the actual number for #1 lies in the roadway so it looks like the road ... it should be moved off the road" (fixed for every map: number spots are now scored by the street ink under them). Salt Lake City: "#7 is covered by the location text, zoom out just enough" (widened 22 to 24.5 km, Davis County 49011 loaded, 5.3 percent fused). Then, for all maps: numbers and dots 10 percent bigger, and then (after the road-avoiding placement pushed numbers away from their dots) Evan: numbers go directly above the dot with 2 mm of clearance around number and dot, except Mendon 1 (number to the right, `label_at` in its markers file), and another 10 percent bigger: number 0.29 in, dot radius 0.06 in.
+- Flags for Evan on that page: Whitingham marker 1 (traditional birth site) is placed from a non-Church lead; Colesville's tavern source says Harpursville but names a corner 4.6 km away.
+
+## Thin lines in crowded patches (Evan, 9 Oct)
+
+Evan: "where the roads start blending together and forming solid white blocks ... make the roads where that's the case 0.5 millimeters, but then all the roads outside of it the 1.5", naming Fayette's far left and lower rows. Built into `build_map_back.py` (`dense_field`, see README) and `web_map_drawing.py`; applies to every 1.5 mm map automatically, so all small-town maps were rebuilt 9 Oct. Share of each map thinned (patches under 0.2 sq in skipped as lone knots): Fayette 6.3 percent, Mendon 3.8, Winter Quarters 2.7, Colesville 1.7, Afton 1.4, Richmond 1.2, Manchester 1.1, Harmony 1.0, the rest under 1; Nauvoo, Far West, Haun's Mill, Garden Grove and Mount Pisgah unchanged. Shown to Evan on the markers review page and a Fayette before-and-after. Thin patches are under the 0.71 mm DTG tee minimum, like Salt Lake City; the sample tee would settle both.
+
+## Next line of work (Evan, 9 Oct; not started)
+
+Every city with a temple product gets a plain city map "in the near future": no history section (`history: false`), built and reviewed like San Antonio. Only plan or build this when Evan asks. A temple city's map should carry the temple halo and the coordinates front, since the temple is in frame by definition.
 
 ## Decisions Evan still owes
 
-- **Palmyra has two maps** (`palmyra-village`, 3 km; `palmyra-township`, 10 km, with the temple in frame). Both are labelled PALMYRA, NEW YORK, so they would get the same product title and Easify label; `map_run.py` refuses a duplicate title. Pick one, or rename one. One Palmyra history section can serve both if its "On the Map" list holds only places inside the smaller village frame.
-- **San Antonio** is a city, not a Church history site: confirm it should be a product at all.
 - **Salt Lake City prints at 0.5 mm** lines, under the 0.71 mm DTG minimum for the tee. A sample tee was suggested, not yet ordered.
 - **Fayette's** frame takes in Waterloo and Seneca Falls, which show as dense knots (flagged 8 Oct, no action requested).
 
@@ -38,39 +64,9 @@ Evan (9 Oct): "make them all and I will confirm them in one go". The packages ar
 - Preston, England is not built: TIGER is US only and OpenStreetMap was unreachable.
 - The two temple-worded FAQ rows ("Is it appropriate to wear a temple on a shirt?", Temple Art File) still show on map pages; Evan has not decided.
 
-## Historical maps: the next session starts here (9 Oct)
+## Historical maps: closed (Evan, 9 Oct)
 
-Evan wants to understand these before anything is made. Do not build products or confirm any history section until he has seen this. Full research: `historical-maps.md` in this folder (per-place tables, licenses word for word, earliest USGS quads, OpenHistoricalMap counts, failed requests). Starting brief: the Claude Docs page "Historical Street Map Sources: Research Brief for Claude Code" (https://claude.ai/artifact/YWqHSXnAKpZ9bZn4Rpa85e); read it with the Claude Docs connector (`read` ref node `8fd64ecc-b638` in container project `ff359f9f-4266-45de-99dd-f44f27f43861`).
-
-**Evan's questions for the next session, in his words:** "how do these historic maps work? are they like the current maps just older with less roads? Do all of the resources work? None of them?"
-
-### How they work (the short answer to give him, then show it)
-
-They are not the current maps with fewer roads. The current maps are data: every road is a line in the Census TIGER files, and the code draws it. For the Church-era years no such data exists, except a little in OpenHistoricalMap (OHM). What does exist is **pictures of old maps**: scanned period plats and county maps. To get our white-line look from one, someone (or a script, with checking) has to **trace** its streets, then fit them to the modern street grid so the frame, the temple halo and the coordinates still line up (georeferencing). The result would be a much sparser drawing (Salt Lake City 1847 is 135 square blocks; Nauvoo 1859 about 150 blocks; Palmyra 1853 about 15 streets), and the old map's own year often trails the Saints' years by 15 to 30 years. The alternative is to print the old map itself as a vintage image, which is a different product look.
-
-**Show, do not tell:** the best first step is a side-by-side for one place. Trace the Salt Lake City 1847 Sherwood plat (`historical/samples/slc-1847-sherwood-plat_loc_pct25.jpg`; the full 4328 x 6503 scan is on the LoC IIIF server) into the map-back style, place it in the same 13.5 x 18 in frame, and put it next to today's Salt Lake City back (`out/salt-lake-city/`). Maybe Nauvoo 1859 as a second. That answers "are they like the current maps" better than words.
-
-### Did the resources work? (tested 9 Oct)
-
-| Source | Worked? | What it gave | Commercial use |
-|---|---|---|---|
-| Library of Congress maps (loc.gov, IIIF image server) | **Yes, fully.** Item JSON, IIIF info.json and region crops all downloaded | The good maps: 1847 Salt Lake plat; 1850s county maps with insets for Nauvoo, Carthage, Palmyra, Kirtland, Hiram, Sharon; bird's-eye views | **Yes.** "free to use and reuse unless a Rights Advisory statement is present"; checked: none on the Salt Lake, Nauvoo, Palmyra or Kirtland items |
-| OpenHistoricalMap (Overpass `https://overpass-api.openhistoricalmap.org/api/interpreter`) | **Yes, but nearly empty** for these places | Salt Lake City: 38 era streets. Elsewhere only turnpikes and the Mormon Trail; 12 of 28 frames have no roads at all | Yes (CC0 unless a feature says otherwise) |
-| USGS topo maps (TNM API) | **Yes** | Earliest editions 1885 to 1954 per place: too late to be period maps | Yes (public domain) |
-| Joseph Smith Papers / Church History Library | Pages load; catalog rights fields could not be read (JavaScript app) | City of Zion 1833, Kirtland 1833, Far West plats | **No without permission** (© Intellectual Reserve, all rights reserved; Intellectual Property Office, about 45 days) |
-| NYPL Digital Collections | **No:** bot check blocks scripted requests | The true 1842 Gustavus Hills map of Nauvoo (NYPL calls it public domain) | Unconfirmed; Evan can open it in a browser |
-| DPLA, a Missouri archive site | **No:** HTTP 403 | (Winter Quarters, Jackson County plat book leads) | Unknown |
-| Allmaps (georeferencing lookup) | **No:** HTTP 403 for all six maps | Whether any of these maps is already georeferenced: unknown | Annotations CC0; images per holder |
-| David Rumsey | Searched, not used: its robots.txt disallows the search path (8 searches were sent before that was read; then stopped, nothing downloaded) | Copies of maps LoC also holds | **No** (CC BY-NC-SA, non-commercial) |
-| OldMapsOnline | Not tested (a finder that links to holding libraries) | | Per holding library |
-
-So: **LoC works and is the backbone; OHM and USGS work but add little; the Church, NYPL, DPLA and Allmaps routes were blocked or restricted.** Places with nothing usable: the Missouri sites, the Iowa camps, Winter Quarters, Martin's Cove.
-
-### Decisions to ask Evan after he has seen a side-by-side
-
-The six questions at the end of `historical-maps.md`: separate "Historical" version vs replacement vs no; planned-but-never-built cities (City of Zion) in scope?; Church-held plats (ask permission, draw our own City of Zion from its written dimensions, or LoC only); an 1850s map for an 1830s site and which year the label shows; the NYPL 1842 Nauvoo map (Evan to open it in a browser); keep Missouri, Iowa, Winter Quarters and Martin's Cove on today's roads?
-
-Rules carried from the brief: no scraping where a dump or bucket exists, respect robots.txt and terms, keep downloads small and in `historical/` with `manifest.json` recording source URL, license text and license URL for every file, report failed requests instead of working around them.
+Evan saw the side-by-side (1847 Salt Lake plat, 1859 Nauvoo inset, next to today's backs) and decided: **no historical maps; every map stays on today's TIGER roads.** Do not reopen it. The research (`historical-maps.md`), the LoC samples with their license manifest, the traces and `build_historical.py` stay in the repo as the record of why.
 
 ## History brief
 

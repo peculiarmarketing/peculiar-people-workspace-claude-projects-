@@ -11,7 +11,7 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
 - **City label inside the frame**, bottom right, on a knocked-out patch: Oswald 500, 0.25 in type with 0.16 em letter spacing, 0.25 in in from the frame.
 - **Temple marker: the halo.** Streets cleared in a 0.32 in radius circle, a 1 mm ring at 0.22 in, a 0.06 in centre dot. No marker when no temple is in frame. Dot, dot-with-name and no-marker versions were rejected.
 - **Line weight by place size.**
-  - Big or busy cities: every street at 0.5 mm, with the frame as wide as it can go before streets merge. San Antonio holds to about 35 km across, Salt Lake to about 22 km.
+  - Big or busy cities: every street at 0.5 mm, with the frame as wide as it can go before streets merge. San Antonio holds to about 35 km across, Salt Lake to about 22 km (widened to 24.5 km on 9 October 2026, with Davis County loaded, so the Temple Quarry marker clears the city label; 5.3 percent fused).
   - Small towns, townships and rural sites: 1.5 mm.
   - Which is which is set by hand (`"busy": true` in `places.json`): the fused-ink measure picks a busy city's width but cannot tell a town from busy countryside (rural Fayette scores higher at 1.5 mm than the city of Quincy). Busy so far: San Antonio, Salt Lake City, Independence, Council Bluffs, Liberty, Quincy.
 - **The more streets the better**, as long as the frame does not pull in a whole other city. Kirtland went from 3.5 km to 6 km and Nauvoo from 3 km to 4 km for that reason.
@@ -19,6 +19,14 @@ Mockups live on the design canvas "City Map Back Prints" on claude.ai (private t
   - Highway-only maps and the tight 4 to 5 km city crops were rejected. 0.3 mm was tried and rejected because it is below every print method's minimum.
 - **Front: box logo with the temple's coordinates set into the box ("3A closed"), 6 in wide, centred.** The box around PECULIAR stays whole except for two breaks: latitude in the top edge at the left, longitude in the bottom edge at the right, each with about 2 mm of clear space to the line ends. Decimal degrees to four places (about 11 m). Lettering is the original logo, untouched. Coordinates are Oswald 500, 0.8 mm strokes at the 6 in front size; weight 400 measured 0.45 mm and would not print on the tee. Rejected along the way: streets inside the box (too thin to print, and the street lines read as extra strokes in the thin PECULIAR letters), and corner-mark, tick, dashed, halo and scale-bar versions of the box.
 - **Every street, not highways.** The look Evan wants is intricate: individual streets readable, not white blobs.
+
+## Numbered landmark markers (9 October 2026)
+
+Church history maps carry numbered markers that match the numbered On the Map list on the product page. The list of places lives in `history/<place>-markers.json` and is drawn by `draw_markers()` in `build_map_back.py`: a dot (0.06 in radius) with the number (Oswald 500, 0.29 in, about 1 mm strokes, 6 mm tall) directly above it, about 1.8 mm above the dot (Evan asked for 1 mm more space), both ringed by 2 mm of cleared streets (Evan, 9 October 2026: 10 percent bigger twice over the first 0.24 in, numbers directly above the dot). A temple keeps its halo and gets its number above the ring. A number moves only when the spot above is taken by another marker, the halo, the frame or the label, or when its marker names a side (`"label_at": "right"`, used for Mendon 1, whose spot above is a road). Places closer than 0.35 in on the print share one number. A place whose spot is uncertain is graded approximate or traditional in the file and says so in its list item. Plain city maps have no markers.
+
+## Thin lines in crowded patches (9 October 2026)
+
+Evan: where 1.5 mm streets crowd together into solid white (tight lakeside rows, a village core), draw those patches at 0.5 mm and keep everything else at 1.5 mm. `dense_field()` in `build_map_back.py` renders the map at full weight, closes every gap narrower than 1.5 mm, and marks the places where those closed-up gaps are dense as crowded patches. A smooth field then scales each line's width from 1.5 mm in open country down to 0.5 mm inside a patch, easing over about 0.2 in, so a road thins gradually. Patches under 0.2 sq in are lone knots on an ordinary road and keep the full weight, since thinning them reads as a glitch. Busy cities are already at 0.5 mm and are skipped. A place can set `"dense_line_mm"` (0 turns it off), and `--no-thin` turns it off for a run. Fayette: 7 percent of the map thinned, fused ink 16.8 to 8.8 percent. The thin patches print at 0.5 mm, under the 0.71 mm DTG minimum for the tee, the same as Salt Lake City (see HANDOFF, sample tee).
 
 ## Hand-drawn lines
 
@@ -70,6 +78,8 @@ python3 designs/city-map-back/build_map_back.py --all
 
 Places are in `places.json` (counties by FIPS code, centre, width, line weight, temple). County road files download once to `city-maps/data/tiger/`, which is gitignored. Output goes to `out/<place>/`, also gitignored: a 100 ppi preview, a 300 ppi back print PNG (4050 x 5400) and a 300 ppi front PNG (the logo with coordinates, 6 in wide), white ink on transparent with every pixel's colour set to white. The back print includes the frame and the city label.
 
+**Where the art is kept.** `out/` is not in git. Every live map's back and front art, with its print files, design cards and review sheet, has a permanent copy in Shopify Files (public links, no login). The index is `temple-product-generator/artifacts/maps/ART_INDEX.md` (readable, per map, with the live listings and their on-model photo links) and `art_index.json` beside it. On a fresh checkout, `python scripts/map_art_backup.py --fetch <place>` in the temple repo restores a map's files; after rebuilding a live map's art, `--apply` uploads the changed files and rewrites both indexes.
+
 ## Still open
 
-- Which places become products, and whether this becomes its own line in BRAND.md.
+- Decided 9 October 2026: two kinds of map, Church history sites (with a history section) and plain city maps (none). San Antonio is a plain city product, and every city with a temple product will get one. Historical period maps were tested and declined; maps stay on today's TIGER roads. Recorded in BRAND.md.

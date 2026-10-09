@@ -1,0 +1,7 @@
+{"place": "richmond", "markers": [
+  {"n": 1, "name": "Richmond jail site (with Ray County Courthouse and Doniphan statue)", "lat": 39.27993, "lon": -93.97727, "certainty": "exact", "kind": "site", "coord_source": "Church location page Richmond Jail Site (155 W Buchanan St), Google Maps pin 39.2799321, -93.9772703; OSM address 39.27999, -93.97727", "note": "Building gone; marked site. Church page calls it the Richmond jail, JSP and Saints call the building an old log house."},
+  {"n": 2, "name": "David Whitmer homesite", "lat": 39.27861, "lon": -93.97565, "certainty": "exact", "kind": "site", "coord_source": "Church location page David Whitmer Homesite (114 E Main St), Google Maps pin 39.2786054, -93.975652", "note": "Original house gone; plaque marks the site."},
+  {"n": 3, "name": "Pioneer Cemetery, Three Witnesses Monument", "lat": 39.28499, "lon": -93.97621, "certainty": "exact", "kind": "site", "coord_source": "Church location page Richmond Pioneer Cemetery (103 Crispin St), Google Maps pin 39.2849912, -93.976214", "note": ""},
+  {"n": 4, "name": "Richmond Cemetery, David Whitmer grave", "lat": 39.27998, "lon": -93.98550, "certainty": "exact", "kind": "site", "coord_source": "Church location page David Whitmer Gravesite, Google Maps pin 39.279982, -93.985496", "note": ""},
+  {"n": 5, "name": "Ray County Museum", "lat": 39.27280, "lon": -93.98912, "certainty": "exact", "kind": "site", "coord_source": "OSM Nominatim, 901 W Royle St", "note": ""}
+]}

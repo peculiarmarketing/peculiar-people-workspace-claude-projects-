@@ -1,0 +1,25 @@
+{
+ "place": "council-bluffs",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Iowa School for the Deaf grounds: Grand Encampment, battalion muster, Mosquito Creek camp area",
+   "lat": 41.22622,
+   "lon": -95.8202,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM node 354358556 'Grand Encampment Marker' via Nominatim",
+   "note": "The markers on the campus are exact, but the first 1846 camp on Mosquito Creek is placed only in the general area of the school (Ensign Sept 1979; NPS Historic Resource Study ch. 7). Point is the OSM Grand Encampment marker; the 1988 muster marker is on the same campus, position not separately pinned."
+  },
+  {
+   "n": 2,
+   "name": "Kanesville Memorial / log tabernacle site",
+   "lat": 41.26483,
+   "lon": -95.8421,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "Church location page 'Kanesville Memorial' map pin (41.264834, -95.842104); OSM way 1328902136 41.26491, -95.84192",
+   "note": "Memorial position exact. The 1847 log tabernacle stood near it (Church News 1996: replica near the original site; Church News 1993: north of today's First Avenue near Indian Creek); its exact footprint is not known."
+  }
+ ]
+}
