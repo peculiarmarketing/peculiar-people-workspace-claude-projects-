@@ -10,7 +10,7 @@ Key sources:
 
 - A. Joseph Smith Papers, place "Colesville Township, New York": https://www.josephsmithpapers.org/place/colesville-township-new-york
 - B. Saints vol. 1, ch. 9, "Come Life or Come Death": https://www.churchofjesuschrist.org/study/history/saints-v1/09-come-life-or-come-death?lang=eng
-- C. Joseph Smith Papers, "Introduction to State of New York v. JS–B and State of New York v. JS–C": https://www.josephsmithpapers.org/paper-summary/introduction-to-state-of-new-york-v-js-b-and-state-of-new-york-v-js-c/
+- C. Joseph Smith Papers, "Introduction to State of New York v. JS-B and State of New York v. JS-C": https://www.josephsmithpapers.org/paper-summary/introduction-to-state-of-new-york-v-js-b-and-state-of-new-york-v-js-c/
 - D. Revelations in Context, "The Journey of the Colesville Branch": https://www.churchofjesuschrist.org/study/manual/revelations-in-context/the-journey-of-the-colesville-branch?lang=eng
 - E. Saints vol. 1, ch. 12, "After Much Tribulation": https://www.churchofjesuschrist.org/study/history/saints-v1/12-after-much-tribulation?lang=eng
 - F. Church location page, "Joseph Knight Sr. Home": https://www.churchofjesuschrist.org/learn/locations/joseph-knight-home?lang=eng
@@ -64,7 +64,7 @@ Trivia
 
 ## Dropped
 
-- "First branch of the Church" as a flat superlative. The Church's history map 3 (study helps) says the first branch was organized at the Knight home, but D (Revelations in Context) hedges "one of the first (if not the first)." Copy uses the hedge.
+- "First branch of the Church" as a flat superlative. The Church's history map 3 (study helps; seen in search results only, not fetched) says the first branch was organized at the Knight home, but D (Revelations in Context) hedges "one of the first (if not the first)." Copy uses the hedge.
 - Branch organized at a meeting in the Knight home after April 1830 (F). No date given; left out rather than guess.
 - 82 members of the branch (Meridian via historyofmormonism.com, lead only). D gives sixty for the Missouri arrival; only that is used.
 - Polly Knight's exact death date: D&C 59 heading implies August 7; secondary sources (Lyndon Cook via blogs) give August 6; Saints says "a few days later." Copy says "Within the week."
