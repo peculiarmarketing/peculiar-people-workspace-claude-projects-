@@ -75,3 +75,23 @@ Trivia
 - Courthouse construction date (1908 per Wikipedia and illinoisgenweb, leads only) and George W. Payne & Son as its architect (K names Payne for the district, not the courthouse alone). Not stated.
 - 1994 sesquicentennial restoration (search summary only, not confirmed in a fetched T1 source). Omitted.
 - Illinois State's role in an earlier restoration (J). Single-source detail; omitted.
+
+## Markers (9 Oct 2026)
+
+Frame lat 40.3863 to 40.4430, lon -91.1546 to -91.0991; merge distance 122 m. All three markers inside the frame. Closest pair: 1 and 2 at 220 m.
+
+New sources:
+
+- M. Joseph Smith Papers, place "Hamilton's Hotel, Carthage, Illinois": https://www.josephsmithpapers.org/place/hamiltons-hotel-carthage-illinois [T1]
+- N. Joseph Smith Papers, place "Carthage, Illinois": https://www.josephsmithpapers.org/place/carthage-illinois [T1] (county seat March 1833; not used in copy)
+
+Markers
+
+1. Courthouse square. 40.41299, -91.13542, OSM way 917957321 (Hancock County Courthouse, Main Street), inside the NRIS 86001482 district (K). Exact. Ordered first as the county seat (designated March 1833, N). Text unchanged.
+2. Hamilton's hotel site. 40.41352, -91.13292. [T1, M] also called Hamilton House or Hamilton's Tavern; southwest corner of Main and Washington Streets, about one block south and four blocks east of the jail; Joseph Smith's party (with Governor Ford) stayed overnight 24 to 25 June 1844; on 25 June a hearing on the riot charge against Joseph, Hyrum and the Nauvoo City Council was held before Robert F. Smith. Coordinate: intersection of OSM Main Street (way 21778502) and Washington Street (ways 21778663/21774388) at 40.41366, -91.13278, offset about 20 m into the southwest corner. Approximate: the source gives a corner, and no fetched source says whether the building survives (a search found nothing either way). "That evening the brothers were taken to the jail" rests on C ("arrived at Carthage Jail on the evening of June 25, 1844"). Left out of copy: Governor Ford's presence (blame-adjacent per the earlier Dropped list) and the bodies being carried to the hotel on 27 June (M; sensitivity rule).
+3. Carthage Jail, with visitors' center and statue plaza. 40.41521, -91.13932: Church location page C embedded Maps place 40.4152109, -91.1393322; OSM node 2483032243 (tourism=museum, Historic Carthage Jail) 40.41521, -91.13932. Exact. Note: the OSM way 440867015 used earlier (40.41564, -91.13885) is the whole block polygon, not the building, so the node replaces it. Merge: visitors' center (40.41620, -91.13941) is 110 m away, under 122 m; statue and tablets on the plaza (H, I). Text is the old two items joined.
+
+Considered and left out
+
+- 1845 trial venue: no fetched source names the building where the May 1845 trial was held. Not tied to the courthouse square in copy.
+- Carthage Greys' camp on the public square: dropped earlier as blame-adjacent; not marked.

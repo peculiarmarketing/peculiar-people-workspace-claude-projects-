@@ -89,3 +89,38 @@ Trivia
 - 2024 transfer of the Red Brick Store, Mansion House, Homestead and Nauvoo House from Community of Christ (R, $192.5 million). Verified, but left out of customer copy: sensitive for Community of Christ members, and not Nauvoo-era history. Kept in this ledger only.
 - Seventies Hall, Brigham Young Home, Times and Seasons building. All inside the frame (OSM: Seventies Hall 40.5433, -91.3947; Brigham Young Home 40.5442, -91.3929) but no Tier 1 fact about events there was fetched; cut to keep the list at six well-sourced sites.
 - Rebuilt temple open-house figure (331,849) and 13 dedicatory sessions. Verified (O, N) but temple detail rather than town history; left out to keep temple points to two.
+
+## Markers (9 Oct 2026)
+
+Frame lat 40.5239 to 40.5721, lon -91.4036 to -91.3564; merge distance 104 m. Coordinates come from the Church location pages' embedded Google Maps place pins and Street View pins (fetched from churchofjesuschrist.org/learn/locations/<slug>), checked against OpenStreetMap (Nominatim, one request at a time). All eight markers are inside the frame. Distances by equirectangular approximation; the closest pair of markers is 1 and 4 at 155 m.
+
+New sources (all T1, fetched and read):
+
+- S. Location page "Hiram and Sarah Granger Kimball Home": https://www.churchofjesuschrist.org/learn/locations/sarah-kimball-home?lang=eng
+- T. Location page "West Grove": https://www.churchofjesuschrist.org/learn/locations/west-grove?lang=eng
+- U. Location page "Brigham and Mary Ann Young Home": https://www.churchofjesuschrist.org/learn/locations/young-home?lang=eng
+- V. Location page "Seventies Hall": https://www.churchofjesuschrist.org/learn/locations/seventies-hall?lang=eng
+- W. Location page "Trail of Hope": https://www.churchofjesuschrist.org/learn/locations/trail-of-hope?lang=eng
+- X. Location page "Pioneer Memorial and Exodus to Greatness": https://www.churchofjesuschrist.org/learn/locations/pioneer-memorial-nauvoo?lang=eng
+- Y. Location pages used for pins only: mansion-house, smith-family-homestead, smith-family-cemetery, nauvoo-house, red-brick-store (same URL pattern). Index: https://www.churchofjesuschrist.org/learn/history/sites/historic-nauvoo/all-locations?lang=eng
+
+Markers
+
+1. Smith family sites (Homestead, family cemetery, Mansion House, Nauvoo House). 40.54100, -91.39139. Mansion House pin from Y (Maps place 40.540996, -91.391387; Street View 40.54101, -91.39144); OSM way 250169371 40.54098, -91.39137. Exact. Merge: Homestead pin 40.54042, -91.39201 (83 m), cemetery 40.54037, -91.39222 (99 m), Nauvoo House 40.54010, -91.39138 (100 m); all under 104 m. Marker set at the Mansion House rather than the Homestead because the Homestead is 104 m from the Red Brick Store and the cemetery only 69 m, which would have forced the store into the same entry; the Mansion House is 155 m from the store. Story order uses the Homestead's May 1839 date. Text reuses the old list's verified facts (I, M, B, E); "on Water Street" for the Homestead from the old ledger.
+2. Temple. 40.5504848, -91.3843815 (task coordinates). kind temple. Exact. Story date: cornerstones April 6, 1841 (P).
+3. Hiram and Sarah Granger Kimball Home. 40.55313, -91.39721. S pin 40.5531065, -91.397221; OSM way 1532138908 40.55313, -91.39721. Exact: S says the exchange "occurred within its walls," so this is the house itself. [T1, S] Margaret Cook, a seamstress who worked for Sarah, wanted to help the temple's construction by sewing shirts for the builders; one day in 1842 the two discussed creating a sewing society; days later about a dozen other neighborhood women met in the home's parlor for its first meeting; from this the Relief Society was formed.
+4. Red Brick Store. 40.54070, -91.39318. OSM way 240578321 (610 Water St); Y Street View pin 40.54073, -91.39316. Exact. Facts unchanged (B, A).
+5. West Grove. 40.55089, -91.38703. T pin 40.5508902, -91.3870347. Approximate: [T1, T] historical accounts reference at least two groves near the temple, one directly east and another on the west; minutes often say only "the stand" or "the grove," so it is unclear which sermons were where; trees cut for firewood and lumber after 1846; trees west of the temple replanted in 2015; "just down the hill" from the temple; outdoor meeting place while the temple was under construction; Joseph Smith's August 31, 1842 sermon to the Relief Society occurred in the West Grove, on new understanding by revelation about proxy baptism for deceased ancestors. The replanting's position relative to the original west grove is not stated, hence approximate. 229 m from the temple.
+6. Brigham and Mary Ann Young Home. 40.54417, -91.39291. OSM way 249784944 (Kimball Street); U Maps place 40.5443467, -91.3929243. Exact (U describes this brick home as the family's home). [T1, U] the family's second Nauvoo home; the first was an unfinished log cabin; moved in May 31, 1843; Brigham met there with other members of his quorum. 180 m from the Seventies Hall.
+7. Seventies Hall. 40.54331, -91.39472. V Street View 40.54331, -91.39472 and Maps place 40.5433225, -91.3947248; OSM way 249786345 (Parley Street). Exact: [T1, V] reconstructed on its original foundation in 1972; built 1844; dedicated in seven sessions between Christmas Day 1844 and New Year's Day 1845; sold June 1846; demolished by 1869; leaders met there to plan leaving Nauvoo (spring 1845, and the winter 1846 organizing meetings).
+8. Parley Street / Trail of Hope, river end. 40.54292, -91.40038. X Maps place 40.5429248, -91.4002175; OSM node 2563441073 40.54292, -91.40038. Exact for the street. [T1, W] first wagons left February 4, 1846 along Parley Street to the river, where a ferry took them across; following the Trail of Hope ends at the Mississippi and the Pioneer Memorial. Not placed at the Trail of Hope pin (40.54324, -91.39497), which is 23 m from the Seventies Hall and would have forced a merge.
+
+Considered and left out
+
+- Pioneer Saints Cemetery (Old Nauvoo Burial Ground): Church pin 40.5373819, -91.3495336 is east of the frame edge (-91.3564). Outside.
+- Cultural Hall (Masonic Hall), 40.54741, -91.39179 (Church pin; OSM way 250173088). Verified on its location page (dedicated April 5, 1844; meeting space; wagons built there before the exodus), but cut to keep the list at eight strong entries.
+- John and Leonora Taylor Home, Print Shop and Post Office, 40.54435, -91.39178. Its location page dates the print shop on that property to May 1845, so it is not where the March 1842 Times and Seasons (Articles of Faith) was printed; not marked for that reason. Also 98 m from the Young Home, which would force a merge.
+- King Follett discourse (April 7, 1844): T says minutes often name only "the grove" and it is unclear which sermons were where; no fetched source fixes this sermon's spot. Not marked.
+- September 1846 fighting: C gives no location. Not marked.
+- Heber C. Kimball, Wilford Woodruff and Lucy Mack Smith homes: in frame (Church pins 40.54545, -91.38792; 40.54620, -91.38681; 40.54403, -91.38986) but no event in the section happened there. Left out.
+- Monument to Women garden (40.55280, -91.38979): modern; left out.

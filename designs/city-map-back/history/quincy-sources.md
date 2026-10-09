@@ -72,3 +72,16 @@ Trivia
 - "City of Refuge" nickname (I). Verified, but it bundles other history (Underground Railroad, Potawatomi); not used.
 - Hinckley asking choir members with Quincy-sheltered ancestors to stand (H, I; recalled by Charles Scholz in 2025). Verified; cut for length.
 - Distances: 45 miles (A, B), "fifty miles" (Saints ch. 34), about 55 (H). Copy uses 45, "some 45 miles."
+
+## Markers (9 Oct 2026)
+
+Frame lat 39.8719 to 39.9997, lon -91.4342 to -91.3100 (Missouri bank excluded); merge distance 275 m. Both markers inside the frame, 585 m apart. On the Map list converted to the numbered format; text unchanged.
+
+1. Washington Park and the 1976 marker. 39.93258, -91.40925 (OSM Nominatim, park). Exact. ISHS record (K) places the marker in the park on the north side of Maine Street between 4th and 5th; marker point is the park, not the plaque.
+2. Clat Adams Bicentennial Park. 39.93460, -91.41559 (OSM Nominatim). Exact for the park and the 2025 panel (I).
+
+Considered and left out
+
+- 1839 crossing / ferry landing. Re-read I (Newsroom, 13 May 2025): it does not say the park is the landing site. HMDB lists a marker reading "crossed the Mississippi River at this approximate site" at 39.93472, -91.41575 (in Clat Adams Park), but HMDB returned HTTP 403 and is a lead only; the marker's erector was not confirmed. Not added to copy.
+- Cleveland home (Emma's lodging, Joseph's reunion April 22, 1839): D gives "four miles from the village of Quincy"; Wilford Woodruff's journal (search snippet only) "four miles out of town." No position. Not marked; already told in What Happened Here.
+- Democratic Association meetings (Feb 1839) and the May 1839 conference camp ground "just beyond the city limits" (G): no position in any source. Not marked.
