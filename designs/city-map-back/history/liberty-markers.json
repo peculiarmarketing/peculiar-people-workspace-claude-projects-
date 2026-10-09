@@ -1,0 +1,4 @@
+{"place": "liberty", "markers": [
+  {"n": 1, "name": "Monument to the Eight Witnesses (Arthur farm)", "lat": 39.20740, "lon": -94.44985, "certainty": "exact", "kind": "site", "coord_source": "Church location page Monument to the Eight Witnesses, Google Maps pin 39.2073999, -94.4498515", "note": ""},
+  {"n": 2, "name": "Historic Liberty Jail (with Doniphan home site)", "lat": 39.24854, "lon": -94.42065, "certainty": "exact", "kind": "site", "coord_source": "Church location page Liberty Jail, Google Maps pin 39.2485445, -94.4206498; OSM 216 N Main St 39.24852, -94.42062", "note": ""}
+]}

@@ -70,3 +70,22 @@ Trivia
 - Mormon Battalion 2,000-mile march (E, K). Not Council Bluffs history beyond the muster.
 - Musical "Come Home to Kanesville" (B). Not Church-run; volatile; omitted.
 - Winter Quarters, Cutler's Park and anything in Omaha/Florence. Outside the Iowa-only frame.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.1313 to 41.3267, lon -95.9359 to -95.7424 (Iowa side only); merge distance 420 m; no temple. Two markers, about 4.7 km apart.
+
+1. Iowa School for the Deaf grounds: Grand Encampment, battalion muster marker, Mosquito Creek camp area (merged). 41.22622, -95.82020. Coordinate source: OSM node 354358556 "Grand Encampment Marker" (Nominatim); school building OSM way 854240638 at 41.22483, -95.82027 (about 155 m away, under the 420 m merge distance). Certainty: approximate. Why: the campus markers are real and placed, but the first 1846 camp on Mosquito Creek is located only to the school's general area. [T1] Ensign, Sept 1979 (https://www.churchofjesuschrist.org/study/ensign/1979/09/the-mormon-pioneer-trail-1846-47?lang=eng): "The first Mormon encampment was along Mosquito Creek near the present Iowa School for the Deaf on Highway 275." [NPS] Historic Resource Study ch. 7 (https://npshistory.com/publications/mopi/hrs/chap7.htm), site 14: "Near the Iowa School for the Deaf ... is the general area of the first Mormon camp," with the battalion marker there. The 1988 muster marker's own position on the campus is not separately pinned; the point is the OSM Grand Encampment marker. In frame: yes.
+2. Kanesville Memorial and log tabernacle site. 41.26483, -95.84210. Coordinate source: Church location page A map pin (41.264834, -95.842104); OSM way 1328902136 "Kanesville Tabernacle", 41.26491, -95.84192. Certainty: approximate. Why: the memorial is exact, but the 1847 tabernacle stood only "near" it. [T1] C (1996): replica "near the original site." [T1] Church News, 18 Dec 1993, "Trails group plans to rebuild church's 1847 log tabernacle" (https://www.thechurchnews.com/1993/12/18/23257631/trails-group-plans-to-rebuild-churchs-1847-log-tabernacle): "The original building, which was north of what is now Council Bluff's First Avenue near Indian Creek." [NPS] Kanesville Memorial Historic Site (https://www.nps.gov/places/kanesville-memorial-historic-site.htm) says the tabernacle was built "at this site"; less precise than the Church sources and not used for the wording. In frame: yes.
+
+New facts used in copy: first camp on Mosquito Creek in the general area of the school (Ensign 1979, T1; NPS HRS); tabernacle north of today's First Avenue near Indian Creek (Church News 1993, T1).
+
+Edit to existing copy: "near where the log tabernacle stood" moved out of the memorial's first sentence into the closing certainty sentence. No facts dropped.
+
+Volatile: the 1993 location description was written before the replica site was chosen; re-check if the Church publishes a footprint.
+
+Considered and left out:
+- Orson Hyde's home (5 December 1847 meeting): no source read gives its location.
+- Bayliss Park boulder commemorating the Mormon Trail through Kanesville (Ensign 1979 T1: "a boulder with two markers honoring the Mormon pioneers"; NPS HRS site 15; Council Bluffs library archive, 1936 DAR gift, lead only). Location fine (OSM Bayliss Park way 193045648, 41.25922, -95.85170), but no current source confirms it still stands; HMdb page returned 403 and was not worked around. Left out.
+- Iowa-side Missouri ferry landings: NPS HRS says no markers exist on the Iowa side and two crossings "correspond quite closely" to today's South Omaha and Mormon Pioneer Memorial bridges. Too vague to place; the Mormon Bridge (about lat 41.34) is outside the frame anyway.
+- Overpass API requests failed (connection reset through the proxy); Nominatim used instead.

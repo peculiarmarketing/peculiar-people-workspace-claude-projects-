@@ -70,3 +70,19 @@ Trivia
 - Lorenzo Snow later presided at Pisgah (F). Verified, left out for length.
 - Huntington's tent prayer meeting in temple clothes (F, from his diary). Ordinance-adjacent; omitted.
 - Ezra T. Benson quote, "the first place where I felt willing in my heart to stay" (A). Verified; omitted to keep trivia from ending reverent.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.0139 to 41.0862, lon -94.1366 to -94.0651; merge distance 156 m; no temple. Two markers, about 390 m apart.
+
+1. Mount Pisgah settlement slope. 41.05050, -94.09650. Coordinate source: derived, about 370 m due east of the county park (OSM relation 6150307, 41.05003, -94.10083) on the slope east of the cemetery hill; reverse-geocodes beside Mount Pisgah Road. Certainty: approximate. Why: [NPS] Historic Resource Study ch. 7 (https://npshistory.com/publications/mopi/hrs/chap7.htm) quotes the State of Iowa marker: "The original community was located on the slope and flat lands east of this spot. The cemetery extended down the hill to the west, north, and south beyond the railroad tracks," and says "There is little left today of the old campsite." [T1] B: homes and two log meetinghouses "on a hillside overlooking" the fields in "the plain below"; "The cemetery at the top of the hill." No source gives a distance or a building position, so the point stands for the eastern slope only. In frame: yes.
+2. Mount Pisgah cemetery, monument and park (merged). 41.05110, -94.10106. Coordinate source: Church location page C map pin (41.051103, -94.101062); OSM relation 6150306 cemetery 41.05125, -94.10079. Certainty: exact. Merge: cemetery/monument and the adjoining county park (OSM 41.05003, -94.10083) are about 120 m apart, under 156 m, so one entry naming both, marker at the monument. In frame: yes.
+
+New facts used in copy: houses on the slope east of the cemetery hill with fields on the flat land below (State of Iowa marker text via NPS HRS; T1 B for hillside and plain); "little left today of the old campsite" (NPS HRS), copy says "Almost nothing of the old camp is left." [T1] Ensign Sept 1979 (https://www.churchofjesuschrist.org/study/ensign/1979/09/the-mormon-pioneer-trail-1846-47?lang=eng) agrees the campsite today is marked by the cemetery and a nine-acre park.
+
+Edit to existing copy: the two old On the Map items (cemetery, county park) merged into one list item because they share one marker. No facts dropped.
+
+Considered and left out:
+- The DAR marker of 1928 in the park (NPS HRS; Ensign 1979): inside the merged park entry's footprint; not worth its own line.
+- Death totals on the State of Iowa marker ("between 300 and 800"): conflicts with the Church's figures; already in Dropped.
+- Overpass API requests failed (connection reset through the proxy); Nominatim used instead.

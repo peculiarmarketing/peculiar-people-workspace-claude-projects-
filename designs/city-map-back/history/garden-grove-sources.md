@@ -69,3 +69,19 @@ Trivia
 - First settlement on Potawatomi lands in territorial Iowa (D). Verified, left out for length.
 - Iowa neighbors' donations in October 1847 (B). Verified, left out for length.
 - Mormon Battalion volunteers came partly from Garden Grove (Newsroom, search summary). Kept for the Council Bluffs section.
+
+## Markers (9 Oct 2026)
+
+Frame lat 40.7911 to 40.8634, lon -93.6428 to -93.5716; merge distance 156 m; no temple. Two markers. The two points are about 1.8 km apart, so no merge.
+
+1. Garden Grove camp / town. 40.82723, -93.60723. Coordinate source: OSM relation 129180 (Garden Grove village) centre point, via Nominatim. Certainty: approximate. Why: no source pins the 1846 campsite. [T1] Ensign, Sept 1979, "The Mormon Pioneer Trail, 1846-47" (https://www.churchofjesuschrist.org/study/ensign/1979/09/the-mormon-pioneer-trail-1846-47?lang=eng): "a community of the same name still exists on this campsite. A brass marker in a large stone in the center of town honors these early settlers." [NPS] C (current page): "the site itself is on nearby private farmland. The present town of Garden Grove, Iowa, grew up near the old Latter-day Saints camp." The two disagree on whether the town is on or beside the camp; copy names both and says the exact spot is unknown. In frame: yes.
+2. Mormon pioneer cemetery, county park. 40.82750, -93.62852. Coordinate source: OSM way 860522813 "Garden Grove Mormon Burial Grounds" (Nominatim); NPS address 30308 Mormon Trail Road (C). Certainty: exact (the marked, public cemetery park itself). In frame: yes. [T1] Ensign 1979 and [NPS] Historic Resource Study ch. 7 (https://npshistory.com/publications/mopi/hrs/chap7.htm) both put it one mile west of the town marker, which matches the OSM points (about 1.8 km).
+
+New facts used in copy: the town on or beside the camp, and the brass plaque on a large stone in the centre of town (Ensign 1979, T1; NPS HRS ch. 7 corroborates a town-park marker dedicated 1956).
+
+Volatile: the brass plaque in the centre of town (1979 description; the NPS study's town-park marker may be the same one). Re-check that it still stands before reprint.
+
+Considered and left out:
+- The 1846 camp as its own point on farmland: no source gives a position. Folded into marker 1 as approximate.
+- West bank of the East (Weldon) Fork as the camp position (Ensign 1979): a bank, not a spot; not enough to place a marker.
+- Overpass API (OSM) requests failed with connection resets through the proxy; not retried beyond one attempt per endpoint. Nominatim used instead.
