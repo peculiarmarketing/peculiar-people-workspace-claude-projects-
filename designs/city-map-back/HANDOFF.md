@@ -28,9 +28,16 @@ Next, once Evan has chosen:
 
 Evan's calls, 9 Oct: Fayette's "In Fayette or Manchester?" row removed ("skip it if you aren't sure"); Independence's July 1833 Star article added, verified by two Church sources ("include it if verified by multiple sources"); San Antonio stays a product, as a plain city map with no history section. Still open on the page: Sacred Grove witness-tree source (BYU article, not a Church page); Council Bluffs replica tabernacle demolished 2022 (copy says so); Quincy stake today unconfirmed.
 
-## Proposal waiting on Evan: numbered landmark markers (9 Oct)
+## Numbered landmark markers (Evan, 9 Oct: build on all Church history maps)
 
-Evan asked for a way to mark where things happened on the Church history maps, explained on the product page. Mock-up on Palmyra township (built by a scratchpad script, not kept): a 0.11 in dot at each landmark with streets knocked out around it, and a number in Oswald 500 at 0.22 in (the city label's size, so strokes clear the DTG minimum) on a knocked-out patch beside it, placed automatically so it does not hit another marker or the temple halo. The numbers match a numbered On the Map list on the product page. Coordinates already sit in every history ledger. Not built into `build_map_back.py`; no decision yet. If approved: a `markers` list per place in `places.json` (number, name, lat, lon from the ledger), drawn by `build_map_back.py`, the On the Map list rendered as a numbered list, and the confirmed maps rebuilt and re-shown before any publish. Note: live Nauvoo and Salt Lake City would change design if markers are added to them.
+Evan: "build the numbered list structure on all the church history maps with any relevant history, locations, events, as best as we might know where they are. If we are not positive that's where they are or where they happened, note that in the on the map section. Also ensure that the numbers are big enough to be printed correctly, but not ridiculously big. Do this on all church history maps, including Salt Lake and Nauvoo."
+
+Done 9 Oct:
+- Each of the 26 Church history maps has `history/<place>-markers.json` (n, name, lat, lon, certainty exact/approximate/traditional, kind site/temple, coordinate source) and its On the Map list is now `<ol class="site-history__list site-history__map">`, one item per marker in the same order. Every approximate or traditional item says so in plain words. Each ledger has a "## Markers (9 Oct 2026)" section (coordinates, sources, merges, places left out). 85 markers in all; places closer than 0.35 in on the print were merged into one number.
+- `build_map_back.py` draws them (`draw_markers`): a 0.05 in radius dot with streets cleared to 0.10 in, and the number in Oswald 500 at 0.24 in (measured 0.85 mm strokes, about 4.9 mm tall; DTG minimum 0.71 mm) on a knocked-out patch placed automatically clear of other markers, the halo, the frame and the city label. A temple entry gets only its number, outside the halo. `web_map_drawing.py` passes the markers too, so the product-page drawing band shows them.
+- `map_run.py` (temple repo) ships a scoped style that forces the On the Map numbers on, whatever the theme does to lists.
+- Status: all 26 stay at ready (Evan confirmed the maps and asked for the markers). Nauvoo and Salt Lake City are LIVE with the old art and old list: they need `map_run.py <place> --apply --publish` again to carry the markers, only when Evan says. Same for every other map when its products go up.
+- Evan's markers look is on the review page (collection `markers` there; the earlier `decisions` collection holds his 9 Oct map choices).
 
 ## Next line of work (Evan, 9 Oct; not started)
 
