@@ -131,7 +131,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "manchester": {
     "label": "MANCHESTER, NEW YORK",
@@ -150,7 +150,7 @@
       -77.2370607
     ],
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "fayette": {
     "label": "FAYETTE, NEW YORK",
@@ -168,7 +168,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "mendon": {
     "label": "MENDON, NEW YORK",
@@ -185,7 +185,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "colesville": {
     "label": "COLESVILLE, NEW YORK",
@@ -201,7 +201,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "afton": {
     "label": "AFTON, NEW YORK",
@@ -219,7 +219,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "harmony": {
     "label": "HARMONY, PENNSYLVANIA",
@@ -235,7 +235,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "hiram": {
     "label": "HIRAM, OHIO",
@@ -251,7 +251,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "independence": {
     "label": "INDEPENDENCE, MISSOURI",
@@ -269,7 +269,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "liberty": {
     "label": "LIBERTY, MISSOURI",
@@ -286,7 +286,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "richmond": {
     "label": "RICHMOND, MISSOURI",
@@ -302,7 +302,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "far-west": {
     "label": "FAR WEST, MISSOURI",
@@ -317,7 +317,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "adam-ondi-ahman": {
     "label": "ADAM-ONDI-AHMAN, MISSOURI",
@@ -332,7 +332,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "hauns-mill": {
     "label": "HAUN'S MILL, MISSOURI",
@@ -347,7 +347,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "quincy": {
     "label": "QUINCY, ILLINOIS",
@@ -363,7 +363,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "carthage": {
     "label": "CARTHAGE, ILLINOIS",
@@ -378,7 +378,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "garden-grove": {
     "label": "GARDEN GROVE, IOWA",
@@ -393,7 +393,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "mount-pisgah": {
     "label": "MOUNT PISGAH, IOWA",
@@ -408,7 +408,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "council-bluffs": {
     "label": "COUNCIL BLUFFS, IOWA",
@@ -425,7 +425,7 @@
     "temple": null,
     "busy": true,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "winter-quarters": {
     "label": "WINTER QUARTERS, NEBRASKA",
@@ -460,7 +460,7 @@
     "line_mm": 1.5,
     "temple": null,
     "history": true,
-    "status": "ready"
+    "status": "live"
   },
   "_status": "Product stage per map (8 Oct 2026). designed: art built, not reviewed. review: the full product package (print files per garment, gallery cards, history section) is made and waits on Evan. ready: Evan confirmed it; scripts/map_run.py may publish it. live: on the store. map_run.py refuses --apply below ready and sets live itself after a publish.",
   "_dropped": "9 Oct 2026, Evan on the review page: palmyra-village and sacred-grove dropped. palmyra-township was widened (centre 43.0737, -77.2066, 12.5 km) to cover both old frames, and its history section carries the village and Sacred Grove story. Old frames: palmyra-village centre 43.06001,-77.23005 at 3 km; sacred-grove centre 43.03971,-77.24625 at 6 km. Their ledgers stay in history/ as sources for palmyra-township."
