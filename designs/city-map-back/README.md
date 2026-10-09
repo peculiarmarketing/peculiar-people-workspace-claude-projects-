@@ -78,6 +78,8 @@ python3 designs/city-map-back/build_map_back.py --all
 
 Places are in `places.json` (counties by FIPS code, centre, width, line weight, temple). County road files download once to `city-maps/data/tiger/`, which is gitignored. Output goes to `out/<place>/`, also gitignored: a 100 ppi preview, a 300 ppi back print PNG (4050 x 5400) and a 300 ppi front PNG (the logo with coordinates, 6 in wide), white ink on transparent with every pixel's colour set to white. The back print includes the frame and the city label.
 
+**Where the art is kept.** `out/` is not in git. Every live map's back and front art, with its print files, design cards and review sheet, has a permanent copy in Shopify Files (public links, no login). The index is `temple-product-generator/artifacts/maps/ART_INDEX.md` (readable, per map, with the live listings and their on-model photo links) and `art_index.json` beside it. On a fresh checkout, `python scripts/map_art_backup.py --fetch <place>` in the temple repo restores a map's files; after rebuilding a live map's art, `--apply` uploads the changed files and rewrites both indexes.
+
 ## Still open
 
 - Decided 9 October 2026: two kinds of map, Church history sites (with a history section) and plain city maps (none). San Antonio is a plain city product, and every city with a temple product will get one. Historical period maps were tested and declined; maps stay on today's TIGER roads. Recorded in BRAND.md.

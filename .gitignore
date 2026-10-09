@@ -38,4 +38,7 @@ city-maps/out/
 
 # Census TIGER road files (about 20 MB per batch of counties), re-downloaded on demand.
 city-maps/data/tiger/
+# Map art (about 260 MB with the print files): every live map's files are in Shopify
+# Files, indexed in temple-product-generator/artifacts/maps/ART_INDEX.md; restore with
+# temple-product-generator/scripts/map_art_backup.py --fetch <place>.
 designs/city-map-back/out/
