@@ -4,12 +4,13 @@ Read `README.md` in this folder first: it holds every settled decision (frame, l
 
 ## Where it stands
 
-| Stage | Maps |
-|---|---|
-| live | Nauvoo, Salt Lake City (tee, sweatshirt, hoodie each; Salt Lake City is the map line's parent) |
-| ready (Evan confirmed) | Kirtland, Sharon, and 22 confirmed on the review page 9 Oct: San Antonio, Whitingham, Manchester, Fayette, Mendon, Colesville, Afton, Harmony, Hiram, Independence, Liberty, Richmond, Far West, Adam-ondi-Ahman, Haun's Mill, Quincy, Carthage, Garden Grove, Mount Pisgah, Council Bluffs, Winter Quarters, Martin's Cove |
-| review | Palmyra township only: rebuilt 9 Oct to Evan's note (widened to 12.5 km, centre 43.0737, -77.2066, to take in the old Sacred Grove frame; history section merged from the village and Sacred Grove sections). Waits on Evan's look |
-| dropped (9 Oct) | Palmyra village, Sacred Grove: removed from `places.json` (see its `_dropped` note); their ledgers stay as sources for Palmyra township |
+**All 27 maps are live (9 Oct, evening)** on the tee, sweatshirt and hoodie: 81 listings, each with on-model photos in every colour. Salt Lake City is the map line's parent. Nothing is in review.
+
+- **Publish:** the 25 new maps went up through `map_run.py <place> --apply --publish`, two lanes at a time (about 4 minutes a map). Network resets to Tapstitch and Shopify stopped a run three times; every stage resumes from `artifacts/maps/<place>/state.json`, so a rerun picks up where it stopped with nothing duplicated.
+- **Nauvoo and Salt Lake City** (live since 8 Oct) were moved onto the new art in place with `scripts/map_refresh.py <place>`: new design on the existing Tapstitch template, Tapstitch re-sends the images, the script restores every alt by pixel match, swaps the design cards, checks variant bindings, rewrites the description. Listings, handles and Easify bindings unchanged. Two things it now handles: products created on 8 Oct get Tapstitch's stored tags copied onto every re-sent image as alt text ("map:nauvoo,line:map"); and a re-send can drop an image whose file Shopify no longer has (it logs these as LOST).
+- **On-model photos:** built with the locked placement (`artifacts/onmodel-maps/LOCK.md`) for all 27, approved by Evan city by city on the review page https://claude.ai/artifact/Jd47QRyexAtEsRVHsHFMrd (collection `onmodel`), applied with `scripts/onmodel_maps_apply.py --place <city> --apply`. Nauvoo and Salt Lake City used `--replace`, which swapped their old-art photos for the new ones and brought back the three shots lost in the re-sends. `scripts/onmodel_maps_register.py <city>` adds a new city's prints and Tapstitch placements to `prints/`.
+- **Names:** `map_run.city_state` no longer uses `str.title()` (it gave "Haun'S Mill"); Adam-ondi-Ahman keeps the Church's lowercase "ondi". Shopify handles for those two end `-haun-s-mill` and `-martin-s-cove`; Palmyra township's listings end `-palmyra`. Scripts read handles from `state.json`, never from the folder name.
+- **Easify:** `option-sets.csv` now lists all 27 maps in the Map Tee, Map Sweatshirt and Map Hoodie sets. Evan imports it, then exports and the CSV is reseeded (`easify_options.py reseed --export PATH`), because every import renumbers the sets.
 
 - **Design packages** (print files per garment, gallery cards, a review sheet) are built for all 29 by `temple-product-generator/scripts/map_run.py <place> --review`. They are gitignored and rebuild in about 20 seconds per map: `artifacts/maps/<place>/` (print files, `<place> map card.png`, `<place> logo card.png` when the front has coordinates, `<place> review.png`). The 300 dpi art they are made from is in `out/<place>/` here, also gitignored, rebuilt by `build_map_back.py <place>`.
 - **History sections** exist for Nauvoo, Salt Lake City, Kirtland and Sharon (`history/<place>.html` with `history/<place>-sources.md`). **None exist yet for the other 24 Church history sites.** San Antonio needs none (`history: false`).
