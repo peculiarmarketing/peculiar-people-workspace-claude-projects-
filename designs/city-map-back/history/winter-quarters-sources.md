@@ -79,3 +79,23 @@ Trivia
 - Council house dedicated January 23, 1847 (C). Verified; cut for length.
 - Kanesville First Presidency, December 1847. Iowa side, outside the frame.
 - Fetch failures: history.nebraska.gov (Florence and the Winter Quarters marker) and omahamagazine.com both returned 403. Not worked around. history.churchofjesuschrist.org/article/trek/pioneer-story-winter-quarters returned 404.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.2989 to 41.3712, lon -96.0009 to -95.9291; merge distance 156 m. Two markers, story order. Both checked inside the frame; they are 553 m apart. On the Map is now a numbered `<ol>`; the three old items (cemetery, Fairbanks bronze, trail center) merged into one temple entry, and the town site was added.
+
+New source: C (Lund, BYU Studies) refetched for locations: the tableland was "bordered on north and south by creeks," "on the west by a high bluff," and "on the east by a steep descent to the river's edge"; the plat ran "one mile in length and slightly less than a half mile wide," with its main axis along the bluff; the main cemetery was "on the bluff immediately west of Winter Quarters"; the council house was "on a rise near the north end of town"; the gristmill was on Turkey (Mill) Creek at the north end. C gives no tie between the plat and Florence's streets. A says Winter Quarters became Florence; L, M, N (T3) say Mitchell platted Florence at the site.
+
+Markers:
+
+1. Winter Quarters town site. 41.33684, -95.96067 (OSM node 12950182773, place=village "Florence", in the historic Florence core east of the cemetery bluff). Approximate: the sources describe the town's setting but not its position on today's map. Copy says so. Copy facts: plat a mile long along the bluff and a little under half a mile wide (C, T1); Florence grew up on the site (A, T1; L, M, N).
+2. Mormon Pioneer Cemetery, temple and Mormon Trail Center (kind temple). 41.3340799, -95.966178 (brief). Exact. Merge: cemetery (OSM way 1070974048, 41.33479, -95.96606) is about 77 m from the temple point and the trail center (41.33504, -95.96501) about 107 m from the cemetery, both under 156 m. "Just west of the old town" (C); trail center "just east of the cemetery" is E's "cemetery on a rise just west of the Mormon Trail Center" restated. Other facts unchanged (D, E, F, H).
+
+Considered and left out:
+
+- Florence Mill / Weber Mill (9102 North 30th Street, OSM museum node 41.34347, -95.96266). C says only that its timbers "are reputed to have come from the original Winter Quarters mill." NPS (https://www.nps.gov/places/weber-mill.htm, via search summary) and SAH Archipedia leads say the building dates from 1856 and was moved above the floodplain about 1939, so it does not stand on the Saints' mill site, and that site on Mill Creek is not located. Not marked.
+- Council house, Octagon, Brigham Young's house, Kimball Row, Gopher Hill dugouts, steamboat landing, ferry (all C). Described relative to the old town only; no positions today. Not marked.
+- Bank of Florence (41.33731, -95.96095). Post-1854 Florence, not Church history; stays in Trivia without a number. It is also 58 m from the town-site marker.
+- Cutler's Park (first camp, August 1846). C puts Winter Quarters "directly north" of it and the leaders rode "three miles east" to the tableland; it lies west of the frame's west edge (-96.0009) on that reasoning. Not marked.
+- Mormon Bridge historical marker (OSM node 9943898765, 41.34516, -95.95934). Marker text is about the 1953 bridge; no fetched source ties a Saints' crossing to that spot.
+- Fetch failures: history.nebraska.gov (flour-mills page) returned 403 again. Not worked around.

@@ -1,0 +1,7 @@
+{"place": "manchester", "markers": [
+  {"n": 1, "name": "Smith farm: frame house and log home", "lat": 43.03818, "lon": -77.24056, "certainty": "exact", "kind": "site", "coord_source": "OSM (Joseph Smith Frame Home)", "note": "Merged: log home 202 m north. Marker at the frame house, the house on the Manchester side."},
+  {"n": 2, "name": "Sacred Grove", "lat": 43.03971, "lon": -77.24625, "certainty": "traditional", "kind": "site", "coord_source": "OSM wood polygon centroid (Sacred Grove)", "note": "Named since at least 1905; Church sources say the exact site of the First Vision is unknown."},
+  {"n": 3, "name": "Hill Cumorah: monument and visitors' center", "lat": 43.00651, "lon": -77.22425, "certainty": "exact", "kind": "site", "coord_source": "OSM (Angel Moroni Monument)", "note": "Merged: visitors' center 134 m."},
+  {"n": 4, "name": "Manchester village", "lat": 42.96942, "lon": -77.22967, "certainty": "exact", "kind": "site", "coord_source": "OSM (Manchester village place node)", "note": ""},
+  {"n": 5, "name": "Palmyra New York Temple", "lat": 43.0389988, "lon": -77.2370607, "certainty": "exact", "kind": "temple", "coord_source": "Brief (OSM way 69595119)", "note": ""}
+]}

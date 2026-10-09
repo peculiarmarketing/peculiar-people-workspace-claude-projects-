@@ -1,0 +1,15 @@
+{
+ "place": "hiram",
+ "markers": [
+  {
+   "n": 1,
+   "name": "John and Elsa Johnson Home (with Hiram Ward meetinghouse)",
+   "lat": 41.29599,
+   "lon": -81.16779,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM way 410116126 'John Johnson Home' (historic=building) 41.29599,-81.16779; Church location page map link ll=41.296093,-81.167821 agrees",
+   "note": "Merged: meetinghouse (OSM way 410116132, 41.29653,-81.16986) is 183 m west, under 223 m. Old ledger point 41.29561,-81.16514 was an address interpolation about 220 m off; corrected."
+  }
+ ]
+}

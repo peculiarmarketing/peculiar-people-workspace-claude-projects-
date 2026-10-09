@@ -72,3 +72,36 @@ Trivia
 - Total rescuers (363 in the biographical database, maybe over 400) and 200-plus wagons (E). Verified; cut to keep Trivia to two items.
 - Weather in Salt Lake City when the call went out (mid-70s, no snow, E). Verified; cut for length.
 - Sun Ranch National Historic Landmark and the Peoples of the Sweetwater Museum (F). Verified, left out to keep On the Map at three strong items.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.4159 to 42.4882, lon -107.2765 to -107.2034; merge distance 156 m. Four markers, story order (Devil's Gate camp; then the events of 4 November, broken east to west along the route: the fort, the crossing, the cove). All checked inside the frame; closest pair is the crossing and the cove, 812 m. On the Map is now a numbered `<ol>`.
+
+As asked, the Church pages were tried again for pins:
+
+- A (location page, refetched): one pin only, "View Map" at 42.441872, -107.219467, labelled "Mormon Handcart Historic Site", address 47600 West Hwy 220, Alcova. That is the visitors' center (OSM agrees to about 30 m). No pins for the sculptures, the crossing, Fort Seminoe or Devil's Gate.
+- https://www.churchofjesuschrist.org/learn/historic-sites/wyoming/martins-cove?lang=eng : same single pin.
+- F ("What to Expect", refetched): no coordinates or map pins at all. It mentions the Bowers bronzes on "a trail loop", LeRoy Transfield sculptures at Prairie Park, the 1933 marker ("a short drive away"), and Sixth Crossing (Willie company, outside this story).
+- Location-page slugs tried for the features (rescue-sculptures, fort-seminoe, devils-gate, martins-cove-lower-monument, prairie-park and variants): all 404. Directory listings named "Rescue Sculptures", "Martin's Cove Lower Monument" and "Fort Seminoe Site" exist on directory.yext.com in search results, but redirect to location.com and return 404. Nothing usable.
+
+New sources:
+
+- P. Steven L. De Vore, "Magnetic Gradient Survey of Seminoe's Fort on the Tom Sun Ranch," NPS Midwest Archeological Center Technical Report 77 (2002): https://www.npshistory.com/series/archeology/mwac/tech/77.pdf (Gov't, read in full text)
+- Q. Deseret News, 25 July 2001, "Digging up history at fort" (T3 lead only): https://www.deseret.com/2001/7/25/19597942/digging-up-history-at-fort/
+- C and J refetched for location wording.
+
+Markers:
+
+1. Devil's Gate. 42.44827, -107.20997 (OSM node 5310819204, natural=gorge). Exact: the gorge itself. The company "camped near Devil's Gate" (F) and left it on the morning of 4 November (C); the item says "near".
+2. Fort Seminoe (rebuilt) and the visitors' center. 42.44095, -107.22111 (OSM node 7606427444, historic=fort). Approximate. [Gov't] P: the fort's exact location had been lost since 1857; the May 2001 survey located a U-shaped structure in a hayfield "near the Mormon Handcart Visitor Center", bounded east by the ranch headquarters fence, west by Pete Creek and north by old Highway 220, ahead of excavation in summer 2001 and a proposed Church reconstruction. No source fetched says the rebuild sits on the excavated footprint, so the copy says the sources don't say. The visitors' center (Church pin above) is 169 m away, just over the merge distance; folded into this entry anyway to keep the two from crowding each other, and named in the item. "Wagon companies unloaded" from F and B as before.
+3. Sweetwater crossing and the rescue sculptures. 42.44516, -107.24324: the vertex of the OSM Sweetwater River line (way 120513102) nearest the cove point, 812 m (half a mile) south of it and about 2.8 km (1.7 miles) west of the Devil's Gate node. Approximate. [T1] C: the company traveled "two miles to reach the Sweetwater" from the Devil's Gate camp; the cove was "the half mile" beyond the river; the ford was a diagonal crossing between low spots in the bank, thirty to forty feet wide. C does not identify the ford's exact position, and no source maps it. [T1] J (refetched): the statues are "at the base of Martin's Cove," "on a rise just off the trail adjacent to the river," on the loop from the visitors' center to the cove and back. No coordinate exists for them; they share this marker. Copy carries the certainty note.
+4. Martin's Cove. 42.45204, -107.23993 (OSM node 5310826993, "Martin's Cove"). Exact for the cove as a named place; the camp spread through it and no camp spot is pinned. Facts unchanged (A, F, H).
+
+Considered and left out:
+
+- 1933 Utah Pioneer Trails and Landmarks Association marker: still no position ("a short drive away", F).
+- Martin's Cove Monument (1992), Martin's Cove "lower monument", and the small stone monument with four rescuers' names "near a bridge over the river further along the trail" (J): no positions. They stay unnumbered.
+- Prairie Park (LeRoy Transfield sculptures, beside the visitors' center): later art, inside the marker 2 radius; not named.
+- Sixth Crossing: Willie company, outside this section's story, and F's distance wording does not put it reliably in the frame.
+- Sun Ranch NHL (OSM 42.44329, -107.21813): the visitors' center is its old headquarters; covered by marker 2.
+- Fetch notes: overpass-api.de reset the connection; Nominatim returned 429 after two lookups. Coordinates came from one OpenStreetMap API map-bbox download. Not worked around.

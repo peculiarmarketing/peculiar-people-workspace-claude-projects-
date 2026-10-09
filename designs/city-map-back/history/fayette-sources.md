@@ -73,3 +73,19 @@ Trivia
 - "The Kingdom" settlement near Waterloo where Lucy lived Nov 1830 to May 1831 (G). No coordinates found; omitted from the map list.
 - 1980 time capsule to be opened in 2030; nearly 30 reporters; Today show segment (K, J). Verified, cut.
 - Seneca Falls, inside the frame, has no tie to Church history in any fetched source.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.7120 to 42.9954, lon -76.9917 to -76.7038; merge distance 609 m; no temple. All three markers checked inside the frame. Evan's rule kept: no entry names where the Church was organized.
+
+1. Whitmer farm: 42.86595, -76.87220 (Church location page pin, "Peter and Mary Whitmer Home," https://www.churchofjesuschrist.org/learn/locations/peter-and-mary-whitmer-home?lang=eng, fetched 9 Oct). Exact: the farm is the certain site; the copy names what is certain there (translation finished, first conference June 9, 1830, rebuilt log home) and nothing about the organization. Merge: OSM visitors' center and Fayette chapel (way 300976271, 42.86639, -76.86898) is 266 m east; both sit about 200 m north of Aunkst Road on the TIGER/Line road file, consistent with one farm. Story order: June 1829.
+2. Seneca Lake: 42.87248, -76.94407 (OSM relation 6464140, Seneca Lake State Park on the north shore). Approximate: A says only "some of those present were baptized in nearby Seneca Lake"; no source gives a spot. Copy says no record gives the place along the shore. 5.9 km from marker 1. Story order: April 1830.
+3. Cayuga-Seneca Canal at Waterloo: 42.90125, -76.86377 (OSM relation 17611446, Lock 4, Village of Waterloo). Approximate: H says the company began "near present-day Waterloo." The lock is modern and is used only to put the marker on the canal inside the village; the copy does not mention it. 3.9 km from marker 1. Story order: May 1831.
+
+Copy changes: On the Map converted to an ordered list; the Whitmer item gained "where the translation was finished and the first conference met"; certainty clauses added to items 2 and 3. Nothing else changed.
+
+Considered and left out:
+- The "near Fayette" place of the December 1830 revelation (D&C 37): no location.
+- "The Kingdom" near Waterloo (G): no coordinates found.
+- The Three Witnesses' vision in the woods near the house: dropped from copy earlier (see Dropped); not marked.
+- Seneca Falls: no Church history tie in a fetched source.

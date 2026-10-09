@@ -97,3 +97,33 @@ Trivia
 - Address grid trivia (street numbers counting from the temple block). Not sourced to Tier 1 on fetch; omitted.
 - Assembly Hall listed as its own landmark: folded into the Tabernacle item to keep the list at six.
 - Endowment House (1855 to 1889, F): demolished, nothing on the map; omitted.
+
+## Markers (9 Oct 2026)
+
+Frame lat 40.5674 to 40.8326, lon -112.0053 to -111.7447; merge distance 570 m. Seven markers, in story order. All seven checked inside the frame by script; closest pair is the City Creek camp and Pioneer Park, 987 m apart. On the Map is now a numbered `<ol>`; the old six items were kept, the Temple Square, Tabernacle/Assembly Hall and Beehive/Lion House items merged into one, and the quarry sentence moved from the Temple Square item into the new quarry item.
+
+New sources:
+
+- V. Ensign, Oct. 1975, "Quarrying the Temple Granite": https://www.churchofjesuschrist.org/study/ensign/1975/10/discovery/quarrying-the-temple-granite?lang=eng
+- W. Church News, 2 Oct 2004, "Temple Quarry: 70-year-old monument moved and rededicated": https://www.thechurchnews.com/2004/10/2/23237665/temple-quarry-70-year-old-monument-moved-and-rededicated/
+- X. Ensign, May 1993, "Temple Quarry Trail Finished" (seen in search results; lead and corroboration only): https://churchofjesuschrist.org/study/ensign/1993/05/news-of-the-church/temple-quarry-trail-finished
+
+Markers:
+
+1. This Is the Place Monument. 40.75202, -111.81619. OSM node 356680155 (historic=monument, GNIS 1446532). Exact (the monument itself). New fact: [T1] on 21 July 1847 Pratt and Snow "returned to the vanguard group camped at the mouth of Emigration Canyon"; on 22 July the main company caught up that morning and the combined wagons came down to camp (B, refetched). Monument facts unchanged (L, M). The canyon-mouth camp is described only as "at the mouth", so it is named in the item without its own point.
+2. First valley camp, Parley's Creek. 40.73352, -111.87679 (OSM: shared node of 1700 South and 500 East). Approximate. [T1] 22 July 1847 the combined companies camped beside "Parley's Creek near present-day 1700 South and 500 East" (B, refetched). "Near" an intersection only; certainty note in the copy.
+3. City Creek camp of 23 July 1847. 40.76170, -111.88965: centre of the block bounded by Main Street (lon about -111.8911), State Street (about -111.8882), 300 South (lat about 40.7628) and 400 South (about 40.7606), from OSM intersection nodes. Approximate. [T1] the camp moved to "the south branch of City Creek between present-day Main and State Streets", between 300 and 400 South (B, refetched). B gives no location for the plowing, so the copy does not place the plowing here.
+4. Ensign Peak. 40.79437, -111.89066 (OSM node 356678240, natural=peak, GNIS 1440938). Exact. Facts unchanged (B, C). B's map caption: "about one mile north of Temple Square."
+5. Temple Square (kind temple). 40.7704367, -111.8919131 (brief). Exact. Merged entry: temple, Tabernacle (about 100 m west), Assembly Hall, Beehive House (about 290 m east) and Lion House are all within 570 m of the temple point. Facts unchanged (B, F, G, K).
+6. Old Fort site, Pioneer Park. 40.76194, -111.90137 (OSM way 172843732 centroid; an OSM plaque node "Utah's First Fort" sits at 40.76117, -111.90011). Exact: NRHP 74001938 places the fort site at Pioneer Park (P); the park is the marked site. Facts unchanged (P, Q).
+7. Temple Quarry, Little Cottonwood Canyon. 40.57155, -111.77390 (OSM way 223936008, Temple Quarry Interpretive Trail; OSM history board "Temple Granite Quarry" at 40.57199, -111.77515). Exact: the quarry ground, with a marked Forest Service trail through it. In frame (south edge 40.5674, east edge -111.7447). New facts: [T1] quarry "in the mouth of Little Cottonwood Canyon, twenty miles southeast of the Salt Lake Temple"; work began 1860; rail from 1872 (V). [T1] site administered by the U.S. Forest Service; 1934 monument moved to the head of the paved Temple Quarry Nature Trail (W). [T1, search only] 1993 quarter-mile trail through the pits (X, corroboration). Wagon teams then rail in the 1870s and 20 miles: G, as before. Quartz monzonite: R and known-myths.md, as before. V names oxen ("as many as four yokes"); copy keeps "wagon teams" per G.
+
+Considered and left out:
+
+- Utah Central Railroad depot (last spike, 10 January 1870). No fetched source gives the 1870 depot's location; search leads (Marriott Library photo records, utahrails.net) do not either. Not marked; the event stays in What Happened Here unnumbered.
+- Plowing site of 23 July 1847. B gives no location. Not marked.
+- Spot where Brigham Young first saw the valley (24 July). B gives only "the bench" at the canyon mouth. Covered by marker 1 without a separate point.
+- Brigham Young's grave (First Avenue). About 580 m from the temple point; not part of the 1847 to 1870s story told in the section. Left out.
+- Seagull Monument (on Temple Square, inside the merged entry). Dedication date still not fetched; not named.
+- Church Administration Building (spec row). Inside the Temple Square radius; not named in the item to keep it readable.
+- Fetch notes: overpass-api.de reset the connection twice and Nominatim returned 429 after a few calls; coordinates came from small OpenStreetMap API map-bbox downloads instead (one request each). No blocks worked around.

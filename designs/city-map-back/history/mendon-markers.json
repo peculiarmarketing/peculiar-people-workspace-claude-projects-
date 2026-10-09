@@ -1,0 +1,4 @@
+{"place": "mendon", "markers": [
+  {"n": 1, "name": "John Young farm (Brigham's mill and house)", "lat": 42.97408, "lon": -77.50269, "certainty": "approximate", "kind": "site", "coord_source": "TIGER/Line 2024 roads, Monroe County: Cheese Factory Rd at Mendon Ionia Rd", "note": "Deeds put the farm on the corners of the two roads; no source gives the mill site's position on the farm."},
+  {"n": 2, "name": "Tomlinson Corners: inn and graveyard", "lat": 42.96593, "lon": -77.49469, "certainty": "approximate", "kind": "site", "coord_source": "OSM way 849623726 (Tomlinsons Corners Cemetery)", "note": "Inn's exact site not published; Ensign 2007 says the graveyard is just up the road from it. Marker at the graveyard."}
+]}

@@ -1,0 +1,25 @@
+{
+ "place": "winter-quarters",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Winter Quarters town site (Florence)",
+   "lat": 41.33684,
+   "lon": -95.96067,
+   "certainty": "approximate",
+   "kind": "site",
+   "coord_source": "OSM node 12950182773 (place=village 'Florence'); position reasoned from Lund, BYU Studies 39:2 (tableland between the bluff and the river, cemetery immediately west of town)",
+   "note": "No source ties the 1846 plat to modern streets; marker shows the general area of the old town on the flat below the cemetery bluff."
+  },
+  {
+   "n": 2,
+   "name": "Mormon Pioneer Cemetery, temple and Mormon Trail Center",
+   "lat": 41.3340799,
+   "lon": -95.966178,
+   "certainty": "exact",
+   "kind": "temple",
+   "coord_source": "Temple coordinates given in the brief; cemetery OSM way 1070974048 (41.33479,-95.96606), trail center OSM (41.33504,-95.96501)",
+   "note": ""
+  }
+ ]
+}

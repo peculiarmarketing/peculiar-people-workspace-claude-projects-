@@ -67,3 +67,26 @@ Trivia
 - Story that the monument vanished before a 1901 centennial (Substack). Unsourced; omitted.
 - Whitingham's population and present-day Church members (A, 1998). Dated; omitted.
 - Sadawga Pond and its floating island (H). Not Church history.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.7144 to 42.8518, lon -72.9363 to -72.7968; merge distance 296 m. All three inside the frame; pairwise distances 1.8 km, 4.0 km, 5.6 km.
+
+New sources:
+
+- J. Ensign Peak Foundation, "Brigham Young Birthplace & Monument" (lead only): https://ensignpeakfoundation.org/brigham-young-monument-and-birthplace/ . Says the road is "Brigham Young Hill, also known as Stimpson Hill"; "The smaller marker is in the front yard of a private residence but it can be viewed from the public street"; monument pin 42.781683, -72.8663.
+- G (already listed), Porter BYU devotional: "Because of an ongoing controversy as to just where Brigham Young was born in Whitingham," he spent ten days with the town clerk hunting the site. [A]
+- A (already listed), Church News 1998, raw text re-read: the monument "is located about two miles from where it was formerly thought to be Brigham Young's birthplace, according to the Nov. 6, 1949, Church Section." [T1]
+
+Markers:
+
+1. Traditional birth site, 42.78415, -72.88822. Traditional. Coordinate is the midpoint of OSM way 19726723, Stimpson Hill Road; the marker's position along the road is not known, and only J (a lead) ties the road to the birthplace marker. Certainty: G calls the birthplace an ongoing controversy; A calls an earlier identification one "formerly thought" to be the birthplace. Note the distances do not line up: Stimpson Hill Road is 1.7 to 2.0 km (about 1.1 to 1.2 miles) in a straight line from the monument, while A says about two miles from the formerly-thought site (possibly by road, possibly a different spot). The li says the exact spot isn't known and that this is the place tradition gives; it mentions the private front yard and does not invite visits. The li does not use the names Stimpson Hill or Brigham's Hill (the trivia already has Brigham's Hill; the Stimpson link is lead-only).
+2. Brigham Young monument, Town Hill, 42.78179, -72.86601. Exact. OSM node 356557348 ("Brigham Young Memorial Cemetery, Poverty Row"); J's pin 42.781683, -72.8663 is 25 m away.
+3. Jacksonville, 42.79719, -72.82137 (OSM village point). Exact for the village. The Whitingham Municipal Center building itself was not found (Nominatim returned nothing; then rate-limited with HTTP 429, and Overpass was unreachable), so the marker is the village the li names.
+
+Order: birth 1801, monument 1950, birthday program 2001.
+
+Considered and left out:
+
+- Route 8 / Route 100 roadside sign (D, 1971; A, 1998 says state highway 100, across from the community church and general store): no coordinates found; stays in trivia.
+- Clio entry (https://www.theclio.com/entry/18239, lead) gives 6677 VT Route 100 for the roadside sign; not geocoded, not used.

@@ -1,0 +1,25 @@
+{
+ "place": "sharon",
+ "markers": [
+  {
+   "n": 1,
+   "name": "Joseph Smith Birthplace Memorial",
+   "lat": 43.82347,
+   "lon": -72.47308,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "Church location page map link, joseph-smith-birthplace (357 LDS Lane, 43.823473,-72.47308); OSM visitors' center way 282096232 43.82327,-72.47244 is 55 m away",
+   "note": "Obelisk, cabin-site marker, hearthstone and visitors' center are all on the memorial grounds, well under 433 m apart; obelisk itself not separately mapped in OSM."
+  },
+  {
+   "n": 2,
+   "name": "South Royalton",
+   "lat": 43.81146,
+   "lon": -72.51409,
+   "certainty": "exact",
+   "kind": "site",
+   "coord_source": "OSM Nominatim village place point",
+   "note": "Village point; the 1905 meeting hall is not identified in sources."
+  }
+ ]
+}

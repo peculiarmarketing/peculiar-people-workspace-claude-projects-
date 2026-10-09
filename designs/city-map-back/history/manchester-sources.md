@@ -74,3 +74,20 @@ Trivia
 - Bednar's dedicatory prayer text (I). Reverent; left out per the trivia rule.
 - Statue models (Elwin Clark, Don Carlos Clark, G) and "angels attended him" (G). The latter is a subjective account; omitted.
 - First Vision and Moroni's night visits in the log home: told in `sacred-grove`; here only "the day after Moroni's visits."
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.9299 to 43.0542, lon -77.2524 to -77.1259; merge distance 267 m; temple at 43.0389988, -77.2370607. All five markers checked inside the frame. Distances are marker to marker. The `sacred-grove` section was dropped and merged into `palmyra-township`; facts reused here come from `sacred-grove-sources.md`, already verified.
+
+1. Smith farm: frame house and log home. Marker at the frame house, 43.03818, -77.24056 (OSM). Exact (original frame house, restored; sacred-grove ledger D). Merge: log home 43.03998, -77.24095 is 202 m north. The marker is at the frame house because this section's Across the Line row is about the house on the Manchester side; it is 298 m from the temple, over 267 m. Facts: log home rebuilt on its original foundation (sacred-grove ledger K, G); frame house about 125 yards south of the log home (C); log home on the Palmyra side, farm on the Manchester side (A here). Story order: 1818 to 1825.
+2. Sacred Grove: 43.03971, -77.24625 (OSM wood polygon centroid). Traditional: named since at least 1905 (sacred-grove ledger E, and the Church location page https://www.churchofjesuschrist.org/learn/locations/sacred-grove?lang=eng fetched 9 Oct); exact site unknown (sacred-grove ledger B), "somewhere on the still-wooded part of the farm" (A). Added beyond the old list because the town-line story is about this farm and C here places the First Vision "near border of Palmyra and Manchester townships"; the 1930s bullet's seedlings also came from its edge. First Vision wording follows Joseph's account: "in the woods near his home" (Church location page), spring 1820 (JS-H 1:14). 576 m from marker 1, 815 m from the temple. Story order: 1820.
+3. Hill Cumorah: Angel Moroni Monument, 43.00651, -77.22425 (OSM). Exact. Merge: visitors' center 43.00698, -77.22578 (OSM) is 134 m away, so the old monument and visitors' center items became one entry. Story order: 1823.
+4. Manchester village: 42.96942, -77.22967 (OSM). Exact (the village; JS-H 1:51 landmark). 4.2 km from marker 3. Story order: 1823, after the hill by geography (north to south).
+5. Palmyra New York Temple: 43.0389988, -77.2370607 (brief), kind temple. East side of the Smith farm, dedicated April 6, 2000 by President Hinckley (sacred-grove ledger D, H); "Three miles to the south is the Hill Cumorah" (O here). Story order: 2000.
+
+Copy changes: On the Map converted to an ordered list; monument and visitors' center merged into one item; new items for the Smith farm, the Sacred Grove and the temple. Nothing else in the section changed.
+
+Considered and left out:
+- The 1923 farm on the hill's west slope and the 1928 purchases (Grange Hall, three farms): no positions in any fetched source.
+- The spot where the plates lay: only "west side ... not far from the top" (JS-H 1:51); not marked separately, and the Hill row already quotes it.
+- Hill Cumorah OSM summit (42.99451, -77.22026): the monument is the visible site; one marker is enough.

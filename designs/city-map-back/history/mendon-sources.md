@@ -73,3 +73,19 @@ Trivia
 - John Young's barn moved to the Smith farm in Manchester (Ensign Peak; J says "may incorporate"). Hedged; omitted.
 - The wood lathe found in a collapsing shed (C). Verified, cut for length.
 - Kimball arriving in Mendon "around 1820" (Wikipedia). Lead only; omitted.
+
+## Markers (9 Oct 2026)
+
+Frame lat 42.9068 to 43.0708, lon -77.6423 to -77.4753; merge distance 353 m; no temple. Both markers checked inside the frame. Overpass (overpass-api.de) reset the connection on every try on 9 Oct; not worked around. Road positions came from the TIGER/Line 2024 roads file for Monroe County already cached in city-maps/data/tiger/ and from Nominatim.
+
+1. John Young farm (Brigham's house and mill, the baptism stream, John Young's house halves). Marker at the Cheese Factory Road / Mendon-Ionia Road crossing, 42.97408, -77.50269 (TIGER/Line, the two road lines meet there). Approximate: K (citing 1827 and 1830 deeds) puts John Young's land on the northeast and southeast corners of this crossing; I says Brigham built "back in the property"; no source gives the mill site's position. Copy says the marker is at the corners. The old third On the Map item (Fisher's dig) is the same place and is now part of this entry. New corroboration, [T1] A (re-fetched 9 Oct): Brigham "built a home and mill shop on his father's farm, less than a half mile northeast of where Heber Kimball and his wife, Vilate, lived" (not used in copy; Kimball home unlocated). Story order: 1827 to 1829.
+2. Tomlinson Corners: inn and graveyard. Marker at Tomlinsons Corners Cemetery, 42.96593, -77.49469 (OSM way 849623726). Approximate for the entry: the graveyard is exact, but the inn's site is not published. A (re-fetched 9 Oct): Miriam "was left resting in the little Tomlinson Corners graveyard just up the road from the inn"; the 2007 author lived in the inn, so the building stood then, but no address or road is given. Note: the cemetery is about 650 m east of the Mendon-Ionia Road, near Boughton Hill Road (TIGER), while the Tomlinson Corners hamlet point (OSM 42.96479, -77.50250) is on the Mendon-Ionia Road; copy keeps "Tomlinson Corners ... on the Mendon-Ionia Road" (the hamlet) and places the inn only relative to the graveyard. 906 m from marker 1. Story order: April 1830.
+
+Copy changes: On the Map converted to an ordered list of two; the Fisher item merged into the Young farm item; certainty sentences added to both. Nothing else changed.
+
+Considered and left out:
+- Tomlinson Inn as its own marker: location unknown, so not marked separately (rule: do not mark a place whose location is unknown).
+- The Tomlinson Corners hamlet point as the inn: no source puts the inn at the crossing.
+- Heber C. Kimball's home: "less than a half mile" southwest of Brigham's (A) gives no fixed point.
+- Mendon village: only a direction reference.
+- Victor: outside the frame.

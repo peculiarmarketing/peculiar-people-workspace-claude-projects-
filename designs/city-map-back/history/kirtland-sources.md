@@ -76,3 +76,41 @@ Trivia
 - Kirtland Flats Schoolhouse (41.62851, -81.36029; original 1819 building burned in the 1860s, G). Inside the frame, but no Church history event tied to it in a fetched source. Cut.
 - Visitors' center (41.62867, -81.36058). No event; cut.
 - First tour attendance ("nearly 250"). Single Church News report via search snippet only; omitted.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.5738 to 41.6462, lon -81.3810 to -81.3090; merge distance 156 m. All four markers inside the frame. Coordinates from the map pins behind the "View Map" links on the Church location pages (the maps.app.goo.gl short links resolve to Google place pins), checked against OpenStreetMap Nominatim. Overpass API was unreachable (connection reset at the proxy, twice); not retried further.
+
+New sources:
+
+- M. Church location page, "Isaac and Lucy Morley Farm": https://www.churchofjesuschrist.org/learn/locations/morley-farm?lang=eng
+- N. Church History Sites, "Joseph and Emma Smith's Five Homes in Ohio": https://www.churchofjesuschrist.org/learn/history/sites/ohio/joseph-and-emmas-homes?lang=eng
+- O. Church location page, "Joseph and Emma Smith Home": https://www.churchofjesuschrist.org/learn/locations/smith-home-kirtland?lang=eng
+- P. Church location page, "Kirtland North Cemetery": https://www.churchofjesuschrist.org/learn/locations/kirtland-north-cemetery?lang=eng
+- Q. Church location page, "Stannard Quarry": https://www.churchofjesuschrist.org/learn/locations/stannard-quarry?lang=eng
+- R. Church location pages used for pins only: whitney-store, whitney-home, johnson-inn, sawmill, ashery, kirtland-temple, joseph-sr-and-lucy-mack-smith-home (all under https://www.churchofjesuschrist.org/learn/locations/).
+
+Markers:
+
+1. Whitney store, 41.62938, -81.36142 (Church pin 41.6293836, -81.3614178). Exact. Merged with the Whitney home (pin 41.6294292, -81.362018; 50 m), Johnson Inn (pin 41.6290502, -81.3619924; 60 m), sawmill (pin 41.6282237, -81.3613389; 129 m) and ashery (pin 41.6282152, -81.3610697; 132 m). All pairs within 156 m, so the four old On the Map items became one entry; all their facts kept. Marker at the store, the oldest-dated event (February 1831).
+2. Isaac and Lucy Morley farm, 41.63687, -81.34495 (Church pin 41.6368711, -81.3449515; Nominatim 8605 Chillicothe Rd, way 978876238, 41.63649, -81.34413, 75 m away; Nominatim labels the address Kirtland Hills, the Church page says Kirtland). Approximate: M says the house standing there now "is not the home where the Morleys or the Smiths lived" and visitors walk "toward where the schoolhouse was"; the pin is the public part of an 80-acre farm. The li says so.
+3. Kirtland Temple, 41.62529, -81.36215 (brief; Church pin 41.6252719, -81.3620669). Exact, kind temple. Merged with the Joseph and Emma Smith Home (pin 41.6266612, -81.3625094, Nominatim 8980 Chillicothe Rd 41.62666, -81.36230; 155 m, just under the merge distance) and Kirtland North Cemetery (pin 41.6258795, -81.3623571; 68 m).
+4. Stannard Quarry, 41.59800, -81.34898 (Church pin 41.5979958, -81.3489821; OSM Quarry Pond way 311034887, 41.59796, -81.34888). Exact.
+
+Order: store (Feb 1831), Morley farm (Mar to Sep 1831), temple (cornerstone July 1833; Smith home late 1833), quarry (temple construction 1833 to 1836).
+
+New facts:
+
+- [T1] Morley farm: Isaac Morley agreed to have a home built for Joseph and Emma on his farm; they moved in early March 1831 (N); lived there March to September 1831 (M); "as many as 13" revelations now in the D&C (M, N); in a small schoolhouse on the property 23 men including Joseph Smith were ordained high priests (M); present house is not the Morleys' or Smiths' home (M); "a small portion of the land is open to the public" (M). Address 8605 Chillicothe Rd (M).
+- [T1] Joseph and Emma Smith Home: moved in late 1833; lived there "just over four years," longer than any other home they shared as a married couple; major portions of the Book of Abraham translated during their time there; Emma compiled a book of sacred hymns there (O). Address 8980 Chillicothe Rd (O).
+- [T1] Kirtland North Cemetery: predates the Saints (earliest recorded burial 1827); Joseph Smith Jr.'s grandmother and Oliver Cowdery's parents among those buried; owned by the city of Kirtland (P). Copy does not name the grandmother (P does not).
+- [T1] Stannard Quarry: supplied stone for the Kirtland Temple; inside the Chapin Forest Reservation; blocks split by hand-drilling holes and using wedges; Joseph Smith oversaw the quarrying for a short time; drill-hole remnants visible at the quarry pond (Q). Not owned by the Church (Q). The old temple li fact "Stone for its walls came from a quarry a few miles away" (B) moved here as "stone for the temple's walls."
+- Stone type still omitted: Q itself says "local sandstone" in one sentence and "limestone blocks" in the next.
+
+Considered and left out:
+
+- Joseph Sr. and Lucy Mack Smith Home site (pin 41.6269193, -81.3625631): only "a group of stones indicates the original home's approximate location" (Church page). 29 m from the Smith home, would fold into marker 3; left out to keep that entry short.
+- First Presidency organized in the Whitney store, 8 March 1833 (N). Verified; cut for length.
+- Emma's twins born and died 30 April 1831 and the adoption of the Murdock twins at the Morley farm (N). Verified; left out of the list (sensitive and already implied by the Hiram section).
+- Schoolhouse (Kirtland Flats), visitors' centers, picnic area, stake center pavilion: no Church history event in sources, or modern.
+- Fairport Harbor: Church page exists but outside the frame (north on Lake Erie).

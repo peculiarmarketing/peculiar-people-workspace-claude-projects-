@@ -73,3 +73,17 @@ Trivia
 - Book of Commandments print run (10,000 planned, cut to 3,000; D, heading 67). Verified; cut in favor of the Revelation Book 1 fact.
 - Revelation Book 1 page-numbering slip (two pages numbered 134 and two 135) and the 2024 return of loose leaves to the Church (E). Verified; cut for length.
 - Rigdon cabin as a separate On the Map item. Location of the cabin today not found in a fetched source; folded into the arrival bullet.
+
+## Markers (9 Oct 2026)
+
+Frame lat 41.2584 to 41.3621, lon -81.1968 to -81.0939; merge distance 223 m.
+
+1. John and Elsa Johnson Home, 41.29599, -81.16779. Exact. Source: OSM way 410116126, "John Johnson Home", historic=building (Nominatim); the Church location page's embedded map (ll=41.296093,-81.167821) and street-view camera (41.29601, -81.16780, facing south) agree. Inside the frame.
+   Correction: the earlier ledger point 41.29561, -81.16514 was a Nominatim address interpolation for 6203 Pioneer Trail and sits about 220 m east of the building. Use the new point.
+   Merged with the Hiram Ward meetinghouse (OSM way 410116132, place_of_worship, The Church of Jesus Christ of Latter-day Saints, 41.29653, -81.16986), 183 m west, under the 223 m merge distance. The two old On the Map items became one entry; all facts kept, no new facts.
+
+Considered and left out:
+
+- The meadow where Joseph and Sidney were attacked: not marked (sensitivity rule; location also unknown).
+- Rigdon log cabin "across the road" (C): present location not given in a fetched source; it would merge into marker 1 anyway.
+- Hiram village (41.31256, -81.14371): no event tied to it.
