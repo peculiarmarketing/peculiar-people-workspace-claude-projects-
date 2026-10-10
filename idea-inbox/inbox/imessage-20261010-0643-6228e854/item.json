@@ -1,0 +1,60 @@
+{
+  "id": "imessage-20261010-0643-6228e854",
+  "source": "imessage",
+  "source_label": "iMessage note to self",
+  "received_at": "2026-10-10T06:43:08Z",
+  "messages": [
+    {
+      "time": "2026-10-10T06:43:08Z",
+      "text": "https://www.instagram.com/reel/DeLhVyuT8G9/?obrf=ZHZjOW5xYTZ3bGpm",
+      "attachments": []
+    },
+    {
+      "time": "2026-10-10T06:43:08Z",
+      "text": "Could any of the processes he uses help my with my brand or general work flow? I don’t feel super organized about much of it",
+      "attachments": []
+    }
+  ],
+  "note_text": "https://www.instagram.com/reel/DeLhVyuT8G9/?obrf=ZHZjOW5xYTZ3bGpm\nCould any of the processes he uses help my with my brand or general work flow? I don’t feel super organized about much of it",
+  "links": [
+    "https://www.instagram.com/reel/DeLhVyuT8G9/?obrf=ZHZjOW5xYTZ3bGpm"
+  ],
+  "media": [
+    {
+      "kind": "video",
+      "folder": "video1",
+      "errors": [],
+      "duration_seconds": 91.2,
+      "truncated_to_seconds": null,
+      "frames": [
+        "video1/frames/01_t00m02s.jpg",
+        "video1/frames/02_t00m08s.jpg",
+        "video1/frames/03_t00m14s.jpg",
+        "video1/frames/04_t00m19s.jpg",
+        "video1/frames/05_t00m25s.jpg",
+        "video1/frames/06_t00m31s.jpg",
+        "video1/frames/07_t00m37s.jpg",
+        "video1/frames/08_t00m42s.jpg",
+        "video1/frames/09_t00m48s.jpg",
+        "video1/frames/10_t00m54s.jpg",
+        "video1/frames/11_t00m59s.jpg",
+        "video1/frames/12_t01m05s.jpg",
+        "video1/frames/13_t01m11s.jpg",
+        "video1/frames/14_t01m16s.jpg",
+        "video1/frames/15_t01m22s.jpg",
+        "video1/frames/16_t01m28s.jpg"
+      ],
+      "transcript": "video1/transcript.txt",
+      "language": "en",
+      "url": "https://www.instagram.com/reel/DeLhVyuT8G9/?obrf=ZHZjOW5xYTZ3bGpm",
+      "source_meta": {
+        "title": "Video by aidendjohnston",
+        "uploader": "Aiden Johnston",
+        "channel": "aidendjohnston",
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DeLhVyuT8G9/?obrf=ZHZjOW5xYTZ3bGpm",
+        "description": "day 72 of posting every day until @curatedating has 3,000 daily active users"
+      }
+    }
+  ]
+}

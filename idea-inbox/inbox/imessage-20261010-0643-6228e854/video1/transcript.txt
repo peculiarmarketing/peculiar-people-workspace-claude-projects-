@@ -1,0 +1,13 @@
+[00:00] Here's the AI stack that I personally use as a Soul Offender so I don't have to worry about engineering, design, testing, and content, and I will teach it to you in 60 seconds.
+[00:07] For context, on my AI usage to establish credibility, I have used around 8 billion tokens in the last month.
+[00:12] 1. Engineering. I use T3 code, an agent control panel built by Theo Brown, a YouTuber and YC22 alumni.
+[00:18] It's got a bunch of fun features that you can Google, and then I have my own custom hooks for permissions around 470 memory files, 28 skills, and a couple saved playbooks.
+[00:25] For all the custom stuff, you can either write that stuff yourself, the more experience that you get, or you can scroll on Tech Twitter for around an hour and steal all of it from there.
+[00:32] 2. Design. I don't trust my own eyes for design so I have custom agents look through other apps with good design and distill them into rules and then compare them against my own apps.
+[00:40] 3. Testing. I have a Mac Mini that acts as a sandbox for AI agents. They SSH into it through tail scale and use iPhone emulators through Xcode to run device tests.
+[00:47] In one night, it was able to run 84 different end-to-end tests and find 38 bugs which should have taken me, a human, at least 18 hours of end-to-end work.
+[00:55] Then for code review, I tried macroscope, greptile, code rabbit, but I'm stingy and don't want to pay my credits so I have codex to do code review.
+[01:01] 4. Content. I have a bunch of rules to sell down like how the hook is the only thing that matters. Subtitles need to be 2-3 words at a time.
+[01:07] There needs to be something changing every 3 seconds or whatever. But the really nice thing is that it edits for me.
+[01:12] Every single video on this channel for my 6 post onward was all done by ClaudeCode. It edits with FFMpeg, does a bunch of custom Python scripts stuck together, and it's great. It's amazing.
+[01:21] And that's it. That's my quote 5 code stack that people ask for. Nothing really special about it, and yeah, that was Day 72 of posting every day into my dating app as 3000 daily active users to follow along for the journey. Peace.
